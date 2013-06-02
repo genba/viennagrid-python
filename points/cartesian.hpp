@@ -1,12 +1,7 @@
 #ifndef CARTESIAN_HPP_40UV2UQE
 #define CARTESIAN_HPP_40UV2UQE
 
-#include "viennagrid/forwards.hpp"
-#include "viennagrid/domain/element_creation.hpp"
-#include "viennagrid/traits/point.hpp"
-
-typedef viennagrid::point_t<double, viennagrid::cartesian_cs<2> > PointCartesian2D_t;
-typedef viennagrid::point_t<double, viennagrid::cartesian_cs<3> > PointCartesian3D_t;
+#include "types.hpp"
 
 class PointCartesian2D {
 	PointCartesian2D_t point;
