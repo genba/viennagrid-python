@@ -26,6 +26,9 @@ project
 # source files after the colon separated by spaces.
 python-extension viennagrid_wrapper : wrapper.cpp
                                       points/cartesian.cpp
+                                      points/cylindrical.cpp
+                                      points/polar.cpp
+                                      points/spherical.cpp
                                     ;
 
 # Put the extension and Boost.Python DLL in the current directory, so
