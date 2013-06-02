@@ -5,8 +5,10 @@
 #include "viennagrid/domain/element_creation.hpp"
 #include "viennagrid/traits/point.hpp"
 
+typedef viennagrid::point_t<double, viennagrid::cylindrical_cs> PointCylindrical_t;
+
 class PointCylindrical3D {
-	viennagrid::point_t<double, viennagrid::cylindrical_cs> point;
+	PointCylindrical_t point;
 public:
 	PointCylindrical3D();
 	PointCylindrical3D(double x, double y, double z);

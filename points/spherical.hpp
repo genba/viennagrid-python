@@ -5,8 +5,10 @@
 #include "viennagrid/domain/element_creation.hpp"
 #include "viennagrid/traits/point.hpp"
 
+typedef viennagrid::point_t<double, viennagrid::spherical_cs> PointSpherical_t;
+
 class PointSpherical3D {
-	viennagrid::point_t<double, viennagrid::spherical_cs> point;
+	PointSpherical_t point;
 public:
 	PointSpherical3D();
 	PointSpherical3D(double x, double y, double z);

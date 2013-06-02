@@ -5,8 +5,11 @@
 #include "viennagrid/domain/element_creation.hpp"
 #include "viennagrid/traits/point.hpp"
 
+typedef viennagrid::point_t<double, viennagrid::cartesian_cs<2> > PointCartesian2D_t;
+typedef viennagrid::point_t<double, viennagrid::cartesian_cs<3> > PointCartesian3D_t;
+
 class PointCartesian2D {
-	viennagrid::point_t<double, viennagrid::cartesian_cs<2> > point;
+	PointCartesian2D_t point;
 public:
 	PointCartesian2D();
 	PointCartesian2D(double x, double y);
@@ -15,7 +18,7 @@ public:
 };
 
 class PointCartesian3D {
-	viennagrid::point_t<double, viennagrid::cartesian_cs<3> > point;
+	PointCartesian3D_t point;
 public:
 	PointCartesian3D();
 	PointCartesian3D(double x, double y, double z);

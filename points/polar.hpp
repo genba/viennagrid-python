@@ -5,8 +5,10 @@
 #include "viennagrid/domain/element_creation.hpp"
 #include "viennagrid/traits/point.hpp"
 
+typedef viennagrid::point_t<double, viennagrid::polar_cs> PointPolar_t;
+
 class PointPolar2D {
-	viennagrid::point_t<double, viennagrid::polar_cs> point;
+	PointPolar_t point;
 public:
 	PointPolar2D();
 	PointPolar2D(double x, double y);
