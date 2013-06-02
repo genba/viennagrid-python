@@ -8,11 +8,11 @@ pyvienna is a Python module that provides wrappers for ViennaGrid and ViennaMesh
 
 In order to build pyvienna, you will need the following additional software:
 
-- a compiler toolset, typically gcc (we have used gcc 4.7.2)
-- Python 2.7 (binary files)
-- Python's development files (header files)
-- Boost 1.53.0: source code of the Boost library
-- bjam: a built utility for building software which uses Boost (comes with Boost 1.53.0)
+* a compiler toolset, typically gcc (we have used gcc 4.7.2)
+* Python 2.7 (binary files)
+* Python's development files (header files)
+* Boost 1.53.0: source code of the Boost library
+* bjam: a built utility for building software which uses Boost (comes with Boost 1.53.0)
 
 (The software versions specified above are the version that we have used. You may use other versions, but we do not assure that everything will work with other versions of the software.)
 
