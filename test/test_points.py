@@ -32,11 +32,11 @@ class TestPointCartesian3D(unittest.TestCase):
 		self.point = viennagrid_wrapper._PointCartesian3D()
 	
 	def test_init(self):
-		point = viennagrid_wrapper._PointCartesian2D()
+		point = viennagrid_wrapper._PointCartesian3D()
 		self.assertEqual(self.point.dim, 3)
 	
 	# def test_init_double(self):
-	# 	point = viennagrid_wrapper._PointCartesian2D(1.0, 1.0, 1.0)
+	# 	point = viennagrid_wrapper._PointCartesian3D(1.0, 1.0, 1.0)
 	# 	self.assertEqual(self.point.dim, 3)
 	# TODO: fails because 1.0 is float and function signature is double
 	
@@ -51,11 +51,11 @@ class TestPointCylindical3D(unittest.TestCase):
 		self.point = viennagrid_wrapper._PointCylindrical3D()
 	
 	def test_init(self):
-		point = viennagrid_wrapper._PointCylindrical2D()
+		point = viennagrid_wrapper._PointCylindrical3D()
 		self.assertEqual(self.point.dim, 3)
 	
 	# def test_init_double(self):
-	# 	point = viennagrid_wrapper._PointCylindrical2D(1.0, 1.0, 1.0)
+	# 	point = viennagrid_wrapper._PointCylindrical3D(1.0, 1.0, 1.0)
 	# 	self.assertEqual(self.point.dim, 3)
 	# TODO: fails because 1.0 is float and function signature is double
 	
@@ -89,11 +89,11 @@ class TestPointSpherical3D(unittest.TestCase):
 		self.point = viennagrid_wrapper._PointSpherical3D()
 	
 	def test_init(self):
-		point = viennagrid_wrapper._PointSpherical2D()
+		point = viennagrid_wrapper._PointSpherical3D()
 		self.assertEqual(self.point.dim, 3)
 	
 	# def test_init_double(self):
-	# 	point = viennagrid_wrapper._PointSpherical2D(1.0, 1.0, 1.0)
+	# 	point = viennagrid_wrapper._PointSpherical3D(1.0, 1.0, 1.0)
 	# 	self.assertEqual(self.point.dim, 3)
 	# TODO: fails because 1.0 is float and function signature is double
 	
