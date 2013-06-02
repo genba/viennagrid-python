@@ -97,7 +97,7 @@ In order to compile ViennaGrid for Python, two files are needed:
 
 These two files describe how the project should be built. They are the bjam equivalent of a Makefile. Notice that you must specify the path to the Boost source code in both the `Jamroot` and the `boost-build.jam` files. Since we have installed Boost into the root directory of ViennaGrid for Python's source code and created a symbolic link called `boost`, these files point the Boost installation directory to `./boost`. If you install Boost into another directory, you will have to change this path in both files.
 
-	boost/bjam
+	boost/bjam include=ViennaGrid include=ViennaGrid/external
 
 Alternatively, you can use the provided `Makefile` by running the command
 
