@@ -1,7 +1,7 @@
 BJAM = ./boost/bjam
 
 all:
-	$(BJAM) include=ViennaGrid include=ViennaGrid/external
+	$(BJAM) include=inc/ViennaGrid include=inc/ViennaGrid/external
 
 clean:
 	rm -rf bin
