@@ -24,12 +24,12 @@ project
 
 # Declare the three extension modules.  You can specify multiple
 # source files after the colon separated by spaces.
-python-extension viennawrapper : wrapper.cpp ;
+python-extension viennagrid_wrapper : wrapper.cpp ;
 
 # Put the extension and Boost.Python DLL in the current directory, so
 # that running script by hand works.
 install convenient_copy 
-  : viennawrapper 
+  : viennagrid_wrapper
   : <install-dependencies>on <install-type>SHARED_LIB <install-type>PYTHON_EXTENSION 
     <location>. 
   ;
@@ -43,4 +43,4 @@ local rule run-test ( test-name : sources + )
 }
 
 # Declare test targets
-run-test wrapper : viennawrapper test/test.py ;
+run-test wrapper : viennagrid_wrapper test/test.py ;
