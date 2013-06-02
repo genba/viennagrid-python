@@ -99,6 +99,16 @@ These two files describe how the project should be built. They are the bjam equi
 
 	boost/bjam
 
+Alternatively, you can use the provided `Makefile` by running the command
+
+	make
+
+Running this is equivalent to running bjam. In fact, running bjam like explained before is what the `Makefile` specifies to do.
+
+The advantage of having the `Makefile` is that it also provides a target to clean the build files:
+
+	make clean
+
 ### Running tests
 
 bjam already runs the tests upon compilation, but, if you want to run the tests again separately, you simply have to issue the command
