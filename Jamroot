@@ -24,7 +24,9 @@ project
 
 # Declare the three extension modules.  You can specify multiple
 # source files after the colon separated by spaces.
-python-extension viennagrid_wrapper : wrapper.cpp ;
+python-extension viennagrid_wrapper : wrapper.cpp
+                                      points/cartesian.cpp
+                                    ;
 
 # Put the extension and Boost.Python DLL in the current directory, so
 # that running script by hand works.
