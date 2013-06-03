@@ -1,12 +1,12 @@
-# pyvienna
+# ViennaGrid for Python
 
-pyvienna is a Python module that provides wrappers for ViennaGrid and ViennaMesh, so that you can use ViennaGrid's and ViennaMesh' capabilities from your Python programs.
+ViennaGrid for Python is a Python module that provides a wrapper around [ViennaGrid](http://viennagrid.sourceforge.net "ViennaGrid - C++ Mesh Data Structure Library at High Convenience and Performance"), so that you can use ViennaGrid's capabilities from your Python programs.
 
 ## Compilation instructions
 
 ### Installing dependencies
 
-In order to build pyvienna, you will need the following additional software:
+In order to build ViennaGrid for Python, you will need the following additional software:
 
 * a compiler toolset, typically gcc (we have used gcc 4.7.2)
 * Python 2.7 (binary files)
@@ -28,7 +28,7 @@ Let's get into the following steps with some more detail:
 
 #### Installing a compiler toolset
 
-Since pyvienna is written in C++, you will need a compiler with C++ support. The GNU Compiler Collection (gcc) supports C++, but, if you are using Debian or a similar Linux distribution, chances are that you have to explicitly install the g++ package:
+Since ViennaGrid for Python is written in C++, you will need a compiler with C++ support. The GNU Compiler Collection (gcc) supports C++, but, if you are using Debian or a similar Linux distribution, chances are that you have to explicitly install the g++ package:
 
 	sudo apt-get install g++
 
@@ -78,12 +78,12 @@ And now we can proceed to building Boost and installing it in our system:
 
 ### Compiling the source code
 
-In order to compile pyvienna, two files are needed:
+In order to compile ViennaGrid for Python, two files are needed:
 
 1. `boost-build.jam`
 2. `Jamroot`
 
-These two files describe how the project should be built. They are the bjam equivalent of a Makefile. Notice that you must specify the path to the Boost source code in both the `Jamroot` and the `boost-build.jam` files. Since we have installed Boost into the root directory of pyvienna's source code and created a symbolic link called `boost`, these files point the Boost installation directory to `./boost`. If you install Boost into another directory, you will have to change this path in both files.
+These two files describe how the project should be built. They are the bjam equivalent of a Makefile. Notice that you must specify the path to the Boost source code in both the `Jamroot` and the `boost-build.jam` files. Since we have installed Boost into the root directory of ViennaGrid for Python's source code and created a symbolic link called `boost`, these files point the Boost installation directory to `./boost`. If you install Boost into another directory, you will have to change this path in both files.
 
 	boost/bjam
 
