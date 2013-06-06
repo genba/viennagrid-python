@@ -701,5 +701,30 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		self.assertEqual(len(s0.cells), 1)
 		self.assertEqual(len(s0.cells[0].vertices), 4)
 
+#######################
+# TETRAHEDRAL DOMAINS #
+#######################
+
+class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
+class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
+class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
 if __name__ == '__main__':
 	unittest.main()
