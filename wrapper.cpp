@@ -8,6 +8,7 @@ using namespace boost::python;
 
 #include "domains/triangular.hpp"
 #include "domains/quadrilateral.hpp"
+#include "domains/tetrahedral.hpp"
 
 #include "segments/triangular.hpp"
 #include "segments/quadrilateral.hpp"
@@ -290,5 +291,18 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D, PointSpherical3D, PointSpherical3D>())
 		.add_property("vertices", &QuadrilateralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+
+	/*************************
+	 * TETRAHEDRAL DOMAINS *
+	 *************************/
+	
+	class_<TetrahedralCartesian3D_Domain>("_TetrahedralCartesian3D_Domain")
+	;
+	
+	class_<TetrahedralCylindrical3D_Domain>("_TetrahedralCylindrical3D_Domain")
+	;
+	
+	class_<TetrahedralSpherical3D_Domain>("_TetrahedralSpherical3D_Domain")
 	;
 }
