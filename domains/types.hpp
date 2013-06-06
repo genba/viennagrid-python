@@ -42,4 +42,34 @@ typedef viennagrid::result_of::domain_config<viennagrid::triangle_tag,
                                              viennagrid::storage::id_handle_tag>::type    TriangularSpherical3D_DomainConfig;
 typedef viennagrid::result_of::domain<TriangularSpherical3D_DomainConfig>::type           TriangularSpherical3D_Domain_t;
 
+/**********************
+ * QUADRILATERAL MESH *
+ **********************/
+
+// Quadrilateral, cartesian 2D
+typedef viennagrid::result_of::domain_config<viennagrid::quadrilateral_tag,
+                                             PointCartesian2D_t,
+                                             viennagrid::storage::id_handle_tag>::type    QuadrilateralCartesian2D_DomainConfig;
+typedef viennagrid::result_of::domain<QuadrilateralCartesian2D_DomainConfig>::type        QuadrilateralCartesian2D_Domain_t;
+// Quadrilateral, cartesian 3D
+typedef viennagrid::result_of::domain_config<viennagrid::quadrilateral_tag,
+                                             PointCartesian3D_t,
+                                             viennagrid::storage::id_handle_tag>::type    QuadrilateralCartesian3D_DomainConfig;
+typedef viennagrid::result_of::domain<QuadrilateralCartesian3D_DomainConfig>::type        QuadrilateralCartesian3D_Domain_t;
+// Quadrilateral, cylindrical (3D)
+typedef viennagrid::result_of::domain_config<viennagrid::quadrilateral_tag,
+                                             PointCylindrical_t,
+                                             viennagrid::storage::id_handle_tag>::type    QuadrilateralCylindrical3D_DomainConfig;
+typedef viennagrid::result_of::domain<QuadrilateralCylindrical3D_DomainConfig>::type      QuadrilateralCylindrical3D_Domain_t;
+// Quadrilateral, polar (2D)
+typedef viennagrid::result_of::domain_config<viennagrid::quadrilateral_tag,
+                                             PointPolar_t,
+                                             viennagrid::storage::id_handle_tag>::type    QuadrilateralPolar2D_DomainConfig;
+typedef viennagrid::result_of::domain<QuadrilateralPolar2D_DomainConfig>::type            QuadrilateralPolar2D_Domain_t;
+// Quadrilateral, spherical (3D)
+typedef viennagrid::result_of::domain_config<viennagrid::quadrilateral_tag,
+                                             PointSpherical_t,
+                                             viennagrid::storage::id_handle_tag>::type    QuadrilateralSpherical3D_DomainConfig;
+typedef viennagrid::result_of::domain<QuadrilateralSpherical3D_DomainConfig>::type        QuadrilateralSpherical3D_Domain_t;
+
 #endif /* end of include guard: TYPES_HPP_O176Z3NS */

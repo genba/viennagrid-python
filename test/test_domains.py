@@ -352,5 +352,44 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		self.assertEqual(len(s0.cells), 1)
 		self.assertEqual(len(s0.cells[0].vertices), 3)
 
+#########################
+# QUADRILATERAL DOMAINS #
+#########################
+
+class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
+class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
+class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
+class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
+class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
+	def setUp(self):
+		pass
+	
+	def test_init(self):
+		pass
+
 if __name__ == '__main__':
 	unittest.main()
