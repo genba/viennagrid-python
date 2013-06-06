@@ -6,6 +6,8 @@ using namespace boost::python;
 #include "points/polar.hpp"
 #include "points/spherical.hpp"
 
+#include "domains/triangular.hpp"
+
 char const * version()
 {
 	return "0.1.0";
@@ -15,28 +17,61 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 {
 	def("version", version);
 	
+	/***********************
+	 * WRAPPERS FOR POINTS *
+	 ***********************/
+	
+	// CARTESIAN 2D
+	
 	class_<PointCartesian2D>("_PointCartesian2D")
 		.add_property("dim", &PointCartesian2D::get_dimension)
 		.add_property("coord_system", &PointCartesian2D::get_coord_system)
 	;
+	
+	// CARTESIAN 3D
 	
 	class_<PointCartesian3D>("_PointCartesian3D")
 		.add_property("dim", &PointCartesian3D::get_dimension)
 		.add_property("coord_system", &PointCartesian3D::get_coord_system)
 	;
 	
+	// CYLINDRICAL (3D)
+	
 	class_<PointCylindrical3D>("_PointCylindrical3D")
 		.add_property("dim", &PointCylindrical3D::get_dimension)
 		.add_property("coord_system", &PointCylindrical3D::get_coord_system)
 	;
+	
+	// POLAR (2D)
 	
 	class_<PointPolar2D>("_PointPolar2D")
 		.add_property("dim", &PointPolar2D::get_dimension)
 		.add_property("coord_system", &PointPolar2D::get_coord_system)
 	;
 	
+	// SPHERICAL (3D)
+	
 	class_<PointSpherical3D>("_PointSpherical3D")
 		.add_property("dim", &PointSpherical3D::get_dimension)
 		.add_property("coord_system", &PointSpherical3D::get_coord_system)
+	;
+	
+	/**********************
+	 * TRIANGULAR DOMAINS *
+	 **********************/
+	
+	class_<TriangularCartesian2D_Domain>("_TriangularCartesian2D_Domain")
+	;
+	
+	class_<TriangularCartesian3D_Domain>("_TriangularCartesian3D_Domain")
+	;
+	
+	class_<TriangularCylindrical3D_Domain>("_TriangularCylindrical3D_Domain")
+	;
+	
+	class_<TriangularPolar2D_Domain>("_TriangularPolar2D_Domain")
+	;
+	
+	class_<TriangularSpherical3D_Domain>("_TriangularSpherical3D_Domain")
 	;
 }
