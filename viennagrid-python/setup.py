@@ -1,18 +1,13 @@
 from distutils.core import setup
 
 setup(
-	name='TowelStuff',
+	name='viennagrid-python',
 	version='0.1.0',
-	author='J. Random Hacker',
-	author_email='jrh@example.com',
-	packages=['towelstuff', 'towelstuff.test'],
-	scripts=['bin/stowe-towels.py','bin/wash-towels.py'],
-	url='http://pypi.python.org/pypi/TowelStuff/',
+	author='Jonan CM',
+	author_email='jonancm@gmail.com',
+	packages=['viennagrid', 'viennagrid.test'],
+	url='http://genba.github.io/viennagrid-python/',
 	license='LICENSE.txt',
-	description='Useful towel-related stuff.',
+	description='Python module that provides a wrapper around the ViennaGrid library.',
 	long_description=open('README.txt').read(),
-	install_requires=[
-		"Django >= 1.1.1",
-		"caldav == 0.1.4",
-	],
 )
