@@ -5,6 +5,7 @@
 #include <viennagrid/domain/domain.hpp>
 #include <viennagrid/domain/element_creation.hpp>
 #include <viennagrid/point.hpp>
+#include <viennagrid/topology/quadrilateral.hpp>
 
 #include "../points/types.hpp"
 
