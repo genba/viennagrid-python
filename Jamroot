@@ -14,7 +14,7 @@ if ! [ python.configured ]
 # Specify the path to the Boost project.  If you move this project,
 # adjust this path to refer to the Boost root directory.
 use-project boost
-  : ./boost ;
+  : ./inc/boost ;
 
 # Set up the project-wide requirements that everything uses the
 # boost_python library from the project whose global ID is
