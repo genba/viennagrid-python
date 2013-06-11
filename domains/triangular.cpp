@@ -1,5 +1,6 @@
 #include "triangular.hpp"
 #include "../segments/types.hpp"
+#include "../vertices/types.hpp"
 
 #include <vector>
 
@@ -32,6 +33,11 @@ void TriangularCartesian2D_Domain::create_segments(unsigned int amount)
 	}
 }
 
+void TriangularCartesian2D_Domain::add_vertex(PointCartesian2D vertex)
+{
+	viennagrid::create_element<TriangularCartesian2D_Vertex_t>(domain, vertex.get_point());
+}
+
 ////////////////////////////
 // Triangle, cartesian 3D //
 ////////////////////////////
@@ -60,6 +66,11 @@ void TriangularCartesian3D_Domain::create_segments(unsigned int amount)
 
 		num_segments = amount;
 	}
+}
+
+void TriangularCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
+{
+	viennagrid::create_element<TriangularCartesian3D_Vertex_t>(domain, vertex.get_point());
 }
 
 ////////////////////////////////
@@ -91,6 +102,11 @@ void TriangularCylindrical3D_Domain::create_segments(unsigned int amount)
 	}
 }
 
+void TriangularCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
+{
+	viennagrid::create_element<TriangularCylindrical3D_Vertex_t>(domain, vertex.get_point());
+}
+
 //////////////////////////
 // Triangle, polar (2D) //
 //////////////////////////
@@ -120,6 +136,11 @@ void TriangularPolar2D_Domain::create_segments(unsigned int amount)
 	}
 }
 
+void TriangularPolar2D_Domain::add_vertex(PointPolar2D vertex)
+{
+	viennagrid::create_element<TriangularPolar2D_Vertex_t>(domain, vertex.get_point());
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -147,4 +168,9 @@ void TriangularSpherical3D_Domain::create_segments(unsigned int amount)
 		}
 		num_segments = amount;
 	}
+}
+
+void TriangularSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
+{
+	viennagrid::create_element<TriangularSpherical3D_Vertex_t>(domain, vertex.get_point());
 }

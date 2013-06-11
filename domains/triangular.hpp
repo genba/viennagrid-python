@@ -2,6 +2,10 @@
 #define TRIANGULAR_HPP_40OZO3A3
 
 #include "types.hpp"
+#include "../points/cartesian.hpp"
+#include "../points/cylindrical.hpp"
+#include "../points/polar.hpp"
+#include "../points/spherical.hpp"
 
 ////////////////////////////
 // Triangle, cartesian 2D //
@@ -14,6 +18,7 @@ public:
 	TriangularCartesian2D_Domain();
 	unsigned int get_num_segments();
 	void create_segments(unsigned int amount);
+	void add_vertex(PointCartesian2D vertex);
 };
 
 ////////////////////////////
@@ -27,6 +32,7 @@ public:
 	TriangularCartesian3D_Domain();
 	unsigned int get_num_segments();
 	void create_segments(unsigned int amount);
+	void add_vertex(PointCartesian3D vertex);
 };
 
 ////////////////////////////////
@@ -40,6 +46,7 @@ public:
 	TriangularCylindrical3D_Domain();
 	unsigned int get_num_segments();
 	void create_segments(unsigned int amount);
+	void add_vertex(PointCylindrical3D vertex);
 };
 
 //////////////////////////
@@ -53,6 +60,7 @@ public:
 	TriangularPolar2D_Domain();
 	unsigned int get_num_segments();
 	void create_segments(unsigned int amount);
+	void add_vertex(PointPolar2D vertex);
 };
 
 //////////////////////////////
@@ -66,6 +74,7 @@ public:
 	TriangularSpherical3D_Domain();
 	unsigned int get_num_segments();
 	void create_segments(unsigned int amount);
+	void add_vertex(PointSpherical3D vertex);
 };
 
 #endif /* end of include guard: TRIANGULAR_HPP_40OZO3A3 */
