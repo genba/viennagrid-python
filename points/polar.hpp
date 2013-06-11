@@ -10,6 +10,7 @@ public:
 	PointPolar2D(double x, double y);
 	size_t get_dimension();
 	const char * get_coord_system();
+	PointPolar_t & get_point();
 };
 
 #endif /* end of include guard: POLAR_HPP_HL2P4D4 */

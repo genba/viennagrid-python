@@ -10,6 +10,7 @@ public:
 	PointSpherical3D(double x, double y, double z);
 	size_t get_dimension();
 	const char * get_coord_system();
+	PointSpherical_t & get_point();
 };
 
 #endif /* end of include guard: SPHERICAL_HPP_LPABEBWU */

@@ -10,6 +10,7 @@ public:
 	PointCartesian2D(double x, double y);
 	size_t get_dimension();
 	const char * get_coord_system();
+	PointCartesian2D_t & get_point();
 };
 
 class PointCartesian3D {
@@ -19,6 +20,7 @@ public:
 	PointCartesian3D(double x, double y, double z);
 	size_t get_dimension();
 	const char * get_coord_system();
+	PointCartesian3D_t & get_point();
 };
 
 #endif /* end of include guard: CARTESIAN_HPP_40UV2UQE */

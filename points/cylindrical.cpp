@@ -19,3 +19,8 @@ const char * PointCylindrical3D::get_coord_system()
 {
 	return "cylindrical";
 }
+
+PointCylindrical_t & PointCylindrical3D::get_point()
+{
+	return point;
+}

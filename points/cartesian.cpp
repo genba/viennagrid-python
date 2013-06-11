@@ -20,6 +20,11 @@ const char * PointCartesian2D::get_coord_system()
 	return "cartesian";
 }
 
+PointCartesian2D_t & PointCartesian2D::get_point()
+{
+	return point;
+}
+
 PointCartesian3D::PointCartesian3D()
 {
 	
@@ -38,4 +43,9 @@ size_t PointCartesian3D::get_dimension()
 const char * PointCartesian3D::get_coord_system()
 {
 	return "cartesian";
+}
+
+PointCartesian3D_t & PointCartesian3D::get_point()
+{
+	return point;
 }

@@ -19,3 +19,8 @@ const char * PointPolar2D::get_coord_system()
 {
 	return "polar";
 }
+
+PointPolar_t & PointPolar2D::get_point()
+{
+	return point;
+}

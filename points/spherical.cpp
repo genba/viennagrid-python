@@ -19,3 +19,8 @@ const char * PointSpherical3D::get_coord_system()
 {
 	return "spherical";
 }
+
+PointSpherical_t & PointSpherical3D::get_point()
+{
+	return point;
+}

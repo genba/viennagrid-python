@@ -10,6 +10,7 @@ public:
 	PointCylindrical3D(double x, double y, double z);
 	size_t get_dimension();
 	const char * get_coord_system();
+	PointCylindrical_t & get_point();
 };
 
 #endif /* end of include guard: CYLINDRICAL_HPP_P07EFHVO */
