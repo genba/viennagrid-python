@@ -8,6 +8,8 @@ using namespace boost::python;
 
 #include "domains/triangular.hpp"
 
+#include "segments/triangular.hpp"
+
 char const * version()
 {
 	return "0.1.0";
@@ -73,5 +75,24 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TriangularSpherical3D_Domain>("_TriangularSpherical3D_Domain")
+	;
+	
+	/***********************
+	 * TRIANGULAR SEGMENTS *
+	 ***********************/
+	
+	class_<TriangularCartesian2D_Segment>("_TriangularCartesian2D_Segment")
+	;
+	
+	class_<TriangularCartesian3D_Segment>("_TriangularCartesian3D_Segment")
+	;
+	
+	class_<TriangularCylindrical3D_Segment>("_TriangularCylindrical3D_Segment")
+	;
+	
+	class_<TriangularPolar2D_Segment>("_TriangularPolar2D_Segment")
+	;
+	
+	class_<TriangularSpherical3D_Segment>("_TriangularSpherical3D_Segment")
 	;
 }
