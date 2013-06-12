@@ -39,6 +39,15 @@ TriangularCartesian2D_Segment TriangularCartesian2D_Domain::get_segment(unsigned
 	return segments.at(index); // TODO: this will raise an exception if vector size is smaller than index
 }
 
+PointCartesian2D TriangularCartesian2D_Domain::get_vertex(unsigned int index)
+{
+	typedef viennagrid::result_of::element_range<TriangularCartesian2D_Domain_t,
+	                                             viennagrid::vertex_tag>::type    VertexRange;
+	
+	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointCartesian2D(viennagrid::point(domain, vertices[index]));
+}
+
 ////////////////////////////
 // Triangle, cartesian 3D //
 ////////////////////////////
@@ -72,6 +81,15 @@ void TriangularCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
 TriangularCartesian3D_Segment TriangularCartesian3D_Domain::get_segment(unsigned int index)
 {
 	return segments.at(index); // TODO: this will raise an exception if vector size is smaller than index
+}
+
+PointCartesian3D TriangularCartesian3D_Domain::get_vertex(unsigned int index)
+{
+	typedef viennagrid::result_of::element_range<TriangularCartesian3D_Domain_t,
+	                                             viennagrid::vertex_tag>::type    VertexRange;
+	
+	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointCartesian3D(viennagrid::point(domain, vertices[index]));
 }
 
 ////////////////////////////////
@@ -109,6 +127,15 @@ TriangularCylindrical3D_Segment TriangularCylindrical3D_Domain::get_segment(unsi
 	return segments.at(index); // TODO: this will raise an exception if vector size is smaller than index
 }
 
+PointCylindrical3D TriangularCylindrical3D_Domain::get_vertex(unsigned int index)
+{
+	typedef viennagrid::result_of::element_range<TriangularCylindrical3D_Domain_t,
+	                                             viennagrid::vertex_tag>::type    VertexRange;
+	
+	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointCylindrical3D(viennagrid::point(domain, vertices[index]));
+}
+
 //////////////////////////
 // Triangle, polar (2D) //
 //////////////////////////
@@ -144,6 +171,15 @@ TriangularPolar2D_Segment TriangularPolar2D_Domain::get_segment(unsigned int ind
 	return segments.at(index); // TODO: this will raise an exception if vector size is smaller than index
 }
 
+PointPolar2D TriangularPolar2D_Domain::get_vertex(unsigned int index)
+{
+	typedef viennagrid::result_of::element_range<TriangularPolar2D_Domain_t,
+	                                             viennagrid::vertex_tag>::type    VertexRange;
+	
+	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointPolar2D(viennagrid::point(domain, vertices[index]));
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -177,4 +213,13 @@ void TriangularSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
 TriangularSpherical3D_Segment TriangularSpherical3D_Domain::get_segment(unsigned int index)
 {
 	return segments.at(index); // TODO: this will raise an exception if vector size is smaller than index
+}
+
+PointSpherical3D TriangularSpherical3D_Domain::get_vertex(unsigned int index)
+{
+	typedef viennagrid::result_of::element_range<TriangularSpherical3D_Domain_t,
+	                                             viennagrid::vertex_tag>::type    VertexRange;
+	
+	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointSpherical3D(viennagrid::point(domain, vertices[index]));
 }

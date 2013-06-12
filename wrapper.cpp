@@ -28,6 +28,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<PointCartesian2D>("_PointCartesian2D")
 		.add_property("dim", &PointCartesian2D::get_dimension)
 		.add_property("coord_system", &PointCartesian2D::get_coord_system)
+		.def(self == self)
 	;
 	
 	// CARTESIAN 3D
@@ -35,6 +36,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<PointCartesian3D>("_PointCartesian3D")
 		.add_property("dim", &PointCartesian3D::get_dimension)
 		.add_property("coord_system", &PointCartesian3D::get_coord_system)
+		.def(self == self)
 	;
 	
 	// CYLINDRICAL (3D)
@@ -42,6 +44,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<PointCylindrical3D>("_PointCylindrical3D")
 		.add_property("dim", &PointCylindrical3D::get_dimension)
 		.add_property("coord_system", &PointCylindrical3D::get_coord_system)
+		.def(self == self)
 	;
 	
 	// POLAR (2D)
@@ -49,6 +52,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<PointPolar2D>("_PointPolar2D")
 		.add_property("dim", &PointPolar2D::get_dimension)
 		.add_property("coord_system", &PointPolar2D::get_coord_system)
+		.def(self == self)
 	;
 	
 	// SPHERICAL (3D)
@@ -56,6 +60,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<PointSpherical3D>("_PointSpherical3D")
 		.add_property("dim", &PointSpherical3D::get_dimension)
 		.add_property("coord_system", &PointSpherical3D::get_coord_system)
+		.def(self == self)
 	;
 	
 	/**********************
@@ -67,6 +72,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_segments", &TriangularCartesian2D_Domain::create_segments)
 		.def("add_vertex", &TriangularCartesian2D_Domain::add_vertex)
 		.def("get_segment", &TriangularCartesian2D_Domain::get_segment)
+		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex)
 	;
 	
 	class_<TriangularCartesian3D_Domain>("_TriangularCartesian3D_Domain")
@@ -74,6 +80,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_segments", &TriangularCartesian3D_Domain::create_segments)
 		.def("add_vertex", &TriangularCartesian3D_Domain::add_vertex)
 		.def("get_segment", &TriangularCartesian3D_Domain::get_segment)
+		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex)
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("_TriangularCylindrical3D_Domain")
@@ -81,6 +88,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_segments", &TriangularCylindrical3D_Domain::create_segments)
 		.def("add_vertex", &TriangularCylindrical3D_Domain::add_vertex)
 		.def("get_segment", &TriangularCylindrical3D_Domain::get_segment)
+		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex)
 	;
 	
 	class_<TriangularPolar2D_Domain>("_TriangularPolar2D_Domain")
@@ -88,6 +96,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_segments", &TriangularPolar2D_Domain::create_segments)
 		.def("add_vertex", &TriangularPolar2D_Domain::add_vertex)
 		.def("get_segment", &TriangularPolar2D_Domain::get_segment)
+		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex)
 	;
 	
 	class_<TriangularSpherical3D_Domain>("_TriangularSpherical3D_Domain")
@@ -95,6 +104,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_segments", &TriangularSpherical3D_Domain::create_segments)
 		.def("add_vertex", &TriangularSpherical3D_Domain::add_vertex)
 		.def("get_segment", &TriangularSpherical3D_Domain::get_segment)
+		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex)
 	;
 	
 	/***********************
