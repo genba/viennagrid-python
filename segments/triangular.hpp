@@ -12,6 +12,7 @@ class TriangularCartesian2D_Segment
 	TriangularCartesian2D_Segment_t segment;
 public:
 	TriangularCartesian2D_Segment();
+	TriangularCartesian2D_Segment(TriangularCartesian2D_Segment_t initial_segment);
 };
 
 ////////////////////////////
@@ -23,6 +24,7 @@ class TriangularCartesian3D_Segment
 	TriangularCartesian3D_Segment_t segment;
 public:
 	TriangularCartesian3D_Segment();
+	TriangularCartesian3D_Segment(TriangularCartesian3D_Segment_t initial_segment);
 };
 
 ////////////////////////////////
@@ -34,6 +36,7 @@ class TriangularCylindrical3D_Segment
 	TriangularCylindrical3D_Segment_t segment;
 public:
 	TriangularCylindrical3D_Segment();
+	TriangularCylindrical3D_Segment(TriangularCylindrical3D_Segment_t initial_segment);
 };
 
 //////////////////////////
@@ -45,6 +48,7 @@ class TriangularPolar2D_Segment
 	TriangularPolar2D_Segment_t segment;
 public:
 	TriangularPolar2D_Segment();
+	TriangularPolar2D_Segment(TriangularPolar2D_Segment_t initial_segment);
 };
 
 //////////////////////////////
@@ -56,6 +60,7 @@ class TriangularSpherical3D_Segment
 	TriangularSpherical3D_Segment_t segment;
 public:
 	TriangularSpherical3D_Segment();
+	TriangularSpherical3D_Segment(TriangularSpherical3D_Segment_t initial_segment);
 };
 
 #endif /* end of include guard: TRIANGULAR_HPP_ASEQMOCM */
