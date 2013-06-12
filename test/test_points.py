@@ -11,36 +11,36 @@ import viennagrid_wrapper
 class TestPointCartesian2D(unittest.TestCase):
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointCartesian2D()
+		point = viennagrid_wrapper.PointCartesian2D()
 		self.assertEqual(point.dim, 2)
 		self.assertEqual(point.coords[0], 0)
 		self.assertEqual(point.coords[1], 0)
 	
 	def test_init_double(self):
 		"""Test constructor with doubles, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointCartesian2D(2.0, 5.0)
+		point = viennagrid_wrapper.PointCartesian2D(2.0, 5.0)
 		self.assertEqual(point.dim, 2)
 		self.assertEqual(point.coords[0], 2.0)
 		self.assertEqual(point.coords[1], 5.0)
 	
 	def test_coord_system(self):
 		"""Test property 'coord_system'."""
-		point = viennagrid_wrapper._PointCartesian2D()
+		point = viennagrid_wrapper.PointCartesian2D()
 		self.assertEqual(point.coord_system, 'cartesian')
 	
 	def test_get_coord(self):
 		"""Test method 'get_coord'."""
-		point = viennagrid_wrapper._PointCartesian2D()
+		point = viennagrid_wrapper.PointCartesian2D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		
-		point = viennagrid_wrapper._PointCartesian2D(2, 5)
+		point = viennagrid_wrapper.PointCartesian2D(2, 5)
 		self.assertEqual(point.get_coord(0), 2)
 		self.assertEqual(point.get_coord(1), 5)
 	
 	def test_set_coord(self):
 		"""Test method 'set_coord'."""
-		point = viennagrid_wrapper._PointCartesian2D()
+		point = viennagrid_wrapper.PointCartesian2D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		point.set_coord(0, 5)
@@ -50,16 +50,16 @@ class TestPointCartesian2D(unittest.TestCase):
 	
 	def test_equal(self):
 		"""Test operator '=='."""
-		p1 = viennagrid_wrapper._PointCartesian2D()
-		p2 = viennagrid_wrapper._PointCartesian2D()
+		p1 = viennagrid_wrapper.PointCartesian2D()
+		p2 = viennagrid_wrapper.PointCartesian2D()
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
 		self.assertEqual(p2.coords[0], 0.0)
 		self.assertEqual(p2.coords[1], 0.0)
 		
-		p1 = viennagrid_wrapper._PointCartesian2D(2, 1)
-		p2 = viennagrid_wrapper._PointCartesian2D(2, 1)
+		p1 = viennagrid_wrapper.PointCartesian2D(2, 1)
+		p2 = viennagrid_wrapper.PointCartesian2D(2, 1)
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -68,8 +68,8 @@ class TestPointCartesian2D(unittest.TestCase):
 	
 	def test_assign(self):
 		"""Test operator '='."""
-		p1 = viennagrid_wrapper._PointCartesian2D(2, 1)
-		p2 = viennagrid_wrapper._PointCartesian2D(1, 2)
+		p1 = viennagrid_wrapper.PointCartesian2D(2, 1)
+		p2 = viennagrid_wrapper.PointCartesian2D(1, 2)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -84,8 +84,8 @@ class TestPointCartesian2D(unittest.TestCase):
 	
 	def test_add(self):
 		"""Test operator '+' (addition)."""
-		p1 = viennagrid_wrapper._PointCartesian2D(2, 1)
-		p2 = viennagrid_wrapper._PointCartesian2D(1, 2)
+		p1 = viennagrid_wrapper.PointCartesian2D(2, 1)
+		p2 = viennagrid_wrapper.PointCartesian2D(1, 2)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -97,8 +97,8 @@ class TestPointCartesian2D(unittest.TestCase):
 	
 	def test_sub(self):
 		"""Test operator '-' (subtraction)."""
-		p1 = viennagrid_wrapper._PointCartesian2D(2, 1)
-		p2 = viennagrid_wrapper._PointCartesian2D(1, 2)
+		p1 = viennagrid_wrapper.PointCartesian2D(2, 1)
+		p2 = viennagrid_wrapper.PointCartesian2D(1, 2)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -110,15 +110,15 @@ class TestPointCartesian2D(unittest.TestCase):
 	
 	def test_mul(self):
 		"""Test operator '*' (multiplication)."""
-		p1 = viennagrid_wrapper._PointCartesian2D()
-		p2 = viennagrid_wrapper._PointCartesian2D()
+		p1 = viennagrid_wrapper.PointCartesian2D()
+		p2 = viennagrid_wrapper.PointCartesian2D()
 		p1 = p1 * 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
 		
-		p1 = viennagrid_wrapper._PointCartesian2D(1, 1)
-		p2 = viennagrid_wrapper._PointCartesian2D(2, 2)
+		p1 = viennagrid_wrapper.PointCartesian2D(1, 1)
+		p2 = viennagrid_wrapper.PointCartesian2D(2, 2)
 		p1 = p1 * 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
@@ -126,15 +126,15 @@ class TestPointCartesian2D(unittest.TestCase):
 	
 	def test_div(self):
 		"""Test operator '/' (division)."""
-		p1 = viennagrid_wrapper._PointCartesian2D()
-		p2 = viennagrid_wrapper._PointCartesian2D()
+		p1 = viennagrid_wrapper.PointCartesian2D()
+		p2 = viennagrid_wrapper.PointCartesian2D()
 		p1 = p1 / 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
 		
-		p1 = viennagrid_wrapper._PointCartesian2D(1, 1)
-		p2 = viennagrid_wrapper._PointCartesian2D(0.5, 0.5)
+		p1 = viennagrid_wrapper.PointCartesian2D(1, 1)
+		p2 = viennagrid_wrapper.PointCartesian2D(0.5, 0.5)
 		p1 = p1 / 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.5)
@@ -143,7 +143,7 @@ class TestPointCartesian2D(unittest.TestCase):
 class TestPointCartesian3D(unittest.TestCase):
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointCartesian3D()
+		point = viennagrid_wrapper.PointCartesian3D()
 		self.assertEqual(point.dim, 3)
 		self.assertEqual(point.coords[0], 0)
 		self.assertEqual(point.coords[1], 0)
@@ -151,7 +151,7 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_init_double(self):
 		"""Test constructor with doubles, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointCartesian3D(2.0, 5.0, 4.0)
+		point = viennagrid_wrapper.PointCartesian3D(2.0, 5.0, 4.0)
 		self.assertEqual(point.dim, 3)
 		self.assertEqual(point.coords[0], 2.0)
 		self.assertEqual(point.coords[1], 5.0)
@@ -159,24 +159,24 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_coord_system(self):
 		"""Test property 'coord_system'."""
-		point = viennagrid_wrapper._PointCartesian3D()
+		point = viennagrid_wrapper.PointCartesian3D()
 		self.assertEqual(point.coord_system, 'cartesian')
 	
 	def test_get_coord(self):
 		"""Test method 'get_coord'."""
-		point = viennagrid_wrapper._PointCartesian3D()
+		point = viennagrid_wrapper.PointCartesian3D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		self.assertEqual(point.get_coord(2), 0)
 		
-		point = viennagrid_wrapper._PointCartesian3D(2, 5, 4)
+		point = viennagrid_wrapper.PointCartesian3D(2, 5, 4)
 		self.assertEqual(point.get_coord(0), 2)
 		self.assertEqual(point.get_coord(1), 5)
 		self.assertEqual(point.get_coord(2), 4)
 	
 	def test_set_coord(self):
 		"""Test method 'set_coord'."""
-		point = viennagrid_wrapper._PointCartesian3D()
+		point = viennagrid_wrapper.PointCartesian3D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		self.assertEqual(point.get_coord(2), 0)
@@ -189,8 +189,8 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_equal(self):
 		"""Test operator '=='."""
-		p1 = viennagrid_wrapper._PointCartesian3D()
-		p2 = viennagrid_wrapper._PointCartesian3D()
+		p1 = viennagrid_wrapper.PointCartesian3D()
+		p2 = viennagrid_wrapper.PointCartesian3D()
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
@@ -199,8 +199,8 @@ class TestPointCartesian3D(unittest.TestCase):
 		self.assertEqual(p2.coords[1], 0.0)
 		self.assertEqual(p2.coords[2], 0.0)
 		
-		p1 = viennagrid_wrapper._PointCartesian3D(2, 1, 4)
-		p2 = viennagrid_wrapper._PointCartesian3D(2, 1, 4)
+		p1 = viennagrid_wrapper.PointCartesian3D(2, 1, 4)
+		p2 = viennagrid_wrapper.PointCartesian3D(2, 1, 4)
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -211,8 +211,8 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_assign(self):
 		"""Test operator '='."""
-		p1 = viennagrid_wrapper._PointCartesian3D(2, 1, 3)
-		p2 = viennagrid_wrapper._PointCartesian3D(1, 2, 4)
+		p1 = viennagrid_wrapper.PointCartesian3D(2, 1, 3)
+		p2 = viennagrid_wrapper.PointCartesian3D(1, 2, 4)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -231,8 +231,8 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_add(self):
 		"""Test operator '+' (addition)."""
-		p1 = viennagrid_wrapper._PointCartesian3D(2, 1, 3)
-		p2 = viennagrid_wrapper._PointCartesian3D(1, 2, 4)
+		p1 = viennagrid_wrapper.PointCartesian3D(2, 1, 3)
+		p2 = viennagrid_wrapper.PointCartesian3D(1, 2, 4)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -247,8 +247,8 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_sub(self):
 		"""Test operator '-' (subtraction)."""
-		p1 = viennagrid_wrapper._PointCartesian3D(2, 1, 3)
-		p2 = viennagrid_wrapper._PointCartesian3D(1, 2, 4)
+		p1 = viennagrid_wrapper.PointCartesian3D(2, 1, 3)
+		p2 = viennagrid_wrapper.PointCartesian3D(1, 2, 4)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -263,16 +263,16 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_mul(self):
 		"""Test operator '*' (multiplication)."""
-		p1 = viennagrid_wrapper._PointCartesian3D()
-		p2 = viennagrid_wrapper._PointCartesian3D()
+		p1 = viennagrid_wrapper.PointCartesian3D()
+		p2 = viennagrid_wrapper.PointCartesian3D()
 		p1 = p1 * 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
 		self.assertEqual(p1.coords[2], 0.0)
 		
-		p1 = viennagrid_wrapper._PointCartesian3D(1, 1, 1)
-		p2 = viennagrid_wrapper._PointCartesian3D(2, 2, 2)
+		p1 = viennagrid_wrapper.PointCartesian3D(1, 1, 1)
+		p2 = viennagrid_wrapper.PointCartesian3D(2, 2, 2)
 		p1 = p1 * 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
@@ -281,16 +281,16 @@ class TestPointCartesian3D(unittest.TestCase):
 	
 	def test_div(self):
 		"""Test operator '/' (division)."""
-		p1 = viennagrid_wrapper._PointCartesian3D()
-		p2 = viennagrid_wrapper._PointCartesian3D()
+		p1 = viennagrid_wrapper.PointCartesian3D()
+		p2 = viennagrid_wrapper.PointCartesian3D()
 		p1 = p1 / 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
 		self.assertEqual(p1.coords[2], 0.0)
 		
-		p1 = viennagrid_wrapper._PointCartesian3D(1, 1, 1)
-		p2 = viennagrid_wrapper._PointCartesian3D(0.5, 0.5, 0.5)
+		p1 = viennagrid_wrapper.PointCartesian3D(1, 1, 1)
+		p2 = viennagrid_wrapper.PointCartesian3D(0.5, 0.5, 0.5)
 		p1 = p1 / 2
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.5)
@@ -300,7 +300,7 @@ class TestPointCartesian3D(unittest.TestCase):
 class TestPointCylindrical3D(unittest.TestCase):
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointCylindrical3D()
+		point = viennagrid_wrapper.PointCylindrical3D()
 		self.assertEqual(point.dim, 3)
 		self.assertEqual(point.coords[0], 0)
 		self.assertEqual(point.coords[1], 0)
@@ -308,7 +308,7 @@ class TestPointCylindrical3D(unittest.TestCase):
 	
 	def test_init_double(self):
 		"""Test constructor with doubles, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointCylindrical3D(2.0, 5.0, 4.0)
+		point = viennagrid_wrapper.PointCylindrical3D(2.0, 5.0, 4.0)
 		self.assertEqual(point.dim, 3)
 		self.assertEqual(point.coords[0], 2.0)
 		self.assertEqual(point.coords[1], 5.0)
@@ -316,24 +316,24 @@ class TestPointCylindrical3D(unittest.TestCase):
 	
 	def test_coord_system(self):
 		"""Test property 'coord_system'."""
-		point = viennagrid_wrapper._PointCylindrical3D()
+		point = viennagrid_wrapper.PointCylindrical3D()
 		self.assertEqual(point.coord_system, 'cylindrical')
 	
 	def test_get_coord(self):
 		"""Test method 'get_coord'."""
-		point = viennagrid_wrapper._PointCylindrical3D()
+		point = viennagrid_wrapper.PointCylindrical3D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		self.assertEqual(point.get_coord(2), 0)
 		
-		point = viennagrid_wrapper._PointCylindrical3D(2, 5, 4)
+		point = viennagrid_wrapper.PointCylindrical3D(2, 5, 4)
 		self.assertEqual(point.get_coord(0), 2)
 		self.assertEqual(point.get_coord(1), 5)
 		self.assertEqual(point.get_coord(2), 4)
 	
 	def test_set_coord(self):
 		"""Test method 'set_coord'."""
-		point = viennagrid_wrapper._PointCylindrical3D()
+		point = viennagrid_wrapper.PointCylindrical3D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		self.assertEqual(point.get_coord(2), 0)
@@ -346,8 +346,8 @@ class TestPointCylindrical3D(unittest.TestCase):
 	
 	def test_equal(self):
 		"""Test operator '=='."""
-		p1 = viennagrid_wrapper._PointCylindrical3D()
-		p2 = viennagrid_wrapper._PointCylindrical3D()
+		p1 = viennagrid_wrapper.PointCylindrical3D()
+		p2 = viennagrid_wrapper.PointCylindrical3D()
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
@@ -356,8 +356,8 @@ class TestPointCylindrical3D(unittest.TestCase):
 		self.assertEqual(p2.coords[1], 0.0)
 		self.assertEqual(p2.coords[2], 0.0)
 		
-		p1 = viennagrid_wrapper._PointCylindrical3D(2, 1, 4)
-		p2 = viennagrid_wrapper._PointCylindrical3D(2, 1, 4)
+		p1 = viennagrid_wrapper.PointCylindrical3D(2, 1, 4)
+		p2 = viennagrid_wrapper.PointCylindrical3D(2, 1, 4)
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -368,8 +368,8 @@ class TestPointCylindrical3D(unittest.TestCase):
 	
 	def test_assign(self):
 		"""Test operator '='."""
-		p1 = viennagrid_wrapper._PointCylindrical3D(2, 1, 3)
-		p2 = viennagrid_wrapper._PointCylindrical3D(1, 2, 4)
+		p1 = viennagrid_wrapper.PointCylindrical3D(2, 1, 3)
+		p2 = viennagrid_wrapper.PointCylindrical3D(1, 2, 4)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -389,36 +389,36 @@ class TestPointCylindrical3D(unittest.TestCase):
 class TestPointPolar2D(unittest.TestCase):
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointPolar2D()
+		point = viennagrid_wrapper.PointPolar2D()
 		self.assertEqual(point.dim, 2)
 		self.assertEqual(point.coords[0], 0)
 		self.assertEqual(point.coords[1], 0)
 	
 	def test_init_double(self):
 		"""Test constructor with doubles, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointPolar2D(2.0, 5.0)
+		point = viennagrid_wrapper.PointPolar2D(2.0, 5.0)
 		self.assertEqual(point.dim, 2)
 		self.assertEqual(point.coords[0], 2.0)
 		self.assertEqual(point.coords[1], 5.0)
 	
 	def test_coord_system(self):
 		"""Test property 'coord_system'."""
-		point = viennagrid_wrapper._PointPolar2D()
+		point = viennagrid_wrapper.PointPolar2D()
 		self.assertEqual(point.coord_system, 'polar')
 	
 	def test_get_coord(self):
 		"""Test method 'get_coord'."""
-		point = viennagrid_wrapper._PointPolar2D()
+		point = viennagrid_wrapper.PointPolar2D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		
-		point = viennagrid_wrapper._PointPolar2D(2, 5)
+		point = viennagrid_wrapper.PointPolar2D(2, 5)
 		self.assertEqual(point.get_coord(0), 2)
 		self.assertEqual(point.get_coord(1), 5)
 	
 	def test_set_coord(self):
 		"""Test method 'set_coord'."""
-		point = viennagrid_wrapper._PointPolar2D()
+		point = viennagrid_wrapper.PointPolar2D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		point.set_coord(0, 5)
@@ -428,16 +428,16 @@ class TestPointPolar2D(unittest.TestCase):
 	
 	def test_equal(self):
 		"""Test operator '=='."""
-		p1 = viennagrid_wrapper._PointPolar2D()
-		p2 = viennagrid_wrapper._PointPolar2D()
+		p1 = viennagrid_wrapper.PointPolar2D()
+		p2 = viennagrid_wrapper.PointPolar2D()
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
 		self.assertEqual(p2.coords[0], 0.0)
 		self.assertEqual(p2.coords[1], 0.0)
 		
-		p1 = viennagrid_wrapper._PointPolar2D(2, 1)
-		p2 = viennagrid_wrapper._PointPolar2D(2, 1)
+		p1 = viennagrid_wrapper.PointPolar2D(2, 1)
+		p2 = viennagrid_wrapper.PointPolar2D(2, 1)
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -446,8 +446,8 @@ class TestPointPolar2D(unittest.TestCase):
 	
 	def test_assign(self):
 		"""Test operator '='."""
-		p1 = viennagrid_wrapper._PointPolar2D(2, 1)
-		p2 = viennagrid_wrapper._PointPolar2D(1, 2)
+		p1 = viennagrid_wrapper.PointPolar2D(2, 1)
+		p2 = viennagrid_wrapper.PointPolar2D(1, 2)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -463,7 +463,7 @@ class TestPointPolar2D(unittest.TestCase):
 class TestPointSpherical3D(unittest.TestCase):
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointSpherical3D()
+		point = viennagrid_wrapper.PointSpherical3D()
 		self.assertEqual(point.dim, 3)
 		self.assertEqual(point.coords[0], 0)
 		self.assertEqual(point.coords[1], 0)
@@ -471,7 +471,7 @@ class TestPointSpherical3D(unittest.TestCase):
 	
 	def test_init_double(self):
 		"""Test constructor with doubles, and properties 'dim' and 'coords'."""
-		point = viennagrid_wrapper._PointSpherical3D(2.0, 5.0, 4.0)
+		point = viennagrid_wrapper.PointSpherical3D(2.0, 5.0, 4.0)
 		self.assertEqual(point.dim, 3)
 		self.assertEqual(point.coords[0], 2.0)
 		self.assertEqual(point.coords[1], 5.0)
@@ -479,24 +479,24 @@ class TestPointSpherical3D(unittest.TestCase):
 	
 	def test_coord_system(self):
 		"""Test property 'coord_system'."""
-		point = viennagrid_wrapper._PointSpherical3D()
+		point = viennagrid_wrapper.PointSpherical3D()
 		self.assertEqual(point.coord_system, 'spherical')
 	
 	def test_get_coord(self):
 		"""Test method 'get_coord'."""
-		point = viennagrid_wrapper._PointSpherical3D()
+		point = viennagrid_wrapper.PointSpherical3D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		self.assertEqual(point.get_coord(2), 0)
 		
-		point = viennagrid_wrapper._PointSpherical3D(2, 5, 4)
+		point = viennagrid_wrapper.PointSpherical3D(2, 5, 4)
 		self.assertEqual(point.get_coord(0), 2)
 		self.assertEqual(point.get_coord(1), 5)
 		self.assertEqual(point.get_coord(2), 4)
 	
 	def test_set_coord(self):
 		"""Test method 'set_coord'."""
-		point = viennagrid_wrapper._PointSpherical3D()
+		point = viennagrid_wrapper.PointSpherical3D()
 		self.assertEqual(point.get_coord(0), 0)
 		self.assertEqual(point.get_coord(1), 0)
 		self.assertEqual(point.get_coord(2), 0)
@@ -509,8 +509,8 @@ class TestPointSpherical3D(unittest.TestCase):
 	
 	def test_equal(self):
 		"""Test operator '=='."""
-		p1 = viennagrid_wrapper._PointSpherical3D()
-		p2 = viennagrid_wrapper._PointSpherical3D()
+		p1 = viennagrid_wrapper.PointSpherical3D()
+		p2 = viennagrid_wrapper.PointSpherical3D()
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.0)
 		self.assertEqual(p1.coords[1], 0.0)
@@ -519,8 +519,8 @@ class TestPointSpherical3D(unittest.TestCase):
 		self.assertEqual(p2.coords[1], 0.0)
 		self.assertEqual(p2.coords[2], 0.0)
 		
-		p1 = viennagrid_wrapper._PointSpherical3D(2, 1, 4)
-		p2 = viennagrid_wrapper._PointSpherical3D(2, 1, 4)
+		p1 = viennagrid_wrapper.PointSpherical3D(2, 1, 4)
+		p2 = viennagrid_wrapper.PointSpherical3D(2, 1, 4)
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
@@ -531,8 +531,8 @@ class TestPointSpherical3D(unittest.TestCase):
 	
 	def test_assign(self):
 		"""Test operator '='."""
-		p1 = viennagrid_wrapper._PointSpherical3D(2, 1, 3)
-		p2 = viennagrid_wrapper._PointSpherical3D(1, 2, 4)
+		p1 = viennagrid_wrapper.PointSpherical3D(2, 1, 3)
+		p2 = viennagrid_wrapper.PointSpherical3D(1, 2, 4)
 		self.assertNotEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 2.0)
 		self.assertEqual(p1.coords[1], 1.0)
