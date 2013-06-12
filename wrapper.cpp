@@ -69,42 +69,42 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<TriangularCartesian2D_Domain>("_TriangularCartesian2D_Domain")
 		.add_property("num_segments", &TriangularCartesian2D_Domain::get_num_segments, "Number of segments contained in the domain.")
-		.def("create_segments", &TriangularCartesian2D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called once and before adding any vertices to the domain which should be in any of the created segments. Vertices which are to be in the domain but in no segment can be safely added to the domain before calling this function.")
-		.def("add_vertex", &TriangularCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID. Note that the vertex will not be added to any segment, but rather be contained directly in the domain.")
+		.def("create_segments", &TriangularCartesian2D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TriangularCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularCartesian2D_Domain::get_segment, "Return the segment at the given index within the domain.")
-		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 	;
 	
 	class_<TriangularCartesian3D_Domain>("_TriangularCartesian3D_Domain")
 		.add_property("num_segments", &TriangularCartesian3D_Domain::get_num_segments, "Number of segments contained in the domain.")
-		.def("create_segments", &TriangularCartesian3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called once and before adding any vertices to the domain which should be in any of the created segments. Vertices which are to be in the domain but in no segment can be safely added to the domain before calling this function.")
-		.def("add_vertex", &TriangularCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID. Note that the vertex will not be added to any segment, but rather be contained directly in the domain.")
+		.def("create_segments", &TriangularCartesian3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TriangularCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularCartesian3D_Domain::get_segment, "Return the segment at the given index within the domain.")
-		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("_TriangularCylindrical3D_Domain")
 		.add_property("num_segments", &TriangularCylindrical3D_Domain::get_num_segments, "Number of segments contained in the domain.")
-		.def("create_segments", &TriangularCylindrical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called once and before adding any vertices to the domain which should be in any of the created segments. Vertices which are to be in the domain but in no segment can be safely added to the domain before calling this function.")
-		.def("add_vertex", &TriangularCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID. Note that the vertex will not be added to any segment, but rather be contained directly in the domain.")
+		.def("create_segments", &TriangularCylindrical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TriangularCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularCylindrical3D_Domain::get_segment, "Return the segment at the given index within the domain.")
-		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 	;
 	
 	class_<TriangularPolar2D_Domain>("_TriangularPolar2D_Domain")
 		.add_property("num_segments", &TriangularPolar2D_Domain::get_num_segments, "Number of segments contained in the domain.")
-		.def("create_segments", &TriangularPolar2D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called once and before adding any vertices to the domain which should be in any of the created segments. Vertices which are to be in the domain but in no segment can be safely added to the domain before calling this function.")
-		.def("add_vertex", &TriangularPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID. Note that the vertex will not be added to any segment, but rather be contained directly in the domain.")
+		.def("create_segments", &TriangularPolar2D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TriangularPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularPolar2D_Domain::get_segment, "Return the segment at the given index within the domain.")
-		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 	;
 	
 	class_<TriangularSpherical3D_Domain>("_TriangularSpherical3D_Domain")
 		.add_property("num_segments", &TriangularSpherical3D_Domain::get_num_segments, "Number of segments contained in the domain.")
-		.def("create_segments", &TriangularSpherical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called once and before adding any vertices to the domain which should be in any of the created segments. Vertices which are to be in the domain but in no segment can be safely added to the domain before calling this function.")
-		.def("add_vertex", &TriangularSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID. Note that the vertex will not be added to any segment, but rather be contained directly in the domain.")
+		.def("create_segments", &TriangularSpherical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TriangularSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularSpherical3D_Domain::get_segment, "Return the segment at the given index within the domain.")
-		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 	;
 	
 	/***********************
