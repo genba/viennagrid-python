@@ -3,27 +3,16 @@
 PointCylindrical3D::PointCylindrical3D()
 {
 	point = new PointCylindrical_t(0, 0, 0);
-	// destroy = true;
 }
 
 PointCylindrical3D::PointCylindrical3D(double x, double y, double z)
 {
 	point = new PointCylindrical_t(x, y, z);
-	// destroy = true;
 }
 
 PointCylindrical3D::PointCylindrical3D(PointCylindrical_t &initial_point)
 {
 	point = &initial_point;
-	// destroy = false;
-}
-
-PointCylindrical3D::~PointCylindrical3D()
-{
-	// if (destroy)
-	// 	delete point;
-	// Strangely, I do not need to free the memory when I allocate it in the constructor.
-	// If I do so, I get a double-free error and the program aborts.
 }
 
 size_t PointCylindrical3D::get_dimension()

@@ -3,27 +3,16 @@
 PointSpherical3D::PointSpherical3D()
 {
 	point = new PointSpherical_t(0, 0, 0);
-	// destroy = true;
 }
 
 PointSpherical3D::PointSpherical3D(double x, double y, double z)
 {
 	point = new PointSpherical_t(x, y, z);
-	// destroy = true;
 }
 
 PointSpherical3D::PointSpherical3D(PointSpherical_t &initial_point)
 {
 	point = &initial_point;
-	// destroy = false;
-}
-
-PointSpherical3D::~PointSpherical3D()
-{
-	// if (destroy)
-	// 	delete point;
-	// Strangely, I do not need to free the memory when I allocate it in the constructor.
-	// If I do so, I get a double-free error and the program aborts.
 }
 
 size_t PointSpherical3D::get_dimension()

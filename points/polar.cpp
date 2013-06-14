@@ -3,27 +3,16 @@
 PointPolar2D::PointPolar2D()
 {
 	point = new PointPolar_t(0, 0);
-	// destroy = true;
 }
 
 PointPolar2D::PointPolar2D(double x, double y)
 {
 	point = new PointPolar_t(x, y);
-	// destroy = true;
 }
 
 PointPolar2D::PointPolar2D(PointPolar_t &initial_point)
 {
 	point = &initial_point;
-	// destroy = false;
-}
-
-PointPolar2D::~PointPolar2D()
-{
-	// if (destroy)
-	// 	delete point;
-	// Strangely, I do not need to free the memory when I allocate it in the constructor.
-	// If I do so, I get a double-free error and the program aborts.
 }
 
 size_t PointPolar2D::get_dimension()
