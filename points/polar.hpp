@@ -4,11 +4,13 @@
 #include "types.hpp"
 
 class PointPolar2D {
-	PointPolar_t point;
+	PointPolar_t *point;
+	// bool destroy;
 public:
 	PointPolar2D();
 	PointPolar2D(double x, double y);
-	PointPolar2D(PointPolar_t initial_point);
+	PointPolar2D(PointPolar_t &initial_point);
+	~PointPolar2D();
 	size_t get_dimension();
 	const char * get_coord_system();
 	PointPolar_t & get_point();

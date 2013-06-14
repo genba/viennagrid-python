@@ -2,17 +2,28 @@
 
 PointPolar2D::PointPolar2D()
 {
-	
+	point = new PointPolar_t(0, 0);
+	// destroy = true;
 }
 
 PointPolar2D::PointPolar2D(double x, double y)
 {
-	
+	point = new PointPolar_t(x, y);
+	// destroy = true;
 }
 
-PointPolar2D::PointPolar2D(PointPolar_t initial_point)
+PointPolar2D::PointPolar2D(PointPolar_t &initial_point)
 {
-	point = initial_point;
+	point = &initial_point;
+	// destroy = false;
+}
+
+PointPolar2D::~PointPolar2D()
+{
+	// if (destroy)
+	// 	delete point;
+	// Strangely, I do not need to free the memory when I allocate it in the constructor.
+	// If I do so, I get a double-free error and the program aborts.
 }
 
 size_t PointPolar2D::get_dimension()
@@ -27,13 +38,13 @@ const char * PointPolar2D::get_coord_system()
 
 PointPolar_t & PointPolar2D::get_point()
 {
-	return point;
+	return *point;
 }
 
 bool PointPolar2D::operator==(const PointPolar2D &other)
 {
 	bool equal = true;
-	for (unsigned int i = 0; equal && i < point.size(); ++i)
-		equal = equal && (point.at(i) == other.point.at(i));
+	for (unsigned int i = 0; equal && i < point->size(); ++i)
+		equal = equal && (point->at(i) == other.point->at(i));
 	return equal;
 }

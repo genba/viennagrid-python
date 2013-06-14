@@ -4,11 +4,13 @@
 #include "types.hpp"
 
 class PointCartesian2D {
-	PointCartesian2D_t point;
+	PointCartesian2D_t *point;
+	// bool destroy;
 public:
 	PointCartesian2D();
 	PointCartesian2D(double x, double y);
-	PointCartesian2D(PointCartesian2D_t initial_point);
+	PointCartesian2D(PointCartesian2D_t &initial_point);
+	~PointCartesian2D();
 	size_t get_dimension();
 	const char * get_coord_system();
 	PointCartesian2D_t & get_point();
@@ -16,11 +18,13 @@ public:
 };
 
 class PointCartesian3D {
-	PointCartesian3D_t point;
+	PointCartesian3D_t *point;
+	// bool destroy;
 public:
 	PointCartesian3D();
 	PointCartesian3D(double x, double y, double z);
-	PointCartesian3D(PointCartesian3D_t initial_point);
+	PointCartesian3D(PointCartesian3D_t &initial_point);
+	~PointCartesian3D();
 	size_t get_dimension();
 	const char * get_coord_system();
 	PointCartesian3D_t & get_point();
