@@ -8,6 +8,8 @@ class PointPolar2D {
 	 * Pointer to the low-level ViennaGrid point type.
 	**/
 	PointPolar_t *point;
+	
+	int id;
 public:
 	/**
 	 * Initialize point in the 2D cartesian space with coordinates (0, 0).
@@ -43,11 +45,13 @@ public:
 	 * instantiated using this constructor or any other constructor in order for the destructor to only free when
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	**/
-	PointPolar2D(PointPolar_t &initial_point);
+	PointPolar2D(PointPolar_t &initial_point, unsigned int initial_id=0);
 	size_t get_dimension();
 	const char * get_coord_system();
 	PointPolar_t & get_point();
 	bool operator==(const PointPolar2D &other);
+	unsigned int get_id();
+	void set_id(unsigned int new_id);
 };
 
 #endif /* end of include guard: POLAR_HPP_HL2P4D4 */

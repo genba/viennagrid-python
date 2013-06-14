@@ -177,7 +177,7 @@ PointPolar2D TriangularPolar2D_Domain::get_vertex(unsigned int index)
 	                                             viennagrid::vertex_tag>::type    VertexRange;
 	
 	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointPolar2D(viennagrid::point(domain, vertices[index]));
+	return PointPolar2D(viennagrid::point(domain, vertices[index]), index);
 }
 
 //////////////////////////////
@@ -221,5 +221,5 @@ PointSpherical3D TriangularSpherical3D_Domain::get_vertex(unsigned int index)
 	                                             viennagrid::vertex_tag>::type    VertexRange;
 	
 	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointSpherical3D(viennagrid::point(domain, vertices[index]));
+	return PointSpherical3D(viennagrid::point(domain, vertices[index]), index);
 }

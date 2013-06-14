@@ -8,6 +8,8 @@ class PointCylindrical3D {
 	 * Pointer to the low-level ViennaGrid point type.
 	**/
 	PointCylindrical_t *point;
+	
+	int id;
 public:
 	/**
 	 * Initialize point in the 3D cartesian space with coordinates (0, 0, 0).
@@ -43,11 +45,13 @@ public:
 	 * instantiated using this constructor or any other constructor in order for the destructor to only free when
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	**/
-	PointCylindrical3D(PointCylindrical_t &initial_point);
+	PointCylindrical3D(PointCylindrical_t &initial_point, unsigned int initial_id=0);
 	size_t get_dimension();
 	const char * get_coord_system();
 	PointCylindrical_t & get_point();
 	bool operator==(const PointCylindrical3D &other);
+	unsigned int get_id();
+	void set_id(unsigned int new_id);
 };
 
 #endif /* end of include guard: CYLINDRICAL_HPP_P07EFHVO */
