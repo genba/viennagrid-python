@@ -17,16 +17,20 @@
 class TriangularCartesian2D_Domain {
 	TriangularCartesian2D_Domain_t                domain;
 	std::vector<TriangularCartesian2D_Segment>    segments;
-	unsigned int                                  num_segments;
+	std::vector<PointCartesian2D>                 vertices;
 public:
-	TriangularCartesian2D_Domain();
-	unsigned int get_num_segments();
+	TriangularCartesian2D_Domain() {};
+
 	void create_segments(unsigned int amount);
-	void add_vertex(PointCartesian2D vertex);
+	unsigned int get_num_segments();
 	TriangularCartesian2D_Segment get_segment(unsigned int index);
-	PointCartesian2D get_vertex(unsigned int index);
 	std::vector<TriangularCartesian2D_Segment>::iterator segments_begin();
 	std::vector<TriangularCartesian2D_Segment>::iterator segments_end();
+
+	void add_vertex(PointCartesian2D vertex);
+	unsigned int get_num_vertices();
+	PointCartesian2D get_vertex(unsigned int index);
+
 	TriangularCartesian2D_Domain_t & get_domain();
 };
 
@@ -37,16 +41,18 @@ public:
 class TriangularCartesian3D_Domain {
 	TriangularCartesian3D_Domain_t                domain;
 	std::vector<TriangularCartesian3D_Segment>    segments;
-	unsigned int                                  num_segments;
 public:
-	TriangularCartesian3D_Domain();
-	unsigned int get_num_segments();
+	TriangularCartesian3D_Domain() {};
+
 	void create_segments(unsigned int amount);
-	void add_vertex(PointCartesian3D vertex);
+	unsigned int get_num_segments();
 	TriangularCartesian3D_Segment get_segment(unsigned int index);
-	PointCartesian3D get_vertex(unsigned int index);
 	std::vector<TriangularCartesian3D_Segment>::iterator segments_begin();
 	std::vector<TriangularCartesian3D_Segment>::iterator segments_end();
+
+	void add_vertex(PointCartesian3D vertex);
+	PointCartesian3D get_vertex(unsigned int index);
+
 	TriangularCartesian3D_Domain_t & get_domain();
 };
 
@@ -57,16 +63,18 @@ public:
 class TriangularCylindrical3D_Domain {
 	TriangularCylindrical3D_Domain_t                domain;
 	std::vector<TriangularCylindrical3D_Segment>    segments;
-	unsigned int                                    num_segments;
 public:
-	TriangularCylindrical3D_Domain();
-	unsigned int get_num_segments();
+	TriangularCylindrical3D_Domain() {};
+
 	void create_segments(unsigned int amount);
-	void add_vertex(PointCylindrical3D vertex);
+	unsigned int get_num_segments();
 	TriangularCylindrical3D_Segment get_segment(unsigned int index);
-	PointCylindrical3D get_vertex(unsigned int index);
 	std::vector<TriangularCylindrical3D_Segment>::iterator segments_begin();
 	std::vector<TriangularCylindrical3D_Segment>::iterator segments_end();
+
+	void add_vertex(PointCylindrical3D vertex);
+	PointCylindrical3D get_vertex(unsigned int index);
+
 	TriangularCylindrical3D_Domain_t & get_domain();
 };
 
@@ -77,16 +85,18 @@ public:
 class TriangularPolar2D_Domain {
 	TriangularPolar2D_Domain_t                domain;
 	std::vector<TriangularPolar2D_Segment>    segments;
-	unsigned int                              num_segments;
 public:
-	TriangularPolar2D_Domain();
-	unsigned int get_num_segments();
+	TriangularPolar2D_Domain() {};
+
 	void create_segments(unsigned int amount);
-	void add_vertex(PointPolar2D vertex);
+	unsigned int get_num_segments();
 	TriangularPolar2D_Segment get_segment(unsigned int index);
-	PointPolar2D get_vertex(unsigned int index);
 	std::vector<TriangularPolar2D_Segment>::iterator segments_begin();
 	std::vector<TriangularPolar2D_Segment>::iterator segments_end();
+
+	void add_vertex(PointPolar2D vertex);
+	PointPolar2D get_vertex(unsigned int index);
+
 	TriangularPolar2D_Domain_t & get_domain();
 };
 
@@ -97,16 +107,18 @@ public:
 class TriangularSpherical3D_Domain {
 	TriangularSpherical3D_Domain_t                domain;
 	std::vector<TriangularSpherical3D_Segment>    segments;
-	unsigned int                                  num_segments;
 public:
-	TriangularSpherical3D_Domain();
-	unsigned int get_num_segments();
+	TriangularSpherical3D_Domain() {};
+
 	void create_segments(unsigned int amount);
-	void add_vertex(PointSpherical3D vertex);
+	unsigned int get_num_segments();
 	TriangularSpherical3D_Segment get_segment(unsigned int index);
-	PointSpherical3D get_vertex(unsigned int index);
 	std::vector<TriangularSpherical3D_Segment>::iterator segments_begin();
 	std::vector<TriangularSpherical3D_Segment>::iterator segments_end();
+	
+	void add_vertex(PointSpherical3D vertex);
+	PointSpherical3D get_vertex(unsigned int index);
+
 	TriangularSpherical3D_Domain_t & get_domain();
 };
 
