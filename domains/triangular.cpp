@@ -24,7 +24,10 @@ void TriangularCartesian2D_Domain::create_segments(unsigned int amount)
 	else {
 		segments.reserve(amount);
 		for (unsigned int i = 0; i < amount; ++i)
-			segments.push_back(TriangularCartesian2D_Segment(viennagrid::create_view<TriangularCartesian2D_Segment_t>(domain)));
+		{
+			TriangularCartesian2D_Segment_t seg = viennagrid::create_view<TriangularCartesian2D_Segment_t>(domain);
+			segments.push_back(TriangularCartesian2D_Segment(*this, seg));
+		}
 		num_segments = amount;
 	}
 }
@@ -48,6 +51,11 @@ PointCartesian2D TriangularCartesian2D_Domain::get_vertex(unsigned int index)
 	return PointCartesian2D(viennagrid::point(domain, vertices[index]));
 }
 
+TriangularCartesian2D_Domain_t & TriangularCartesian2D_Domain::get_domain()
+{
+	return domain;
+}
+
 ////////////////////////////
 // Triangle, cartesian 3D //
 ////////////////////////////
@@ -68,7 +76,10 @@ void TriangularCartesian3D_Domain::create_segments(unsigned int amount)
 	else {
 		segments.reserve(amount);
 		for (unsigned int i = 0; i < amount; ++i)
-			segments.push_back(TriangularCartesian3D_Segment(viennagrid::create_view<TriangularCartesian3D_Segment_t>(domain)));
+		{
+			TriangularCartesian3D_Segment_t seg = viennagrid::create_view<TriangularCartesian3D_Segment_t>(domain);
+			segments.push_back(TriangularCartesian3D_Segment(*this, seg));
+		}
 		num_segments = amount;
 	}
 }
@@ -92,6 +103,11 @@ PointCartesian3D TriangularCartesian3D_Domain::get_vertex(unsigned int index)
 	return PointCartesian3D(viennagrid::point(domain, vertices[index]));
 }
 
+TriangularCartesian3D_Domain_t & TriangularCartesian3D_Domain::get_domain()
+{
+	return domain;
+}
+
 ////////////////////////////////
 // Triangle, cylindrical (3D) //
 ////////////////////////////////
@@ -112,7 +128,10 @@ void TriangularCylindrical3D_Domain::create_segments(unsigned int amount)
 	else {
 		segments.reserve(amount);
 		for (unsigned int i = 0; i < amount; ++i)
-			segments.push_back(TriangularCylindrical3D_Segment(viennagrid::create_view<TriangularCylindrical3D_Segment_t>(domain)));
+		{
+			TriangularCylindrical3D_Segment_t seg = viennagrid::create_view<TriangularCylindrical3D_Segment_t>(domain);
+			segments.push_back(TriangularCylindrical3D_Segment(*this, seg));
+		}
 		num_segments = amount;
 	}
 }
@@ -136,6 +155,11 @@ PointCylindrical3D TriangularCylindrical3D_Domain::get_vertex(unsigned int index
 	return PointCylindrical3D(viennagrid::point(domain, vertices[index]));
 }
 
+TriangularCylindrical3D_Domain_t & TriangularCylindrical3D_Domain::get_domain()
+{
+	return domain;
+}
+
 //////////////////////////
 // Triangle, polar (2D) //
 //////////////////////////
@@ -156,7 +180,10 @@ void TriangularPolar2D_Domain::create_segments(unsigned int amount)
 	else {
 		segments.reserve(amount);
 		for (unsigned int i = 0; i < amount; ++i)
-			segments.push_back(TriangularPolar2D_Segment(viennagrid::create_view<TriangularPolar2D_Segment_t>(domain)));
+		{
+			TriangularPolar2D_Segment_t seg = viennagrid::create_view<TriangularPolar2D_Segment_t>(domain);
+			segments.push_back(TriangularPolar2D_Segment(*this, seg));
+		}
 		num_segments = amount;
 	}
 }
@@ -180,6 +207,11 @@ PointPolar2D TriangularPolar2D_Domain::get_vertex(unsigned int index)
 	return PointPolar2D(viennagrid::point(domain, vertices[index]), index);
 }
 
+TriangularPolar2D_Domain_t & TriangularPolar2D_Domain::get_domain()
+{
+	return domain;
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -200,7 +232,10 @@ void TriangularSpherical3D_Domain::create_segments(unsigned int amount)
 	else {
 		segments.reserve(amount);
 		for (unsigned int i = 0; i < amount; ++i)
-			segments.push_back(TriangularSpherical3D_Segment(viennagrid::create_view<TriangularSpherical3D_Segment_t>(domain)));
+		{
+			TriangularSpherical3D_Segment_t seg = viennagrid::create_view<TriangularSpherical3D_Segment_t>(domain);
+			segments.push_back(TriangularSpherical3D_Segment(*this, seg));
+		}
 		num_segments = amount;
 	}
 }
@@ -222,4 +257,9 @@ PointSpherical3D TriangularSpherical3D_Domain::get_vertex(unsigned int index)
 	
 	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return PointSpherical3D(viennagrid::point(domain, vertices[index]), index);
+}
+
+TriangularSpherical3D_Domain_t & TriangularSpherical3D_Domain::get_domain()
+{
+	return domain;
 }

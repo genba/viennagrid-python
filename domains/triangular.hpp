@@ -23,6 +23,7 @@ public:
 	void add_vertex(PointCartesian2D vertex);
 	TriangularCartesian2D_Segment get_segment(unsigned int index);
 	PointCartesian2D get_vertex(unsigned int index);
+	TriangularCartesian2D_Domain_t & get_domain();
 };
 
 ////////////////////////////
@@ -40,6 +41,7 @@ public:
 	void add_vertex(PointCartesian3D vertex);
 	TriangularCartesian3D_Segment get_segment(unsigned int index);
 	PointCartesian3D get_vertex(unsigned int index);
+	TriangularCartesian3D_Domain_t & get_domain();
 };
 
 ////////////////////////////////
@@ -57,6 +59,7 @@ public:
 	void add_vertex(PointCylindrical3D vertex);
 	TriangularCylindrical3D_Segment get_segment(unsigned int index);
 	PointCylindrical3D get_vertex(unsigned int index);
+	TriangularCylindrical3D_Domain_t & get_domain();
 };
 
 //////////////////////////
@@ -74,6 +77,7 @@ public:
 	void add_vertex(PointPolar2D vertex);
 	TriangularPolar2D_Segment get_segment(unsigned int index);
 	PointPolar2D get_vertex(unsigned int index);
+	TriangularPolar2D_Domain_t & get_domain();
 };
 
 //////////////////////////////
@@ -91,6 +95,7 @@ public:
 	void add_vertex(PointSpherical3D vertex);
 	TriangularSpherical3D_Segment get_segment(unsigned int index);
 	PointSpherical3D get_vertex(unsigned int index);
+	TriangularSpherical3D_Domain_t & get_domain();
 };
 
 #endif /* end of include guard: TRIANGULAR_HPP_40OZO3A3 */
