@@ -44,10 +44,7 @@ TriangularCartesian2D_Segment TriangularCartesian2D_Domain::get_segment(unsigned
 
 PointCartesian2D TriangularCartesian2D_Domain::get_vertex(unsigned int index)
 {
-	typedef viennagrid::result_of::element_range<TriangularCartesian2D_Domain_t,
-	                                             viennagrid::vertex_tag>::type    VertexRange;
-	
-	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	TriangularCartesian2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return PointCartesian2D(viennagrid::point(domain, vertices[index]));
 }
 
@@ -121,10 +118,7 @@ TriangularCartesian3D_Segment TriangularCartesian3D_Domain::get_segment(unsigned
 
 PointCartesian3D TriangularCartesian3D_Domain::get_vertex(unsigned int index)
 {
-	typedef viennagrid::result_of::element_range<TriangularCartesian3D_Domain_t,
-	                                             viennagrid::vertex_tag>::type    VertexRange;
-	
-	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	TriangularCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return PointCartesian3D(viennagrid::point(domain, vertices[index]));
 }
 
@@ -198,10 +192,7 @@ TriangularCylindrical3D_Segment TriangularCylindrical3D_Domain::get_segment(unsi
 
 PointCylindrical3D TriangularCylindrical3D_Domain::get_vertex(unsigned int index)
 {
-	typedef viennagrid::result_of::element_range<TriangularCylindrical3D_Domain_t,
-	                                             viennagrid::vertex_tag>::type    VertexRange;
-	
-	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	TriangularCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return PointCylindrical3D(viennagrid::point(domain, vertices[index]));
 }
 
@@ -275,10 +266,7 @@ TriangularPolar2D_Segment TriangularPolar2D_Domain::get_segment(unsigned int ind
 
 PointPolar2D TriangularPolar2D_Domain::get_vertex(unsigned int index)
 {
-	typedef viennagrid::result_of::element_range<TriangularPolar2D_Domain_t,
-	                                             viennagrid::vertex_tag>::type    VertexRange;
-	
-	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	TriangularPolar2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return PointPolar2D(viennagrid::point(domain, vertices[index]), index);
 }
 
@@ -352,10 +340,7 @@ TriangularSpherical3D_Segment TriangularSpherical3D_Domain::get_segment(unsigned
 
 PointSpherical3D TriangularSpherical3D_Domain::get_vertex(unsigned int index)
 {
-	typedef viennagrid::result_of::element_range<TriangularSpherical3D_Domain_t,
-	                                             viennagrid::vertex_tag>::type    VertexRange;
-	
-	VertexRange vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	TriangularSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return PointSpherical3D(viennagrid::point(domain, vertices[index]), index);
 }
 
