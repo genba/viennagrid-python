@@ -73,6 +73,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularCartesian2D_Domain::get_segment, "Return the segment at the given index within the domain.")
 		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
+		.add_property("iter_segments", range(&TriangularCartesian2D_Domain::segments_begin, &TriangularCartesian2D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 	;
 	
 	class_<TriangularCartesian3D_Domain>("_TriangularCartesian3D_Domain")
@@ -81,6 +82,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularCartesian3D_Domain::get_segment, "Return the segment at the given index within the domain.")
 		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
+		.add_property("iter_segments", range(&TriangularCartesian3D_Domain::segments_begin, &TriangularCartesian3D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("_TriangularCylindrical3D_Domain")
@@ -89,6 +91,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularCylindrical3D_Domain::get_segment, "Return the segment at the given index within the domain.")
 		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
+		.add_property("iter_segments", range(&TriangularCylindrical3D_Domain::segments_begin, &TriangularCylindrical3D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 	;
 	
 	class_<TriangularPolar2D_Domain>("_TriangularPolar2D_Domain")
@@ -97,6 +100,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularPolar2D_Domain::get_segment, "Return the segment at the given index within the domain.")
 		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
+		.add_property("iter_segments", range(&TriangularPolar2D_Domain::segments_begin, &TriangularPolar2D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 	;
 	
 	class_<TriangularSpherical3D_Domain>("_TriangularSpherical3D_Domain")
@@ -105,6 +109,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_segment", &TriangularSpherical3D_Domain::get_segment, "Return the segment at the given index within the domain.")
 		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
+		.add_property("iter_segments", range(&TriangularSpherical3D_Domain::segments_begin, &TriangularSpherical3D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 	;
 	
 	/***********************

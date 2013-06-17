@@ -56,6 +56,16 @@ TriangularCartesian2D_Domain_t & TriangularCartesian2D_Domain::get_domain()
 	return domain;
 }
 
+std::vector<TriangularCartesian2D_Segment>::iterator TriangularCartesian2D_Domain::segments_begin()
+{
+	return segments.begin();
+}
+
+std::vector<TriangularCartesian2D_Segment>::iterator TriangularCartesian2D_Domain::segments_end()
+{
+	return segments.end();
+}
+
 ////////////////////////////
 // Triangle, cartesian 3D //
 ////////////////////////////
@@ -106,6 +116,16 @@ PointCartesian3D TriangularCartesian3D_Domain::get_vertex(unsigned int index)
 TriangularCartesian3D_Domain_t & TriangularCartesian3D_Domain::get_domain()
 {
 	return domain;
+}
+
+std::vector<TriangularCartesian3D_Segment>::iterator TriangularCartesian3D_Domain::segments_begin()
+{
+	return segments.begin();
+}
+
+std::vector<TriangularCartesian3D_Segment>::iterator TriangularCartesian3D_Domain::segments_end()
+{
+	return segments.end();
 }
 
 ////////////////////////////////
@@ -160,6 +180,16 @@ TriangularCylindrical3D_Domain_t & TriangularCylindrical3D_Domain::get_domain()
 	return domain;
 }
 
+std::vector<TriangularCylindrical3D_Segment>::iterator TriangularCylindrical3D_Domain::segments_begin()
+{
+	return segments.begin();
+}
+
+std::vector<TriangularCylindrical3D_Segment>::iterator TriangularCylindrical3D_Domain::segments_end()
+{
+	return segments.end();
+}
+
 //////////////////////////
 // Triangle, polar (2D) //
 //////////////////////////
@@ -212,6 +242,16 @@ TriangularPolar2D_Domain_t & TriangularPolar2D_Domain::get_domain()
 	return domain;
 }
 
+std::vector<TriangularPolar2D_Segment>::iterator TriangularPolar2D_Domain::segments_begin()
+{
+	return segments.begin();
+}
+
+std::vector<TriangularPolar2D_Segment>::iterator TriangularPolar2D_Domain::segments_end()
+{
+	return segments.end();
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -262,4 +302,14 @@ PointSpherical3D TriangularSpherical3D_Domain::get_vertex(unsigned int index)
 TriangularSpherical3D_Domain_t & TriangularSpherical3D_Domain::get_domain()
 {
 	return domain;
+}
+
+std::vector<TriangularSpherical3D_Segment>::iterator TriangularSpherical3D_Domain::segments_begin()
+{
+	return segments.begin();
+}
+
+std::vector<TriangularSpherical3D_Segment>::iterator TriangularSpherical3D_Domain::segments_end()
+{
+	return segments.end();
 }
