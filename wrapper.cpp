@@ -131,18 +131,23 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * TRIANGULAR SEGMENTS *
 	 ***********************/
 	
-	class_<TriangularCartesian2D_Segment>("_TriangularCartesian2D_Segment")
+	class_<TriangularCartesian2D_Segment>("_TriangularCartesian2D_Segment", init<TriangularCartesian2D_Domain &, TriangularCartesian2D_Segment_t &>())
+		.def("create_cell", &TriangularCartesian2D_Segment::create_cell)
 	;
 	
-	class_<TriangularCartesian3D_Segment>("_TriangularCartesian3D_Segment")
+	class_<TriangularCartesian3D_Segment>("_TriangularCartesian3D_Segment", init<TriangularCartesian3D_Domain &, TriangularCartesian3D_Segment_t &>())
+		.def("create_cell", &TriangularCartesian3D_Segment::create_cell)
 	;
 	
-	class_<TriangularCylindrical3D_Segment>("_TriangularCylindrical3D_Segment")
+	class_<TriangularCylindrical3D_Segment>("_TriangularCylindrical3D_Segment", init<TriangularCylindrical3D_Domain &, TriangularCylindrical3D_Segment_t &>())
+		.def("create_cell", &TriangularCylindrical3D_Segment::create_cell)
 	;
 	
-	class_<TriangularPolar2D_Segment>("_TriangularPolar2D_Segment")
+	class_<TriangularPolar2D_Segment>("_TriangularPolar2D_Segment", init<TriangularPolar2D_Domain &, TriangularPolar2D_Segment_t &>())
+		.def("create_cell", &TriangularPolar2D_Segment::create_cell)
 	;
 	
-	class_<TriangularSpherical3D_Segment>("_TriangularSpherical3D_Segment")
+	class_<TriangularSpherical3D_Segment>("_TriangularSpherical3D_Segment", init<TriangularSpherical3D_Domain &, TriangularSpherical3D_Segment_t &>())
+		.def("create_cell", &TriangularSpherical3D_Segment::create_cell)
 	;
 }
