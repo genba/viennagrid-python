@@ -69,7 +69,7 @@ public:
 class TriangularCylindrical3D_Domain {
 	TriangularCylindrical3D_Domain_t                domain;
 	std::vector<TriangularCylindrical3D_Segment>    segments;
-	std::vector<PointCylindrical3D>                   vertices;
+	std::vector<PointCylindrical3D>                 vertices;
 public:
 	TriangularCylindrical3D_Domain() {};
 
@@ -95,7 +95,7 @@ public:
 class TriangularPolar2D_Domain {
 	TriangularPolar2D_Domain_t                domain;
 	std::vector<TriangularPolar2D_Segment>    segments;
-	std::vector<PointPolar2D>             vertices;
+	std::vector<PointPolar2D>                 vertices;
 public:
 	TriangularPolar2D_Domain() {};
 
