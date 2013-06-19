@@ -57,6 +57,35 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		vertices = [v for v in self.domain.iter_vertices]
 		self.assertEqual(len(vertices), self.num_vertices)
 
+	def test_list_segments(self):
+		"""Test method for attiribute 'segments', which returns a Python list."""
+		self.domain.create_segments(self.num_segments)
+		# Test __len__
+		self.assertEqual(len(self.domain.segments), self.num_segments)
+		# Test __iter__
+		for segment in self.domain.segments:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.segments)):
+			self.domain.segments[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.segments[2:4]), 2)
+
+	def test_list_vertices(self):
+		"""Test method for attiribute 'vertices', which returns a Python list."""
+		for vertex in self.vertices:
+			self.domain.add_vertex(vertex)
+		# Test __len__
+		self.assertEqual(len(self.domain.vertices), self.num_vertices)
+		# Test __iter__
+		for vertex in self.domain.vertices:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.vertices)):
+			self.domain.vertices[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.vertices[2:4]), 2)
+
 class TestTriangularCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
@@ -101,6 +130,35 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		vertices = [v for v in self.domain.iter_vertices]
 		self.assertEqual(len(vertices), self.num_vertices)
+
+	def test_list_segments(self):
+		"""Test method for attiribute 'segments', which returns a Python list."""
+		self.domain.create_segments(self.num_segments)
+		# Test __len__
+		self.assertEqual(len(self.domain.segments), self.num_segments)
+		# Test __iter__
+		for segment in self.domain.segments:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.segments)):
+			self.domain.segments[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.segments[2:4]), 2)
+
+	def test_list_vertices(self):
+		"""Test method for attiribute 'vertices', which returns a Python list."""
+		for vertex in self.vertices:
+			self.domain.add_vertex(vertex)
+		# Test __len__
+		self.assertEqual(len(self.domain.vertices), self.num_vertices)
+		# Test __iter__
+		for vertex in self.domain.vertices:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.vertices)):
+			self.domain.vertices[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.vertices[2:4]), 2)
 
 class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -147,6 +205,35 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		vertices = [v for v in self.domain.iter_vertices]
 		self.assertEqual(len(vertices), self.num_vertices)
 
+	def test_list_segments(self):
+		"""Test method for attiribute 'segments', which returns a Python list."""
+		self.domain.create_segments(self.num_segments)
+		# Test __len__
+		self.assertEqual(len(self.domain.segments), self.num_segments)
+		# Test __iter__
+		for segment in self.domain.segments:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.segments)):
+			self.domain.segments[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.segments[2:4]), 2)
+
+	def test_list_vertices(self):
+		"""Test method for attiribute 'vertices', which returns a Python list."""
+		for vertex in self.vertices:
+			self.domain.add_vertex(vertex)
+		# Test __len__
+		self.assertEqual(len(self.domain.vertices), self.num_vertices)
+		# Test __iter__
+		for vertex in self.domain.vertices:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.vertices)):
+			self.domain.vertices[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.vertices[2:4]), 2)
+
 class TestTriangularPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
@@ -192,6 +279,35 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		vertices = [v for v in self.domain.iter_vertices]
 		self.assertEqual(len(vertices), self.num_vertices)
 
+	def test_list_segments(self):
+		"""Test method for attiribute 'segments', which returns a Python list."""
+		self.domain.create_segments(self.num_segments)
+		# Test __len__
+		self.assertEqual(len(self.domain.segments), self.num_segments)
+		# Test __iter__
+		for segment in self.domain.segments:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.segments)):
+			self.domain.segments[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.segments[2:4]), 2)
+
+	def test_list_vertices(self):
+		"""Test method for attiribute 'vertices', which returns a Python list."""
+		for vertex in self.vertices:
+			self.domain.add_vertex(vertex)
+		# Test __len__
+		self.assertEqual(len(self.domain.vertices), self.num_vertices)
+		# Test __iter__
+		for vertex in self.domain.vertices:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.vertices)):
+			self.domain.vertices[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.vertices[2:4]), 2)
+
 class TestTriangularSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
@@ -236,6 +352,35 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		vertices = [v for v in self.domain.iter_vertices]
 		self.assertEqual(len(vertices), self.num_vertices)
+
+	def test_list_segments(self):
+		"""Test method for attiribute 'segments', which returns a Python list."""
+		self.domain.create_segments(self.num_segments)
+		# Test __len__
+		self.assertEqual(len(self.domain.segments), self.num_segments)
+		# Test __iter__
+		for segment in self.domain.segments:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.segments)):
+			self.domain.segments[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.segments[2:4]), 2)
+
+	def test_list_vertices(self):
+		"""Test method for attiribute 'vertices', which returns a Python list."""
+		for vertex in self.vertices:
+			self.domain.add_vertex(vertex)
+		# Test __len__
+		self.assertEqual(len(self.domain.vertices), self.num_vertices)
+		# Test __iter__
+		for vertex in self.domain.vertices:
+			pass
+		# Test __getitem__ with indices
+		for i in range(0, len(self.domain.vertices)):
+			self.domain.vertices[i]
+		# Test __getitem__ with slices
+		self.assertEqual(len(self.domain.vertices[2:4]), 2)
 
 if __name__ == '__main__':
 	unittest.main()

@@ -78,6 +78,22 @@ std::vector<PointCartesian2D>::iterator TriangularCartesian2D_Domain::vertices_e
 	return vertices.end();
 }
 
+list TriangularCartesian2D_Domain::get_segments()
+{
+	list list_segments;
+	for (unsigned int i = 0; i < segments.size(); ++i)
+		list_segments.append<TriangularCartesian2D_Segment>(segments.at(i));
+	return list_segments;
+}
+
+list TriangularCartesian2D_Domain::get_vertices()
+{
+	list list_vertices;
+	for (unsigned int i = 0; i < vertices.size(); ++i)
+		list_vertices.append<PointCartesian2D>(vertices.at(i));
+	return list_vertices;
+}
+
 ////////////////////////////
 // Triangle, cartesian 3D //
 ////////////////////////////
@@ -150,6 +166,22 @@ std::vector<PointCartesian3D>::iterator TriangularCartesian3D_Domain::vertices_b
 std::vector<PointCartesian3D>::iterator TriangularCartesian3D_Domain::vertices_end()
 {
 	return vertices.end();
+}
+
+list TriangularCartesian3D_Domain::get_segments()
+{
+	list list_segments;
+	for (unsigned int i = 0; i < segments.size(); ++i)
+		list_segments.append<TriangularCartesian3D_Segment>(segments.at(i));
+	return list_segments;
+}
+
+list TriangularCartesian3D_Domain::get_vertices()
+{
+	list list_vertices;
+	for (unsigned int i = 0; i < vertices.size(); ++i)
+		list_vertices.append<PointCartesian3D>(vertices.at(i));
+	return list_vertices;
 }
 
 ////////////////////////////////
@@ -226,6 +258,22 @@ std::vector<PointCylindrical3D>::iterator TriangularCylindrical3D_Domain::vertic
 	return vertices.end();
 }
 
+list TriangularCylindrical3D_Domain::get_segments()
+{
+	list list_segments;
+	for (unsigned int i = 0; i < segments.size(); ++i)
+		list_segments.append<TriangularCylindrical3D_Segment>(segments.at(i));
+	return list_segments;
+}
+
+list TriangularCylindrical3D_Domain::get_vertices()
+{
+	list list_vertices;
+	for (unsigned int i = 0; i < vertices.size(); ++i)
+		list_vertices.append<PointCylindrical3D>(vertices.at(i));
+	return list_vertices;
+}
+
 //////////////////////////
 // Triangle, polar (2D) //
 //////////////////////////
@@ -300,6 +348,22 @@ std::vector<PointPolar2D>::iterator TriangularPolar2D_Domain::vertices_end()
 	return vertices.end();
 }
 
+list TriangularPolar2D_Domain::get_segments()
+{
+	list list_segments;
+	for (unsigned int i = 0; i < segments.size(); ++i)
+		list_segments.append<TriangularPolar2D_Segment>(segments.at(i));
+	return list_segments;
+}
+
+list TriangularPolar2D_Domain::get_vertices()
+{
+	list list_vertices;
+	for (unsigned int i = 0; i < vertices.size(); ++i)
+		list_vertices.append<PointPolar2D>(vertices.at(i));
+	return list_vertices;
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -372,4 +436,20 @@ std::vector<PointSpherical3D>::iterator TriangularSpherical3D_Domain::vertices_b
 std::vector<PointSpherical3D>::iterator TriangularSpherical3D_Domain::vertices_end()
 {
 	return vertices.end();
+}
+
+list TriangularSpherical3D_Domain::get_segments()
+{
+	list list_segments;
+	for (unsigned int i = 0; i < segments.size(); ++i)
+		list_segments.append<TriangularSpherical3D_Segment>(segments.at(i));
+	return list_segments;
+}
+
+list TriangularSpherical3D_Domain::get_vertices()
+{
+	list list_vertices;
+	for (unsigned int i = 0; i < vertices.size(); ++i)
+		list_vertices.append<PointSpherical3D>(vertices.at(i));
+	return list_vertices;
 }

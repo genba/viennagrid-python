@@ -81,6 +81,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 		.add_property("iter_segments", range(&TriangularCartesian2D_Domain::segments_begin, &TriangularCartesian2D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 		.add_property("iter_vertices", range(&TriangularCartesian2D_Domain::vertices_begin, &TriangularCartesian2D_Domain::vertices_end), "Return a Python iterator to iterate over vertices.")
+		.add_property("segments", &TriangularCartesian2D_Domain::get_segments)
+		.add_property("vertices", &TriangularCartesian2D_Domain::get_vertices)
 	;
 	
 	class_<TriangularCartesian3D_Domain>("_TriangularCartesian3D_Domain")
@@ -92,6 +94,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 		.add_property("iter_segments", range(&TriangularCartesian3D_Domain::segments_begin, &TriangularCartesian3D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 		.add_property("iter_vertices", range(&TriangularCartesian3D_Domain::vertices_begin, &TriangularCartesian3D_Domain::vertices_end), "Return a Python iterator to iterate over vertices.")
+		.add_property("segments", &TriangularCartesian3D_Domain::get_segments)
+		.add_property("vertices", &TriangularCartesian3D_Domain::get_vertices)
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("_TriangularCylindrical3D_Domain")
@@ -103,6 +107,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 		.add_property("iter_segments", range(&TriangularCylindrical3D_Domain::segments_begin, &TriangularCylindrical3D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 		.add_property("iter_vertices", range(&TriangularCylindrical3D_Domain::vertices_begin, &TriangularCylindrical3D_Domain::vertices_end), "Return a Python iterator to iterate over vertices.")
+		.add_property("segments", &TriangularCylindrical3D_Domain::get_segments)
+		.add_property("vertices", &TriangularCylindrical3D_Domain::get_vertices)
 	;
 	
 	class_<TriangularPolar2D_Domain>("_TriangularPolar2D_Domain")
@@ -114,6 +120,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 		.add_property("iter_segments", range(&TriangularPolar2D_Domain::segments_begin, &TriangularPolar2D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 		.add_property("iter_vertices", range(&TriangularPolar2D_Domain::vertices_begin, &TriangularPolar2D_Domain::vertices_end), "Return a Python iterator to iterate over vertices.")
+		.add_property("segments", &TriangularPolar2D_Domain::get_segments)
+		.add_property("vertices", &TriangularPolar2D_Domain::get_vertices)
 	;
 	
 	class_<TriangularSpherical3D_Domain>("_TriangularSpherical3D_Domain")
@@ -125,6 +133,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added to the domain).")
 		.add_property("iter_segments", range(&TriangularSpherical3D_Domain::segments_begin, &TriangularSpherical3D_Domain::segments_end), "Return a Python iterator to iterate over segments.")
 		.add_property("iter_vertices", range(&TriangularSpherical3D_Domain::vertices_begin, &TriangularSpherical3D_Domain::vertices_end), "Return a Python iterator to iterate over vertices.")
+		.add_property("segments", &TriangularSpherical3D_Domain::get_segments)
+		.add_property("vertices", &TriangularSpherical3D_Domain::get_vertices)
 	;
 	
 	/***********************
