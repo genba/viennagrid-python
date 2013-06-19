@@ -31,6 +31,7 @@ python-extension viennagrid_wrapper : wrapper.cpp
                                       points/spherical.cpp
                                       domains/triangular.cpp
                                       segments/triangular.cpp
+                                      cells/triangular.cpp
                                     ;
 
 # Put the extension and Boost.Python DLL in the current directory, so

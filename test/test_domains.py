@@ -64,6 +64,22 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		# Test __getitem__ with slices
 		self.assertEqual(len(self.domain.vertices[2:4]), 2)
 
+	def test_create_cell(self):
+		"""Test method for 'Segment.create_cell', 'Segment.cells', and 'Cell.vertices'."""
+		self.domain.create_segments(self.num_segments)
+		for point in self.vertices:
+			self.domain.add_vertex(point)
+
+		v0 = self.domain.vertices[0]
+		v1 = self.domain.vertices[1]
+		v2 = self.domain.vertices[2]
+
+		s0 = self.domain.segments[0]
+		self.assertEqual(len(s0.cells), 0)
+		s0.create_cell(v0, v1, v2)
+		self.assertEqual(len(s0.cells), 1)
+		self.assertEqual(len(s0.cells[0].vertices), 3)
+
 class TestTriangularCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
@@ -115,6 +131,22 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 			self.assertEqual(self.domain.vertices[i], self.vertices[i])
 		# Test __getitem__ with slices
 		self.assertEqual(len(self.domain.vertices[2:4]), 2)
+
+	def test_create_cell(self):
+		"""Test method for 'Segment.create_cell', 'Segment.cells', and 'Cell.vertices'."""
+		self.domain.create_segments(self.num_segments)
+		for point in self.vertices:
+			self.domain.add_vertex(point)
+
+		v0 = self.domain.vertices[0]
+		v1 = self.domain.vertices[1]
+		v2 = self.domain.vertices[2]
+
+		s0 = self.domain.segments[0]
+		self.assertEqual(len(s0.cells), 0)
+		s0.create_cell(v0, v1, v2)
+		self.assertEqual(len(s0.cells), 1)
+		self.assertEqual(len(s0.cells[0].vertices), 3)
 
 class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -168,6 +200,22 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		# Test __getitem__ with slices
 		self.assertEqual(len(self.domain.vertices[2:4]), 2)
 
+	def test_create_cell(self):
+		"""Test method for 'Segment.create_cell', 'Segment.cells', and 'Cell.vertices'."""
+		self.domain.create_segments(self.num_segments)
+		for point in self.vertices:
+			self.domain.add_vertex(point)
+
+		v0 = self.domain.vertices[0]
+		v1 = self.domain.vertices[1]
+		v2 = self.domain.vertices[2]
+
+		s0 = self.domain.segments[0]
+		self.assertEqual(len(s0.cells), 0)
+		s0.create_cell(v0, v1, v2)
+		self.assertEqual(len(s0.cells), 1)
+		self.assertEqual(len(s0.cells[0].vertices), 3)
+
 class TestTriangularPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
@@ -220,6 +268,22 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		# Test __getitem__ with slices
 		self.assertEqual(len(self.domain.vertices[2:4]), 2)
 
+	def test_create_cell(self):
+		"""Test method for 'Segment.create_cell', 'Segment.cells', and 'Cell.vertices'."""
+		self.domain.create_segments(self.num_segments)
+		for point in self.vertices:
+			self.domain.add_vertex(point)
+
+		v0 = self.domain.vertices[0]
+		v1 = self.domain.vertices[1]
+		v2 = self.domain.vertices[2]
+
+		s0 = self.domain.segments[0]
+		self.assertEqual(len(s0.cells), 0)
+		s0.create_cell(v0, v1, v2)
+		self.assertEqual(len(s0.cells), 1)
+		self.assertEqual(len(s0.cells[0].vertices), 3)
+
 class TestTriangularSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
@@ -271,6 +335,22 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 			self.assertEqual(self.domain.vertices[i], self.vertices[i])
 		# Test __getitem__ with slices
 		self.assertEqual(len(self.domain.vertices[2:4]), 2)
+
+	def test_create_cell(self):
+		"""Test method for 'Segment.create_cell', 'Segment.cells', and 'Cell.vertices'."""
+		self.domain.create_segments(self.num_segments)
+		for point in self.vertices:
+			self.domain.add_vertex(point)
+
+		v0 = self.domain.vertices[0]
+		v1 = self.domain.vertices[1]
+		v2 = self.domain.vertices[2]
+
+		s0 = self.domain.segments[0]
+		self.assertEqual(len(s0.cells), 0)
+		s0.create_cell(v0, v1, v2)
+		self.assertEqual(len(s0.cells), 1)
+		self.assertEqual(len(s0.cells[0].vertices), 3)
 
 if __name__ == '__main__':
 	unittest.main()

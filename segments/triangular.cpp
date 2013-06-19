@@ -21,6 +21,13 @@ void TriangularCartesian2D_Segment::create_cell(PointCartesian2D vertex1, PointC
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	viennagrid::create_element<TriangularCartesian2D_Cell_t>(segment, vertices);
+	
+	cells.append<TriangularCartesian2D_Cell>(TriangularCartesian2D_Cell(vertex1, vertex2, vertex3));
+}
+
+list TriangularCartesian2D_Segment::get_cells()
+{
+	return cells;
 }
 
 ///////////////////////////////////
@@ -40,6 +47,13 @@ void TriangularCartesian3D_Segment::create_cell(PointCartesian3D vertex1, PointC
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	viennagrid::create_element<TriangularCartesian3D_Cell_t>(segment, vertices);
+	
+	cells.append<TriangularCartesian3D_Cell>(TriangularCartesian3D_Cell(vertex1, vertex2, vertex3));
+}
+
+list TriangularCartesian3D_Segment::get_cells()
+{
+	return cells;
 }
 
 /////////////////////////////////////
@@ -59,6 +73,13 @@ void TriangularCylindrical3D_Segment::create_cell(PointCylindrical3D vertex1, Po
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	viennagrid::create_element<TriangularCylindrical3D_Cell_t>(segment, vertices);
+	
+	cells.append<TriangularCylindrical3D_Cell>(TriangularCylindrical3D_Cell(vertex1, vertex2, vertex3));
+}
+
+list TriangularCylindrical3D_Segment::get_cells()
+{
+	return cells;
 }
 
 ///////////////////////////////
@@ -78,6 +99,13 @@ void TriangularPolar2D_Segment::create_cell(PointPolar2D vertex1, PointPolar2D v
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	viennagrid::create_element<TriangularPolar2D_Cell_t>(segment, vertices);
+	
+	cells.append<TriangularPolar2D_Cell>(TriangularPolar2D_Cell(vertex1, vertex2, vertex3));
+}
+
+list TriangularPolar2D_Segment::get_cells()
+{
+	return cells;
 }
 
 ///////////////////////////////////
@@ -97,4 +125,11 @@ void TriangularSpherical3D_Segment::create_cell(PointSpherical3D vertex1, PointS
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	viennagrid::create_element<TriangularSpherical3D_Cell_t>(segment, vertices);
+	
+	cells.append<TriangularSpherical3D_Cell>(TriangularSpherical3D_Cell(vertex1, vertex2, vertex3));
+}
+
+list TriangularSpherical3D_Segment::get_cells()
+{
+	return cells;
 }
