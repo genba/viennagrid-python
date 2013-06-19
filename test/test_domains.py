@@ -26,7 +26,7 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper._TriangularCartesian2D_Domain()
 
 	def test_segments(self):
-		"""Test method for attiribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
+		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
 		self.assertEqual(len(self.domain.segments), 0)
 		self.assertEqual(self.domain.segments, [])
 		self.domain.create_segments(self.num_segments)
@@ -44,7 +44,7 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		self.assertEqual(len(self.domain.segments[2:4]), 2)
 
 	def test_vertices(self):
-		"""Test method for attiribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
+		"""Test method for attribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
 		self.assertEqual(len(self.domain.vertices), 0)
 		self.assertEqual(self.domain.vertices, [])
 		for point in self.vertices:
@@ -78,7 +78,7 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper._TriangularCartesian3D_Domain()
 
 	def test_segments(self):
-		"""Test method for attiribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
+		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
 		self.assertEqual(len(self.domain.segments), 0)
 		self.assertEqual(self.domain.segments, [])
 		self.domain.create_segments(self.num_segments)
@@ -96,7 +96,7 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		self.assertEqual(len(self.domain.segments[2:4]), 2)
 
 	def test_vertices(self):
-		"""Test method for attiribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
+		"""Test method for attribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
 		self.assertEqual(len(self.domain.vertices), 0)
 		self.assertEqual(self.domain.vertices, [])
 		for point in self.vertices:
@@ -130,7 +130,7 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper._TriangularCylindrical3D_Domain()
 
 	def test_segments(self):
-		"""Test method for attiribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
+		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
 		self.assertEqual(len(self.domain.segments), 0)
 		self.assertEqual(self.domain.segments, [])
 		self.domain.create_segments(self.num_segments)
@@ -148,7 +148,7 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		self.assertEqual(len(self.domain.segments[2:4]), 2)
 
 	def test_vertices(self):
-		"""Test method for attiribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
+		"""Test method for attribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
 		self.assertEqual(len(self.domain.vertices), 0)
 		self.assertEqual(self.domain.vertices, [])
 		for point in self.vertices:
@@ -182,7 +182,7 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper._TriangularPolar2D_Domain()
 
 	def test_segments(self):
-		"""Test method for attiribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
+		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
 		self.assertEqual(len(self.domain.segments), 0)
 		self.assertEqual(self.domain.segments, [])
 		self.domain.create_segments(self.num_segments)
@@ -200,7 +200,7 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		self.assertEqual(len(self.domain.segments[2:4]), 2)
 
 	def test_vertices(self):
-		"""Test method for attiribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
+		"""Test method for attribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
 		self.assertEqual(len(self.domain.vertices), 0)
 		self.assertEqual(self.domain.vertices, [])
 		for point in self.vertices:
@@ -234,7 +234,7 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper._TriangularSpherical3D_Domain()
 
 	def test_segments(self):
-		"""Test method for attiribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
+		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
 		self.assertEqual(len(self.domain.segments), 0)
 		self.assertEqual(self.domain.segments, [])
 		self.domain.create_segments(self.num_segments)
@@ -252,7 +252,7 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		self.assertEqual(len(self.domain.segments[2:4]), 2)
 
 	def test_vertices(self):
-		"""Test method for attiribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
+		"""Test method for attribute 'vertices', which returns a Python list. Also tests method 'add_vertex'."""
 		self.assertEqual(len(self.domain.vertices), 0)
 		self.assertEqual(self.domain.vertices, [])
 		for point in self.vertices:
