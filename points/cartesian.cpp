@@ -1,5 +1,9 @@
 #include "cartesian.hpp"
 
+//////////////////
+// CARTESIAN 2D //
+//////////////////
+
 PointCartesian2D::PointCartesian2D()
 {
 	point = new PointCartesian2D_t(0, 0);
@@ -33,6 +37,16 @@ PointCartesian2D_t & PointCartesian2D::get_point()
 	return *point;
 }
 
+double PointCartesian2D::get_coord(unsigned int index)
+{
+	return point->at(index);
+}
+
+void PointCartesian2D::set_coord(unsigned int index, double new_value)
+{
+	point->at(index) = new_value;
+}
+
 bool PointCartesian2D::operator==(const PointCartesian2D &other)
 {
 	bool equal = true;
@@ -50,6 +64,48 @@ void PointCartesian2D::set_id(unsigned int new_id)
 {
 	id = new_id;
 }
+
+list PointCartesian2D::get_coord_list()
+{
+	list coord_list;
+	coord_list.append<double>(point->at(0));
+	coord_list.append<double>(point->at(1));
+	return coord_list;
+}
+
+PointCartesian2D & PointCartesian2D::operator=(const PointCartesian2D &other)
+{
+	*(this->point) = *(other.point);
+	return *this;
+}
+
+PointCartesian2D PointCartesian2D::operator+(const PointCartesian2D &other)
+{
+	PointCartesian2D_t result = *(this->point) + *(other.point);
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
+PointCartesian2D PointCartesian2D::operator-(const PointCartesian2D &other)
+{
+	PointCartesian2D_t result = *(this->point) - *(other.point);
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
+PointCartesian2D PointCartesian2D::operator*(const double factor)
+{
+	PointCartesian2D_t result = *(this->point) * factor;
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
+PointCartesian2D PointCartesian2D::operator/(const double factor)
+{
+	PointCartesian2D_t result = *(this->point) / factor;
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
+//////////////////
+// CARTESIAN 3D //
+//////////////////
 
 PointCartesian3D::PointCartesian3D()
 {
@@ -100,4 +156,53 @@ unsigned int PointCartesian3D::get_id()
 void PointCartesian3D::set_id(unsigned int new_id)
 {
 	id = new_id;
+}
+
+double PointCartesian3D::get_coord(unsigned int index)
+{
+	return point->at(index);
+}
+
+void PointCartesian3D::set_coord(unsigned int index, double new_value)
+{
+	point->at(index) = new_value;
+}
+
+list PointCartesian3D::get_coord_list()
+{
+	list coord_list;
+	coord_list.append<double>(point->at(0));
+	coord_list.append<double>(point->at(1));
+	coord_list.append<double>(point->at(2));
+	return coord_list;
+}
+
+PointCartesian3D & PointCartesian3D::operator=(const PointCartesian3D &other)
+{
+	*(this->point) = *(other.point);
+	return *this;
+}
+
+PointCartesian3D PointCartesian3D::operator+(const PointCartesian3D &other)
+{
+	PointCartesian3D_t result = *(this->point) + *(other.point);
+	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCartesian3D PointCartesian3D::operator-(const PointCartesian3D &other)
+{
+	PointCartesian3D_t result = *(this->point) - *(other.point);
+	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCartesian3D PointCartesian3D::operator*(const double factor)
+{
+	PointCartesian3D_t result = *(this->point) * factor;
+	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCartesian3D PointCartesian3D::operator/(const double factor)
+{
+	PointCartesian3D_t result = *(this->point) / factor;
+	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
 }

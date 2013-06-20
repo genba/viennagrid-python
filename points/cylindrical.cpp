@@ -50,3 +50,52 @@ void PointCylindrical3D::set_id(unsigned int new_id)
 {
 	id = new_id;
 }
+
+double PointCylindrical3D::get_coord(unsigned int index)
+{
+	return point->at(index);
+}
+
+void PointCylindrical3D::set_coord(unsigned int index, double new_value)
+{
+	point->at(index) = new_value;
+}
+
+list PointCylindrical3D::get_coord_list()
+{
+	list coord_list;
+	coord_list.append<double>(point->at(0));
+	coord_list.append<double>(point->at(1));
+	coord_list.append<double>(point->at(2));
+	return coord_list;
+}
+
+PointCylindrical3D & PointCylindrical3D::operator=(const PointCylindrical3D &other)
+{
+	*(this->point) = *(other.point);
+	return *this;
+}
+
+PointCylindrical3D PointCylindrical3D::operator+(const PointCylindrical3D &other)
+{
+	PointCylindrical_t result = *(this->point) + *(other.point);
+	return PointCylindrical3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCylindrical3D PointCylindrical3D::operator-(const PointCylindrical3D &other)
+{
+	PointCylindrical_t result = *(this->point) - *(other.point);
+	return PointCylindrical3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCylindrical3D PointCylindrical3D::operator*(const double factor)
+{
+	PointCylindrical_t result = *(this->point) * factor;
+	return PointCylindrical3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCylindrical3D PointCylindrical3D::operator/(const double factor)
+{
+	PointCylindrical_t result = *(this->point) / factor;
+	return PointCylindrical3D(result.at(0), result.at(1), result.at(2));
+}

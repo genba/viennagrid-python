@@ -3,12 +3,21 @@
 
 #include "types.hpp"
 
+#include <boost/python.hpp>
+using namespace boost::python;
+
 class PointCartesian2D {
 	/**
-	 * Pointer to the low-level ViennaGrid point type.
+	 * Pointer to the low-level ViennaGrid point type that actually stores the information about the point.
 	**/
 	PointCartesian2D_t *point;
 	
+	/**
+	 * ID of the point within the domain it is assigned to (if applicable).
+	 * If the point is not assigned to any domain as a vertex, its value is -1.
+	 * Otherwise, its value will be the ID of the point within the domain, i.e. its index
+	 * in the vector of vertices.
+	**/
 	int id;
 public:
 	/**
@@ -46,11 +55,73 @@ public:
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	**/
 	PointCartesian2D(PointCartesian2D_t &initial_point, unsigned int initial_id=0);
+	
+	/**
+	 * Get the dimension of the point. For 2D points, this always returns 2.
+	**/
 	size_t get_dimension();
+	
+	/**
+	 * Get the name of the coordinate system. For cartesian points, this always returns 'cartesian'.
+	**/
 	const char * get_coord_system();
-	PointCartesian2D_t & get_point();
+	
+	/**
+	 * Get the coordinate at given index (0 for x, 1 for y).
+	**/
+	double get_coord(unsigned int index);
+	
+	/**
+	 * Set the coordinate at given index (0 for x, 1 for y).
+	**/
+	void set_coord(unsigned int index, double new_value);
+	
+	/**
+	 * Get coordinates as a Python list.
+	**/
+	list get_coord_list();
+	
 	bool operator==(const PointCartesian2D &other);
+	
+	/**
+	 * Assignment operator that copies the coordinates of the right operand to the left operand.
+	 * This operator cannot be wrapped to Python explicitly.
+	**/
+	PointCartesian2D & operator=(const PointCartesian2D &other);
+	
+	/**
+	 * Addition operator which adds two points coordinate by coordinate.
+	**/
+	PointCartesian2D operator+(const PointCartesian2D &other);
+	
+	/**
+	 * Subtraction operator which subtracts two points coordinate by coordinate.
+	**/
+	PointCartesian2D operator-(const PointCartesian2D &other);
+	
+	/**
+	 * Multiplication operator which multiplies a point and a scalar (real) number, coordinate by coordinate.
+	**/
+	PointCartesian2D operator*(const double factor);
+	
+	/**
+	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	**/
+	PointCartesian2D operator/(const double factor);
+	
+	/**
+	 * Get ViennaGrid point.
+	**/
+	PointCartesian2D_t & get_point();
+	
+	/**
+	 * Get ID of the point within the domain it is assigned to (if applicable).
+	**/
 	unsigned int get_id();
+	
+	/**
+	 * Set ID of the point within the domain it is assigned to.
+	**/
 	void set_id(unsigned int new_id);
 };
 
@@ -97,11 +168,73 @@ public:
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	**/
 	PointCartesian3D(PointCartesian3D_t &initial_point, unsigned int initial_id=0);
+	
+	/**
+	 * Get the dimension of the point. For 3D points, this always returns 3.
+	**/
 	size_t get_dimension();
+	
+	/**
+	 * Get the name of the coordinate system. For cartesian points, this always returns 'cartesian'.
+	**/
 	const char * get_coord_system();
-	PointCartesian3D_t & get_point();
+	
+	/**
+	 * Get the coordinate at given index (0 for x, 1 for y, 2 for z).
+	**/
+	double get_coord(unsigned int index);
+	
+	/**
+	 * Set the coordinate at given index (0 for x, 1 for y, 2 for z).
+	**/
+	void set_coord(unsigned int index, double new_value);
+	
+	/**
+	 * Get coordinates as a Python list.
+	**/
+	list get_coord_list();
+	
 	bool operator==(const PointCartesian3D &other);
+	
+	/**
+	 * Assignment operator that copies the coordinates of the right operand to the left operand.
+	 * This operator cannot be wrapped to Python explicitly.
+	**/
+	PointCartesian3D & operator=(const PointCartesian3D &other);
+	
+	/**
+	 * Addition operator which adds two points coordinate by coordinate.
+	**/
+	PointCartesian3D operator+(const PointCartesian3D &other);
+	
+	/**
+	 * Subtraction operator which subtracts two points coordinate by coordinate.
+	**/
+	PointCartesian3D operator-(const PointCartesian3D &other);
+	
+	/**
+	 * Multiplication operator which multiplies a point and a scalar (real) number, coordinate by coordinate.
+	**/
+	PointCartesian3D operator*(const double factor);
+	
+	/**
+	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	**/
+	PointCartesian3D operator/(const double factor);
+	
+	/**
+	 * Get ViennaGrid point.
+	**/
+	PointCartesian3D_t & get_point();
+	
+	/**
+	 * Get ID of the point within the domain it is assigned to (if applicable).
+	**/
 	unsigned int get_id();
+	
+	/**
+	 * Set ID of the point within the domain it is assigned to.
+	**/
 	void set_id(unsigned int new_id);
 };
 
