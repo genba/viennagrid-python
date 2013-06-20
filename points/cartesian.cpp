@@ -73,6 +73,36 @@ list PointCartesian2D::get_coord_list()
 	return coord_list;
 }
 
+PointCartesian2D & PointCartesian2D::operator=(const PointCartesian2D &other)
+{
+	*(this->point) = *(other.point);
+	return *this;
+}
+
+PointCartesian2D PointCartesian2D::operator+(const PointCartesian2D &other)
+{
+	PointCartesian2D_t result = *(this->point) + *(other.point);
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
+PointCartesian2D PointCartesian2D::operator-(const PointCartesian2D &other)
+{
+	PointCartesian2D_t result = *(this->point) - *(other.point);
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
+PointCartesian2D PointCartesian2D::operator*(const double factor)
+{
+	PointCartesian2D_t result = *(this->point) * factor;
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
+PointCartesian2D PointCartesian2D::operator/(const double factor)
+{
+	PointCartesian2D_t result = *(this->point) / factor;
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
 //////////////////
 // CARTESIAN 3D //
 //////////////////

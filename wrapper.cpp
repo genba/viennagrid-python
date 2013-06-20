@@ -35,6 +35,10 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_coord", &PointCartesian2D::get_coord)
 		.def("set_coord", &PointCartesian2D::set_coord)
 		.def(self == self)
+		.def(self + self)
+		.def(self - self)
+		.def(self * double())
+		.def(self / double())
 	;
 	
 	// CARTESIAN 3D

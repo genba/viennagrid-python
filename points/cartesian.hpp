@@ -58,6 +58,11 @@ public:
 	double get_coord(unsigned int index);
 	void set_coord(unsigned int index, double new_value);
 	list get_coord_list();
+	PointCartesian2D & operator=(const PointCartesian2D &other);
+	PointCartesian2D operator+(const PointCartesian2D &other);
+	PointCartesian2D operator-(const PointCartesian2D &other);
+	PointCartesian2D operator*(const double factor);
+	PointCartesian2D operator/(const double factor);
 };
 
 class PointCartesian3D {
