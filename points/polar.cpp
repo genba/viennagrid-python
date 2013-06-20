@@ -50,3 +50,51 @@ void PointPolar2D::set_id(unsigned int new_id)
 {
 	id = new_id;
 }
+
+double PointPolar2D::get_coord(unsigned int index)
+{
+	return point->at(index);
+}
+
+void PointPolar2D::set_coord(unsigned int index, double new_value)
+{
+	point->at(index) = new_value;
+}
+
+list PointPolar2D::get_coord_list()
+{
+	list coord_list;
+	coord_list.append<double>(point->at(0));
+	coord_list.append<double>(point->at(1));
+	return coord_list;
+}
+
+PointPolar2D & PointPolar2D::operator=(const PointPolar2D &other)
+{
+	*(this->point) = *(other.point);
+	return *this;
+}
+
+PointPolar2D PointPolar2D::operator+(const PointPolar2D &other)
+{
+	PointPolar_t result = *(this->point) + *(other.point);
+	return PointPolar2D(result.at(0), result.at(1));
+}
+
+PointPolar2D PointPolar2D::operator-(const PointPolar2D &other)
+{
+	PointPolar_t result = *(this->point) - *(other.point);
+	return PointPolar2D(result.at(0), result.at(1));
+}
+
+PointPolar2D PointPolar2D::operator*(const double factor)
+{
+	PointPolar_t result = *(this->point) * factor;
+	return PointPolar2D(result.at(0), result.at(1));
+}
+
+PointPolar2D PointPolar2D::operator/(const double factor)
+{
+	PointPolar_t result = *(this->point) / factor;
+	return PointPolar2D(result.at(0), result.at(1));
+}

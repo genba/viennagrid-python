@@ -387,23 +387,78 @@ class TestPointCylindrical3D(unittest.TestCase):
 		self.assertEqual(p2.coords[2], 4.0)
 
 class TestPointPolar2D(unittest.TestCase):
-	def setUp(self):
-		self.point = viennagrid_wrapper._PointPolar2D()
-	
 	def test_init(self):
+		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper._PointPolar2D()
-		self.assertEqual(self.point.dim, 2)
+		self.assertEqual(point.dim, 2)
+		self.assertEqual(point.coords[0], 0)
+		self.assertEqual(point.coords[1], 0)
 	
-	# def test_init_double(self):
-	# 	point = viennagrid_wrapper._PointPolar2D(1.0, 1.0)
-	# 	self.assertEqual(self.point.dim, 2)
-	# TODO: fails because 1.0 is float and function signature is double
-	
-	def test_dimension(self):
-		self.assertEqual(self.point.dim, 2)
+	def test_init_double(self):
+		"""Test constructor with doubles, and properties 'dim' and 'coords'."""
+		point = viennagrid_wrapper._PointPolar2D(2.0, 5.0)
+		self.assertEqual(point.dim, 2)
+		self.assertEqual(point.coords[0], 2.0)
+		self.assertEqual(point.coords[1], 5.0)
 	
 	def test_coord_system(self):
-		self.assertEqual(self.point.coord_system, 'polar')
+		"""Test property 'coord_system'."""
+		point = viennagrid_wrapper._PointPolar2D()
+		self.assertEqual(point.coord_system, 'polar')
+	
+	def test_get_coord(self):
+		"""Test method 'get_coord'."""
+		point = viennagrid_wrapper._PointPolar2D()
+		self.assertEqual(point.get_coord(0), 0)
+		self.assertEqual(point.get_coord(1), 0)
+		
+		point = viennagrid_wrapper._PointPolar2D(2, 5)
+		self.assertEqual(point.get_coord(0), 2)
+		self.assertEqual(point.get_coord(1), 5)
+	
+	def test_set_coord(self):
+		"""Test method 'set_coord'."""
+		point = viennagrid_wrapper._PointPolar2D()
+		self.assertEqual(point.get_coord(0), 0)
+		self.assertEqual(point.get_coord(1), 0)
+		point.set_coord(0, 5)
+		point.set_coord(1, 8)
+		self.assertEqual(point.get_coord(0), 5)
+		self.assertEqual(point.get_coord(1), 8)
+	
+	def test_equal(self):
+		"""Test operator '=='."""
+		p1 = viennagrid_wrapper._PointPolar2D()
+		p2 = viennagrid_wrapper._PointPolar2D()
+		self.assertEqual(p1, p2)
+		self.assertEqual(p1.coords[0], 0.0)
+		self.assertEqual(p1.coords[1], 0.0)
+		self.assertEqual(p2.coords[0], 0.0)
+		self.assertEqual(p2.coords[1], 0.0)
+		
+		p1 = viennagrid_wrapper._PointPolar2D(2, 1)
+		p2 = viennagrid_wrapper._PointPolar2D(2, 1)
+		self.assertEqual(p1, p2)
+		self.assertEqual(p1.coords[0], 2.0)
+		self.assertEqual(p1.coords[1], 1.0)
+		self.assertEqual(p2.coords[0], 2.0)
+		self.assertEqual(p2.coords[1], 1.0)
+	
+	def test_assign(self):
+		"""Test operator '='."""
+		p1 = viennagrid_wrapper._PointPolar2D(2, 1)
+		p2 = viennagrid_wrapper._PointPolar2D(1, 2)
+		self.assertNotEqual(p1, p2)
+		self.assertEqual(p1.coords[0], 2.0)
+		self.assertEqual(p1.coords[1], 1.0)
+		self.assertEqual(p2.coords[0], 1.0)
+		self.assertEqual(p2.coords[1], 2.0)
+		p1 = p2
+		self.assertEqual(p1, p2)
+		self.assertEqual(p1.coords[0], 1.0)
+		self.assertEqual(p1.coords[1], 2.0)
+		self.assertEqual(p2.coords[0], 1.0)
+		self.assertEqual(p2.coords[1], 2.0)
 
 class TestPointSpherical3D(unittest.TestCase):
 	def setUp(self):

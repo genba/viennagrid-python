@@ -3,6 +3,9 @@
 
 #include "types.hpp"
 
+#include <boost/python.hpp>
+using namespace boost::python;
+
 class PointPolar2D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type.
@@ -46,11 +49,73 @@ public:
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	**/
 	PointPolar2D(PointPolar_t &initial_point, unsigned int initial_id=0);
+	
+	/**
+	 * Get the dimension of the point. For 2D points, this always returns 2.
+	**/
 	size_t get_dimension();
+	
+	/**
+	 * Get the name of the coordinate system. For cartesian points, this always returns 'cartesian'.
+	**/
 	const char * get_coord_system();
-	PointPolar_t & get_point();
+	
+	/**
+	 * Get the coordinate at given index (0 for x, 1 for y).
+	**/
+	double get_coord(unsigned int index);
+	
+	/**
+	 * Set the coordinate at given index (0 for x, 1 for y).
+	**/
+	void set_coord(unsigned int index, double new_value);
+	
+	/**
+	 * Get coordinates as a Python list.
+	**/
+	list get_coord_list();
+	
 	bool operator==(const PointPolar2D &other);
+	
+	/**
+	 * Assignment operator that copies the coordinates of the right operand to the left operand.
+	 * This operator cannot be wrapped to Python explicitly.
+	**/
+	PointPolar2D & operator=(const PointPolar2D &other);
+	
+	/**
+	 * Addition operator which adds two points coordinate by coordinate.
+	**/
+	PointPolar2D operator+(const PointPolar2D &other);
+	
+	/**
+	 * Subtraction operator which subtracts two points coordinate by coordinate.
+	**/
+	PointPolar2D operator-(const PointPolar2D &other);
+	
+	/**
+	 * Multiplication operator which multiplies a point and a scalar (real) number, coordinate by coordinate.
+	**/
+	PointPolar2D operator*(const double factor);
+	
+	/**
+	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	**/
+	PointPolar2D operator/(const double factor);
+	
+	/**
+	 * Get ViennaGrid point.
+	**/
+	PointPolar_t & get_point();
+	
+	/**
+	 * Get ID of the point within the domain it is assigned to (if applicable).
+	**/
 	unsigned int get_id();
+	
+	/**
+	 * Set ID of the point within the domain it is assigned to.
+	**/
 	void set_id(unsigned int new_id);
 };
 
