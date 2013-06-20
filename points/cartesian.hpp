@@ -3,6 +3,9 @@
 
 #include "types.hpp"
 
+#include <boost/python.hpp>
+using namespace boost::python;
+
 class PointCartesian2D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type.
@@ -52,6 +55,9 @@ public:
 	bool operator==(const PointCartesian2D &other);
 	unsigned int get_id();
 	void set_id(unsigned int new_id);
+	double get_coord(unsigned int index);
+	void set_coord(unsigned int index, double new_value);
+	list get_coord_list();
 };
 
 class PointCartesian3D {

@@ -31,6 +31,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(init<double, double>())
 		.add_property("dim", &PointCartesian2D::get_dimension, "Dimension of the space where the point is defined.")
 		.add_property("coord_system", &PointCartesian2D::get_coord_system, "Coordinate system of the space where the point is defined.")
+		.add_property("coords", &PointCartesian2D::get_coord_list)
+		.def("get_coord", &PointCartesian2D::get_coord)
+		.def("set_coord", &PointCartesian2D::set_coord)
 		.def(self == self)
 	;
 	

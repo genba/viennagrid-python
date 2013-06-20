@@ -1,5 +1,9 @@
 #include "cartesian.hpp"
 
+//////////////////
+// CARTESIAN 2D //
+//////////////////
+
 PointCartesian2D::PointCartesian2D()
 {
 	point = new PointCartesian2D_t(0, 0);
@@ -33,6 +37,16 @@ PointCartesian2D_t & PointCartesian2D::get_point()
 	return *point;
 }
 
+double PointCartesian2D::get_coord(unsigned int index)
+{
+	return point->at(index);
+}
+
+void PointCartesian2D::set_coord(unsigned int index, double new_value)
+{
+	point->at(index) = new_value;
+}
+
 bool PointCartesian2D::operator==(const PointCartesian2D &other)
 {
 	bool equal = true;
@@ -50,6 +64,18 @@ void PointCartesian2D::set_id(unsigned int new_id)
 {
 	id = new_id;
 }
+
+list PointCartesian2D::get_coord_list()
+{
+	list coord_list;
+	coord_list.append<double>(point->at(0));
+	coord_list.append<double>(point->at(1));
+	return coord_list;
+}
+
+//////////////////
+// CARTESIAN 3D //
+//////////////////
 
 PointCartesian3D::PointCartesian3D()
 {
