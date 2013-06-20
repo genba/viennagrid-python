@@ -95,7 +95,14 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(init<double, double, double>())
 		.add_property("dim", &PointSpherical3D::get_dimension, "Dimension of the space where the point is defined.")
 		.add_property("coord_system", &PointSpherical3D::get_coord_system, "Coordinate system of the space where the point is defined.")
+		.add_property("coords", &PointSpherical3D::get_coord_list)
+		.def("get_coord", &PointSpherical3D::get_coord)
+		.def("set_coord", &PointSpherical3D::set_coord)
 		.def(self == self)
+		.def(self + self)
+		.def(self - self)
+		.def(self * double())
+		.def(self / double())
 	;
 	
 	/**********************
