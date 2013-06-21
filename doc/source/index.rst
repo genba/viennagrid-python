@@ -3,14 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ViennaGrid for Python's documentation!
-=================================================
-
-Contents:
+Welcome to the documentation of ViennaGrid for Python!
+======================================================
 
 .. toctree::
    :maxdepth: 2
-   
+   :numbered:
+
+   intro
+   tutorial
    apiref
 
 Indices and tables
@@ -19,4 +20,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
