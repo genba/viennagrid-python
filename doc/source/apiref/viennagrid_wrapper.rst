@@ -49,3 +49,18 @@ API reference of viennagrid_wrapper
    
    .. autoclass:: TriangularSpherical3D_Segment
       :members:
+
+   .. autoclass:: TriangularCartesian2D_Cell
+      :members:
+   
+   .. autoclass:: TriangularCartesian3D_Cell
+      :members:
+   
+   .. autoclass:: TriangularCylindrical3D_Cell
+      :members:
+   
+   .. autoclass:: TriangularPolar2D_Cell
+      :members:
+   
+   .. autoclass:: TriangularSpherical3D_Cell
+      :members:
