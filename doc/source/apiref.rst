@@ -2,6 +2,7 @@ API reference
 =============
 
 .. toctree::
-   :maxdepth: 2
-   
+   :maxdepth: 3
+
+   apiref/viennagrid
    apiref/viennagrid_wrapper
