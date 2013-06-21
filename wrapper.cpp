@@ -19,7 +19,7 @@ char const * version()
 
 BOOST_PYTHON_MODULE(viennagrid_wrapper)
 {
-	def("version", version);
+	def("version", version, "Return the version number of 'viennagrid_wrapper'.");
 	
 	/***********************
 	 * WRAPPERS FOR POINTS *
