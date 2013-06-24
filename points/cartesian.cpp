@@ -5,6 +5,7 @@
 
 #include <viennagrid/algorithm/inner_prod.hpp>
 #include <viennagrid/algorithm/cross_prod.hpp>
+#include <viennagrid/algorithm/norm.hpp>
 
 //////////////////
 // CARTESIAN 2D //
@@ -124,6 +125,21 @@ PointPolar2D PointCartesian2D::to_polar()
 {
 	PointPolar_t new_point = get_point();
 	return PointPolar2D(new_point.at(0), new_point.at(1));
+}
+
+double PointCartesian2D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointCartesian2D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointCartesian2D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
 }
 
 //////////////////
@@ -257,4 +273,19 @@ PointCartesian3D PointCartesian3D::cross_prod(PointCartesian3D &other)
 {
 	PointCartesian3D_t res = viennagrid::cross_prod(get_point(), other.get_point());
 	return PointCartesian3D(res.at(0), res.at(1), res.at(2));
+}
+
+double PointCartesian3D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointCartesian3D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointCartesian3D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
 }

@@ -8,6 +8,8 @@ import unittest
 
 import viennagrid_wrapper
 
+from utils import equal
+
 class TestAlgorithmsCartesian2D(unittest.TestCase):
 	def setUp(self):
 		pass
@@ -57,6 +59,12 @@ class TestAlgorithmsCartesian2D(unittest.TestCase):
 		
 		res = a.cross_prod(b)
 		self.assertEqual(res.coords, [0, 0, 1])
+	
+	def test_norm(self):
+		p = viennagrid_wrapper.PointCartesian3D(1, 2, 3)
+		self.assertTrue(equal(p.norm_1(), 6))
+		self.assertTrue(equal(p.norm_2(), 3.74))
+		self.assertTrue(equal(p.norm_inf(), 3))
 
 if __name__ == '__main__':
 	unittest.main()

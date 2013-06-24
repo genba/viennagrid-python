@@ -141,6 +141,9 @@ public:
 	PointPolar2D to_polar();
 	
 	double inner_prod(PointCartesian2D &other);
+	double norm_1();
+	double norm_2();
+	double norm_inf();
 };
 
 class PointCartesian3D {
@@ -273,6 +276,9 @@ public:
 	
 	double inner_prod(PointCartesian3D &other);
 	PointCartesian3D cross_prod(PointCartesian3D &other);
+	double norm_1();
+	double norm_2();
+	double norm_inf();
 };
 
 #endif /* end of include guard: CARTESIAN_HPP_40UV2UQE */

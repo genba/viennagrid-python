@@ -45,6 +45,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
 		.def("inner_prod", &PointCartesian2D::inner_prod)
 		.def("to_polar", &PointCartesian2D::to_polar)
+		.def("norm_1", &PointCartesian2D::norm_1)
+		.def("norm_2", &PointCartesian2D::norm_2)
+		.def("norm_inf", &PointCartesian2D::norm_inf)
 	;
 	
 	// CARTESIAN 3D
@@ -65,6 +68,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("cross_prod", &PointCartesian3D::cross_prod)
 		.def("to_cylindrical", &PointCartesian3D::to_cylindrical)
 		.def("to_spherical", &PointCartesian3D::to_spherical)
+		.def("norm_1", &PointCartesian3D::norm_1)
+		.def("norm_2", &PointCartesian3D::norm_2)
+		.def("norm_inf", &PointCartesian3D::norm_inf)
 	;
 	
 	// CYLINDRICAL (3D)

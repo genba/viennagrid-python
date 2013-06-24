@@ -9,9 +9,7 @@ import math
 
 import viennagrid_wrapper
 
-def equal(x, y, tol=0.000000001):
-	"""Compare if two real numbers are equal using a tolerance to avoid rounding errors."""
-	return math.fabs(x - y) < tol, '%(x)f != %(y)f' % locals()
+from utils import equal
 
 class TestPointCartesian2D(unittest.TestCase):
 	def test_init(self):
