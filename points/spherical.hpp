@@ -2,6 +2,7 @@
 #define SPHERICAL_HPP_LPABEBWU
 
 #include "types.hpp"
+#include "forward.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -117,6 +118,9 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	PointCartesian3D to_cartesian();
+	PointCylindrical3D to_cylindrical();
 };
 
 #endif /* end of include guard: SPHERICAL_HPP_LPABEBWU */

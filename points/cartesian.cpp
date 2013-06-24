@@ -1,4 +1,7 @@
 #include "cartesian.hpp"
+#include "polar.hpp"
+#include "cylindrical.hpp"
+#include "spherical.hpp"
 
 #include <viennagrid/algorithm/inner_prod.hpp>
 #include <viennagrid/algorithm/cross_prod.hpp>
@@ -117,6 +120,12 @@ double PointCartesian2D::inner_prod(PointCartesian2D &other)
 	return viennagrid::inner_prod(get_point(), other.get_point());
 }
 
+PointPolar2D PointCartesian2D::to_polar()
+{
+	PointPolar_t new_point = get_point();
+	return PointPolar2D(new_point.at(0), new_point.at(1));
+}
+
 //////////////////
 // CARTESIAN 3D //
 //////////////////
@@ -225,6 +234,18 @@ PointCartesian3D PointCartesian3D::operator/(const double factor)
 {
 	PointCartesian3D_t result = *(this->point) / factor;
 	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCylindrical3D PointCartesian3D::to_cylindrical()
+{
+	PointCylindrical_t new_point = get_point();
+	return PointCylindrical3D(new_point.at(0), new_point.at(1), new_point.at(2));
+}
+
+PointSpherical3D PointCartesian3D::to_spherical()
+{
+	PointSpherical_t new_point = get_point();
+	return PointSpherical3D(new_point.at(0), new_point.at(1), new_point.at(2));
 }
 
 double PointCartesian3D::inner_prod(PointCartesian3D &other)

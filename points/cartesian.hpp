@@ -2,6 +2,7 @@
 #define CARTESIAN_HPP_40UV2UQE
 
 #include "types.hpp"
+#include "forward.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -137,6 +138,8 @@ public:
 	**/
 	void set_id(unsigned int new_id);
 	
+	PointPolar2D to_polar();
+	
 	double inner_prod(PointCartesian2D &other);
 };
 
@@ -264,6 +267,9 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	PointCylindrical3D to_cylindrical();
+	PointSpherical3D to_spherical();
 	
 	double inner_prod(PointCartesian3D &other);
 	PointCartesian3D cross_prod(PointCartesian3D &other);

@@ -1,4 +1,6 @@
 #include "spherical.hpp"
+#include "cartesian.hpp"
+#include "cylindrical.hpp"
 
 PointSpherical3D::PointSpherical3D()
 {
@@ -98,4 +100,16 @@ PointSpherical3D PointSpherical3D::operator/(const double factor)
 {
 	PointSpherical_t result = *(this->point) / factor;
 	return PointSpherical3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCartesian3D PointSpherical3D::to_cartesian()
+{
+	PointCartesian3D_t new_point = get_point();
+	return PointCartesian3D(new_point.at(0), new_point.at(1), new_point.at(2));
+}
+
+PointCylindrical3D PointSpherical3D::to_cylindrical()
+{
+	PointCylindrical_t new_point = get_point();
+	return PointCylindrical3D(new_point.at(0), new_point.at(1), new_point.at(2));
 }
