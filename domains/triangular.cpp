@@ -27,7 +27,7 @@ void TriangularCartesian2D_Domain::add_vertex(PointCartesian2D vertex)
 	unsigned int point_id = num_vertices++;
 	TriangularCartesian2D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	PointCartesian2D_t &point = viennagrid::point(domain, vertex_range[point_id]);
-	vertices.append<PointCartesian2D>(PointCartesian2D(point, point_id));
+	vertices.append<PointCartesian2D>(PointCartesian2D(&point, point_id));
 }
 
 TriangularCartesian2D_Domain_t & TriangularCartesian2D_Domain::get_domain()
@@ -70,7 +70,7 @@ void TriangularCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
 	unsigned int point_id = num_vertices++;
 	TriangularCartesian3D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	PointCartesian3D_t &point = viennagrid::point(domain, vertex_range[point_id]);
-	vertices.append<PointCartesian3D>(PointCartesian3D(point, point_id));
+	vertices.append<PointCartesian3D>(PointCartesian3D(&point, point_id));
 }
 
 TriangularCartesian3D_Domain_t & TriangularCartesian3D_Domain::get_domain()

@@ -19,9 +19,15 @@ PointCartesian2D::PointCartesian2D(double x, double y)
 	id = -1;
 }
 
-PointCartesian2D::PointCartesian2D(PointCartesian2D_t &initial_point, unsigned int initial_id)
+PointCartesian2D::PointCartesian2D(PointCartesian2D_t *initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = initial_point;
+	id = initial_id;
+}
+
+PointCartesian2D::PointCartesian2D(PointCartesian2D_t initial_point, unsigned int initial_id)
+{
+	point = new PointCartesian2D_t(initial_point);
 	id = initial_id;
 }
 
@@ -127,9 +133,15 @@ PointCartesian3D::PointCartesian3D(double x, double y, double z)
 	id = -1;
 }
 
-PointCartesian3D::PointCartesian3D(PointCartesian3D_t &initial_point, unsigned int initial_id)
+PointCartesian3D::PointCartesian3D(PointCartesian3D_t *initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = initial_point;
+	id = initial_id;
+}
+
+PointCartesian3D::PointCartesian3D(PointCartesian3D_t initial_point, unsigned int initial_id)
+{
+	point = new PointCartesian3D_t(initial_point);
 	id = initial_id;
 }
 
