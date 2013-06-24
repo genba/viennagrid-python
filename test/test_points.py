@@ -5,8 +5,13 @@ import sys
 sys.path += '..'
 
 import unittest
+import math
 
 import viennagrid_wrapper
+
+def equal(x, y, tol=0.000000001):
+	"""Compare if two real numbers are equal using a tolerance to avoid rounding errors."""
+	return math.fabs(x - y) < tol, '%(x)f != %(y)f' % locals()
 
 class TestPointCartesian2D(unittest.TestCase):
 	def test_init(self):
@@ -139,6 +144,28 @@ class TestPointCartesian2D(unittest.TestCase):
 		self.assertEqual(p1, p2)
 		self.assertEqual(p1.coords[0], 0.5)
 		self.assertEqual(p1.coords[1], 0.5)
+	
+	def test_to_polar(self):
+		"""Test method 'to_polar'."""
+		c = viennagrid_wrapper.PointCartesian2D(0, 0)
+		p = c.to_polar()
+		self.assertTrue(*equal(p.get_coord(0), 0))
+		self.assertTrue(*equal(p.get_coord(1), 0))
+		
+		c = viennagrid_wrapper.PointCartesian2D(0, 1)
+		p = c.to_polar()
+		self.assertTrue(*equal(p.get_coord(0), 1))
+		self.assertTrue(*equal(p.get_coord(1), math.pi / 2))
+		
+		c = viennagrid_wrapper.PointCartesian2D(1, 0)
+		p = c.to_polar()
+		self.assertTrue(*equal(p.get_coord(0), 1))
+		self.assertTrue(*equal(p.get_coord(1), 0))
+		
+		c = viennagrid_wrapper.PointCartesian2D(1, 1)
+		p = c.to_polar()
+		self.assertTrue(*equal(p.get_coord(0), math.sqrt(2)))
+		self.assertTrue(*equal(p.get_coord(1), math.pi / 4))
 
 class TestPointCartesian3D(unittest.TestCase):
 	def test_init(self):
@@ -459,6 +486,28 @@ class TestPointPolar2D(unittest.TestCase):
 		self.assertEqual(p1.coords[1], 2.0)
 		self.assertEqual(p2.coords[0], 1.0)
 		self.assertEqual(p2.coords[1], 2.0)
+	
+	def test_to_cartesian(self):
+		"""Test method 'to_cartesian'."""
+		p = viennagrid_wrapper.PointPolar2D(0, 0)
+		c = p.to_cartesian()
+		self.assertTrue(*equal(c.get_coord(0), 0))
+		self.assertTrue(*equal(c.get_coord(1), 0))
+		
+		p = viennagrid_wrapper.PointPolar2D(1, 0)
+		c = p.to_cartesian()
+		self.assertTrue(*equal(c.get_coord(0), 1))
+		self.assertTrue(*equal(c.get_coord(1), 0))
+		
+		p = viennagrid_wrapper.PointPolar2D(1, math.pi / 2)
+		c = p.to_cartesian()
+		self.assertTrue(*equal(c.get_coord(0), 0))
+		self.assertTrue(*equal(c.get_coord(1), 1))
+		
+		p = viennagrid_wrapper.PointPolar2D(math.sqrt(2), math.pi / 4)
+		c = p.to_cartesian()
+		self.assertTrue(*equal(c.get_coord(0), 1))
+		self.assertTrue(*equal(c.get_coord(1), 1))
 
 class TestPointSpherical3D(unittest.TestCase):
 	def test_init(self):
