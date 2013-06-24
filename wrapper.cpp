@@ -44,6 +44,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
 		.def("inner_prod", &PointCartesian2D::inner_prod)
+		.def("to_polar", &PointCartesian2D::to_polar)
 	;
 	
 	// CARTESIAN 3D
@@ -62,6 +63,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
 		.def("inner_prod", &PointCartesian3D::inner_prod)
 		.def("cross_prod", &PointCartesian3D::cross_prod)
+		.def("to_cylindrical", &PointCartesian3D::to_cylindrical)
+		.def("to_spherical", &PointCartesian3D::to_spherical)
 	;
 	
 	// CYLINDRICAL (3D)
@@ -78,6 +81,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
+		.def("to_cartesian", &PointCylindrical3D::to_cartesian)
+		.def("to_spherical", &PointCylindrical3D::to_spherical)
 	;
 	
 	// POLAR (2D)
@@ -94,6 +99,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
+		.def("to_cartesian", &PointPolar2D::to_cartesian)
 	;
 	
 	// SPHERICAL (3D)
@@ -110,6 +116,8 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
+		.def("to_cartesian", &PointSpherical3D::to_cartesian)
+		.def("to_cylindrical", &PointSpherical3D::to_cylindrical)
 	;
 	
 	/**********************
