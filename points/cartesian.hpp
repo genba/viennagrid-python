@@ -240,6 +240,7 @@ public:
 	void set_id(unsigned int new_id);
 	
 	double inner_prod(PointCartesian3D &other);
+	PointCartesian3D cross_prod(PointCartesian3D &other);
 };
 
 #endif /* end of include guard: CARTESIAN_HPP_40UV2UQE */
