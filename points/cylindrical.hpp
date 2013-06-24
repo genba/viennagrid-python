@@ -99,7 +99,7 @@ public:
 	PointCylindrical3D operator*(const double factor);
 	
 	/**
-	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCylindrical3D operator/(const double factor);
 	

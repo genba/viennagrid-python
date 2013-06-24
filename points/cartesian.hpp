@@ -105,7 +105,7 @@ public:
 	PointCartesian2D operator*(const double factor);
 	
 	/**
-	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCartesian2D operator/(const double factor);
 	
@@ -220,7 +220,7 @@ public:
 	PointCartesian3D operator*(const double factor);
 	
 	/**
-	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCartesian3D operator/(const double factor);
 	
