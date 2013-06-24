@@ -43,6 +43,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
+		.def("inner_prod", &PointCartesian2D::inner_prod)
 	;
 	
 	// CARTESIAN 3D
@@ -59,6 +60,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
 		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
+		.def("inner_prod", &PointCartesian3D::inner_prod)
 	;
 	
 	// CYLINDRICAL (3D)

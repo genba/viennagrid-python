@@ -1,5 +1,7 @@
 #include "cartesian.hpp"
 
+#include <viennagrid/algorithm/inner_prod.hpp>
+
 //////////////////
 // CARTESIAN 2D //
 //////////////////
@@ -101,6 +103,11 @@ PointCartesian2D PointCartesian2D::operator/(const double factor)
 {
 	PointCartesian2D_t result = *(this->point) / factor;
 	return PointCartesian2D(result.at(0), result.at(1));
+}	
+
+double PointCartesian2D::inner_prod(PointCartesian2D &other)
+{
+	return viennagrid::inner_prod(get_point(), other.get_point());
 }
 
 //////////////////
@@ -205,4 +212,9 @@ PointCartesian3D PointCartesian3D::operator/(const double factor)
 {
 	PointCartesian3D_t result = *(this->point) / factor;
 	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+double PointCartesian3D::inner_prod(PointCartesian3D &other)
+{
+	return viennagrid::inner_prod(get_point(), other.get_point());
 }

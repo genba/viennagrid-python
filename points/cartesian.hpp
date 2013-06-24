@@ -123,6 +123,8 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	double inner_prod(PointCartesian2D &other);
 };
 
 class PointCartesian3D {
@@ -236,6 +238,8 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	double inner_prod(PointCartesian3D &other);
 };
 
 #endif /* end of include guard: CARTESIAN_HPP_40UV2UQE */
