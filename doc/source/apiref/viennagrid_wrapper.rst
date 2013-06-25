@@ -50,6 +50,8 @@ For each type of point there is a separate class:
 Domains
 =======
 
+.. TRIANGULAR DOMAINS
+
 .. autoclass:: TriangularCartesian2D_Domain
     :members:
 
@@ -65,8 +67,38 @@ Domains
 .. autoclass:: TriangularSpherical3D_Domain
     :members:
 
+.. QUADRILATERAL DOMAINS
+
+.. autoclass:: QuadrilateralCartesian2D_Domain
+    :members:
+
+.. autoclass:: QuadrilateralCartesian3D_Domain
+    :members:
+
+.. autoclass:: QuadrilateralCylindrical3D_Domain
+    :members:
+
+.. autoclass:: QuadrilateralPolar2D_Domain
+    :members:
+
+.. autoclass:: QuadrilateralSpherical3D_Domain
+    :members:
+
+.. TETRAHEDRAL DOMAINS
+
+.. autoclass:: TetrahedralCartesian3D_Domain
+    :members:
+
+.. autoclass:: TetrahedralCylindrical3D_Domain
+    :members:
+
+.. autoclass:: TetrahedralSpherical3D_Domain
+    :members:
+
 Segments
 ========
+
+.. TRIANGULAR SEGMENTS
 
 .. autoclass:: TriangularCartesian2D_Segment
     :members:
@@ -83,8 +115,38 @@ Segments
 .. autoclass:: TriangularSpherical3D_Segment
     :members:
 
+.. QUADRILATERAL SEGMENTS
+
+.. autoclass:: QuadrilateralCartesian2D_Segment
+    :members:
+
+.. autoclass:: QuadrilateralCartesian3D_Segment
+    :members:
+
+.. autoclass:: QuadrilateralCylindrical3D_Segment
+    :members:
+
+.. autoclass:: QuadrilateralPolar2D_Segment
+    :members:
+
+.. autoclass:: QuadrilateralSpherical3D_Segment
+    :members:
+
+.. TETRAHEDRAL SEGMENTS
+
+.. autoclass:: TetrahedralCartesian3D_Segment
+    :members:
+
+.. autoclass:: TetrahedralCylindrical3D_Segment
+    :members:
+
+.. autoclass:: TetrahedralSpherical3D_Segment
+    :members:
+
 Cells
 =====
+
+.. TRIANGULAR CELLS
 
 .. autoclass:: TriangularCartesian2D_Cell
     :members:
@@ -99,4 +161,32 @@ Cells
     :members:
 
 .. autoclass:: TriangularSpherical3D_Cell
+    :members:
+
+.. QUADRILATERAL CELLS
+
+.. autoclass:: QuadrilateralCartesian2D_Cell
+    :members:
+
+.. autoclass:: QuadrilateralCartesian3D_Cell
+    :members:
+
+.. autoclass:: QuadrilateralCylindrical3D_Cell
+    :members:
+
+.. autoclass:: QuadrilateralPolar2D_Cell
+    :members:
+
+.. autoclass:: QuadrilateralSpherical3D_Cell
+    :members:
+
+.. TETRAHEDRAL CELLS
+
+.. autoclass:: TetrahedralCartesian3D_Cell
+    :members:
+
+.. autoclass:: TetrahedralCylindrical3D_Cell
+    :members:
+
+.. autoclass:: TetrahedralSpherical3D_Cell
     :members:
