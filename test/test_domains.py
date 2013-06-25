@@ -417,12 +417,13 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 		v0 = self.domain.vertices[0]
 		v1 = self.domain.vertices[1]
 		v2 = self.domain.vertices[2]
+		v3 = self.domain.vertices[3]
 
 		s0 = self.domain.segments[0]
 		self.assertEqual(len(s0.cells), 0)
-		s0.create_cell(v0, v1, v2)
+		s0.create_cell(v0, v1, v2, v3)
 		self.assertEqual(len(s0.cells), 1)
-		self.assertEqual(len(s0.cells[0].vertices), 3)
+		self.assertEqual(len(s0.cells[0].vertices), 4)
 
 class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -485,12 +486,13 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 		v0 = self.domain.vertices[0]
 		v1 = self.domain.vertices[1]
 		v2 = self.domain.vertices[2]
+		v3 = self.domain.vertices[3]
 
 		s0 = self.domain.segments[0]
 		self.assertEqual(len(s0.cells), 0)
-		s0.create_cell(v0, v1, v2)
+		s0.create_cell(v0, v1, v2, v3)
 		self.assertEqual(len(s0.cells), 1)
-		self.assertEqual(len(s0.cells[0].vertices), 3)
+		self.assertEqual(len(s0.cells[0].vertices), 4)
 
 class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -553,12 +555,13 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 		v0 = self.domain.vertices[0]
 		v1 = self.domain.vertices[1]
 		v2 = self.domain.vertices[2]
+		v3 = self.domain.vertices[3]
 
 		s0 = self.domain.segments[0]
 		self.assertEqual(len(s0.cells), 0)
-		s0.create_cell(v0, v1, v2)
+		s0.create_cell(v0, v1, v2, v3)
 		self.assertEqual(len(s0.cells), 1)
-		self.assertEqual(len(s0.cells[0].vertices), 3)
+		self.assertEqual(len(s0.cells[0].vertices), 4)
 
 class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -621,12 +624,13 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 		v0 = self.domain.vertices[0]
 		v1 = self.domain.vertices[1]
 		v2 = self.domain.vertices[2]
+		v3 = self.domain.vertices[3]
 
 		s0 = self.domain.segments[0]
 		self.assertEqual(len(s0.cells), 0)
-		s0.create_cell(v0, v1, v2)
+		s0.create_cell(v0, v1, v2, v3)
 		self.assertEqual(len(s0.cells), 1)
-		self.assertEqual(len(s0.cells[0].vertices), 3)
+		self.assertEqual(len(s0.cells[0].vertices), 4)
 
 class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -689,12 +693,13 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		v0 = self.domain.vertices[0]
 		v1 = self.domain.vertices[1]
 		v2 = self.domain.vertices[2]
+		v3 = self.domain.vertices[3]
 
 		s0 = self.domain.segments[0]
 		self.assertEqual(len(s0.cells), 0)
-		s0.create_cell(v0, v1, v2)
+		s0.create_cell(v0, v1, v2, v3)
 		self.assertEqual(len(s0.cells), 1)
-		self.assertEqual(len(s0.cells[0].vertices), 3)
+		self.assertEqual(len(s0.cells[0].vertices), 4)
 
 if __name__ == '__main__':
 	unittest.main()
