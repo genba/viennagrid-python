@@ -2,8 +2,6 @@
 #include "../segments/types.hpp"
 #include "../vertices/types.hpp"
 
-#include <vector>
-
 ////////////////////////////
 // Triangle, cartesian 2D //
 ////////////////////////////
