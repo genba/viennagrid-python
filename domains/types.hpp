@@ -73,4 +73,24 @@ typedef viennagrid::result_of::domain_config<viennagrid::quadrilateral_tag,
                                              viennagrid::storage::id_handle_tag>::type    QuadrilateralSpherical3D_DomainConfig;
 typedef viennagrid::result_of::domain<QuadrilateralSpherical3D_DomainConfig>::type        QuadrilateralSpherical3D_Domain_t;
 
+/********************
+ * TETRAHEDRAL MESH *
+ ********************/
+
+// Tetrahedral, cartesian 3D
+typedef viennagrid::result_of::domain_config<viennagrid::tetrahedron_tag,
+                                             PointCartesian3D_t,
+                                             viennagrid::storage::id_handle_tag>::type    TetrahedralCartesian3D_DomainConfig;
+typedef viennagrid::result_of::domain<TetrahedralCartesian3D_DomainConfig>::type          TetrahedralCartesian3D_Domain_t;
+// Tetrahedral, cylindrical (3D)
+typedef viennagrid::result_of::domain_config<viennagrid::tetrahedron_tag,
+                                             PointCylindrical_t,
+                                             viennagrid::storage::id_handle_tag>::type    TetrahedralCylindrical3D_DomainConfig;
+typedef viennagrid::result_of::domain<TetrahedralCylindrical3D_DomainConfig>::type        TetrahedralCylindrical3D_Domain_t;
+// Tetrahedral, spherical (3D)
+typedef viennagrid::result_of::domain_config<viennagrid::tetrahedron_tag,
+                                             PointSpherical_t,
+                                             viennagrid::storage::id_handle_tag>::type    TetrahedralSpherical3D_DomainConfig;
+typedef viennagrid::result_of::domain<TetrahedralSpherical3D_DomainConfig>::type          TetrahedralSpherical3D_Domain_t;
+
 #endif /* end of include guard: TYPES_HPP_O176Z3NS */
