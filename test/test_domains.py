@@ -16,14 +16,14 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
 		self.vertices = [
-			viennagrid_wrapper._PointCartesian2D(1, 2),
-			viennagrid_wrapper._PointCartesian2D(2, 3),
-			viennagrid_wrapper._PointCartesian2D(3, 4),
-			viennagrid_wrapper._PointCartesian2D(4, 5),
-			viennagrid_wrapper._PointCartesian2D(5, 6),
+			viennagrid_wrapper.PointCartesian2D(1, 2),
+			viennagrid_wrapper.PointCartesian2D(2, 3),
+			viennagrid_wrapper.PointCartesian2D(3, 4),
+			viennagrid_wrapper.PointCartesian2D(4, 5),
+			viennagrid_wrapper.PointCartesian2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper._TriangularCartesian2D_Domain()
+		self.domain = viennagrid_wrapper.TriangularCartesian2D_Domain()
 
 	def test_segments(self):
 		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
@@ -84,14 +84,14 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
 		self.vertices = [
-			viennagrid_wrapper._PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper._PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper._PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper._PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper._PointCartesian3D(5, 6, 7),
+			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper._TriangularCartesian3D_Domain()
+		self.domain = viennagrid_wrapper.TriangularCartesian3D_Domain()
 
 	def test_segments(self):
 		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
@@ -152,14 +152,14 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
 		self.vertices = [
-			viennagrid_wrapper._PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper._PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper._PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper._PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper._PointCylindrical3D(5, 6, 7),
+			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper._TriangularCylindrical3D_Domain()
+		self.domain = viennagrid_wrapper.TriangularCylindrical3D_Domain()
 
 	def test_segments(self):
 		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
@@ -220,14 +220,14 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
 		self.vertices = [
-			viennagrid_wrapper._PointPolar2D(1, 2),
-			viennagrid_wrapper._PointPolar2D(2, 3),
-			viennagrid_wrapper._PointPolar2D(3, 4),
-			viennagrid_wrapper._PointPolar2D(4, 5),
-			viennagrid_wrapper._PointPolar2D(5, 6),
+			viennagrid_wrapper.PointPolar2D(1, 2),
+			viennagrid_wrapper.PointPolar2D(2, 3),
+			viennagrid_wrapper.PointPolar2D(3, 4),
+			viennagrid_wrapper.PointPolar2D(4, 5),
+			viennagrid_wrapper.PointPolar2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper._TriangularPolar2D_Domain()
+		self.domain = viennagrid_wrapper.TriangularPolar2D_Domain()
 
 	def test_segments(self):
 		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
@@ -288,14 +288,14 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.num_segments = 5
 		self.vertices = [
-			viennagrid_wrapper._PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper._PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper._PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper._PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper._PointSpherical3D(5, 6, 7),
+			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper._TriangularSpherical3D_Domain()
+		self.domain = viennagrid_wrapper.TriangularSpherical3D_Domain()
 
 	def test_segments(self):
 		"""Test method for attribute 'segments', which returns a Python list. Also tests method 'create_segments'."""
