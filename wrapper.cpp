@@ -7,10 +7,13 @@ using namespace boost::python;
 #include "points/spherical.hpp"
 
 #include "domains/triangular.hpp"
+#include "domains/quadrilateral.hpp"
 
 #include "segments/triangular.hpp"
+#include "segments/quadrilateral.hpp"
 
 #include "cells/triangular.hpp"
+#include "cells/quadrilateral.hpp"
 
 char const * version()
 {
@@ -197,4 +200,95 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("vertices", &TriangularSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
+	/*************************
+	 * QUADRILATERAL DOMAINS *
+	 *************************/
+	
+	class_<QuadrilateralCartesian2D_Domain>("QuadrilateralCartesian2D_Domain")
+		.def("create_segments", &QuadrilateralCartesian2D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &QuadrilateralCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &QuadrilateralCartesian2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &QuadrilateralCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+	;
+	
+	class_<QuadrilateralCartesian3D_Domain>("QuadrilateralCartesian3D_Domain")
+		.def("create_segments", &QuadrilateralCartesian3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &QuadrilateralCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &QuadrilateralCartesian3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &QuadrilateralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Domain>("QuadrilateralCylindrical3D_Domain")
+		.def("create_segments", &QuadrilateralCylindrical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &QuadrilateralCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &QuadrilateralCylindrical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &QuadrilateralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+	;
+	
+	class_<QuadrilateralPolar2D_Domain>("QuadrilateralPolar2D_Domain")
+		.def("create_segments", &QuadrilateralPolar2D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &QuadrilateralPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &QuadrilateralPolar2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &QuadrilateralPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+	;
+	
+	class_<QuadrilateralSpherical3D_Domain>("QuadrilateralSpherical3D_Domain")
+		.def("create_segments", &QuadrilateralSpherical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &QuadrilateralSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &QuadrilateralSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &QuadrilateralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+	;
+	
+	/**************************
+	 * QUADRILATERAL SEGMENTS *
+	 **************************/
+	
+	class_<QuadrilateralCartesian2D_Segment>("QuadrilateralCartesian2D_Segment", init<QuadrilateralCartesian2D_Domain &, QuadrilateralCartesian2D_Segment_t &>())
+		.def("create_cell", &QuadrilateralCartesian2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<QuadrilateralCartesian3D_Segment>("QuadrilateralCartesian3D_Segment", init<QuadrilateralCartesian3D_Domain &, QuadrilateralCartesian3D_Segment_t &>())
+		.def("create_cell", &QuadrilateralCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Segment>("QuadrilateralCylindrical3D_Segment", init<QuadrilateralCylindrical3D_Domain &, QuadrilateralCylindrical3D_Segment_t &>())
+		.def("create_cell", &QuadrilateralCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<QuadrilateralPolar2D_Segment>("QuadrilateralPolar2D_Segment", init<QuadrilateralPolar2D_Domain &, QuadrilateralPolar2D_Segment_t &>())
+		.def("create_cell", &QuadrilateralPolar2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<QuadrilateralSpherical3D_Segment>("QuadrilateralSpherical3D_Segment", init<QuadrilateralSpherical3D_Domain &, QuadrilateralSpherical3D_Segment_t &>())
+		.def("create_cell", &QuadrilateralSpherical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	/***********************
+	 * QUADRILATERAL CELLS *
+	 ***********************/
+	
+	class_<QuadrilateralCartesian2D_Cell>("QuadrilateralCartesian2D_Cell", init<PointCartesian2D, PointCartesian2D, PointCartesian2D, PointCartesian2D>())
+		.add_property("vertices", &QuadrilateralCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<QuadrilateralCartesian3D_Cell>("QuadrilateralCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D, PointCartesian3D, PointCartesian3D>())
+		.add_property("vertices", &QuadrilateralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Cell>("QuadrilateralCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D, PointCylindrical3D, PointCylindrical3D>())
+		.add_property("vertices", &QuadrilateralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<QuadrilateralPolar2D_Cell>("QuadrilateralPolar2D_Cell", init<PointPolar2D, PointPolar2D, PointPolar2D, PointPolar2D>())
+		.add_property("vertices", &QuadrilateralPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D, PointSpherical3D, PointSpherical3D>())
+		.add_property("vertices", &QuadrilateralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
 }

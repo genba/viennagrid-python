@@ -8,8 +8,6 @@
 #include "../points/spherical.hpp"
 #include "../segments/triangular.hpp"
 
-#include <vector>
-
 #include <boost/python.hpp>
 using namespace boost::python;
 
