@@ -297,12 +297,59 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * TETRAHEDRAL DOMAINS *
 	 *************************/
 	
-	class_<TetrahedralCartesian3D_Domain>("_TetrahedralCartesian3D_Domain")
+	class_<TetrahedralCartesian3D_Domain>("TetrahedralCartesian3D_Domain")
+		.def("create_segments", &TetrahedralCartesian3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TetrahedralCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &TetrahedralCartesian3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &TetrahedralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
 	;
 	
-	class_<TetrahedralCylindrical3D_Domain>("_TetrahedralCylindrical3D_Domain")
+	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
+		.def("create_segments", &TetrahedralCylindrical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TetrahedralCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &TetrahedralCylindrical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &TetrahedralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
 	;
 	
-	class_<TetrahedralSpherical3D_Domain>("_TetrahedralSpherical3D_Domain")
+	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
+		.def("create_segments", &TetrahedralSpherical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("add_vertex", &TetrahedralSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.add_property("segments", &TetrahedralSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
+		.add_property("vertices", &TetrahedralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+	;
+	
+	/**************************
+	 * TETRAHEDRAL SEGMENTS *
+	 **************************/
+	
+	class_<TetrahedralCartesian3D_Segment>("TetrahedralCartesian3D_Segment", init<TetrahedralCartesian3D_Domain &, TetrahedralCartesian3D_Segment_t &>())
+		.def("create_cell", &TetrahedralCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<TetrahedralCylindrical3D_Segment>("TetrahedralCylindrical3D_Segment", init<TetrahedralCylindrical3D_Domain &, TetrahedralCylindrical3D_Segment_t &>())
+		.def("create_cell", &TetrahedralCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<TetrahedralSpherical3D_Segment>("TetrahedralSpherical3D_Segment", init<TetrahedralSpherical3D_Domain &, TetrahedralSpherical3D_Segment_t &>())
+		.def("create_cell", &TetrahedralSpherical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	/***********************
+	 * TETRAHEDRAL CELLS *
+	 ***********************/
+	
+	class_<TetrahedralCartesian3D_Cell>("TetrahedralCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D, PointCartesian3D, PointCartesian3D>())
+		.add_property("vertices", &TetrahedralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<TetrahedralCylindrical3D_Cell>("TetrahedralCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D, PointCylindrical3D, PointCylindrical3D>())
+		.add_property("vertices", &TetrahedralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<TetrahedralSpherical3D_Cell>("TetrahedralSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D, PointSpherical3D, PointSpherical3D>())
+		.add_property("vertices", &TetrahedralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 }

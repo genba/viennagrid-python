@@ -51,4 +51,20 @@ typedef viennagrid::result_of::element<QuadrilateralSpherical3D_Domain_t, vienna
 typedef viennagrid::result_of::handle<QuadrilateralSpherical3D_Domain_t, viennagrid::vertex_tag>::type           QuadrilateralSpherical3D_VertexHandle_t;
 typedef viennagrid::result_of::element_range<QuadrilateralSpherical3D_Domain_t, viennagrid::vertex_tag>::type    QuadrilateralSpherical3D_VertexRange_t;
 
+/*****************
+ * Tetrahedral *
+ *****************/
+
+typedef viennagrid::result_of::element<TetrahedralCartesian3D_Domain_t, viennagrid::vertex_tag>::type          TetrahedralCartesian3D_Vertex_t;
+typedef viennagrid::result_of::handle<TetrahedralCartesian3D_Domain_t, viennagrid::vertex_tag>::type           TetrahedralCartesian3D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<TetrahedralCartesian3D_Domain_t, viennagrid::vertex_tag>::type    TetrahedralCartesian3D_VertexRange_t;
+
+typedef viennagrid::result_of::element<TetrahedralCylindrical3D_Domain_t, viennagrid::vertex_tag>::type        TetrahedralCylindrical3D_Vertex_t;
+typedef viennagrid::result_of::handle<TetrahedralCylindrical3D_Domain_t, viennagrid::vertex_tag>::type         TetrahedralCylindrical3D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<TetrahedralCylindrical3D_Domain_t, viennagrid::vertex_tag>::type    TetrahedralCylindrical3D_VertexRange_t;
+
+typedef viennagrid::result_of::element<TetrahedralSpherical3D_Domain_t, viennagrid::vertex_tag>::type          TetrahedralSpherical3D_Vertex_t;
+typedef viennagrid::result_of::handle<TetrahedralSpherical3D_Domain_t, viennagrid::vertex_tag>::type           TetrahedralSpherical3D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<TetrahedralSpherical3D_Domain_t, viennagrid::vertex_tag>::type    TetrahedralSpherical3D_VertexRange_t;
+
 #endif /* end of include guard: TYPES_HPP_1AMW8QS7 */

@@ -41,4 +41,17 @@ typedef viennagrid::result_of::element<QuadrilateralPolar2D_Domain_t, viennagrid
 // Quadrilateral, spherical (3D)
 typedef viennagrid::result_of::element<QuadrilateralSpherical3D_Domain_t, viennagrid::quadrilateral_tag>::type      QuadrilateralSpherical3D_Cell_t;
 
+/**********************
+ * TETRAHEDRAL MESH *
+ **********************/
+
+// Tetrahedral, cartesian 3D
+typedef viennagrid::result_of::element<TetrahedralCartesian3D_Domain_t, viennagrid::tetrahedron_tag>::type      TetrahedralCartesian3D_Cell_t;
+
+// Tetrahedral, cylindrical (3D)
+typedef viennagrid::result_of::element<TetrahedralCylindrical3D_Domain_t, viennagrid::tetrahedron_tag>::type    TetrahedralCylindrical3D_Cell_t;
+
+// Tetrahedral, spherical (3D)
+typedef viennagrid::result_of::element<TetrahedralSpherical3D_Domain_t, viennagrid::tetrahedron_tag>::type      TetrahedralSpherical3D_Cell_t;
+
 #endif /* end of include guard: TYPES_HPP_NFUQ9SMB */
