@@ -25,18 +25,36 @@ set (VIENNAGRID_WRAPPER_POINTS_SRC
 set (VIENNAGRID_WRAPPER_DOMAINS_SRC
         domains/types.hpp
         domains/triangular.hpp
-        domains/triangular.cpp)
+        domains/triangular.cpp
+        domains/quadrilateral.hpp
+        domains/quadrilateral.cpp
+        domains/tetrahedral.hpp
+        domains/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_SEGMENTS_SRC
-        domains/types.hpp
-        domains/triangular.hpp
-        domains/triangular.cpp)
+        segments/types.hpp
+        segments/triangular.hpp
+        segments/triangular.cpp
+        segments/quadrilateral.hpp
+        segments/quadrilateral.cpp
+        segments/tetrahedral.hpp
+        segments/tetrahedral.cpp)
+
+set (VIENNAGRID_WRAPPER_CELLS_SRC
+        cells/types.hpp
+        cells/triangular.hpp
+        cells/triangular.cpp
+        cells/quadrilateral.hpp
+        cells/quadrilateral.cpp
+        cells/tetrahedral.hpp
+        cells/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp
         ${VIENNAGRID_WRAPPER_POINTS_SRC}
         ${VIENNAGRID_WRAPPER_DOMAINS_SRC}
-        ${VIENNAGRID_WRAPPER_SEGMENTS_SRC})
+        ${VIENNAGRID_WRAPPER_SEGMENTS_SRC}
+        ${VIENNAGRID_WRAPPER_CELLS_SRC})
 
 add_library (viennagrid_wrapper SHARED ${VIENNAGRID_WRAPPER_SRC})
 target_link_libraries (viennagrid_wrapper ${Boost_LIBRARIES})
