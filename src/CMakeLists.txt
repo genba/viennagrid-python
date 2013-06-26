@@ -1,5 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (ViennaGridWrapper)
+set (version 0.1)
+set (release 0.1.0)
 
 # Find Python header files (Python.h)
 find_package (PythonLibs REQUIRED)
@@ -61,3 +63,4 @@ set (VIENNAGRID_WRAPPER_SRC
 
 add_library (viennagrid_wrapper SHARED ${VIENNAGRID_WRAPPER_SRC})
 target_link_libraries (viennagrid_wrapper ${Boost_LIBRARIES})
+set_target_properties (viennagrid_wrapper PROPERTIES VERSION ${release} SOVERSION ${version})
