@@ -1,5 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
+project (ViennaGridWrapper)
 
+# Find Python header files (Python.h)
 find_package (PythonLibs REQUIRED)
 include_directories (${PYTHON_INCLUDE_PATH})
 
@@ -7,8 +9,9 @@ include_directories (${PYTHON_INCLUDE_PATH})
 find_package (Boost 1.53.0 REQUIRED COMPONENTS python)
 include_directories (${Boost_INCLUDE_DIRS})
 
-# Include ViennaGrid
+# Add include path for ViennaGrid
 include_directories (../inc/ViennaGrid)
+# Add include path for ViennaData
 include_directories (../inc/ViennaGrid/external)
 
 set (VIENNAGRID_WRAPPER_POINTS_SRC
