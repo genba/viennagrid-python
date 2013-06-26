@@ -3,17 +3,9 @@ cmake_minimum_required (VERSION 2.6)
 find_package (PythonLibs REQUIRED)
 include_directories (${PYTHON_INCLUDE_PATH})
 
-FIND_PACKAGE(Boost)
-IF(Boost_FOUND)
-  INCLUDE_DIRECTORIES("${Boost_INCLUDE_DIRS}")
-  SET(Boost_USE_STATIC_LIBS OFF)
-  SET(Boost_USE_MULTITHREADED ON)
-  SET(Boost_USE_STATIC_RUNTIME OFF)
-  FIND_PACKAGE(Boost COMPONENTS python)
-ELSEIF(NOT Boost_FOUND)
-  MESSAGE(FATAL_ERROR "Unable to find correct Boost version. Did you set BOOST_ROOT?")
-ENDIF()
-# http://preney.ca/paul/archives/107
+# Find Boost.Python 1.53.0
+find_package (Boost 1.53.0 REQUIRED COMPONENTS python)
+include_directories (${Boost_INCLUDE_DIRS})
 
 # Include ViennaGrid
 include_directories (../inc/ViennaGrid)
