@@ -61,6 +61,6 @@ set (VIENNAGRID_WRAPPER_SRC
         ${VIENNAGRID_WRAPPER_SEGMENTS_SRC}
         ${VIENNAGRID_WRAPPER_CELLS_SRC})
 
-add_library (viennagrid_wrapper SHARED ${VIENNAGRID_WRAPPER_SRC})
+python_add_module (viennagrid_wrapper ${VIENNAGRID_WRAPPER_SRC})
 target_link_libraries (viennagrid_wrapper ${Boost_LIBRARIES})
 set_target_properties (viennagrid_wrapper PROPERTIES VERSION ${release} SOVERSION ${version})
