@@ -20,6 +20,7 @@ class TriangularCartesian2D_Domain {
 	list                              segments;
 	list                              vertices;
 	unsigned int                      num_vertices;
+	list                              cells;
 public:
 	TriangularCartesian2D_Domain();
 
@@ -28,6 +29,8 @@ public:
 
 	void add_vertex(PointCartesian2D vertex);
 	list get_vertices();
+	
+	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3);
 
 	TriangularCartesian2D_Domain_t & get_domain();
 };
@@ -41,6 +44,7 @@ class TriangularCartesian3D_Domain {
 	list                              segments;
 	list                              vertices;
 	unsigned int                      num_vertices;
+	list                              cells;
 public:
 	TriangularCartesian3D_Domain();
 
@@ -49,6 +53,8 @@ public:
 
 	void add_vertex(PointCartesian3D vertex);
 	list get_vertices();
+	
+	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3);
 
 	TriangularCartesian3D_Domain_t & get_domain();
 };
@@ -62,6 +68,7 @@ class TriangularCylindrical3D_Domain {
 	list                                segments;
 	list                                vertices;
 	unsigned int                        num_vertices;
+	list                                cells;
 public:
 	TriangularCylindrical3D_Domain();
 
@@ -70,6 +77,8 @@ public:
 
 	void add_vertex(PointCylindrical3D vertex);
 	list get_vertices();
+	
+	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3);
 
 	TriangularCylindrical3D_Domain_t & get_domain();
 };
@@ -83,6 +92,7 @@ class TriangularPolar2D_Domain {
 	list                          segments;
 	list                          vertices;
 	unsigned int                  num_vertices;
+	list                          cells;
 public:
 	TriangularPolar2D_Domain();
 
@@ -91,6 +101,8 @@ public:
 
 	void add_vertex(PointPolar2D vertex);
 	list get_vertices();
+	
+	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3);
 
 	TriangularPolar2D_Domain_t & get_domain();
 };
@@ -104,6 +116,7 @@ class TriangularSpherical3D_Domain {
 	list                              segments;
 	list                              vertices;
 	unsigned int                      num_vertices;
+	list                              cells;
 public:
 	TriangularSpherical3D_Domain();
 
@@ -112,6 +125,8 @@ public:
 	
 	void add_vertex(PointSpherical3D vertex);
 	list get_vertices();
+	
+	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3);
 
 	TriangularSpherical3D_Domain_t & get_domain();
 };

@@ -1,6 +1,8 @@
 #include "tetrahedral.hpp"
 #include "../segments/types.hpp"
 #include "../vertices/types.hpp"
+#include "../cells/types.hpp"
+#include "../cells/tetrahedral.hpp"
 
 ///////////////////////////////
 // Tetrahedral, cartesian 3D //
@@ -43,6 +45,18 @@ list TetrahedralCartesian3D_Domain::get_segments()
 list TetrahedralCartesian3D_Domain::get_vertices()
 {
 	return vertices;
+}
+
+void TetrahedralCartesian3D_Domain::create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4)
+{
+	viennagrid::storage::static_array<TetrahedralCartesian3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<TetrahedralCartesian3D_Cell_t>(domain, vertices);
+	
+	cells.append<TetrahedralCartesian3D_Cell>(TetrahedralCartesian3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
 ///////////////////////////////////
@@ -88,6 +102,18 @@ list TetrahedralCylindrical3D_Domain::get_vertices()
 	return vertices;
 }
 
+void TetrahedralCylindrical3D_Domain::create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4)
+{
+	viennagrid::storage::static_array<TetrahedralCylindrical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<TetrahedralCylindrical3D_Cell_t>(domain, vertices);
+	
+	cells.append<TetrahedralCylindrical3D_Cell>(TetrahedralCylindrical3D_Cell(vertex1, vertex2, vertex3, vertex4));
+}
+
 /////////////////////////////////
 // Tetrahedral, spherical (3D) //
 /////////////////////////////////
@@ -129,4 +155,16 @@ list TetrahedralSpherical3D_Domain::get_segments()
 list TetrahedralSpherical3D_Domain::get_vertices()
 {
 	return vertices;
+}
+
+void TetrahedralSpherical3D_Domain::create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4)
+{
+	viennagrid::storage::static_array<TetrahedralSpherical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<TetrahedralSpherical3D_Cell_t>(domain, vertices);
+	
+	cells.append<TetrahedralSpherical3D_Cell>(TetrahedralSpherical3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }

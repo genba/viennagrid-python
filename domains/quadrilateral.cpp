@@ -1,6 +1,8 @@
 #include "quadrilateral.hpp"
 #include "../segments/types.hpp"
 #include "../vertices/types.hpp"
+#include "../cells/types.hpp"
+#include "../cells/quadrilateral.hpp"
 
 /////////////////////////////////
 // Quadrilateral, cartesian 2D //
@@ -43,6 +45,18 @@ list QuadrilateralCartesian2D_Domain::get_segments()
 list QuadrilateralCartesian2D_Domain::get_vertices()
 {
 	return vertices;
+}
+
+void QuadrilateralCartesian2D_Domain::create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4)
+{
+	viennagrid::storage::static_array<QuadrilateralCartesian2D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<QuadrilateralCartesian2D_Cell_t>(domain, vertices);
+	
+	cells.append<QuadrilateralCartesian2D_Cell>(QuadrilateralCartesian2D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
 /////////////////////////////////
@@ -88,6 +102,18 @@ list QuadrilateralCartesian3D_Domain::get_vertices()
 	return vertices;
 }
 
+void QuadrilateralCartesian3D_Domain::create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4)
+{
+	viennagrid::storage::static_array<QuadrilateralCartesian3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<QuadrilateralCartesian3D_Cell_t>(domain, vertices);
+	
+	cells.append<QuadrilateralCartesian3D_Cell>(QuadrilateralCartesian3D_Cell(vertex1, vertex2, vertex3, vertex4));
+}
+
 /////////////////////////////////////
 // Quadrilateral, cylindrical (3D) //
 /////////////////////////////////////
@@ -129,6 +155,18 @@ list QuadrilateralCylindrical3D_Domain::get_segments()
 list QuadrilateralCylindrical3D_Domain::get_vertices()
 {
 	return vertices;
+}
+
+void QuadrilateralCylindrical3D_Domain::create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4)
+{
+	viennagrid::storage::static_array<QuadrilateralCylindrical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<QuadrilateralCylindrical3D_Cell_t>(domain, vertices);
+	
+	cells.append<QuadrilateralCylindrical3D_Cell>(QuadrilateralCylindrical3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
 ///////////////////////////////
@@ -174,6 +212,18 @@ list QuadrilateralPolar2D_Domain::get_vertices()
 	return vertices;
 }
 
+void QuadrilateralPolar2D_Domain::create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4)
+{
+	viennagrid::storage::static_array<QuadrilateralPolar2D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<QuadrilateralPolar2D_Cell_t>(domain, vertices);
+	
+	cells.append<QuadrilateralPolar2D_Cell>(QuadrilateralPolar2D_Cell(vertex1, vertex2, vertex3, vertex4));
+}
+
 ///////////////////////////////////
 // Quadrilateral, spherical (3D) //
 ///////////////////////////////////
@@ -215,4 +265,16 @@ list QuadrilateralSpherical3D_Domain::get_segments()
 list QuadrilateralSpherical3D_Domain::get_vertices()
 {
 	return vertices;
+}
+
+void QuadrilateralSpherical3D_Domain::create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4)
+{
+	viennagrid::storage::static_array<QuadrilateralSpherical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
+	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
+	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
+	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
+	viennagrid::create_element<QuadrilateralSpherical3D_Cell_t>(domain, vertices);
+	
+	cells.append<QuadrilateralSpherical3D_Cell>(QuadrilateralSpherical3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
