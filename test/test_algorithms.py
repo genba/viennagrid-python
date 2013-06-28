@@ -2,7 +2,8 @@
 #-*- coding: utf-8 -*-
 
 import sys
-sys.path += '..'
+if len(sys.argv) > 1:
+	sys.path.insert(0, sys.argv.pop(1))
 
 import unittest
 
