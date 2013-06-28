@@ -102,6 +102,12 @@ PointSpherical3D PointSpherical3D::operator/(const double factor)
 	return PointSpherical3D(result.at(0), result.at(1), result.at(2));
 }
 
+PointSpherical3D PointSpherical3D::operator-()
+{
+	PointSpherical_t result = -(*point);
+	return PointSpherical3D(result.at(0), result.at(1), result.at(2));
+}
+
 PointCartesian3D PointSpherical3D::to_cartesian()
 {
 	PointCartesian3D_t new_point = get_point();

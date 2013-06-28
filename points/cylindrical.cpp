@@ -102,6 +102,12 @@ PointCylindrical3D PointCylindrical3D::operator/(const double factor)
 	return PointCylindrical3D(result.at(0), result.at(1), result.at(2));
 }
 
+PointCylindrical3D PointCylindrical3D::operator-()
+{
+	PointCylindrical_t result = -(*point);
+	return PointCylindrical3D(result.at(0), result.at(1), result.at(2));
+}
+
 PointCartesian3D PointCylindrical3D::to_cartesian()
 {
 	PointCartesian3D_t new_point = get_point();

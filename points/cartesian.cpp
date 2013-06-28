@@ -142,6 +142,12 @@ double PointCartesian2D::norm_inf()
 	return viennagrid::norm_inf(get_point());
 }
 
+PointCartesian2D PointCartesian2D::operator-()
+{
+	PointCartesian2D_t result = -(*point);
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
 //////////////////
 // CARTESIAN 3D //
 //////////////////
@@ -249,6 +255,12 @@ PointCartesian3D PointCartesian3D::operator*(const double factor)
 PointCartesian3D PointCartesian3D::operator/(const double factor)
 {
 	PointCartesian3D_t result = *(this->point) / factor;
+	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCartesian3D PointCartesian3D::operator-()
+{
+	PointCartesian3D_t result = -(*point);
 	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
 }
 

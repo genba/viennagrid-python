@@ -105,6 +105,11 @@ public:
 	PointCylindrical3D operator/(const double factor);
 	
 	/**
+	 * Unary operator which inverts the coordinates of a point.
+	**/
+	PointCylindrical3D operator-();
+	
+	/**
 	 * Get ViennaGrid point.
 	**/
 	PointCylindrical_t & get_point();

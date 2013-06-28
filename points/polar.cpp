@@ -100,6 +100,12 @@ PointPolar2D PointPolar2D::operator/(const double factor)
 	return PointPolar2D(result.at(0), result.at(1));
 }
 
+PointPolar2D PointPolar2D::operator-()
+{
+	PointPolar_t result = -(*point);
+	return PointPolar2D(result.at(0), result.at(1));
+}
+
 PointCartesian2D PointPolar2D::to_cartesian()
 {
 	PointCartesian2D_t new_point = get_point();

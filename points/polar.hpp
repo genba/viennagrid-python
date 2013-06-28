@@ -105,6 +105,11 @@ public:
 	PointPolar2D operator/(const double factor);
 	
 	/**
+	 * Unary operator which inverts the coordinates of a point.
+	**/
+	PointPolar2D operator-();
+	
+	/**
 	 * Get ViennaGrid point.
 	**/
 	PointPolar_t & get_point();
