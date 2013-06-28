@@ -12,9 +12,11 @@ using namespace boost::python;
 
 #include "segments/triangular.hpp"
 #include "segments/quadrilateral.hpp"
+#include "segments/tetrahedral.hpp"
 
 #include "cells/triangular.hpp"
 #include "cells/quadrilateral.hpp"
+#include "cells/tetrahedral.hpp"
 
 char const * version()
 {
