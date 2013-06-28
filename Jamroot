@@ -32,6 +32,9 @@ python-extension viennagrid_wrapper : wrapper.cpp
                                       domains/triangular.cpp
                                       domains/quadrilateral.cpp
                                       domains/tetrahedral.cpp
+                                      segmentations/triangular.cpp
+                                      segmentations/quadrilateral.cpp
+                                      segmentations/tetrahedral.cpp
                                       segments/triangular.cpp
                                       segments/quadrilateral.cpp
                                       segments/tetrahedral.cpp

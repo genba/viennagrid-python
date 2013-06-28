@@ -10,6 +10,10 @@ using namespace boost::python;
 #include "domains/quadrilateral.hpp"
 #include "domains/tetrahedral.hpp"
 
+#include "segmentations/triangular.hpp"
+#include "segmentations/quadrilateral.hpp"
+#include "segmentations/tetrahedral.hpp"
+
 #include "segments/triangular.hpp"
 #include "segments/quadrilateral.hpp"
 #include "segments/tetrahedral.hpp"
@@ -160,6 +164,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("cells", &TriangularSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
+	/****************************
+	 * TRIANGULAR SEGMENTATIONS *
+	 ****************************/
+	
+	class_<TriangularCartesian2D_Segmentation>("TriangularCartesian2D_Segmentation")
+	;
+	
+	class_<TriangularCartesian3D_Segmentation>("TriangularCartesian3D_Segmentation")
+	;
+	
+	class_<TriangularCylindrical3D_Segmentation>("TriangularCylindrical3D_Segmentation")
+	;
+	
+	class_<TriangularPolar2D_Segmentation>("TriangularPolar2D_Segmentation")
+	;
+	
+	class_<TriangularSpherical3D_Segmentation>("TriangularSpherical3D_Segmentation")
+	;
+	
 	/***********************
 	 * TRIANGULAR SEGMENTS *
 	 ***********************/
@@ -262,6 +285,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("cells", &QuadrilateralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
+	/*******************************
+	 * QUADRILATERAL SEGMENTATIONS *
+	 *******************************/
+	
+	class_<QuadrilateralCartesian2D_Segmentation>("QuadrilateralCartesian2D_Segmentation")
+	;
+	
+	class_<QuadrilateralCartesian3D_Segmentation>("QuadrilateralCartesian3D_Segmentation")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Segmentation>("QuadrilateralCylindrical3D_Segmentation")
+	;
+	
+	class_<QuadrilateralPolar2D_Segmentation>("QuadrilateralPolar2D_Segmentation")
+	;
+	
+	class_<QuadrilateralSpherical3D_Segmentation>("QuadrilateralSpherical3D_Segmentation")
+	;
+	
 	/**************************
 	 * QUADRILATERAL SEGMENTS *
 	 **************************/
@@ -344,6 +386,19 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("segments", &TetrahedralSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TetrahedralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
 		.add_property("cells", &TetrahedralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
+	;
+	
+	/*****************************
+	 * TETRAHEDRAL SEGMENTATIONS *
+	 *****************************/
+	
+	class_<TetrahedralCartesian3D_Segmentation>("TetrahedralCartesian3D_Segmentation")
+	;
+	
+	class_<TetrahedralCylindrical3D_Segmentation>("TetrahedralCylindrical3D_Segmentation")
+	;
+	
+	class_<TetrahedralSpherical3D_Segmentation>("TetrahedralSpherical3D_Segmentation")
 	;
 	
 	/**************************
