@@ -59,6 +59,11 @@ void TetrahedralCartesian3D_Domain::create_cell(PointCartesian3D vertex1, PointC
 	cells.append<TetrahedralCartesian3D_Cell>(TetrahedralCartesian3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
+list TetrahedralCartesian3D_Domain::get_cells()
+{
+	return cells;
+}
+
 ///////////////////////////////////
 // Tetrahedral, cylindrical (3D) //
 ///////////////////////////////////
@@ -114,6 +119,11 @@ void TetrahedralCylindrical3D_Domain::create_cell(PointCylindrical3D vertex1, Po
 	cells.append<TetrahedralCylindrical3D_Cell>(TetrahedralCylindrical3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
+list TetrahedralCylindrical3D_Domain::get_cells()
+{
+	return cells;
+}
+
 /////////////////////////////////
 // Tetrahedral, spherical (3D) //
 /////////////////////////////////
@@ -167,4 +177,9 @@ void TetrahedralSpherical3D_Domain::create_cell(PointSpherical3D vertex1, PointS
 	viennagrid::create_element<TetrahedralSpherical3D_Cell_t>(domain, vertices);
 	
 	cells.append<TetrahedralSpherical3D_Cell>(TetrahedralSpherical3D_Cell(vertex1, vertex2, vertex3, vertex4));
+}
+
+list TetrahedralSpherical3D_Domain::get_cells()
+{
+	return cells;
 }

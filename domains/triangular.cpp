@@ -58,6 +58,11 @@ void TriangularCartesian2D_Domain::create_cell(PointCartesian2D vertex1, PointCa
 	cells.append<TriangularCartesian2D_Cell>(TriangularCartesian2D_Cell(vertex1, vertex2, vertex3));
 }
 
+list TriangularCartesian2D_Domain::get_cells()
+{
+	return cells;
+}
+
 ////////////////////////////
 // Triangle, cartesian 3D //
 ////////////////////////////
@@ -110,6 +115,11 @@ void TriangularCartesian3D_Domain::create_cell(PointCartesian3D vertex1, PointCa
 	viennagrid::create_element<TriangularCartesian3D_Cell_t>(domain, vertices);
 	
 	cells.append<TriangularCartesian3D_Cell>(TriangularCartesian3D_Cell(vertex1, vertex2, vertex3));
+}
+
+list TriangularCartesian3D_Domain::get_cells()
+{
+	return cells;
 }
 
 ////////////////////////////////
@@ -166,6 +176,11 @@ void TriangularCylindrical3D_Domain::create_cell(PointCylindrical3D vertex1, Poi
 	cells.append<TriangularCylindrical3D_Cell>(TriangularCylindrical3D_Cell(vertex1, vertex2, vertex3));
 }
 
+list TriangularCylindrical3D_Domain::get_cells()
+{
+	return cells;
+}
+
 //////////////////////////
 // Triangle, polar (2D) //
 //////////////////////////
@@ -220,6 +235,11 @@ void TriangularPolar2D_Domain::create_cell(PointPolar2D vertex1, PointPolar2D ve
 	cells.append<TriangularPolar2D_Cell>(TriangularPolar2D_Cell(vertex1, vertex2, vertex3));
 }
 
+list TriangularPolar2D_Domain::get_cells()
+{
+	return cells;
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -272,4 +292,9 @@ void TriangularSpherical3D_Domain::create_cell(PointSpherical3D vertex1, PointSp
 	viennagrid::create_element<TriangularSpherical3D_Cell_t>(domain, vertices);
 	
 	cells.append<TriangularSpherical3D_Cell>(TriangularSpherical3D_Cell(vertex1, vertex2, vertex3));
+}
+
+list TriangularSpherical3D_Domain::get_cells()
+{
+	return cells;
 }

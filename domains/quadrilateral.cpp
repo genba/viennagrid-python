@@ -59,6 +59,11 @@ void QuadrilateralCartesian2D_Domain::create_cell(PointCartesian2D vertex1, Poin
 	cells.append<QuadrilateralCartesian2D_Cell>(QuadrilateralCartesian2D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
+list QuadrilateralCartesian2D_Domain::get_cells()
+{
+	return cells;
+}
+
 /////////////////////////////////
 // Quadrilateral, cartesian 3D //
 /////////////////////////////////
@@ -112,6 +117,11 @@ void QuadrilateralCartesian3D_Domain::create_cell(PointCartesian3D vertex1, Poin
 	viennagrid::create_element<QuadrilateralCartesian3D_Cell_t>(domain, vertices);
 	
 	cells.append<QuadrilateralCartesian3D_Cell>(QuadrilateralCartesian3D_Cell(vertex1, vertex2, vertex3, vertex4));
+}
+
+list QuadrilateralCartesian3D_Domain::get_cells()
+{
+	return cells;
 }
 
 /////////////////////////////////////
@@ -169,6 +179,11 @@ void QuadrilateralCylindrical3D_Domain::create_cell(PointCylindrical3D vertex1, 
 	cells.append<QuadrilateralCylindrical3D_Cell>(QuadrilateralCylindrical3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
+list QuadrilateralCylindrical3D_Domain::get_cells()
+{
+	return cells;
+}
+
 ///////////////////////////////
 // Quadrilateral, polar (2D) //
 ///////////////////////////////
@@ -224,6 +239,11 @@ void QuadrilateralPolar2D_Domain::create_cell(PointPolar2D vertex1, PointPolar2D
 	cells.append<QuadrilateralPolar2D_Cell>(QuadrilateralPolar2D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
 
+list QuadrilateralPolar2D_Domain::get_cells()
+{
+	return cells;
+}
+
 ///////////////////////////////////
 // Quadrilateral, spherical (3D) //
 ///////////////////////////////////
@@ -277,4 +297,9 @@ void QuadrilateralSpherical3D_Domain::create_cell(PointSpherical3D vertex1, Poin
 	viennagrid::create_element<QuadrilateralSpherical3D_Cell_t>(domain, vertices);
 	
 	cells.append<QuadrilateralSpherical3D_Cell>(QuadrilateralSpherical3D_Cell(vertex1, vertex2, vertex3, vertex4));
+}
+
+list QuadrilateralSpherical3D_Domain::get_cells()
+{
+	return cells;
 }

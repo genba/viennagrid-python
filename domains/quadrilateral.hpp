@@ -27,6 +27,7 @@ public:
 	list get_vertices();
 	
 	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4);
+	list get_cells();
 	
 	QuadrilateralCartesian2D_Domain_t & get_domain();
 };
@@ -47,6 +48,7 @@ public:
 	list get_vertices();
 	
 	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
+	list get_cells();
 	
 	QuadrilateralCartesian3D_Domain_t & get_domain();
 };
@@ -67,6 +69,7 @@ public:
 	list get_vertices();
 	
 	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
+	list get_cells();
 	
 	QuadrilateralCylindrical3D_Domain_t & get_domain();
 };
@@ -87,6 +90,7 @@ public:
 	list get_vertices();
 	
 	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4);
+	list get_cells();
 	
 	QuadrilateralPolar2D_Domain_t & get_domain();
 };
@@ -107,6 +111,7 @@ public:
 	list get_vertices();
 	
 	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
+	list get_cells();
 	
 	QuadrilateralSpherical3D_Domain_t & get_domain();
 };

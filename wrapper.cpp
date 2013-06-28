@@ -119,6 +119,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TriangularCartesian2D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TriangularCartesian2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TriangularCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<TriangularCartesian3D_Domain>("TriangularCartesian3D_Domain")
@@ -127,6 +128,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TriangularCartesian3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TriangularCartesian3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TriangularCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("TriangularCylindrical3D_Domain")
@@ -135,6 +137,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TriangularCylindrical3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TriangularCylindrical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TriangularCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<TriangularPolar2D_Domain>("TriangularPolar2D_Domain")
@@ -143,6 +146,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TriangularPolar2D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TriangularPolar2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TriangularPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<TriangularSpherical3D_Domain>("TriangularSpherical3D_Domain")
@@ -151,6 +155,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TriangularSpherical3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TriangularSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TriangularSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	/***********************
@@ -216,6 +221,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &QuadrilateralCartesian2D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &QuadrilateralCartesian2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &QuadrilateralCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &QuadrilateralCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<QuadrilateralCartesian3D_Domain>("QuadrilateralCartesian3D_Domain")
@@ -224,6 +230,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &QuadrilateralCartesian3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &QuadrilateralCartesian3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &QuadrilateralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &QuadrilateralCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Domain>("QuadrilateralCylindrical3D_Domain")
@@ -232,6 +239,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &QuadrilateralCylindrical3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &QuadrilateralCylindrical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &QuadrilateralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &QuadrilateralCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<QuadrilateralPolar2D_Domain>("QuadrilateralPolar2D_Domain")
@@ -240,6 +248,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &QuadrilateralPolar2D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &QuadrilateralPolar2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &QuadrilateralPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &QuadrilateralPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<QuadrilateralSpherical3D_Domain>("QuadrilateralSpherical3D_Domain")
@@ -248,6 +257,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &QuadrilateralSpherical3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &QuadrilateralSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &QuadrilateralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &QuadrilateralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	/**************************
@@ -313,6 +323,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TetrahedralCartesian3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TetrahedralCartesian3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TetrahedralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TetrahedralCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
@@ -321,6 +332,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TetrahedralCylindrical3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TetrahedralCylindrical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TetrahedralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TetrahedralCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
@@ -329,6 +341,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("create_cell", &TetrahedralSpherical3D_Domain::create_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
 		.add_property("segments", &TetrahedralSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TetrahedralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.add_property("cells", &TetrahedralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain (those which are not assigned to any segment).")
 	;
 	
 	/**************************
