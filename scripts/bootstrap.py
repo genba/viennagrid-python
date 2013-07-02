@@ -110,8 +110,8 @@ def download_boost(dest_dir, interactive=False, version=False, install=False):
 	# Download Boost
 	os.chdir(dest_dir)
 	run_commad('wget -c -t inf -O %(boost_filename)s "%(boost_url)s"' % locals())
-	run_commad('tar xvjf %(boost_filename)s' % locals())
-	run_commad('ln -s %s boost' % boost_filename.replace('.tar.bz2', ''))
+	run_commad('tar xvjf "%(boost_filename)s"' % locals())
+	run_commad('ln -s "%s" boost' % boost_filename.replace('.tar.bz2', ''))
 	os.chdir('boost')
 	run_commad('./bootstrap.sh --with-libraries=python')
 	
