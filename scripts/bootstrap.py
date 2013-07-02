@@ -54,8 +54,9 @@ DEFAULT_VIENNAMESH_FILENAME = ''
 def warning_msg(msg):
 	sys.stdout.write(''.join([msg, '\n']))
 
-def error_msg(msg):
+def error_msg(msg, errno=-1):
 	sys.stderr.write(''.join([msg, '\n']))
+	sys.exit(errno)
 
 def debug_msg(msg):
 	sys.stdout.write(''.join([msg, '\n']))
