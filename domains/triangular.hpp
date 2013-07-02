@@ -28,6 +28,7 @@ public:
 
 	void add_vertex(PointCartesian2D vertex);
 	list get_vertices();
+	PointCartesian2D get_vertex(unsigned int index);
 
 	TriangularCartesian2D_Domain_t & get_domain();
 };
@@ -51,6 +52,7 @@ public:
 	list get_vertices();
 
 	TriangularCartesian3D_Domain_t & get_domain();
+	PointCartesian3D get_vertex(unsigned int index);
 };
 
 ////////////////////////////////
@@ -70,6 +72,7 @@ public:
 
 	void add_vertex(PointCylindrical3D vertex);
 	list get_vertices();
+	PointCylindrical3D get_vertex(unsigned int index);
 
 	TriangularCylindrical3D_Domain_t & get_domain();
 };
@@ -91,6 +94,7 @@ public:
 
 	void add_vertex(PointPolar2D vertex);
 	list get_vertices();
+	PointPolar2D get_vertex(unsigned int index);
 
 	TriangularPolar2D_Domain_t & get_domain();
 };
@@ -112,6 +116,7 @@ public:
 	
 	void add_vertex(PointSpherical3D vertex);
 	list get_vertices();
+	PointSpherical3D get_vertex(unsigned int index);
 
 	TriangularSpherical3D_Domain_t & get_domain();
 };

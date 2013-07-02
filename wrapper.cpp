@@ -135,6 +135,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.add_property("segments", &TriangularCartesian2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	class_<TriangularCartesian3D_Domain>("TriangularCartesian3D_Domain")
@@ -142,6 +143,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.add_property("segments", &TriangularCartesian3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("TriangularCylindrical3D_Domain")
@@ -149,6 +151,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.add_property("segments", &TriangularCylindrical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	class_<TriangularPolar2D_Domain>("TriangularPolar2D_Domain")
@@ -156,6 +159,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.add_property("segments", &TriangularPolar2D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	class_<TriangularSpherical3D_Domain>("TriangularSpherical3D_Domain")
@@ -163,6 +167,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("add_vertex", &TriangularSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.add_property("segments", &TriangularSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
 		.add_property("vertices", &TriangularSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	/***********************
