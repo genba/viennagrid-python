@@ -82,11 +82,11 @@ def prompt(question, choices=[('y', 'yes'), ('n', 'no')], default='y', return_ty
 	
 	return return_value
 
-def run_commad(cmd, debug=False):
+def run_commad(cmd, debug=False, stdin=None, stdout=None, stderr=None):
 	if debug:
 		debug_msg(cmd)
 	else:
-		subprocess.call(cmd, shell=True)
+		subprocess.call(cmd, shell=True, stdin=stdin, stdout=stdout, stderr=stderr)
 
 def download_boost(dest_dir, interactive=False, version=False, install=False):
 	boost_version = DEFAULT_BOOST_VERSION
