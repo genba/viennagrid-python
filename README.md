@@ -14,6 +14,12 @@ where the following rules apply:
 
 You can download the latest release of ViennaGrid for Python from [ViennaGrid for Python's GitHub page](http://genba.github.io/viennagrid-python/ "ViennaGrid for Python by genba").
 
+Links:
+
+* Website: http://genba.github.io/viennagrid-python/
+* GitHub repository: https://github.com/genba/viennagrid-python
+* Package on PyPI: http://pypi.python.org/pypi/viennagrid-python
+
 ## Compilation instructions
 
 ### Installing dependencies
