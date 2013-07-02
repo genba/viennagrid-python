@@ -98,13 +98,13 @@ def download_boost(dest_dir, interactive=False, version=False, install=False):
 		if HAS_MECHANIZE:
 			pass
 		else:
-			warning_msg('Python module "mechanize" not found. Falling back to version %(DEFAULT_BOOST_VERSION)s' % globals())
+			warning_msg('Python module "mechanize" not found. Falling back to version %(DEFAULT_BOOST_VERSION)s.' % globals())
 	# Try to find custom Boost version
 	elif version != DEFAULT_BOOST_VERSION:
 		if HAS_MECHANIZE:
 			pass
 		else:
-			warning_msg('Python module "mechanize" not found. Falling back to version %(DEFAULT_BOOST_VERSION)s' % globals())
+			warning_msg('Python module "mechanize" not found. Falling back to version %(DEFAULT_BOOST_VERSION)s.' % globals())
 	# else: download default Boost version
 	
 	# Download Boost
