@@ -17,17 +17,11 @@ using namespace boost::python;
 
 class TriangularCartesian2D_Domain {
 	TriangularCartesian2D_Domain_t    domain;
-	list                              segments;
-	list                              vertices;
-	unsigned int                      num_vertices;
 public:
-	TriangularCartesian2D_Domain();
+	TriangularCartesian2D_Domain() {};
 
-	void create_segments(unsigned int amount);
-	list get_segments();
-
+	unsigned int num_vertices();
 	void add_vertex(PointCartesian2D vertex);
-	list get_vertices();
 	PointCartesian2D get_vertex(unsigned int index);
 
 	TriangularCartesian2D_Domain_t & get_domain();
@@ -39,20 +33,14 @@ public:
 
 class TriangularCartesian3D_Domain {
 	TriangularCartesian3D_Domain_t    domain;
-	list                              segments;
-	list                              vertices;
-	unsigned int                      num_vertices;
 public:
-	TriangularCartesian3D_Domain();
+	TriangularCartesian3D_Domain() {};
 
-	void create_segments(unsigned int amount);
-	list get_segments();
-
+	unsigned int num_vertices();
 	void add_vertex(PointCartesian3D vertex);
-	list get_vertices();
+	PointCartesian3D get_vertex(unsigned int index);
 
 	TriangularCartesian3D_Domain_t & get_domain();
-	PointCartesian3D get_vertex(unsigned int index);
 };
 
 ////////////////////////////////
@@ -61,17 +49,11 @@ public:
 
 class TriangularCylindrical3D_Domain {
 	TriangularCylindrical3D_Domain_t    domain;
-	list                                segments;
-	list                                vertices;
-	unsigned int                        num_vertices;
 public:
-	TriangularCylindrical3D_Domain();
+	TriangularCylindrical3D_Domain() {};
 
-	void create_segments(unsigned int amount);
-	list get_segments();
-
+	unsigned int num_vertices();
 	void add_vertex(PointCylindrical3D vertex);
-	list get_vertices();
 	PointCylindrical3D get_vertex(unsigned int index);
 
 	TriangularCylindrical3D_Domain_t & get_domain();
@@ -83,17 +65,11 @@ public:
 
 class TriangularPolar2D_Domain {
 	TriangularPolar2D_Domain_t    domain;
-	list                          segments;
-	list                          vertices;
-	unsigned int                  num_vertices;
 public:
-	TriangularPolar2D_Domain();
+	TriangularPolar2D_Domain() {};
 
-	void create_segments(unsigned int amount);
-	list get_segments();
-
+	unsigned int num_vertices();
 	void add_vertex(PointPolar2D vertex);
-	list get_vertices();
 	PointPolar2D get_vertex(unsigned int index);
 
 	TriangularPolar2D_Domain_t & get_domain();
@@ -105,17 +81,11 @@ public:
 
 class TriangularSpherical3D_Domain {
 	TriangularSpherical3D_Domain_t    domain;
-	list                              segments;
-	list                              vertices;
-	unsigned int                      num_vertices;
 public:
-	TriangularSpherical3D_Domain();
+	TriangularSpherical3D_Domain() {};
 
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointSpherical3D vertex);
-	list get_vertices();
 	PointSpherical3D get_vertex(unsigned int index);
 
 	TriangularSpherical3D_Domain_t & get_domain();
