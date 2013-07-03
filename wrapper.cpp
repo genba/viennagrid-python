@@ -241,30 +241,50 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("num_vertices", &QuadrilateralCartesian2D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &QuadrilateralCartesian2D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &QuadrilateralCartesian2D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &QuadrilateralCartesian2D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &QuadrilateralCartesian2D_Domain::write_vtk, "docstring")
 	;
 	
 	class_<QuadrilateralCartesian3D_Domain>("QuadrilateralCartesian3D_Domain")
 		.def("num_vertices", &QuadrilateralCartesian3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &QuadrilateralCartesian3D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &QuadrilateralCartesian3D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &QuadrilateralCartesian3D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &QuadrilateralCartesian3D_Domain::write_vtk, "docstring")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Domain>("QuadrilateralCylindrical3D_Domain")
 		.def("num_vertices", &QuadrilateralCylindrical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &QuadrilateralCylindrical3D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &QuadrilateralCylindrical3D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &QuadrilateralCylindrical3D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &QuadrilateralCylindrical3D_Domain::write_vtk, "docstring")
 	;
 	
 	class_<QuadrilateralPolar2D_Domain>("QuadrilateralPolar2D_Domain")
 		.def("num_vertices", &QuadrilateralPolar2D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &QuadrilateralPolar2D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &QuadrilateralPolar2D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &QuadrilateralPolar2D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &QuadrilateralPolar2D_Domain::write_vtk, "docstring")
 	;
 	
 	class_<QuadrilateralSpherical3D_Domain>("QuadrilateralSpherical3D_Domain")
 		.def("num_vertices", &QuadrilateralSpherical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &QuadrilateralSpherical3D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &QuadrilateralSpherical3D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &QuadrilateralSpherical3D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &QuadrilateralSpherical3D_Domain::write_vtk, "docstring")
 	;
 	
 	/**************************
