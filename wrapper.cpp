@@ -305,24 +305,21 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 *************************/
 	
 	class_<TetrahedralCartesian3D_Domain>("TetrahedralCartesian3D_Domain")
-		.def("create_segments", &TetrahedralCartesian3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("num_vertices", &TetrahedralCartesian3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
-		.add_property("segments", &TetrahedralCartesian3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
-		.add_property("vertices", &TetrahedralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TetrahedralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
-		.def("create_segments", &TetrahedralCylindrical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("num_vertices", &TetrahedralCylindrical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
-		.add_property("segments", &TetrahedralCylindrical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
-		.add_property("vertices", &TetrahedralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TetrahedralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
-		.def("create_segments", &TetrahedralSpherical3D_Domain::create_segments, "Create the specified amount of segments within the domain. This function must be called only once.")
+		.def("num_vertices", &TetrahedralSpherical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
-		.add_property("segments", &TetrahedralSpherical3D_Domain::get_segments, "Read-only property that returns a list containing all the segments stored within the domain.")
-		.add_property("vertices", &TetrahedralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices stored within the domain.")
+		.def("get_vertex", &TetrahedralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 	;
 	
 	/**************************
