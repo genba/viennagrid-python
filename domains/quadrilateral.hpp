@@ -13,85 +13,60 @@ using namespace boost::python;
 
 class QuadrilateralCartesian2D_Domain {
 	QuadrilateralCartesian2D_Domain_t    domain;
-	list                                 segments;
-	list                                 vertices;
-	unsigned int                         num_vertices;
 public:
-	QuadrilateralCartesian2D_Domain();
+	QuadrilateralCartesian2D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointCartesian2D vertex);
-	list get_vertices();
+	PointCartesian2D get_vertex(unsigned int index);
 	
 	QuadrilateralCartesian2D_Domain_t & get_domain();
 };
 
 class QuadrilateralCartesian3D_Domain {
 	QuadrilateralCartesian3D_Domain_t     domain;
-	list                                  segments;
-	list                                  vertices;
-	unsigned int                          num_vertices;
 public:
-	QuadrilateralCartesian3D_Domain();
+	QuadrilateralCartesian3D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointCartesian3D vertex);
-	list get_vertices();
+	PointCartesian3D get_vertex(unsigned int index);
 	
 	QuadrilateralCartesian3D_Domain_t & get_domain();
 };
 
 class QuadrilateralCylindrical3D_Domain {
 	QuadrilateralCylindrical3D_Domain_t     domain;
-	list                                    segments;
-	list                                    vertices;
-	unsigned int                            num_vertices;
 public:
-	QuadrilateralCylindrical3D_Domain();
+	QuadrilateralCylindrical3D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointCylindrical3D vertex);
-	list get_vertices();
+	PointCylindrical3D get_vertex(unsigned int index);
 	
 	QuadrilateralCylindrical3D_Domain_t & get_domain();
 };
 
 class QuadrilateralPolar2D_Domain {
 	QuadrilateralPolar2D_Domain_t     domain;
-	list                              segments;
-	list                              vertices;
-	unsigned int                      num_vertices;
 public:
-	QuadrilateralPolar2D_Domain();
+	QuadrilateralPolar2D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointPolar2D vertex);
-	list get_vertices();
+	PointPolar2D get_vertex(unsigned int index);
 	
 	QuadrilateralPolar2D_Domain_t & get_domain();
 };
 
 class QuadrilateralSpherical3D_Domain {
 	QuadrilateralSpherical3D_Domain_t     domain;
-	list                                  segments;
-	list                                  vertices;
-	unsigned int                          num_vertices;
 public:
-	QuadrilateralSpherical3D_Domain();
+	QuadrilateralSpherical3D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointSpherical3D vertex);
-	list get_vertices();
+	PointSpherical3D get_vertex(unsigned int index);
 	
 	QuadrilateralSpherical3D_Domain_t & get_domain();
 };
