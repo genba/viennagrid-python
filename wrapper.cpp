@@ -348,18 +348,30 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("num_vertices", &TetrahedralCartesian3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &TetrahedralCartesian3D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &TetrahedralCartesian3D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &TetrahedralCartesian3D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &TetrahedralCartesian3D_Domain::write_vtk, "docstring")
 	;
 	
 	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
 		.def("num_vertices", &TetrahedralCylindrical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &TetrahedralCylindrical3D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &TetrahedralCylindrical3D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &TetrahedralCylindrical3D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &TetrahedralCylindrical3D_Domain::write_vtk, "docstring")
 	;
 	
 	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
 		.def("num_vertices", &TetrahedralSpherical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &TetrahedralSpherical3D_Domain::read_netgen, "docstring")
+		.def("read_vtk", &TetrahedralSpherical3D_Domain::read_vtk, "docstring")
+		.def("write_opendx", &TetrahedralSpherical3D_Domain::write_opendx, "docstring")
+		.def("write_vtk", &TetrahedralSpherical3D_Domain::write_vtk, "docstring")
 	;
 	
 	/**************************

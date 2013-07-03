@@ -11,6 +11,8 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
+#include <string>
+
 class TetrahedralCartesian3D_Domain {
 	TetrahedralCartesian3D_Domain_t     domain;
 public:
@@ -19,6 +21,12 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointCartesian3D vertex);
 	PointCartesian3D get_vertex(unsigned int index);
+	
+	void read_netgen(std::string const &filename);
+	void read_vtk(std::string const &filename);
+	
+	void write_opendx(std::string const &filename);
+	void write_vtk(std::string const &filename);
 	
 	TetrahedralCartesian3D_Domain_t & get_domain();
 };
@@ -32,6 +40,12 @@ public:
 	void add_vertex(PointCylindrical3D vertex);
 	PointCylindrical3D get_vertex(unsigned int index);
 	
+	void read_netgen(std::string const &filename);
+	void read_vtk(std::string const &filename);
+	
+	void write_opendx(std::string const &filename);
+	void write_vtk(std::string const &filename);
+	
 	TetrahedralCylindrical3D_Domain_t & get_domain();
 };
 
@@ -43,6 +57,12 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointSpherical3D vertex);
 	PointSpherical3D get_vertex(unsigned int index);
+	
+	void read_netgen(std::string const &filename);
+	void read_vtk(std::string const &filename);
+	
+	void write_opendx(std::string const &filename);
+	void write_vtk(std::string const &filename);
 	
 	TetrahedralSpherical3D_Domain_t & get_domain();
 };
