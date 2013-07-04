@@ -17,7 +17,7 @@ if (SPHINX_BUILD_EXECUTABLE)
 	set (SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/html")
 
 	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/sphinx/generate-sphinx-doc.sh.in" "${CMAKE_CURRENT_BINARY_DIR}/generate-sphinx-doc.sh" @ONLY)
-	add_custom_target (sphinx /bin/sh "${CMAKE_CURRENT_BINARY_DIR}/generate-sphinx-doc.sh")
+	add_custom_target (sphinx /bin/sh "${CMAKE_CURRENT_BINARY_DIR}/generate-sphinx-doc.sh" DEPENDS viennagrid_wrapper)
 	set (TARGETS ${TARGETS} sphinx)
 else (SPHINX_BUILD_EXECUTABLE)
 	message (WARNING "sphinx-build not found")
