@@ -131,7 +131,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 **********************/
 	
 	class_<TriangularCartesian2D_Domain>("TriangularCartesian2D_Domain")
-		.def("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TriangularCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TriangularCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -141,7 +141,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TriangularCartesian3D_Domain>("TriangularCartesian3D_Domain")
-		.def("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TriangularCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TriangularCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -151,7 +151,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("TriangularCylindrical3D_Domain")
-		.def("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TriangularCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TriangularCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -161,7 +161,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TriangularPolar2D_Domain>("TriangularPolar2D_Domain")
-		.def("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TriangularPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TriangularCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -171,7 +171,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TriangularSpherical3D_Domain>("TriangularSpherical3D_Domain")
-		.def("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TriangularCartesian2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TriangularSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TriangularCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -238,7 +238,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 *************************/
 	
 	class_<QuadrilateralCartesian2D_Domain>("QuadrilateralCartesian2D_Domain")
-		.def("num_vertices", &QuadrilateralCartesian2D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &QuadrilateralCartesian2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &QuadrilateralCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -248,7 +248,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<QuadrilateralCartesian3D_Domain>("QuadrilateralCartesian3D_Domain")
-		.def("num_vertices", &QuadrilateralCartesian3D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &QuadrilateralCartesian3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &QuadrilateralCartesian3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -258,7 +258,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<QuadrilateralCylindrical3D_Domain>("QuadrilateralCylindrical3D_Domain")
-		.def("num_vertices", &QuadrilateralCylindrical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &QuadrilateralCylindrical3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &QuadrilateralCylindrical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -268,7 +268,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<QuadrilateralPolar2D_Domain>("QuadrilateralPolar2D_Domain")
-		.def("num_vertices", &QuadrilateralPolar2D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &QuadrilateralPolar2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &QuadrilateralPolar2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -278,7 +278,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<QuadrilateralSpherical3D_Domain>("QuadrilateralSpherical3D_Domain")
-		.def("num_vertices", &QuadrilateralSpherical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &QuadrilateralSpherical3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &QuadrilateralSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &QuadrilateralSpherical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -345,7 +345,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 *************************/
 	
 	class_<TetrahedralCartesian3D_Domain>("TetrahedralCartesian3D_Domain")
-		.def("num_vertices", &TetrahedralCartesian3D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TetrahedralCartesian3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TetrahedralCartesian3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -355,7 +355,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
-		.def("num_vertices", &TetrahedralCylindrical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TetrahedralCylindrical3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TetrahedralCylindrical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
@@ -365,7 +365,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
-		.def("num_vertices", &TetrahedralSpherical3D_Domain::num_vertices, "Return the number of vertices in the domain.")
+		.add_property("num_vertices", &TetrahedralSpherical3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
 		.def("add_vertex", &TetrahedralSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
 		.def("read_netgen", &TetrahedralSpherical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
