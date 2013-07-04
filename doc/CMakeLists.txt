@@ -7,7 +7,7 @@ set (TARGETS)
 find_program (SPHINX_BUILD_EXECUTABLE sphinx-build)
 if (SPHINX_BUILD_EXECUTABLE)
 	set (WRAPPER_LOCATION "${CMAKE_CURRENT_BIN_DIR}/src")
-	set (SPHINX_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/source")
+	set (SPHINX_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sphinx/source")
 	
 	# configured documentation tools and intermediate build results
 	set (SPHINX_CONF_DIR "${SPHINX_SRC_DIR}")
@@ -16,7 +16,7 @@ if (SPHINX_BUILD_EXECUTABLE)
 	# HTML output directory
 	set (SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/html")
 
-	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/generate-sphinx-doc.sh.in" "${CMAKE_CURRENT_BINARY_DIR}/generate-sphinx-doc.sh" @ONLY)
+	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/sphinx/generate-sphinx-doc.sh.in" "${CMAKE_CURRENT_BINARY_DIR}/generate-sphinx-doc.sh" @ONLY)
 	add_custom_target (sphinx /bin/sh "${CMAKE_CURRENT_BINARY_DIR}/generate-sphinx-doc.sh")
 	set (TARGETS ${TARGETS} sphinx)
 else (SPHINX_BUILD_EXECUTABLE)
