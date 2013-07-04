@@ -25,4 +25,23 @@ else (SPHINX_BUILD_EXECUTABLE)
 	message (WARNING "sphinx-build not found")
 endif (SPHINX_BUILD_EXECUTABLE)
 
-add_custom_target (doc DEPENDS ${TARGETS})
+# Find Doxygen
+find_package (Doxygen)
+# Target for Doxygen documentation
+if (DOXYGEN_FOUND)
+	set (DOXYFILE_TEMPLATE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/doxygen/Doxyfile.in")
+	set (DOXYFILE_PATH "${CMAKE_CURRENT_BINARY_DIR}/doxygen/Doxyfile")
+	set (DOXYGEN_OUTPUT_DIR "${CMAKE_CURRENT_BINARY_DIR}/doxygen")
+	
+	configure_file("${DOXYFILE_TEMPLATE_PATH}" "${DOXYFILE_PATH}" @ONLY)
+	add_custom_target (doxygen ${DOXYGEN_EXECUTABLE} ${DOXYFILE_PATH})
+	set (TARGETS ${TARGETS} doxygen)
+else (DOXYGEN_FOUND)
+	message (WARNING "doxygen not found")
+endif (DOXYGEN_FOUND)
+
+if (TARGETS)
+	add_custom_target (doc DEPENDS ${TARGETS})
+else (TARGETS)
+	message (WARNING "no targets for documentation have been created")
+endif (TARGETS)
