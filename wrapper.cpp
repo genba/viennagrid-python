@@ -38,7 +38,6 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("coords", &PointCartesian2D::get_coord_list, "Read-only property that returns a list containing all the coordinates of the point.")
 		.def("get_coord", &PointCartesian2D::get_coord, "Get the value of the coordinate at given index in the coordinate list.")
 		.def("set_coord", &PointCartesian2D::set_coord, "Set the value of the coordinate at given index in the coordinate list.")
-		.def(self == self) // "Compare if two points are equal, coordinate by coordinate."
 		.def(self + self) // "Add two points."
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
@@ -60,7 +59,6 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("coords", &PointCartesian3D::get_coord_list, "Read-only property that returns a list containing all the coordinates of the point.")
 		.def("get_coord", &PointCartesian3D::get_coord, "Get the value of the coordinate at given index in the coordinate list.")
 		.def("set_coord", &PointCartesian3D::set_coord, "Set the value of the coordinate at given index in the coordinate list.")
-		.def(self == self) // "Compare if two points are equal, coordinate by coordinate."
 		.def(self + self) // "Add two points."
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
@@ -84,7 +82,6 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("coords", &PointCylindrical3D::get_coord_list, "Read-only property that returns a list containing all the coordinates of the point.")
 		.def("get_coord", &PointCylindrical3D::get_coord, "Get the value of the coordinate at given index in the coordinate list.")
 		.def("set_coord", &PointCylindrical3D::set_coord, "Set the value of the coordinate at given index in the coordinate list.")
-		.def(self == self) // "Compare if two points are equal, coordinate by coordinate."
 		.def(self + self) // "Add two points."
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
@@ -103,7 +100,6 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("coords", &PointPolar2D::get_coord_list, "Read-only property that returns a list containing all the coordinates of the point.")
 		.def("get_coord", &PointPolar2D::get_coord, "Get the value of the coordinate at given index in the coordinate list.")
 		.def("set_coord", &PointPolar2D::set_coord, "Set the value of the coordinate at given index in the coordinate list.")
-		.def(self == self) // "Compare if two points are equal, coordinate by coordinate."
 		.def(self + self) // "Add two points."
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
@@ -121,7 +117,6 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("coords", &PointSpherical3D::get_coord_list, "Read-only property that returns a list containing all the coordinates of the point.")
 		.def("get_coord", &PointSpherical3D::get_coord, "Get the value of the coordinate at given index in the coordinate list.")
 		.def("set_coord", &PointSpherical3D::set_coord, "Set the value of the coordinate at given index in the coordinate list.")
-		.def(self == self) // "Compare if two points are equal, coordinate by coordinate."
 		.def(self + self) // "Add two points."
 		.def(self - self) // "Subtract two points."
 		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."

@@ -35,14 +35,6 @@ PointCylindrical_t & PointCylindrical3D::get_point()
 	return *point;
 }
 
-bool PointCylindrical3D::operator==(const PointCylindrical3D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
-}
-
 unsigned int PointCylindrical3D::get_id()
 {
 	return id;

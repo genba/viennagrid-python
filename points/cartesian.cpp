@@ -60,14 +60,6 @@ void PointCartesian2D::set_coord(unsigned int index, double new_value)
 	point->at(index) = new_value;
 }
 
-bool PointCartesian2D::operator==(const PointCartesian2D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
-}
-
 unsigned int PointCartesian2D::get_id()
 {
 	return id;
@@ -189,14 +181,6 @@ const char * PointCartesian3D::get_coord_system()
 PointCartesian3D_t & PointCartesian3D::get_point()
 {
 	return *point;
-}
-
-bool PointCartesian3D::operator==(const PointCartesian3D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
 }
 
 unsigned int PointCartesian3D::get_id()

@@ -95,8 +95,6 @@ public:
 	**/
 	list get_coord_list();
 	
-	bool operator==(const PointCartesian2D &other);
-	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.
@@ -232,8 +230,6 @@ public:
 	 * Get coordinates as a Python list.
 	**/
 	list get_coord_list();
-	
-	bool operator==(const PointCartesian3D &other);
 	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.

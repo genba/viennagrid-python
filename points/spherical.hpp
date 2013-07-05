@@ -76,8 +76,6 @@ public:
 	**/
 	list get_coord_list();
 	
-	bool operator==(const PointSpherical3D &other);
-	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.

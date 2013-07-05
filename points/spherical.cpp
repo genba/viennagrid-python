@@ -35,14 +35,6 @@ PointSpherical_t & PointSpherical3D::get_point()
 	return *point;
 }
 
-bool PointSpherical3D::operator==(const PointSpherical3D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
-}
-
 unsigned int PointSpherical3D::get_id()
 {
 	return id;
