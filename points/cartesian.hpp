@@ -95,8 +95,6 @@ public:
 	**/
 	list get_coord_list();
 	
-	bool operator==(const PointCartesian2D &other);
-	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.
@@ -122,6 +120,11 @@ public:
 	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCartesian2D operator/(const double factor);
+	
+	/**
+	 * Unary operator which inverts the coordinates of a point.
+	**/
+	PointCartesian2D operator-();
 	
 	/**
 	 * Get ViennaGrid point.
@@ -228,8 +231,6 @@ public:
 	**/
 	list get_coord_list();
 	
-	bool operator==(const PointCartesian3D &other);
-	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.
@@ -255,6 +256,11 @@ public:
 	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCartesian3D operator/(const double factor);
+	
+	/**
+	 * Unary operator which inverts the coordinates of a point.
+	**/
+	PointCartesian3D operator-();
 	
 	/**
 	 * Get ViennaGrid point.

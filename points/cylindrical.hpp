@@ -76,8 +76,6 @@ public:
 	**/
 	list get_coord_list();
 	
-	bool operator==(const PointCylindrical3D &other);
-	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.
@@ -103,6 +101,11 @@ public:
 	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCylindrical3D operator/(const double factor);
+	
+	/**
+	 * Unary operator which inverts the coordinates of a point.
+	**/
+	PointCylindrical3D operator-();
 	
 	/**
 	 * Get ViennaGrid point.

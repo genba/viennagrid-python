@@ -9,9 +9,12 @@ import math
 
 import viennagrid_wrapper
 
-from utils import equal
+from utils import equal, point_equal
 
 class TestPointCartesian2D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointCartesian2D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointCartesian2D()
@@ -164,8 +167,18 @@ class TestPointCartesian2D(unittest.TestCase):
 		p = c.to_polar()
 		self.assertTrue(*equal(p.get_coord(0), math.sqrt(2)))
 		self.assertTrue(*equal(p.get_coord(1), math.pi / 4))
+	
+	def test_neg(self):
+		"""Test unary operator '-' (__neg__ in Python)."""
+		p1 = viennagrid_wrapper.PointCartesian2D(1, 2)
+		p2 = -p1
+		self.assertEqual(-p1.coords[0], p2.coords[0])
+		self.assertEqual(-p1.coords[1], p2.coords[1])
 
 class TestPointCartesian3D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointCartesian3D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointCartesian3D()
@@ -321,8 +334,19 @@ class TestPointCartesian3D(unittest.TestCase):
 		self.assertEqual(p1.coords[0], 0.5)
 		self.assertEqual(p1.coords[1], 0.5)
 		self.assertEqual(p1.coords[2], 0.5)
+	
+	def test_neg(self):
+		"""Test unary operator '-' (__neg__ in Python)."""
+		p1 = viennagrid_wrapper.PointCartesian3D(1, 2, 3)
+		p2 = -p1
+		self.assertEqual(-p1.coords[0], p2.coords[0])
+		self.assertEqual(-p1.coords[1], p2.coords[1])
+		self.assertEqual(-p1.coords[2], p2.coords[2])
 
 class TestPointCylindrical3D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointCylindrical3D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointCylindrical3D()
@@ -410,8 +434,15 @@ class TestPointCylindrical3D(unittest.TestCase):
 		self.assertEqual(p2.coords[0], 1.0)
 		self.assertEqual(p2.coords[1], 2.0)
 		self.assertEqual(p2.coords[2], 4.0)
+	
+	def test_neg(self):
+		"""Test unary operator '-' (__neg__ in Python)."""
+		pass
 
 class TestPointPolar2D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointPolar2D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointPolar2D()
@@ -506,8 +537,15 @@ class TestPointPolar2D(unittest.TestCase):
 		c = p.to_cartesian()
 		self.assertTrue(*equal(c.get_coord(0), 1))
 		self.assertTrue(*equal(c.get_coord(1), 1))
+	
+	def test_neg(self):
+		"""Test unary operator '-' (__neg__ in Python)."""
+		pass
 
 class TestPointSpherical3D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointSpherical3D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointSpherical3D()
@@ -595,6 +633,10 @@ class TestPointSpherical3D(unittest.TestCase):
 		self.assertEqual(p2.coords[0], 1.0)
 		self.assertEqual(p2.coords[1], 2.0)
 		self.assertEqual(p2.coords[2], 4.0)
+	
+	def test_neg(self):
+		"""Test unary operator '-' (__neg__ in Python)."""
+		pass
 
 if __name__ == '__main__':
 	unittest.main()

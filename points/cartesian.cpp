@@ -60,14 +60,6 @@ void PointCartesian2D::set_coord(unsigned int index, double new_value)
 	point->at(index) = new_value;
 }
 
-bool PointCartesian2D::operator==(const PointCartesian2D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
-}
-
 unsigned int PointCartesian2D::get_id()
 {
 	return id;
@@ -142,6 +134,12 @@ double PointCartesian2D::norm_inf()
 	return viennagrid::norm_inf(get_point());
 }
 
+PointCartesian2D PointCartesian2D::operator-()
+{
+	PointCartesian2D_t result = -(*point);
+	return PointCartesian2D(result.at(0), result.at(1));
+}
+
 //////////////////
 // CARTESIAN 3D //
 //////////////////
@@ -183,14 +181,6 @@ const char * PointCartesian3D::get_coord_system()
 PointCartesian3D_t & PointCartesian3D::get_point()
 {
 	return *point;
-}
-
-bool PointCartesian3D::operator==(const PointCartesian3D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
 }
 
 unsigned int PointCartesian3D::get_id()
@@ -249,6 +239,12 @@ PointCartesian3D PointCartesian3D::operator*(const double factor)
 PointCartesian3D PointCartesian3D::operator/(const double factor)
 {
 	PointCartesian3D_t result = *(this->point) / factor;
+	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCartesian3D PointCartesian3D::operator-()
+{
+	PointCartesian3D_t result = -(*point);
 	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
 }
 

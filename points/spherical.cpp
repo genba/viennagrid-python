@@ -35,14 +35,6 @@ PointSpherical_t & PointSpherical3D::get_point()
 	return *point;
 }
 
-bool PointSpherical3D::operator==(const PointSpherical3D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
-}
-
 unsigned int PointSpherical3D::get_id()
 {
 	return id;
@@ -99,6 +91,12 @@ PointSpherical3D PointSpherical3D::operator*(const double factor)
 PointSpherical3D PointSpherical3D::operator/(const double factor)
 {
 	PointSpherical_t result = *(this->point) / factor;
+	return PointSpherical3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointSpherical3D PointSpherical3D::operator-()
+{
+	PointSpherical_t result = -(*point);
 	return PointSpherical3D(result.at(0), result.at(1), result.at(2));
 }
 

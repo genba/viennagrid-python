@@ -76,8 +76,6 @@ public:
 	**/
 	list get_coord_list();
 	
-	bool operator==(const PointPolar2D &other);
-	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.
@@ -103,6 +101,11 @@ public:
 	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointPolar2D operator/(const double factor);
+	
+	/**
+	 * Unary operator which inverts the coordinates of a point.
+	**/
+	PointPolar2D operator-();
 	
 	/**
 	 * Get ViennaGrid point.
