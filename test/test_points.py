@@ -9,9 +9,12 @@ import math
 
 import viennagrid_wrapper
 
-from utils import equal
+from utils import equal, point_equal
 
 class TestPointCartesian2D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointCartesian2D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointCartesian2D()
@@ -173,6 +176,9 @@ class TestPointCartesian2D(unittest.TestCase):
 		self.assertEqual(-p1.coords[1], p2.coords[1])
 
 class TestPointCartesian3D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointCartesian3D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointCartesian3D()
@@ -338,6 +344,9 @@ class TestPointCartesian3D(unittest.TestCase):
 		self.assertEqual(-p1.coords[2], p2.coords[2])
 
 class TestPointCylindrical3D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointCylindrical3D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointCylindrical3D()
@@ -431,6 +440,9 @@ class TestPointCylindrical3D(unittest.TestCase):
 		pass
 
 class TestPointPolar2D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointPolar2D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointPolar2D()
@@ -531,6 +543,9 @@ class TestPointPolar2D(unittest.TestCase):
 		pass
 
 class TestPointSpherical3D(unittest.TestCase):
+	def setUp(self):
+		self.addTypeEqualityFunc(viennagrid_wrapper.PointSpherical3D, point_equal)
+	
 	def test_init(self):
 		"""Test constructor, and properties 'dim' and 'coords'."""
 		point = viennagrid_wrapper.PointSpherical3D()
