@@ -14,10 +14,12 @@ using namespace boost::python;
 #include "segments/linear.hpp"
 #include "segments/triangular.hpp"
 #include "segments/quadrilateral.hpp"
+#include "segments/tetrahedral.hpp"
 
 #include "cells/linear.hpp"
 #include "cells/triangular.hpp"
 #include "cells/quadrilateral.hpp"
+#include "cells/tetrahedral.hpp"
 
 char const * version()
 {
