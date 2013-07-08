@@ -29,6 +29,26 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * WRAPPERS FOR POINTS *
 	 ***********************/
 	
+	// CARTESIAN 1D
+	
+	class_<PointCartesian1D>("PointCartesian1D")
+		.def(init<double>())
+		.add_property("dim", &PointCartesian1D::get_dimension, "Read-only property that returns the dimension of the space where the point is defined.")
+		.add_property("coord_system", &PointCartesian1D::get_coord_system, "Read-only property that returns the coordinate system of the space where the point is defined.")
+		.add_property("coords", &PointCartesian1D::get_coord_list, "Read-only property that returns a list containing all the coordinates of the point.")
+		.def("get_coord", &PointCartesian1D::get_coord, "Get the value of the coordinate at given index in the coordinate list.")
+		.def("set_coord", &PointCartesian1D::set_coord, "Set the value of the coordinate at given index in the coordinate list.")
+		.def(self + self) // "Add two points."
+		.def(self - self) // "Subtract two points."
+		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
+		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
+		.def(-self)
+		.def("inner_prod", &PointCartesian1D::inner_prod)
+		.def("norm_1", &PointCartesian1D::norm_1)
+		.def("norm_2", &PointCartesian1D::norm_2)
+		.def("norm_inf", &PointCartesian1D::norm_inf)
+	;
+	
 	// CARTESIAN 2D
 	
 	class_<PointCartesian2D>("PointCartesian2D")

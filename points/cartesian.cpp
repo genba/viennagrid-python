@@ -8,6 +8,132 @@
 #include <viennagrid/algorithm/norm.hpp>
 
 //////////////////
+// CARTESIAN 1D //
+//////////////////
+
+PointCartesian1D::PointCartesian1D()
+{
+	point = new PointCartesian1D_t(0);
+	id = -1;
+}
+
+PointCartesian1D::PointCartesian1D(double x)
+{
+	point = new PointCartesian1D_t(x);
+	id = -1;
+}
+
+PointCartesian1D::PointCartesian1D(PointCartesian1D_t *initial_point, unsigned int initial_id)
+{
+	point = initial_point;
+	id = initial_id;
+}
+
+PointCartesian1D::PointCartesian1D(PointCartesian1D_t initial_point, unsigned int initial_id)
+{
+	point = new PointCartesian1D_t(initial_point);
+	id = initial_id;
+}
+
+size_t PointCartesian1D::get_dimension()
+{
+	return 1;
+}
+
+const char * PointCartesian1D::get_coord_system()
+{
+	return "cartesian";
+}
+
+PointCartesian1D_t & PointCartesian1D::get_point()
+{
+	return *point;
+}
+
+double PointCartesian1D::get_coord(unsigned int index)
+{
+	return point->at(index);
+}
+
+void PointCartesian1D::set_coord(unsigned int index, double new_value)
+{
+	point->at(index) = new_value;
+}
+
+unsigned int PointCartesian1D::get_id()
+{
+	return id;
+}
+
+void PointCartesian1D::set_id(unsigned int new_id)
+{
+	id = new_id;
+}
+
+list PointCartesian1D::get_coord_list()
+{
+	list coord_list;
+	coord_list.append<double>(point->at(0));
+	return coord_list;
+}
+
+PointCartesian1D & PointCartesian1D::operator=(const PointCartesian1D &other)
+{
+	*(this->point) = *(other.point);
+	return *this;
+}
+
+PointCartesian1D PointCartesian1D::operator+(const PointCartesian1D &other)
+{
+	PointCartesian1D_t result = *(this->point) + *(other.point);
+	return PointCartesian1D(result.at(0));
+}
+
+PointCartesian1D PointCartesian1D::operator-(const PointCartesian1D &other)
+{
+	PointCartesian1D_t result = *(this->point) - *(other.point);
+	return PointCartesian1D(result.at(0));
+}
+
+PointCartesian1D PointCartesian1D::operator*(const double factor)
+{
+	PointCartesian1D_t result = *(this->point) * factor;
+	return PointCartesian1D(result.at(0));
+}
+
+PointCartesian1D PointCartesian1D::operator/(const double factor)
+{
+	PointCartesian1D_t result = *(this->point) / factor;
+	return PointCartesian1D(result.at(0));
+}	
+
+double PointCartesian1D::inner_prod(PointCartesian1D &other)
+{
+	return viennagrid::inner_prod(get_point(), other.get_point());
+}
+
+double PointCartesian1D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointCartesian1D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointCartesian1D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
+}
+
+PointCartesian1D PointCartesian1D::operator-()
+{
+	PointCartesian1D_t result = -(*point);
+	return PointCartesian1D(result.at(0));
+}
+
+//////////////////
 // CARTESIAN 2D //
 //////////////////
 
