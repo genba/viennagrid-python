@@ -29,12 +29,15 @@ python-extension viennagrid_wrapper : wrapper.cpp
                                       points/cylindrical.cpp
                                       points/polar.cpp
                                       points/spherical.cpp
+                                      domains/linear.cpp
                                       domains/triangular.cpp
                                       domains/quadrilateral.cpp
                                       domains/tetrahedral.cpp
+                                      segments/linear.cpp
                                       segments/triangular.cpp
                                       segments/quadrilateral.cpp
                                       segments/tetrahedral.cpp
+                                      cells/linear.cpp
                                       cells/triangular.cpp
                                       cells/quadrilateral.cpp
                                       cells/tetrahedral.cpp

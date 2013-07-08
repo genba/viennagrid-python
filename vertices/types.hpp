@@ -3,6 +3,34 @@
 
 #include "../domains/types.hpp"
 
+/**********
+ * Linear *
+ **********/
+
+typedef viennagrid::result_of::element<LinearCartesian1D_Domain_t, viennagrid::vertex_tag>::type                   LinearCartesian1D_Vertex_t;
+typedef viennagrid::result_of::handle<LinearCartesian1D_Domain_t, viennagrid::vertex_tag>::type                    LinearCartesian1D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<LinearCartesian1D_Domain_t, viennagrid::vertex_tag>::type             LinearCartesian1D_VertexRange_t;
+
+typedef viennagrid::result_of::element<LinearCartesian2D_Domain_t, viennagrid::vertex_tag>::type                   LinearCartesian2D_Vertex_t;
+typedef viennagrid::result_of::handle<LinearCartesian2D_Domain_t, viennagrid::vertex_tag>::type                    LinearCartesian2D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<LinearCartesian2D_Domain_t, viennagrid::vertex_tag>::type             LinearCartesian2D_VertexRange_t;
+
+typedef viennagrid::result_of::element<LinearCartesian3D_Domain_t, viennagrid::vertex_tag>::type                   LinearCartesian3D_Vertex_t;
+typedef viennagrid::result_of::handle<LinearCartesian3D_Domain_t, viennagrid::vertex_tag>::type                    LinearCartesian3D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<LinearCartesian3D_Domain_t, viennagrid::vertex_tag>::type             LinearCartesian3D_VertexRange_t;
+
+typedef viennagrid::result_of::element<LinearCylindrical3D_Domain_t, viennagrid::vertex_tag>::type                 LinearCylindrical3D_Vertex_t;
+typedef viennagrid::result_of::handle<LinearCylindrical3D_Domain_t, viennagrid::vertex_tag>::type                  LinearCylindrical3D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<LinearCylindrical3D_Domain_t, viennagrid::vertex_tag>::type           LinearCylindrical3D_VertexRange_t;
+
+typedef viennagrid::result_of::element<LinearPolar2D_Domain_t, viennagrid::vertex_tag>::type                       LinearPolar2D_Vertex_t;
+typedef viennagrid::result_of::handle<LinearPolar2D_Domain_t, viennagrid::vertex_tag>::type                        LinearPolar2D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<LinearPolar2D_Domain_t, viennagrid::vertex_tag>::type                 LinearPolar2D_VertexRange_t;
+
+typedef viennagrid::result_of::element<LinearSpherical3D_Domain_t, viennagrid::vertex_tag>::type                   LinearSpherical3D_Vertex_t;
+typedef viennagrid::result_of::handle<LinearSpherical3D_Domain_t, viennagrid::vertex_tag>::type                    LinearSpherical3D_VertexHandle_t;
+typedef viennagrid::result_of::element_range<LinearSpherical3D_Domain_t, viennagrid::vertex_tag>::type             LinearSpherical3D_VertexRange_t;
+
 /**************
  * Triangular *
  **************/

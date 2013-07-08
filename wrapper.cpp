@@ -6,15 +6,20 @@ using namespace boost::python;
 #include "points/polar.hpp"
 #include "points/spherical.hpp"
 
+#include "domains/linear.hpp"
 #include "domains/triangular.hpp"
 #include "domains/quadrilateral.hpp"
 #include "domains/tetrahedral.hpp"
 
+#include "segments/linear.hpp"
 #include "segments/triangular.hpp"
 #include "segments/quadrilateral.hpp"
+#include "segments/tetrahedral.hpp"
 
+#include "cells/linear.hpp"
 #include "cells/triangular.hpp"
 #include "cells/quadrilateral.hpp"
+#include "cells/tetrahedral.hpp"
 
 char const * version()
 {
@@ -28,6 +33,26 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	/***********************
 	 * WRAPPERS FOR POINTS *
 	 ***********************/
+	
+	// CARTESIAN 1D
+	
+	class_<PointCartesian1D>("PointCartesian1D")
+		.def(init<double>())
+		.add_property("dim", &PointCartesian1D::get_dimension, "Read-only property that returns the dimension of the space where the point is defined.")
+		.add_property("coord_system", &PointCartesian1D::get_coord_system, "Read-only property that returns the coordinate system of the space where the point is defined.")
+		.add_property("coords", &PointCartesian1D::get_coord_list, "Read-only property that returns a list containing all the coordinates of the point.")
+		.def("get_coord", &PointCartesian1D::get_coord, "Get the value of the coordinate at given index in the coordinate list.")
+		.def("set_coord", &PointCartesian1D::set_coord, "Set the value of the coordinate at given index in the coordinate list.")
+		.def(self + self) // "Add two points."
+		.def(self - self) // "Subtract two points."
+		.def(self * double()) // "Multiply a point by a scalar (the result is the product of each coordinate by the scalar)."
+		.def(self / double()) // "Divide a point by a scalar (the result is the division of each coordinate by the scalar)."
+		.def(-self)
+		.def("inner_prod", &PointCartesian1D::inner_prod)
+		.def("norm_1", &PointCartesian1D::norm_1)
+		.def("norm_2", &PointCartesian1D::norm_2)
+		.def("norm_inf", &PointCartesian1D::norm_inf)
+	;
 	
 	// CARTESIAN 2D
 	
@@ -124,6 +149,123 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def(-self)
 		.def("to_cartesian", &PointSpherical3D::to_cartesian)
 		.def("to_cylindrical", &PointSpherical3D::to_cylindrical)
+	;
+	
+	/**********************
+	 * LINEAR DOMAINS *
+	 **********************/
+	
+	class_<LinearCartesian1D_Domain>("LinearCartesian1D_Domain")
+		.add_property("num_vertices", &LinearCartesian1D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
+		.def("add_vertex", &LinearCartesian1D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.def("get_vertex", &LinearCartesian1D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &LinearCartesian1D_Domain::read_netgen, "Read mesh data from a Netgen file.")
+		.def("read_vtk", &LinearCartesian1D_Domain::read_vtk, "Read mesh data from a VTK file.")
+		.def("write_opendx", &LinearCartesian1D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
+		.def("write_vtk", &LinearCartesian1D_Domain::write_vtk, "Write mesh data to a VTK file.")
+	;
+	
+	class_<LinearCartesian2D_Domain>("LinearCartesian2D_Domain")
+		.add_property("num_vertices", &LinearCartesian2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
+		.def("add_vertex", &LinearCartesian2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.def("get_vertex", &LinearCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &LinearCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
+		.def("read_vtk", &LinearCartesian2D_Domain::read_vtk, "Read mesh data from a VTK file.")
+		.def("write_opendx", &LinearCartesian2D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
+		.def("write_vtk", &LinearCartesian2D_Domain::write_vtk, "Write mesh data to a VTK file.")
+	;
+	
+	class_<LinearCartesian3D_Domain>("LinearCartesian3D_Domain")
+		.add_property("num_vertices", &LinearCartesian3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
+		.def("add_vertex", &LinearCartesian3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.def("get_vertex", &LinearCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &LinearCartesian3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
+		.def("read_vtk", &LinearCartesian3D_Domain::read_vtk, "Read mesh data from a VTK file.")
+		.def("write_opendx", &LinearCartesian3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
+		.def("write_vtk", &LinearCartesian3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+	;
+	
+	class_<LinearCylindrical3D_Domain>("LinearCylindrical3D_Domain")
+		.add_property("num_vertices", &LinearCylindrical3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
+		.def("add_vertex", &LinearCylindrical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.def("get_vertex", &LinearCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &LinearCylindrical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
+		.def("read_vtk", &LinearCylindrical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
+		.def("write_opendx", &LinearCylindrical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
+		.def("write_vtk", &LinearCylindrical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+	;
+	
+	class_<LinearPolar2D_Domain>("LinearPolar2D_Domain")
+		.add_property("num_vertices", &LinearPolar2D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
+		.def("add_vertex", &LinearPolar2D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.def("get_vertex", &LinearPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &LinearPolar2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
+		.def("read_vtk", &LinearPolar2D_Domain::read_vtk, "Read mesh data from a VTK file.")
+		.def("write_opendx", &LinearPolar2D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
+		.def("write_vtk", &LinearPolar2D_Domain::write_vtk, "Write mesh data to a VTK file.")
+	;
+	
+	class_<LinearSpherical3D_Domain>("LinearSpherical3D_Domain")
+		.add_property("num_vertices", &LinearSpherical3D_Domain::num_vertices, "Read-only property that returns the number of vertices in the domain.")
+		.def("add_vertex", &LinearSpherical3D_Domain::add_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
+		.def("get_vertex", &LinearSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.def("read_netgen", &LinearSpherical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
+		.def("read_vtk", &LinearSpherical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
+		.def("write_opendx", &LinearSpherical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
+		.def("write_vtk", &LinearSpherical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+	;
+	
+	/***********************
+	 * LINEAR SEGMENTS *
+	 ***********************/
+	
+	class_<LinearCartesian2D_Segment>("LinearCartesian2D_Segment", init<LinearCartesian2D_Domain &, LinearCartesian2D_Segment_t &>())
+		.def("create_cell", &LinearCartesian2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<LinearCartesian3D_Segment>("LinearCartesian3D_Segment", init<LinearCartesian3D_Domain &, LinearCartesian3D_Segment_t &>())
+		.def("create_cell", &LinearCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<LinearCylindrical3D_Segment>("LinearCylindrical3D_Segment", init<LinearCylindrical3D_Domain &, LinearCylindrical3D_Segment_t &>())
+		.def("create_cell", &LinearCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<LinearPolar2D_Segment>("LinearPolar2D_Segment", init<LinearPolar2D_Domain &, LinearPolar2D_Segment_t &>())
+		.def("create_cell", &LinearPolar2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	class_<LinearSpherical3D_Segment>("LinearSpherical3D_Segment", init<LinearSpherical3D_Domain &, LinearSpherical3D_Segment_t &>())
+		.def("create_cell", &LinearSpherical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
+	;
+	
+	/********************
+	 * LINEAR CELLS *
+	 ********************/
+	
+	class_<LinearCartesian2D_Cell>("LinearCartesian2D_Cell", init<PointCartesian2D, PointCartesian2D>())
+		.add_property("vertices", &LinearCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<LinearCartesian3D_Cell>("LinearCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D>())
+		.add_property("vertices", &LinearCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<LinearCylindrical3D_Cell>("LinearCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D>())
+		.add_property("vertices", &LinearCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<LinearPolar2D_Cell>("LinearPolar2D_Cell", init<PointPolar2D, PointPolar2D>())
+		.add_property("vertices", &LinearPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	class_<LinearSpherical3D_Cell>("LinearSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D>())
+		.add_property("vertices", &LinearSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
 	/**********************

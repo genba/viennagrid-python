@@ -9,6 +9,46 @@
 
 #include "../points/types.hpp"
 
+/***************
+ * LINEAR MESH *
+ ***************/
+
+// Line, cartesian 1D
+typedef viennagrid::result_of::domain_config<viennagrid::triangle_tag,
+                                             PointCartesian1D_t,
+                                             viennagrid::storage::id_handle_tag>::type    LinearCartesian1D_DomainConfig;
+typedef viennagrid::result_of::domain<LinearCartesian1D_DomainConfig>::type               LinearCartesian1D_Domain_t;
+
+// Line, cartesian 2D
+typedef viennagrid::result_of::domain_config<viennagrid::triangle_tag,
+                                             PointCartesian2D_t,
+                                             viennagrid::storage::id_handle_tag>::type    LinearCartesian2D_DomainConfig;
+typedef viennagrid::result_of::domain<LinearCartesian2D_DomainConfig>::type               LinearCartesian2D_Domain_t;
+
+// Line, cartesian 3D
+typedef viennagrid::result_of::domain_config<viennagrid::triangle_tag,
+                                             PointCartesian3D_t,
+                                             viennagrid::storage::id_handle_tag>::type    LinearCartesian3D_DomainConfig;
+typedef viennagrid::result_of::domain<LinearCartesian3D_DomainConfig>::type               LinearCartesian3D_Domain_t;
+
+// Line, cylindrical (3D)
+typedef viennagrid::result_of::domain_config<viennagrid::triangle_tag,
+                                             PointCylindrical_t,
+                                             viennagrid::storage::id_handle_tag>::type    LinearCylindrical3D_DomainConfig;
+typedef viennagrid::result_of::domain<LinearCylindrical3D_DomainConfig>::type             LinearCylindrical3D_Domain_t;
+
+// Line, polar (2D)
+typedef viennagrid::result_of::domain_config<viennagrid::triangle_tag,
+                                             PointPolar_t,
+                                             viennagrid::storage::id_handle_tag>::type    LinearPolar2D_DomainConfig;
+typedef viennagrid::result_of::domain<LinearPolar2D_DomainConfig>::type                   LinearPolar2D_Domain_t;
+
+// Line, spherical (3D)
+typedef viennagrid::result_of::domain_config<viennagrid::triangle_tag,
+                                             PointSpherical_t,
+                                             viennagrid::storage::id_handle_tag>::type    LinearSpherical3D_DomainConfig;
+typedef viennagrid::result_of::domain<LinearSpherical3D_DomainConfig>::type               LinearSpherical3D_Domain_t;
+
 /*******************
  * TRIANGULAR MESH *
  *******************/
