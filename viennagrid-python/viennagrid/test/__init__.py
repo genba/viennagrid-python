@@ -3,6 +3,7 @@
 import unittest
 
 from point import *
+from config import *
 
 if __name__ == '__main__':
 	unittest.main()
