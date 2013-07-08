@@ -93,3 +93,26 @@ class Point(object):
 	@property
 	def dim(self):
 		return self._point.dim
+
+class Domain(object):
+	"""docstring for Domain"""
+	def __init__(self, cfg):
+		super(Domain, self).__init__()
+		self._config = cfg
+		self._obj = cfg.create_domain()
+	
+	@property
+	def config(self):
+		return self._config
+	
+	@property
+	def vertices(self):
+		return [vertex for vertex in self._obj.iter_vertices()]
+		# TODO: this should fail, because iter_vertices is not yet implemented
+	
+	def add_vertex(self, vertex):
+		self._obj.add_vertex(vertex)
+	
+	def __iter__(self):
+		return self._obj.iter_vertices()
+		# TODO: this should fail, because iter_vertices is not yet implemented
