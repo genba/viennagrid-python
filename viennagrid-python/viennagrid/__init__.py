@@ -59,14 +59,14 @@ class Point(object):
 				if not isinstance(dim, int):
 					raise TypeError('Dimension must be an integer.')
 				if dim not in config.SUPPORTED_DIMENSIONS[_coord_system]:
-					coord_system_name = _coord_system.replace('_cs', '')
+					coord_system_name = _coord_system
 					supported_dims = ', '.join(str(x) for x in config.SUPPORTED_DIMENSIONS[_coord_system])
 					raise ValueError('Unsupported dimension. Only the following dimensions are supported for %(coord_system_name)s points: %(supported_dims)s.' % locals())
 				_dim = dim
 			_coords = [0 for i in range(0, _dim)]
 		# If an invalid number of positional arguments has been provided, raise an exception
 		else:
-			coord_system_name = _coord_system.replace('_cs', '')
+			coord_system_name = _coord_system
 			supported_dims = ', '.join(['0'] + [str(x) for x in config.SUPPORTED_DIMENSIONS[_coord_system]])
 			raise TypeError('Point() for %(coord_system_name)s points must take any of the following numbers of positional arguments: %(supported_dims)s.' % locals())
 		
