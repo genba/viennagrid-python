@@ -4,10 +4,12 @@
 #include "../cells/types.hpp"
 #include "../cells/quadrilateral.hpp"
 
+/*
 #include <viennagrid/io/netgen_reader.hpp>
 #include <viennagrid/io/vtk_reader.hpp>
 #include <viennagrid/io/opendx_writer.hpp>
 #include <viennagrid/io/vtk_writer.hpp>
+*/
 
 #include <vector>
 
@@ -40,35 +42,43 @@ PointCartesian2D QuadrilateralCartesian2D_Domain::get_vertex(unsigned int index)
 
 void QuadrilateralCartesian2D_Domain::read_netgen(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralCartesian2D_Segment_t>                   segment_list;
 	viennagrid::io::netgen_reader<QuadrilateralCartesian2D_Cell_t>    my_netgen_reader;
 	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
 	my_netgen_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralCartesian2D_Domain::read_vtk(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralCartesian2D_Segment_t>                                                segment_list;
 	viennagrid::io::vtk_reader<QuadrilateralCartesian2D_Cell_t, QuadrilateralCartesian2D_Domain_t>    my_vtk_reader;
 	
 	my_vtk_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralCartesian2D_Domain::write_opendx(std::string const &filename)
 {
+	/*
 	viennagrid::io::opendx_writer<QuadrilateralCartesian2D_Cell_t, QuadrilateralCartesian2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
+	*/
 }
 
 void QuadrilateralCartesian2D_Domain::write_vtk(std::string const &filename)
 {
+	/*
 	viennagrid::io::vtk_writer<QuadrilateralCartesian2D_Domain_t, QuadrilateralCartesian2D_Cell_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
+	*/
 }
 
 /////////////////////////////////
@@ -100,35 +110,43 @@ PointCartesian3D QuadrilateralCartesian3D_Domain::get_vertex(unsigned int index)
 
 void QuadrilateralCartesian3D_Domain::read_netgen(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralCartesian3D_Segment_t>                   segment_list;
 	viennagrid::io::netgen_reader<QuadrilateralCartesian3D_Cell_t>    my_netgen_reader;
 	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
 	my_netgen_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralCartesian3D_Domain::read_vtk(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralCartesian3D_Segment_t>                                                segment_list;
 	viennagrid::io::vtk_reader<QuadrilateralCartesian3D_Cell_t, QuadrilateralCartesian3D_Domain_t>    my_vtk_reader;
 	
 	my_vtk_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralCartesian3D_Domain::write_opendx(std::string const &filename)
 {
+	/*
 	viennagrid::io::opendx_writer<QuadrilateralCartesian3D_Cell_t, QuadrilateralCartesian3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
+	*/
 }
 
 void QuadrilateralCartesian3D_Domain::write_vtk(std::string const &filename)
 {
+	/*
 	viennagrid::io::vtk_writer<QuadrilateralCartesian3D_Domain_t, QuadrilateralCartesian3D_Cell_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
+	*/
 }
 
 /////////////////////////////////////
@@ -160,35 +178,43 @@ PointCylindrical3D QuadrilateralCylindrical3D_Domain::get_vertex(unsigned int in
 
 void QuadrilateralCylindrical3D_Domain::read_netgen(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralCylindrical3D_Segment_t>                   segment_list;
 	viennagrid::io::netgen_reader<QuadrilateralCylindrical3D_Cell_t>    my_netgen_reader;
 	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
 	my_netgen_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralCylindrical3D_Domain::read_vtk(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralCylindrical3D_Segment_t>                                                segment_list;
 	viennagrid::io::vtk_reader<QuadrilateralCylindrical3D_Cell_t, QuadrilateralCylindrical3D_Domain_t>    my_vtk_reader;
 	
 	my_vtk_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralCylindrical3D_Domain::write_opendx(std::string const &filename)
 {
+	/*
 	viennagrid::io::opendx_writer<QuadrilateralCylindrical3D_Cell_t, QuadrilateralCylindrical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
+	*/
 }
 
 void QuadrilateralCylindrical3D_Domain::write_vtk(std::string const &filename)
 {
+	/*
 	viennagrid::io::vtk_writer<QuadrilateralCylindrical3D_Domain_t, QuadrilateralCylindrical3D_Cell_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
+	*/
 }
 
 ///////////////////////////////
@@ -220,35 +246,43 @@ PointPolar2D QuadrilateralPolar2D_Domain::get_vertex(unsigned int index)
 
 void QuadrilateralPolar2D_Domain::read_netgen(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralPolar2D_Segment_t>                   segment_list;
 	viennagrid::io::netgen_reader<QuadrilateralPolar2D_Cell_t>    my_netgen_reader;
 	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
 	my_netgen_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralPolar2D_Domain::read_vtk(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralPolar2D_Segment_t>                                                segment_list;
 	viennagrid::io::vtk_reader<QuadrilateralPolar2D_Cell_t, QuadrilateralPolar2D_Domain_t>    my_vtk_reader;
 	
 	my_vtk_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralPolar2D_Domain::write_opendx(std::string const &filename)
 {
+	/*
 	viennagrid::io::opendx_writer<QuadrilateralPolar2D_Cell_t, QuadrilateralPolar2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
+	*/
 }
 
 void QuadrilateralPolar2D_Domain::write_vtk(std::string const &filename)
 {
+	/*
 	viennagrid::io::vtk_writer<QuadrilateralPolar2D_Domain_t, QuadrilateralPolar2D_Cell_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
+	*/
 }
 
 ///////////////////////////////////
@@ -280,33 +314,41 @@ PointSpherical3D QuadrilateralSpherical3D_Domain::get_vertex(unsigned int index)
 
 void QuadrilateralSpherical3D_Domain::read_netgen(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralSpherical3D_Segment_t>                   segment_list;
 	viennagrid::io::netgen_reader<QuadrilateralSpherical3D_Cell_t>    my_netgen_reader;
 	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
 	my_netgen_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralSpherical3D_Domain::read_vtk(std::string const &filename)
 {
+	/*
 	std::vector<QuadrilateralSpherical3D_Segment_t>                                                segment_list;
 	viennagrid::io::vtk_reader<QuadrilateralSpherical3D_Cell_t, QuadrilateralSpherical3D_Domain_t>    my_vtk_reader;
 	
 	my_vtk_reader(domain, segment_list, filename);
 	// TODO: return segmentation object from segment_list
+	*/
 }
 
 void QuadrilateralSpherical3D_Domain::write_opendx(std::string const &filename)
 {
+	/*
 	viennagrid::io::opendx_writer<QuadrilateralSpherical3D_Cell_t, QuadrilateralSpherical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
+	*/
 }
 
 void QuadrilateralSpherical3D_Domain::write_vtk(std::string const &filename)
 {
+	/*
 	viennagrid::io::vtk_writer<QuadrilateralSpherical3D_Domain_t, QuadrilateralSpherical3D_Cell_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
+	*/
 }
