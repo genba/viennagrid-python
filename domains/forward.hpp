@@ -1,6 +1,13 @@
 #ifndef FORWARD_HPP_MPKJBME9
 #define FORWARD_HPP_MPKJBME9
 
+class LinearCartesian1D_Domain;
+class LinearCartesian2D_Domain;
+class LinearCartesian3D_Domain;
+class LinearCylindrical3D_Domain;
+class LinearPolar2D_Domain;
+class LinearSpherical3D_Domain;
+
 class TriangularCartesian2D_Domain;
 class TriangularCartesian3D_Domain;
 class TriangularCylindrical3D_Domain;

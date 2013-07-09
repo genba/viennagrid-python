@@ -4,32 +4,26 @@
 #include "../cells/types.hpp"
 #include "../cells/quadrilateral.hpp"
 
+#include <viennagrid/io/netgen_reader.hpp>
+#include <viennagrid/io/vtk_reader.hpp>
+#include <viennagrid/io/opendx_writer.hpp>
+#include <viennagrid/io/vtk_writer.hpp>
+
+#include <vector>
+
 /////////////////////////////////
 // Quadrilateral, cartesian 2D //
 /////////////////////////////////
 
-QuadrilateralCartesian2D_Domain::QuadrilateralCartesian2D_Domain()
+unsigned int QuadrilateralCartesian2D_Domain::num_vertices()
 {
-	num_vertices = 0;
-}
-
-void QuadrilateralCartesian2D_Domain::create_segments(unsigned int amount)
-{
-	for (unsigned int i = 0; i < amount; ++i)
-	{
-		QuadrilateralCartesian2D_Segment_t seg = viennagrid::create_view<QuadrilateralCartesian2D_Segment_t>(domain);
-		segments.append<QuadrilateralCartesian2D_Segment>(QuadrilateralCartesian2D_Segment(*this, seg));
-	}
+	QuadrilateralCartesian2D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return vertex_range.size();
 }
 
 void QuadrilateralCartesian2D_Domain::add_vertex(PointCartesian2D vertex)
 {
 	viennagrid::create_element<QuadrilateralCartesian2D_Vertex_t>(domain, vertex.get_point());
-
-	unsigned int point_id = num_vertices++;
-	QuadrilateralCartesian2D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	PointCartesian2D_t &point = viennagrid::point(domain, vertex_range[point_id]);
-	vertices.append<PointCartesian2D>(PointCartesian2D(point, point_id));
 }
 
 QuadrilateralCartesian2D_Domain_t & QuadrilateralCartesian2D_Domain::get_domain()
@@ -37,59 +31,59 @@ QuadrilateralCartesian2D_Domain_t & QuadrilateralCartesian2D_Domain::get_domain(
 	return domain;
 }
 
-list QuadrilateralCartesian2D_Domain::get_segments()
+PointCartesian2D QuadrilateralCartesian2D_Domain::get_vertex(unsigned int index)
 {
-	return segments;
+	// TODO: domain.find_by_id(index);
+	QuadrilateralCartesian2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointCartesian2D(viennagrid::point(domain, vertices[index]), index);
 }
 
-list QuadrilateralCartesian2D_Domain::get_vertices()
+void QuadrilateralCartesian2D_Domain::read_netgen(std::string const &filename)
 {
-	return vertices;
-}
-
-void QuadrilateralCartesian2D_Domain::create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4)
-{
-	viennagrid::storage::static_array<QuadrilateralCartesian2D_VertexHandle_t, 4> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
-	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
-	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
-	viennagrid::create_element<QuadrilateralCartesian2D_Cell_t>(domain, vertices);
+	std::vector<QuadrilateralCartesian2D_Segment_t>                   segment_list;
+	viennagrid::io::netgen_reader<QuadrilateralCartesian2D_Cell_t>    my_netgen_reader;
+	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
-	cells.append<QuadrilateralCartesian2D_Cell>(QuadrilateralCartesian2D_Cell(vertex1, vertex2, vertex3, vertex4));
+	my_netgen_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
 }
 
-list QuadrilateralCartesian2D_Domain::get_cells()
+void QuadrilateralCartesian2D_Domain::read_vtk(std::string const &filename)
 {
-	return cells;
+	std::vector<QuadrilateralCartesian2D_Segment_t>                                                segment_list;
+	viennagrid::io::vtk_reader<QuadrilateralCartesian2D_Cell_t, QuadrilateralCartesian2D_Domain_t>    my_vtk_reader;
+	
+	my_vtk_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
+}
+
+void QuadrilateralCartesian2D_Domain::write_opendx(std::string const &filename)
+{
+	viennagrid::io::opendx_writer<QuadrilateralCartesian2D_Cell_t, QuadrilateralCartesian2D_Domain_t>    my_dx_writer;
+	
+	my_dx_writer(domain, filename);
+}
+
+void QuadrilateralCartesian2D_Domain::write_vtk(std::string const &filename)
+{
+	viennagrid::io::vtk_writer<QuadrilateralCartesian2D_Domain_t, QuadrilateralCartesian2D_Cell_t>    my_vtk_writer;
+	
+	my_vtk_writer(domain, filename);
 }
 
 /////////////////////////////////
 // Quadrilateral, cartesian 3D //
 /////////////////////////////////
 
-QuadrilateralCartesian3D_Domain::QuadrilateralCartesian3D_Domain()
+unsigned int QuadrilateralCartesian3D_Domain::num_vertices()
 {
-	num_vertices = 0;
-}
-
-void QuadrilateralCartesian3D_Domain::create_segments(unsigned int amount)
-{
-	for (unsigned int i = 0; i < amount; ++i)
-	{
-		QuadrilateralCartesian3D_Segment_t seg = viennagrid::create_view<QuadrilateralCartesian3D_Segment_t>(domain);
-		segments.append<QuadrilateralCartesian3D_Segment>(QuadrilateralCartesian3D_Segment(*this, seg));
-	}
+	QuadrilateralCartesian3D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return vertex_range.size();
 }
 
 void QuadrilateralCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
 {
 	viennagrid::create_element<QuadrilateralCartesian3D_Vertex_t>(domain, vertex.get_point());
-
-	unsigned int point_id = num_vertices++;
-	QuadrilateralCartesian3D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	PointCartesian3D_t &point = viennagrid::point(domain, vertex_range[point_id]);
-	vertices.append<PointCartesian3D>(PointCartesian3D(point, point_id));
 }
 
 QuadrilateralCartesian3D_Domain_t & QuadrilateralCartesian3D_Domain::get_domain()
@@ -97,59 +91,59 @@ QuadrilateralCartesian3D_Domain_t & QuadrilateralCartesian3D_Domain::get_domain(
 	return domain;
 }
 
-list QuadrilateralCartesian3D_Domain::get_segments()
+PointCartesian3D QuadrilateralCartesian3D_Domain::get_vertex(unsigned int index)
 {
-	return segments;
+	// TODO: domain.find_by_id(index);
+	QuadrilateralCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointCartesian3D(viennagrid::point(domain, vertices[index]), index);
 }
 
-list QuadrilateralCartesian3D_Domain::get_vertices()
+void QuadrilateralCartesian3D_Domain::read_netgen(std::string const &filename)
 {
-	return vertices;
-}
-
-void QuadrilateralCartesian3D_Domain::create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4)
-{
-	viennagrid::storage::static_array<QuadrilateralCartesian3D_VertexHandle_t, 4> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
-	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
-	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
-	viennagrid::create_element<QuadrilateralCartesian3D_Cell_t>(domain, vertices);
+	std::vector<QuadrilateralCartesian3D_Segment_t>                   segment_list;
+	viennagrid::io::netgen_reader<QuadrilateralCartesian3D_Cell_t>    my_netgen_reader;
+	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
-	cells.append<QuadrilateralCartesian3D_Cell>(QuadrilateralCartesian3D_Cell(vertex1, vertex2, vertex3, vertex4));
+	my_netgen_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
 }
 
-list QuadrilateralCartesian3D_Domain::get_cells()
+void QuadrilateralCartesian3D_Domain::read_vtk(std::string const &filename)
 {
-	return cells;
+	std::vector<QuadrilateralCartesian3D_Segment_t>                                                segment_list;
+	viennagrid::io::vtk_reader<QuadrilateralCartesian3D_Cell_t, QuadrilateralCartesian3D_Domain_t>    my_vtk_reader;
+	
+	my_vtk_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
+}
+
+void QuadrilateralCartesian3D_Domain::write_opendx(std::string const &filename)
+{
+	viennagrid::io::opendx_writer<QuadrilateralCartesian3D_Cell_t, QuadrilateralCartesian3D_Domain_t>    my_dx_writer;
+	
+	my_dx_writer(domain, filename);
+}
+
+void QuadrilateralCartesian3D_Domain::write_vtk(std::string const &filename)
+{
+	viennagrid::io::vtk_writer<QuadrilateralCartesian3D_Domain_t, QuadrilateralCartesian3D_Cell_t>    my_vtk_writer;
+	
+	my_vtk_writer(domain, filename);
 }
 
 /////////////////////////////////////
 // Quadrilateral, cylindrical (3D) //
 /////////////////////////////////////
 
-QuadrilateralCylindrical3D_Domain::QuadrilateralCylindrical3D_Domain()
+unsigned int QuadrilateralCylindrical3D_Domain::num_vertices()
 {
-	num_vertices = 0;
-}
-
-void QuadrilateralCylindrical3D_Domain::create_segments(unsigned int amount)
-{
-	for (unsigned int i = 0; i < amount; ++i)
-	{
-		QuadrilateralCylindrical3D_Segment_t seg = viennagrid::create_view<QuadrilateralCylindrical3D_Segment_t>(domain);
-		segments.append<QuadrilateralCylindrical3D_Segment>(QuadrilateralCylindrical3D_Segment(*this, seg));
-	}
+	QuadrilateralCylindrical3D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return vertex_range.size();
 }
 
 void QuadrilateralCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
 {
 	viennagrid::create_element<QuadrilateralCylindrical3D_Vertex_t>(domain, vertex.get_point());
-
-	unsigned int point_id = num_vertices++;
-	QuadrilateralCylindrical3D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	PointCylindrical_t &point = viennagrid::point(domain, vertex_range[point_id]);
-	vertices.append<PointCylindrical3D>(PointCylindrical3D(point, point_id));
 }
 
 QuadrilateralCylindrical3D_Domain_t & QuadrilateralCylindrical3D_Domain::get_domain()
@@ -157,59 +151,59 @@ QuadrilateralCylindrical3D_Domain_t & QuadrilateralCylindrical3D_Domain::get_dom
 	return domain;
 }
 
-list QuadrilateralCylindrical3D_Domain::get_segments()
+PointCylindrical3D QuadrilateralCylindrical3D_Domain::get_vertex(unsigned int index)
 {
-	return segments;
+	// TODO: domain.find_by_id(index);
+	QuadrilateralCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointCylindrical3D(viennagrid::point(domain, vertices[index]), index);
 }
 
-list QuadrilateralCylindrical3D_Domain::get_vertices()
+void QuadrilateralCylindrical3D_Domain::read_netgen(std::string const &filename)
 {
-	return vertices;
-}
-
-void QuadrilateralCylindrical3D_Domain::create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4)
-{
-	viennagrid::storage::static_array<QuadrilateralCylindrical3D_VertexHandle_t, 4> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
-	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
-	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
-	viennagrid::create_element<QuadrilateralCylindrical3D_Cell_t>(domain, vertices);
+	std::vector<QuadrilateralCylindrical3D_Segment_t>                   segment_list;
+	viennagrid::io::netgen_reader<QuadrilateralCylindrical3D_Cell_t>    my_netgen_reader;
+	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
-	cells.append<QuadrilateralCylindrical3D_Cell>(QuadrilateralCylindrical3D_Cell(vertex1, vertex2, vertex3, vertex4));
+	my_netgen_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
 }
 
-list QuadrilateralCylindrical3D_Domain::get_cells()
+void QuadrilateralCylindrical3D_Domain::read_vtk(std::string const &filename)
 {
-	return cells;
+	std::vector<QuadrilateralCylindrical3D_Segment_t>                                                segment_list;
+	viennagrid::io::vtk_reader<QuadrilateralCylindrical3D_Cell_t, QuadrilateralCylindrical3D_Domain_t>    my_vtk_reader;
+	
+	my_vtk_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
+}
+
+void QuadrilateralCylindrical3D_Domain::write_opendx(std::string const &filename)
+{
+	viennagrid::io::opendx_writer<QuadrilateralCylindrical3D_Cell_t, QuadrilateralCylindrical3D_Domain_t>    my_dx_writer;
+	
+	my_dx_writer(domain, filename);
+}
+
+void QuadrilateralCylindrical3D_Domain::write_vtk(std::string const &filename)
+{
+	viennagrid::io::vtk_writer<QuadrilateralCylindrical3D_Domain_t, QuadrilateralCylindrical3D_Cell_t>    my_vtk_writer;
+	
+	my_vtk_writer(domain, filename);
 }
 
 ///////////////////////////////
 // Quadrilateral, polar (2D) //
 ///////////////////////////////
 
-QuadrilateralPolar2D_Domain::QuadrilateralPolar2D_Domain()
+unsigned int QuadrilateralPolar2D_Domain::num_vertices()
 {
-	num_vertices = 0;
-}
-
-void QuadrilateralPolar2D_Domain::create_segments(unsigned int amount)
-{
-	for (unsigned int i = 0; i < amount; ++i)
-	{
-		QuadrilateralPolar2D_Segment_t seg = viennagrid::create_view<QuadrilateralPolar2D_Segment_t>(domain);
-		segments.append<QuadrilateralPolar2D_Segment>(QuadrilateralPolar2D_Segment(*this, seg));
-	}
+	QuadrilateralPolar2D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return vertex_range.size();
 }
 
 void QuadrilateralPolar2D_Domain::add_vertex(PointPolar2D vertex)
 {
 	viennagrid::create_element<QuadrilateralPolar2D_Vertex_t>(domain, vertex.get_point());
-
-	unsigned int point_id = num_vertices++;
-	QuadrilateralPolar2D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	PointPolar_t &point = viennagrid::point(domain, vertex_range[point_id]);
-	vertices.append<PointPolar2D>(PointPolar2D(point, point_id));
 }
 
 QuadrilateralPolar2D_Domain_t & QuadrilateralPolar2D_Domain::get_domain()
@@ -217,59 +211,59 @@ QuadrilateralPolar2D_Domain_t & QuadrilateralPolar2D_Domain::get_domain()
 	return domain;
 }
 
-list QuadrilateralPolar2D_Domain::get_segments()
+PointPolar2D QuadrilateralPolar2D_Domain::get_vertex(unsigned int index)
 {
-	return segments;
+	// TODO: domain.find_by_id(index);
+	QuadrilateralPolar2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointPolar2D(viennagrid::point(domain, vertices[index]), index);
 }
 
-list QuadrilateralPolar2D_Domain::get_vertices()
+void QuadrilateralPolar2D_Domain::read_netgen(std::string const &filename)
 {
-	return vertices;
-}
-
-void QuadrilateralPolar2D_Domain::create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4)
-{
-	viennagrid::storage::static_array<QuadrilateralPolar2D_VertexHandle_t, 4> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
-	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
-	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
-	viennagrid::create_element<QuadrilateralPolar2D_Cell_t>(domain, vertices);
+	std::vector<QuadrilateralPolar2D_Segment_t>                   segment_list;
+	viennagrid::io::netgen_reader<QuadrilateralPolar2D_Cell_t>    my_netgen_reader;
+	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
 	
-	cells.append<QuadrilateralPolar2D_Cell>(QuadrilateralPolar2D_Cell(vertex1, vertex2, vertex3, vertex4));
+	my_netgen_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
 }
 
-list QuadrilateralPolar2D_Domain::get_cells()
+void QuadrilateralPolar2D_Domain::read_vtk(std::string const &filename)
 {
-	return cells;
+	std::vector<QuadrilateralPolar2D_Segment_t>                                                segment_list;
+	viennagrid::io::vtk_reader<QuadrilateralPolar2D_Cell_t, QuadrilateralPolar2D_Domain_t>    my_vtk_reader;
+	
+	my_vtk_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
+}
+
+void QuadrilateralPolar2D_Domain::write_opendx(std::string const &filename)
+{
+	viennagrid::io::opendx_writer<QuadrilateralPolar2D_Cell_t, QuadrilateralPolar2D_Domain_t>    my_dx_writer;
+	
+	my_dx_writer(domain, filename);
+}
+
+void QuadrilateralPolar2D_Domain::write_vtk(std::string const &filename)
+{
+	viennagrid::io::vtk_writer<QuadrilateralPolar2D_Domain_t, QuadrilateralPolar2D_Cell_t>    my_vtk_writer;
+	
+	my_vtk_writer(domain, filename);
 }
 
 ///////////////////////////////////
 // Quadrilateral, spherical (3D) //
 ///////////////////////////////////
 
-QuadrilateralSpherical3D_Domain::QuadrilateralSpherical3D_Domain()
+unsigned int QuadrilateralSpherical3D_Domain::num_vertices()
 {
-	num_vertices = 0;
-}
-
-void QuadrilateralSpherical3D_Domain::create_segments(unsigned int amount)
-{
-	for (unsigned int i = 0; i < amount; ++i)
-	{
-		QuadrilateralSpherical3D_Segment_t seg = viennagrid::create_view<QuadrilateralSpherical3D_Segment_t>(domain);
-		segments.append<QuadrilateralSpherical3D_Segment>(QuadrilateralSpherical3D_Segment(*this, seg));
-	}
+	QuadrilateralSpherical3D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return vertex_range.size();
 }
 
 void QuadrilateralSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
 {
 	viennagrid::create_element<QuadrilateralSpherical3D_Vertex_t>(domain, vertex.get_point());
-
-	unsigned int point_id = num_vertices++;
-	QuadrilateralSpherical3D_VertexRange_t vertex_range = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	PointSpherical_t &point = viennagrid::point(domain, vertex_range[point_id]);
-	vertices.append<PointSpherical3D>(PointSpherical3D(point, point_id));
 }
 
 QuadrilateralSpherical3D_Domain_t & QuadrilateralSpherical3D_Domain::get_domain()
@@ -277,14 +271,44 @@ QuadrilateralSpherical3D_Domain_t & QuadrilateralSpherical3D_Domain::get_domain(
 	return domain;
 }
 
-list QuadrilateralSpherical3D_Domain::get_segments()
+PointSpherical3D QuadrilateralSpherical3D_Domain::get_vertex(unsigned int index)
 {
-	return segments;
+	// TODO: domain.find_by_id(index);
+	QuadrilateralSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
+	return PointSpherical3D(viennagrid::point(domain, vertices[index]), index);
 }
 
-list QuadrilateralSpherical3D_Domain::get_vertices()
+void QuadrilateralSpherical3D_Domain::read_netgen(std::string const &filename)
 {
-	return vertices;
+	std::vector<QuadrilateralSpherical3D_Segment_t>                   segment_list;
+	viennagrid::io::netgen_reader<QuadrilateralSpherical3D_Cell_t>    my_netgen_reader;
+	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
+	
+	my_netgen_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
+}
+
+void QuadrilateralSpherical3D_Domain::read_vtk(std::string const &filename)
+{
+	std::vector<QuadrilateralSpherical3D_Segment_t>                                                segment_list;
+	viennagrid::io::vtk_reader<QuadrilateralSpherical3D_Cell_t, QuadrilateralSpherical3D_Domain_t>    my_vtk_reader;
+	
+	my_vtk_reader(domain, segment_list, filename);
+	// TODO: return segmentation object from segment_list
+}
+
+void QuadrilateralSpherical3D_Domain::write_opendx(std::string const &filename)
+{
+	viennagrid::io::opendx_writer<QuadrilateralSpherical3D_Cell_t, QuadrilateralSpherical3D_Domain_t>    my_dx_writer;
+	
+	my_dx_writer(domain, filename);
+}
+
+void QuadrilateralSpherical3D_Domain::write_vtk(std::string const &filename)
+{
+	viennagrid::io::vtk_writer<QuadrilateralSpherical3D_Domain_t, QuadrilateralSpherical3D_Cell_t>    my_vtk_writer;
+	
+	my_vtk_writer(domain, filename);
 }
 
 void QuadrilateralSpherical3D_Domain::create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4)

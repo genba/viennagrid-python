@@ -11,20 +11,22 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
+#include <string>
+
 class TetrahedralCartesian3D_Domain {
 	TetrahedralCartesian3D_Domain_t     domain;
-	list                                segments;
-	list                                vertices;
-	unsigned int                        num_vertices;
-	list                                cells;
 public:
-	TetrahedralCartesian3D_Domain();
+	TetrahedralCartesian3D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointCartesian3D vertex);
-	list get_vertices();
+	PointCartesian3D get_vertex(unsigned int index);
+	
+	void read_netgen(std::string const &filename);
+	void read_vtk(std::string const &filename);
+	
+	void write_opendx(std::string const &filename);
+	void write_vtk(std::string const &filename);
 	
 	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
 	list get_cells();
@@ -34,18 +36,18 @@ public:
 
 class TetrahedralCylindrical3D_Domain {
 	TetrahedralCylindrical3D_Domain_t     domain;
-	list                                  segments;
-	list                                  vertices;
-	unsigned int                          num_vertices;
-	list                                  cells;
 public:
-	TetrahedralCylindrical3D_Domain();
+	TetrahedralCylindrical3D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointCylindrical3D vertex);
-	list get_vertices();
+	PointCylindrical3D get_vertex(unsigned int index);
+	
+	void read_netgen(std::string const &filename);
+	void read_vtk(std::string const &filename);
+	
+	void write_opendx(std::string const &filename);
+	void write_vtk(std::string const &filename);
 	
 	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
 	list get_cells();
@@ -55,18 +57,18 @@ public:
 
 class TetrahedralSpherical3D_Domain {
 	TetrahedralSpherical3D_Domain_t     domain;
-	list                                segments;
-	list                                vertices;
-	unsigned int                        num_vertices;
-	list                                cells;
 public:
-	TetrahedralSpherical3D_Domain();
+	TetrahedralSpherical3D_Domain() {};
 	
-	void create_segments(unsigned int amount);
-	list get_segments();
-	
+	unsigned int num_vertices();
 	void add_vertex(PointSpherical3D vertex);
-	list get_vertices();
+	PointSpherical3D get_vertex(unsigned int index);
+	
+	void read_netgen(std::string const &filename);
+	void read_vtk(std::string const &filename);
+	
+	void write_opendx(std::string const &filename);
+	void write_vtk(std::string const &filename);
 	
 	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
 	list get_cells();

@@ -3,6 +3,28 @@
 
 #include "../domains/types.hpp"
 
+/***************
+ * LINEAR MESH *
+ ***************/
+
+// Line, cartesian 1D
+typedef viennagrid::result_of::element<LinearCartesian1D_Domain_t, viennagrid::line_tag>::type      LinearCartesian1D_Cell_t;
+
+// Line, cartesian 2D
+typedef viennagrid::result_of::element<LinearCartesian2D_Domain_t, viennagrid::line_tag>::type      LinearCartesian2D_Cell_t;
+
+// Line, cartesian 3D
+typedef viennagrid::result_of::element<LinearCartesian3D_Domain_t, viennagrid::line_tag>::type      LinearCartesian3D_Cell_t;
+
+// Line, cylindrical (3D)
+typedef viennagrid::result_of::element<LinearCylindrical3D_Domain_t, viennagrid::line_tag>::type    LinearCylindrical3D_Cell_t;
+
+// Line, polar (2D)
+typedef viennagrid::result_of::element<LinearPolar2D_Domain_t, viennagrid::line_tag>::type          LinearPolar2D_Cell_t;
+
+// Line, spherical (3D)
+typedef viennagrid::result_of::element<LinearSpherical3D_Domain_t, viennagrid::line_tag>::type      LinearSpherical3D_Cell_t;
+
 /*******************
  * TRIANGULAR MESH *
  *******************/

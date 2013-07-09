@@ -34,14 +34,6 @@ PointPolar_t & PointPolar2D::get_point()
 	return *point;
 }
 
-bool PointPolar2D::operator==(const PointPolar2D &other)
-{
-	bool equal = true;
-	for (unsigned int i = 0; equal && i < point->size(); ++i)
-		equal = equal && (point->at(i) == other.point->at(i));
-	return equal;
-}
-
 unsigned int PointPolar2D::get_id()
 {
 	return id;
@@ -97,6 +89,12 @@ PointPolar2D PointPolar2D::operator*(const double factor)
 PointPolar2D PointPolar2D::operator/(const double factor)
 {
 	PointPolar_t result = *(this->point) / factor;
+	return PointPolar2D(result.at(0), result.at(1));
+}
+
+PointPolar2D PointPolar2D::operator-()
+{
+	PointPolar_t result = -(*point);
 	return PointPolar2D(result.at(0), result.at(1));
 }
 

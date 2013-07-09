@@ -1,26 +1,46 @@
-#ifndef TRIANGULAR_HPP_40OZO3A3
-#define TRIANGULAR_HPP_40OZO3A3
+#ifndef DOMAINS_LINEAR_HPP
+#define DOMAINS_LINEAR_HPP
 
 #include "types.hpp"
 #include "../points/cartesian.hpp"
 #include "../points/cylindrical.hpp"
 #include "../points/polar.hpp"
 #include "../points/spherical.hpp"
-#include "../segments/triangular.hpp"
+#include "../segments/linear.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
 
-#include <string>
+//////////////////////////
+// Linear, cartesian 1D //
+//////////////////////////
 
-////////////////////////////
-// Triangle, cartesian 2D //
-////////////////////////////
-
-class TriangularCartesian2D_Domain {
-	TriangularCartesian2D_Domain_t    domain;
+class LinearCartesian1D_Domain {
+	LinearCartesian1D_Domain_t    domain;
 public:
-	TriangularCartesian2D_Domain() {};
+	LinearCartesian1D_Domain() {};
+
+	unsigned int num_vertices();
+	void add_vertex(PointCartesian1D vertex);
+	PointCartesian1D get_vertex(unsigned int index);
+	
+	void read_netgen(std::string const &filename);
+	void read_vtk(std::string const &filename);
+	
+	void write_opendx(std::string const &filename);
+	void write_vtk(std::string const &filename);
+
+	LinearCartesian1D_Domain_t & get_domain();
+};
+
+//////////////////////////
+// Linear, cartesian 2D //
+//////////////////////////
+
+class LinearCartesian2D_Domain {
+	LinearCartesian2D_Domain_t    domain;
+public:
+	LinearCartesian2D_Domain() {};
 
 	unsigned int num_vertices();
 	void add_vertex(PointCartesian2D vertex);
@@ -32,17 +52,17 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 
-	TriangularCartesian2D_Domain_t & get_domain();
+	LinearCartesian2D_Domain_t & get_domain();
 };
 
-////////////////////////////
-// Triangle, cartesian 3D //
-////////////////////////////
+//////////////////////////
+// Linear, cartesian 3D //
+//////////////////////////
 
-class TriangularCartesian3D_Domain {
-	TriangularCartesian3D_Domain_t    domain;
+class LinearCartesian3D_Domain {
+	LinearCartesian3D_Domain_t    domain;
 public:
-	TriangularCartesian3D_Domain() {};
+	LinearCartesian3D_Domain() {};
 
 	unsigned int num_vertices();
 	void add_vertex(PointCartesian3D vertex);
@@ -54,17 +74,17 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 
-	TriangularCartesian3D_Domain_t & get_domain();
+	LinearCartesian3D_Domain_t & get_domain();
 };
 
-////////////////////////////////
-// Triangle, cylindrical (3D) //
-////////////////////////////////
+//////////////////////////////
+// Linear, cylindrical (3D) //
+//////////////////////////////
 
-class TriangularCylindrical3D_Domain {
-	TriangularCylindrical3D_Domain_t    domain;
+class LinearCylindrical3D_Domain {
+	LinearCylindrical3D_Domain_t    domain;
 public:
-	TriangularCylindrical3D_Domain() {};
+	LinearCylindrical3D_Domain() {};
 
 	unsigned int num_vertices();
 	void add_vertex(PointCylindrical3D vertex);
@@ -76,17 +96,17 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 
-	TriangularCylindrical3D_Domain_t & get_domain();
+	LinearCylindrical3D_Domain_t & get_domain();
 };
 
-//////////////////////////
-// Triangle, polar (2D) //
-//////////////////////////
+////////////////////////
+// Linear, polar (2D) //
+////////////////////////
 
-class TriangularPolar2D_Domain {
-	TriangularPolar2D_Domain_t    domain;
+class LinearPolar2D_Domain {
+	LinearPolar2D_Domain_t    domain;
 public:
-	TriangularPolar2D_Domain() {};
+	LinearPolar2D_Domain() {};
 
 	unsigned int num_vertices();
 	void add_vertex(PointPolar2D vertex);
@@ -98,17 +118,17 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 
-	TriangularPolar2D_Domain_t & get_domain();
+	LinearPolar2D_Domain_t & get_domain();
 };
 
-//////////////////////////////
-// Triangle, spherical (3D) //
-//////////////////////////////
+////////////////////////////
+// Linear, spherical (3D) //
+////////////////////////////
 
-class TriangularSpherical3D_Domain {
-	TriangularSpherical3D_Domain_t    domain;
+class LinearSpherical3D_Domain {
+	LinearSpherical3D_Domain_t    domain;
 public:
-	TriangularSpherical3D_Domain() {};
+	LinearSpherical3D_Domain() {};
 
 	unsigned int num_vertices();
 	void add_vertex(PointSpherical3D vertex);
@@ -120,7 +140,7 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 
-	TriangularSpherical3D_Domain_t & get_domain();
+	LinearSpherical3D_Domain_t & get_domain();
 };
 
-#endif /* end of include guard: TRIANGULAR_HPP_40OZO3A3 */
+#endif
