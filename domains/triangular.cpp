@@ -310,19 +310,3 @@ void TriangularSpherical3D_Domain::write_vtk(std::string const &filename)
 	
 	my_vtk_writer(domain, filename);
 }
-
-void TriangularSpherical3D_Domain::create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3)
-{
-	viennagrid::storage::static_array<TriangularSpherical3D_VertexHandle_t, 3> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
-	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
-	viennagrid::create_element<TriangularSpherical3D_Cell_t>(domain, vertices);
-	
-	cells.append<TriangularSpherical3D_Cell>(TriangularSpherical3D_Cell(vertex1, vertex2, vertex3));
-}
-
-list TriangularSpherical3D_Domain::get_cells()
-{
-	return cells;
-}

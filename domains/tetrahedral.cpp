@@ -190,20 +190,3 @@ void TetrahedralSpherical3D_Domain::write_vtk(std::string const &filename)
 	
 	my_vtk_writer(domain, filename);
 }
-
-void TetrahedralSpherical3D_Domain::create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4)
-{
-	viennagrid::storage::static_array<TetrahedralSpherical3D_VertexHandle_t, 4> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex2.get_id());
-	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex3.get_id());
-	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain).handle_at(vertex4.get_id());
-	viennagrid::create_element<TetrahedralSpherical3D_Cell_t>(domain, vertices);
-	
-	cells.append<TetrahedralSpherical3D_Cell>(TetrahedralSpherical3D_Cell(vertex1, vertex2, vertex3, vertex4));
-}
-
-list TetrahedralSpherical3D_Domain::get_cells()
-{
-	return cells;
-}
