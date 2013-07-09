@@ -1,4 +1,11 @@
 #include "cartesian.hpp"
+#include "polar.hpp"
+#include "cylindrical.hpp"
+#include "spherical.hpp"
+
+#include <viennagrid/algorithm/inner_prod.hpp>
+#include <viennagrid/algorithm/cross_prod.hpp>
+#include <viennagrid/algorithm/norm.hpp>
 
 //////////////////
 // CARTESIAN 2D //
@@ -16,9 +23,15 @@ PointCartesian2D::PointCartesian2D(double x, double y)
 	id = -1;
 }
 
-PointCartesian2D::PointCartesian2D(PointCartesian2D_t &initial_point, unsigned int initial_id)
+PointCartesian2D::PointCartesian2D(PointCartesian2D_t *initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = initial_point;
+	id = initial_id;
+}
+
+PointCartesian2D::PointCartesian2D(PointCartesian2D_t initial_point, unsigned int initial_id)
+{
+	point = new PointCartesian2D_t(initial_point);
 	id = initial_id;
 }
 
@@ -101,6 +114,32 @@ PointCartesian2D PointCartesian2D::operator/(const double factor)
 {
 	PointCartesian2D_t result = *(this->point) / factor;
 	return PointCartesian2D(result.at(0), result.at(1));
+}	
+
+double PointCartesian2D::inner_prod(PointCartesian2D &other)
+{
+	return viennagrid::inner_prod(get_point(), other.get_point());
+}
+
+PointPolar2D PointCartesian2D::to_polar()
+{
+	PointPolar_t new_point = get_point();
+	return PointPolar2D(new_point.at(0), new_point.at(1));
+}
+
+double PointCartesian2D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointCartesian2D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointCartesian2D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
 }
 
 //////////////////
@@ -119,9 +158,15 @@ PointCartesian3D::PointCartesian3D(double x, double y, double z)
 	id = -1;
 }
 
-PointCartesian3D::PointCartesian3D(PointCartesian3D_t &initial_point, unsigned int initial_id)
+PointCartesian3D::PointCartesian3D(PointCartesian3D_t *initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = initial_point;
+	id = initial_id;
+}
+
+PointCartesian3D::PointCartesian3D(PointCartesian3D_t initial_point, unsigned int initial_id)
+{
+	point = new PointCartesian3D_t(initial_point);
 	id = initial_id;
 }
 
@@ -205,4 +250,42 @@ PointCartesian3D PointCartesian3D::operator/(const double factor)
 {
 	PointCartesian3D_t result = *(this->point) / factor;
 	return PointCartesian3D(result.at(0), result.at(1), result.at(2));
+}
+
+PointCylindrical3D PointCartesian3D::to_cylindrical()
+{
+	PointCylindrical_t new_point = get_point();
+	return PointCylindrical3D(new_point.at(0), new_point.at(1), new_point.at(2));
+}
+
+PointSpherical3D PointCartesian3D::to_spherical()
+{
+	PointSpherical_t new_point = get_point();
+	return PointSpherical3D(new_point.at(0), new_point.at(1), new_point.at(2));
+}
+
+double PointCartesian3D::inner_prod(PointCartesian3D &other)
+{
+	return viennagrid::inner_prod(get_point(), other.get_point());
+}
+
+PointCartesian3D PointCartesian3D::cross_prod(PointCartesian3D &other)
+{
+	PointCartesian3D_t res = viennagrid::cross_prod(get_point(), other.get_point());
+	return PointCartesian3D(res.at(0), res.at(1), res.at(2));
+}
+
+double PointCartesian3D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointCartesian3D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointCartesian3D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
 }

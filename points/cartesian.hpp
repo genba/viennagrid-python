@@ -2,6 +2,7 @@
 #define CARTESIAN_HPP_40UV2UQE
 
 #include "types.hpp"
+#include "forward.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -41,7 +42,7 @@ public:
 	PointCartesian2D(double x, double y);
 	
 	/**
-	 * Initialize point in the DIM cartesian space from a ViennaGrid point.
+	 * Initialize point in the 2D cartesian space from a ViennaGrid point by pointing at it.
 	 *
 	 * What this makes is to set the pointer to point to the ViennaGrid point and thus solves the issue caused by
 	 * the fact that the ViennaGrid point was being copied, thus not being able to get references to the points
@@ -54,7 +55,20 @@ public:
 	 * instantiated using this constructor or any other constructor in order for the destructor to only free when
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	**/
-	PointCartesian2D(PointCartesian2D_t &initial_point, unsigned int initial_id=0);
+	PointCartesian2D(PointCartesian2D_t *initial_point, unsigned int initial_id=0);
+	
+	/**
+	 * Initialize point in the 2D cartesian space from a ViennaGrid point by copying it.
+	 * 
+	 * This constructor is meant to be used by the wrapper code when the programmer runs
+	 * an algorithm on points. Hence, it needs to allocate memory in the heap for the new
+	 * ViennaGrid point.
+	 * 
+	 * As one would normally think, this should be paired with a destructor that frees the
+	 * allocated memory. However, when we free the memory in the destructor, the program
+	 * aborts and states that the program tried to perform a double-free.
+	**/
+	PointCartesian2D(PointCartesian2D_t initial_point, unsigned int initial_id=-1);
 	
 	/**
 	 * Get the dimension of the point. For 2D points, this always returns 2.
@@ -105,7 +119,7 @@ public:
 	PointCartesian2D operator*(const double factor);
 	
 	/**
-	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCartesian2D operator/(const double factor);
 	
@@ -123,6 +137,13 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	PointPolar2D to_polar();
+	
+	double inner_prod(PointCartesian2D &other);
+	double norm_1();
+	double norm_2();
+	double norm_inf();
 };
 
 class PointCartesian3D {
@@ -154,7 +175,7 @@ public:
 	PointCartesian3D(double x, double y, double z);
 	
 	/**
-	 * Initialize point in the DIM cartesian space from a ViennaGrid point.
+	 * Initialize point in the 3D cartesian space from a ViennaGrid point.
 	 *
 	 * What this makes is to set the pointer to point to the ViennaGrid point and thus solves the issue caused by
 	 * the fact that the ViennaGrid point was being copied, thus not being able to get references to the points
@@ -167,7 +188,20 @@ public:
 	 * instantiated using this constructor or any other constructor in order for the destructor to only free when
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	**/
-	PointCartesian3D(PointCartesian3D_t &initial_point, unsigned int initial_id=0);
+	PointCartesian3D(PointCartesian3D_t *initial_point, unsigned int initial_id=0);
+	
+	/**
+	 * Initialize point in the 3D cartesian space from a ViennaGrid point by copying it.
+	 * 
+	 * This constructor is meant to be used by the wrapper code when the programmer runs
+	 * an algorithm on points. Hence, it needs to allocate memory in the heap for the new
+	 * ViennaGrid point.
+	 * 
+	 * As one would normally think, this should be paired with a destructor that frees the
+	 * allocated memory. However, when we free the memory in the destructor, the program
+	 * aborts and states that the program tried to perform a double-free.
+	**/
+	PointCartesian3D(PointCartesian3D_t initial_point, unsigned int initial_id=-1);
 	
 	/**
 	 * Get the dimension of the point. For 3D points, this always returns 3.
@@ -218,7 +252,7 @@ public:
 	PointCartesian3D operator*(const double factor);
 	
 	/**
-	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointCartesian3D operator/(const double factor);
 	
@@ -236,6 +270,15 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	PointCylindrical3D to_cylindrical();
+	PointSpherical3D to_spherical();
+	
+	double inner_prod(PointCartesian3D &other);
+	PointCartesian3D cross_prod(PointCartesian3D &other);
+	double norm_1();
+	double norm_2();
+	double norm_inf();
 };
 
 #endif /* end of include guard: CARTESIAN_HPP_40UV2UQE */

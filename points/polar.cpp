@@ -1,4 +1,5 @@
 #include "polar.hpp"
+#include "cartesian.hpp"
 
 PointPolar2D::PointPolar2D()
 {
@@ -97,4 +98,10 @@ PointPolar2D PointPolar2D::operator/(const double factor)
 {
 	PointPolar_t result = *(this->point) / factor;
 	return PointPolar2D(result.at(0), result.at(1));
+}
+
+PointCartesian2D PointPolar2D::to_cartesian()
+{
+	PointCartesian2D_t new_point = get_point();
+	return PointCartesian2D(new_point.at(0), new_point.at(1));
 }

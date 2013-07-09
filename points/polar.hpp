@@ -2,6 +2,7 @@
 #define POLAR_HPP_HL2P4D4
 
 #include "types.hpp"
+#include "forward.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -99,7 +100,7 @@ public:
 	PointPolar2D operator*(const double factor);
 	
 	/**
-	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointPolar2D operator/(const double factor);
 	
@@ -117,6 +118,8 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	PointCartesian2D to_cartesian();
 };
 
 #endif /* end of include guard: POLAR_HPP_HL2P4D4 */

@@ -2,6 +2,7 @@
 #define SPHERICAL_HPP_LPABEBWU
 
 #include "types.hpp"
+#include "forward.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -99,7 +100,7 @@ public:
 	PointSpherical3D operator*(const double factor);
 	
 	/**
-	 * Divisioon operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
 	**/
 	PointSpherical3D operator/(const double factor);
 	
@@ -117,6 +118,9 @@ public:
 	 * Set ID of the point within the domain it is assigned to.
 	**/
 	void set_id(unsigned int new_id);
+	
+	PointCartesian3D to_cartesian();
+	PointCylindrical3D to_cylindrical();
 };
 
 #endif /* end of include guard: SPHERICAL_HPP_LPABEBWU */
