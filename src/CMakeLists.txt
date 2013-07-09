@@ -18,6 +18,7 @@ include_directories (../inc/ViennaGrid/external)
 
 set (VIENNAGRID_WRAPPER_POINTS_SRC
         points/types.hpp
+        points/forward.hpp
         points/cartesian.hpp
         points/cartesian.cpp
         points/cylindrical.hpp
@@ -29,6 +30,9 @@ set (VIENNAGRID_WRAPPER_POINTS_SRC
 
 set (VIENNAGRID_WRAPPER_DOMAINS_SRC
         domains/types.hpp
+        domains/forward.hpp
+        domains/linear.hpp
+        domains/linear.cpp
         domains/triangular.hpp
         domains/triangular.cpp
         domains/quadrilateral.hpp
@@ -36,8 +40,21 @@ set (VIENNAGRID_WRAPPER_DOMAINS_SRC
         domains/tetrahedral.hpp
         domains/tetrahedral.cpp)
 
+set (VIENNAGRID_WRAPPER_SEGMENTATIONS_SRC
+        segmentations/types.hpp
+        segmentations/linear.hpp
+        segmentations/linear.cpp
+        segmentations/triangular.hpp
+        segmentations/triangular.cpp
+        segmentations/quadrilateral.hpp
+        segmentations/quadrilateral.cpp
+        segmentations/tetrahedral.hpp
+        segmentations/tetrahedral.cpp)
+
 set (VIENNAGRID_WRAPPER_SEGMENTS_SRC
         segments/types.hpp
+        segments/linear.hpp
+        segments/linear.cpp
         segments/triangular.hpp
         segments/triangular.cpp
         segments/quadrilateral.hpp
@@ -47,6 +64,8 @@ set (VIENNAGRID_WRAPPER_SEGMENTS_SRC
 
 set (VIENNAGRID_WRAPPER_CELLS_SRC
         cells/types.hpp
+        cells/linear.hpp
+        cells/linear.cpp
         cells/triangular.hpp
         cells/triangular.cpp
         cells/quadrilateral.hpp
@@ -54,12 +73,17 @@ set (VIENNAGRID_WRAPPER_CELLS_SRC
         cells/tetrahedral.hpp
         cells/tetrahedral.cpp)
 
+set (VIENNAGRID_WRAPPER_VERTICES_SRC
+        vertices/types.hpp)
+
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp
         ${VIENNAGRID_WRAPPER_POINTS_SRC}
         ${VIENNAGRID_WRAPPER_DOMAINS_SRC}
+        ${VIENNAGRID_WRAPPER_SEGMENTATIONS_SRC}
         ${VIENNAGRID_WRAPPER_SEGMENTS_SRC}
-        ${VIENNAGRID_WRAPPER_CELLS_SRC})
+        ${VIENNAGRID_WRAPPER_CELLS_SRC}
+        ${VIENNAGRID_WRAPPER_VERTICES_SRC})
 
 python_add_module (viennagrid_wrapper ${VIENNAGRID_WRAPPER_SRC})
 target_link_libraries (viennagrid_wrapper ${Boost_LIBRARIES})
