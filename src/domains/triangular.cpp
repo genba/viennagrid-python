@@ -25,7 +25,7 @@ unsigned int TriangularCartesian2D_Domain::num_vertices()
 
 void TriangularCartesian2D_Domain::add_vertex(PointCartesian2D vertex)
 {
-	viennagrid::create_element<TriangularCartesian2D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 TriangularCartesian2D_Domain_t & TriangularCartesian2D_Domain::get_domain()
@@ -93,7 +93,7 @@ unsigned int TriangularCartesian3D_Domain::num_vertices()
 
 void TriangularCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
 {
-	viennagrid::create_element<TriangularCartesian3D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 TriangularCartesian3D_Domain_t & TriangularCartesian3D_Domain::get_domain()
@@ -161,7 +161,7 @@ unsigned int TriangularCylindrical3D_Domain::num_vertices()
 
 void TriangularCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
 {
-	viennagrid::create_element<TriangularCylindrical3D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 TriangularCylindrical3D_Domain_t & TriangularCylindrical3D_Domain::get_domain()
@@ -229,7 +229,7 @@ unsigned int TriangularPolar2D_Domain::num_vertices()
 
 void TriangularPolar2D_Domain::add_vertex(PointPolar2D vertex)
 {
-	viennagrid::create_element<TriangularPolar2D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 TriangularPolar2D_Domain_t & TriangularPolar2D_Domain::get_domain()
@@ -297,7 +297,7 @@ unsigned int TriangularSpherical3D_Domain::num_vertices()
 
 void TriangularSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
 {
-	viennagrid::create_element<TriangularSpherical3D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 TriangularSpherical3D_Domain_t & TriangularSpherical3D_Domain::get_domain()

@@ -24,7 +24,7 @@ unsigned int LinearCartesian1D_Domain::num_vertices()
 
 void LinearCartesian1D_Domain::add_vertex(PointCartesian1D vertex)
 {
-	viennagrid::create_element<LinearCartesian1D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 LinearCartesian1D_Domain_t & LinearCartesian1D_Domain::get_domain()
@@ -92,7 +92,7 @@ unsigned int LinearCartesian2D_Domain::num_vertices()
 
 void LinearCartesian2D_Domain::add_vertex(PointCartesian2D vertex)
 {
-	viennagrid::create_element<LinearCartesian2D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 LinearCartesian2D_Domain_t & LinearCartesian2D_Domain::get_domain()
@@ -160,7 +160,7 @@ unsigned int LinearCartesian3D_Domain::num_vertices()
 
 void LinearCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
 {
-	viennagrid::create_element<LinearCartesian3D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 LinearCartesian3D_Domain_t & LinearCartesian3D_Domain::get_domain()
@@ -228,7 +228,7 @@ unsigned int LinearCylindrical3D_Domain::num_vertices()
 
 void LinearCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
 {
-	viennagrid::create_element<LinearCylindrical3D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 LinearCylindrical3D_Domain_t & LinearCylindrical3D_Domain::get_domain()
@@ -296,7 +296,7 @@ unsigned int LinearPolar2D_Domain::num_vertices()
 
 void LinearPolar2D_Domain::add_vertex(PointPolar2D vertex)
 {
-	viennagrid::create_element<LinearPolar2D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 LinearPolar2D_Domain_t & LinearPolar2D_Domain::get_domain()
@@ -364,7 +364,7 @@ unsigned int LinearSpherical3D_Domain::num_vertices()
 
 void LinearSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
 {
-	viennagrid::create_element<LinearSpherical3D_Vertex_t>(domain, vertex.get_point());
+	viennagrid::create_vertex(domain, vertex.get_point());
 }
 
 LinearSpherical3D_Domain_t & LinearSpherical3D_Domain::get_domain()

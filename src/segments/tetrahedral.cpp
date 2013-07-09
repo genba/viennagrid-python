@@ -21,7 +21,7 @@ void TetrahedralCartesian3D_Segment::create_cell(PointCartesian3D vertex1, Point
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex4.get_id());
-	viennagrid::create_element<TetrahedralCartesian3D_Cell_t>(segment, vertices);
+	viennagrid::create_element<TetrahedralCartesian3D_Cell_t>(segment, vertices.begin(), vertices.end());
 	
 	cells.append<TetrahedralCartesian3D_Cell>(TetrahedralCartesian3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
@@ -48,7 +48,7 @@ void TetrahedralCylindrical3D_Segment::create_cell(PointCylindrical3D vertex1, P
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex4.get_id());
-	viennagrid::create_element<TetrahedralCylindrical3D_Cell_t>(segment, vertices);
+	viennagrid::create_element<TetrahedralCylindrical3D_Cell_t>(segment, vertices.begin(), vertices.end());
 	
 	cells.append<TetrahedralCylindrical3D_Cell>(TetrahedralCylindrical3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
@@ -75,7 +75,7 @@ void TetrahedralSpherical3D_Segment::create_cell(PointSpherical3D vertex1, Point
 	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
 	vertices[2] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex3.get_id());
 	vertices[3] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex4.get_id());
-	viennagrid::create_element<TetrahedralSpherical3D_Cell_t>(segment, vertices);
+	viennagrid::create_element<TetrahedralSpherical3D_Cell_t>(segment, vertices.begin(), vertices.end());
 	
 	cells.append<TetrahedralSpherical3D_Cell>(TetrahedralSpherical3D_Cell(vertex1, vertex2, vertex3, vertex4));
 }
