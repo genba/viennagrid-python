@@ -12,9 +12,9 @@ find_package (Boost 1.53.0 REQUIRED COMPONENTS python)
 include_directories (${Boost_INCLUDE_DIRS})
 
 # Add include path for ViennaGrid
-include_directories (../inc/ViennaGrid)
+include_directories (../inc/viennagrid)
 # Add include path for ViennaData
-include_directories (../inc/ViennaGrid/external)
+include_directories (../inc/viennadata)
 
 set (VIENNAGRID_WRAPPER_POINTS_SRC
         points/types.hpp
