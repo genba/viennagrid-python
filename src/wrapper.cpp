@@ -220,9 +220,31 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("write_vtk", &LinearSpherical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
 	;
 	
-	/***********************
+	/************************
+	 * LINEAR SEGMENTATIONS *
+	 ************************/
+	
+	class_<LinearCartesian1D_Segmentation>("LinearCartesian1D_Segmentation", init<LinearCartesian1D_Domain &>())
+	;
+	
+	class_<LinearCartesian2D_Segmentation>("LinearCartesian2D_Segmentation", init<LinearCartesian2D_Domain &>())
+	;
+	
+	class_<LinearCartesian3D_Segmentation>("LinearCartesian3D_Segmentation", init<LinearCartesian3D_Domain &>())
+	;
+	
+	class_<LinearCylindrical3D_Segmentation>("LinearCylindrical3D_Segmentation", init<LinearCylindrical3D_Domain &>())
+	;
+	
+	class_<LinearPolar2D_Segmentation>("LinearPolar2D_Segmentation", init<LinearPolar2D_Domain &>())
+	;
+	
+	class_<LinearSpherical3D_Segmentation>("LinearSpherical3D_Segmentation", init<LinearSpherical3D_Domain &>())
+	;
+	
+	/*******************
 	 * LINEAR SEGMENTS *
-	 ***********************/
+	 *******************/
 	
 	class_<LinearCartesian2D_Segment>("LinearCartesian2D_Segment", init<LinearCartesian2D_Domain &, LinearCartesian2D_Segment_t &>())
 		.def("create_cell", &LinearCartesian2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
@@ -249,9 +271,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("cells", &LinearSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	/********************
+	/****************
 	 * LINEAR CELLS *
-	 ********************/
+	 ****************/
 	
 	class_<LinearCartesian2D_Cell>("LinearCartesian2D_Cell", init<PointCartesian2D, PointCartesian2D>())
 		.add_property("vertices", &LinearCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
