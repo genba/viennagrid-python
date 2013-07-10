@@ -15,6 +15,7 @@ class QuadrilateralCartesian2D_Segmentation
 	//QuadrilateralCartesian2D_Domain           *domain;
 public:
 	QuadrilateralCartesian2D_Segmentation(QuadrilateralCartesian2D_Domain &dom);
+	QuadrilateralCartesian2D_Segment create_segment();
 };
 
 ////////////////////////////////
@@ -27,6 +28,7 @@ class QuadrilateralCartesian3D_Segmentation
 	//QuadrilateralCartesian3D_Domain           *domain;
 public:
 	QuadrilateralCartesian3D_Segmentation(QuadrilateralCartesian3D_Domain &dom);
+	QuadrilateralCartesian3D_Segment create_segment();
 };
 
 //////////////////////////////////
@@ -39,6 +41,7 @@ class QuadrilateralCylindrical3D_Segmentation
 	//QuadrilateralCylindrical3D_Domain           *domain;
 public:
 	QuadrilateralCylindrical3D_Segmentation(QuadrilateralCylindrical3D_Domain &dom);
+	QuadrilateralCylindrical3D_Segment create_segment();
 };
 
 ////////////////////////////
@@ -51,6 +54,7 @@ class QuadrilateralPolar2D_Segmentation
 	//QuadrilateralPolar2D_Domain           *domain;
 public:
 	QuadrilateralPolar2D_Segmentation(QuadrilateralPolar2D_Domain &dom);
+	QuadrilateralPolar2D_Segment create_segment();
 };
 
 ////////////////////////////////
@@ -63,6 +67,7 @@ class QuadrilateralSpherical3D_Segmentation
 	//QuadrilateralSpherical3D_Domain           *domain;
 public:
 	QuadrilateralSpherical3D_Segmentation(QuadrilateralSpherical3D_Domain &dom);
+	QuadrilateralSpherical3D_Segment create_segment();
 };
 
 #endif
