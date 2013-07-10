@@ -494,19 +494,19 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * QUADRILATERAL SEGMENTATIONS *
 	 *******************************/
 	
-	class_<QuadrilateralCartesian2D_Segmentation>("QuadrilateralCartesian2D_Segmentation")
+	class_<QuadrilateralCartesian2D_Segmentation>("QuadrilateralCartesian2D_Segmentation", init<QuadrilateralCartesian2D_Domain &>())
 	;
 	
-	class_<QuadrilateralCartesian3D_Segmentation>("QuadrilateralCartesian3D_Segmentation")
+	class_<QuadrilateralCartesian3D_Segmentation>("QuadrilateralCartesian3D_Segmentation", init<QuadrilateralCartesian3D_Domain &>())
 	;
 	
-	class_<QuadrilateralCylindrical3D_Segmentation>("QuadrilateralCylindrical3D_Segmentation")
+	class_<QuadrilateralCylindrical3D_Segmentation>("QuadrilateralCylindrical3D_Segmentation", init<QuadrilateralCylindrical3D_Domain &>())
 	;
 	
-	class_<QuadrilateralPolar2D_Segmentation>("QuadrilateralPolar2D_Segmentation")
+	class_<QuadrilateralPolar2D_Segmentation>("QuadrilateralPolar2D_Segmentation", init<QuadrilateralPolar2D_Domain &>())
 	;
 	
-	class_<QuadrilateralSpherical3D_Segmentation>("QuadrilateralSpherical3D_Segmentation")
+	class_<QuadrilateralSpherical3D_Segmentation>("QuadrilateralSpherical3D_Segmentation", init<QuadrilateralSpherical3D_Domain &>())
 	;
 	
 	/**************************
