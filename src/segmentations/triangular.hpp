@@ -15,6 +15,7 @@ class TriangularCartesian2D_Segmentation
 	//TriangularCartesian2D_Domain           *domain;
 public:
 	TriangularCartesian2D_Segmentation(TriangularCartesian2D_Domain &dom);
+	TriangularCartesian2D_Segment create_segment();
 };
 
 /////////////////////////////
@@ -27,6 +28,7 @@ class TriangularCartesian3D_Segmentation
 	//TriangularCartesian3D_Domain           *domain;
 public:
 	TriangularCartesian3D_Segmentation(TriangularCartesian3D_Domain &dom);
+	TriangularCartesian3D_Segment create_segment();
 };
 
 ///////////////////////////////
@@ -39,6 +41,7 @@ class TriangularCylindrical3D_Segmentation
 	//TriangularCylindrical3D_Domain           *domain;
 public:
 	TriangularCylindrical3D_Segmentation(TriangularCylindrical3D_Domain &dom);
+	TriangularCylindrical3D_Segment create_segment();
 };
 
 /////////////////////////
@@ -51,6 +54,7 @@ class TriangularPolar2D_Segmentation
 	//TriangularPolar2D_Domain           *domain;
 public:
 	TriangularPolar2D_Segmentation(TriangularPolar2D_Domain &dom);
+	TriangularPolar2D_Segment create_segment();
 };
 
 /////////////////////////////
@@ -63,6 +67,7 @@ class TriangularSpherical3D_Segmentation
 	//TriangularSpherical3D_Domain           *domain;
 public:
 	TriangularSpherical3D_Segmentation(TriangularSpherical3D_Domain &dom);
+	TriangularSpherical3D_Segment create_segment();
 };
 
 #endif
