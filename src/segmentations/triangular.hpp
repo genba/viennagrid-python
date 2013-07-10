@@ -5,6 +5,9 @@
 
 #include "../domains/triangular.hpp"
 
+#include <boost/python.hpp>
+using namespace boost::python;
+
 /////////////////////////////
 // TRIANGULAR CARTESIAN 2D //
 /////////////////////////////
@@ -16,6 +19,7 @@ class TriangularCartesian2D_Segmentation
 public:
 	TriangularCartesian2D_Segmentation(TriangularCartesian2D_Domain &dom);
 	TriangularCartesian2D_Segment create_segment();
+	list get_segments();
 };
 
 /////////////////////////////
@@ -29,6 +33,7 @@ class TriangularCartesian3D_Segmentation
 public:
 	TriangularCartesian3D_Segmentation(TriangularCartesian3D_Domain &dom);
 	TriangularCartesian3D_Segment create_segment();
+	list get_segments();
 };
 
 ///////////////////////////////
@@ -42,6 +47,7 @@ class TriangularCylindrical3D_Segmentation
 public:
 	TriangularCylindrical3D_Segmentation(TriangularCylindrical3D_Domain &dom);
 	TriangularCylindrical3D_Segment create_segment();
+	list get_segments();
 };
 
 /////////////////////////
@@ -55,6 +61,7 @@ class TriangularPolar2D_Segmentation
 public:
 	TriangularPolar2D_Segmentation(TriangularPolar2D_Domain &dom);
 	TriangularPolar2D_Segment create_segment();
+	list get_segments();
 };
 
 /////////////////////////////
@@ -68,6 +75,7 @@ class TriangularSpherical3D_Segmentation
 public:
 	TriangularSpherical3D_Segmentation(TriangularSpherical3D_Domain &dom);
 	TriangularSpherical3D_Segment create_segment();
+	list get_segments();
 };
 
 #endif

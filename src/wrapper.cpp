@@ -376,22 +376,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<TriangularCartesian2D_Segmentation>("TriangularCartesian2D_Segmentation", init<TriangularCartesian2D_Domain &>())
 		.def("create_segment", &TriangularCartesian2D_Segmentation::create_segment, "docstring")
+		.def("get_segments", &TriangularCartesian2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularCartesian3D_Segmentation>("TriangularCartesian3D_Segmentation", init<TriangularCartesian3D_Domain &>())
 		.def("create_segment", &TriangularCartesian3D_Segmentation::create_segment, "docstring")
+		.def("get_segments", &TriangularCartesian3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularCylindrical3D_Segmentation>("TriangularCylindrical3D_Segmentation", init<TriangularCylindrical3D_Domain &>())
 		.def("create_segment", &TriangularCylindrical3D_Segmentation::create_segment, "docstring")
+		.def("get_segments", &TriangularCylindrical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularPolar2D_Segmentation>("TriangularPolar2D_Segmentation", init<TriangularPolar2D_Domain &>())
 		.def("create_segment", &TriangularPolar2D_Segmentation::create_segment, "docstring")
+		.def("get_segments", &TriangularPolar2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularSpherical3D_Segmentation>("TriangularSpherical3D_Segmentation", init<TriangularSpherical3D_Domain &>())
 		.def("create_segment", &TriangularSpherical3D_Segmentation::create_segment, "docstring")
+		.def("get_segments", &TriangularSpherical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	/***********************
