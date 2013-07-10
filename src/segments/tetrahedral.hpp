@@ -21,12 +21,9 @@ using namespace boost::python;
 
 class TetrahedralCartesian3D_Segment
 {
-	TetrahedralCartesian3D_Domain      *domain;
 	TetrahedralCartesian3D_Segment_t    segment;
-	list                                cells;
 public:
-	TetrahedralCartesian3D_Segment() {} // TODO: delete
-	TetrahedralCartesian3D_Segment(TetrahedralCartesian3D_Domain &initial_domain, TetrahedralCartesian3D_Segment_t &initial_segment);
+	TetrahedralCartesian3D_Segment(TetrahedralCartesian3D_Segment_t &initial_segment);
 	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
 	list get_cells();
 };
@@ -37,12 +34,9 @@ public:
 
 class TetrahedralCylindrical3D_Segment
 {
-	TetrahedralCylindrical3D_Domain      *domain;
 	TetrahedralCylindrical3D_Segment_t    segment;
-	list                                  cells;
 public:
-	TetrahedralCylindrical3D_Segment() {} // TODO: delete
-	TetrahedralCylindrical3D_Segment(TetrahedralCylindrical3D_Domain &initial_domain, TetrahedralCylindrical3D_Segment_t &initial_segment);
+	TetrahedralCylindrical3D_Segment(TetrahedralCylindrical3D_Segment_t &initial_segment);
 	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
 	list get_cells();
 };
@@ -53,12 +47,9 @@ public:
 
 class TetrahedralSpherical3D_Segment
 {
-	TetrahedralSpherical3D_Domain      *domain;
 	TetrahedralSpherical3D_Segment_t    segment;
-	list                                cells;
 public:
-	TetrahedralSpherical3D_Segment() {} // TODO: delete
-	TetrahedralSpherical3D_Segment(TetrahedralSpherical3D_Domain &initial_domain, TetrahedralSpherical3D_Segment_t &initial_segment);
+	TetrahedralSpherical3D_Segment(TetrahedralSpherical3D_Segment_t &initial_segment);
 	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
 	list get_cells();
 };
