@@ -15,6 +15,7 @@ class LinearCartesian1D_Segmentation
 	//LinearCartesian1D_Domain           *domain;
 public:
 	LinearCartesian1D_Segmentation(LinearCartesian1D_Domain &dom);
+	LinearCartesian1D_Segment create_segment();
 };
 
 /////////////////////////
@@ -27,6 +28,7 @@ class LinearCartesian2D_Segmentation
 	//LinearCartesian2D_Domain           *domain;
 public:
 	LinearCartesian2D_Segmentation(LinearCartesian2D_Domain &dom);
+	LinearCartesian2D_Segment create_segment();
 };
 
 /////////////////////////
@@ -39,6 +41,7 @@ class LinearCartesian3D_Segmentation
 	//LinearCartesian3D_Domain           *domain;
 public:
 	LinearCartesian3D_Segmentation(LinearCartesian3D_Domain &dom);
+	LinearCartesian3D_Segment create_segment();
 };
 
 ///////////////////////////
@@ -51,6 +54,7 @@ class LinearCylindrical3D_Segmentation
 	//LinearCylindrical3D_Domain           *domain;
 public:
 	LinearCylindrical3D_Segmentation(LinearCylindrical3D_Domain &dom);
+	LinearCylindrical3D_Segment create_segment();
 };
 
 /////////////////////
@@ -63,6 +67,7 @@ class LinearPolar2D_Segmentation
 	//LinearPolar2D_Domain           *domain;
 public:
 	LinearPolar2D_Segmentation(LinearPolar2D_Domain &dom);
+	LinearPolar2D_Segment create_segment();
 };
 
 /////////////////////////
@@ -75,6 +80,7 @@ class LinearSpherical3D_Segmentation
 	//LinearSpherical3D_Domain           *domain;
 public:
 	LinearSpherical3D_Segmentation(LinearSpherical3D_Domain &dom);
+	LinearSpherical3D_Segment create_segment();
 };
 
 #endif

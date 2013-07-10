@@ -225,21 +225,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 ************************/
 	
 	class_<LinearCartesian1D_Segmentation>("LinearCartesian1D_Segmentation", init<LinearCartesian1D_Domain &>())
+		.def("create_segment", &LinearCartesian1D_Segmentation::create_segment, "docstring")
 	;
 	
 	class_<LinearCartesian2D_Segmentation>("LinearCartesian2D_Segmentation", init<LinearCartesian2D_Domain &>())
+		.def("create_segment", &LinearCartesian2D_Segmentation::create_segment, "docstring")
 	;
 	
 	class_<LinearCartesian3D_Segmentation>("LinearCartesian3D_Segmentation", init<LinearCartesian3D_Domain &>())
+		.def("create_segment", &LinearCartesian3D_Segmentation::create_segment, "docstring")
 	;
 	
 	class_<LinearCylindrical3D_Segmentation>("LinearCylindrical3D_Segmentation", init<LinearCylindrical3D_Domain &>())
+		.def("create_segment", &LinearCylindrical3D_Segmentation::create_segment, "docstring")
 	;
 	
 	class_<LinearPolar2D_Segmentation>("LinearPolar2D_Segmentation", init<LinearPolar2D_Domain &>())
+		.def("create_segment", &LinearPolar2D_Segmentation::create_segment, "docstring")
 	;
 	
 	class_<LinearSpherical3D_Segmentation>("LinearSpherical3D_Segmentation", init<LinearSpherical3D_Domain &>())
+		.def("create_segment", &LinearSpherical3D_Segmentation::create_segment, "docstring")
 	;
 	
 	/*******************
