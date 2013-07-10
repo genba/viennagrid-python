@@ -368,19 +368,19 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * TRIANGULAR SEGMENTATIONS *
 	 ****************************/
 	
-	class_<TriangularCartesian2D_Segmentation>("TriangularCartesian2D_Segmentation")
+	class_<TriangularCartesian2D_Segmentation>("TriangularCartesian2D_Segmentation", init<TriangularCartesian2D_Domain &>())
 	;
 	
-	class_<TriangularCartesian3D_Segmentation>("TriangularCartesian3D_Segmentation")
+	class_<TriangularCartesian3D_Segmentation>("TriangularCartesian3D_Segmentation", init<TriangularCartesian3D_Domain &>())
 	;
 	
-	class_<TriangularCylindrical3D_Segmentation>("TriangularCylindrical3D_Segmentation")
+	class_<TriangularCylindrical3D_Segmentation>("TriangularCylindrical3D_Segmentation", init<TriangularCylindrical3D_Domain &>())
 	;
 	
-	class_<TriangularPolar2D_Segmentation>("TriangularPolar2D_Segmentation")
+	class_<TriangularPolar2D_Segmentation>("TriangularPolar2D_Segmentation", init<TriangularPolar2D_Domain &>())
 	;
 	
-	class_<TriangularSpherical3D_Segmentation>("TriangularSpherical3D_Segmentation")
+	class_<TriangularSpherical3D_Segmentation>("TriangularSpherical3D_Segmentation", init<TriangularSpherical3D_Domain &>())
 	;
 	
 	/***********************
