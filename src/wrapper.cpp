@@ -600,13 +600,13 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * TETRAHEDRAL SEGMENTATIONS *
 	 *****************************/
 	
-	class_<TetrahedralCartesian3D_Segmentation>("TetrahedralCartesian3D_Segmentation")
+	class_<TetrahedralCartesian3D_Segmentation>("TetrahedralCartesian3D_Segmentation", init<TetrahedralCartesian3D_Domain &>())
 	;
 	
-	class_<TetrahedralCylindrical3D_Segmentation>("TetrahedralCylindrical3D_Segmentation")
+	class_<TetrahedralCylindrical3D_Segmentation>("TetrahedralCylindrical3D_Segmentation", init<TetrahedralCylindrical3D_Domain &>())
 	;
 	
-	class_<TetrahedralSpherical3D_Segmentation>("TetrahedralSpherical3D_Segmentation")
+	class_<TetrahedralSpherical3D_Segmentation>("TetrahedralSpherical3D_Segmentation", init<TetrahedralSpherical3D_Domain &>())
 	;
 	
 	/**************************
