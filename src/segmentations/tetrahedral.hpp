@@ -15,6 +15,7 @@ class TetrahedralCartesian3D_Segmentation
 	//TetrahedralCartesian3D_Domain           *domain;
 public:
 	TetrahedralCartesian3D_Segmentation(TetrahedralCartesian3D_Domain &dom);
+	TetrahedralCartesian3D_Segment create_segment();
 };
 
 ////////////////////////////////
@@ -27,6 +28,7 @@ class TetrahedralCylindrical3D_Segmentation
 	//TetrahedralCylindrical3D_Domain           *domain;
 public:
 	TetrahedralCylindrical3D_Segmentation(TetrahedralCylindrical3D_Domain &dom);
+	TetrahedralCylindrical3D_Segment create_segment();
 };
 
 //////////////////////////////
@@ -39,6 +41,7 @@ class TetrahedralSpherical3D_Segmentation
 	//TetrahedralSpherical3D_Domain           *domain;
 public:
 	TetrahedralSpherical3D_Segmentation(TetrahedralSpherical3D_Domain &dom);
+	TetrahedralSpherical3D_Segment create_segment();
 };
 
 #endif

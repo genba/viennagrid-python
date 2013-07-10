@@ -611,12 +611,15 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 *****************************/
 	
 	class_<TetrahedralCartesian3D_Segmentation>("TetrahedralCartesian3D_Segmentation", init<TetrahedralCartesian3D_Domain &>())
+		.def("create_segment", &TetrahedralCartesian3D_Segmentation::create_segment, "docstring")
 	;
 	
 	class_<TetrahedralCylindrical3D_Segmentation>("TetrahedralCylindrical3D_Segmentation", init<TetrahedralCylindrical3D_Domain &>())
+		.def("create_segment", &TetrahedralCylindrical3D_Segmentation::create_segment, "docstring")
 	;
 	
 	class_<TetrahedralSpherical3D_Segmentation>("TetrahedralSpherical3D_Segmentation", init<TetrahedralSpherical3D_Domain &>())
+		.def("create_segment", &TetrahedralSpherical3D_Segmentation::create_segment, "docstring")
 	;
 	
 	/**************************
