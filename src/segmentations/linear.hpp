@@ -5,6 +5,9 @@
 
 #include "../domains/linear.hpp"
 
+#include <boost/python.hpp>
+using namespace boost::python;
+
 /////////////////////////
 // LINEAR CARTESIAN 1D //
 /////////////////////////
@@ -16,6 +19,7 @@ class LinearCartesian1D_Segmentation
 public:
 	LinearCartesian1D_Segmentation(LinearCartesian1D_Domain &dom);
 	LinearCartesian1D_Segment create_segment();
+	list get_segments();
 };
 
 /////////////////////////
@@ -29,6 +33,7 @@ class LinearCartesian2D_Segmentation
 public:
 	LinearCartesian2D_Segmentation(LinearCartesian2D_Domain &dom);
 	LinearCartesian2D_Segment create_segment();
+	list get_segments();
 };
 
 /////////////////////////
@@ -42,6 +47,7 @@ class LinearCartesian3D_Segmentation
 public:
 	LinearCartesian3D_Segmentation(LinearCartesian3D_Domain &dom);
 	LinearCartesian3D_Segment create_segment();
+	list get_segments();
 };
 
 ///////////////////////////
@@ -55,6 +61,7 @@ class LinearCylindrical3D_Segmentation
 public:
 	LinearCylindrical3D_Segmentation(LinearCylindrical3D_Domain &dom);
 	LinearCylindrical3D_Segment create_segment();
+	list get_segments();
 };
 
 /////////////////////
@@ -68,6 +75,7 @@ class LinearPolar2D_Segmentation
 public:
 	LinearPolar2D_Segmentation(LinearPolar2D_Domain &dom);
 	LinearPolar2D_Segment create_segment();
+	list get_segments();
 };
 
 /////////////////////////
@@ -81,6 +89,7 @@ class LinearSpherical3D_Segmentation
 public:
 	LinearSpherical3D_Segmentation(LinearSpherical3D_Domain &dom);
 	LinearSpherical3D_Segment create_segment();
+	list get_segments();
 };
 
 #endif
