@@ -25,7 +25,7 @@ unsigned int TetrahedralCartesian3D_Domain::num_vertices()
 
 void TetrahedralCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, vertex.get_point());
 }
 
 TetrahedralCartesian3D_Domain_t & TetrahedralCartesian3D_Domain::get_domain()
@@ -93,7 +93,7 @@ unsigned int TetrahedralCylindrical3D_Domain::num_vertices()
 
 void TetrahedralCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, vertex.get_point());
 }
 
 TetrahedralCylindrical3D_Domain_t & TetrahedralCylindrical3D_Domain::get_domain()
@@ -161,7 +161,7 @@ unsigned int TetrahedralSpherical3D_Domain::num_vertices()
 
 void TetrahedralSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, vertex.get_point());
 }
 
 TetrahedralSpherical3D_Domain_t & TetrahedralSpherical3D_Domain::get_domain()
