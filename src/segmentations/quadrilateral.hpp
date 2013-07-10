@@ -5,6 +5,9 @@
 
 #include "../domains/quadrilateral.hpp"
 
+#include <boost/python.hpp>
+using namespace boost::python;
+
 ////////////////////////////////
 // QUADRILATERAL CARTESIAN 2D //
 ////////////////////////////////
@@ -16,6 +19,7 @@ class QuadrilateralCartesian2D_Segmentation
 public:
 	QuadrilateralCartesian2D_Segmentation(QuadrilateralCartesian2D_Domain &dom);
 	QuadrilateralCartesian2D_Segment create_segment();
+	list get_segments();
 };
 
 ////////////////////////////////
@@ -29,6 +33,7 @@ class QuadrilateralCartesian3D_Segmentation
 public:
 	QuadrilateralCartesian3D_Segmentation(QuadrilateralCartesian3D_Domain &dom);
 	QuadrilateralCartesian3D_Segment create_segment();
+	list get_segments();
 };
 
 //////////////////////////////////
@@ -42,6 +47,7 @@ class QuadrilateralCylindrical3D_Segmentation
 public:
 	QuadrilateralCylindrical3D_Segmentation(QuadrilateralCylindrical3D_Domain &dom);
 	QuadrilateralCylindrical3D_Segment create_segment();
+	list get_segments();
 };
 
 ////////////////////////////
@@ -55,6 +61,7 @@ class QuadrilateralPolar2D_Segmentation
 public:
 	QuadrilateralPolar2D_Segmentation(QuadrilateralPolar2D_Domain &dom);
 	QuadrilateralPolar2D_Segment create_segment();
+	list get_segments();
 };
 
 ////////////////////////////////
@@ -68,6 +75,7 @@ class QuadrilateralSpherical3D_Segmentation
 public:
 	QuadrilateralSpherical3D_Segmentation(QuadrilateralSpherical3D_Domain &dom);
 	QuadrilateralSpherical3D_Segment create_segment();
+	list get_segments();
 };
 
 #endif
