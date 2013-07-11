@@ -27,8 +27,12 @@ void LinearCartesian1D_Segment::create_cell(PointCartesian1D vertex1, PointCarte
 
 list LinearCartesian1D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<LinearCartesian1D_Segment_t, viennagrid::line_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<LinearCartesian1D_Cell>(LinearCartesian1D_Cell(*it));
 	return cells;
 }
 
@@ -55,8 +59,12 @@ void LinearCartesian2D_Segment::create_cell(PointCartesian2D vertex1, PointCarte
 
 list LinearCartesian2D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<LinearCartesian2D_Segment_t, viennagrid::line_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<LinearCartesian2D_Cell>(LinearCartesian2D_Cell(*it));
 	return cells;
 }
 
@@ -83,8 +91,12 @@ void LinearCartesian3D_Segment::create_cell(PointCartesian3D vertex1, PointCarte
 
 list LinearCartesian3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<LinearCartesian3D_Segment_t, viennagrid::line_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<LinearCartesian3D_Cell>(LinearCartesian3D_Cell(*it));
 	return cells;
 }
 
@@ -111,8 +123,12 @@ void LinearCylindrical3D_Segment::create_cell(PointCylindrical3D vertex1, PointC
 
 list LinearCylindrical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<LinearCylindrical3D_Segment_t, viennagrid::line_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<LinearCylindrical3D_Cell>(LinearCylindrical3D_Cell(*it));
 	return cells;
 }
 
@@ -139,8 +155,12 @@ void LinearPolar2D_Segment::create_cell(PointPolar2D vertex1, PointPolar2D verte
 
 list LinearPolar2D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<LinearPolar2D_Segment_t, viennagrid::line_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<LinearPolar2D_Cell>(LinearPolar2D_Cell(*it));
 	return cells;
 }
 
@@ -167,7 +187,11 @@ void LinearSpherical3D_Segment::create_cell(PointSpherical3D vertex1, PointSpher
 
 list LinearSpherical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<LinearSpherical3D_Segment_t, viennagrid::line_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<LinearSpherical3D_Cell>(LinearSpherical3D_Cell(*it));
 	return cells;
 }
