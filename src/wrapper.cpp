@@ -292,27 +292,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * LINEAR CELLS *
 	 ****************/
 	
-	class_<LinearCartesian1D_Cell>("LinearCartesian1D_Cell", init<PointCartesian1D, PointCartesian1D>())
+	class_<LinearCartesian1D_Cell>("LinearCartesian1D_Cell", init<LinearCartesian1D_Cell_t &>())
 		.add_property("vertices", &LinearCartesian1D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearCartesian2D_Cell>("LinearCartesian2D_Cell", init<PointCartesian2D, PointCartesian2D>())
+	class_<LinearCartesian2D_Cell>("LinearCartesian2D_Cell", init<LinearCartesian2D_Cell_t &>())
 		.add_property("vertices", &LinearCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearCartesian3D_Cell>("LinearCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D>())
+	class_<LinearCartesian3D_Cell>("LinearCartesian3D_Cell", init<LinearCartesian3D_Cell_t &>())
 		.add_property("vertices", &LinearCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearCylindrical3D_Cell>("LinearCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D>())
+	class_<LinearCylindrical3D_Cell>("LinearCylindrical3D_Cell", init<LinearCylindrical3D_Cell_t &>())
 		.add_property("vertices", &LinearCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearPolar2D_Cell>("LinearPolar2D_Cell", init<PointPolar2D, PointPolar2D>())
+	class_<LinearPolar2D_Cell>("LinearPolar2D_Cell", init<LinearPolar2D_Cell_t &>())
 		.add_property("vertices", &LinearPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearSpherical3D_Cell>("LinearSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D>())
+	class_<LinearSpherical3D_Cell>("LinearSpherical3D_Cell", init<LinearSpherical3D_Cell_t &>())
 		.add_property("vertices", &LinearSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
