@@ -98,21 +98,18 @@ list LinearCartesian3D_Segment::get_cells()
 // LinearCylindrical3D_Segment //
 /////////////////////////////////
 
-LinearCylindrical3D_Segment::LinearCylindrical3D_Segment(LinearCylindrical3D_Segment_t &initial_segment) : segment(initial_segment)
+LinearCylindrical3D_Segment::LinearCylindrical3D_Segment(LinearCylindrical3D_Segment_t &initial_segment, LinearCylindrical3D_Segmentation &initial_segmentation) : segment(initial_segment)
 {
 	//segment = initial_segment;
+	segmentation = &initial_segmentation;
 }
 
-void LinearCylindrical3D_Segment::create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2)
+void LinearCylindrical3D_Segment::create_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2)
 {
-	/*
 	viennagrid::storage::static_array<LinearCylindrical3D_VertexHandle_t, 2> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
-	viennagrid::create_element<LinearCylindrical3D_Cell_t>(segment, vertices.begin(), vertices.end());
-	*/
-	
-	//cells.append<LinearCylindrical3D_Cell>(LinearCylindrical3D_Cell(vertex1, vertex2));
+	vertices[0] = viennagrid::handle(segmentation->get_domain(), vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(segmentation->get_domain(), vertex2.get_vertex());;
+	viennagrid::make_element<viennagrid::line_tag>(segment, vertices.begin(), vertices.end());
 }
 
 list LinearCylindrical3D_Segment::get_cells()

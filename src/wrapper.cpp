@@ -273,7 +273,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("cells", &LinearCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<LinearCylindrical3D_Segment>("LinearCylindrical3D_Segment", init<LinearCylindrical3D_Segment_t &>())
+	class_<LinearCylindrical3D_Segment>("LinearCylindrical3D_Segment", init<LinearCylindrical3D_Segment_t &, LinearCylindrical3D_Segmentation &>())
 		.def("create_cell", &LinearCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;

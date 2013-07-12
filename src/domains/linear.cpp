@@ -226,9 +226,9 @@ unsigned int LinearCylindrical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
+void LinearCylindrical3D_Domain::add_vertex(PointCylindrical3D point)
 {
-	viennagrid::make_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearCylindrical3D_Domain_t & LinearCylindrical3D_Domain::get_domain()
@@ -236,11 +236,11 @@ LinearCylindrical3D_Domain_t & LinearCylindrical3D_Domain::get_domain()
 	return domain;
 }
 
-PointCylindrical3D LinearCylindrical3D_Domain::get_vertex(unsigned int index)
+LinearCylindrical3D_Vertex LinearCylindrical3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCylindrical3D(viennagrid::point(domain, vertices[index]), index);
+	return LinearCylindrical3D_Vertex(vertices[index]);
 }
 
 void LinearCylindrical3D_Domain::read_netgen(std::string const &filename)

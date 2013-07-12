@@ -65,10 +65,11 @@ public:
 
 class LinearCylindrical3D_Segment
 {
-	LinearCylindrical3D_Segment_t    segment;
+	LinearCylindrical3D_Segment_t        segment;
+	LinearCylindrical3D_Segmentation    *segmentation;
 public:
-	LinearCylindrical3D_Segment(LinearCylindrical3D_Segment_t &initial_segment);
-	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2);
+	LinearCylindrical3D_Segment(LinearCylindrical3D_Segment_t &initial_segment, LinearCylindrical3D_Segmentation &initial_segmentation);
+	void create_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2);
 	list get_cells();
 };
 

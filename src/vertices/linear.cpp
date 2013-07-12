@@ -41,3 +41,17 @@ LinearCartesian3D_Vertex_t & LinearCartesian3D_Vertex::get_vertex()
 {
 	return *vertex;
 }
+
+////////////////////////////////
+// LinearCylindrical3D_Vertex //
+////////////////////////////////
+
+LinearCylindrical3D_Vertex::LinearCylindrical3D_Vertex(LinearCylindrical3D_Vertex_t &initial_vertex)
+{
+	vertex = &initial_vertex;
+}
+
+LinearCylindrical3D_Vertex_t & LinearCylindrical3D_Vertex::get_vertex()
+{
+	return *vertex;
+}

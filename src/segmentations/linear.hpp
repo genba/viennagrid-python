@@ -61,11 +61,12 @@ public:
 class LinearCylindrical3D_Segmentation
 {
 	LinearCylindrical3D_Segmentation_t    segmentation;
-	//LinearCylindrical3D_Domain           *domain;
+	LinearCylindrical3D_Domain           *domain;
 public:
 	LinearCylindrical3D_Segmentation(LinearCylindrical3D_Domain &dom);
 	LinearCylindrical3D_Segment create_segment();
 	list get_segments();
+	LinearCylindrical3D_Domain_t & get_domain();
 };
 
 /////////////////////

@@ -39,4 +39,16 @@ public:
 	LinearCartesian3D_Vertex_t & get_vertex();
 };
 
+////////////////////////////////
+// LinearCylindrical3D_Vertex //
+////////////////////////////////
+
+class LinearCylindrical3D_Vertex
+{
+	LinearCylindrical3D_Vertex_t    *vertex;
+public:
+	LinearCylindrical3D_Vertex(LinearCylindrical3D_Vertex_t &initial_vertex);
+	LinearCylindrical3D_Vertex_t & get_vertex();
+};
+
 #endif
