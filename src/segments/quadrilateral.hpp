@@ -11,6 +11,8 @@
 #include "../points/spherical.hpp"
 
 #include "../cells/quadrilateral.hpp"
+#include "../segmentations/forward.hpp"
+#include "../vertices/quadrilateral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -21,10 +23,11 @@ using namespace boost::python;
 
 class QuadrilateralCartesian2D_Segment
 {
-	QuadrilateralCartesian2D_Segment_t    segment;
+	QuadrilateralCartesian2D_Segment_t        segment;
+	QuadrilateralCartesian2D_Segmentation    *segmentation;
 public:
-	QuadrilateralCartesian2D_Segment(QuadrilateralCartesian2D_Segment_t &initial_segment);
-	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4);
+	QuadrilateralCartesian2D_Segment(QuadrilateralCartesian2D_Segment_t &initial_segment, QuadrilateralCartesian2D_Segmentation &initial_segmentation);
+	void create_cell(QuadrilateralCartesian2D_Vertex vertex1, QuadrilateralCartesian2D_Vertex vertex2, QuadrilateralCartesian2D_Vertex vertex3, QuadrilateralCartesian2D_Vertex vertex4);
 	list get_cells();
 };
 
@@ -34,10 +37,11 @@ public:
 
 class QuadrilateralCartesian3D_Segment
 {
-	QuadrilateralCartesian3D_Segment_t    segment;
+	QuadrilateralCartesian3D_Segment_t        segment;
+	QuadrilateralCartesian3D_Segmentation    *segmentation;
 public:
-	QuadrilateralCartesian3D_Segment(QuadrilateralCartesian3D_Segment_t &initial_segment);
-	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
+	QuadrilateralCartesian3D_Segment(QuadrilateralCartesian3D_Segment_t &initial_segment, QuadrilateralCartesian3D_Segmentation &initial_segmentation);
+	void create_cell(QuadrilateralCartesian3D_Vertex vertex1, QuadrilateralCartesian3D_Vertex vertex2, QuadrilateralCartesian3D_Vertex vertex3, QuadrilateralCartesian3D_Vertex vertex4);
 	list get_cells();
 };
 
@@ -47,10 +51,11 @@ public:
 
 class QuadrilateralCylindrical3D_Segment
 {
-	QuadrilateralCylindrical3D_Segment_t    segment;
+	QuadrilateralCylindrical3D_Segment_t        segment;
+	QuadrilateralCylindrical3D_Segmentation    *segmentation;
 public:
-	QuadrilateralCylindrical3D_Segment(QuadrilateralCylindrical3D_Segment_t &initial_segment);
-	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
+	QuadrilateralCylindrical3D_Segment(QuadrilateralCylindrical3D_Segment_t &initial_segment, QuadrilateralCylindrical3D_Segmentation &initial_segmentation);
+	void create_cell(QuadrilateralCylindrical3D_Vertex vertex1, QuadrilateralCylindrical3D_Vertex vertex2, QuadrilateralCylindrical3D_Vertex vertex3, QuadrilateralCylindrical3D_Vertex vertex4);
 	list get_cells();
 };
 
@@ -60,10 +65,11 @@ public:
 
 class QuadrilateralPolar2D_Segment
 {
-	QuadrilateralPolar2D_Segment_t    segment;
+	QuadrilateralPolar2D_Segment_t        segment;
+	QuadrilateralPolar2D_Segmentation    *segmentation;
 public:
-	QuadrilateralPolar2D_Segment(QuadrilateralPolar2D_Segment_t &initial_segment);
-	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4);
+	QuadrilateralPolar2D_Segment(QuadrilateralPolar2D_Segment_t &initial_segment, QuadrilateralPolar2D_Segmentation &initial_segmentation);
+	void create_cell(QuadrilateralPolar2D_Vertex vertex1, QuadrilateralPolar2D_Vertex vertex2, QuadrilateralPolar2D_Vertex vertex3, QuadrilateralPolar2D_Vertex vertex4);
 	list get_cells();
 };
 
@@ -73,10 +79,11 @@ public:
 
 class QuadrilateralSpherical3D_Segment
 {
-	QuadrilateralSpherical3D_Segment_t    segment;
+	QuadrilateralSpherical3D_Segment_t        segment;
+	QuadrilateralSpherical3D_Segmentation    *segmentation;
 public:
-	QuadrilateralSpherical3D_Segment(QuadrilateralSpherical3D_Segment_t &initial_segment);
-	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
+	QuadrilateralSpherical3D_Segment(QuadrilateralSpherical3D_Segment_t &initial_segment, QuadrilateralSpherical3D_Segmentation &initial_segmentation);
+	void create_cell(QuadrilateralSpherical3D_Vertex vertex1, QuadrilateralSpherical3D_Vertex vertex2, QuadrilateralSpherical3D_Vertex vertex3, QuadrilateralSpherical3D_Vertex vertex4);
 	list get_cells();
 };
 

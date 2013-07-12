@@ -6,7 +6,8 @@
 #include "../points/cylindrical.hpp"
 #include "../points/polar.hpp"
 #include "../points/spherical.hpp"
-#include "../segments/quadrilateral.hpp"
+
+#include "../vertices/quadrilateral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -19,8 +20,8 @@ public:
 	QuadrilateralCartesian2D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian2D vertex);
-	PointCartesian2D get_vertex(unsigned int index);
+	void add_vertex(PointCartesian2D point);
+	QuadrilateralCartesian2D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -40,8 +41,8 @@ public:
 	QuadrilateralCartesian3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian3D vertex);
-	PointCartesian3D get_vertex(unsigned int index);
+	void add_vertex(PointCartesian3D point);
+	QuadrilateralCartesian3D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -61,8 +62,8 @@ public:
 	QuadrilateralCylindrical3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCylindrical3D vertex);
-	PointCylindrical3D get_vertex(unsigned int index);
+	void add_vertex(PointCylindrical3D point);
+	QuadrilateralCylindrical3D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -82,8 +83,8 @@ public:
 	QuadrilateralPolar2D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointPolar2D vertex);
-	PointPolar2D get_vertex(unsigned int index);
+	void add_vertex(PointPolar2D point);
+	QuadrilateralPolar2D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -103,8 +104,8 @@ public:
 	QuadrilateralSpherical3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointSpherical3D vertex);
-	PointSpherical3D get_vertex(unsigned int index);
+	void add_vertex(PointSpherical3D point);
+	QuadrilateralSpherical3D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);

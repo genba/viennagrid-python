@@ -78,7 +78,9 @@ set (VIENNAGRID_WRAPPER_VERTICES_SRC
         vertices/linear.hpp
         vertices/linear.cpp
         vertices/triangular.hpp
-        vertices/triangular.cpp)
+        vertices/triangular.cpp
+        vertices/quadrilateral.hpp
+        vertices/quadrilateral.cpp)
 
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp
