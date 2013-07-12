@@ -93,10 +93,11 @@ public:
 
 class LinearSpherical3D_Segment
 {
-	LinearSpherical3D_Segment_t    segment;
+	LinearSpherical3D_Segment_t        segment;
+	LinearSpherical3D_Segmentation    *segmentation;
 public:
-	LinearSpherical3D_Segment(LinearSpherical3D_Segment_t &initial_segment);
-	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2);
+	LinearSpherical3D_Segment(LinearSpherical3D_Segment_t &initial_segment, LinearSpherical3D_Segmentation &initial_segmentation);
+	void create_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2);
 	list get_cells();
 };
 

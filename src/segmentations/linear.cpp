@@ -156,13 +156,13 @@ LinearPolar2D_Domain_t & LinearPolar2D_Segmentation::get_domain()
 
 LinearSpherical3D_Segmentation::LinearSpherical3D_Segmentation(LinearSpherical3D_Domain &dom) : segmentation(dom.get_domain())
 {
-	//domain = &dom;
+	domain = &dom;
 }
 
 LinearSpherical3D_Segment LinearSpherical3D_Segmentation::create_segment()
 {
 	LinearSpherical3D_Segment_t seg = segmentation.make_segment();
-	LinearSpherical3D_Segment new_segment(seg);
+	LinearSpherical3D_Segment new_segment(seg, *this);
 	return new_segment;
 }
 
@@ -171,6 +171,11 @@ list LinearSpherical3D_Segmentation::get_segments()
 	typedef LinearSpherical3D_Segmentation_t::iterator iterator;
 	list segment_list;
 	for (iterator it = segmentation.begin(); it != segmentation.end(); ++it)
-		segment_list.append<LinearSpherical3D_Segment>(LinearSpherical3D_Segment(*it));
+		segment_list.append<LinearSpherical3D_Segment>(LinearSpherical3D_Segment(*it, *this));
 	return segment_list;
+}
+
+LinearSpherical3D_Domain_t & LinearSpherical3D_Segmentation::get_domain()
+{
+	return domain->get_domain();
 }

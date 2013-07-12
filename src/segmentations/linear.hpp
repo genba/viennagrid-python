@@ -91,11 +91,12 @@ public:
 class LinearSpherical3D_Segmentation
 {
 	LinearSpherical3D_Segmentation_t    segmentation;
-	//LinearSpherical3D_Domain           *domain;
+	LinearSpherical3D_Domain           *domain;
 public:
 	LinearSpherical3D_Segmentation(LinearSpherical3D_Domain &dom);
 	LinearSpherical3D_Segment create_segment();
 	list get_segments();
+	LinearSpherical3D_Domain_t & get_domain();
 };
 
 #endif

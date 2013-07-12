@@ -156,21 +156,18 @@ list LinearPolar2D_Segment::get_cells()
 // LinearSpherical3D_Segment //
 ///////////////////////////////
 
-LinearSpherical3D_Segment::LinearSpherical3D_Segment(LinearSpherical3D_Segment_t &initial_segment) : segment(initial_segment)
+LinearSpherical3D_Segment::LinearSpherical3D_Segment(LinearSpherical3D_Segment_t &initial_segment, LinearSpherical3D_Segmentation &initial_segmentation) : segment(initial_segment)
 {
 	//segment = initial_segment;
+	segmentation = &initial_segmentation;
 }
 
-void LinearSpherical3D_Segment::create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2)
+void LinearSpherical3D_Segment::create_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2)
 {
-	/*
 	viennagrid::storage::static_array<LinearSpherical3D_VertexHandle_t, 2> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
-	viennagrid::create_element<LinearSpherical3D_Cell_t>(segment, vertices.begin(), vertices.end());
-	*/
-	
-	//cells.append<LinearSpherical3D_Cell>(LinearSpherical3D_Cell(vertex1, vertex2));
+	vertices[0] = viennagrid::handle(segmentation->get_domain(), vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(segmentation->get_domain(), vertex2.get_vertex());;
+	viennagrid::make_element<viennagrid::line_tag>(segment, vertices.begin(), vertices.end());
 }
 
 list LinearSpherical3D_Segment::get_cells()

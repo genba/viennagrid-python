@@ -63,4 +63,16 @@ public:
 	LinearPolar2D_Vertex_t & get_vertex();
 };
 
+//////////////////////////////
+// LinearSpherical3D_Vertex //
+//////////////////////////////
+
+class LinearSpherical3D_Vertex
+{
+	LinearSpherical3D_Vertex_t    *vertex;
+public:
+	LinearSpherical3D_Vertex(LinearSpherical3D_Vertex_t &initial_vertex);
+	LinearSpherical3D_Vertex_t & get_vertex();
+};
+
 #endif

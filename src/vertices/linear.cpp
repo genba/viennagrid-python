@@ -69,3 +69,17 @@ LinearPolar2D_Vertex_t & LinearPolar2D_Vertex::get_vertex()
 {
 	return *vertex;
 }
+
+//////////////////////////////
+// LinearSpherical3D_Vertex //
+//////////////////////////////
+
+LinearSpherical3D_Vertex::LinearSpherical3D_Vertex(LinearSpherical3D_Vertex_t &initial_vertex)
+{
+	vertex = &initial_vertex;
+}
+
+LinearSpherical3D_Vertex_t & LinearSpherical3D_Vertex::get_vertex()
+{
+	return *vertex;
+}

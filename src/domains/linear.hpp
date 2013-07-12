@@ -131,8 +131,8 @@ public:
 	LinearSpherical3D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointSpherical3D vertex);
-	PointSpherical3D get_vertex(unsigned int index);
+	void add_vertex(PointSpherical3D point); // TODO: rename to create_vertex or make_vertex?
+	LinearSpherical3D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);

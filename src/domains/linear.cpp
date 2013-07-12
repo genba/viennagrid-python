@@ -362,9 +362,9 @@ unsigned int LinearSpherical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
+void LinearSpherical3D_Domain::add_vertex(PointSpherical3D point)
 {
-	viennagrid::make_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearSpherical3D_Domain_t & LinearSpherical3D_Domain::get_domain()
@@ -372,11 +372,11 @@ LinearSpherical3D_Domain_t & LinearSpherical3D_Domain::get_domain()
 	return domain;
 }
 
-PointSpherical3D LinearSpherical3D_Domain::get_vertex(unsigned int index)
+LinearSpherical3D_Vertex LinearSpherical3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointSpherical3D(viennagrid::point(domain, vertices[index]), index);
+	return LinearSpherical3D_Vertex(vertices[index]);
 }
 
 void LinearSpherical3D_Domain::read_netgen(std::string const &filename)
