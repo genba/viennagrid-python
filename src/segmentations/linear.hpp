@@ -4,6 +4,7 @@
 #include "types.hpp"
 
 #include "../domains/linear.hpp"
+#include "../segments/linear.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -15,11 +16,12 @@ using namespace boost::python;
 class LinearCartesian1D_Segmentation
 {
 	LinearCartesian1D_Segmentation_t    segmentation;
-	//LinearCartesian1D_Domain           *domain;
+	LinearCartesian1D_Domain           *domain;
 public:
 	LinearCartesian1D_Segmentation(LinearCartesian1D_Domain &dom);
 	LinearCartesian1D_Segment create_segment();
 	list get_segments();
+	LinearCartesian1D_Domain_t & get_domain();
 };
 
 /////////////////////////

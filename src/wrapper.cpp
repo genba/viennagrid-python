@@ -258,7 +258,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * LINEAR SEGMENTS *
 	 *******************/
 	
-	class_<LinearCartesian1D_Segment>("LinearCartesian1D_Segment", init<LinearCartesian1D_Segment_t &>())
+	class_<LinearCartesian1D_Segment>("LinearCartesian1D_Segment", init<LinearCartesian1D_Segment_t &, LinearCartesian1D_Segmentation &>())
 		.def("create_cell", &LinearCartesian1D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCartesian1D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;

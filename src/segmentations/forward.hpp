@@ -1,0 +1,11 @@
+#ifndef SEGMENTATIONS_FORWARD_HPP
+#define SEGMENTATIONS_FORWARD_HPP
+
+class LinearCartesian1D_Segmentation;
+class LinearCartesian2D_Segmentation;
+class LinearCartesian3D_Segmentation;
+class LinearCylindrical3D_Segmentation;
+class LinearPolar2D_Segmentation;
+class LinearSpherical3D_Segmentation;
+
+#endif

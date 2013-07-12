@@ -21,8 +21,8 @@ public:
 	LinearCartesian1D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian1D vertex);
-	PointCartesian1D get_vertex(unsigned int index);
+	void add_vertex(PointCartesian1D point); // TODO: rename to create_vertex or make_vertex?
+	LinearCartesian1D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);

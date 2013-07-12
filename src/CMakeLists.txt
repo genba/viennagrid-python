@@ -74,7 +74,9 @@ set (VIENNAGRID_WRAPPER_CELLS_SRC
         cells/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_VERTICES_SRC
-        vertices/types.hpp)
+        vertices/types.hpp
+        vertices/linear.hpp
+        vertices/linear.cpp)
 
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp

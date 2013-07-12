@@ -10,7 +10,9 @@
 #include "../points/polar.hpp"
 #include "../points/spherical.hpp"
 
+#include "../segmentations/forward.hpp"
 #include "../cells/linear.hpp"
+#include "../vertices/linear.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -21,10 +23,11 @@ using namespace boost::python;
 
 class LinearCartesian1D_Segment
 {
-	LinearCartesian1D_Segment_t    segment;
+	LinearCartesian1D_Segment_t        segment;
+	LinearCartesian1D_Segmentation    *segmentation;
 public:
-	LinearCartesian1D_Segment(LinearCartesian1D_Segment_t &initial_segment);
-	void create_cell(PointCartesian1D vertex1, PointCartesian1D vertex2);
+	LinearCartesian1D_Segment(LinearCartesian1D_Segment_t &initial_segment, LinearCartesian1D_Segmentation &initial_segmentation);
+	void create_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2);
 	list get_cells();
 };
 

@@ -6,13 +6,13 @@
 
 LinearCartesian1D_Segmentation::LinearCartesian1D_Segmentation(LinearCartesian1D_Domain &dom) : segmentation(dom.get_domain())
 {
-	//domain = &dom;
+	domain = &dom;
 }
 
 LinearCartesian1D_Segment LinearCartesian1D_Segmentation::create_segment()
 {
 	LinearCartesian1D_Segment_t seg = segmentation.make_segment();
-	LinearCartesian1D_Segment new_segment(seg);
+	LinearCartesian1D_Segment new_segment(seg, *this);
 	return new_segment;
 }
 
@@ -21,8 +21,13 @@ list LinearCartesian1D_Segmentation::get_segments()
 	typedef LinearCartesian1D_Segmentation_t::iterator iterator;
 	list segment_list;
 	for (iterator it = segmentation.begin(); it != segmentation.end(); ++it)
-		segment_list.append<LinearCartesian1D_Segment>(LinearCartesian1D_Segment(*it));
+		segment_list.append<LinearCartesian1D_Segment>(LinearCartesian1D_Segment(*it, *this));
 	return segment_list;
+}
+
+LinearCartesian1D_Domain_t & LinearCartesian1D_Segmentation::get_domain()
+{
+	return domain->get_domain();
 }
 
 ////////////////////////////////////
