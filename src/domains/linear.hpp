@@ -6,7 +6,8 @@
 #include "../points/cylindrical.hpp"
 #include "../points/polar.hpp"
 #include "../points/spherical.hpp"
-#include "../segments/linear.hpp"
+
+#include "../vertices/linear.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;

@@ -8,6 +8,8 @@
 
 #include "types.hpp"
 
+#include "../vertices/linear.hpp"
+
 #include <boost/python.hpp>
 using namespace boost::python;
 
