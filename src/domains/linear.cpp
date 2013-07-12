@@ -158,9 +158,9 @@ unsigned int LinearCartesian3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
+void LinearCartesian3D_Domain::add_vertex(PointCartesian3D point)
 {
-	viennagrid::make_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearCartesian3D_Domain_t & LinearCartesian3D_Domain::get_domain()
@@ -168,11 +168,11 @@ LinearCartesian3D_Domain_t & LinearCartesian3D_Domain::get_domain()
 	return domain;
 }
 
-PointCartesian3D LinearCartesian3D_Domain::get_vertex(unsigned int index)
+LinearCartesian3D_Vertex LinearCartesian3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCartesian3D(viennagrid::point(domain, vertices[index]), index);
+	return LinearCartesian3D_Vertex(vertices[index]);
 }
 
 void LinearCartesian3D_Domain::read_netgen(std::string const &filename)

@@ -51,10 +51,11 @@ public:
 
 class LinearCartesian3D_Segment
 {
-	LinearCartesian3D_Segment_t    segment;
+	LinearCartesian3D_Segment_t        segment;
+	LinearCartesian3D_Segmentation    *segmentation;
 public:
-	LinearCartesian3D_Segment(LinearCartesian3D_Segment_t &initial_segment);
-	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2);
+	LinearCartesian3D_Segment(LinearCartesian3D_Segment_t &initial_segment, LinearCartesian3D_Segmentation &initial_segmentation);
+	void create_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2);
 	list get_cells();
 };
 

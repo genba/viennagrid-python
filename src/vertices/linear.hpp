@@ -27,4 +27,16 @@ public:
 	LinearCartesian2D_Vertex_t & get_vertex();
 };
 
+//////////////////////////////
+// LinearCartesian3D_Vertex //
+//////////////////////////////
+
+class LinearCartesian3D_Vertex
+{
+	LinearCartesian3D_Vertex_t    *vertex;
+public:
+	LinearCartesian3D_Vertex(LinearCartesian3D_Vertex_t &initial_vertex);
+	LinearCartesian3D_Vertex_t & get_vertex();
+};
+
 #endif

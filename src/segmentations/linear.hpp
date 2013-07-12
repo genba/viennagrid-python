@@ -46,11 +46,12 @@ public:
 class LinearCartesian3D_Segmentation
 {
 	LinearCartesian3D_Segmentation_t    segmentation;
-	//LinearCartesian3D_Domain           *domain;
+	LinearCartesian3D_Domain           *domain;
 public:
 	LinearCartesian3D_Segmentation(LinearCartesian3D_Domain &dom);
 	LinearCartesian3D_Segment create_segment();
 	list get_segments();
+	LinearCartesian3D_Domain_t & get_domain();
 };
 
 ///////////////////////////

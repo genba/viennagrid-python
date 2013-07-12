@@ -27,3 +27,17 @@ LinearCartesian2D_Vertex_t & LinearCartesian2D_Vertex::get_vertex()
 {
 	return *vertex;
 }
+
+//////////////////////////////
+// LinearCartesian3D_Vertex //
+//////////////////////////////
+
+LinearCartesian3D_Vertex::LinearCartesian3D_Vertex(LinearCartesian3D_Vertex_t &initial_vertex)
+{
+	vertex = &initial_vertex;
+}
+
+LinearCartesian3D_Vertex_t & LinearCartesian3D_Vertex::get_vertex()
+{
+	return *vertex;
+}

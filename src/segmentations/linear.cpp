@@ -66,13 +66,13 @@ LinearCartesian2D_Domain_t & LinearCartesian2D_Segmentation::get_domain()
 
 LinearCartesian3D_Segmentation::LinearCartesian3D_Segmentation(LinearCartesian3D_Domain &dom) : segmentation(dom.get_domain())
 {
-	//domain = &dom;
+	domain = &dom;
 }
 
 LinearCartesian3D_Segment LinearCartesian3D_Segmentation::create_segment()
 {
 	LinearCartesian3D_Segment_t seg = segmentation.make_segment();
-	LinearCartesian3D_Segment new_segment(seg);
+	LinearCartesian3D_Segment new_segment(seg, *this);
 	return new_segment;
 }
 
@@ -81,8 +81,13 @@ list LinearCartesian3D_Segmentation::get_segments()
 	typedef LinearCartesian3D_Segmentation_t::iterator iterator;
 	list segment_list;
 	for (iterator it = segmentation.begin(); it != segmentation.end(); ++it)
-		segment_list.append<LinearCartesian3D_Segment>(LinearCartesian3D_Segment(*it));
+		segment_list.append<LinearCartesian3D_Segment>(LinearCartesian3D_Segment(*it, *this));
 	return segment_list;
+}
+
+LinearCartesian3D_Domain_t & LinearCartesian3D_Segmentation::get_domain()
+{
+	return domain->get_domain();
 }
 
 //////////////////////////////////////
