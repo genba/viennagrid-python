@@ -20,4 +20,8 @@ class QuadrilateralCylindrical3D_Segmentation;
 class QuadrilateralPolar2D_Segmentation;
 class QuadrilateralSpherical3D_Segmentation;
 
+class TetrahedralCartesian3D_Segmentation;
+class TetrahedralCylindrical3D_Segmentation;
+class TetrahedralSpherical3D_Segmentation;
+
 #endif

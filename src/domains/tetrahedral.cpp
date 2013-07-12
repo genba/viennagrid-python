@@ -23,9 +23,9 @@ unsigned int TetrahedralCartesian3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void TetrahedralCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
+void TetrahedralCartesian3D_Domain::add_vertex(PointCartesian3D point)
 {
-	viennagrid::make_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 TetrahedralCartesian3D_Domain_t & TetrahedralCartesian3D_Domain::get_domain()
@@ -33,11 +33,11 @@ TetrahedralCartesian3D_Domain_t & TetrahedralCartesian3D_Domain::get_domain()
 	return domain;
 }
 
-PointCartesian3D TetrahedralCartesian3D_Domain::get_vertex(unsigned int index)
+TetrahedralCartesian3D_Vertex TetrahedralCartesian3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	TetrahedralCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCartesian3D(viennagrid::point(domain, vertices[index]), index);
+	return TetrahedralCartesian3D_Vertex(vertices[index]);
 }
 
 void TetrahedralCartesian3D_Domain::read_netgen(std::string const &filename)
@@ -91,9 +91,9 @@ unsigned int TetrahedralCylindrical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void TetrahedralCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
+void TetrahedralCylindrical3D_Domain::add_vertex(PointCylindrical3D point)
 {
-	viennagrid::make_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 TetrahedralCylindrical3D_Domain_t & TetrahedralCylindrical3D_Domain::get_domain()
@@ -101,11 +101,11 @@ TetrahedralCylindrical3D_Domain_t & TetrahedralCylindrical3D_Domain::get_domain(
 	return domain;
 }
 
-PointCylindrical3D TetrahedralCylindrical3D_Domain::get_vertex(unsigned int index)
+TetrahedralCylindrical3D_Vertex TetrahedralCylindrical3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	TetrahedralCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCylindrical3D(viennagrid::point(domain, vertices[index]), index);
+	return TetrahedralCylindrical3D_Vertex(vertices[index]);
 }
 
 void TetrahedralCylindrical3D_Domain::read_netgen(std::string const &filename)
@@ -159,9 +159,9 @@ unsigned int TetrahedralSpherical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void TetrahedralSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
+void TetrahedralSpherical3D_Domain::add_vertex(PointSpherical3D point)
 {
-	viennagrid::make_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 TetrahedralSpherical3D_Domain_t & TetrahedralSpherical3D_Domain::get_domain()
@@ -169,11 +169,11 @@ TetrahedralSpherical3D_Domain_t & TetrahedralSpherical3D_Domain::get_domain()
 	return domain;
 }
 
-PointSpherical3D TetrahedralSpherical3D_Domain::get_vertex(unsigned int index)
+TetrahedralSpherical3D_Vertex TetrahedralSpherical3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	TetrahedralSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointSpherical3D(viennagrid::point(domain, vertices[index]), index);
+	return TetrahedralSpherical3D_Vertex(vertices[index]);
 }
 
 void TetrahedralSpherical3D_Domain::read_netgen(std::string const &filename)

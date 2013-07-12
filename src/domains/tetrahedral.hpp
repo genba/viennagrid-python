@@ -6,7 +6,8 @@
 #include "../points/cylindrical.hpp"
 #include "../points/polar.hpp"
 #include "../points/spherical.hpp"
-#include "../segments/tetrahedral.hpp"
+
+#include "../vertices/tetrahedral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -19,8 +20,8 @@ public:
 	TetrahedralCartesian3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian3D vertex);
-	PointCartesian3D get_vertex(unsigned int index);
+	void add_vertex(PointCartesian3D point);
+	TetrahedralCartesian3D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -40,8 +41,8 @@ public:
 	TetrahedralCylindrical3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCylindrical3D vertex);
-	PointCylindrical3D get_vertex(unsigned int index);
+	void add_vertex(PointCylindrical3D point);
+	TetrahedralCylindrical3D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -61,8 +62,8 @@ public:
 	TetrahedralSpherical3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointSpherical3D vertex);
-	PointSpherical3D get_vertex(unsigned int index);
+	void add_vertex(PointSpherical3D point);
+	TetrahedralSpherical3D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
