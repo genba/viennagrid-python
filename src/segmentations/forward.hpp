@@ -8,4 +8,10 @@ class LinearCylindrical3D_Segmentation;
 class LinearPolar2D_Segmentation;
 class LinearSpherical3D_Segmentation;
 
+class TriangularCartesian2D_Segmentation;
+class TriangularCartesian3D_Segmentation;
+class TriangularCylindrical3D_Segmentation;
+class TriangularPolar2D_Segmentation;
+class TriangularSpherical3D_Segmentation;
+
 #endif

@@ -11,6 +11,8 @@
 #include "../points/spherical.hpp"
 
 #include "../cells/triangular.hpp"
+#include "../vertices/triangular.hpp"
+#include "../segmentations/forward.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -21,10 +23,11 @@ using namespace boost::python;
 
 class TriangularCartesian2D_Segment
 {
-	TriangularCartesian2D_Segment_t    segment;
+	TriangularCartesian2D_Segment_t        segment;
+	TriangularCartesian2D_Segmentation    *segmentation;
 public:
-	TriangularCartesian2D_Segment(TriangularCartesian2D_Segment_t &initial_segment);
-	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3);
+	TriangularCartesian2D_Segment(TriangularCartesian2D_Segment_t &initial_segment, TriangularCartesian2D_Segmentation &initial_segmentation);
+	void create_cell(TriangularCartesian2D_Vertex vertex1, TriangularCartesian2D_Vertex vertex2, TriangularCartesian2D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -34,10 +37,11 @@ public:
 
 class TriangularCartesian3D_Segment
 {
-	TriangularCartesian3D_Segment_t    segment;
+	TriangularCartesian3D_Segment_t        segment;
+	TriangularCartesian3D_Segmentation    *segmentation;
 public:
-	TriangularCartesian3D_Segment(TriangularCartesian3D_Segment_t &initial_segment);
-	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3);
+	TriangularCartesian3D_Segment(TriangularCartesian3D_Segment_t &initial_segment, TriangularCartesian3D_Segmentation &initial_segmentation);
+	void create_cell(TriangularCartesian3D_Vertex vertex1, TriangularCartesian3D_Vertex vertex2, TriangularCartesian3D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -47,10 +51,11 @@ public:
 
 class TriangularCylindrical3D_Segment
 {
-	TriangularCylindrical3D_Segment_t    segment;
+	TriangularCylindrical3D_Segment_t        segment;
+	TriangularCylindrical3D_Segmentation    *segmentation;
 public:
-	TriangularCylindrical3D_Segment(TriangularCylindrical3D_Segment_t &initial_segment);
-	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3);
+	TriangularCylindrical3D_Segment(TriangularCylindrical3D_Segment_t &initial_segment, TriangularCylindrical3D_Segmentation &initial_segmentation);
+	void create_cell(TriangularCylindrical3D_Vertex vertex1, TriangularCylindrical3D_Vertex vertex2, TriangularCylindrical3D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -60,10 +65,11 @@ public:
 
 class TriangularPolar2D_Segment
 {
-	TriangularPolar2D_Segment_t    segment;
+	TriangularPolar2D_Segment_t        segment;
+	TriangularPolar2D_Segmentation    *segmentation;
 public:
-	TriangularPolar2D_Segment(TriangularPolar2D_Segment_t &initial_segment);
-	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3);
+	TriangularPolar2D_Segment(TriangularPolar2D_Segment_t &initial_segment, TriangularPolar2D_Segmentation &initial_segmentation);
+	void create_cell(TriangularPolar2D_Vertex vertex1, TriangularPolar2D_Vertex vertex2, TriangularPolar2D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -73,10 +79,11 @@ public:
 
 class TriangularSpherical3D_Segment
 {
-	TriangularSpherical3D_Segment_t    segment;
+	TriangularSpherical3D_Segment_t        segment;
+	TriangularSpherical3D_Segmentation    *segmentation;
 public:
-	TriangularSpherical3D_Segment(TriangularSpherical3D_Segment_t &initial_segment);
-	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3);
+	TriangularSpherical3D_Segment(TriangularSpherical3D_Segment_t &initial_segment, TriangularSpherical3D_Segmentation &initial_segmentation);
+	void create_cell(TriangularSpherical3D_Vertex vertex1, TriangularSpherical3D_Vertex vertex2, TriangularSpherical3D_Vertex vertex3);
 	list get_cells();
 };
 
