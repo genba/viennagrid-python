@@ -15,4 +15,16 @@ public:
 	LinearCartesian1D_Vertex_t & get_vertex();
 };
 
+//////////////////////////////
+// LinearCartesian2D_Vertex //
+//////////////////////////////
+
+class LinearCartesian2D_Vertex
+{
+	LinearCartesian2D_Vertex_t    *vertex;
+public:
+	LinearCartesian2D_Vertex(LinearCartesian2D_Vertex_t &initial_vertex);
+	LinearCartesian2D_Vertex_t & get_vertex();
+};
+
 #endif

@@ -31,11 +31,12 @@ public:
 class LinearCartesian2D_Segmentation
 {
 	LinearCartesian2D_Segmentation_t    segmentation;
-	//LinearCartesian2D_Domain           *domain;
+	LinearCartesian2D_Domain           *domain;
 public:
 	LinearCartesian2D_Segmentation(LinearCartesian2D_Domain &dom);
 	LinearCartesian2D_Segment create_segment();
 	list get_segments();
+	LinearCartesian2D_Domain_t & get_domain();
 };
 
 /////////////////////////

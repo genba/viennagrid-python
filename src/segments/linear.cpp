@@ -40,21 +40,18 @@ list LinearCartesian1D_Segment::get_cells()
 // LinearCartesian2D_Segment //
 ///////////////////////////////
 
-LinearCartesian2D_Segment::LinearCartesian2D_Segment(LinearCartesian2D_Segment_t &initial_segment) : segment(initial_segment)
+LinearCartesian2D_Segment::LinearCartesian2D_Segment(LinearCartesian2D_Segment_t &initial_segment, LinearCartesian2D_Segmentation &initial_segmentation) : segment(initial_segment)
 {
 	//segment = initial_segment;
+	segmentation = &initial_segmentation;
 }
 
-void LinearCartesian2D_Segment::create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2)
+void LinearCartesian2D_Segment::create_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2)
 {
-	/*
 	viennagrid::storage::static_array<LinearCartesian2D_VertexHandle_t, 2> vertices;
-	vertices[0] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex1.get_id());
-	vertices[1] = viennagrid::elements<viennagrid::vertex_tag>(domain->get_domain()).handle_at(vertex2.get_id());
-	viennagrid::create_element<LinearCartesian2D_Cell_t>(segment, vertices.begin(), vertices.end());
-	*/
-	
-	//cells.append<LinearCartesian2D_Cell>(LinearCartesian2D_Cell(vertex1, vertex2));
+	vertices[0] = viennagrid::handle(segmentation->get_domain(), vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(segmentation->get_domain(), vertex2.get_vertex());;
+	viennagrid::make_element<viennagrid::line_tag>(segment, vertices.begin(), vertices.end());
 }
 
 list LinearCartesian2D_Segment::get_cells()

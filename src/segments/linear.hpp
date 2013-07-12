@@ -37,10 +37,11 @@ public:
 
 class LinearCartesian2D_Segment
 {
-	LinearCartesian2D_Segment_t    segment;
+	LinearCartesian2D_Segment_t        segment;
+	LinearCartesian2D_Segmentation    *segmentation;
 public:
-	LinearCartesian2D_Segment(LinearCartesian2D_Segment_t &initial_segment);
-	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2);
+	LinearCartesian2D_Segment(LinearCartesian2D_Segment_t &initial_segment, LinearCartesian2D_Segmentation &initial_segmentation);
+	void create_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2);
 	list get_cells();
 };
 
