@@ -109,8 +109,8 @@ public:
 	LinearPolar2D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointPolar2D vertex);
-	PointPolar2D get_vertex(unsigned int index);
+	void add_vertex(PointPolar2D point); // TODO: rename to create_vertex or make_vertex?
+	LinearPolar2D_Vertex get_vertex(unsigned int index);
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);

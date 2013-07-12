@@ -51,4 +51,16 @@ public:
 	LinearCylindrical3D_Vertex_t & get_vertex();
 };
 
+//////////////////////////
+// LinearPolar2D_Vertex //
+//////////////////////////
+
+class LinearPolar2D_Vertex
+{
+	LinearPolar2D_Vertex_t    *vertex;
+public:
+	LinearPolar2D_Vertex(LinearPolar2D_Vertex_t &initial_vertex);
+	LinearPolar2D_Vertex_t & get_vertex();
+};
+
 #endif

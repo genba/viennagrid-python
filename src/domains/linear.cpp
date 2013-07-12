@@ -294,9 +294,9 @@ unsigned int LinearPolar2D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearPolar2D_Domain::add_vertex(PointPolar2D vertex)
+void LinearPolar2D_Domain::add_vertex(PointPolar2D point)
 {
-	viennagrid::make_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearPolar2D_Domain_t & LinearPolar2D_Domain::get_domain()
@@ -304,11 +304,11 @@ LinearPolar2D_Domain_t & LinearPolar2D_Domain::get_domain()
 	return domain;
 }
 
-PointPolar2D LinearPolar2D_Domain::get_vertex(unsigned int index)
+LinearPolar2D_Vertex LinearPolar2D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearPolar2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointPolar2D(viennagrid::point(domain, vertices[index]), index);
+	return LinearPolar2D_Vertex(vertices[index]);
 }
 
 void LinearPolar2D_Domain::read_netgen(std::string const &filename)

@@ -79,10 +79,11 @@ public:
 
 class LinearPolar2D_Segment
 {
-	LinearPolar2D_Segment_t    segment;
+	LinearPolar2D_Segment_t        segment;
+	LinearPolar2D_Segmentation    *segmentation;
 public:
-	LinearPolar2D_Segment(LinearPolar2D_Segment_t &initial_segment);
-	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2);
+	LinearPolar2D_Segment(LinearPolar2D_Segment_t &initial_segment, LinearPolar2D_Segmentation &initial_segmentation);
+	void create_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2);
 	list get_cells();
 };
 

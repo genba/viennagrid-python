@@ -76,11 +76,12 @@ public:
 class LinearPolar2D_Segmentation
 {
 	LinearPolar2D_Segmentation_t    segmentation;
-	//LinearPolar2D_Domain           *domain;
+	LinearPolar2D_Domain           *domain;
 public:
 	LinearPolar2D_Segmentation(LinearPolar2D_Domain &dom);
 	LinearPolar2D_Segment create_segment();
 	list get_segments();
+	LinearPolar2D_Domain_t & get_domain();
 };
 
 /////////////////////////

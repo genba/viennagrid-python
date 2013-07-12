@@ -55,3 +55,17 @@ LinearCylindrical3D_Vertex_t & LinearCylindrical3D_Vertex::get_vertex()
 {
 	return *vertex;
 }
+
+//////////////////////////
+// LinearPolar2D_Vertex //
+//////////////////////////
+
+LinearPolar2D_Vertex::LinearPolar2D_Vertex(LinearPolar2D_Vertex_t &initial_vertex)
+{
+	vertex = &initial_vertex;
+}
+
+LinearPolar2D_Vertex_t & LinearPolar2D_Vertex::get_vertex()
+{
+	return *vertex;
+}
