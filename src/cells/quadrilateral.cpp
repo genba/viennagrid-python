@@ -1,5 +1,7 @@
 #include "quadrilateral.hpp"
 
+#include "../vertices/quadrilateral.hpp"
+
 /////////////////////////////////
 // Quadrilateral, cartesian 2D //
 /////////////////////////////////
@@ -12,6 +14,19 @@ QuadrilateralCartesian2D_Cell::QuadrilateralCartesian2D_Cell(QuadrilateralCartes
 list QuadrilateralCartesian2D_Cell::get_vertices()
 {
 	list vertices;
+	
+	typedef QuadrilateralCartesian2D_Cell_t                                                 CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<QuadrilateralCartesian2D_Vertex>(QuadrilateralCartesian2D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -27,6 +42,19 @@ QuadrilateralCartesian3D_Cell::QuadrilateralCartesian3D_Cell(QuadrilateralCartes
 list QuadrilateralCartesian3D_Cell::get_vertices()
 {
 	list vertices;
+	
+	typedef QuadrilateralCartesian3D_Cell_t                                                 CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<QuadrilateralCartesian3D_Vertex>(QuadrilateralCartesian3D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -42,6 +70,19 @@ QuadrilateralCylindrical3D_Cell::QuadrilateralCylindrical3D_Cell(QuadrilateralCy
 list QuadrilateralCylindrical3D_Cell::get_vertices()
 {
 	list vertices;
+	
+	typedef QuadrilateralCylindrical3D_Cell_t                                               CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<QuadrilateralCylindrical3D_Vertex>(QuadrilateralCylindrical3D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -57,6 +98,19 @@ QuadrilateralPolar2D_Cell::QuadrilateralPolar2D_Cell(QuadrilateralPolar2D_Cell_t
 list QuadrilateralPolar2D_Cell::get_vertices()
 {
 	list vertices;
+	
+	typedef QuadrilateralPolar2D_Cell_t                                                     CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<QuadrilateralPolar2D_Vertex>(QuadrilateralPolar2D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -72,5 +126,18 @@ QuadrilateralSpherical3D_Cell::QuadrilateralSpherical3D_Cell(QuadrilateralSpheri
 list QuadrilateralSpherical3D_Cell::get_vertices()
 {
 	list vertices;
+	
+	typedef QuadrilateralSpherical3D_Cell_t                                                 CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<QuadrilateralSpherical3D_Vertex>(QuadrilateralSpherical3D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
