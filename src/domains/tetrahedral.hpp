@@ -22,6 +22,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointCartesian3D point);
 	TetrahedralCartesian3D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -43,6 +44,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointCylindrical3D point);
 	TetrahedralCylindrical3D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -64,6 +66,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointSpherical3D point);
 	TetrahedralSpherical3D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);

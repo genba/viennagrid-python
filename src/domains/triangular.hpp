@@ -26,6 +26,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointCartesian2D point); // TODO: rename to create_vertex or make_vertex?
 	TriangularCartesian2D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -48,6 +49,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointCartesian3D point); // TODO: rename to create_vertex or make_vertex?
 	TriangularCartesian3D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -70,6 +72,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointCylindrical3D point); // TODO: rename to create_vertex or make_vertex?
 	TriangularCylindrical3D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -92,6 +95,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointPolar2D point); // TODO: rename to create_vertex or make_vertex?
 	TriangularPolar2D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);
@@ -114,6 +118,7 @@ public:
 	unsigned int num_vertices();
 	void add_vertex(PointSpherical3D point); // TODO: rename to create_vertex or make_vertex?
 	TriangularSpherical3D_Vertex get_vertex(unsigned int index);
+	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
 	void read_vtk(std::string const &filename);

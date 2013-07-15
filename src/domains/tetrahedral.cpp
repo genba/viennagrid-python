@@ -40,6 +40,21 @@ TetrahedralCartesian3D_Vertex TetrahedralCartesian3D_Domain::get_vertex(unsigned
 	return TetrahedralCartesian3D_Vertex(vertices[index]);
 }
 
+list TetrahedralCartesian3D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef TetrahedralCartesian3D_Domain_t                                                   DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<TetrahedralCartesian3D_Vertex>(TetrahedralCartesian3D_Vertex(*it));
+	
+	return vertices;
+}
+
 void TetrahedralCartesian3D_Domain::read_netgen(std::string const &filename)
 {
 	/*
@@ -108,6 +123,21 @@ TetrahedralCylindrical3D_Vertex TetrahedralCylindrical3D_Domain::get_vertex(unsi
 	return TetrahedralCylindrical3D_Vertex(vertices[index]);
 }
 
+list TetrahedralCylindrical3D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef TetrahedralCylindrical3D_Domain_t                                                 DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<TetrahedralCylindrical3D_Vertex>(TetrahedralCylindrical3D_Vertex(*it));
+	
+	return vertices;
+}
+
 void TetrahedralCylindrical3D_Domain::read_netgen(std::string const &filename)
 {
 	/*
@@ -174,6 +204,21 @@ TetrahedralSpherical3D_Vertex TetrahedralSpherical3D_Domain::get_vertex(unsigned
 	// TODO: domain.find_by_id(index);
 	TetrahedralSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return TetrahedralSpherical3D_Vertex(vertices[index]);
+}
+
+list TetrahedralSpherical3D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef TetrahedralSpherical3D_Domain_t                                                   DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<TetrahedralSpherical3D_Vertex>(TetrahedralSpherical3D_Vertex(*it));
+	
+	return vertices;
 }
 
 void TetrahedralSpherical3D_Domain::read_netgen(std::string const &filename)

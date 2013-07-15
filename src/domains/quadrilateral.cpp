@@ -40,6 +40,21 @@ QuadrilateralCartesian2D_Vertex QuadrilateralCartesian2D_Domain::get_vertex(unsi
 	return QuadrilateralCartesian2D_Vertex(vertices[index]);
 }
 
+list QuadrilateralCartesian2D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef QuadrilateralCartesian2D_Domain_t                                                 DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<QuadrilateralCartesian2D_Vertex>(QuadrilateralCartesian2D_Vertex(*it));
+	
+	return vertices;
+}
+
 void QuadrilateralCartesian2D_Domain::read_netgen(std::string const &filename)
 {
 	/*
@@ -106,6 +121,21 @@ QuadrilateralCartesian3D_Vertex QuadrilateralCartesian3D_Domain::get_vertex(unsi
 	// TODO: domain.find_by_id(index);
 	QuadrilateralCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return QuadrilateralCartesian3D_Vertex(vertices[index]);
+}
+
+list QuadrilateralCartesian3D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef QuadrilateralCartesian3D_Domain_t                                                 DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<QuadrilateralCartesian3D_Vertex>(QuadrilateralCartesian3D_Vertex(*it));
+	
+	return vertices;
 }
 
 void QuadrilateralCartesian3D_Domain::read_netgen(std::string const &filename)
@@ -176,6 +206,21 @@ QuadrilateralCylindrical3D_Vertex QuadrilateralCylindrical3D_Domain::get_vertex(
 	return QuadrilateralCylindrical3D_Vertex(vertices[index]);
 }
 
+list QuadrilateralCylindrical3D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef QuadrilateralCylindrical3D_Domain_t                                               DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<QuadrilateralCylindrical3D_Vertex>(QuadrilateralCylindrical3D_Vertex(*it));
+	
+	return vertices;
+}
+
 void QuadrilateralCylindrical3D_Domain::read_netgen(std::string const &filename)
 {
 	/*
@@ -244,6 +289,21 @@ QuadrilateralPolar2D_Vertex QuadrilateralPolar2D_Domain::get_vertex(unsigned int
 	return QuadrilateralPolar2D_Vertex(vertices[index]);
 }
 
+list QuadrilateralPolar2D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef QuadrilateralPolar2D_Domain_t                                                     DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<QuadrilateralPolar2D_Vertex>(QuadrilateralPolar2D_Vertex(*it));
+	
+	return vertices;
+}
+
 void QuadrilateralPolar2D_Domain::read_netgen(std::string const &filename)
 {
 	/*
@@ -310,6 +370,21 @@ QuadrilateralSpherical3D_Vertex QuadrilateralSpherical3D_Domain::get_vertex(unsi
 	// TODO: domain.find_by_id(index);
 	QuadrilateralSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
 	return QuadrilateralSpherical3D_Vertex(vertices[index]);
+}
+
+list QuadrilateralSpherical3D_Domain::get_vertices()
+{
+	list vertices;
+	
+	typedef QuadrilateralSpherical3D_Domain_t                                                 DomainType;
+	typedef viennagrid::result_of::element_range<DomainType, viennagrid::vertex_tag>::type    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type                                VertexIterator;
+	
+	VertexRange range = viennagrid::elements(domain);
+	for (VertexIterator it = range.begin(); it != range.end(); ++it)
+		vertices.append<QuadrilateralSpherical3D_Vertex>(QuadrilateralSpherical3D_Vertex(*it));
+	
+	return vertices;
 }
 
 void QuadrilateralSpherical3D_Domain::read_netgen(std::string const &filename)
