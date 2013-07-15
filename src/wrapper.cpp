@@ -226,32 +226,32 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<LinearCartesian1D_Segmentation>("LinearCartesian1D_Segmentation", init<LinearCartesian1D_Domain &>())
 		.def("create_segment", &LinearCartesian1D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &LinearCartesian1D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCartesian1D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<LinearCartesian2D_Segmentation>("LinearCartesian2D_Segmentation", init<LinearCartesian2D_Domain &>())
 		.def("create_segment", &LinearCartesian2D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &LinearCartesian2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCartesian2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<LinearCartesian3D_Segmentation>("LinearCartesian3D_Segmentation", init<LinearCartesian3D_Domain &>())
 		.def("create_segment", &LinearCartesian3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &LinearCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCartesian3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<LinearCylindrical3D_Segmentation>("LinearCylindrical3D_Segmentation", init<LinearCylindrical3D_Domain &>())
 		.def("create_segment", &LinearCylindrical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &LinearCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCylindrical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<LinearPolar2D_Segmentation>("LinearPolar2D_Segmentation", init<LinearPolar2D_Domain &>())
 		.def("create_segment", &LinearPolar2D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &LinearPolar2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearPolar2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<LinearSpherical3D_Segmentation>("LinearSpherical3D_Segmentation", init<LinearSpherical3D_Domain &>())
 		.def("create_segment", &LinearSpherical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &LinearSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearSpherical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	/*******************
@@ -376,27 +376,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<TriangularCartesian2D_Segmentation>("TriangularCartesian2D_Segmentation", init<TriangularCartesian2D_Domain &>())
 		.def("create_segment", &TriangularCartesian2D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TriangularCartesian2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularCartesian2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularCartesian3D_Segmentation>("TriangularCartesian3D_Segmentation", init<TriangularCartesian3D_Domain &>())
 		.def("create_segment", &TriangularCartesian3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TriangularCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularCartesian3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularCylindrical3D_Segmentation>("TriangularCylindrical3D_Segmentation", init<TriangularCylindrical3D_Domain &>())
 		.def("create_segment", &TriangularCylindrical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TriangularCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularCylindrical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularPolar2D_Segmentation>("TriangularPolar2D_Segmentation", init<TriangularPolar2D_Domain &>())
 		.def("create_segment", &TriangularPolar2D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TriangularPolar2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularPolar2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TriangularSpherical3D_Segmentation>("TriangularSpherical3D_Segmentation", init<TriangularSpherical3D_Domain &>())
 		.def("create_segment", &TriangularSpherical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TriangularSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularSpherical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	/***********************
@@ -531,27 +531,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<QuadrilateralCartesian2D_Segmentation>("QuadrilateralCartesian2D_Segmentation", init<QuadrilateralCartesian2D_Domain &>())
 		.def("create_segment", &QuadrilateralCartesian2D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &QuadrilateralCartesian2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralCartesian2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<QuadrilateralCartesian3D_Segmentation>("QuadrilateralCartesian3D_Segmentation", init<QuadrilateralCartesian3D_Domain &>())
 		.def("create_segment", &QuadrilateralCartesian3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &QuadrilateralCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralCartesian3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Segmentation>("QuadrilateralCylindrical3D_Segmentation", init<QuadrilateralCylindrical3D_Domain &>())
 		.def("create_segment", &QuadrilateralCylindrical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &QuadrilateralCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralCylindrical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<QuadrilateralPolar2D_Segmentation>("QuadrilateralPolar2D_Segmentation", init<QuadrilateralPolar2D_Domain &>())
 		.def("create_segment", &QuadrilateralPolar2D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &QuadrilateralPolar2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralPolar2D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<QuadrilateralSpherical3D_Segmentation>("QuadrilateralSpherical3D_Segmentation", init<QuadrilateralSpherical3D_Domain &>())
 		.def("create_segment", &QuadrilateralSpherical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &QuadrilateralSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralSpherical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	/**************************
@@ -666,17 +666,17 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<TetrahedralCartesian3D_Segmentation>("TetrahedralCartesian3D_Segmentation", init<TetrahedralCartesian3D_Domain &>())
 		.def("create_segment", &TetrahedralCartesian3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TetrahedralCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TetrahedralCartesian3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TetrahedralCylindrical3D_Segmentation>("TetrahedralCylindrical3D_Segmentation", init<TetrahedralCylindrical3D_Domain &>())
 		.def("create_segment", &TetrahedralCylindrical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TetrahedralCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TetrahedralCylindrical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	class_<TetrahedralSpherical3D_Segmentation>("TetrahedralSpherical3D_Segmentation", init<TetrahedralSpherical3D_Domain &>())
 		.def("create_segment", &TetrahedralSpherical3D_Segmentation::create_segment, "docstring")
-		.def("get_segments", &TetrahedralSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TetrahedralSpherical3D_Segmentation::get_segments, "docstring")
 	;
 	
 	/************************
