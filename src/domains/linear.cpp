@@ -34,9 +34,12 @@ LinearCartesian1D_Domain_t & LinearCartesian1D_Domain::get_domain()
 
 LinearCartesian1D_Vertex LinearCartesian1D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	LinearCartesian1D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return LinearCartesian1D_Vertex(vertices[index]);
+	typedef LinearCartesian1D_VertexRange_t                       VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef LinearCartesian1D_Vertex_t::id_type                   VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return LinearCartesian1D_Vertex(*vertex);
 }
 
 list LinearCartesian1D_Domain::get_vertices()
@@ -117,9 +120,12 @@ LinearCartesian2D_Domain_t & LinearCartesian2D_Domain::get_domain()
 
 LinearCartesian2D_Vertex LinearCartesian2D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	LinearCartesian2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return LinearCartesian2D_Vertex(vertices[index]);
+	typedef LinearCartesian2D_VertexRange_t                       VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef LinearCartesian2D_Vertex_t::id_type                   VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return LinearCartesian2D_Vertex(*vertex);
 }
 
 list LinearCartesian2D_Domain::get_vertices()
@@ -200,9 +206,12 @@ LinearCartesian3D_Domain_t & LinearCartesian3D_Domain::get_domain()
 
 LinearCartesian3D_Vertex LinearCartesian3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	LinearCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return LinearCartesian3D_Vertex(vertices[index]);
+	typedef LinearCartesian3D_VertexRange_t                       VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef LinearCartesian3D_Vertex_t::id_type                   VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return LinearCartesian3D_Vertex(*vertex);
 }
 
 list LinearCartesian3D_Domain::get_vertices()
@@ -283,9 +292,12 @@ LinearCylindrical3D_Domain_t & LinearCylindrical3D_Domain::get_domain()
 
 LinearCylindrical3D_Vertex LinearCylindrical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	LinearCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return LinearCylindrical3D_Vertex(vertices[index]);
+	typedef LinearCylindrical3D_VertexRange_t                     VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef LinearCylindrical3D_Vertex_t::id_type                 VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return LinearCylindrical3D_Vertex(*vertex);
 }
 
 list LinearCylindrical3D_Domain::get_vertices()
@@ -366,9 +378,12 @@ LinearPolar2D_Domain_t & LinearPolar2D_Domain::get_domain()
 
 LinearPolar2D_Vertex LinearPolar2D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	LinearPolar2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return LinearPolar2D_Vertex(vertices[index]);
+	typedef LinearPolar2D_VertexRange_t                           VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef LinearPolar2D_Vertex_t::id_type                       VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return LinearPolar2D_Vertex(*vertex);
 }
 
 list LinearPolar2D_Domain::get_vertices()
@@ -449,9 +464,12 @@ LinearSpherical3D_Domain_t & LinearSpherical3D_Domain::get_domain()
 
 LinearSpherical3D_Vertex LinearSpherical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	LinearSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return LinearSpherical3D_Vertex(vertices[index]);
+	typedef LinearSpherical3D_VertexRange_t                       VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef LinearSpherical3D_Vertex_t::id_type                   VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return LinearSpherical3D_Vertex(*vertex);
 }
 
 list LinearSpherical3D_Domain::get_vertices()

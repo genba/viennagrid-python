@@ -35,9 +35,12 @@ QuadrilateralCartesian2D_Domain_t & QuadrilateralCartesian2D_Domain::get_domain(
 
 QuadrilateralCartesian2D_Vertex QuadrilateralCartesian2D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	QuadrilateralCartesian2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return QuadrilateralCartesian2D_Vertex(vertices[index]);
+	typedef QuadrilateralCartesian2D_VertexRange_t                VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef QuadrilateralCartesian2D_Vertex_t::id_type            VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return QuadrilateralCartesian2D_Vertex(*vertex);
 }
 
 list QuadrilateralCartesian2D_Domain::get_vertices()
@@ -118,9 +121,12 @@ QuadrilateralCartesian3D_Domain_t & QuadrilateralCartesian3D_Domain::get_domain(
 
 QuadrilateralCartesian3D_Vertex QuadrilateralCartesian3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	QuadrilateralCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return QuadrilateralCartesian3D_Vertex(vertices[index]);
+	typedef QuadrilateralCartesian3D_VertexRange_t                VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef QuadrilateralCartesian3D_Vertex_t::id_type            VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return QuadrilateralCartesian3D_Vertex(*vertex);
 }
 
 list QuadrilateralCartesian3D_Domain::get_vertices()
@@ -201,9 +207,12 @@ QuadrilateralCylindrical3D_Domain_t & QuadrilateralCylindrical3D_Domain::get_dom
 
 QuadrilateralCylindrical3D_Vertex QuadrilateralCylindrical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	QuadrilateralCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return QuadrilateralCylindrical3D_Vertex(vertices[index]);
+	typedef QuadrilateralCylindrical3D_VertexRange_t              VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef QuadrilateralCylindrical3D_Vertex_t::id_type          VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return QuadrilateralCylindrical3D_Vertex(*vertex);
 }
 
 list QuadrilateralCylindrical3D_Domain::get_vertices()
@@ -284,9 +293,12 @@ QuadrilateralPolar2D_Domain_t & QuadrilateralPolar2D_Domain::get_domain()
 
 QuadrilateralPolar2D_Vertex QuadrilateralPolar2D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	QuadrilateralPolar2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return QuadrilateralPolar2D_Vertex(vertices[index]);
+	typedef QuadrilateralPolar2D_VertexRange_t                    VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef QuadrilateralPolar2D_Vertex_t::id_type                VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return QuadrilateralPolar2D_Vertex(*vertex);
 }
 
 list QuadrilateralPolar2D_Domain::get_vertices()
@@ -367,9 +379,12 @@ QuadrilateralSpherical3D_Domain_t & QuadrilateralSpherical3D_Domain::get_domain(
 
 QuadrilateralSpherical3D_Vertex QuadrilateralSpherical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	QuadrilateralSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return QuadrilateralSpherical3D_Vertex(vertices[index]);
+	typedef QuadrilateralSpherical3D_VertexRange_t                VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef QuadrilateralSpherical3D_Vertex_t::id_type            VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return QuadrilateralSpherical3D_Vertex(*vertex);
 }
 
 list QuadrilateralSpherical3D_Domain::get_vertices()

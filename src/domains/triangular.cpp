@@ -35,9 +35,12 @@ TriangularCartesian2D_Domain_t & TriangularCartesian2D_Domain::get_domain()
 
 TriangularCartesian2D_Vertex TriangularCartesian2D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TriangularCartesian2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TriangularCartesian2D_Vertex(vertices[index]);
+	typedef TriangularCartesian2D_VertexRange_t                   VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TriangularCartesian2D_Vertex_t::id_type               VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TriangularCartesian2D_Vertex(*vertex);
 }
 
 list TriangularCartesian2D_Domain::get_vertices()
@@ -118,9 +121,12 @@ TriangularCartesian3D_Domain_t & TriangularCartesian3D_Domain::get_domain()
 
 TriangularCartesian3D_Vertex TriangularCartesian3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TriangularCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TriangularCartesian3D_Vertex(vertices[index]);
+	typedef TriangularCartesian3D_VertexRange_t                   VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TriangularCartesian3D_Vertex_t::id_type               VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TriangularCartesian3D_Vertex(*vertex);
 }
 
 list TriangularCartesian3D_Domain::get_vertices()
@@ -201,9 +207,12 @@ TriangularCylindrical3D_Domain_t & TriangularCylindrical3D_Domain::get_domain()
 
 TriangularCylindrical3D_Vertex TriangularCylindrical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TriangularCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TriangularCylindrical3D_Vertex(vertices[index]);
+	typedef TriangularCylindrical3D_VertexRange_t                 VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TriangularCylindrical3D_Vertex_t::id_type             VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TriangularCylindrical3D_Vertex(*vertex);
 }
 
 list TriangularCylindrical3D_Domain::get_vertices()
@@ -284,9 +293,12 @@ TriangularPolar2D_Domain_t & TriangularPolar2D_Domain::get_domain()
 
 TriangularPolar2D_Vertex TriangularPolar2D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TriangularPolar2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TriangularPolar2D_Vertex(vertices[index]);
+	typedef TriangularPolar2D_VertexRange_t                       VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TriangularPolar2D_Vertex_t::id_type                   VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TriangularPolar2D_Vertex(*vertex);
 }
 
 list TriangularPolar2D_Domain::get_vertices()
@@ -367,9 +379,12 @@ TriangularSpherical3D_Domain_t & TriangularSpherical3D_Domain::get_domain()
 
 TriangularSpherical3D_Vertex TriangularSpherical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TriangularSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TriangularSpherical3D_Vertex(vertices[index]);
+	typedef TriangularSpherical3D_VertexRange_t                   VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TriangularSpherical3D_Vertex_t::id_type               VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TriangularSpherical3D_Vertex(*vertex);
 }
 
 list TriangularSpherical3D_Domain::get_vertices()

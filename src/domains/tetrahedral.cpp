@@ -35,9 +35,12 @@ TetrahedralCartesian3D_Domain_t & TetrahedralCartesian3D_Domain::get_domain()
 
 TetrahedralCartesian3D_Vertex TetrahedralCartesian3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TetrahedralCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TetrahedralCartesian3D_Vertex(vertices[index]);
+	typedef TetrahedralCartesian3D_VertexRange_t                  VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TetrahedralCartesian3D_Vertex_t::id_type              VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TetrahedralCartesian3D_Vertex(*vertex);
 }
 
 list TetrahedralCartesian3D_Domain::get_vertices()
@@ -118,9 +121,12 @@ TetrahedralCylindrical3D_Domain_t & TetrahedralCylindrical3D_Domain::get_domain(
 
 TetrahedralCylindrical3D_Vertex TetrahedralCylindrical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TetrahedralCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TetrahedralCylindrical3D_Vertex(vertices[index]);
+	typedef TetrahedralCylindrical3D_VertexRange_t                VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TetrahedralCylindrical3D_Vertex_t::id_type            VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TetrahedralCylindrical3D_Vertex(*vertex);
 }
 
 list TetrahedralCylindrical3D_Domain::get_vertices()
@@ -201,9 +207,12 @@ TetrahedralSpherical3D_Domain_t & TetrahedralSpherical3D_Domain::get_domain()
 
 TetrahedralSpherical3D_Vertex TetrahedralSpherical3D_Domain::get_vertex(unsigned int index)
 {
-	// TODO: domain.find_by_id(index);
-	TetrahedralSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return TetrahedralSpherical3D_Vertex(vertices[index]);
+	typedef TetrahedralSpherical3D_VertexRange_t                  VertexRange;
+	typedef viennagrid::result_of::iterator<VertexRange>::type    VertexIterator;
+	typedef TetrahedralSpherical3D_Vertex_t::id_type              VertexIDType;
+	
+	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	return TetrahedralSpherical3D_Vertex(*vertex);
 }
 
 list TetrahedralSpherical3D_Domain::get_vertices()
