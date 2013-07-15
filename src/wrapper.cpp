@@ -452,6 +452,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("vertices", &TriangularSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
+	/***********************
+	 * TRIANGULAR VERTICES *
+	 ***********************/
+	
+	class_<TriangularCartesian2D_Vertex>("TriangularCartesian2D_Vertex", init<TriangularCartesian2D_Vertex_t &>())
+	;
+	
+	class_<TriangularCartesian3D_Vertex>("TriangularCartesian3D_Vertex", init<TriangularCartesian3D_Vertex_t &>())
+	;
+	
+	class_<TriangularCylindrical3D_Vertex>("TriangularCylindrical3D_Vertex", init<TriangularCylindrical3D_Vertex_t &>())
+	;
+	
+	class_<TriangularPolar2D_Vertex>("TriangularPolar2D_Vertex", init<TriangularPolar2D_Vertex_t &>())
+	;
+	
+	class_<TriangularSpherical3D_Vertex>("TriangularSpherical3D_Vertex", init<TriangularSpherical3D_Vertex_t &>())
+	;
+	
 	/*************************
 	 * QUADRILATERAL DOMAINS *
 	 *************************/
@@ -587,6 +606,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<QuadrilateralSpherical3D_Cell_t &>())
 		.add_property("vertices", &QuadrilateralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
+	
+	/**************************
+	 * QUADRILATERAL VERTICES *
+	 **************************/
+	
+	class_<QuadrilateralCartesian2D_Vertex>("QuadrilateralCartesian2D_Vertex", init<QuadrilateralCartesian2D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralCartesian3D_Vertex>("QuadrilateralCartesian3D_Vertex", init<QuadrilateralCartesian3D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralCylindrical3D_Vertex>("QuadrilateralCylindrical3D_Vertex", init<QuadrilateralCylindrical3D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralPolar2D_Vertex>("QuadrilateralPolar2D_Vertex", init<QuadrilateralPolar2D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralSpherical3D_Vertex>("QuadrilateralSpherical3D_Vertex", init<QuadrilateralSpherical3D_Vertex_t &>())
+	;
 
 	/*************************
 	 * TETRAHEDRAL DOMAINS *
@@ -641,9 +679,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_segments", &TetrahedralSpherical3D_Segmentation::get_segments, "docstring")
 	;
 	
-	/**************************
+	/************************
 	 * TETRAHEDRAL SEGMENTS *
-	 **************************/
+	 ************************/
 	
 	class_<TetrahedralCartesian3D_Segment>("TetrahedralCartesian3D_Segment", init<TetrahedralCartesian3D_Segment_t &, TetrahedralCartesian3D_Segmentation &>())
 		.def("create_cell", &TetrahedralCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
@@ -660,9 +698,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("cells", &TetrahedralSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	/***********************
+	/*********************
 	 * TETRAHEDRAL CELLS *
-	 ***********************/
+	 *********************/
 	
 	class_<TetrahedralCartesian3D_Cell>("TetrahedralCartesian3D_Cell", init<TetrahedralCartesian3D_Cell_t &>())
 		.add_property("vertices", &TetrahedralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
@@ -674,5 +712,18 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<TetrahedralSpherical3D_Cell>("TetrahedralSpherical3D_Cell", init<TetrahedralSpherical3D_Cell_t &>())
 		.add_property("vertices", &TetrahedralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	/************************
+	 * TETRAHEDRAL VERTICES *
+	 ************************/
+	
+	class_<TetrahedralCartesian3D_Vertex>("TetrahedralCartesian3D_Vertex", init<TetrahedralCartesian3D_Vertex_t &>())
+	;
+	
+	class_<TetrahedralCylindrical3D_Vertex>("TetrahedralCylindrical3D_Vertex", init<TetrahedralCylindrical3D_Vertex_t &>())
+	;
+	
+	class_<TetrahedralSpherical3D_Vertex>("TetrahedralSpherical3D_Vertex", init<TetrahedralSpherical3D_Vertex_t &>())
 	;
 }
