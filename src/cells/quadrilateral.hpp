@@ -1,6 +1,8 @@
 #ifndef CELLS_QUADRILATERAL_HPP
 #define CELLS_QUADRILATERAL_HPP
 
+#include "types.hpp"
+
 #include "../points/cartesian.hpp"
 #include "../points/cylindrical.hpp"
 #include "../points/polar.hpp"
@@ -14,9 +16,9 @@ using namespace boost::python;
 /////////////////////////////////
 
 class QuadrilateralCartesian2D_Cell {
-	list    vertices;
+	QuadrilateralCartesian2D_Cell_t    *cell;
 public:
-	QuadrilateralCartesian2D_Cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4);
+	QuadrilateralCartesian2D_Cell(QuadrilateralCartesian2D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -25,9 +27,9 @@ public:
 /////////////////////////////////
 
 class QuadrilateralCartesian3D_Cell {
-	list    vertices;
+	QuadrilateralCartesian3D_Cell_t    *cell;
 public:
-	QuadrilateralCartesian3D_Cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
+	QuadrilateralCartesian3D_Cell(QuadrilateralCartesian3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -36,9 +38,9 @@ public:
 /////////////////////////////////////
 
 class QuadrilateralCylindrical3D_Cell {
-	list    vertices;
+	QuadrilateralCylindrical3D_Cell_t    *cell;
 public:
-	QuadrilateralCylindrical3D_Cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
+	QuadrilateralCylindrical3D_Cell(QuadrilateralCylindrical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -47,9 +49,9 @@ public:
 ///////////////////////////////
 
 class QuadrilateralPolar2D_Cell {
-	list    vertices;
+	QuadrilateralPolar2D_Cell_t    *cell;
 public:
-	QuadrilateralPolar2D_Cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4);
+	QuadrilateralPolar2D_Cell(QuadrilateralPolar2D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -58,9 +60,9 @@ public:
 ///////////////////////////////////
 
 class QuadrilateralSpherical3D_Cell {
-	list    vertices;
+	QuadrilateralSpherical3D_Cell_t    *cell;
 public:
-	QuadrilateralSpherical3D_Cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
+	QuadrilateralSpherical3D_Cell(QuadrilateralSpherical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
