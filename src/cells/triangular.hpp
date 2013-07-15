@@ -1,6 +1,8 @@
 #ifndef CELLS_TRIANGULAR_HPP
 #define CELLS_TRIANGULAR_HPP
 
+#include "types.hpp"
+
 #include "../points/cartesian.hpp"
 #include "../points/cylindrical.hpp"
 #include "../points/polar.hpp"
@@ -14,9 +16,9 @@ using namespace boost::python;
 ////////////////////////////
 
 class TriangularCartesian2D_Cell {
-	list    vertices;
+	TriangularCartesian2D_Cell_t    *cell;
 public:
-	TriangularCartesian2D_Cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3);
+	TriangularCartesian2D_Cell(TriangularCartesian2D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -25,9 +27,9 @@ public:
 ////////////////////////////
 
 class TriangularCartesian3D_Cell {
-	list    vertices;
+	TriangularCartesian3D_Cell_t    *cell;
 public:
-	TriangularCartesian3D_Cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3);
+	TriangularCartesian3D_Cell(TriangularCartesian3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -36,9 +38,9 @@ public:
 ////////////////////////////////
 
 class TriangularCylindrical3D_Cell {
-	list    vertices;
+	TriangularCylindrical3D_Cell_t    *cell;
 public:
-	TriangularCylindrical3D_Cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3);
+	TriangularCylindrical3D_Cell(TriangularCylindrical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -47,9 +49,9 @@ public:
 //////////////////////////
 
 class TriangularPolar2D_Cell {
-	list    vertices;
+	TriangularPolar2D_Cell_t    *cell;
 public:
-	TriangularPolar2D_Cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3);
+	TriangularPolar2D_Cell(TriangularPolar2D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -58,9 +60,9 @@ public:
 //////////////////////////////
 
 class TriangularSpherical3D_Cell {
-	list    vertices;
+	TriangularSpherical3D_Cell_t    *cell;
 public:
-	TriangularSpherical3D_Cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3);
+	TriangularSpherical3D_Cell(TriangularSpherical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 

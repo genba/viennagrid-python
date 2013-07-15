@@ -4,6 +4,7 @@
 #include "types.hpp"
 
 #include "../domains/quadrilateral.hpp"
+#include "../segments/quadrilateral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -15,11 +16,12 @@ using namespace boost::python;
 class QuadrilateralCartesian2D_Segmentation
 {
 	QuadrilateralCartesian2D_Segmentation_t    segmentation;
-	//QuadrilateralCartesian2D_Domain           *domain;
+	QuadrilateralCartesian2D_Domain           *domain;
 public:
 	QuadrilateralCartesian2D_Segmentation(QuadrilateralCartesian2D_Domain &dom);
 	QuadrilateralCartesian2D_Segment create_segment();
 	list get_segments();
+	QuadrilateralCartesian2D_Domain_t & get_domain();
 };
 
 ////////////////////////////////
@@ -29,11 +31,12 @@ public:
 class QuadrilateralCartesian3D_Segmentation
 {
 	QuadrilateralCartesian3D_Segmentation_t    segmentation;
-	//QuadrilateralCartesian3D_Domain           *domain;
+	QuadrilateralCartesian3D_Domain           *domain;
 public:
 	QuadrilateralCartesian3D_Segmentation(QuadrilateralCartesian3D_Domain &dom);
 	QuadrilateralCartesian3D_Segment create_segment();
 	list get_segments();
+	QuadrilateralCartesian3D_Domain_t & get_domain();
 };
 
 //////////////////////////////////
@@ -43,11 +46,12 @@ public:
 class QuadrilateralCylindrical3D_Segmentation
 {
 	QuadrilateralCylindrical3D_Segmentation_t    segmentation;
-	//QuadrilateralCylindrical3D_Domain           *domain;
+	QuadrilateralCylindrical3D_Domain           *domain;
 public:
 	QuadrilateralCylindrical3D_Segmentation(QuadrilateralCylindrical3D_Domain &dom);
 	QuadrilateralCylindrical3D_Segment create_segment();
 	list get_segments();
+	QuadrilateralCylindrical3D_Domain_t & get_domain();
 };
 
 ////////////////////////////
@@ -57,11 +61,12 @@ public:
 class QuadrilateralPolar2D_Segmentation
 {
 	QuadrilateralPolar2D_Segmentation_t    segmentation;
-	//QuadrilateralPolar2D_Domain           *domain;
+	QuadrilateralPolar2D_Domain           *domain;
 public:
 	QuadrilateralPolar2D_Segmentation(QuadrilateralPolar2D_Domain &dom);
 	QuadrilateralPolar2D_Segment create_segment();
 	list get_segments();
+	QuadrilateralPolar2D_Domain_t & get_domain();
 };
 
 ////////////////////////////////
@@ -71,11 +76,12 @@ public:
 class QuadrilateralSpherical3D_Segmentation
 {
 	QuadrilateralSpherical3D_Segmentation_t    segmentation;
-	//QuadrilateralSpherical3D_Domain           *domain;
+	QuadrilateralSpherical3D_Domain           *domain;
 public:
 	QuadrilateralSpherical3D_Segmentation(QuadrilateralSpherical3D_Domain &dom);
 	QuadrilateralSpherical3D_Segment create_segment();
 	list get_segments();
+	QuadrilateralSpherical3D_Domain_t & get_domain();
 };
 
 #endif

@@ -6,6 +6,10 @@
 #include "../points/polar.hpp"
 #include "../points/spherical.hpp"
 
+#include "types.hpp"
+
+#include "../vertices/linear.hpp"
+
 #include <boost/python.hpp>
 using namespace boost::python;
 
@@ -14,9 +18,9 @@ using namespace boost::python;
 ////////////////////////
 
 class LinearCartesian1D_Cell {
-	list    vertices;
+	LinearCartesian1D_Cell_t    *cell;
 public:
-	LinearCartesian1D_Cell(PointCartesian1D vertex1, PointCartesian1D vertex2);
+	LinearCartesian1D_Cell(LinearCartesian1D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -25,9 +29,9 @@ public:
 ////////////////////////
 
 class LinearCartesian2D_Cell {
-	list    vertices;
+	LinearCartesian2D_Cell_t    *cell;
 public:
-	LinearCartesian2D_Cell(PointCartesian2D vertex1, PointCartesian2D vertex2);
+	LinearCartesian2D_Cell(LinearCartesian2D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -36,9 +40,9 @@ public:
 ////////////////////////
 
 class LinearCartesian3D_Cell {
-	list    vertices;
+	LinearCartesian3D_Cell_t    *cell;
 public:
-	LinearCartesian3D_Cell(PointCartesian3D vertex1, PointCartesian3D vertex2);
+	LinearCartesian3D_Cell(LinearCartesian3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -47,9 +51,9 @@ public:
 ////////////////////////////
 
 class LinearCylindrical3D_Cell {
-	list    vertices;
+	LinearCylindrical3D_Cell_t    *cell;
 public:
-	LinearCylindrical3D_Cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2);
+	LinearCylindrical3D_Cell(LinearCylindrical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -58,9 +62,9 @@ public:
 //////////////////////
 
 class LinearPolar2D_Cell {
-	list    vertices;
+	LinearPolar2D_Cell_t    *cell;
 public:
-	LinearPolar2D_Cell(PointPolar2D vertex1, PointPolar2D vertex2);
+	LinearPolar2D_Cell(LinearPolar2D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -69,9 +73,9 @@ public:
 //////////////////////////
 
 class LinearSpherical3D_Cell {
-	list    vertices;
+	LinearSpherical3D_Cell_t    *cell;
 public:
-	LinearSpherical3D_Cell(PointSpherical3D vertex1, PointSpherical3D vertex2);
+	LinearSpherical3D_Cell(LinearSpherical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 

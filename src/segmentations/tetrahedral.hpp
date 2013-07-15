@@ -4,6 +4,7 @@
 #include "types.hpp"
 
 #include "../domains/tetrahedral.hpp"
+#include "../segments/tetrahedral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -15,11 +16,12 @@ using namespace boost::python;
 class TetrahedralCartesian3D_Segmentation
 {
 	TetrahedralCartesian3D_Segmentation_t    segmentation;
-	//TetrahedralCartesian3D_Domain           *domain;
+	TetrahedralCartesian3D_Domain           *domain;
 public:
 	TetrahedralCartesian3D_Segmentation(TetrahedralCartesian3D_Domain &dom);
 	TetrahedralCartesian3D_Segment create_segment();
 	list get_segments();
+	TetrahedralCartesian3D_Domain_t & get_domain();
 };
 
 ////////////////////////////////
@@ -29,11 +31,12 @@ public:
 class TetrahedralCylindrical3D_Segmentation
 {
 	TetrahedralCylindrical3D_Segmentation_t    segmentation;
-	//TetrahedralCylindrical3D_Domain           *domain;
+	TetrahedralCylindrical3D_Domain           *domain;
 public:
 	TetrahedralCylindrical3D_Segmentation(TetrahedralCylindrical3D_Domain &dom);
 	TetrahedralCylindrical3D_Segment create_segment();
 	list get_segments();
+	TetrahedralCylindrical3D_Domain_t & get_domain();
 };
 
 //////////////////////////////
@@ -43,11 +46,12 @@ public:
 class TetrahedralSpherical3D_Segmentation
 {
 	TetrahedralSpherical3D_Segmentation_t    segmentation;
-	//TetrahedralSpherical3D_Domain           *domain;
+	TetrahedralSpherical3D_Domain           *domain;
 public:
 	TetrahedralSpherical3D_Segmentation(TetrahedralSpherical3D_Domain &dom);
 	TetrahedralSpherical3D_Segment create_segment();
 	list get_segments();
+	TetrahedralSpherical3D_Domain_t & get_domain();
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "types.hpp"
 
 #include "../domains/triangular.hpp"
+#include "../segments/triangular.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -15,11 +16,12 @@ using namespace boost::python;
 class TriangularCartesian2D_Segmentation
 {
 	TriangularCartesian2D_Segmentation_t    segmentation;
-	//TriangularCartesian2D_Domain           *domain;
+	TriangularCartesian2D_Domain           *domain;
 public:
 	TriangularCartesian2D_Segmentation(TriangularCartesian2D_Domain &dom);
 	TriangularCartesian2D_Segment create_segment();
 	list get_segments();
+	TriangularCartesian2D_Domain_t & get_domain();
 };
 
 /////////////////////////////
@@ -29,11 +31,12 @@ public:
 class TriangularCartesian3D_Segmentation
 {
 	TriangularCartesian3D_Segmentation_t    segmentation;
-	//TriangularCartesian3D_Domain           *domain;
+	TriangularCartesian3D_Domain           *domain;
 public:
 	TriangularCartesian3D_Segmentation(TriangularCartesian3D_Domain &dom);
 	TriangularCartesian3D_Segment create_segment();
 	list get_segments();
+	TriangularCartesian3D_Domain_t & get_domain();
 };
 
 ///////////////////////////////
@@ -43,11 +46,12 @@ public:
 class TriangularCylindrical3D_Segmentation
 {
 	TriangularCylindrical3D_Segmentation_t    segmentation;
-	//TriangularCylindrical3D_Domain           *domain;
+	TriangularCylindrical3D_Domain           *domain;
 public:
 	TriangularCylindrical3D_Segmentation(TriangularCylindrical3D_Domain &dom);
 	TriangularCylindrical3D_Segment create_segment();
 	list get_segments();
+	TriangularCylindrical3D_Domain_t & get_domain();
 };
 
 /////////////////////////
@@ -57,11 +61,12 @@ public:
 class TriangularPolar2D_Segmentation
 {
 	TriangularPolar2D_Segmentation_t    segmentation;
-	//TriangularPolar2D_Domain           *domain;
+	TriangularPolar2D_Domain           *domain;
 public:
 	TriangularPolar2D_Segmentation(TriangularPolar2D_Domain &dom);
 	TriangularPolar2D_Segment create_segment();
 	list get_segments();
+	TriangularPolar2D_Domain_t & get_domain();
 };
 
 /////////////////////////////
@@ -71,11 +76,12 @@ public:
 class TriangularSpherical3D_Segmentation
 {
 	TriangularSpherical3D_Segmentation_t    segmentation;
-	//TriangularSpherical3D_Domain           *domain;
+	TriangularSpherical3D_Domain           *domain;
 public:
 	TriangularSpherical3D_Segmentation(TriangularSpherical3D_Domain &dom);
 	TriangularSpherical3D_Segment create_segment();
 	list get_segments();
+	TriangularSpherical3D_Domain_t & get_domain();
 };
 
 #endif

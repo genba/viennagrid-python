@@ -258,32 +258,32 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * LINEAR SEGMENTS *
 	 *******************/
 	
-	class_<LinearCartesian1D_Segment>("LinearCartesian1D_Segment", init<LinearCartesian1D_Segment_t &>())
+	class_<LinearCartesian1D_Segment>("LinearCartesian1D_Segment", init<LinearCartesian1D_Segment_t &, LinearCartesian1D_Segmentation &>())
 		.def("create_cell", &LinearCartesian1D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCartesian1D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<LinearCartesian2D_Segment>("LinearCartesian2D_Segment", init<LinearCartesian2D_Segment_t &>())
+	class_<LinearCartesian2D_Segment>("LinearCartesian2D_Segment", init<LinearCartesian2D_Segment_t &, LinearCartesian2D_Segmentation &>())
 		.def("create_cell", &LinearCartesian2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<LinearCartesian3D_Segment>("LinearCartesian3D_Segment", init<LinearCartesian3D_Segment_t &>())
+	class_<LinearCartesian3D_Segment>("LinearCartesian3D_Segment", init<LinearCartesian3D_Segment_t &, LinearCartesian3D_Segmentation &>())
 		.def("create_cell", &LinearCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<LinearCylindrical3D_Segment>("LinearCylindrical3D_Segment", init<LinearCylindrical3D_Segment_t &>())
+	class_<LinearCylindrical3D_Segment>("LinearCylindrical3D_Segment", init<LinearCylindrical3D_Segment_t &, LinearCylindrical3D_Segmentation &>())
 		.def("create_cell", &LinearCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<LinearPolar2D_Segment>("LinearPolar2D_Segment", init<LinearPolar2D_Segment_t &>())
+	class_<LinearPolar2D_Segment>("LinearPolar2D_Segment", init<LinearPolar2D_Segment_t &, LinearPolar2D_Segmentation &>())
 		.def("create_cell", &LinearPolar2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<LinearSpherical3D_Segment>("LinearSpherical3D_Segment", init<LinearSpherical3D_Segment_t &>())
+	class_<LinearSpherical3D_Segment>("LinearSpherical3D_Segment", init<LinearSpherical3D_Segment_t &, LinearSpherical3D_Segmentation &>())
 		.def("create_cell", &LinearSpherical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
@@ -292,27 +292,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * LINEAR CELLS *
 	 ****************/
 	
-	class_<LinearCartesian1D_Cell>("LinearCartesian1D_Cell", init<PointCartesian1D, PointCartesian1D>())
+	class_<LinearCartesian1D_Cell>("LinearCartesian1D_Cell", init<LinearCartesian1D_Cell_t &>())
 		.add_property("vertices", &LinearCartesian1D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearCartesian2D_Cell>("LinearCartesian2D_Cell", init<PointCartesian2D, PointCartesian2D>())
+	class_<LinearCartesian2D_Cell>("LinearCartesian2D_Cell", init<LinearCartesian2D_Cell_t &>())
 		.add_property("vertices", &LinearCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearCartesian3D_Cell>("LinearCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D>())
+	class_<LinearCartesian3D_Cell>("LinearCartesian3D_Cell", init<LinearCartesian3D_Cell_t &>())
 		.add_property("vertices", &LinearCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearCylindrical3D_Cell>("LinearCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D>())
+	class_<LinearCylindrical3D_Cell>("LinearCylindrical3D_Cell", init<LinearCylindrical3D_Cell_t &>())
 		.add_property("vertices", &LinearCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearPolar2D_Cell>("LinearPolar2D_Cell", init<PointPolar2D, PointPolar2D>())
+	class_<LinearPolar2D_Cell>("LinearPolar2D_Cell", init<LinearPolar2D_Cell_t &>())
 		.add_property("vertices", &LinearPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<LinearSpherical3D_Cell>("LinearSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D>())
+	class_<LinearSpherical3D_Cell>("LinearSpherical3D_Cell", init<LinearSpherical3D_Cell_t &>())
 		.add_property("vertices", &LinearSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
@@ -403,27 +403,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * TRIANGULAR SEGMENTS *
 	 ***********************/
 	
-	class_<TriangularCartesian2D_Segment>("TriangularCartesian2D_Segment", init<TriangularCartesian2D_Segment_t &>())
+	class_<TriangularCartesian2D_Segment>("TriangularCartesian2D_Segment", init<TriangularCartesian2D_Segment_t &, TriangularCartesian2D_Segmentation &>())
 		.def("create_cell", &TriangularCartesian2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<TriangularCartesian3D_Segment>("TriangularCartesian3D_Segment", init<TriangularCartesian3D_Segment_t &>())
+	class_<TriangularCartesian3D_Segment>("TriangularCartesian3D_Segment", init<TriangularCartesian3D_Segment_t &, TriangularCartesian3D_Segmentation &>())
 		.def("create_cell", &TriangularCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<TriangularCylindrical3D_Segment>("TriangularCylindrical3D_Segment", init<TriangularCylindrical3D_Segment_t &>())
+	class_<TriangularCylindrical3D_Segment>("TriangularCylindrical3D_Segment", init<TriangularCylindrical3D_Segment_t &, TriangularCylindrical3D_Segmentation &>())
 		.def("create_cell", &TriangularCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<TriangularPolar2D_Segment>("TriangularPolar2D_Segment", init<TriangularPolar2D_Segment_t &>())
+	class_<TriangularPolar2D_Segment>("TriangularPolar2D_Segment", init<TriangularPolar2D_Segment_t &, TriangularPolar2D_Segmentation &>())
 		.def("create_cell", &TriangularPolar2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<TriangularSpherical3D_Segment>("TriangularSpherical3D_Segment", init<TriangularSpherical3D_Segment_t &>())
+	class_<TriangularSpherical3D_Segment>("TriangularSpherical3D_Segment", init<TriangularSpherical3D_Segment_t &, TriangularSpherical3D_Segmentation &>())
 		.def("create_cell", &TriangularSpherical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
@@ -432,24 +432,43 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * TRIANGULAR CELLS *
 	 ********************/
 	
-	class_<TriangularCartesian2D_Cell>("TriangularCartesian2D_Cell", init<PointCartesian2D, PointCartesian2D, PointCartesian2D>())
+	class_<TriangularCartesian2D_Cell>("TriangularCartesian2D_Cell", init<TriangularCartesian2D_Cell_t &>())
 		.add_property("vertices", &TriangularCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<TriangularCartesian3D_Cell>("TriangularCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D, PointCartesian3D>())
+	class_<TriangularCartesian3D_Cell>("TriangularCartesian3D_Cell", init<TriangularCartesian3D_Cell_t &>())
 		.add_property("vertices", &TriangularCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<TriangularCylindrical3D_Cell>("TriangularCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D, PointCylindrical3D>())
+	class_<TriangularCylindrical3D_Cell>("TriangularCylindrical3D_Cell", init<TriangularCylindrical3D_Cell_t &>())
 		.add_property("vertices", &TriangularCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<TriangularPolar2D_Cell>("TriangularPolar2D_Cell", init<PointPolar2D, PointPolar2D, PointPolar2D>())
+	class_<TriangularPolar2D_Cell>("TriangularPolar2D_Cell", init<TriangularPolar2D_Cell_t &>())
 		.add_property("vertices", &TriangularPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<TriangularSpherical3D_Cell>("TriangularSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D, PointSpherical3D>())
+	class_<TriangularSpherical3D_Cell>("TriangularSpherical3D_Cell", init<TriangularSpherical3D_Cell_t &>())
 		.add_property("vertices", &TriangularSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	/***********************
+	 * TRIANGULAR VERTICES *
+	 ***********************/
+	
+	class_<TriangularCartesian2D_Vertex>("TriangularCartesian2D_Vertex", init<TriangularCartesian2D_Vertex_t &>())
+	;
+	
+	class_<TriangularCartesian3D_Vertex>("TriangularCartesian3D_Vertex", init<TriangularCartesian3D_Vertex_t &>())
+	;
+	
+	class_<TriangularCylindrical3D_Vertex>("TriangularCylindrical3D_Vertex", init<TriangularCylindrical3D_Vertex_t &>())
+	;
+	
+	class_<TriangularPolar2D_Vertex>("TriangularPolar2D_Vertex", init<TriangularPolar2D_Vertex_t &>())
+	;
+	
+	class_<TriangularSpherical3D_Vertex>("TriangularSpherical3D_Vertex", init<TriangularSpherical3D_Vertex_t &>())
 	;
 	
 	/*************************
@@ -539,27 +558,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * QUADRILATERAL SEGMENTS *
 	 **************************/
 	
-	class_<QuadrilateralCartesian2D_Segment>("QuadrilateralCartesian2D_Segment", init<QuadrilateralCartesian2D_Segment_t &>())
+	class_<QuadrilateralCartesian2D_Segment>("QuadrilateralCartesian2D_Segment", init<QuadrilateralCartesian2D_Segment_t &, QuadrilateralCartesian2D_Segmentation &>())
 		.def("create_cell", &QuadrilateralCartesian2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<QuadrilateralCartesian3D_Segment>("QuadrilateralCartesian3D_Segment", init<QuadrilateralCartesian3D_Segment_t &>())
+	class_<QuadrilateralCartesian3D_Segment>("QuadrilateralCartesian3D_Segment", init<QuadrilateralCartesian3D_Segment_t &, QuadrilateralCartesian3D_Segmentation &>())
 		.def("create_cell", &QuadrilateralCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<QuadrilateralCylindrical3D_Segment>("QuadrilateralCylindrical3D_Segment", init<QuadrilateralCylindrical3D_Segment_t &>())
+	class_<QuadrilateralCylindrical3D_Segment>("QuadrilateralCylindrical3D_Segment", init<QuadrilateralCylindrical3D_Segment_t &, QuadrilateralCylindrical3D_Segmentation &>())
 		.def("create_cell", &QuadrilateralCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<QuadrilateralPolar2D_Segment>("QuadrilateralPolar2D_Segment", init<QuadrilateralPolar2D_Segment_t &>())
+	class_<QuadrilateralPolar2D_Segment>("QuadrilateralPolar2D_Segment", init<QuadrilateralPolar2D_Segment_t &, QuadrilateralPolar2D_Segmentation &>())
 		.def("create_cell", &QuadrilateralPolar2D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<QuadrilateralSpherical3D_Segment>("QuadrilateralSpherical3D_Segment", init<QuadrilateralSpherical3D_Segment_t &>())
+	class_<QuadrilateralSpherical3D_Segment>("QuadrilateralSpherical3D_Segment", init<QuadrilateralSpherical3D_Segment_t &, QuadrilateralSpherical3D_Segmentation &>())
 		.def("create_cell", &QuadrilateralSpherical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
@@ -568,24 +587,43 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * QUADRILATERAL CELLS *
 	 ***********************/
 	
-	class_<QuadrilateralCartesian2D_Cell>("QuadrilateralCartesian2D_Cell", init<PointCartesian2D, PointCartesian2D, PointCartesian2D, PointCartesian2D>())
+	class_<QuadrilateralCartesian2D_Cell>("QuadrilateralCartesian2D_Cell", init<QuadrilateralCartesian2D_Cell_t &>())
 		.add_property("vertices", &QuadrilateralCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<QuadrilateralCartesian3D_Cell>("QuadrilateralCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D, PointCartesian3D, PointCartesian3D>())
+	class_<QuadrilateralCartesian3D_Cell>("QuadrilateralCartesian3D_Cell", init<QuadrilateralCartesian3D_Cell_t &>())
 		.add_property("vertices", &QuadrilateralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<QuadrilateralCylindrical3D_Cell>("QuadrilateralCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D, PointCylindrical3D, PointCylindrical3D>())
+	class_<QuadrilateralCylindrical3D_Cell>("QuadrilateralCylindrical3D_Cell", init<QuadrilateralCylindrical3D_Cell_t &>())
 		.add_property("vertices", &QuadrilateralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<QuadrilateralPolar2D_Cell>("QuadrilateralPolar2D_Cell", init<PointPolar2D, PointPolar2D, PointPolar2D, PointPolar2D>())
+	class_<QuadrilateralPolar2D_Cell>("QuadrilateralPolar2D_Cell", init<QuadrilateralPolar2D_Cell_t &>())
 		.add_property("vertices", &QuadrilateralPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D, PointSpherical3D, PointSpherical3D>())
+	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<QuadrilateralSpherical3D_Cell_t &>())
 		.add_property("vertices", &QuadrilateralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	/**************************
+	 * QUADRILATERAL VERTICES *
+	 **************************/
+	
+	class_<QuadrilateralCartesian2D_Vertex>("QuadrilateralCartesian2D_Vertex", init<QuadrilateralCartesian2D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralCartesian3D_Vertex>("QuadrilateralCartesian3D_Vertex", init<QuadrilateralCartesian3D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralCylindrical3D_Vertex>("QuadrilateralCylindrical3D_Vertex", init<QuadrilateralCylindrical3D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralPolar2D_Vertex>("QuadrilateralPolar2D_Vertex", init<QuadrilateralPolar2D_Vertex_t &>())
+	;
+	
+	class_<QuadrilateralSpherical3D_Vertex>("QuadrilateralSpherical3D_Vertex", init<QuadrilateralSpherical3D_Vertex_t &>())
 	;
 
 	/*************************
@@ -641,38 +679,51 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("get_segments", &TetrahedralSpherical3D_Segmentation::get_segments, "docstring")
 	;
 	
-	/**************************
+	/************************
 	 * TETRAHEDRAL SEGMENTS *
-	 **************************/
+	 ************************/
 	
-	class_<TetrahedralCartesian3D_Segment>("TetrahedralCartesian3D_Segment", init<TetrahedralCartesian3D_Segment_t &>())
+	class_<TetrahedralCartesian3D_Segment>("TetrahedralCartesian3D_Segment", init<TetrahedralCartesian3D_Segment_t &, TetrahedralCartesian3D_Segmentation &>())
 		.def("create_cell", &TetrahedralCartesian3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TetrahedralCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<TetrahedralCylindrical3D_Segment>("TetrahedralCylindrical3D_Segment", init<TetrahedralCylindrical3D_Segment_t &>())
+	class_<TetrahedralCylindrical3D_Segment>("TetrahedralCylindrical3D_Segment", init<TetrahedralCylindrical3D_Segment_t &, TetrahedralCylindrical3D_Segmentation &>())
 		.def("create_cell", &TetrahedralCylindrical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TetrahedralCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	class_<TetrahedralSpherical3D_Segment>("TetrahedralSpherical3D_Segment", init<TetrahedralSpherical3D_Segment_t &>())
+	class_<TetrahedralSpherical3D_Segment>("TetrahedralSpherical3D_Segment", init<TetrahedralSpherical3D_Segment_t &, TetrahedralSpherical3D_Segmentation &>())
 		.def("create_cell", &TetrahedralSpherical3D_Segment::create_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TetrahedralSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
-	/***********************
+	/*********************
 	 * TETRAHEDRAL CELLS *
-	 ***********************/
+	 *********************/
 	
-	class_<TetrahedralCartesian3D_Cell>("TetrahedralCartesian3D_Cell", init<PointCartesian3D, PointCartesian3D, PointCartesian3D, PointCartesian3D>())
+	class_<TetrahedralCartesian3D_Cell>("TetrahedralCartesian3D_Cell", init<TetrahedralCartesian3D_Cell_t &>())
 		.add_property("vertices", &TetrahedralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<TetrahedralCylindrical3D_Cell>("TetrahedralCylindrical3D_Cell", init<PointCylindrical3D, PointCylindrical3D, PointCylindrical3D, PointCylindrical3D>())
+	class_<TetrahedralCylindrical3D_Cell>("TetrahedralCylindrical3D_Cell", init<TetrahedralCylindrical3D_Cell_t &>())
 		.add_property("vertices", &TetrahedralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
-	class_<TetrahedralSpherical3D_Cell>("TetrahedralSpherical3D_Cell", init<PointSpherical3D, PointSpherical3D, PointSpherical3D, PointSpherical3D>())
+	class_<TetrahedralSpherical3D_Cell>("TetrahedralSpherical3D_Cell", init<TetrahedralSpherical3D_Cell_t &>())
 		.add_property("vertices", &TetrahedralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+	;
+	
+	/************************
+	 * TETRAHEDRAL VERTICES *
+	 ************************/
+	
+	class_<TetrahedralCartesian3D_Vertex>("TetrahedralCartesian3D_Vertex", init<TetrahedralCartesian3D_Vertex_t &>())
+	;
+	
+	class_<TetrahedralCylindrical3D_Vertex>("TetrahedralCylindrical3D_Vertex", init<TetrahedralCylindrical3D_Vertex_t &>())
+	;
+	
+	class_<TetrahedralSpherical3D_Vertex>("TetrahedralSpherical3D_Vertex", init<TetrahedralSpherical3D_Vertex_t &>())
 	;
 }
