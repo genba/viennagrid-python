@@ -1,4 +1,2 @@
-boost*
-bin
-*.so*
-*.pyc
+inc
+build
