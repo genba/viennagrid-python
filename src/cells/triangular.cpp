@@ -1,18 +1,32 @@
 #include "triangular.hpp"
 
+#include "../vertices/triangular.hpp"
+
 ////////////////////////////
 // Triangle, cartesian 2D //
 ////////////////////////////
 
-TriangularCartesian2D_Cell::TriangularCartesian2D_Cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3)
+TriangularCartesian2D_Cell::TriangularCartesian2D_Cell(TriangularCartesian2D_Cell_t &initial_cell)
 {
-	vertices.append<PointCartesian2D>(vertex1);
-	vertices.append<PointCartesian2D>(vertex2);
-	vertices.append<PointCartesian2D>(vertex3);
+	cell = &initial_cell;
 }
 
 list TriangularCartesian2D_Cell::get_vertices()
 {
+	list vertices;
+	
+	typedef TriangularCartesian2D_Cell_t                                                    CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<TriangularCartesian2D_Vertex>(TriangularCartesian2D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -20,15 +34,27 @@ list TriangularCartesian2D_Cell::get_vertices()
 // Triangle, cartesian 3D //
 ////////////////////////////
 
-TriangularCartesian3D_Cell::TriangularCartesian3D_Cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3)
+TriangularCartesian3D_Cell::TriangularCartesian3D_Cell(TriangularCartesian3D_Cell_t &initial_cell)
 {
-	vertices.append<PointCartesian3D>(vertex1);
-	vertices.append<PointCartesian3D>(vertex2);
-	vertices.append<PointCartesian3D>(vertex3);
+	cell = &initial_cell;
 }
 
 list TriangularCartesian3D_Cell::get_vertices()
 {
+	list vertices;
+	
+	typedef TriangularCartesian3D_Cell_t                                                    CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<TriangularCartesian3D_Vertex>(TriangularCartesian3D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -36,15 +62,27 @@ list TriangularCartesian3D_Cell::get_vertices()
 // Triangle, cylindrical (3D) //
 ////////////////////////////////
 
-TriangularCylindrical3D_Cell::TriangularCylindrical3D_Cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3)
+TriangularCylindrical3D_Cell::TriangularCylindrical3D_Cell(TriangularCylindrical3D_Cell_t &initial_cell)
 {
-	vertices.append<PointCylindrical3D>(vertex1);
-	vertices.append<PointCylindrical3D>(vertex2);
-	vertices.append<PointCylindrical3D>(vertex3);
+	cell = &initial_cell;
 }
 
 list TriangularCylindrical3D_Cell::get_vertices()
 {
+	list vertices;
+	
+	typedef TriangularCylindrical3D_Cell_t                                                  CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<TriangularCylindrical3D_Vertex>(TriangularCylindrical3D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -52,15 +90,27 @@ list TriangularCylindrical3D_Cell::get_vertices()
 // Triangle, polar (2D) //
 //////////////////////////
 
-TriangularPolar2D_Cell::TriangularPolar2D_Cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3)
+TriangularPolar2D_Cell::TriangularPolar2D_Cell(TriangularPolar2D_Cell_t &initial_cell)
 {
-	vertices.append<PointPolar2D>(vertex1);
-	vertices.append<PointPolar2D>(vertex2);
-	vertices.append<PointPolar2D>(vertex3);
+	cell = &initial_cell;
 }
 
 list TriangularPolar2D_Cell::get_vertices()
 {
+	list vertices;
+	
+	typedef TriangularPolar2D_Cell_t                                                        CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<TriangularPolar2D_Vertex>(TriangularPolar2D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }
 
@@ -68,14 +118,26 @@ list TriangularPolar2D_Cell::get_vertices()
 // Triangle, spherical (3D) //
 //////////////////////////////
 
-TriangularSpherical3D_Cell::TriangularSpherical3D_Cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3)
+TriangularSpherical3D_Cell::TriangularSpherical3D_Cell(TriangularSpherical3D_Cell_t &initial_cell)
 {
-	vertices.append<PointSpherical3D>(vertex1);
-	vertices.append<PointSpherical3D>(vertex2);
-	vertices.append<PointSpherical3D>(vertex3);
+	cell = &initial_cell;
 }
 
 list TriangularSpherical3D_Cell::get_vertices()
 {
+	list vertices;
+	
+	typedef TriangularSpherical3D_Cell_t                                                    CellType;
+	typedef viennagrid::result_of::element_range<CellType, viennagrid::vertex_tag>::type    VertexOnElementRange;
+	typedef viennagrid::result_of::iterator<VertexOnElementRange>::type                     VertexOnElementIterator;
+	
+	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
+	for (VertexOnElementIterator voeit = vertices_on_element.begin();
+	                             voeit != vertices_on_element.end();
+	                             ++voeit)
+	{
+		vertices.append<TriangularSpherical3D_Vertex>(TriangularSpherical3D_Vertex(*voeit));
+	}
+	
 	return vertices;
 }

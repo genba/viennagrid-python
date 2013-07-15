@@ -22,9 +22,9 @@ unsigned int LinearCartesian1D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearCartesian1D_Domain::add_vertex(PointCartesian1D vertex)
+void LinearCartesian1D_Domain::add_vertex(PointCartesian1D point)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearCartesian1D_Domain_t & LinearCartesian1D_Domain::get_domain()
@@ -32,11 +32,11 @@ LinearCartesian1D_Domain_t & LinearCartesian1D_Domain::get_domain()
 	return domain;
 }
 
-PointCartesian1D LinearCartesian1D_Domain::get_vertex(unsigned int index)
+LinearCartesian1D_Vertex LinearCartesian1D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearCartesian1D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCartesian1D(viennagrid::point(domain, vertices[index]), index);
+	return LinearCartesian1D_Vertex(vertices[index]);
 }
 
 void LinearCartesian1D_Domain::read_netgen(std::string const &filename)
@@ -90,9 +90,9 @@ unsigned int LinearCartesian2D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearCartesian2D_Domain::add_vertex(PointCartesian2D vertex)
+void LinearCartesian2D_Domain::add_vertex(PointCartesian2D point)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearCartesian2D_Domain_t & LinearCartesian2D_Domain::get_domain()
@@ -100,11 +100,11 @@ LinearCartesian2D_Domain_t & LinearCartesian2D_Domain::get_domain()
 	return domain;
 }
 
-PointCartesian2D LinearCartesian2D_Domain::get_vertex(unsigned int index)
+LinearCartesian2D_Vertex LinearCartesian2D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearCartesian2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCartesian2D(viennagrid::point(domain, vertices[index]), index);
+	return LinearCartesian2D_Vertex(vertices[index]);
 }
 
 void LinearCartesian2D_Domain::read_netgen(std::string const &filename)
@@ -158,9 +158,9 @@ unsigned int LinearCartesian3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearCartesian3D_Domain::add_vertex(PointCartesian3D vertex)
+void LinearCartesian3D_Domain::add_vertex(PointCartesian3D point)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearCartesian3D_Domain_t & LinearCartesian3D_Domain::get_domain()
@@ -168,11 +168,11 @@ LinearCartesian3D_Domain_t & LinearCartesian3D_Domain::get_domain()
 	return domain;
 }
 
-PointCartesian3D LinearCartesian3D_Domain::get_vertex(unsigned int index)
+LinearCartesian3D_Vertex LinearCartesian3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearCartesian3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCartesian3D(viennagrid::point(domain, vertices[index]), index);
+	return LinearCartesian3D_Vertex(vertices[index]);
 }
 
 void LinearCartesian3D_Domain::read_netgen(std::string const &filename)
@@ -226,9 +226,9 @@ unsigned int LinearCylindrical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearCylindrical3D_Domain::add_vertex(PointCylindrical3D vertex)
+void LinearCylindrical3D_Domain::add_vertex(PointCylindrical3D point)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearCylindrical3D_Domain_t & LinearCylindrical3D_Domain::get_domain()
@@ -236,11 +236,11 @@ LinearCylindrical3D_Domain_t & LinearCylindrical3D_Domain::get_domain()
 	return domain;
 }
 
-PointCylindrical3D LinearCylindrical3D_Domain::get_vertex(unsigned int index)
+LinearCylindrical3D_Vertex LinearCylindrical3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearCylindrical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointCylindrical3D(viennagrid::point(domain, vertices[index]), index);
+	return LinearCylindrical3D_Vertex(vertices[index]);
 }
 
 void LinearCylindrical3D_Domain::read_netgen(std::string const &filename)
@@ -294,9 +294,9 @@ unsigned int LinearPolar2D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearPolar2D_Domain::add_vertex(PointPolar2D vertex)
+void LinearPolar2D_Domain::add_vertex(PointPolar2D point)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearPolar2D_Domain_t & LinearPolar2D_Domain::get_domain()
@@ -304,11 +304,11 @@ LinearPolar2D_Domain_t & LinearPolar2D_Domain::get_domain()
 	return domain;
 }
 
-PointPolar2D LinearPolar2D_Domain::get_vertex(unsigned int index)
+LinearPolar2D_Vertex LinearPolar2D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearPolar2D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointPolar2D(viennagrid::point(domain, vertices[index]), index);
+	return LinearPolar2D_Vertex(vertices[index]);
 }
 
 void LinearPolar2D_Domain::read_netgen(std::string const &filename)
@@ -362,9 +362,9 @@ unsigned int LinearSpherical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void LinearSpherical3D_Domain::add_vertex(PointSpherical3D vertex)
+void LinearSpherical3D_Domain::add_vertex(PointSpherical3D point)
 {
-	viennagrid::create_vertex(domain, vertex.get_point());
+	viennagrid::make_vertex(domain, point.get_point());
 }
 
 LinearSpherical3D_Domain_t & LinearSpherical3D_Domain::get_domain()
@@ -372,11 +372,11 @@ LinearSpherical3D_Domain_t & LinearSpherical3D_Domain::get_domain()
 	return domain;
 }
 
-PointSpherical3D LinearSpherical3D_Domain::get_vertex(unsigned int index)
+LinearSpherical3D_Vertex LinearSpherical3D_Domain::get_vertex(unsigned int index)
 {
 	// TODO: domain.find_by_id(index);
 	LinearSpherical3D_VertexRange_t vertices = viennagrid::elements<viennagrid::vertex_tag>(domain);
-	return PointSpherical3D(viennagrid::point(domain, vertices[index]), index);
+	return LinearSpherical3D_Vertex(vertices[index]);
 }
 
 void LinearSpherical3D_Domain::read_netgen(std::string const &filename)

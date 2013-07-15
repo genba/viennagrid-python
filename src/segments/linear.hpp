@@ -10,7 +10,9 @@
 #include "../points/polar.hpp"
 #include "../points/spherical.hpp"
 
+#include "../segmentations/forward.hpp"
 #include "../cells/linear.hpp"
+#include "../vertices/linear.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -21,13 +23,11 @@ using namespace boost::python;
 
 class LinearCartesian1D_Segment
 {
-	LinearCartesian1D_Domain      *domain;
-	LinearCartesian1D_Segment_t    segment;
-	list                           cells;
+	LinearCartesian1D_Segment_t        segment;
+	LinearCartesian1D_Segmentation    *segmentation;
 public:
-	LinearCartesian1D_Segment() {} // TODO: delete
-	LinearCartesian1D_Segment(LinearCartesian1D_Domain &initial_domain, LinearCartesian1D_Segment_t &initial_segment);
-	void create_cell(PointCartesian1D vertex1, PointCartesian1D vertex2);
+	LinearCartesian1D_Segment(LinearCartesian1D_Segment_t &initial_segment, LinearCartesian1D_Segmentation &initial_segmentation);
+	void create_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -37,13 +37,11 @@ public:
 
 class LinearCartesian2D_Segment
 {
-	LinearCartesian2D_Domain      *domain;
-	LinearCartesian2D_Segment_t    segment;
-	list                           cells;
+	LinearCartesian2D_Segment_t        segment;
+	LinearCartesian2D_Segmentation    *segmentation;
 public:
-	LinearCartesian2D_Segment() {} // TODO: delete
-	LinearCartesian2D_Segment(LinearCartesian2D_Domain &initial_domain, LinearCartesian2D_Segment_t &initial_segment);
-	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2);
+	LinearCartesian2D_Segment(LinearCartesian2D_Segment_t &initial_segment, LinearCartesian2D_Segmentation &initial_segmentation);
+	void create_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -53,13 +51,11 @@ public:
 
 class LinearCartesian3D_Segment
 {
-	LinearCartesian3D_Domain      *domain;
-	LinearCartesian3D_Segment_t    segment;
-	list                           cells;
+	LinearCartesian3D_Segment_t        segment;
+	LinearCartesian3D_Segmentation    *segmentation;
 public:
-	LinearCartesian3D_Segment() {} // TODO: delete
-	LinearCartesian3D_Segment(LinearCartesian3D_Domain &initial_domain, LinearCartesian3D_Segment_t &initial_segment);
-	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2);
+	LinearCartesian3D_Segment(LinearCartesian3D_Segment_t &initial_segment, LinearCartesian3D_Segmentation &initial_segmentation);
+	void create_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -69,13 +65,11 @@ public:
 
 class LinearCylindrical3D_Segment
 {
-	LinearCylindrical3D_Domain      *domain;
-	LinearCylindrical3D_Segment_t    segment;
-	list                             cells;
+	LinearCylindrical3D_Segment_t        segment;
+	LinearCylindrical3D_Segmentation    *segmentation;
 public:
-	LinearCylindrical3D_Segment() {} // TODO: delete
-	LinearCylindrical3D_Segment(LinearCylindrical3D_Domain &initial_domain, LinearCylindrical3D_Segment_t &initial_segment);
-	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2);
+	LinearCylindrical3D_Segment(LinearCylindrical3D_Segment_t &initial_segment, LinearCylindrical3D_Segmentation &initial_segmentation);
+	void create_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -85,13 +79,11 @@ public:
 
 class LinearPolar2D_Segment
 {
-	LinearPolar2D_Domain      *domain;
-	LinearPolar2D_Segment_t    segment;
-	list                       cells;
+	LinearPolar2D_Segment_t        segment;
+	LinearPolar2D_Segmentation    *segmentation;
 public:
-	LinearPolar2D_Segment() {} // TODO: delete
-	LinearPolar2D_Segment(LinearPolar2D_Domain &initial_domain, LinearPolar2D_Segment_t &initial_segment);
-	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2);
+	LinearPolar2D_Segment(LinearPolar2D_Segment_t &initial_segment, LinearPolar2D_Segmentation &initial_segmentation);
+	void create_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -101,13 +93,11 @@ public:
 
 class LinearSpherical3D_Segment
 {
-	LinearSpherical3D_Domain      *domain;
-	LinearSpherical3D_Segment_t    segment;
-	list                           cells;
+	LinearSpherical3D_Segment_t        segment;
+	LinearSpherical3D_Segmentation    *segmentation;
 public:
-	LinearSpherical3D_Segment() {} // TODO: delete
-	LinearSpherical3D_Segment(LinearSpherical3D_Domain &initial_domain, LinearSpherical3D_Segment_t &initial_segment);
-	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2);
+	LinearSpherical3D_Segment(LinearSpherical3D_Segment_t &initial_segment, LinearSpherical3D_Segmentation &initial_segmentation);
+	void create_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2);
 	list get_cells();
 };
 

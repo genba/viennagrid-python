@@ -11,6 +11,8 @@
 #include "../points/spherical.hpp"
 
 #include "../cells/tetrahedral.hpp"
+#include "../segmentations/forward.hpp"
+#include "../vertices/tetrahedral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -21,13 +23,11 @@ using namespace boost::python;
 
 class TetrahedralCartesian3D_Segment
 {
-	TetrahedralCartesian3D_Domain      *domain;
-	TetrahedralCartesian3D_Segment_t    segment;
-	list                                cells;
+	TetrahedralCartesian3D_Segment_t        segment;
+	TetrahedralCartesian3D_Segmentation    *segmentation;
 public:
-	TetrahedralCartesian3D_Segment() {} // TODO: delete
-	TetrahedralCartesian3D_Segment(TetrahedralCartesian3D_Domain &initial_domain, TetrahedralCartesian3D_Segment_t &initial_segment);
-	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
+	TetrahedralCartesian3D_Segment(TetrahedralCartesian3D_Segment_t &initial_segment, TetrahedralCartesian3D_Segmentation &initial_segmentation);
+	void create_cell(TetrahedralCartesian3D_Vertex vertex1, TetrahedralCartesian3D_Vertex vertex2, TetrahedralCartesian3D_Vertex vertex3, TetrahedralCartesian3D_Vertex vertex4);
 	list get_cells();
 };
 
@@ -37,13 +37,11 @@ public:
 
 class TetrahedralCylindrical3D_Segment
 {
-	TetrahedralCylindrical3D_Domain      *domain;
-	TetrahedralCylindrical3D_Segment_t    segment;
-	list                                  cells;
+	TetrahedralCylindrical3D_Segment_t        segment;
+	TetrahedralCylindrical3D_Segmentation    *segmentation;
 public:
-	TetrahedralCylindrical3D_Segment() {} // TODO: delete
-	TetrahedralCylindrical3D_Segment(TetrahedralCylindrical3D_Domain &initial_domain, TetrahedralCylindrical3D_Segment_t &initial_segment);
-	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
+	TetrahedralCylindrical3D_Segment(TetrahedralCylindrical3D_Segment_t &initial_segment, TetrahedralCylindrical3D_Segmentation &initial_segmentation);
+	void create_cell(TetrahedralCylindrical3D_Vertex vertex1, TetrahedralCylindrical3D_Vertex vertex2, TetrahedralCylindrical3D_Vertex vertex3, TetrahedralCylindrical3D_Vertex vertex4);
 	list get_cells();
 };
 
@@ -53,13 +51,11 @@ public:
 
 class TetrahedralSpherical3D_Segment
 {
-	TetrahedralSpherical3D_Domain      *domain;
-	TetrahedralSpherical3D_Segment_t    segment;
-	list                                cells;
+	TetrahedralSpherical3D_Segment_t        segment;
+	TetrahedralSpherical3D_Segmentation    *segmentation;
 public:
-	TetrahedralSpherical3D_Segment() {} // TODO: delete
-	TetrahedralSpherical3D_Segment(TetrahedralSpherical3D_Domain &initial_domain, TetrahedralSpherical3D_Segment_t &initial_segment);
-	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
+	TetrahedralSpherical3D_Segment(TetrahedralSpherical3D_Segment_t &initial_segment, TetrahedralSpherical3D_Segmentation &initial_segmentation);
+	void create_cell(TetrahedralSpherical3D_Vertex vertex1, TetrahedralSpherical3D_Vertex vertex2, TetrahedralSpherical3D_Vertex vertex3, TetrahedralSpherical3D_Vertex vertex4);
 	list get_cells();
 };
 

@@ -1,6 +1,8 @@
 #ifndef CELLS_TETRAHEDRAL_HPP
 #define CELLS_TETRAHEDRAL_HPP
 
+#include "types.hpp"
+
 #include "../points/cartesian.hpp"
 #include "../points/cylindrical.hpp"
 #include "../points/polar.hpp"
@@ -14,9 +16,9 @@ using namespace boost::python;
 ///////////////////////////////
 
 class TetrahedralCartesian3D_Cell {
-	list    vertices;
+	TetrahedralCartesian3D_Cell_t *cell;
 public:
-	TetrahedralCartesian3D_Cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
+	TetrahedralCartesian3D_Cell(TetrahedralCartesian3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -25,9 +27,9 @@ public:
 ///////////////////////////////////
 
 class TetrahedralCylindrical3D_Cell {
-	list    vertices;
+	TetrahedralCylindrical3D_Cell_t *cell;
 public:
-	TetrahedralCylindrical3D_Cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
+	TetrahedralCylindrical3D_Cell(TetrahedralCylindrical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
@@ -36,9 +38,9 @@ public:
 /////////////////////////////////
 
 class TetrahedralSpherical3D_Cell {
-	list    vertices;
+	TetrahedralSpherical3D_Cell_t *cell;
 public:
-	TetrahedralSpherical3D_Cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
+	TetrahedralSpherical3D_Cell(TetrahedralSpherical3D_Cell_t &initial_cell);
 	list get_vertices();
 };
 
