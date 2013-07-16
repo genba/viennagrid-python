@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 
-import viennagrid_wrapper
+import viennagrid_wrapper as _wrapper
 
 ##########################
 # COORDINATE SYSTEM TAGS #
@@ -94,19 +94,19 @@ class Configuration(object):
 	def point_type(self):
 		"""Return appropriate point type based in this configuration"""
 		classname = ''.join(['Point', self.coord_system.title(), str(self.dim), 'D'])
-		return viennagrid_wrapper.__getattribute__(classname)
+		return _wrapper.__getattribute__(classname)
 	
 	@property
 	def domain_type(self):
 		"""Return appropriate domain type based in this configuration"""
 		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_Domain'])
-		return viennagrid_wrapper.__getattribute__(classname)
+		return _wrapper.__getattribute__(classname)
 	
 	@property
 	def segmentation_type(self):
 		"""Return appropriate segmentation type based in this configuration"""
 		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_Segmentation'])
-		return viennagrid_wrapper.__getattribute__(classname)
+		return _wrapper.__getattribute__(classname)
 	
 	def create_point(self, *args, **kwargs):
 		"""Create a new point based in this configuration"""
