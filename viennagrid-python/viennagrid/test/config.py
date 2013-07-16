@@ -15,7 +15,7 @@ class TestConfiguration(unittest.TestCase):
 		"""
 		Test signature:
 		
-		Configuration(cell_tag, coord_system_tag)
+		Configuration(cell_tag, coord_system)
 		"""
 		for cell_tag in viennagrid.config.CELL_TAGS:
 			for coord_system in viennagrid.config.COORD_SYSTEM_TAGS:
@@ -24,7 +24,7 @@ class TestConfiguration(unittest.TestCase):
 				else:
 					cfg = viennagrid.config.Configuration(cell_tag, coord_system)
 					self.assertEqual(cfg.numeric_type, 'double')
-					self.assertEqual(cfg.coord_system_tag, coord_system)
+					self.assertEqual(cfg.coord_system, coord_system)
 					self.assertEqual(cfg.cell_tag, cell_tag)
 					self.assertEqual(cfg.dim, viennagrid.config.SUPPORTED_DIMENSIONS[coord_system][0])
 		
@@ -33,14 +33,14 @@ class TestConfiguration(unittest.TestCase):
 		"""
 		Test signature:
 		
-		Configuration(cell_tag, coord_system_tag, dim)
+		Configuration(cell_tag, coord_system, dim)
 		"""
 		for cell_tag in viennagrid.config.CELL_TAGS:
 			for coord_system in viennagrid.config.COORD_SYSTEM_TAGS:
 				for dim in viennagrid.config.SUPPORTED_DIMENSIONS[coord_system]:
 					cfg = viennagrid.config.Configuration(cell_tag, coord_system, dim)
 					self.assertEqual(cfg.numeric_type, 'double')
-					self.assertEqual(cfg.coord_system_tag, coord_system)
+					self.assertEqual(cfg.coord_system, coord_system)
 					self.assertEqual(cfg.cell_tag, cell_tag)
 					self.assertEqual(cfg.dim, dim)
 		
@@ -64,42 +64,42 @@ class TestConfiguration(unittest.TestCase):
 		###########################################################################################
 		
 		self.assertEqual(viennagrid.config.linear_2d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.linear_2d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.linear_2d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.linear_2d.cell_tag, viennagrid.config.LINE_TAG)
 		self.assertEqual(viennagrid.config.linear_2d.dim, 2)
 		
 		self.assertEqual(viennagrid.config.linear_3d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.linear_3d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.linear_3d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.linear_3d.cell_tag, viennagrid.config.LINE_TAG)
 		self.assertEqual(viennagrid.config.linear_3d.dim, 3)
 		
 		self.assertEqual(viennagrid.config.triangular_2d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.triangular_2d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.triangular_2d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.triangular_2d.cell_tag, viennagrid.config.TRIANGLE_TAG)
 		self.assertEqual(viennagrid.config.triangular_2d.dim, 2)
 		
 		self.assertEqual(viennagrid.config.triangular_3d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.triangular_3d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.triangular_3d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.triangular_3d.cell_tag, viennagrid.config.TRIANGLE_TAG)
 		self.assertEqual(viennagrid.config.triangular_3d.dim, 3)
 		
 		self.assertEqual(viennagrid.config.tetrahedral_3d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.tetrahedral_3d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.tetrahedral_3d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.tetrahedral_3d.cell_tag, viennagrid.config.TETRAHEDRON_TAG)
 		self.assertEqual(viennagrid.config.tetrahedral_3d.dim, 3)
 		
 		self.assertEqual(viennagrid.config.quadrilateral_2d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.quadrilateral_2d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.quadrilateral_2d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.quadrilateral_2d.cell_tag, viennagrid.config.QUADRILATERAL_TAG)
 		self.assertEqual(viennagrid.config.quadrilateral_2d.dim, 2)
 		
 		self.assertEqual(viennagrid.config.quadrilateral_3d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.quadrilateral_3d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.quadrilateral_3d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.quadrilateral_3d.cell_tag, viennagrid.config.QUADRILATERAL_TAG)
 		self.assertEqual(viennagrid.config.quadrilateral_3d.dim, 3)
 		
 		self.assertEqual(viennagrid.config.hexahedral_3d.numeric_type, 'double')
-		self.assertEqual(viennagrid.config.hexahedral_3d.coord_system_tag, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.hexahedral_3d.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(viennagrid.config.hexahedral_3d.cell_tag, viennagrid.config.HEXAHEDRON_TAG)
 		self.assertEqual(viennagrid.config.hexahedral_3d.dim, 3)
 	

@@ -41,7 +41,7 @@ CELL_TAGS = (LINE_TAG, TRIANGLE_TAG, TETRAHEDRON_TAG, QUADRILATERAL_TAG, HEXAHED
 #######################
 
 class Configuration(object):
-	def __init__(self, cell_tag, coord_system_tag, dim=None):
+	def __init__(self, cell_tag, coord_system, dim=None):
 		super(Configuration, self).__init__()
 		
 		# Set numeric_type to double
@@ -53,24 +53,24 @@ class Configuration(object):
 		else:
 			self._cell_tag = cell_tag
 		
-		# Set coord_system_tag
-		if coord_system_tag not in COORD_SYSTEM_TAGS:
+		# Set coord_system
+		if coord_system not in COORD_SYSTEM_TAGS:
 			raise ValueError('Unsupported coordinate system tag')
 		else:
-			self._coord_system_tag = coord_system_tag
+			self._coord_system = coord_system
 		
 		# Set dim
 		if dim is not None:
 			if not isinstance(dim, int):
 				raise TypeError('Dimension must be an integer')
 			
-			if dim not in SUPPORTED_DIMENSIONS[coord_system_tag]:
+			if dim not in SUPPORTED_DIMENSIONS[coord_system]:
 				raise ValueError('Unsupported dimension: %(dim)s' % locals())
 			
 			self._dim = dim
 		else:
-			if len(SUPPORTED_DIMENSIONS[coord_system_tag]) == 1:
-				self._dim = SUPPORTED_DIMENSIONS[coord_system_tag][0]
+			if len(SUPPORTED_DIMENSIONS[coord_system]) == 1:
+				self._dim = SUPPORTED_DIMENSIONS[coord_system][0]
 			else:
 				raise TypeError('Dimension has not been specified')
 	
@@ -79,8 +79,8 @@ class Configuration(object):
 		return self._numeric_type
 	
 	@property
-	def coord_system_tag(self):
-		return self._coord_system_tag
+	def coord_system(self):
+		return self._coord_system
 	
 	@property
 	def cell_tag(self):
@@ -93,19 +93,19 @@ class Configuration(object):
 	@property
 	def point_type(self):
 		"""Return appropriate point type based in this configuration"""
-		classname = ''.join(['Point', self.coord_system_tag.title(), str(self.dim), 'D'])
+		classname = ''.join(['Point', self.coord_system.title(), str(self.dim), 'D'])
 		return viennagrid_wrapper.__getattribute__(classname)
 	
 	@property
 	def domain_type(self):
 		"""Return appropriate domain type based in this configuration"""
-		classname = ''.join([self.cell_tag.title(), self.coord_system_tag.title(), str(self.dim), 'D_Domain'])
+		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_Domain'])
 		return viennagrid_wrapper.__getattribute__(classname)
 	
 	@property
 	def segmentation_type(self):
 		"""Return appropriate segmentation type based in this configuration"""
-		classname = ''.join([self.cell_tag.title(), self.coord_system_tag.title(), str(self.dim), 'D_Segmentation'])
+		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_Segmentation'])
 		return viennagrid_wrapper.__getattribute__(classname)
 	
 	def create_point(self, *args, **kwargs):
