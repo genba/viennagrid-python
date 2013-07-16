@@ -144,3 +144,15 @@ class Domain(object):
 	
 	def __iter__(self):
 		return iter(self.vertices)
+	
+	def read_netgen(self, path):
+		return self._domain.read_netgen(path)
+	
+	def read_vtk(self, path):
+		return self._domain.read_vtk(path)
+	
+	def write_opendx(self, path):
+		return self._domain.write_opendx(path)
+	
+	def write_vtk(self, path):
+		return self._domain.write_vtk(path)
