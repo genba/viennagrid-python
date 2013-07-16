@@ -93,6 +93,24 @@ class Point(object):
 	@property
 	def dim(self):
 		return self._point.dim
+	
+	def __add__(self, other):
+		return self._point + other._point
+	
+	def __sub__(self, other):
+		return self._point - other._point
+	
+	def __mul__(self, scalar):
+		return self._point * scalar
+	
+	def __div__(self, scalar):
+		return self._point / scalar
+	
+	def __neg__(self):
+		return -self._point
+	
+	def __getattr__(self, attr):
+		return self._point.__getattribute__(attr)
 
 class Domain(object):
 	"""docstring for Domain"""
