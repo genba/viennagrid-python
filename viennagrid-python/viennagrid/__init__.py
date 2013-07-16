@@ -121,21 +121,22 @@ class Domain(object):
 			def __init__(self, domain):
 				self._domain = domain
 			def __call__(self):
-				return self._domain.vertices
+				return [Vertex(v) for v in self._domain.vertices]
 			def __len__(self):
 				return self._domain.num_vertices
 			def __iter__(self):
 				for i in range(0, len(self)):
-					yield self._domain.get_vertex(i)
+					yield Vertex(self._domain.get_vertex(i))
 			def __getitem__(self, index):
-				return self._domain.get_vertex(index)
+				return Vertex(self._domain.get_vertex(index))
 		return VertexList(self._domain)
 	
 	def add_vertex(self, vertex):
 		self._domain.add_vertex(vertex)
 	
 	def __iter__(self):
-		return iter(self.vertices)
+		for vertex in self._domain.vertices:
+			yield Vertex(vertex)
 	
 	def read_netgen(self, path):
 		return self._domain.read_netgen(path)
@@ -164,7 +165,81 @@ class Segmentation(object):
 	
 	@property
 	def segments(self):
-		return self._segmentation.segments
+		class SegmentList(object):
+			def __init__(self, segment_list):
+				self._segment_list = segment_list
+			def __call__(self):
+				return [Segment(seg) for seg in self._segment_list]
+			def __len__(self):
+				return len(self._segment_list)
+			def __iter__(self):
+				for seg in self._segment_list:
+					yield Segment(seg)
+			def __getitem__(self, index):
+				return Segment(self._segment_list[index])
+		return SegmentList(self._segmentation.segments)
 	
 	def create_segment(self):
 		return self._segmentation.create_segment()
+	
+	def __iter__(self):
+		for segment in self._segmentation.segments:
+			yield Segment(segment)
+
+class Segment(object):
+	def __init__(self, segment):
+		super(Segment, self).__init__()
+		self._segment = segment
+	
+	@property
+	def cells(self):
+		class CellList(object):
+			def __init__(self, cell_list):
+				self._cell_list = cell_list
+			def __call__(self):
+				return [Cell(c) for c in self._cell_list]
+			def __len__(self):
+				return len(self._cell_list)
+			def __iter__(self):
+				for c in self._cell_list:
+					yield Cell(c)
+			def __getitem__(self, index):
+				return Cell(self._cell_list[index])
+		return CellList(self._segment.cells)
+	
+	def create_cell(self, *args, **kwargs):
+		self._segment.create_cell(*args, **kwargs)
+	
+	def __iter__(self):
+		for cell in self._segment.cells:
+			yield Cell(cell)
+
+class Cell(object):
+	def __init__(self, cell):
+		super(Cell, self).__init__()
+		self._cell = cell
+	
+	@property
+	def vertices(self):
+		class VertexList(object):
+			def __init__(self, vertex_list):
+				self._vertex_list = vertex_list
+			def __call__(self):
+				return [Vertex(v) for v in self._vertex_list]
+			def __len__(self):
+				return len(self._vertex_list)
+			def __iter__(self):
+				for v in self._vertex_list:
+					yield Vertex(v)
+			def __getitem__(self, index):
+				return Vertex(self._vertex_list[index])
+		return VertexList(self._cell.vertices)
+	
+	def __iter__(self):
+		for vertex in self._cell.vertices:
+			yield Vertex(vertex)
+
+class Vertex(object):
+	def __init__(self, vertex):
+		super(Vertex, self).__init__()
+		self._vertex = vertex
