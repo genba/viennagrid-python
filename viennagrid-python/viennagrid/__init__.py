@@ -70,17 +70,9 @@ class Point(object):
 			supported_dims = ', '.join(['0'] + [str(x) for x in config.SUPPORTED_DIMENSIONS[_coord_system]])
 			raise TypeError('Point() for %(coord_system_name)s points must take any of the following numbers of positional arguments: %(supported_dims)s.' % locals())
 		
-		if _coord_system == config.CARTESIAN:
-			if _dim == 2:
-				self._point = wrapper.PointCartesian2D(*_coords)
-			elif _dim == 3:
-				self._point = wrapper.PointCartesian3D(*_coords)
-		elif _coord_system == config.POLAR:
-			self._point = wrapper.PointPolar2D(*_coords)
-		elif _coord_system == config.CYLINDRICAL:
-			self._point = wrapper.PointCylindrical3D(*_coords)
-		elif _coord_system == config.SPHERICAL:
-			self._point = wrapper.PointSpherical3D(*_coords)
+		classname = ''.join(['Point', _coord_system.title(), str(_dim), 'D'])
+		PointType = wrapper.__getattribute__(classname)
+		self._point = PointType(*_coords)
 	
 	@property
 	def coords(self):
