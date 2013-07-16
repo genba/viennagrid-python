@@ -114,10 +114,10 @@ class Point(object):
 
 class Domain(object):
 	"""docstring for Domain"""
-	def __init__(self, cfg):
+	def __init__(self, config):
 		super(Domain, self).__init__()
-		self._config = cfg
-		self._obj = cfg.create_domain()
+		self._config = config
+		self._domain = config.create_domain()
 	
 	@property
 	def config(self):
@@ -129,7 +129,7 @@ class Domain(object):
 		# TODO: this should fail, because iter_vertices is not yet implemented
 	
 	def add_vertex(self, vertex):
-		self._obj.add_vertex(vertex)
+		self._domain.add_vertex(vertex)
 	
 	def __iter__(self):
 		return self._obj.iter_vertices()
