@@ -156,3 +156,23 @@ class Domain(object):
 	
 	def write_vtk(self, path):
 		return self._domain.write_vtk(path)
+	
+	def _create_segmentation(self):
+		return self.config.create_segmentation(self._domain)
+
+class Segmentation(object):
+	def __init__(self, domain):
+		super(Segmentation, self).__init__()
+		self._domain = domain
+		self._segmentation = domain._create_segmentation()
+	
+	@property
+	def domain(self):
+		return self._domain
+	
+	@property
+	def segments(self):
+		return self._segmentation.segments
+	
+	def create_segment(self):
+		return self._segmentation.create_segment()

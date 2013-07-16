@@ -102,6 +102,12 @@ class Configuration(object):
 		classname = ''.join([self.cell_tag.title(), self.coord_system_tag.title(), str(self.dim), 'D_Domain'])
 		return viennagrid_wrapper.__getattribute__(classname)
 	
+	@property
+	def segmentation_type(self):
+		"""Return appropriate segmentation type based in this configuration"""
+		classname = ''.join([self.cell_tag.title(), self.coord_system_tag.title(), str(self.dim), 'D_Segmentation'])
+		return viennagrid_wrapper.__getattribute__(classname)
+	
 	def create_point(self, *args, **kwargs):
 		"""Create a new point based in this configuration"""
 		PointType = self.point_type
@@ -111,6 +117,11 @@ class Configuration(object):
 		"""Create a new domain based in this configuration"""
 		DomainType = self.domain_type
 		return DomainType(*args, **kwargs)
+	
+	def create_segmentation(self, *args, **kwargs):
+		"""Create a new segmentation based in this configuration"""
+		SegmentationType = self.segmentation_type
+		return SegmentationType(*args, **kwargs)
 
 #########################
 # COMMON CONFIGURATIONS #
