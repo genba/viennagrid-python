@@ -125,12 +125,22 @@ class Domain(object):
 	
 	@property
 	def vertices(self):
-		return [vertex for vertex in self._obj.iter_vertices()]
-		# TODO: this should fail, because iter_vertices is not yet implemented
+		class VertexList(object):
+			def __init__(self, domain):
+				self._domain = domain
+			def __call__(self):
+				return self._domain.vertices
+			def __len__(self):
+				return self._domain.num_vertices
+			def __iter__(self):
+				for i in range(0, len(self)):
+					yield self._domain.get_vertex(i)
+			def __getitem__(self, index):
+				return self._domain.get_vertex(index)
+		return VertexList(self._domain)
 	
 	def add_vertex(self, vertex):
 		self._domain.add_vertex(vertex)
 	
 	def __iter__(self):
-		return self._obj.iter_vertices()
-		# TODO: this should fail, because iter_vertices is not yet implemented
+		return iter(self.vertices)
