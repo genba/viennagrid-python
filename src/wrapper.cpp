@@ -322,6 +322,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.add_property("vertices", &LinearSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 	;
 	
+	/*******************
+	 * LIENAR VERTICES *
+	 *******************/
+	
+	class_<LinearCartesian1D_Vertex>("LinearCartesian1D_Vertex", init<LinearCartesian1D_Vertex_t &>())
+	;
+	
+	class_<LinearCartesian2D_Vertex>("LinearCartesian2D_Vertex", init<LinearCartesian2D_Vertex_t &>())
+	;
+	
+	class_<LinearCartesian3D_Vertex>("LinearCartesian3D_Vertex", init<LinearCartesian3D_Vertex_t &>())
+	;
+	
+	class_<LinearCylindrical3D_Vertex>("LinearCylindrical3D_Vertex", init<LinearCylindrical3D_Vertex_t &>())
+	;
+	
+	class_<LinearPolar2D_Vertex>("LinearPolar2D_Vertex", init<LinearPolar2D_Vertex_t &>())
+	;
+	
+	class_<LinearSpherical3D_Vertex>("LinearSpherical3D_Vertex", init<LinearSpherical3D_Vertex_t &>())
+	;
+	
 	/**********************
 	 * TRIANGULAR DOMAINS *
 	 **********************/
