@@ -22,7 +22,7 @@ void TetrahedralCartesian3D_Segment::create_cell(TetrahedralCartesian3D_Vertex v
 	vertices[1] = viennagrid::handle(segmentation->get_domain(), vertex2.get_vertex());
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
-	viennagrid::create_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
+	viennagrid::make_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
 }
 
 list TetrahedralCartesian3D_Segment::get_cells()
@@ -49,7 +49,7 @@ void TetrahedralCylindrical3D_Segment::create_cell(TetrahedralCylindrical3D_Vert
 	vertices[1] = viennagrid::handle(segmentation->get_domain(), vertex2.get_vertex());
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
-	viennagrid::create_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
+	viennagrid::make_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
 }
 
 list TetrahedralCylindrical3D_Segment::get_cells()
@@ -76,7 +76,7 @@ void TetrahedralSpherical3D_Segment::create_cell(TetrahedralSpherical3D_Vertex v
 	vertices[1] = viennagrid::handle(segmentation->get_domain(), vertex2.get_vertex());
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
-	viennagrid::create_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
+	viennagrid::make_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
 }
 
 list TetrahedralSpherical3D_Segment::get_cells()
