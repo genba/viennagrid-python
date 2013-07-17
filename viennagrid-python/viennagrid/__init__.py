@@ -131,8 +131,8 @@ class Domain(object):
 				return Vertex(self._domain.get_vertex(index))
 		return VertexList(self._domain)
 	
-	def add_vertex(self, vertex):
-		self._domain.add_vertex(vertex)
+	def add_vertex(self, point):
+		self._domain.add_vertex(point._point)
 	
 	def __iter__(self):
 		for vertex in self._domain.vertices:
