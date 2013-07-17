@@ -210,11 +210,11 @@ class TestDomain_LinearCylindrical3D(unittest.TestCase):
 		self.config = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CYLINDRICAL)
 		self.domain = viennagrid.Domain(self.config)
 		self.vertices = [
-			viennagrid.Point(1, 2, 3),
-			viennagrid.Point(2, 2, 3),
-			viennagrid.Point(3, 2, 3),
-			viennagrid.Point(4, 2, 3),
-			viennagrid.Point(5, 2, 3),
+			viennagrid.Point(1, 2, 3, coord_system=viennagrid.config.CYLINDRICAL),
+			viennagrid.Point(2, 2, 3, coord_system=viennagrid.config.CYLINDRICAL),
+			viennagrid.Point(3, 2, 3, coord_system=viennagrid.config.CYLINDRICAL),
+			viennagrid.Point(4, 2, 3, coord_system=viennagrid.config.CYLINDRICAL),
+			viennagrid.Point(5, 2, 3, coord_system=viennagrid.config.CYLINDRICAL),
 		]
 		self.num_vertices = len(self.vertices)
 	
@@ -277,11 +277,11 @@ class TestDomain_LinearPolar2D(unittest.TestCase):
 		self.config = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.POLAR)
 		self.domain = viennagrid.Domain(self.config)
 		self.vertices = [
-			viennagrid.Point(1, 2),
-			viennagrid.Point(2, 2),
-			viennagrid.Point(3, 2),
-			viennagrid.Point(4, 2),
-			viennagrid.Point(5, 2),
+			viennagrid.Point(1, 2, coord_system=viennagrid.config.POLAR),
+			viennagrid.Point(2, 2, coord_system=viennagrid.config.POLAR),
+			viennagrid.Point(3, 2, coord_system=viennagrid.config.POLAR),
+			viennagrid.Point(4, 2, coord_system=viennagrid.config.POLAR),
+			viennagrid.Point(5, 2, coord_system=viennagrid.config.POLAR),
 		]
 		self.num_vertices = len(self.vertices)
 	
@@ -344,11 +344,11 @@ class TestDomain_LinearSpherical3D(unittest.TestCase):
 		self.config = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.SPHERICAL)
 		self.domain = viennagrid.Domain(self.config)
 		self.vertices = [
-			viennagrid.Point(1, 2, 3),
-			viennagrid.Point(2, 2, 3),
-			viennagrid.Point(3, 2, 3),
-			viennagrid.Point(4, 2, 3),
-			viennagrid.Point(5, 2, 3),
+			viennagrid.Point(1, 2, 3, coord_system=viennagrid.config.SPHERICAL),
+			viennagrid.Point(2, 2, 3, coord_system=viennagrid.config.SPHERICAL),
+			viennagrid.Point(3, 2, 3, coord_system=viennagrid.config.SPHERICAL),
+			viennagrid.Point(4, 2, 3, coord_system=viennagrid.config.SPHERICAL),
+			viennagrid.Point(5, 2, 3, coord_system=viennagrid.config.SPHERICAL),
 		]
 		self.num_vertices = len(self.vertices)
 	
