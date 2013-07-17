@@ -18,7 +18,7 @@ COORD_SYSTEM_TAGS = (CARTESIAN, POLAR, SPHERICAL, CYLINDRICAL)
 ########################
 
 SUPPORTED_DIMENSIONS = {
-	CARTESIAN:      (2, 3),
+	CARTESIAN:      (1, 2, 3),
 	CYLINDRICAL:    (3,),
 	POLAR:          (2,),
 	SPHERICAL:      (3,),
@@ -127,6 +127,7 @@ class Configuration(object):
 # COMMON CONFIGURATIONS #
 #########################
 
+linear_1d        = Configuration(LINE_TAG, CARTESIAN, 1)
 linear_2d        = Configuration(LINE_TAG, CARTESIAN, 2)
 linear_3d        = Configuration(LINE_TAG, CARTESIAN, 3)
 triangular_2d    = Configuration(TRIANGLE_TAG, CARTESIAN, 2)

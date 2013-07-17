@@ -16,6 +16,11 @@ class TestPoint(unittest.TestCase):
 		Point(dim)
 		Point(coord_system, dim)
 		
+		Point(x)
+		Point(x, coord_system)
+		Point(x, dim)
+		Point(x, coord_system, dim)
+		
 		Point(x, y)
 		Point(x, y, coord_system)
 		Point(x, y, dim)
@@ -33,10 +38,6 @@ class TestPoint(unittest.TestCase):
 		The following signatures must fail:
 		
 		Point()
-		Point(x)
-		Point(x, dim)
-		Point(x, coord_system)
-		Point(x, coord_system, dim)
 		"""
 		
 		x = 0
@@ -45,25 +46,6 @@ class TestPoint(unittest.TestCase):
 		
 		self.assertRaises(TypeError, viennagrid.Point)
 		
-		self.assertRaises(TypeError, viennagrid.Point, x)
-		
-		self.assertRaises(TypeError, viennagrid.Point, x, dim=0)
-		self.assertRaises(TypeError, viennagrid.Point, x, dim=1)
-		self.assertRaises(TypeError, viennagrid.Point, x, dim=2)
-		self.assertRaises(TypeError, viennagrid.Point, x, dim=3)
-		self.assertRaises(TypeError, viennagrid.Point, x, dim=4)
-		
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CARTESIAN)
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.POLAR)
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.SPHERICAL)
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CYLINDRICAL)
-		
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CARTESIAN, dim=2)
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CARTESIAN, dim=3)
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.POLAR, dim=2)
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.SPHERICAL, dim=3)
-		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CYLINDRICAL, dim=3)
-		
 		###########################################################################################
 		
 		"""
@@ -71,6 +53,11 @@ class TestPoint(unittest.TestCase):
 		
 		Point(dim)
 		"""
+		
+		p = viennagrid.Point(dim=1)
+		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
+		self.assertEqual(p.dim, 1)
+		self.assertTrue(*equal(p.coords[0], x))
 		
 		p = viennagrid.Point(dim=2)
 		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
@@ -86,7 +73,6 @@ class TestPoint(unittest.TestCase):
 		self.assertTrue(*equal(p.coords[2], z))
 		
 		self.assertRaises(ValueError, viennagrid.Point, dim=0)
-		self.assertRaises(ValueError, viennagrid.Point, dim=1)
 		self.assertRaises(ValueError, viennagrid.Point, dim=4)
 		self.assertRaises(TypeError, viennagrid.Point, dim='')
 		self.assertRaises(TypeError, viennagrid.Point, dim=[])
@@ -140,6 +126,11 @@ class TestPoint(unittest.TestCase):
 		Point(coord_system, dim)
 		"""
 		
+		p = viennagrid.Point(coord_system=viennagrid.config.CARTESIAN, dim=1)
+		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
+		self.assertEqual(p.dim, 1)
+		self.assertTrue(*equal(p.coords[0], x))
+		
 		p = viennagrid.Point(coord_system=viennagrid.config.CARTESIAN, dim=2)
 		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
 		self.assertEqual(p.dim, 2)
@@ -173,7 +164,7 @@ class TestPoint(unittest.TestCase):
 		self.assertTrue(*equal(p.coords[1], y))
 		self.assertTrue(*equal(p.coords[2], z))
 		
-		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.CARTESIAN, dim=1)
+		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.CARTESIAN, dim=0)
 		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.CARTESIAN, dim=4)
 		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.POLAR, dim=1)
 		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.POLAR, dim=3)
@@ -183,6 +174,99 @@ class TestPoint(unittest.TestCase):
 		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.CYLINDRICAL, dim=1)
 		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.CYLINDRICAL, dim=2)
 		self.assertRaises(ValueError, viennagrid.Point, coord_system=viennagrid.config.CYLINDRICAL, dim=4)
+		
+		###########################################################################################
+		
+		"""
+		Test signature:
+		
+		Point(x)
+		"""
+		
+		x = 15
+		y = 83
+		z = 49
+		
+		p = viennagrid.Point(x)
+		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
+		self.assertEqual(p.dim, 1)
+		self.assertTrue(*equal(p.coords[0], x))
+		
+		###########################################################################################
+		
+		"""
+		Test signature:
+		
+		Point(x, dim)
+		"""
+		
+		p = viennagrid.Point(x, dim=1)
+		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
+		self.assertEqual(p.dim, 1)
+		self.assertTrue(*equal(p.coords[0], x))
+		
+		self.assertRaises(ValueError, viennagrid.Point, x, dim=0)
+		self.assertRaises(ValueError, viennagrid.Point, x, dim=2)
+		self.assertRaises(ValueError, viennagrid.Point, x, dim=3)
+		
+		self.assertRaises(ValueError, viennagrid.Point, x, dim=0)
+		self.assertRaises(ValueError, viennagrid.Point, x, dim=4)
+		self.assertRaises(TypeError, viennagrid.Point, x, dim='')
+		self.assertRaises(TypeError, viennagrid.Point, x, dim=[])
+		self.assertRaises(TypeError, viennagrid.Point, x, dim=long(1))
+		self.assertRaises(TypeError, viennagrid.Point, x, dim=float(1))
+		self.assertRaises(TypeError, viennagrid.Point, x, dim=complex(1))
+		
+		###########################################################################################
+		
+		"""
+		Test signature:
+		
+		Point(x, coord_system)
+		"""
+		
+		p = viennagrid.Point(x, coord_system=viennagrid.config.CARTESIAN)
+		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
+		self.assertEqual(p.dim, 1)
+		self.assertTrue(*equal(p.coords[0], x))
+		
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.SPHERICAL)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.POLAR)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CYLINDRICAL)
+		
+		self.assertRaises(ValueError, viennagrid.Point, x, coord_system='')
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=[])
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=int(1))
+		
+		###########################################################################################
+		
+		"""
+		Test signature:
+		
+		Point(x, coord_system, dim)
+		"""
+		
+		p = viennagrid.Point(x, coord_system=viennagrid.config.CARTESIAN, dim=1)
+		self.assertEqual(p.coord_system, viennagrid.config.CARTESIAN)
+		self.assertEqual(p.dim, 1)
+		self.assertTrue(*equal(p.coords[0], x))
+
+		
+		self.assertRaises(ValueError, viennagrid.Point, x, coord_system=viennagrid.config.CARTESIAN, dim=0)
+		self.assertRaises(ValueError, viennagrid.Point, x, coord_system=viennagrid.config.CARTESIAN, dim=2)
+		self.assertRaises(ValueError, viennagrid.Point, x, coord_system=viennagrid.config.CARTESIAN, dim=3)
+		
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.SPHERICAL, dim=1)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.SPHERICAL, dim=2)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.SPHERICAL, dim=3)
+		
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CYLINDRICAL, dim=1)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CYLINDRICAL, dim=2)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.CYLINDRICAL, dim=3)
+		
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.POLAR, dim=1)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.POLAR, dim=2)
+		self.assertRaises(TypeError, viennagrid.Point, x, coord_system=viennagrid.config.POLAR, dim=3)
 		
 		###########################################################################################
 		

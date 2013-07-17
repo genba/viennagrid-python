@@ -50,7 +50,7 @@ class TestConfiguration(unittest.TestCase):
 		self.assertRaises(ValueError, viennagrid.config.Configuration, 'unknown cell tag', viennagrid.config.CARTESIAN, dim=2)
 		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, 'unknown coord system')
 		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, 'unknown coord system', dim=2)
-		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, viennagrid.config.CARTESIAN, dim=1)
+		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, viennagrid.config.CARTESIAN, dim=0)
 		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, viennagrid.config.CARTESIAN, dim=4)
 		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, viennagrid.config.CYLINDRICAL, dim=1)
 		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, viennagrid.config.CYLINDRICAL, dim=2)
@@ -62,6 +62,11 @@ class TestConfiguration(unittest.TestCase):
 		self.assertRaises(ValueError, viennagrid.config.Configuration, viennagrid.config.TRIANGLE_TAG, viennagrid.config.SPHERICAL, dim=4)
 		
 		###########################################################################################
+		
+		self.assertEqual(viennagrid.config.linear_1d.numeric_type, 'double')
+		self.assertEqual(viennagrid.config.linear_1d.coord_system, viennagrid.config.CARTESIAN)
+		self.assertEqual(viennagrid.config.linear_1d.cell_tag, viennagrid.config.LINE_TAG)
+		self.assertEqual(viennagrid.config.linear_1d.dim, 1)
 		
 		self.assertEqual(viennagrid.config.linear_2d.numeric_type, 'double')
 		self.assertEqual(viennagrid.config.linear_2d.coord_system, viennagrid.config.CARTESIAN)
@@ -107,6 +112,10 @@ class TestConfiguration(unittest.TestCase):
 		##########
 		# LINEAR #
 		##########
+		
+		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=1)
+		point_type = cfg.point_type
+		self.assertIs(point_type, viennagrid.wrapper.PointCartesian1D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=2)
 		point_type = cfg.point_type
@@ -229,6 +238,10 @@ class TestConfiguration(unittest.TestCase):
 		# LINEAR #
 		##########
 		
+		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=1)
+		domain_type = cfg.domain_type
+		self.assertIs(domain_type, viennagrid.wrapper.LinearCartesian1D_Domain)
+		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=2)
 		domain_type = cfg.domain_type
 		self.assertIs(domain_type, viennagrid.wrapper.LinearCartesian2D_Domain)
@@ -335,6 +348,10 @@ class TestConfiguration(unittest.TestCase):
 		##########
 		# LINEAR #
 		##########
+		
+		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=1)
+		point = cfg.create_point()
+		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian1D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=2)
 		point = cfg.create_point()
@@ -456,6 +473,10 @@ class TestConfiguration(unittest.TestCase):
 		##########
 		# LINEAR #
 		##########
+		
+		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=1)
+		domain = cfg.create_domain()
+		self.assertIsInstance(domain, viennagrid.wrapper.LinearCartesian1D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=2)
 		domain = cfg.create_domain()
