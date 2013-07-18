@@ -33,8 +33,12 @@ TriangularCartesian2D_Cell TriangularCartesian2D_Segment::create_cell(Triangular
 
 list TriangularCartesian2D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TriangularCartesian2D_Segment_t, viennagrid::triangle_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularCartesian2D_Cell>(TriangularCartesian2D_Cell(*it));
 	return cells;
 }
 
@@ -66,8 +70,12 @@ TriangularCartesian3D_Cell TriangularCartesian3D_Segment::create_cell(Triangular
 
 list TriangularCartesian3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TriangularCartesian3D_Segment_t, viennagrid::triangle_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularCartesian3D_Cell>(TriangularCartesian3D_Cell(*it));
 	return cells;
 }
 
@@ -99,8 +107,12 @@ TriangularCylindrical3D_Cell TriangularCylindrical3D_Segment::create_cell(Triang
 
 list TriangularCylindrical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TriangularCylindrical3D_Segment_t, viennagrid::triangle_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularCylindrical3D_Cell>(TriangularCylindrical3D_Cell(*it));
 	return cells;
 }
 
@@ -132,8 +144,12 @@ TriangularPolar2D_Cell TriangularPolar2D_Segment::create_cell(TriangularPolar2D_
 
 list TriangularPolar2D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TriangularPolar2D_Segment_t, viennagrid::triangle_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularPolar2D_Cell>(TriangularPolar2D_Cell(*it));
 	return cells;
 }
 
@@ -165,7 +181,11 @@ TriangularSpherical3D_Cell TriangularSpherical3D_Segment::create_cell(Triangular
 
 list TriangularSpherical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TriangularSpherical3D_Segment_t, viennagrid::triangle_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularSpherical3D_Cell>(TriangularSpherical3D_Cell(*it));
 	return cells;
 }

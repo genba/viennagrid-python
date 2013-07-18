@@ -34,8 +34,12 @@ TetrahedralCartesian3D_Cell TetrahedralCartesian3D_Segment::create_cell(Tetrahed
 
 list TetrahedralCartesian3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TetrahedralCartesian3D_Segment_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TetrahedralCartesian3D_Cell>(TetrahedralCartesian3D_Cell(*it));
 	return cells;
 }
 
@@ -68,8 +72,12 @@ TetrahedralCylindrical3D_Cell TetrahedralCylindrical3D_Segment::create_cell(Tetr
 
 list TetrahedralCylindrical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TetrahedralCylindrical3D_Segment_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TetrahedralCylindrical3D_Cell>(TetrahedralCylindrical3D_Cell(*it));
 	return cells;
 }
 
@@ -102,7 +110,11 @@ TetrahedralSpherical3D_Cell TetrahedralSpherical3D_Segment::create_cell(Tetrahed
 
 list TetrahedralSpherical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<TetrahedralSpherical3D_Segment_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TetrahedralSpherical3D_Cell>(TetrahedralSpherical3D_Cell(*it));
 	return cells;
 }

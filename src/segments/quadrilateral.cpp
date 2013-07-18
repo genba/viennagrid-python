@@ -34,8 +34,12 @@ QuadrilateralCartesian2D_Cell QuadrilateralCartesian2D_Segment::create_cell(Quad
 
 list QuadrilateralCartesian2D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian2D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralCartesian2D_Cell>(QuadrilateralCartesian2D_Cell(*it));
 	return cells;
 }
 
@@ -68,8 +72,12 @@ QuadrilateralCartesian3D_Cell QuadrilateralCartesian3D_Segment::create_cell(Quad
 
 list QuadrilateralCartesian3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian3D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralCartesian3D_Cell>(QuadrilateralCartesian3D_Cell(*it));
 	return cells;
 }
 
@@ -102,8 +110,12 @@ QuadrilateralCylindrical3D_Cell QuadrilateralCylindrical3D_Segment::create_cell(
 
 list QuadrilateralCylindrical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<QuadrilateralCylindrical3D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralCylindrical3D_Cell>(QuadrilateralCylindrical3D_Cell(*it));
 	return cells;
 }
 
@@ -136,8 +148,12 @@ QuadrilateralPolar2D_Cell QuadrilateralPolar2D_Segment::create_cell(Quadrilatera
 
 list QuadrilateralPolar2D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<QuadrilateralPolar2D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralPolar2D_Cell>(QuadrilateralPolar2D_Cell(*it));
 	return cells;
 }
 
@@ -170,7 +186,11 @@ QuadrilateralSpherical3D_Cell QuadrilateralSpherical3D_Segment::create_cell(Quad
 
 list QuadrilateralSpherical3D_Segment::get_cells()
 {
+	typedef viennagrid::result_of::element_range<QuadrilateralSpherical3D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
 	list cells;
-	// TODO: implement
+	range_type range = viennagrid::elements(segment);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralSpherical3D_Cell>(QuadrilateralSpherical3D_Cell(*it));
 	return cells;
 }
