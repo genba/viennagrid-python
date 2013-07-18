@@ -183,7 +183,7 @@ class Segmentation(object):
 		return SegmentList(self._segmentation.segments)
 	
 	def create_segment(self):
-		return self._segmentation.create_segment()
+		return Segment(self._segmentation.create_segment())
 	
 	def __iter__(self):
 		for segment in self._segmentation.segments:
@@ -211,7 +211,8 @@ class Segment(object):
 		return CellList(self._segment.cells)
 	
 	def create_cell(self, *args, **kwargs):
-		self._segment.create_cell(*args, **kwargs)
+		vertices = [vertex._vertex for vertex in args]
+		return Cell(self._segment.create_cell(*vertices))
 	
 	def __iter__(self):
 		for cell in self._segment.cells:
