@@ -26,7 +26,7 @@ class TestDomain_LinearCartesian1D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -36,7 +36,7 @@ class TestDomain_LinearCartesian1D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -93,7 +93,7 @@ class TestDomain_LinearCartesian2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -103,7 +103,7 @@ class TestDomain_LinearCartesian2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -160,7 +160,7 @@ class TestDomain_LinearCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -170,7 +170,7 @@ class TestDomain_LinearCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -227,7 +227,7 @@ class TestDomain_LinearCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -237,7 +237,7 @@ class TestDomain_LinearCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -294,7 +294,7 @@ class TestDomain_LinearPolar2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -304,7 +304,7 @@ class TestDomain_LinearPolar2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -361,7 +361,7 @@ class TestDomain_LinearSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -371,7 +371,7 @@ class TestDomain_LinearSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -432,7 +432,7 @@ class TestDomain_TriangularCartesian2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -442,7 +442,7 @@ class TestDomain_TriangularCartesian2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -499,7 +499,7 @@ class TestDomain_TriangularCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -509,7 +509,7 @@ class TestDomain_TriangularCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -566,7 +566,7 @@ class TestDomain_TriangularCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -576,7 +576,7 @@ class TestDomain_TriangularCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -633,7 +633,7 @@ class TestDomain_TriangularPolar2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -643,7 +643,7 @@ class TestDomain_TriangularPolar2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -700,7 +700,7 @@ class TestDomain_TriangularSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -710,7 +710,7 @@ class TestDomain_TriangularSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -771,7 +771,7 @@ class TestDomain_QuadrilateralCartesian2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -781,7 +781,7 @@ class TestDomain_QuadrilateralCartesian2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -838,7 +838,7 @@ class TestDomain_QuadrilateralCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -848,7 +848,7 @@ class TestDomain_QuadrilateralCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -905,7 +905,7 @@ class TestDomain_QuadrilateralCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -915,7 +915,7 @@ class TestDomain_QuadrilateralCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -972,7 +972,7 @@ class TestDomain_QuadrilateralPolar2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -982,7 +982,7 @@ class TestDomain_QuadrilateralPolar2D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1039,7 +1039,7 @@ class TestDomain_QuadrilateralSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1049,7 +1049,7 @@ class TestDomain_QuadrilateralSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1110,7 +1110,7 @@ class TestDomain_TetrahedralCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1120,7 +1120,7 @@ class TestDomain_TetrahedralCartesian3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1177,7 +1177,7 @@ class TestDomain_TetrahedralCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1187,7 +1187,7 @@ class TestDomain_TetrahedralCylindrical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1244,7 +1244,7 @@ class TestDomain_TetrahedralSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
@@ -1254,7 +1254,7 @@ class TestDomain_TetrahedralSpherical3D(unittest.TestCase):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
-			pass
+			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
 		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
