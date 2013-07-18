@@ -27,7 +27,7 @@ class LinearCartesian1D_Segment
 	LinearCartesian1D_Segmentation    *segmentation;
 public:
 	LinearCartesian1D_Segment(LinearCartesian1D_Segment_t &initial_segment, LinearCartesian1D_Segmentation &initial_segmentation);
-	void create_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2);
+	LinearCartesian1D_Cell create_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -41,7 +41,7 @@ class LinearCartesian2D_Segment
 	LinearCartesian2D_Segmentation    *segmentation;
 public:
 	LinearCartesian2D_Segment(LinearCartesian2D_Segment_t &initial_segment, LinearCartesian2D_Segmentation &initial_segmentation);
-	void create_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2);
+	LinearCartesian2D_Cell create_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -55,7 +55,7 @@ class LinearCartesian3D_Segment
 	LinearCartesian3D_Segmentation    *segmentation;
 public:
 	LinearCartesian3D_Segment(LinearCartesian3D_Segment_t &initial_segment, LinearCartesian3D_Segmentation &initial_segmentation);
-	void create_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2);
+	LinearCartesian3D_Cell create_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -69,7 +69,7 @@ class LinearCylindrical3D_Segment
 	LinearCylindrical3D_Segmentation    *segmentation;
 public:
 	LinearCylindrical3D_Segment(LinearCylindrical3D_Segment_t &initial_segment, LinearCylindrical3D_Segmentation &initial_segmentation);
-	void create_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2);
+	LinearCylindrical3D_Cell create_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -83,7 +83,7 @@ class LinearPolar2D_Segment
 	LinearPolar2D_Segmentation    *segmentation;
 public:
 	LinearPolar2D_Segment(LinearPolar2D_Segment_t &initial_segment, LinearPolar2D_Segmentation &initial_segmentation);
-	void create_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2);
+	LinearPolar2D_Cell create_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2);
 	list get_cells();
 };
 
@@ -97,7 +97,7 @@ class LinearSpherical3D_Segment
 	LinearSpherical3D_Segmentation    *segmentation;
 public:
 	LinearSpherical3D_Segment(LinearSpherical3D_Segment_t &initial_segment, LinearSpherical3D_Segmentation &initial_segmentation);
-	void create_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2);
+	LinearSpherical3D_Cell create_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2);
 	list get_cells();
 };
 
