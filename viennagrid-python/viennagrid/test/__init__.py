@@ -7,6 +7,7 @@ from config import *
 from domain import *
 from segmentation import *
 from segment import *
+from cell import *
 
 if __name__ == '__main__':
 	unittest.main()
