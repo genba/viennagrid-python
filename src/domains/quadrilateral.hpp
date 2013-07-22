@@ -8,6 +8,7 @@
 #include "../points/spherical.hpp"
 
 #include "../vertices/quadrilateral.hpp"
+#include "../segmentations/quadrilateral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -24,8 +25,8 @@ public:
 	QuadrilateralCartesian2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	QuadrilateralCartesian2D_Segmentation read_netgen(std::string const &filename);
+	QuadrilateralCartesian2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -46,8 +47,8 @@ public:
 	QuadrilateralCartesian3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	QuadrilateralCartesian3D_Segmentation read_netgen(std::string const &filename);
+	QuadrilateralCartesian3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -68,8 +69,8 @@ public:
 	QuadrilateralCylindrical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	QuadrilateralCylindrical3D_Segmentation read_netgen(std::string const &filename);
+	QuadrilateralCylindrical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -90,8 +91,8 @@ public:
 	QuadrilateralPolar2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	QuadrilateralPolar2D_Segmentation read_netgen(std::string const &filename);
+	QuadrilateralPolar2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -112,8 +113,8 @@ public:
 	QuadrilateralSpherical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	QuadrilateralSpherical3D_Segmentation read_netgen(std::string const &filename);
+	QuadrilateralSpherical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
