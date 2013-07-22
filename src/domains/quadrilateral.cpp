@@ -6,10 +6,8 @@
 
 #include <viennagrid/io/netgen_reader.hpp>
 #include <viennagrid/io/vtk_reader.hpp>
-/*
 #include <viennagrid/io/opendx_writer.hpp>
 #include <viennagrid/io/vtk_writer.hpp>
-*/
 
 /////////////////////////////////
 // Quadrilateral, cartesian 2D //
@@ -78,20 +76,16 @@ QuadrilateralCartesian2D_Segmentation QuadrilateralCartesian2D_Domain::read_vtk(
 
 void QuadrilateralCartesian2D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<QuadrilateralCartesian2D_Cell_t, QuadrilateralCartesian2D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<QuadrilateralCartesian2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void QuadrilateralCartesian2D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<QuadrilateralCartesian2D_Domain_t, QuadrilateralCartesian2D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<QuadrilateralCartesian2D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 /////////////////////////////////
@@ -161,20 +155,16 @@ QuadrilateralCartesian3D_Segmentation QuadrilateralCartesian3D_Domain::read_vtk(
 
 void QuadrilateralCartesian3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<QuadrilateralCartesian3D_Cell_t, QuadrilateralCartesian3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<QuadrilateralCartesian3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void QuadrilateralCartesian3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<QuadrilateralCartesian3D_Domain_t, QuadrilateralCartesian3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<QuadrilateralCartesian3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 /////////////////////////////////////
@@ -244,20 +234,16 @@ QuadrilateralCylindrical3D_Segmentation QuadrilateralCylindrical3D_Domain::read_
 
 void QuadrilateralCylindrical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<QuadrilateralCylindrical3D_Cell_t, QuadrilateralCylindrical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<QuadrilateralCylindrical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void QuadrilateralCylindrical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<QuadrilateralCylindrical3D_Domain_t, QuadrilateralCylindrical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<QuadrilateralCylindrical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ///////////////////////////////
@@ -327,20 +313,16 @@ QuadrilateralPolar2D_Segmentation QuadrilateralPolar2D_Domain::read_vtk(std::str
 
 void QuadrilateralPolar2D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<QuadrilateralPolar2D_Cell_t, QuadrilateralPolar2D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<QuadrilateralPolar2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void QuadrilateralPolar2D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<QuadrilateralPolar2D_Domain_t, QuadrilateralPolar2D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<QuadrilateralPolar2D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ///////////////////////////////////
@@ -410,18 +392,14 @@ QuadrilateralSpherical3D_Segmentation QuadrilateralSpherical3D_Domain::read_vtk(
 
 void QuadrilateralSpherical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<QuadrilateralSpherical3D_Cell_t, QuadrilateralSpherical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<QuadrilateralSpherical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void QuadrilateralSpherical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<QuadrilateralSpherical3D_Domain_t, QuadrilateralSpherical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<QuadrilateralSpherical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
