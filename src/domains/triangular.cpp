@@ -6,10 +6,8 @@
 
 #include <viennagrid/io/netgen_reader.hpp>
 #include <viennagrid/io/vtk_reader.hpp>
-/*
 #include <viennagrid/io/opendx_writer.hpp>
 #include <viennagrid/io/vtk_writer.hpp>
-*/
 
 ////////////////////////////
 // Triangle, cartesian 2D //
@@ -78,20 +76,16 @@ TriangularCartesian2D_Segmentation TriangularCartesian2D_Domain::read_vtk(std::s
 
 void TriangularCartesian2D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TriangularCartesian2D_Cell_t, TriangularCartesian2D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TriangularCartesian2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TriangularCartesian2D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TriangularCartesian2D_Domain_t, TriangularCartesian2D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TriangularCartesian2D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ////////////////////////////
@@ -161,20 +155,16 @@ TriangularCartesian3D_Segmentation TriangularCartesian3D_Domain::read_vtk(std::s
 
 void TriangularCartesian3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TriangularCartesian3D_Cell_t, TriangularCartesian3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TriangularCartesian3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TriangularCartesian3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TriangularCartesian3D_Domain_t, TriangularCartesian3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TriangularCartesian3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ////////////////////////////////
@@ -244,20 +234,16 @@ TriangularCylindrical3D_Segmentation TriangularCylindrical3D_Domain::read_vtk(st
 
 void TriangularCylindrical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TriangularCylindrical3D_Cell_t, TriangularCylindrical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TriangularCylindrical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TriangularCylindrical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TriangularCylindrical3D_Domain_t, TriangularCylindrical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TriangularCylindrical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 //////////////////////////
@@ -327,20 +313,16 @@ TriangularPolar2D_Segmentation TriangularPolar2D_Domain::read_vtk(std::string co
 
 void TriangularPolar2D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TriangularPolar2D_Cell_t, TriangularPolar2D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TriangularPolar2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TriangularPolar2D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TriangularPolar2D_Domain_t, TriangularPolar2D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TriangularPolar2D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 //////////////////////////////
@@ -410,18 +392,14 @@ TriangularSpherical3D_Segmentation TriangularSpherical3D_Domain::read_vtk(std::s
 
 void TriangularSpherical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TriangularSpherical3D_Cell_t, TriangularSpherical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TriangularSpherical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TriangularSpherical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TriangularSpherical3D_Domain_t, TriangularSpherical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TriangularSpherical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
