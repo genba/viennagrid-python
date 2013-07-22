@@ -8,6 +8,7 @@
 #include "../points/spherical.hpp"
 
 #include "../vertices/linear.hpp"
+#include "../segmentations/linear.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -26,8 +27,8 @@ public:
 	LinearCartesian1D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	LinearCartesian1D_Segmentation read_netgen(std::string const &filename);
+	LinearCartesian1D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -49,8 +50,8 @@ public:
 	LinearCartesian2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	LinearCartesian2D_Segmentation read_netgen(std::string const &filename);
+	LinearCartesian2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -72,8 +73,8 @@ public:
 	LinearCartesian3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	LinearCartesian3D_Segmentation read_netgen(std::string const &filename);
+	LinearCartesian3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -95,8 +96,8 @@ public:
 	LinearCylindrical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	LinearCylindrical3D_Segmentation read_netgen(std::string const &filename);
+	LinearCylindrical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -118,8 +119,8 @@ public:
 	LinearPolar2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	LinearPolar2D_Segmentation read_netgen(std::string const &filename);
+	LinearPolar2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -141,8 +142,8 @@ public:
 	LinearSpherical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	LinearSpherical3D_Segmentation read_netgen(std::string const &filename);
+	LinearSpherical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);

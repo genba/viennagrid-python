@@ -1,4 +1,5 @@
 #include "linear.hpp"
+#include "../domains/linear.hpp"
 
 ////////////////////////////////////
 // LinearCartesian1D_Segmentation //
@@ -28,6 +29,11 @@ list LinearCartesian1D_Segmentation::get_segments()
 LinearCartesian1D_Domain_t & LinearCartesian1D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+LinearCartesian1D_Segmentation_t & LinearCartesian1D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }
 
 ////////////////////////////////////
@@ -60,6 +66,11 @@ LinearCartesian2D_Domain_t & LinearCartesian2D_Segmentation::get_domain()
 	return domain->get_domain();
 }
 
+LinearCartesian2D_Segmentation_t & LinearCartesian2D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ////////////////////////////////////
 // LinearCartesian3D_Segmentation //
 ////////////////////////////////////
@@ -88,6 +99,11 @@ list LinearCartesian3D_Segmentation::get_segments()
 LinearCartesian3D_Domain_t & LinearCartesian3D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+LinearCartesian3D_Segmentation_t & LinearCartesian3D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }
 
 //////////////////////////////////////
@@ -120,6 +136,11 @@ LinearCylindrical3D_Domain_t & LinearCylindrical3D_Segmentation::get_domain()
 	return domain->get_domain();
 }
 
+LinearCylindrical3D_Segmentation_t & LinearCylindrical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ////////////////////////////////
 // LinearPolar2D_Segmentation //
 ////////////////////////////////
@@ -150,6 +171,11 @@ LinearPolar2D_Domain_t & LinearPolar2D_Segmentation::get_domain()
 	return domain->get_domain();
 }
 
+LinearPolar2D_Segmentation_t & LinearPolar2D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ////////////////////////////////////
 // LinearSpherical3D_Segmentation //
 ////////////////////////////////////
@@ -178,4 +204,9 @@ list LinearSpherical3D_Segmentation::get_segments()
 LinearSpherical3D_Domain_t & LinearSpherical3D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+LinearSpherical3D_Segmentation_t & LinearSpherical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }
