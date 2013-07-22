@@ -8,6 +8,7 @@
 #include "../points/spherical.hpp"
 
 #include "../vertices/triangular.hpp"
+#include "../segmentations/triangular.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -28,8 +29,8 @@ public:
 	TriangularCartesian2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TriangularCartesian2D_Segmentation read_netgen(std::string const &filename);
+	TriangularCartesian2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -51,8 +52,8 @@ public:
 	TriangularCartesian3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TriangularCartesian3D_Segmentation read_netgen(std::string const &filename);
+	TriangularCartesian3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -74,8 +75,8 @@ public:
 	TriangularCylindrical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TriangularCylindrical3D_Segmentation read_netgen(std::string const &filename);
+	TriangularCylindrical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -97,8 +98,8 @@ public:
 	TriangularPolar2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TriangularPolar2D_Segmentation read_netgen(std::string const &filename);
+	TriangularPolar2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -120,8 +121,8 @@ public:
 	TriangularSpherical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TriangularSpherical3D_Segmentation read_netgen(std::string const &filename);
+	TriangularSpherical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);

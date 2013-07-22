@@ -4,14 +4,12 @@
 #include "../cells/types.hpp"
 #include "../cells/triangular.hpp"
 
-/*
 #include <viennagrid/io/netgen_reader.hpp>
 #include <viennagrid/io/vtk_reader.hpp>
+/*
 #include <viennagrid/io/opendx_writer.hpp>
 #include <viennagrid/io/vtk_writer.hpp>
 */
-
-#include <vector>
 
 ////////////////////////////
 // Triangle, cartesian 2D //
@@ -58,27 +56,24 @@ list TriangularCartesian2D_Domain::get_vertices()
 	return vertices;
 }
 
-void TriangularCartesian2D_Domain::read_netgen(std::string const &filename)
+TriangularCartesian2D_Segmentation TriangularCartesian2D_Domain::read_netgen(std::string const &filename)
 {
-	/*
-	std::vector<TriangularCartesian2D_Segment_t>                   segment_list;
-	viennagrid::io::netgen_reader<TriangularCartesian2D_Cell_t>    my_netgen_reader;
-	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
+	viennagrid::io::netgen_reader         my_netgen_reader;
+	TriangularCartesian2D_Segmentation    segmentation(*this);
 	
-	my_netgen_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
-void TriangularCartesian2D_Domain::read_vtk(std::string const &filename)
+TriangularCartesian2D_Segmentation TriangularCartesian2D_Domain::read_vtk(std::string const &filename)
 {
-	/*
-	std::vector<TriangularCartesian2D_Segment_t>                                                segment_list;
-	viennagrid::io::vtk_reader<TriangularCartesian2D_Cell_t, TriangularCartesian2D_Domain_t>    my_vtk_reader;
+	viennagrid::io::vtk_reader<TriangularCartesian2D_Domain_t, TriangularCartesian2D_Segmentation_t>    my_vtk_reader;
+	TriangularCartesian2D_Segmentation                                                                  segmentation(*this);
 	
-	my_vtk_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
 void TriangularCartesian2D_Domain::write_opendx(std::string const &filename)
@@ -144,27 +139,24 @@ list TriangularCartesian3D_Domain::get_vertices()
 	return vertices;
 }
 
-void TriangularCartesian3D_Domain::read_netgen(std::string const &filename)
+TriangularCartesian3D_Segmentation TriangularCartesian3D_Domain::read_netgen(std::string const &filename)
 {
-	/*
-	std::vector<TriangularCartesian3D_Segment_t>                   segment_list;
-	viennagrid::io::netgen_reader<TriangularCartesian3D_Cell_t>    my_netgen_reader;
-	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
+	viennagrid::io::netgen_reader         my_netgen_reader;
+	TriangularCartesian3D_Segmentation    segmentation(*this);
 	
-	my_netgen_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
-void TriangularCartesian3D_Domain::read_vtk(std::string const &filename)
+TriangularCartesian3D_Segmentation TriangularCartesian3D_Domain::read_vtk(std::string const &filename)
 {
-	/*
-	std::vector<TriangularCartesian3D_Segment_t>                                                segment_list;
-	viennagrid::io::vtk_reader<TriangularCartesian3D_Cell_t, TriangularCartesian3D_Domain_t>    my_vtk_reader;
+	viennagrid::io::vtk_reader<TriangularCartesian3D_Domain_t, TriangularCartesian3D_Segmentation_t>    my_vtk_reader;
+	TriangularCartesian3D_Segmentation                                                                  segmentation(*this);
 	
-	my_vtk_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
 void TriangularCartesian3D_Domain::write_opendx(std::string const &filename)
@@ -230,27 +222,24 @@ list TriangularCylindrical3D_Domain::get_vertices()
 	return vertices;
 }
 
-void TriangularCylindrical3D_Domain::read_netgen(std::string const &filename)
+TriangularCylindrical3D_Segmentation TriangularCylindrical3D_Domain::read_netgen(std::string const &filename)
 {
-	/*
-	std::vector<TriangularCylindrical3D_Segment_t>                   segment_list;
-	viennagrid::io::netgen_reader<TriangularCylindrical3D_Cell_t>    my_netgen_reader;
-	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
+	viennagrid::io::netgen_reader           my_netgen_reader;
+	TriangularCylindrical3D_Segmentation    segmentation(*this);
 	
-	my_netgen_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
-void TriangularCylindrical3D_Domain::read_vtk(std::string const &filename)
+TriangularCylindrical3D_Segmentation TriangularCylindrical3D_Domain::read_vtk(std::string const &filename)
 {
-	/*
-	std::vector<TriangularCylindrical3D_Segment_t>                                                segment_list;
-	viennagrid::io::vtk_reader<TriangularCylindrical3D_Cell_t, TriangularCylindrical3D_Domain_t>    my_vtk_reader;
+	viennagrid::io::vtk_reader<TriangularCylindrical3D_Domain_t, TriangularCylindrical3D_Segmentation_t>    my_vtk_reader;
+	TriangularCylindrical3D_Segmentation                                                                    segmentation(*this);
 	
-	my_vtk_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
 void TriangularCylindrical3D_Domain::write_opendx(std::string const &filename)
@@ -316,27 +305,24 @@ list TriangularPolar2D_Domain::get_vertices()
 	return vertices;
 }
 
-void TriangularPolar2D_Domain::read_netgen(std::string const &filename)
+TriangularPolar2D_Segmentation TriangularPolar2D_Domain::read_netgen(std::string const &filename)
 {
-	/*
-	std::vector<TriangularPolar2D_Segment_t>                   segment_list;
-	viennagrid::io::netgen_reader<TriangularPolar2D_Cell_t>    my_netgen_reader;
-	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
+	viennagrid::io::netgen_reader     my_netgen_reader;
+	TriangularPolar2D_Segmentation    segmentation(*this);
 	
-	my_netgen_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
-void TriangularPolar2D_Domain::read_vtk(std::string const &filename)
+TriangularPolar2D_Segmentation TriangularPolar2D_Domain::read_vtk(std::string const &filename)
 {
-	/*
-	std::vector<TriangularPolar2D_Segment_t>                                                segment_list;
-	viennagrid::io::vtk_reader<TriangularPolar2D_Cell_t, TriangularPolar2D_Domain_t>    my_vtk_reader;
+	viennagrid::io::vtk_reader<TriangularPolar2D_Domain_t, TriangularPolar2D_Segmentation_t>    my_vtk_reader;
+	TriangularPolar2D_Segmentation                                                              segmentation(*this);
 	
-	my_vtk_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
 void TriangularPolar2D_Domain::write_opendx(std::string const &filename)
@@ -402,27 +388,24 @@ list TriangularSpherical3D_Domain::get_vertices()
 	return vertices;
 }
 
-void TriangularSpherical3D_Domain::read_netgen(std::string const &filename)
+TriangularSpherical3D_Segmentation TriangularSpherical3D_Domain::read_netgen(std::string const &filename)
 {
-	/*
-	std::vector<TriangularSpherical3D_Segment_t>                   segment_list;
-	viennagrid::io::netgen_reader<TriangularSpherical3D_Cell_t>    my_netgen_reader;
-	//viennagrid::io::netgen_reader<viennagrid::triangle_tag>    my_netgen_reader;
+	viennagrid::io::netgen_reader         my_netgen_reader;
+	TriangularSpherical3D_Segmentation    segmentation(*this);
 	
-	my_netgen_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
-void TriangularSpherical3D_Domain::read_vtk(std::string const &filename)
+TriangularSpherical3D_Segmentation TriangularSpherical3D_Domain::read_vtk(std::string const &filename)
 {
-	/*
-	std::vector<TriangularSpherical3D_Segment_t>                                                segment_list;
-	viennagrid::io::vtk_reader<TriangularSpherical3D_Cell_t, TriangularSpherical3D_Domain_t>    my_vtk_reader;
+	viennagrid::io::vtk_reader<TriangularSpherical3D_Domain_t, TriangularSpherical3D_Segmentation_t>    my_vtk_reader;
+	TriangularSpherical3D_Segmentation                                                                  segmentation(*this);
 	
-	my_vtk_reader(domain, segment_list, filename);
-	// TODO: return segmentation object from segment_list
-	*/
+	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
+	
+	return segmentation;
 }
 
 void TriangularSpherical3D_Domain::write_opendx(std::string const &filename)
