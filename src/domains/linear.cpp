@@ -5,10 +5,8 @@
 
 #include <viennagrid/io/netgen_reader.hpp>
 #include <viennagrid/io/vtk_reader.hpp>
-/*
 #include <viennagrid/io/opendx_writer.hpp>
 #include <viennagrid/io/vtk_writer.hpp>
-*/
 
 ////////////////////////////
 // Triangle, cartesian 1D //
@@ -77,20 +75,16 @@ LinearCartesian1D_Segmentation LinearCartesian1D_Domain::read_vtk(std::string co
 
 void LinearCartesian1D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<LinearCartesian1D_Cell_t, LinearCartesian1D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<LinearCartesian1D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void LinearCartesian1D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<LinearCartesian1D_Domain_t, LinearCartesian1D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<LinearCartesian1D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ////////////////////////////
@@ -160,20 +154,16 @@ LinearCartesian2D_Segmentation LinearCartesian2D_Domain::read_vtk(std::string co
 
 void LinearCartesian2D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<LinearCartesian2D_Cell_t, LinearCartesian2D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<LinearCartesian2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void LinearCartesian2D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<LinearCartesian2D_Domain_t, LinearCartesian2D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<LinearCartesian2D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ////////////////////////////
@@ -243,20 +233,16 @@ LinearCartesian3D_Segmentation LinearCartesian3D_Domain::read_vtk(std::string co
 
 void LinearCartesian3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<LinearCartesian3D_Cell_t, LinearCartesian3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<LinearCartesian3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void LinearCartesian3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<LinearCartesian3D_Domain_t, LinearCartesian3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<LinearCartesian3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ////////////////////////////////
@@ -326,20 +312,16 @@ LinearCylindrical3D_Segmentation LinearCylindrical3D_Domain::read_vtk(std::strin
 
 void LinearCylindrical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<LinearCylindrical3D_Cell_t, LinearCylindrical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<LinearCylindrical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void LinearCylindrical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<LinearCylindrical3D_Domain_t, LinearCylindrical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<LinearCylindrical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 //////////////////////////
@@ -409,20 +391,16 @@ LinearPolar2D_Segmentation LinearPolar2D_Domain::read_vtk(std::string const &fil
 
 void LinearPolar2D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<LinearPolar2D_Cell_t, LinearPolar2D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<LinearPolar2D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void LinearPolar2D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<LinearPolar2D_Domain_t, LinearPolar2D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<LinearPolar2D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 //////////////////////////////
@@ -492,18 +470,14 @@ LinearSpherical3D_Segmentation LinearSpherical3D_Domain::read_vtk(std::string co
 
 void LinearSpherical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<LinearSpherical3D_Cell_t, LinearSpherical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<LinearSpherical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void LinearSpherical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<LinearSpherical3D_Domain_t, LinearSpherical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<LinearSpherical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
