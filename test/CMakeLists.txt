@@ -14,5 +14,8 @@ add_test (domains
 add_test (segmentations
           python ${CMAKE_CURRENT_SOURCE_DIR}/test_segmentations.py "${PROJECT_BINARY_DIR}/src")
 
+add_test (cells
+          python ${CMAKE_CURRENT_SOURCE_DIR}/test_cells.py "${PROJECT_BINARY_DIR}/src")
+
 add_test (algorithms
           python ${CMAKE_CURRENT_SOURCE_DIR}/test_algorithms.py "${PROJECT_BINARY_DIR}/src")
