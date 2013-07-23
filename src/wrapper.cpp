@@ -26,6 +26,11 @@ using namespace boost::python;
 #include "cells/quadrilateral.hpp"
 #include "cells/tetrahedral.hpp"
 
+#include "exception_translator.hpp"
+
+#include <viennagrid/io/helper.hpp>
+using namespace viennagrid::io;
+
 char const * version()
 {
 	return "0.1.0";
@@ -34,6 +39,13 @@ char const * version()
 BOOST_PYTHON_MODULE(viennagrid_wrapper)
 {
 	def("version", version, "Return the version number of 'viennagrid_wrapper'.");
+
+	/*************************
+	 * EXCEPTION TRANSLATORS *
+	 *************************/
+
+	register_exception_translator<cannot_open_file_exception>(ExceptionTranslator<cannot_open_file_exception>(PyExc_IOError));
+	register_exception_translator<bad_file_format_exception>(ExceptionTranslator<bad_file_format_exception>(PyExc_RuntimeError));
 	
 	/***********************
 	 * WRAPPERS FOR POINTS *
