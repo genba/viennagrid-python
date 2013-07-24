@@ -127,19 +127,37 @@ def download_boost(dest_dir, interactive=False, version=False, install=False):
 def download_viennamesh(dest_dir, interactive=False):
 	pass
 
+def create_virtualenv(dest_dir, requirements=None, interactive=False):
+	run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
+	if requirements and os.path.isfile(requirements):
+		run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
+
 #################
 # MAIN FUNCTION #
 #################
 
 def main(args):
+	# If destination directory for libraries does not exist, create it
 	if not os.path.exists(args.dest_dir):
 		os.mkdir(args.dest_dir)
 	
+	# If destination path for libraries is a directory, download Boost and ViennaMesh
 	if os.path.isdir(args.dest_dir):
 		download_boost(args.dest_dir, args.interactive, args.boost_version, args.install)
 		download_viennamesh(args.dest_dir, args.interactive)
+	# If destination path exists but is not a directory, show an error message and exit
 	else:
 		error_msg('Path "%s" is not a directory' % args.dest_dir)
+	
+	# If destination for virtual environment has been provided, create the virtual environment.
+	# If it hasn't been provided, don't do anything.
+	if args.virtualenv_dest:
+		# If destination path for the Python virtual environment exists, show an error message and exit
+		if os.path.exists(args.virtualenv_dest):
+			error_msg('Destination path for virtual environment already exists')
+		# If destination path for the Python virtual environment does not exist, set up virtual environment
+		else:
+			create_virtualenv(args.virtualenv_dest, args.requirement, args.interactive)
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
@@ -147,6 +165,8 @@ if __name__ == '__main__':
 	parser.add_argument('-i', '--interactive', action='store_true', help='Enable interactive mode')
 	parser.add_argument('--boost-version', action='store', metavar='VERSION_NUMBER', default='auto', help='Force Boost version (or autodiscover latest if %(metavar)s=auto)')
 	parser.add_argument('-I', '--install', action='store_true', help='Install libraries after compiling')
+	parser.add_argument('-e', '--environment', action='store', dest='virtualenv_dest', default=None, help='Destination path for the Python virtual environment')
+	parser.add_argument('-r', '--requirement', action='store', default=None, help='Install all packages listed in the requirements file to the virtual environment using pip')
 	
 	if HAS_ARGCOMPLETE:
 		argcomplete.autocomplete(parser)
