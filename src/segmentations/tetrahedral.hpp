@@ -3,7 +3,7 @@
 
 #include "types.hpp"
 
-#include "../domains/tetrahedral.hpp"
+#include "../domains/forward.hpp"
 #include "../segments/tetrahedral.hpp"
 
 #include <boost/python.hpp>
@@ -22,6 +22,7 @@ public:
 	TetrahedralCartesian3D_Segment create_segment();
 	list get_segments();
 	TetrahedralCartesian3D_Domain_t & get_domain();
+	TetrahedralCartesian3D_Segmentation_t & get_segmentation();
 };
 
 ////////////////////////////////
@@ -37,6 +38,7 @@ public:
 	TetrahedralCylindrical3D_Segment create_segment();
 	list get_segments();
 	TetrahedralCylindrical3D_Domain_t & get_domain();
+	TetrahedralCylindrical3D_Segmentation_t & get_segmentation();
 };
 
 //////////////////////////////
@@ -52,6 +54,7 @@ public:
 	TetrahedralSpherical3D_Segment create_segment();
 	list get_segments();
 	TetrahedralSpherical3D_Domain_t & get_domain();
+	TetrahedralSpherical3D_Segmentation_t & get_segmentation();
 };
 
 #endif

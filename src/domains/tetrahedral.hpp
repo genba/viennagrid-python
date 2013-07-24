@@ -8,6 +8,7 @@
 #include "../points/spherical.hpp"
 
 #include "../vertices/tetrahedral.hpp"
+#include "../segmentations/tetrahedral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -24,8 +25,8 @@ public:
 	TetrahedralCartesian3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TetrahedralCartesian3D_Segmentation read_netgen(std::string const &filename);
+	TetrahedralCartesian3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -46,8 +47,8 @@ public:
 	TetrahedralCylindrical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TetrahedralCylindrical3D_Segmentation read_netgen(std::string const &filename);
+	TetrahedralCylindrical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
@@ -68,8 +69,8 @@ public:
 	TetrahedralSpherical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
-	void read_netgen(std::string const &filename);
-	void read_vtk(std::string const &filename);
+	TetrahedralSpherical3D_Segmentation read_netgen(std::string const &filename);
+	TetrahedralSpherical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
