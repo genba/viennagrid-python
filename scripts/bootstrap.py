@@ -138,6 +138,24 @@ def create_virtualenv(dest_dir, requirements=None, interactive=False):
 	if requirements and os.path.isfile(requirements):
 		run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
 
+def checkout_branch(remote_branch, interactive=False):
+	if interactive:
+		do_checkout = prompt('Check out branch %(remote_branch)s?' % locals())
+	else:
+		do_checkout = True
+	
+	if do_checkout:
+		splitted = remote_branch.split('/')
+		if len(splitted) == 1:
+			remote = 'origin'
+			branch = splitted[1]
+		elif len(splitted) == 2:
+			remote = splitted[0]
+			branch = splitted[1]
+		else:
+			ValueError('invalid branch reference: %(remote_branch)s' % locals())
+		run_commad('git checkout -b %(branch)s %(remote)s/%(branch)s' % locals())
+
 #################
 # MAIN FUNCTION #
 #################
@@ -166,6 +184,9 @@ def main(args):
 		# If destination path for the Python virtual environment does not exist, set up virtual environment
 		else:
 			create_virtualenv(args.virtualenv_dest, args.requirement, args.interactive)
+	
+	# Checkout development branch
+	checkout_branch(args.remote_branch, interactive=args.interactive)
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
@@ -175,6 +196,7 @@ if __name__ == '__main__':
 	parser.add_argument('-I', '--install', action='store_true', help='Install libraries after compiling')
 	parser.add_argument('-e', '--environment', action='store', dest='virtualenv_dest', default=None, help='Destination path for the Python virtual environment')
 	parser.add_argument('-r', '--requirement', action='store', default=None, help='Install all packages listed in the requirements file to the virtual environment using pip')
+	parser.add_argument('-c', '--checkout', metavar='remote_branch', action='store', dest='remote_branch', help='Check out given remote branch to start development on that branch')
 	
 	if HAS_ARGCOMPLETE:
 		argcomplete.autocomplete(parser)
