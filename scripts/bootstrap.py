@@ -124,8 +124,14 @@ def download_boost(dest_dir, interactive=False, version=False, install=False):
 	if install:
 		run_commad('sudo ./b2 install')
 
-def download_viennamesh(dest_dir, interactive=False):
-	pass
+def update_git_submodules(interactive=False):
+	if interactive:
+		update_submodules = prompt('Update Git submodules?')
+	else:
+		update_submodules = True
+	
+	if update_submodules:
+		run_commad('git submodules update')
 
 def create_virtualenv(dest_dir, requirements=None, interactive=False):
 	run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
@@ -141,13 +147,15 @@ def main(args):
 	if not os.path.exists(args.dest_dir):
 		os.mkdir(args.dest_dir)
 	
-	# If destination path for libraries is a directory, download Boost and ViennaMesh
+	# If destination path for libraries is a directory, download Boost
 	if os.path.isdir(args.dest_dir):
 		download_boost(args.dest_dir, args.interactive, args.boost_version, args.install)
-		download_viennamesh(args.dest_dir, args.interactive)
 	# If destination path exists but is not a directory, show an error message and exit
 	else:
 		error_msg('Path "%s" is not a directory' % args.dest_dir)
+	
+	# Download ViennaGrid (update Git submodules)
+	update_git_submodules(args.interactive)
 	
 	# If destination for virtual environment has been provided, create the virtual environment.
 	# If it hasn't been provided, don't do anything.
