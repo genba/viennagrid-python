@@ -6,10 +6,8 @@
 
 #include <viennagrid/io/netgen_reader.hpp>
 #include <viennagrid/io/vtk_reader.hpp>
-/*
 #include <viennagrid/io/opendx_writer.hpp>
 #include <viennagrid/io/vtk_writer.hpp>
-*/
 
 ///////////////////////////////
 // Tetrahedral, cartesian 3D //
@@ -78,20 +76,16 @@ TetrahedralCartesian3D_Segmentation TetrahedralCartesian3D_Domain::read_vtk(std:
 
 void TetrahedralCartesian3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TetrahedralCartesian3D_Cell_t, TetrahedralCartesian3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TetrahedralCartesian3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TetrahedralCartesian3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TetrahedralCartesian3D_Domain_t, TetrahedralCartesian3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TetrahedralCartesian3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 ///////////////////////////////////
@@ -161,20 +155,16 @@ TetrahedralCylindrical3D_Segmentation TetrahedralCylindrical3D_Domain::read_vtk(
 
 void TetrahedralCylindrical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TetrahedralCylindrical3D_Cell_t, TetrahedralCylindrical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TetrahedralCylindrical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TetrahedralCylindrical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TetrahedralCylindrical3D_Domain_t, TetrahedralCylindrical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TetrahedralCylindrical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
 
 /////////////////////////////////
@@ -244,18 +234,14 @@ TetrahedralSpherical3D_Segmentation TetrahedralSpherical3D_Domain::read_vtk(std:
 
 void TetrahedralSpherical3D_Domain::write_opendx(std::string const &filename)
 {
-	/*
-	viennagrid::io::opendx_writer<TetrahedralSpherical3D_Cell_t, TetrahedralSpherical3D_Domain_t>    my_dx_writer;
+	viennagrid::io::opendx_writer<TetrahedralSpherical3D_Domain_t>    my_dx_writer;
 	
 	my_dx_writer(domain, filename);
-	*/
 }
 
 void TetrahedralSpherical3D_Domain::write_vtk(std::string const &filename)
 {
-	/*
-	viennagrid::io::vtk_writer<TetrahedralSpherical3D_Domain_t, TetrahedralSpherical3D_Cell_t>    my_vtk_writer;
+	viennagrid::io::vtk_writer<TetrahedralSpherical3D_Domain_t>    my_vtk_writer;
 	
 	my_vtk_writer(domain, filename);
-	*/
 }
