@@ -197,18 +197,18 @@ class Segment(object):
 	@property
 	def cells(self):
 		class CellList(object):
-			def __init__(self, cell_list):
-				self._cell_list = cell_list
+			def __init__(self, segment):
+				self._segment = segment
 			def __call__(self):
-				return [Cell(c) for c in self._cell_list]
+				return [Cell(c) for c in self._segment.cells]
 			def __len__(self):
-				return len(self._cell_list)
+				return self._segment.num_cells
 			def __iter__(self):
-				for c in self._cell_list:
+				for c in self._segment.cells:
 					yield Cell(c)
 			def __getitem__(self, index):
-				return Cell(self._cell_list[index])
-		return CellList(self._segment.cells)
+				return Cell(self._segment.cells[index])
+		return CellList(self._segment)
 	
 	def create_cell(self, *args, **kwargs):
 		vertices = [vertex._vertex for vertex in args]

@@ -15,6 +15,14 @@ TetrahedralCartesian3D_Segment::TetrahedralCartesian3D_Segment(TetrahedralCartes
 	segmentation = &initial_segmentation;
 }
 
+unsigned int TetrahedralCartesian3D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralCartesian3D_Segment_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
+}
+
 TetrahedralCartesian3D_Cell TetrahedralCartesian3D_Segment::create_cell(TetrahedralCartesian3D_Vertex vertex1, TetrahedralCartesian3D_Vertex vertex2, TetrahedralCartesian3D_Vertex vertex3, TetrahedralCartesian3D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<TetrahedralCartesian3D_Segment_t, TetrahedralCartesian3D_Cell_t>::type    CellHandle;
@@ -53,6 +61,14 @@ TetrahedralCylindrical3D_Segment::TetrahedralCylindrical3D_Segment(TetrahedralCy
 	segmentation = &initial_segmentation;
 }
 
+unsigned int TetrahedralCylindrical3D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralCylindrical3D_Segment_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
+}
+
 TetrahedralCylindrical3D_Cell TetrahedralCylindrical3D_Segment::create_cell(TetrahedralCylindrical3D_Vertex vertex1, TetrahedralCylindrical3D_Vertex vertex2, TetrahedralCylindrical3D_Vertex vertex3, TetrahedralCylindrical3D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<TetrahedralCylindrical3D_Segment_t, TetrahedralCylindrical3D_Cell_t>::type    CellHandle;
@@ -89,6 +105,14 @@ TetrahedralSpherical3D_Segment::TetrahedralSpherical3D_Segment(TetrahedralSpheri
 {
 	//segment = initial_segment;
 	segmentation = &initial_segmentation;
+}
+
+unsigned int TetrahedralSpherical3D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralSpherical3D_Segment_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
 }
 
 TetrahedralSpherical3D_Cell TetrahedralSpherical3D_Segment::create_cell(TetrahedralSpherical3D_Vertex vertex1, TetrahedralSpherical3D_Vertex vertex2, TetrahedralSpherical3D_Vertex vertex3, TetrahedralSpherical3D_Vertex vertex4)

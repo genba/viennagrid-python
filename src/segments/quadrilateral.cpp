@@ -15,6 +15,14 @@ QuadrilateralCartesian2D_Segment::QuadrilateralCartesian2D_Segment(Quadrilateral
 	segmentation = &initial_segmentation;
 }
 
+unsigned int QuadrilateralCartesian2D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian2D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
+}
+
 QuadrilateralCartesian2D_Cell QuadrilateralCartesian2D_Segment::create_cell(QuadrilateralCartesian2D_Vertex vertex1, QuadrilateralCartesian2D_Vertex vertex2, QuadrilateralCartesian2D_Vertex vertex3, QuadrilateralCartesian2D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralCartesian2D_Segment_t, QuadrilateralCartesian2D_Cell_t>::type    CellHandle;
@@ -51,6 +59,14 @@ QuadrilateralCartesian3D_Segment::QuadrilateralCartesian3D_Segment(Quadrilateral
 {
 	//segment = initial_segment;
 	segmentation = &initial_segmentation;
+}
+
+unsigned int QuadrilateralCartesian3D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian3D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
 }
 
 QuadrilateralCartesian3D_Cell QuadrilateralCartesian3D_Segment::create_cell(QuadrilateralCartesian3D_Vertex vertex1, QuadrilateralCartesian3D_Vertex vertex2, QuadrilateralCartesian3D_Vertex vertex3, QuadrilateralCartesian3D_Vertex vertex4)
@@ -91,6 +107,14 @@ QuadrilateralCylindrical3D_Segment::QuadrilateralCylindrical3D_Segment(Quadrilat
 	segmentation = &initial_segmentation;
 }
 
+unsigned int QuadrilateralCylindrical3D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCylindrical3D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
+}
+
 QuadrilateralCylindrical3D_Cell QuadrilateralCylindrical3D_Segment::create_cell(QuadrilateralCylindrical3D_Vertex vertex1, QuadrilateralCylindrical3D_Vertex vertex2, QuadrilateralCylindrical3D_Vertex vertex3, QuadrilateralCylindrical3D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralCylindrical3D_Segment_t, QuadrilateralCylindrical3D_Cell_t>::type    CellHandle;
@@ -129,6 +153,14 @@ QuadrilateralPolar2D_Segment::QuadrilateralPolar2D_Segment(QuadrilateralPolar2D_
 	segmentation = &initial_segmentation;
 }
 
+unsigned int QuadrilateralPolar2D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralPolar2D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
+}
+
 QuadrilateralPolar2D_Cell QuadrilateralPolar2D_Segment::create_cell(QuadrilateralPolar2D_Vertex vertex1, QuadrilateralPolar2D_Vertex vertex2, QuadrilateralPolar2D_Vertex vertex3, QuadrilateralPolar2D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralPolar2D_Segment_t, QuadrilateralPolar2D_Cell_t>::type    CellHandle;
@@ -165,6 +197,14 @@ QuadrilateralSpherical3D_Segment::QuadrilateralSpherical3D_Segment(Quadrilateral
 {
 	//segment = initial_segment;
 	segmentation = &initial_segmentation;
+}
+
+unsigned int QuadrilateralSpherical3D_Segment::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralSpherical3D_Segment_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(segment);
+	return range.size();
 }
 
 QuadrilateralSpherical3D_Cell QuadrilateralSpherical3D_Segment::create_cell(QuadrilateralSpherical3D_Vertex vertex1, QuadrilateralSpherical3D_Vertex vertex2, QuadrilateralSpherical3D_Vertex vertex3, QuadrilateralSpherical3D_Vertex vertex4)
