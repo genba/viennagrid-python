@@ -169,18 +169,18 @@ class Segmentation(object):
 	@property
 	def segments(self):
 		class SegmentList(object):
-			def __init__(self, segment_list):
-				self._segment_list = segment_list
+			def __init__(self, segmentation):
+				self._segmentation = segmentation
 			def __call__(self):
-				return [Segment(seg) for seg in self._segment_list]
+				return [Segment(seg) for seg in self._segmentation.segments]
 			def __len__(self):
-				return len(self._segment_list)
+				return self._segmentation.num_segments
 			def __iter__(self):
-				for seg in self._segment_list:
+				for seg in self._segmentation.segments:
 					yield Segment(seg)
 			def __getitem__(self, index):
-				return Segment(self._segment_list[index])
-		return SegmentList(self._segmentation.segments)
+				return Segment(self._segmentation.segments[index])
+		return SegmentList(self._segmentation)
 	
 	def create_segment(self):
 		return Segment(self._segmentation.create_segment())

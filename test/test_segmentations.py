@@ -32,10 +32,13 @@ class TestLinearCartesian1D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -71,10 +74,13 @@ class TestLinearCartesian2D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -110,10 +116,13 @@ class TestLinearCartesian3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -149,10 +158,13 @@ class TestLinearCylindrical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -188,10 +200,13 @@ class TestLinearPolar2D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -227,10 +242,13 @@ class TestLinearSpherical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -270,10 +288,13 @@ class TestTriangularCartesian2D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -309,10 +330,13 @@ class TestTriangularCartesian3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -348,10 +372,13 @@ class TestTriangularCylindrical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -387,10 +414,13 @@ class TestTriangularPolar2D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -426,10 +456,13 @@ class TestTriangularSpherical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -469,10 +502,13 @@ class TestQuadrilateralCartesian2D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -508,10 +544,13 @@ class TestQuadrilateralCartesian3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -547,10 +586,13 @@ class TestQuadrilateralCylindrical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -586,10 +628,13 @@ class TestQuadrilateralPolar2D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -625,10 +670,13 @@ class TestQuadrilateralSpherical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -668,10 +716,13 @@ class TestTetrahedralCartesian3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -707,10 +758,13 @@ class TestTetrahedralCylindrical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
@@ -746,10 +800,13 @@ class TestTetrahedralSpherical3D_Segmentation(unittest.TestCase):
 	def test_create_segment(self):
 		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
+		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
 			self.segmentation.create_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
+			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
+		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
 	def test_create_cell(self):
 		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
