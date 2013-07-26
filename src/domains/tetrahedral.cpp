@@ -11,7 +11,8 @@
 #include <viennagrid/io/vtk_writer.hpp>
 */
 
-#include <vector>
+#include <stdexcept>
+#include <string>
 
 ///////////////////////////////
 // Tetrahedral, cartesian 3D //
@@ -40,6 +41,13 @@ TetrahedralCartesian3D_Vertex TetrahedralCartesian3D_Domain::get_vertex(unsigned
 	typedef TetrahedralCartesian3D_Vertex_t::id_type              VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TetrahedralCartesian3D_Vertex(*vertex);
 }
 
@@ -126,6 +134,13 @@ TetrahedralCylindrical3D_Vertex TetrahedralCylindrical3D_Domain::get_vertex(unsi
 	typedef TetrahedralCylindrical3D_Vertex_t::id_type            VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TetrahedralCylindrical3D_Vertex(*vertex);
 }
 
@@ -212,6 +227,13 @@ TetrahedralSpherical3D_Vertex TetrahedralSpherical3D_Domain::get_vertex(unsigned
 	typedef TetrahedralSpherical3D_Vertex_t::id_type              VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TetrahedralSpherical3D_Vertex(*vertex);
 }
 

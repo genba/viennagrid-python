@@ -11,7 +11,8 @@
 #include <viennagrid/io/vtk_writer.hpp>
 */
 
-#include <vector>
+#include <stdexcept>
+#include <string>
 
 ////////////////////////////
 // Triangle, cartesian 2D //
@@ -40,6 +41,13 @@ TriangularCartesian2D_Vertex TriangularCartesian2D_Domain::get_vertex(unsigned i
 	typedef TriangularCartesian2D_Vertex_t::id_type               VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TriangularCartesian2D_Vertex(*vertex);
 }
 
@@ -126,6 +134,13 @@ TriangularCartesian3D_Vertex TriangularCartesian3D_Domain::get_vertex(unsigned i
 	typedef TriangularCartesian3D_Vertex_t::id_type               VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TriangularCartesian3D_Vertex(*vertex);
 }
 
@@ -212,6 +227,13 @@ TriangularCylindrical3D_Vertex TriangularCylindrical3D_Domain::get_vertex(unsign
 	typedef TriangularCylindrical3D_Vertex_t::id_type             VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TriangularCylindrical3D_Vertex(*vertex);
 }
 
@@ -298,6 +320,13 @@ TriangularPolar2D_Vertex TriangularPolar2D_Domain::get_vertex(unsigned int index
 	typedef TriangularPolar2D_Vertex_t::id_type                   VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TriangularPolar2D_Vertex(*vertex);
 }
 
@@ -384,6 +413,13 @@ TriangularSpherical3D_Vertex TriangularSpherical3D_Domain::get_vertex(unsigned i
 	typedef TriangularSpherical3D_Vertex_t::id_type               VertexIDType;
 	
 	VertexIterator vertex = viennagrid::find_by_id(domain, VertexIDType(index));
+	VertexRange range = viennagrid::elements(domain);
+	if (vertex == range.end())
+	{
+		std::stringstream ss;
+		ss << "no vertex at index " << index;
+		throw std::out_of_range(ss.str());
+	}
 	return TriangularSpherical3D_Vertex(*vertex);
 }
 
