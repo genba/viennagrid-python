@@ -71,3 +71,31 @@ def norm(point, norm_type=2):
 		return norm_fn(point)
 	else:
 		raise ValueError('unsupported norm type: %(norm_type)s')
+
+###########################
+# N-CELL-BASED ALGORITHMS #
+###########################
+
+def centroid(cell):
+	if isinstance(cell, viennagrid.Cell):
+		cell = cell._cell
+	centroid_fn = _wrapper.__getattribute('%s_centroid' % cell.__class__.__name__)
+	return centroid_fn(cell)
+
+def circumcenter(cell):
+	if isinstance(cell, viennagrid.Cell):
+		cell = cell._cell
+	circumcenter_fn = _wrapper.__getattribute('%s_circumcenter' % cell.__class__.__name__)
+	return circumcenter_fn(cell)
+
+def surface(cell):
+	if isinstance(cell, viennagrid.Cell):
+		cell = cell._cell
+	surface_fn = _wrapper.__getattribute('%s_surface' % cell.__class__.__name__)
+	return surface_fn(cell)
+
+def volume(cell):
+	if isinstance(cell, viennagrid.Cell):
+		cell = cell._cell
+	volume_fn = _wrapper.__getattribute('%s_volume' % cell.__class__.__name__)
+	return volume_fn(cell)
