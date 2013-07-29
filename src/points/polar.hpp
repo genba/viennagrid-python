@@ -123,6 +123,9 @@ public:
 	void set_id(unsigned int new_id);
 	
 	PointCartesian2D to_cartesian();
+	double norm_1();
+	double norm_2();
+	double norm_inf();
 };
 
 #endif /* end of include guard: POLAR_HPP_HL2P4D4 */

@@ -124,6 +124,9 @@ public:
 	
 	PointCartesian3D to_cartesian();
 	PointSpherical3D to_spherical();
+	double norm_1();
+	double norm_2();
+	double norm_inf();
 };
 
 #endif /* end of include guard: CYLINDRICAL_HPP_P07EFHVO */

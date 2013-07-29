@@ -111,3 +111,18 @@ PointCylindrical3D PointSpherical3D::to_cylindrical()
 	PointCylindrical_t new_point = get_point();
 	return PointCylindrical3D(new_point.at(0), new_point.at(1), new_point.at(2));
 }
+
+double PointSpherical3D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointSpherical3D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointSpherical3D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
+}
