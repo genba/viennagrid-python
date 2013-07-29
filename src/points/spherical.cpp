@@ -14,9 +14,15 @@ PointSpherical3D::PointSpherical3D(double x, double y, double z)
 	id = -1;
 }
 
+PointSpherical3D::PointSpherical3D(PointSpherical_t *initial_point, unsigned int initial_id)
+{
+	point = initial_point;
+	id = initial_id;
+}
+
 PointSpherical3D::PointSpherical3D(PointSpherical_t &initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = new PointSpherical_t(initial_point);
 	id = initial_id;
 }
 

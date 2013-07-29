@@ -13,9 +13,15 @@ PointPolar2D::PointPolar2D(double x, double y)
 	id = -1;
 }
 
+PointPolar2D::PointPolar2D(PointPolar_t *initial_point, unsigned int initial_id)
+{
+	point = initial_point;
+	id = initial_id;
+}
+
 PointPolar2D::PointPolar2D(PointPolar_t &initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = new PointPolar_t(initial_point);
 	id = initial_id;
 }
 
