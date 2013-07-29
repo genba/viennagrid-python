@@ -30,6 +30,11 @@ list TriangularCartesian2D_Cell::get_vertices()
 	return vertices;
 }
 
+TriangularCartesian2D_Cell_t & TriangularCartesian2D_Cell::get_cell()
+{
+	return *cell;
+}
+
 ////////////////////////////
 // Triangle, cartesian 3D //
 ////////////////////////////
@@ -56,6 +61,11 @@ list TriangularCartesian3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+TriangularCartesian3D_Cell_t & TriangularCartesian3D_Cell::get_cell()
+{
+	return *cell;
 }
 
 ////////////////////////////////
@@ -86,6 +96,11 @@ list TriangularCylindrical3D_Cell::get_vertices()
 	return vertices;
 }
 
+TriangularCylindrical3D_Cell_t & TriangularCylindrical3D_Cell::get_cell()
+{
+	return *cell;
+}
+
 //////////////////////////
 // Triangle, polar (2D) //
 //////////////////////////
@@ -114,6 +129,11 @@ list TriangularPolar2D_Cell::get_vertices()
 	return vertices;
 }
 
+TriangularPolar2D_Cell_t & TriangularPolar2D_Cell::get_cell()
+{
+	return *cell;
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -140,4 +160,9 @@ list TriangularSpherical3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+TriangularSpherical3D_Cell_t & TriangularSpherical3D_Cell::get_cell()
+{
+	return *cell;
 }

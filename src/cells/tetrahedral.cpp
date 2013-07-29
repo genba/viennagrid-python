@@ -30,6 +30,11 @@ list TetrahedralCartesian3D_Cell::get_vertices()
 	return vertices;
 }
 
+TetrahedralCartesian3D_Cell_t & TetrahedralCartesian3D_Cell::get_cell()
+{
+	return *cell;
+}
+
 ///////////////////////////////////
 // Tetrahedral, cylindrical (3D) //
 ///////////////////////////////////
@@ -58,6 +63,11 @@ list TetrahedralCylindrical3D_Cell::get_vertices()
 	return vertices;
 }
 
+TetrahedralCylindrical3D_Cell_t & TetrahedralCylindrical3D_Cell::get_cell()
+{
+	return *cell;
+}
+
 /////////////////////////////////
 // Tetrahedral, spherical (3D) //
 /////////////////////////////////
@@ -84,4 +94,9 @@ list TetrahedralSpherical3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+TetrahedralSpherical3D_Cell_t & TetrahedralSpherical3D_Cell::get_cell()
+{
+	return *cell;
 }

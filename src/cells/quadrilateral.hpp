@@ -20,6 +20,7 @@ class QuadrilateralCartesian2D_Cell {
 public:
 	QuadrilateralCartesian2D_Cell(QuadrilateralCartesian2D_Cell_t &initial_cell);
 	list get_vertices();
+	QuadrilateralCartesian2D_Cell_t & get_cell();
 };
 
 /////////////////////////////////
@@ -31,6 +32,7 @@ class QuadrilateralCartesian3D_Cell {
 public:
 	QuadrilateralCartesian3D_Cell(QuadrilateralCartesian3D_Cell_t &initial_cell);
 	list get_vertices();
+	QuadrilateralCartesian3D_Cell_t & get_cell();
 };
 
 /////////////////////////////////////
@@ -42,6 +44,7 @@ class QuadrilateralCylindrical3D_Cell {
 public:
 	QuadrilateralCylindrical3D_Cell(QuadrilateralCylindrical3D_Cell_t &initial_cell);
 	list get_vertices();
+	QuadrilateralCylindrical3D_Cell_t & get_cell();
 };
 
 ///////////////////////////////
@@ -53,6 +56,7 @@ class QuadrilateralPolar2D_Cell {
 public:
 	QuadrilateralPolar2D_Cell(QuadrilateralPolar2D_Cell_t &initial_cell);
 	list get_vertices();
+	QuadrilateralPolar2D_Cell_t & get_cell();
 };
 
 ///////////////////////////////////
@@ -64,6 +68,7 @@ class QuadrilateralSpherical3D_Cell {
 public:
 	QuadrilateralSpherical3D_Cell(QuadrilateralSpherical3D_Cell_t &initial_cell);
 	list get_vertices();
+	QuadrilateralSpherical3D_Cell_t & get_cell();
 };
 
 #endif

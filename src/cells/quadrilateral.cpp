@@ -30,6 +30,11 @@ list QuadrilateralCartesian2D_Cell::get_vertices()
 	return vertices;
 }
 
+QuadrilateralCartesian2D_Cell_t & QuadrilateralCartesian2D_Cell::get_cell()
+{
+	return *cell;
+}
+
 /////////////////////////////////
 // Quadrilateral, cartesian 3D //
 /////////////////////////////////
@@ -56,6 +61,11 @@ list QuadrilateralCartesian3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+QuadrilateralCartesian3D_Cell_t & QuadrilateralCartesian3D_Cell::get_cell()
+{
+	return *cell;
 }
 
 /////////////////////////////////////
@@ -86,6 +96,11 @@ list QuadrilateralCylindrical3D_Cell::get_vertices()
 	return vertices;
 }
 
+QuadrilateralCylindrical3D_Cell_t & QuadrilateralCylindrical3D_Cell::get_cell()
+{
+	return *cell;
+}
+
 ///////////////////////////////
 // Quadrilateral, polar (2D) //
 ///////////////////////////////
@@ -114,6 +129,11 @@ list QuadrilateralPolar2D_Cell::get_vertices()
 	return vertices;
 }
 
+QuadrilateralPolar2D_Cell_t & QuadrilateralPolar2D_Cell::get_cell()
+{
+	return *cell;
+}
+
 ///////////////////////////////////
 // Quadrilateral, spherical (3D) //
 ///////////////////////////////////
@@ -140,4 +160,9 @@ list QuadrilateralSpherical3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+QuadrilateralSpherical3D_Cell_t & QuadrilateralSpherical3D_Cell::get_cell()
+{
+	return *cell;
 }

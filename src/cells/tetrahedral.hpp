@@ -20,6 +20,7 @@ class TetrahedralCartesian3D_Cell {
 public:
 	TetrahedralCartesian3D_Cell(TetrahedralCartesian3D_Cell_t &initial_cell);
 	list get_vertices();
+	TetrahedralCartesian3D_Cell_t & get_cell();
 };
 
 ///////////////////////////////////
@@ -31,6 +32,7 @@ class TetrahedralCylindrical3D_Cell {
 public:
 	TetrahedralCylindrical3D_Cell(TetrahedralCylindrical3D_Cell_t &initial_cell);
 	list get_vertices();
+	TetrahedralCylindrical3D_Cell_t & get_cell();
 };
 
 /////////////////////////////////
@@ -42,6 +44,7 @@ class TetrahedralSpherical3D_Cell {
 public:
 	TetrahedralSpherical3D_Cell(TetrahedralSpherical3D_Cell_t &initial_cell);
 	list get_vertices();
+	TetrahedralSpherical3D_Cell_t & get_cell();
 };
 
 #endif

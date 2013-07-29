@@ -20,6 +20,7 @@ class TriangularCartesian2D_Cell {
 public:
 	TriangularCartesian2D_Cell(TriangularCartesian2D_Cell_t &initial_cell);
 	list get_vertices();
+	TriangularCartesian2D_Cell_t & get_cell();
 };
 
 ////////////////////////////
@@ -31,6 +32,7 @@ class TriangularCartesian3D_Cell {
 public:
 	TriangularCartesian3D_Cell(TriangularCartesian3D_Cell_t &initial_cell);
 	list get_vertices();
+	TriangularCartesian3D_Cell_t & get_cell();
 };
 
 ////////////////////////////////
@@ -42,6 +44,7 @@ class TriangularCylindrical3D_Cell {
 public:
 	TriangularCylindrical3D_Cell(TriangularCylindrical3D_Cell_t &initial_cell);
 	list get_vertices();
+	TriangularCylindrical3D_Cell_t & get_cell();
 };
 
 //////////////////////////
@@ -53,6 +56,7 @@ class TriangularPolar2D_Cell {
 public:
 	TriangularPolar2D_Cell(TriangularPolar2D_Cell_t &initial_cell);
 	list get_vertices();
+	TriangularPolar2D_Cell_t & get_cell();
 };
 
 //////////////////////////////
@@ -64,6 +68,7 @@ class TriangularSpherical3D_Cell {
 public:
 	TriangularSpherical3D_Cell(TriangularSpherical3D_Cell_t &initial_cell);
 	list get_vertices();
+	TriangularSpherical3D_Cell_t & get_cell();
 };
 
 #endif
