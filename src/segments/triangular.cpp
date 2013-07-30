@@ -42,6 +42,11 @@ list TriangularCartesian2D_Segment::get_cells()
 	return cells;
 }
 
+TriangularCartesian2D_Segment_t & TriangularCartesian2D_Segment::get_segment()
+{
+	return segment;
+}
+
 ///////////////////////////////////
 // TriangularCartesian3D_Segment //
 ///////////////////////////////////
@@ -77,6 +82,11 @@ list TriangularCartesian3D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<TriangularCartesian3D_Cell>(TriangularCartesian3D_Cell(*it));
 	return cells;
+}
+
+TriangularCartesian3D_Segment_t & TriangularCartesian3D_Segment::get_segment()
+{
+	return segment;
 }
 
 /////////////////////////////////////
@@ -116,6 +126,11 @@ list TriangularCylindrical3D_Segment::get_cells()
 	return cells;
 }
 
+TriangularCylindrical3D_Segment_t & TriangularCylindrical3D_Segment::get_segment()
+{
+	return segment;
+}
+
 ///////////////////////////////
 // TriangularPolar2D_Segment //
 ///////////////////////////////
@@ -153,6 +168,11 @@ list TriangularPolar2D_Segment::get_cells()
 	return cells;
 }
 
+TriangularPolar2D_Segment_t & TriangularPolar2D_Segment::get_segment()
+{
+	return segment;
+}
+
 ///////////////////////////////////
 // TriangularSpherical3D_Segment //
 ///////////////////////////////////
@@ -188,4 +208,9 @@ list TriangularSpherical3D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<TriangularSpherical3D_Cell>(TriangularSpherical3D_Cell(*it));
 	return cells;
+}
+
+TriangularSpherical3D_Segment_t & TriangularSpherical3D_Segment::get_segment()
+{
+	return segment;
 }

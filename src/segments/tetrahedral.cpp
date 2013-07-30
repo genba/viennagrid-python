@@ -43,6 +43,11 @@ list TetrahedralCartesian3D_Segment::get_cells()
 	return cells;
 }
 
+TetrahedralCartesian3D_Segment_t & TetrahedralCartesian3D_Segment::get_segment()
+{
+	return segment;
+}
+
 //////////////////////////////////////
 // TetrahedralCylindrical3D_Segment //
 //////////////////////////////////////
@@ -81,6 +86,11 @@ list TetrahedralCylindrical3D_Segment::get_cells()
 	return cells;
 }
 
+TetrahedralCylindrical3D_Segment_t & TetrahedralCylindrical3D_Segment::get_segment()
+{
+	return segment;
+}
+
 ////////////////////////////////////
 // TetrahedralSpherical3D_Segment //
 ////////////////////////////////////
@@ -117,4 +127,9 @@ list TetrahedralSpherical3D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<TetrahedralSpherical3D_Cell>(TetrahedralSpherical3D_Cell(*it));
 	return cells;
+}
+
+TetrahedralSpherical3D_Segment_t & TetrahedralSpherical3D_Segment::get_segment()
+{
+	return segment;
 }

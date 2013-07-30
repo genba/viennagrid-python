@@ -28,6 +28,7 @@ using namespace boost::python;
 
 #include "algorithms/cell_based.hpp"
 #include "algorithms/domain_based.hpp"
+#include "algorithms/segment_based.hpp"
 
 char const * version()
 {
@@ -907,4 +908,48 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCartesian3D_Domain_volume", &TetrahedralCartesian3D_Domain_volume, "docstring");
 	def("TetrahedralCylindrical3D_Domain_volume", &TetrahedralCylindrical3D_Domain_volume, "docstring");
 	def("TetrahedralSpherical3D_Domain_volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
+	
+	/****************************
+	 * SEGMENT-BASED ALGORITHMS *
+	 ****************************/
+	
+	def("LinearCartesian1D_Segment_surface", &LinearCartesian1D_Segment_surface, "docstring");
+	def("LinearCartesian2D_Segment_surface", &LinearCartesian2D_Segment_surface, "docstring");
+	def("LinearCartesian3D_Segment_surface", &LinearCartesian3D_Segment_surface, "docstring");
+	def("LinearCylindrical3D_Segment_surface", &LinearCylindrical3D_Segment_surface, "docstring");
+	def("LinearPolar2D_Segment_surface", &LinearPolar2D_Segment_surface, "docstring");
+	def("LinearSpherical3D_Segment_surface", &LinearSpherical3D_Segment_surface, "docstring");
+	def("TriangularCartesian2D_Segment_surface", &TriangularCartesian2D_Segment_surface, "docstring");
+	def("TriangularCartesian3D_Segment_surface", &TriangularCartesian3D_Segment_surface, "docstring");
+	def("TriangularCylindrical3D_Segment_surface", &TriangularCylindrical3D_Segment_surface, "docstring");
+	def("TriangularPolar2D_Segment_surface", &TriangularPolar2D_Segment_surface, "docstring");
+	def("TriangularSpherical3D_Segment_surface", &TriangularSpherical3D_Segment_surface, "docstring");
+	def("QuadrilateralCartesian2D_Segment_surface", &QuadrilateralCartesian2D_Segment_surface, "docstring");
+	def("QuadrilateralCartesian3D_Segment_surface", &QuadrilateralCartesian3D_Segment_surface, "docstring");
+	def("QuadrilateralCylindrical3D_Segment_surface", &QuadrilateralCylindrical3D_Segment_surface, "docstring");
+	def("QuadrilateralPolar2D_Segment_surface", &QuadrilateralPolar2D_Segment_surface, "docstring");
+	def("QuadrilateralSpherical3D_Segment_surface", &QuadrilateralSpherical3D_Segment_surface, "docstring");
+	def("TetrahedralCartesian3D_Segment_surface", &TetrahedralCartesian3D_Segment_surface, "docstring");
+	def("TetrahedralCylindrical3D_Segment_surface", &TetrahedralCylindrical3D_Segment_surface, "docstring");
+	def("TetrahedralSpherical3D_Segment_surface", &TetrahedralSpherical3D_Segment_surface, "docstring");
+	
+	def("LinearCartesian1D_Segment_volume", &LinearCartesian1D_Segment_volume, "docstring");
+	def("LinearCartesian2D_Segment_volume", &LinearCartesian2D_Segment_volume, "docstring");
+	def("LinearCartesian3D_Segment_volume", &LinearCartesian3D_Segment_volume, "docstring");
+	def("LinearCylindrical3D_Segment_volume", &LinearCylindrical3D_Segment_volume, "docstring");
+	def("LinearPolar2D_Segment_volume", &LinearPolar2D_Segment_volume, "docstring");
+	def("LinearSpherical3D_Segment_volume", &LinearSpherical3D_Segment_volume, "docstring");
+	def("TriangularCartesian2D_Segment_volume", &TriangularCartesian2D_Segment_volume, "docstring");
+	def("TriangularCartesian3D_Segment_volume", &TriangularCartesian3D_Segment_volume, "docstring");
+	def("TriangularCylindrical3D_Segment_volume", &TriangularCylindrical3D_Segment_volume, "docstring");
+	def("TriangularPolar2D_Segment_volume", &TriangularPolar2D_Segment_volume, "docstring");
+	def("TriangularSpherical3D_Segment_volume", &TriangularSpherical3D_Segment_volume, "docstring");
+	def("QuadrilateralCartesian2D_Segment_volume", &QuadrilateralCartesian2D_Segment_volume, "docstring");
+	def("QuadrilateralCartesian3D_Segment_volume", &QuadrilateralCartesian3D_Segment_volume, "docstring");
+	def("QuadrilateralCylindrical3D_Segment_volume", &QuadrilateralCylindrical3D_Segment_volume, "docstring");
+	def("QuadrilateralPolar2D_Segment_volume", &QuadrilateralPolar2D_Segment_volume, "docstring");
+	def("QuadrilateralSpherical3D_Segment_volume", &QuadrilateralSpherical3D_Segment_volume, "docstring");
+	def("TetrahedralCartesian3D_Segment_volume", &TetrahedralCartesian3D_Segment_volume, "docstring");
+	def("TetrahedralCylindrical3D_Segment_volume", &TetrahedralCylindrical3D_Segment_volume, "docstring");
+	def("TetrahedralSpherical3D_Segment_volume", &TetrahedralSpherical3D_Segment_volume, "docstring");
 }

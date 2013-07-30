@@ -88,7 +88,9 @@ set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/cell_based.hpp
         algorithms/cell_based.cpp
         algorithms/domain_based.hpp
-        algorithms/domain_based.cpp)
+        algorithms/domain_based.cpp
+        algorithms/segment_based.hpp
+        algorithms/segment_based.cpp)
 
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp

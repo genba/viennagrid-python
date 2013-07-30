@@ -29,6 +29,7 @@ public:
 	TetrahedralCartesian3D_Segment(TetrahedralCartesian3D_Segment_t &initial_segment, TetrahedralCartesian3D_Segmentation &initial_segmentation);
 	TetrahedralCartesian3D_Cell create_cell(TetrahedralCartesian3D_Vertex vertex1, TetrahedralCartesian3D_Vertex vertex2, TetrahedralCartesian3D_Vertex vertex3, TetrahedralCartesian3D_Vertex vertex4);
 	list get_cells();
+	TetrahedralCartesian3D_Segment_t & get_segment();
 };
 
 ///////////////////////////////////
@@ -43,6 +44,7 @@ public:
 	TetrahedralCylindrical3D_Segment(TetrahedralCylindrical3D_Segment_t &initial_segment, TetrahedralCylindrical3D_Segmentation &initial_segmentation);
 	TetrahedralCylindrical3D_Cell create_cell(TetrahedralCylindrical3D_Vertex vertex1, TetrahedralCylindrical3D_Vertex vertex2, TetrahedralCylindrical3D_Vertex vertex3, TetrahedralCylindrical3D_Vertex vertex4);
 	list get_cells();
+	TetrahedralCylindrical3D_Segment_t & get_segment();
 };
 
 /////////////////////////////////
@@ -57,6 +59,7 @@ public:
 	TetrahedralSpherical3D_Segment(TetrahedralSpherical3D_Segment_t &initial_segment, TetrahedralSpherical3D_Segmentation &initial_segmentation);
 	TetrahedralSpherical3D_Cell create_cell(TetrahedralSpherical3D_Vertex vertex1, TetrahedralSpherical3D_Vertex vertex2, TetrahedralSpherical3D_Vertex vertex3, TetrahedralSpherical3D_Vertex vertex4);
 	list get_cells();
+	TetrahedralSpherical3D_Segment_t & get_segment();
 };
 
 #endif /* end of include guard: TETRAHEDRAL_HPP_ASEQMOCM */

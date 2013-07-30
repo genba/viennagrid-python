@@ -29,6 +29,7 @@ public:
 	QuadrilateralCartesian2D_Segment(QuadrilateralCartesian2D_Segment_t &initial_segment, QuadrilateralCartesian2D_Segmentation &initial_segmentation);
 	QuadrilateralCartesian2D_Cell create_cell(QuadrilateralCartesian2D_Vertex vertex1, QuadrilateralCartesian2D_Vertex vertex2, QuadrilateralCartesian2D_Vertex vertex3, QuadrilateralCartesian2D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralCartesian2D_Segment_t & get_segment();
 };
 
 /////////////////////////////////
@@ -43,6 +44,7 @@ public:
 	QuadrilateralCartesian3D_Segment(QuadrilateralCartesian3D_Segment_t &initial_segment, QuadrilateralCartesian3D_Segmentation &initial_segmentation);
 	QuadrilateralCartesian3D_Cell create_cell(QuadrilateralCartesian3D_Vertex vertex1, QuadrilateralCartesian3D_Vertex vertex2, QuadrilateralCartesian3D_Vertex vertex3, QuadrilateralCartesian3D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralCartesian3D_Segment_t & get_segment();
 };
 
 /////////////////////////////////////
@@ -57,6 +59,7 @@ public:
 	QuadrilateralCylindrical3D_Segment(QuadrilateralCylindrical3D_Segment_t &initial_segment, QuadrilateralCylindrical3D_Segmentation &initial_segmentation);
 	QuadrilateralCylindrical3D_Cell create_cell(QuadrilateralCylindrical3D_Vertex vertex1, QuadrilateralCylindrical3D_Vertex vertex2, QuadrilateralCylindrical3D_Vertex vertex3, QuadrilateralCylindrical3D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralCylindrical3D_Segment_t & get_segment();
 };
 
 ///////////////////////////////
@@ -71,6 +74,7 @@ public:
 	QuadrilateralPolar2D_Segment(QuadrilateralPolar2D_Segment_t &initial_segment, QuadrilateralPolar2D_Segmentation &initial_segmentation);
 	QuadrilateralPolar2D_Cell create_cell(QuadrilateralPolar2D_Vertex vertex1, QuadrilateralPolar2D_Vertex vertex2, QuadrilateralPolar2D_Vertex vertex3, QuadrilateralPolar2D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralPolar2D_Segment_t & get_segment();
 };
 
 ///////////////////////////////////
@@ -85,6 +89,7 @@ public:
 	QuadrilateralSpherical3D_Segment(QuadrilateralSpherical3D_Segment_t &initial_segment, QuadrilateralSpherical3D_Segmentation &initial_segmentation);
 	QuadrilateralSpherical3D_Cell create_cell(QuadrilateralSpherical3D_Vertex vertex1, QuadrilateralSpherical3D_Vertex vertex2, QuadrilateralSpherical3D_Vertex vertex3, QuadrilateralSpherical3D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralSpherical3D_Segment_t & get_segment();
 };
 
 #endif /* end of include guard: QUADRILATERAL_HPP_ASEQMOCM */
