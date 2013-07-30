@@ -91,11 +91,15 @@ def circumcenter(cell):
 def surface(cell):
 	if isinstance(cell, viennagrid.Cell):
 		cell = cell._cell
+	elif isinstance(cell, viennagrid.Domain):
+		cell = cell._domain
 	surface_fn = _wrapper.__getattribute('%s_surface' % cell.__class__.__name__)
 	return surface_fn(cell)
 
 def volume(cell):
 	if isinstance(cell, viennagrid.Cell):
 		cell = cell._cell
+	elif isinstance(cell, viennagrid.Domain):
+		cell = cell._domain
 	volume_fn = _wrapper.__getattribute('%s_volume' % cell.__class__.__name__)
 	return volume_fn(cell)

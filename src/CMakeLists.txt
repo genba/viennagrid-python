@@ -86,7 +86,9 @@ set (VIENNAGRID_WRAPPER_VERTICES_SRC
 
 set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/cell_based.hpp
-        algorithms/cell_based.cpp)
+        algorithms/cell_based.cpp
+        algorithms/domain_based.hpp
+        algorithms/domain_based.cpp)
 
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp

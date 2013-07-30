@@ -27,6 +27,7 @@ using namespace boost::python;
 #include "cells/tetrahedral.hpp"
 
 #include "algorithms/cell_based.hpp"
+#include "algorithms/domain_based.hpp"
 
 char const * version()
 {
@@ -862,4 +863,48 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCartesian3D_Cell_volume", &TetrahedralCartesian3D_Cell_volume, "docstring");
 	def("TetrahedralCylindrical3D_Cell_volume", &TetrahedralCylindrical3D_Cell_volume, "docstring");
 	def("TetrahedralSpherical3D_Cell_volume", &TetrahedralSpherical3D_Cell_volume, "docstring");
+	
+	/***************************
+	 * DOMAIN-BASED ALGORITHMS *
+	 ***************************/
+	
+	def("LinearCartesian1D_Domain_surface", &LinearCartesian1D_Domain_surface, "docstring");
+	def("LinearCartesian2D_Domain_surface", &LinearCartesian2D_Domain_surface, "docstring");
+	def("LinearCartesian3D_Domain_surface", &LinearCartesian3D_Domain_surface, "docstring");
+	def("LinearCylindrical3D_Domain_surface", &LinearCylindrical3D_Domain_surface, "docstring");
+	def("LinearPolar2D_Domain_surface", &LinearPolar2D_Domain_surface, "docstring");
+	def("LinearSpherical3D_Domain_surface", &LinearSpherical3D_Domain_surface, "docstring");
+	def("TriangularCartesian2D_Domain_surface", &TriangularCartesian2D_Domain_surface, "docstring");
+	def("TriangularCartesian3D_Domain_surface", &TriangularCartesian3D_Domain_surface, "docstring");
+	def("TriangularCylindrical3D_Domain_surface", &TriangularCylindrical3D_Domain_surface, "docstring");
+	def("TriangularPolar2D_Domain_surface", &TriangularPolar2D_Domain_surface, "docstring");
+	def("TriangularSpherical3D_Domain_surface", &TriangularSpherical3D_Domain_surface, "docstring");
+	def("QuadrilateralCartesian2D_Domain_surface", &QuadrilateralCartesian2D_Domain_surface, "docstring");
+	def("QuadrilateralCartesian3D_Domain_surface", &QuadrilateralCartesian3D_Domain_surface, "docstring");
+	def("QuadrilateralCylindrical3D_Domain_surface", &QuadrilateralCylindrical3D_Domain_surface, "docstring");
+	def("QuadrilateralPolar2D_Domain_surface", &QuadrilateralPolar2D_Domain_surface, "docstring");
+	def("QuadrilateralSpherical3D_Domain_surface", &QuadrilateralSpherical3D_Domain_surface, "docstring");
+	def("TetrahedralCartesian3D_Domain_surface", &TetrahedralCartesian3D_Domain_surface, "docstring");
+	def("TetrahedralCylindrical3D_Domain_surface", &TetrahedralCylindrical3D_Domain_surface, "docstring");
+	def("TetrahedralSpherical3D_Domain_surface", &TetrahedralSpherical3D_Domain_surface, "docstring");
+	
+	def("LinearCartesian1D_Domain_volume", &LinearCartesian1D_Domain_volume, "docstring");
+	def("LinearCartesian2D_Domain_volume", &LinearCartesian2D_Domain_volume, "docstring");
+	def("LinearCartesian3D_Domain_volume", &LinearCartesian3D_Domain_volume, "docstring");
+	def("LinearCylindrical3D_Domain_volume", &LinearCylindrical3D_Domain_volume, "docstring");
+	def("LinearPolar2D_Domain_volume", &LinearPolar2D_Domain_volume, "docstring");
+	def("LinearSpherical3D_Domain_volume", &LinearSpherical3D_Domain_volume, "docstring");
+	def("TriangularCartesian2D_Domain_volume", &TriangularCartesian2D_Domain_volume, "docstring");
+	def("TriangularCartesian3D_Domain_volume", &TriangularCartesian3D_Domain_volume, "docstring");
+	def("TriangularCylindrical3D_Domain_volume", &TriangularCylindrical3D_Domain_volume, "docstring");
+	def("TriangularPolar2D_Domain_volume", &TriangularPolar2D_Domain_volume, "docstring");
+	def("TriangularSpherical3D_Domain_volume", &TriangularSpherical3D_Domain_volume, "docstring");
+	def("QuadrilateralCartesian2D_Domain_volume", &QuadrilateralCartesian2D_Domain_volume, "docstring");
+	def("QuadrilateralCartesian3D_Domain_volume", &QuadrilateralCartesian3D_Domain_volume, "docstring");
+	def("QuadrilateralCylindrical3D_Domain_volume", &QuadrilateralCylindrical3D_Domain_volume, "docstring");
+	def("QuadrilateralPolar2D_Domain_volume", &QuadrilateralPolar2D_Domain_volume, "docstring");
+	def("QuadrilateralSpherical3D_Domain_volume", &QuadrilateralSpherical3D_Domain_volume, "docstring");
+	def("TetrahedralCartesian3D_Domain_volume", &TetrahedralCartesian3D_Domain_volume, "docstring");
+	def("TetrahedralCylindrical3D_Domain_volume", &TetrahedralCylindrical3D_Domain_volume, "docstring");
+	def("TetrahedralSpherical3D_Domain_volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
 }
