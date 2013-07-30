@@ -869,6 +869,26 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * DOMAIN-BASED ALGORITHMS *
 	 ***************************/
 	
+	def("LinearCartesian1D_Domain_refine_uniformly", &LinearCartesian1D_Domain_refine_uniformly, "docstring");
+	def("LinearCartesian2D_Domain_refine_uniformly", &LinearCartesian2D_Domain_refine_uniformly, "docstring");
+	def("LinearCartesian3D_Domain_refine_uniformly", &LinearCartesian3D_Domain_refine_uniformly, "docstring");
+	def("LinearCylindrical3D_Domain_refine_uniformly", &LinearCylindrical3D_Domain_refine_uniformly, "docstring");
+	def("LinearPolar2D_Domain_refine_uniformly", &LinearPolar2D_Domain_refine_uniformly, "docstring");
+	def("LinearSpherical3D_Domain_refine_uniformly", &LinearSpherical3D_Domain_refine_uniformly, "docstring");
+	def("TriangularCartesian2D_Domain_refine_uniformly", &TriangularCartesian2D_Domain_refine_uniformly, "docstring");
+	def("TriangularCartesian3D_Domain_refine_uniformly", &TriangularCartesian3D_Domain_refine_uniformly, "docstring");
+	def("TriangularCylindrical3D_Domain_refine_uniformly", &TriangularCylindrical3D_Domain_refine_uniformly, "docstring");
+	def("TriangularPolar2D_Domain_refine_uniformly", &TriangularPolar2D_Domain_refine_uniformly, "docstring");
+	def("TriangularSpherical3D_Domain_refine_uniformly", &TriangularSpherical3D_Domain_refine_uniformly, "docstring");
+	def("QuadrilateralCartesian2D_Domain_refine_uniformly", &QuadrilateralCartesian2D_Domain_refine_uniformly, "docstring");
+	def("QuadrilateralCartesian3D_Domain_refine_uniformly", &QuadrilateralCartesian3D_Domain_refine_uniformly, "docstring");
+	def("QuadrilateralCylindrical3D_Domain_refine_uniformly", &QuadrilateralCylindrical3D_Domain_refine_uniformly, "docstring");
+	def("QuadrilateralPolar2D_Domain_refine_uniformly", &QuadrilateralPolar2D_Domain_refine_uniformly, "docstring");
+	def("QuadrilateralSpherical3D_Domain_refine_uniformly", &QuadrilateralSpherical3D_Domain_refine_uniformly, "docstring");
+	def("TetrahedralCartesian3D_Domain_refine_uniformly", &TetrahedralCartesian3D_Domain_refine_uniformly, "docstring");
+	def("TetrahedralCylindrical3D_Domain_refine_uniformly", &TetrahedralCylindrical3D_Domain_refine_uniformly, "docstring");
+	def("TetrahedralSpherical3D_Domain_refine_uniformly", &TetrahedralSpherical3D_Domain_refine_uniformly, "docstring");
+	
 	def("LinearCartesian1D_Domain_surface", &LinearCartesian1D_Domain_surface, "docstring");
 	def("LinearCartesian2D_Domain_surface", &LinearCartesian2D_Domain_surface, "docstring");
 	def("LinearCartesian3D_Domain_surface", &LinearCartesian3D_Domain_surface, "docstring");

@@ -117,3 +117,12 @@ def is_interface(seg):
 		seg = seg._segment
 	is_interface_fn = _wrapper.__getattribute('%s_is_interface' % seg.__class__.__name__)
 	return is_interface_fn(seg)
+
+def refine_uniformly(dom, seg):
+	"""Returns a tuple containing the output domain and segmentation after the refination."""
+	if isinstance(dom, viennagrid.Domain):
+		dom = dom._domain
+	if isinstance(seg, viennagrid.Segmentation):
+		seg = seg._segmentation
+	refine_uniformly_fn = _wrapper.__getattribute('%s_refine_uniformly' % dom.__class__.__name__)
+	return refine_uniformly_fn(dom, seg)

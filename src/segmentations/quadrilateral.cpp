@@ -30,6 +30,11 @@ QuadrilateralCartesian2D_Domain_t & QuadrilateralCartesian2D_Segmentation::get_d
 	return domain->get_domain();
 }
 
+QuadrilateralCartesian2D_Segmentation_t & QuadrilateralCartesian2D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ///////////////////////////////////////////
 // QuadrilateralCartesian3D_Segmentation //
 ///////////////////////////////////////////
@@ -58,6 +63,11 @@ list QuadrilateralCartesian3D_Segmentation::get_segments()
 QuadrilateralCartesian3D_Domain_t & QuadrilateralCartesian3D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+QuadrilateralCartesian3D_Segmentation_t & QuadrilateralCartesian3D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }
 
 /////////////////////////////////////////////
@@ -90,6 +100,11 @@ QuadrilateralCylindrical3D_Domain_t & QuadrilateralCylindrical3D_Segmentation::g
 	return domain->get_domain();
 }
 
+QuadrilateralCylindrical3D_Segmentation_t & QuadrilateralCylindrical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ///////////////////////////////////////
 // QuadrilateralPolar2D_Segmentation //
 ///////////////////////////////////////
@@ -120,6 +135,11 @@ QuadrilateralPolar2D_Domain_t & QuadrilateralPolar2D_Segmentation::get_domain()
 	return domain->get_domain();
 }
 
+QuadrilateralPolar2D_Segmentation_t & QuadrilateralPolar2D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ///////////////////////////////////////////
 // QuadrilateralSpherical3D_Segmentation //
 ///////////////////////////////////////////
@@ -148,4 +168,9 @@ list QuadrilateralSpherical3D_Segmentation::get_segments()
 QuadrilateralSpherical3D_Domain_t & QuadrilateralSpherical3D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+QuadrilateralSpherical3D_Segmentation_t & QuadrilateralSpherical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }
