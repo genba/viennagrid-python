@@ -107,3 +107,13 @@ def volume(cell):
 		cell = cell._segment
 	volume_fn = _wrapper.__getattribute('%s_volume' % cell.__class__.__name__)
 	return volume_fn(cell)
+
+###################################
+# DOMAIN/SEGMENT-BASED ALGORITHMS #
+###################################
+
+def is_interface(seg):
+	if isinstance(seg, viennagrid.Segment):
+		seg = seg._segment
+	is_interface_fn = _wrapper.__getattribute('%s_is_interface' % seg.__class__.__name__)
+	return is_interface_fn(seg)
