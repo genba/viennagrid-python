@@ -28,7 +28,7 @@ class TriangularCartesian2D_Segment
 public:
 	TriangularCartesian2D_Segment(TriangularCartesian2D_Segment_t &initial_segment, TriangularCartesian2D_Segmentation &initial_segmentation);
 	unsigned int num_cells();
-	TriangularCartesian2D_Cell create_cell(TriangularCartesian2D_Vertex vertex1, TriangularCartesian2D_Vertex vertex2, TriangularCartesian2D_Vertex vertex3);
+	TriangularCartesian2D_Cell make_cell(TriangularCartesian2D_Vertex vertex1, TriangularCartesian2D_Vertex vertex2, TriangularCartesian2D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -43,7 +43,7 @@ class TriangularCartesian3D_Segment
 public:
 	TriangularCartesian3D_Segment(TriangularCartesian3D_Segment_t &initial_segment, TriangularCartesian3D_Segmentation &initial_segmentation);
 	unsigned int num_cells();
-	TriangularCartesian3D_Cell create_cell(TriangularCartesian3D_Vertex vertex1, TriangularCartesian3D_Vertex vertex2, TriangularCartesian3D_Vertex vertex3);
+	TriangularCartesian3D_Cell make_cell(TriangularCartesian3D_Vertex vertex1, TriangularCartesian3D_Vertex vertex2, TriangularCartesian3D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -58,7 +58,7 @@ class TriangularCylindrical3D_Segment
 public:
 	TriangularCylindrical3D_Segment(TriangularCylindrical3D_Segment_t &initial_segment, TriangularCylindrical3D_Segmentation &initial_segmentation);
 	unsigned int num_cells();
-	TriangularCylindrical3D_Cell create_cell(TriangularCylindrical3D_Vertex vertex1, TriangularCylindrical3D_Vertex vertex2, TriangularCylindrical3D_Vertex vertex3);
+	TriangularCylindrical3D_Cell make_cell(TriangularCylindrical3D_Vertex vertex1, TriangularCylindrical3D_Vertex vertex2, TriangularCylindrical3D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -73,7 +73,7 @@ class TriangularPolar2D_Segment
 public:
 	TriangularPolar2D_Segment(TriangularPolar2D_Segment_t &initial_segment, TriangularPolar2D_Segmentation &initial_segmentation);
 	unsigned int num_cells();
-	TriangularPolar2D_Cell create_cell(TriangularPolar2D_Vertex vertex1, TriangularPolar2D_Vertex vertex2, TriangularPolar2D_Vertex vertex3);
+	TriangularPolar2D_Cell make_cell(TriangularPolar2D_Vertex vertex1, TriangularPolar2D_Vertex vertex2, TriangularPolar2D_Vertex vertex3);
 	list get_cells();
 };
 
@@ -88,7 +88,7 @@ class TriangularSpherical3D_Segment
 public:
 	TriangularSpherical3D_Segment(TriangularSpherical3D_Segment_t &initial_segment, TriangularSpherical3D_Segmentation &initial_segmentation);
 	unsigned int num_cells();
-	TriangularSpherical3D_Cell create_cell(TriangularSpherical3D_Vertex vertex1, TriangularSpherical3D_Vertex vertex2, TriangularSpherical3D_Vertex vertex3);
+	TriangularSpherical3D_Cell make_cell(TriangularSpherical3D_Vertex vertex1, TriangularSpherical3D_Vertex vertex2, TriangularSpherical3D_Vertex vertex3);
 	list get_cells();
 };
 

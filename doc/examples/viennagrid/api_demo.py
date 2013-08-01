@@ -14,10 +14,10 @@ config = viennagrid.config.Configuration(viennagrid.config.LINE_TAG,
 
 # Create a domain and add 4 vertices to it
 domain = viennagrid.Domain(config)
-domain.add_vertex(viennagrid.Point(1))
-domain.add_vertex(viennagrid.Point(2))
-domain.add_vertex(viennagrid.Point(3))
-domain.add_vertex(viennagrid.Point(4))
+domain.make_vertex(viennagrid.Point(1))
+domain.make_vertex(viennagrid.Point(2))
+domain.make_vertex(viennagrid.Point(3))
+domain.make_vertex(viennagrid.Point(4))
 
 domain.vertices()     # array of all vertices in the domain
 len(domain.vertices)  # number of segments in the domain
@@ -65,8 +65,8 @@ p = viennagrid.Point(x, y, z, coord_system=viennagrid.config.CYLINDRICAL, dim=3)
 
 # Create a segmentation on the domain with 2 segments in it
 segmentation = Segmentation(domain)
-seg0 = segmentation.create_segment()
-seg1 = segmentation.create_segment()
+seg0 = segmentation.make_segment()
+seg1 = segmentation.make_segment()
 
 segmentation.segments()     # array of all segments in the domain
 len(segmentation.segments)  # number of segments in the domain
@@ -76,11 +76,11 @@ segmentation.segments[i]    # get segment i
 # Create cell #1 in seg0
 v0 = domain.vertices[0]
 v1 = domain.vertices[1]
-cell = seg0.create_cell(v0, v1)
+cell = seg0.make_cell(v0, v1)
 # Create cell #2 in seg0
 v0 = domain.vertices[0]
 v1 = domain.vertices[2]
-cell = seg0.create_cell(v0, v1)
+cell = seg0.make_cell(v0, v1)
 
 seg0.cells()     # array of all cells in the segment
 len(seg0.cells)  # number of cells in the segment
@@ -90,11 +90,11 @@ seg0.cells[i]    # get element i of the array
 # Create cell #1 in seg1
 v0 = domain.vertices[1]
 v1 = domain.vertices[2]
-cell = seg1.create_cell(v0, v1)
+cell = seg1.make_cell(v0, v1)
 # Create cell #2 in seg1
 v0 = domain.vertices[1]
 v1 = domain.vertices[3]
-cell = seg1.create_cell(v0, v1)
+cell = seg1.make_cell(v0, v1)
 
 cell.vertices()     # array of all the vertices of the cell
 len(cell.vertices)  # number of vertices of the cell

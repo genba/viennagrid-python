@@ -344,33 +344,33 @@ class TestConfiguration(unittest.TestCase):
 		"""
 		# TODO: this fails because hexahedral domains are not implemented yet, and thus the classes don't exist
 	
-	def test_create_point(self):
+	def test_make_point(self):
 		##########
 		# LINEAR #
 		##########
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=1)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian1D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCylindrical3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.POLAR, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointPolar2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.SPHERICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointSpherical3D)
 		
 		##############
@@ -378,23 +378,23 @@ class TestConfiguration(unittest.TestCase):
 		##############
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.CARTESIAN, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.CARTESIAN, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCylindrical3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.POLAR, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointPolar2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.SPHERICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointSpherical3D)
 		
 		#################
@@ -402,23 +402,23 @@ class TestConfiguration(unittest.TestCase):
 		#################
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.CARTESIAN, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.CARTESIAN, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCylindrical3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.POLAR, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointPolar2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.SPHERICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointSpherical3D)
 		
 		###############
@@ -426,23 +426,23 @@ class TestConfiguration(unittest.TestCase):
 		###############
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.CARTESIAN, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.CARTESIAN, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCylindrical3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.POLAR, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointPolar2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.SPHERICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointSpherical3D)
 		
 		##############
@@ -450,52 +450,52 @@ class TestConfiguration(unittest.TestCase):
 		##############
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.CARTESIAN, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.CARTESIAN, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCartesian3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointCylindrical3D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.POLAR, dim=2)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointPolar2D)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.SPHERICAL, dim=3)
-		point = cfg.create_point()
+		point = cfg.make_point()
 		self.assertIsInstance(point, viennagrid.wrapper.PointSpherical3D)
 	
-	def test_create_domain(self):
+	def test_make_domain(self):
 		##########
 		# LINEAR #
 		##########
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=1)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.LinearCartesian1D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=2)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.LinearCartesian2D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CARTESIAN, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.LinearCartesian3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.LinearCylindrical3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.POLAR, dim=2)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.LinearPolar2D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.LINE_TAG, viennagrid.config.SPHERICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.LinearSpherical3D_Domain)
 		
 		##############
@@ -503,23 +503,23 @@ class TestConfiguration(unittest.TestCase):
 		##############
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.CARTESIAN, dim=2)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TriangularCartesian2D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.CARTESIAN, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TriangularCartesian3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TriangularCylindrical3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.POLAR, dim=2)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TriangularPolar2D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TRIANGLE_TAG, viennagrid.config.SPHERICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TriangularSpherical3D_Domain)
 		
 		#################
@@ -527,23 +527,23 @@ class TestConfiguration(unittest.TestCase):
 		#################
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.CARTESIAN, dim=2)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.QuadrilateralCartesian2D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.CARTESIAN, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.QuadrilateralCartesian3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.QuadrilateralCylindrical3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.POLAR, dim=2)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.QuadrilateralPolar2D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.QUADRILATERAL_TAG, viennagrid.config.SPHERICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.QuadrilateralSpherical3D_Domain)
 		
 		###############
@@ -551,15 +551,15 @@ class TestConfiguration(unittest.TestCase):
 		###############
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.CARTESIAN, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TetrahedralCartesian3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TetrahedralCylindrical3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.TETRAHEDRON_TAG, viennagrid.config.SPHERICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.TetrahedralSpherical3D_Domain)
 		
 		##############
@@ -567,15 +567,15 @@ class TestConfiguration(unittest.TestCase):
 		##############
 		"""
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.CARTESIAN, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.HexahedralCartesian3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.CYLINDRICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.HexahedralCylindrical3D_Domain)
 		
 		cfg = viennagrid.config.Configuration(viennagrid.config.HEXAHEDRON_TAG, viennagrid.config.SPHERICAL, dim=3)
-		domain = cfg.create_domain()
+		domain = cfg.make_domain()
 		self.assertIsInstance(domain, viennagrid.wrapper.HexahedralSpherical3D_Domain)
 		"""
 		# TODO: this fails because hexahedral domains are not implemented yet, and thus the classes don't exist

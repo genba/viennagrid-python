@@ -14,7 +14,7 @@ unsigned int TriangularCartesian2D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TriangularCartesian2D_Segment TriangularCartesian2D_Segmentation::create_segment()
+TriangularCartesian2D_Segment TriangularCartesian2D_Segmentation::make_segment()
 {
 	TriangularCartesian2D_Segment_t seg = segmentation.make_segment();
 	TriangularCartesian2D_Segment new_segment(seg, *this);
@@ -49,7 +49,7 @@ unsigned int TriangularCartesian3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TriangularCartesian3D_Segment TriangularCartesian3D_Segmentation::create_segment()
+TriangularCartesian3D_Segment TriangularCartesian3D_Segmentation::make_segment()
 {
 	TriangularCartesian3D_Segment_t seg = segmentation.make_segment();
 	TriangularCartesian3D_Segment new_segment(seg, *this);
@@ -84,7 +84,7 @@ unsigned int TriangularCylindrical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TriangularCylindrical3D_Segment TriangularCylindrical3D_Segmentation::create_segment()
+TriangularCylindrical3D_Segment TriangularCylindrical3D_Segmentation::make_segment()
 {
 	TriangularCylindrical3D_Segment_t seg = segmentation.make_segment();
 	TriangularCylindrical3D_Segment new_segment(seg, *this);
@@ -119,7 +119,7 @@ unsigned int TriangularPolar2D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TriangularPolar2D_Segment TriangularPolar2D_Segmentation::create_segment()
+TriangularPolar2D_Segment TriangularPolar2D_Segmentation::make_segment()
 {
 	TriangularPolar2D_Segment_t seg = segmentation.make_segment();
 	TriangularPolar2D_Segment new_segment(seg, *this);
@@ -154,7 +154,7 @@ unsigned int TriangularSpherical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TriangularSpherical3D_Segment TriangularSpherical3D_Segmentation::create_segment()
+TriangularSpherical3D_Segment TriangularSpherical3D_Segmentation::make_segment()
 {
 	TriangularSpherical3D_Segment_t seg = segmentation.make_segment();
 	TriangularSpherical3D_Segment new_segment(seg, *this);

@@ -24,13 +24,13 @@ class TestCell_LinearCartesian1D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -38,7 +38,7 @@ class TestCell_LinearCartesian1D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -76,13 +76,13 @@ class TestCell_LinearCartesian2D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -90,7 +90,7 @@ class TestCell_LinearCartesian2D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -128,13 +128,13 @@ class TestCell_LinearCartesian3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -142,7 +142,7 @@ class TestCell_LinearCartesian3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -180,13 +180,13 @@ class TestCell_LinearCylindrical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -194,7 +194,7 @@ class TestCell_LinearCylindrical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -232,13 +232,13 @@ class TestCell_LinearPolar2D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -246,7 +246,7 @@ class TestCell_LinearPolar2D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -284,13 +284,13 @@ class TestCell_LinearSpherical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -298,7 +298,7 @@ class TestCell_LinearSpherical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -340,13 +340,13 @@ class TestCell_TriangularCartesian2D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -354,7 +354,7 @@ class TestCell_TriangularCartesian2D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -392,13 +392,13 @@ class TestCell_TriangularCartesian3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -406,7 +406,7 @@ class TestCell_TriangularCartesian3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -444,13 +444,13 @@ class TestCell_TriangularCylindrical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -458,7 +458,7 @@ class TestCell_TriangularCylindrical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -496,13 +496,13 @@ class TestCell_TriangularPolar2D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -510,7 +510,7 @@ class TestCell_TriangularPolar2D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -548,13 +548,13 @@ class TestCell_TriangularSpherical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -562,7 +562,7 @@ class TestCell_TriangularSpherical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -604,13 +604,13 @@ class TestCell_QuadrilateralCartesian2D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -618,7 +618,7 @@ class TestCell_QuadrilateralCartesian2D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -656,13 +656,13 @@ class TestCell_QuadrilateralCartesian3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -670,7 +670,7 @@ class TestCell_QuadrilateralCartesian3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -708,13 +708,13 @@ class TestCell_QuadrilateralCylindrical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -722,7 +722,7 @@ class TestCell_QuadrilateralCylindrical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -760,13 +760,13 @@ class TestCell_QuadrilateralPolar2D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -774,7 +774,7 @@ class TestCell_QuadrilateralPolar2D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -812,13 +812,13 @@ class TestCell_QuadrilateralSpherical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -826,7 +826,7 @@ class TestCell_QuadrilateralSpherical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -868,13 +868,13 @@ class TestCell_TetrahedralCartesian3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -882,7 +882,7 @@ class TestCell_TetrahedralCartesian3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -920,13 +920,13 @@ class TestCell_TetrahedralCylindrical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -934,7 +934,7 @@ class TestCell_TetrahedralCylindrical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):
@@ -972,13 +972,13 @@ class TestCell_TetrahedralSpherical3D(unittest.TestCase):
 		]
 		self.num_vertices = len(self.vertices)
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		
 		# Create a new segmentation of the previously created domain
 		self.segmentation = viennagrid.Segmentation(self.domain)
 		
 		# Create a new segment in the segmentation
-		self.segment = self.segmentation.create_segment()
+		self.segment = self.segmentation.make_segment()
 		
 		# Create cells in the segment
 		self.cell_vertices = [
@@ -986,7 +986,7 @@ class TestCell_TetrahedralSpherical3D(unittest.TestCase):
 		]
 		self.num_cells = len(self.cell_vertices)
 		for vertices in self.cell_vertices:
-			self.cell = self.segment.create_cell(*vertices)
+			self.cell = self.segment.make_cell(*vertices)
 		self.num_vertices_per_cell = len(self.cell_vertices[0])
 	
 	def test_init(self):

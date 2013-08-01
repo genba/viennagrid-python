@@ -24,7 +24,7 @@ public:
 	TriangularCartesian2D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian2D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointCartesian2D point); // TODO: rename to make_vertex or make_vertex?
 	TriangularCartesian2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -47,7 +47,7 @@ public:
 	TriangularCartesian3D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian3D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointCartesian3D point); // TODO: rename to make_vertex or make_vertex?
 	TriangularCartesian3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -70,7 +70,7 @@ public:
 	TriangularCylindrical3D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCylindrical3D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointCylindrical3D point); // TODO: rename to make_vertex or make_vertex?
 	TriangularCylindrical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -93,7 +93,7 @@ public:
 	TriangularPolar2D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointPolar2D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointPolar2D point); // TODO: rename to make_vertex or make_vertex?
 	TriangularPolar2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -116,7 +116,7 @@ public:
 	TriangularSpherical3D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointSpherical3D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointSpherical3D point); // TODO: rename to make_vertex or make_vertex?
 	TriangularSpherical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	

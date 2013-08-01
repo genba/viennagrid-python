@@ -14,7 +14,7 @@ unsigned int QuadrilateralCartesian2D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-QuadrilateralCartesian2D_Segment QuadrilateralCartesian2D_Segmentation::create_segment()
+QuadrilateralCartesian2D_Segment QuadrilateralCartesian2D_Segmentation::make_segment()
 {
 	QuadrilateralCartesian2D_Segment_t seg = segmentation.make_segment();
 	QuadrilateralCartesian2D_Segment new_segment(seg, *this);
@@ -49,7 +49,7 @@ unsigned int QuadrilateralCartesian3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-QuadrilateralCartesian3D_Segment QuadrilateralCartesian3D_Segmentation::create_segment()
+QuadrilateralCartesian3D_Segment QuadrilateralCartesian3D_Segmentation::make_segment()
 {
 	QuadrilateralCartesian3D_Segment_t seg = segmentation.make_segment();
 	QuadrilateralCartesian3D_Segment new_segment(seg, *this);
@@ -84,7 +84,7 @@ unsigned int QuadrilateralCylindrical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-QuadrilateralCylindrical3D_Segment QuadrilateralCylindrical3D_Segmentation::create_segment()
+QuadrilateralCylindrical3D_Segment QuadrilateralCylindrical3D_Segmentation::make_segment()
 {
 	QuadrilateralCylindrical3D_Segment_t seg = segmentation.make_segment();
 	QuadrilateralCylindrical3D_Segment new_segment(seg, *this);
@@ -119,7 +119,7 @@ unsigned int QuadrilateralPolar2D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-QuadrilateralPolar2D_Segment QuadrilateralPolar2D_Segmentation::create_segment()
+QuadrilateralPolar2D_Segment QuadrilateralPolar2D_Segmentation::make_segment()
 {
 	QuadrilateralPolar2D_Segment_t seg = segmentation.make_segment();
 	QuadrilateralPolar2D_Segment new_segment(seg, *this);
@@ -154,7 +154,7 @@ unsigned int QuadrilateralSpherical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-QuadrilateralSpherical3D_Segment QuadrilateralSpherical3D_Segmentation::create_segment()
+QuadrilateralSpherical3D_Segment QuadrilateralSpherical3D_Segmentation::make_segment()
 {
 	QuadrilateralSpherical3D_Segment_t seg = segmentation.make_segment();
 	QuadrilateralSpherical3D_Segment new_segment(seg, *this);

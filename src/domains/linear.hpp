@@ -22,7 +22,7 @@ public:
 	LinearCartesian1D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian1D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointCartesian1D point); // TODO: rename to make_vertex or make_vertex?
 	LinearCartesian1D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -45,7 +45,7 @@ public:
 	LinearCartesian2D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian2D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointCartesian2D point); // TODO: rename to make_vertex or make_vertex?
 	LinearCartesian2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -68,7 +68,7 @@ public:
 	LinearCartesian3D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian3D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointCartesian3D point); // TODO: rename to make_vertex or make_vertex?
 	LinearCartesian3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -91,7 +91,7 @@ public:
 	LinearCylindrical3D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointCylindrical3D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointCylindrical3D point); // TODO: rename to make_vertex or make_vertex?
 	LinearCylindrical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -114,7 +114,7 @@ public:
 	LinearPolar2D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointPolar2D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointPolar2D point); // TODO: rename to make_vertex or make_vertex?
 	LinearPolar2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -137,7 +137,7 @@ public:
 	LinearSpherical3D_Domain() {};
 
 	unsigned int num_vertices();
-	void add_vertex(PointSpherical3D point); // TODO: rename to create_vertex or make_vertex?
+	void make_vertex(PointSpherical3D point); // TODO: rename to make_vertex or make_vertex?
 	LinearSpherical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	

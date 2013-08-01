@@ -25,36 +25,36 @@ class TestLinearCartesian1D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.LinearCartesian1D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.LinearCartesian1D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -70,36 +70,36 @@ class TestLinearCartesian2D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.LinearCartesian2D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.LinearCartesian2D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -115,36 +115,36 @@ class TestLinearCartesian3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.LinearCartesian3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.LinearCartesian3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -160,36 +160,36 @@ class TestLinearCylindrical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.LinearCylindrical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.LinearCylindrical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -205,36 +205,36 @@ class TestLinearPolar2D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.LinearPolar2D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.LinearPolar2D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -250,36 +250,36 @@ class TestLinearSpherical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.LinearSpherical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.LinearSpherical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -299,36 +299,36 @@ class TestTriangularCartesian2D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TriangularCartesian2D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TriangularCartesian2D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -344,36 +344,36 @@ class TestTriangularCartesian3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TriangularCartesian3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TriangularCartesian3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -389,36 +389,36 @@ class TestTriangularCylindrical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TriangularCylindrical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TriangularCylindrical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -434,36 +434,36 @@ class TestTriangularPolar2D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TriangularPolar2D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TriangularPolar2D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -479,36 +479,36 @@ class TestTriangularSpherical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TriangularSpherical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TriangularSpherical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -528,36 +528,36 @@ class TestQuadrilateralCartesian2D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.QuadrilateralCartesian2D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.QuadrilateralCartesian2D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -573,36 +573,36 @@ class TestQuadrilateralCartesian3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.QuadrilateralCartesian3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.QuadrilateralCartesian3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -618,36 +618,36 @@ class TestQuadrilateralCylindrical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.QuadrilateralCylindrical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.QuadrilateralCylindrical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -663,36 +663,36 @@ class TestQuadrilateralPolar2D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.QuadrilateralPolar2D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.QuadrilateralPolar2D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -708,36 +708,36 @@ class TestQuadrilateralSpherical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.QuadrilateralSpherical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.QuadrilateralSpherical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -757,36 +757,36 @@ class TestTetrahedralCartesian3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TetrahedralCartesian3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TetrahedralCartesian3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -802,36 +802,36 @@ class TestTetrahedralCylindrical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TetrahedralCylindrical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TetrahedralCylindrical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -847,36 +847,36 @@ class TestTetrahedralSpherical3D_Segmentation(unittest.TestCase):
 		self.num_vertices = len(self.vertices)
 		self.domain = viennagrid_wrapper.TetrahedralSpherical3D_Domain()
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.segmentation = viennagrid_wrapper.TetrahedralSpherical3D_Segmentation(self.domain)
 		self.num_segments = 5
 	
-	def test_create_segment(self):
-		"""Test method 'create_segment' and attribute 'segments' of class 'Segmentation'."""
+	def test_make_segment(self):
+		"""Test method 'make_segment' and attribute 'segments' of class 'Segmentation'."""
 		self.assertEqual(len(self.segmentation.segments), 0)
 		self.assertEqual(self.segmentation.num_segments, 0)
 		for i in range(0, self.num_segments):
-			self.segmentation.create_segment()
+			self.segmentation.make_segment()
 			self.assertEqual(len(self.segmentation.segments), i+1)
 			self.assertEqual(self.segmentation.num_segments, i+1)
 		self.assertEqual(len(self.segmentation.segments), self.num_segments)
 		self.assertEqual(self.segmentation.num_segments, self.num_segments)
 	
-	def test_create_cell(self):
-		"""Test method 'create_cell' and attribute 'cells' of class 'Segment'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Segment'."""
 		for segment in self.segmentation.segments:
 			self.assertEqual(len(segment.cells), 0)
 			self.assertEqual(segment.num_cells, 0)
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.create_cell(v1, v2)
+			segment.make_cell(v1, v2)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 

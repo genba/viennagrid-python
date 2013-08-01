@@ -43,7 +43,7 @@ class TestDomain_LinearCartesian1D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -110,7 +110,7 @@ class TestDomain_LinearCartesian2D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -177,7 +177,7 @@ class TestDomain_LinearCartesian3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -244,7 +244,7 @@ class TestDomain_LinearCylindrical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -311,7 +311,7 @@ class TestDomain_LinearPolar2D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -378,7 +378,7 @@ class TestDomain_LinearSpherical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -449,7 +449,7 @@ class TestDomain_TriangularCartesian2D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -516,7 +516,7 @@ class TestDomain_TriangularCartesian3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -583,7 +583,7 @@ class TestDomain_TriangularCylindrical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -650,7 +650,7 @@ class TestDomain_TriangularPolar2D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -717,7 +717,7 @@ class TestDomain_TriangularSpherical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -788,7 +788,7 @@ class TestDomain_QuadrilateralCartesian2D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -855,7 +855,7 @@ class TestDomain_QuadrilateralCartesian3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -922,7 +922,7 @@ class TestDomain_QuadrilateralCylindrical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -989,7 +989,7 @@ class TestDomain_QuadrilateralPolar2D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -1056,7 +1056,7 @@ class TestDomain_QuadrilateralSpherical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -1127,7 +1127,7 @@ class TestDomain_TetrahedralCartesian3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -1194,7 +1194,7 @@ class TestDomain_TetrahedralCylindrical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)
@@ -1261,7 +1261,7 @@ class TestDomain_TetrahedralSpherical3D(unittest.TestCase):
 		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			
 			# self.assertEqual(self.domain.vertices(), self.vertices[0:i+1]) # FIXME: objects are not equal
 			self.assertEqual(len(self.domain.vertices), i+1)

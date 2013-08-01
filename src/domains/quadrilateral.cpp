@@ -24,7 +24,7 @@ unsigned int QuadrilateralCartesian2D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void QuadrilateralCartesian2D_Domain::add_vertex(PointCartesian2D point)
+void QuadrilateralCartesian2D_Domain::make_vertex(PointCartesian2D point)
 {
 	viennagrid::make_vertex(domain, point.get_point());
 }
@@ -117,7 +117,7 @@ unsigned int QuadrilateralCartesian3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void QuadrilateralCartesian3D_Domain::add_vertex(PointCartesian3D point)
+void QuadrilateralCartesian3D_Domain::make_vertex(PointCartesian3D point)
 {
 	viennagrid::make_vertex(domain, point.get_point());
 }
@@ -210,7 +210,7 @@ unsigned int QuadrilateralCylindrical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void QuadrilateralCylindrical3D_Domain::add_vertex(PointCylindrical3D point)
+void QuadrilateralCylindrical3D_Domain::make_vertex(PointCylindrical3D point)
 {
 	viennagrid::make_vertex(domain, point.get_point());
 }
@@ -303,7 +303,7 @@ unsigned int QuadrilateralPolar2D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void QuadrilateralPolar2D_Domain::add_vertex(PointPolar2D point)
+void QuadrilateralPolar2D_Domain::make_vertex(PointPolar2D point)
 {
 	viennagrid::make_vertex(domain, point.get_point());
 }
@@ -396,7 +396,7 @@ unsigned int QuadrilateralSpherical3D_Domain::num_vertices()
 	return vertex_range.size();
 }
 
-void QuadrilateralSpherical3D_Domain::add_vertex(PointSpherical3D point)
+void QuadrilateralSpherical3D_Domain::make_vertex(PointSpherical3D point)
 {
 	viennagrid::make_vertex(domain, point.get_point());
 }

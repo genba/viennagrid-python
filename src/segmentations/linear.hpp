@@ -20,7 +20,7 @@ class LinearCartesian1D_Segmentation
 public:
 	LinearCartesian1D_Segmentation(LinearCartesian1D_Domain &dom);
 	unsigned int num_segments();
-	LinearCartesian1D_Segment create_segment();
+	LinearCartesian1D_Segment make_segment();
 	list get_segments();
 	LinearCartesian1D_Domain_t & get_domain();
 };
@@ -36,7 +36,7 @@ class LinearCartesian2D_Segmentation
 public:
 	LinearCartesian2D_Segmentation(LinearCartesian2D_Domain &dom);
 	unsigned int num_segments();
-	LinearCartesian2D_Segment create_segment();
+	LinearCartesian2D_Segment make_segment();
 	list get_segments();
 	LinearCartesian2D_Domain_t & get_domain();
 };
@@ -52,7 +52,7 @@ class LinearCartesian3D_Segmentation
 public:
 	LinearCartesian3D_Segmentation(LinearCartesian3D_Domain &dom);
 	unsigned int num_segments();
-	LinearCartesian3D_Segment create_segment();
+	LinearCartesian3D_Segment make_segment();
 	list get_segments();
 	LinearCartesian3D_Domain_t & get_domain();
 };
@@ -68,7 +68,7 @@ class LinearCylindrical3D_Segmentation
 public:
 	LinearCylindrical3D_Segmentation(LinearCylindrical3D_Domain &dom);
 	unsigned int num_segments();
-	LinearCylindrical3D_Segment create_segment();
+	LinearCylindrical3D_Segment make_segment();
 	list get_segments();
 	LinearCylindrical3D_Domain_t & get_domain();
 };
@@ -84,7 +84,7 @@ class LinearPolar2D_Segmentation
 public:
 	LinearPolar2D_Segmentation(LinearPolar2D_Domain &dom);
 	unsigned int num_segments();
-	LinearPolar2D_Segment create_segment();
+	LinearPolar2D_Segment make_segment();
 	list get_segments();
 	LinearPolar2D_Domain_t & get_domain();
 };
@@ -100,7 +100,7 @@ class LinearSpherical3D_Segmentation
 public:
 	LinearSpherical3D_Segmentation(LinearSpherical3D_Domain &dom);
 	unsigned int num_segments();
-	LinearSpherical3D_Segment create_segment();
+	LinearSpherical3D_Segment make_segment();
 	list get_segments();
 	LinearSpherical3D_Domain_t & get_domain();
 };

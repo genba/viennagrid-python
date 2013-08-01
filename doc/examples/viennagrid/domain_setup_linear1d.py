@@ -8,30 +8,30 @@ import viennagrid
 config = viennagrid.config.linear_1d
 
 domain = viennagrid.Domain(config)
-domain.add_vertex(viennagrid.Point(1))
-domain.add_vertex(viennagrid.Point(2))
-domain.add_vertex(viennagrid.Point(3))
-domain.add_vertex(viennagrid.Point(4))
+domain.make_vertex(viennagrid.Point(1))
+domain.make_vertex(viennagrid.Point(2))
+domain.make_vertex(viennagrid.Point(3))
+domain.make_vertex(viennagrid.Point(4))
 
 segmentation = viennagrid.Segmentation(domain)
-seg0 = segmentation.create_segment()
-seg1 = segmentation.create_segment()
+seg0 = segmentation.make_segment()
+seg1 = segmentation.make_segment()
 
 v0 = domain.vertices[0]
 v1 = domain.vertices[1]
-cell = seg0.create_cell(v0, v1)
+cell = seg0.make_cell(v0, v1)
 
 v0 = domain.vertices[0]
 v1 = domain.vertices[2]
-cell = seg0.create_cell(v0, v1)
+cell = seg0.make_cell(v0, v1)
 
 v0 = domain.vertices[1]
 v1 = domain.vertices[2]
-cell = seg1.create_cell(v0, v1)
+cell = seg1.make_cell(v0, v1)
 
 v0 = domain.vertices[1]
 v1 = domain.vertices[3]
-cell = seg1.create_cell(v0, v1)
+cell = seg1.make_cell(v0, v1)
 
 print('\nDomain has', len(domain.vertices), 'vertices:\n')
 for i, vertex in enumerate(domain.vertices):
