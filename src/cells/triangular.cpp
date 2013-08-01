@@ -11,6 +11,11 @@ TriangularCartesian2D_Cell::TriangularCartesian2D_Cell(TriangularCartesian2D_Cel
 	cell = &initial_cell;
 }
 
+unsigned int TriangularCartesian2D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list TriangularCartesian2D_Cell::get_vertices()
 {
 	list vertices;
@@ -37,6 +42,11 @@ list TriangularCartesian2D_Cell::get_vertices()
 TriangularCartesian3D_Cell::TriangularCartesian3D_Cell(TriangularCartesian3D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int TriangularCartesian3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list TriangularCartesian3D_Cell::get_vertices()
@@ -67,6 +77,11 @@ TriangularCylindrical3D_Cell::TriangularCylindrical3D_Cell(TriangularCylindrical
 	cell = &initial_cell;
 }
 
+unsigned int TriangularCylindrical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list TriangularCylindrical3D_Cell::get_vertices()
 {
 	list vertices;
@@ -95,6 +110,11 @@ TriangularPolar2D_Cell::TriangularPolar2D_Cell(TriangularPolar2D_Cell_t &initial
 	cell = &initial_cell;
 }
 
+unsigned int TriangularPolar2D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list TriangularPolar2D_Cell::get_vertices()
 {
 	list vertices;
@@ -121,6 +141,11 @@ list TriangularPolar2D_Cell::get_vertices()
 TriangularSpherical3D_Cell::TriangularSpherical3D_Cell(TriangularSpherical3D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int TriangularSpherical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list TriangularSpherical3D_Cell::get_vertices()

@@ -226,18 +226,18 @@ class Cell(object):
 	@property
 	def vertices(self):
 		class VertexList(object):
-			def __init__(self, vertex_list):
-				self._vertex_list = vertex_list
+			def __init__(self, cell):
+				self.cell = cell
 			def __call__(self):
-				return [Vertex(v) for v in self._vertex_list]
+				return [Vertex(v) for v in self._cell.vertices]
 			def __len__(self):
-				return len(self._vertex_list)
+				return self._cell.num_vertices
 			def __iter__(self):
-				for v in self._vertex_list:
+				for v in self._cell.vertices:
 					yield Vertex(v)
 			def __getitem__(self, index):
-				return Vertex(self._vertex_list[index])
-		return VertexList(self._cell.vertices)
+				return Vertex(self._cell.vertices[index])
+		return VertexList(self._cell)
 	
 	def __iter__(self):
 		for vertex in self._cell.vertices:

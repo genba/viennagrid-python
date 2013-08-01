@@ -45,6 +45,7 @@ class TestLinearCartesian1D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestLinearCartesian2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -78,6 +79,7 @@ class TestLinearCartesian2D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestLinearCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -111,6 +113,7 @@ class TestLinearCartesian3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestLinearCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -144,6 +147,7 @@ class TestLinearCylindrical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestLinearPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -177,6 +181,7 @@ class TestLinearPolar2D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestLinearSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -210,6 +215,7 @@ class TestLinearSpherical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 ######################
 # TRIANGULAR DOMAINS #
@@ -248,6 +254,7 @@ class TestTriangularCartesian2D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestTriangularCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -282,6 +289,7 @@ class TestTriangularCartesian3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestTriangularCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -316,6 +324,7 @@ class TestTriangularCylindrical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestTriangularPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -350,6 +359,7 @@ class TestTriangularPolar2D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestTriangularSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -384,6 +394,7 @@ class TestTriangularSpherical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 #########################
 # QUADRILATERAL DOMAINS #
@@ -423,6 +434,7 @@ class TestQuadrilateralCartesian2D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestQuadrilateralCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -458,6 +470,7 @@ class TestQuadrilateralCartesian3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestQuadrilateralCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -493,6 +506,7 @@ class TestQuadrilateralCylindrical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestQuadrilateralPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -528,6 +542,7 @@ class TestQuadrilateralPolar2D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestQuadrilateralSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -563,6 +578,7 @@ class TestQuadrilateralSpherical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 #######################
 # TETRAHEDRAL DOMAINS #
@@ -602,6 +618,7 @@ class TestTetrahedralCartesian3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestTetrahedralCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -637,6 +654,7 @@ class TestTetrahedralCylindrical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 class TestTetrahedralSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -672,6 +690,7 @@ class TestTetrahedralSpherical3D_Cell(unittest.TestCase):
 	def test_vertices(self):
 		"""Test attribute 'vertices' of cell."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
+		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
 
 if __name__ == '__main__':
 	unittest.main()
