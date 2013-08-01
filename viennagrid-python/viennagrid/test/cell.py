@@ -43,8 +43,7 @@ class TestCell_LinearCartesian1D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -96,8 +95,7 @@ class TestCell_LinearCartesian2D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -149,8 +147,7 @@ class TestCell_LinearCartesian3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -202,8 +199,7 @@ class TestCell_LinearCylindrical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -255,8 +251,7 @@ class TestCell_LinearPolar2D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -308,8 +303,7 @@ class TestCell_LinearSpherical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -365,8 +359,7 @@ class TestCell_TriangularCartesian2D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -418,8 +411,7 @@ class TestCell_TriangularCartesian3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -471,8 +463,7 @@ class TestCell_TriangularCylindrical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -524,8 +515,7 @@ class TestCell_TriangularPolar2D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -577,8 +567,7 @@ class TestCell_TriangularSpherical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -634,8 +623,7 @@ class TestCell_QuadrilateralCartesian2D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -687,8 +675,7 @@ class TestCell_QuadrilateralCartesian3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -740,8 +727,7 @@ class TestCell_QuadrilateralCylindrical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -793,8 +779,7 @@ class TestCell_QuadrilateralPolar2D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -846,8 +831,7 @@ class TestCell_QuadrilateralSpherical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -903,8 +887,7 @@ class TestCell_TetrahedralCartesian3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -956,8 +939,7 @@ class TestCell_TetrahedralCylindrical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:
@@ -1009,8 +991,7 @@ class TestCell_TetrahedralSpherical3D(unittest.TestCase):
 	
 	def test_init(self):
 		self.assertEqual(self.segmentation.domain, self.domain)
-		self.assertEqual(len(self.cell.vertices), 0)
-		self.assertEqual(self.cell.vertices(), [])
+		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 	
 	def test_iter(self):
 		for vertex in self.cell:

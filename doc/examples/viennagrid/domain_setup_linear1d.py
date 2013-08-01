@@ -35,7 +35,7 @@ cell = seg1.create_cell(v0, v1)
 
 print('\nDomain has', len(domain.vertices), 'vertices:\n')
 for i, vertex in enumerate(domain.vertices):
-	print('\tVertex ', i, ': ', 'coordinates', sep='') # TODO: wrap ID and coords, like examples/tutorial/domain_setup
+	print('\tVertex ', i, ': ', vertex, sep='') # TODO: wrap ID and coords, like examples/tutorial/domain_setup
 else:
 	print()
 
@@ -43,6 +43,10 @@ print('Segmentation has', len(segmentation.segments), 'segments:\n')
 for i, segment in enumerate(segmentation.segments):
 	print('\tSegment seg', i, ' has ', len(segment.cells), ' cells:\n', sep='')
 	for cell in segment.cells:
-		print('\t\tCell has', len(cell.vertices), 'vertices:') # TODO: wait until coords of vertices can be read (see previous TODO)
+		print('\t\tCell has', len(cell.vertices), 'vertices:\n') # TODO: wait until coords of vertices can be read (see previous TODO)
+		for vertex in cell.vertices:
+			print('\t\t\t', vertex)
+		else:
+			print()
 	else:
 		print()
