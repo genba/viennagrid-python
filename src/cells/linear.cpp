@@ -9,6 +9,11 @@ LinearCartesian1D_Cell::LinearCartesian1D_Cell(LinearCartesian1D_Cell_t &initial
 	cell = &initial_cell;
 }
 
+unsigned int LinearCartesian1D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list LinearCartesian1D_Cell::get_vertices()
 {
 	list vertices;
@@ -35,6 +40,11 @@ list LinearCartesian1D_Cell::get_vertices()
 LinearCartesian2D_Cell::LinearCartesian2D_Cell(LinearCartesian2D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int LinearCartesian2D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list LinearCartesian2D_Cell::get_vertices()
@@ -65,6 +75,11 @@ LinearCartesian3D_Cell::LinearCartesian3D_Cell(LinearCartesian3D_Cell_t &initial
 	cell = &initial_cell;
 }
 
+unsigned int LinearCartesian3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list LinearCartesian3D_Cell::get_vertices()
 {
 	list vertices;
@@ -91,6 +106,11 @@ list LinearCartesian3D_Cell::get_vertices()
 LinearCylindrical3D_Cell::LinearCylindrical3D_Cell(LinearCylindrical3D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int LinearCylindrical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list LinearCylindrical3D_Cell::get_vertices()
@@ -121,6 +141,11 @@ LinearPolar2D_Cell::LinearPolar2D_Cell(LinearPolar2D_Cell_t &initial_cell)
 	cell = &initial_cell;
 }
 
+unsigned int LinearPolar2D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list LinearPolar2D_Cell::get_vertices()
 {
 	list vertices;
@@ -147,6 +172,11 @@ list LinearPolar2D_Cell::get_vertices()
 LinearSpherical3D_Cell::LinearSpherical3D_Cell(LinearSpherical3D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int LinearSpherical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list LinearSpherical3D_Cell::get_vertices()

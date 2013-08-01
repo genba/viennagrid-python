@@ -9,6 +9,11 @@ TriangularCartesian2D_Segmentation::TriangularCartesian2D_Segmentation(Triangula
 	domain = &dom;
 }
 
+unsigned int TriangularCartesian2D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 TriangularCartesian2D_Segment TriangularCartesian2D_Segmentation::create_segment()
 {
 	TriangularCartesian2D_Segment_t seg = segmentation.make_segment();
@@ -37,6 +42,11 @@ TriangularCartesian2D_Domain_t & TriangularCartesian2D_Segmentation::get_domain(
 TriangularCartesian3D_Segmentation::TriangularCartesian3D_Segmentation(TriangularCartesian3D_Domain &dom) : segmentation(dom.get_domain())
 {
 	domain = &dom;
+}
+
+unsigned int TriangularCartesian3D_Segmentation::num_segments()
+{
+	return segmentation.size();
 }
 
 TriangularCartesian3D_Segment TriangularCartesian3D_Segmentation::create_segment()
@@ -69,6 +79,11 @@ TriangularCylindrical3D_Segmentation::TriangularCylindrical3D_Segmentation(Trian
 	domain = &dom;
 }
 
+unsigned int TriangularCylindrical3D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 TriangularCylindrical3D_Segment TriangularCylindrical3D_Segmentation::create_segment()
 {
 	TriangularCylindrical3D_Segment_t seg = segmentation.make_segment();
@@ -99,6 +114,11 @@ TriangularPolar2D_Segmentation::TriangularPolar2D_Segmentation(TriangularPolar2D
 	domain = &dom;
 }
 
+unsigned int TriangularPolar2D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 TriangularPolar2D_Segment TriangularPolar2D_Segmentation::create_segment()
 {
 	TriangularPolar2D_Segment_t seg = segmentation.make_segment();
@@ -127,6 +147,11 @@ TriangularPolar2D_Domain_t & TriangularPolar2D_Segmentation::get_domain()
 TriangularSpherical3D_Segmentation::TriangularSpherical3D_Segmentation(TriangularSpherical3D_Domain &dom) : segmentation(dom.get_domain())
 {
 	domain = &dom;
+}
+
+unsigned int TriangularSpherical3D_Segmentation::num_segments()
+{
+	return segmentation.size();
 }
 
 TriangularSpherical3D_Segment TriangularSpherical3D_Segmentation::create_segment()

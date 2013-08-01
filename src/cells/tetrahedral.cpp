@@ -11,6 +11,11 @@ TetrahedralCartesian3D_Cell::TetrahedralCartesian3D_Cell(TetrahedralCartesian3D_
 	cell = &initial_cell;
 }
 
+unsigned int TetrahedralCartesian3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list TetrahedralCartesian3D_Cell::get_vertices()
 {
 	list vertices;
@@ -39,6 +44,11 @@ TetrahedralCylindrical3D_Cell::TetrahedralCylindrical3D_Cell(TetrahedralCylindri
 	cell = &initial_cell;
 }
 
+unsigned int TetrahedralCylindrical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list TetrahedralCylindrical3D_Cell::get_vertices()
 {
 	list vertices;
@@ -65,6 +75,11 @@ list TetrahedralCylindrical3D_Cell::get_vertices()
 TetrahedralSpherical3D_Cell::TetrahedralSpherical3D_Cell(TetrahedralSpherical3D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int TetrahedralSpherical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list TetrahedralSpherical3D_Cell::get_vertices()

@@ -11,6 +11,11 @@ QuadrilateralCartesian2D_Cell::QuadrilateralCartesian2D_Cell(QuadrilateralCartes
 	cell = &initial_cell;
 }
 
+unsigned int QuadrilateralCartesian2D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list QuadrilateralCartesian2D_Cell::get_vertices()
 {
 	list vertices;
@@ -37,6 +42,11 @@ list QuadrilateralCartesian2D_Cell::get_vertices()
 QuadrilateralCartesian3D_Cell::QuadrilateralCartesian3D_Cell(QuadrilateralCartesian3D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int QuadrilateralCartesian3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list QuadrilateralCartesian3D_Cell::get_vertices()
@@ -67,6 +77,11 @@ QuadrilateralCylindrical3D_Cell::QuadrilateralCylindrical3D_Cell(QuadrilateralCy
 	cell = &initial_cell;
 }
 
+unsigned int QuadrilateralCylindrical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list QuadrilateralCylindrical3D_Cell::get_vertices()
 {
 	list vertices;
@@ -95,6 +110,11 @@ QuadrilateralPolar2D_Cell::QuadrilateralPolar2D_Cell(QuadrilateralPolar2D_Cell_t
 	cell = &initial_cell;
 }
 
+unsigned int QuadrilateralPolar2D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
+}
+
 list QuadrilateralPolar2D_Cell::get_vertices()
 {
 	list vertices;
@@ -121,6 +141,11 @@ list QuadrilateralPolar2D_Cell::get_vertices()
 QuadrilateralSpherical3D_Cell::QuadrilateralSpherical3D_Cell(QuadrilateralSpherical3D_Cell_t &initial_cell)
 {
 	cell = &initial_cell;
+}
+
+unsigned int QuadrilateralSpherical3D_Cell::num_vertices()
+{
+	return viennagrid::elements<viennagrid::vertex_tag>(*cell).size();
 }
 
 list QuadrilateralSpherical3D_Cell::get_vertices()

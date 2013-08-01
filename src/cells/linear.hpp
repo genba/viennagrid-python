@@ -21,6 +21,7 @@ class LinearCartesian1D_Cell {
 	LinearCartesian1D_Cell_t    *cell;
 public:
 	LinearCartesian1D_Cell(LinearCartesian1D_Cell_t &initial_cell);
+	unsigned int num_vertices();
 	list get_vertices();
 };
 
@@ -32,6 +33,7 @@ class LinearCartesian2D_Cell {
 	LinearCartesian2D_Cell_t    *cell;
 public:
 	LinearCartesian2D_Cell(LinearCartesian2D_Cell_t &initial_cell);
+	unsigned int num_vertices();
 	list get_vertices();
 };
 
@@ -43,6 +45,7 @@ class LinearCartesian3D_Cell {
 	LinearCartesian3D_Cell_t    *cell;
 public:
 	LinearCartesian3D_Cell(LinearCartesian3D_Cell_t &initial_cell);
+	unsigned int num_vertices();
 	list get_vertices();
 };
 
@@ -54,6 +57,7 @@ class LinearCylindrical3D_Cell {
 	LinearCylindrical3D_Cell_t    *cell;
 public:
 	LinearCylindrical3D_Cell(LinearCylindrical3D_Cell_t &initial_cell);
+	unsigned int num_vertices();
 	list get_vertices();
 };
 
@@ -65,6 +69,7 @@ class LinearPolar2D_Cell {
 	LinearPolar2D_Cell_t    *cell;
 public:
 	LinearPolar2D_Cell(LinearPolar2D_Cell_t &initial_cell);
+	unsigned int num_vertices();
 	list get_vertices();
 };
 
@@ -76,6 +81,7 @@ class LinearSpherical3D_Cell {
 	LinearSpherical3D_Cell_t    *cell;
 public:
 	LinearSpherical3D_Cell(LinearSpherical3D_Cell_t &initial_cell);
+	unsigned int num_vertices();
 	list get_vertices();
 };
 

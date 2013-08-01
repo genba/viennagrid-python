@@ -169,18 +169,18 @@ class Segmentation(object):
 	@property
 	def segments(self):
 		class SegmentList(object):
-			def __init__(self, segment_list):
-				self._segment_list = segment_list
+			def __init__(self, segmentation):
+				self._segmentation = segmentation
 			def __call__(self):
-				return [Segment(seg) for seg in self._segment_list]
+				return [Segment(seg) for seg in self._segmentation.segments]
 			def __len__(self):
-				return len(self._segment_list)
+				return self._segmentation.num_segments
 			def __iter__(self):
-				for seg in self._segment_list:
+				for seg in self._segmentation.segments:
 					yield Segment(seg)
 			def __getitem__(self, index):
-				return Segment(self._segment_list[index])
-		return SegmentList(self._segmentation.segments)
+				return Segment(self._segmentation.segments[index])
+		return SegmentList(self._segmentation)
 	
 	def create_segment(self):
 		return Segment(self._segmentation.create_segment())
@@ -197,18 +197,18 @@ class Segment(object):
 	@property
 	def cells(self):
 		class CellList(object):
-			def __init__(self, cell_list):
-				self._cell_list = cell_list
+			def __init__(self, segment):
+				self._segment = segment
 			def __call__(self):
-				return [Cell(c) for c in self._cell_list]
+				return [Cell(c) for c in self._segment.cells]
 			def __len__(self):
-				return len(self._cell_list)
+				return self._segment.num_cells
 			def __iter__(self):
-				for c in self._cell_list:
+				for c in self._segment.cells:
 					yield Cell(c)
 			def __getitem__(self, index):
-				return Cell(self._cell_list[index])
-		return CellList(self._segment.cells)
+				return Cell(self._segment.cells[index])
+		return CellList(self._segment)
 	
 	def create_cell(self, *args, **kwargs):
 		vertices = [vertex._vertex for vertex in args]
@@ -226,18 +226,18 @@ class Cell(object):
 	@property
 	def vertices(self):
 		class VertexList(object):
-			def __init__(self, vertex_list):
-				self._vertex_list = vertex_list
+			def __init__(self, cell):
+				self.cell = cell
 			def __call__(self):
-				return [Vertex(v) for v in self._vertex_list]
+				return [Vertex(v) for v in self._cell.vertices]
 			def __len__(self):
-				return len(self._vertex_list)
+				return self._cell.num_vertices
 			def __iter__(self):
-				for v in self._vertex_list:
+				for v in self._cell.vertices:
 					yield Vertex(v)
 			def __getitem__(self, index):
-				return Vertex(self._vertex_list[index])
-		return VertexList(self._cell.vertices)
+				return Vertex(self._cell.vertices[index])
+		return VertexList(self._cell)
 	
 	def __iter__(self):
 		for vertex in self._cell.vertices:

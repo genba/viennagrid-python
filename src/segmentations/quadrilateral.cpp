@@ -9,6 +9,11 @@ QuadrilateralCartesian2D_Segmentation::QuadrilateralCartesian2D_Segmentation(Qua
 	domain = &dom;
 }
 
+unsigned int QuadrilateralCartesian2D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 QuadrilateralCartesian2D_Segment QuadrilateralCartesian2D_Segmentation::create_segment()
 {
 	QuadrilateralCartesian2D_Segment_t seg = segmentation.make_segment();
@@ -37,6 +42,11 @@ QuadrilateralCartesian2D_Domain_t & QuadrilateralCartesian2D_Segmentation::get_d
 QuadrilateralCartesian3D_Segmentation::QuadrilateralCartesian3D_Segmentation(QuadrilateralCartesian3D_Domain &dom) : segmentation(dom.get_domain())
 {
 	domain = &dom;
+}
+
+unsigned int QuadrilateralCartesian3D_Segmentation::num_segments()
+{
+	return segmentation.size();
 }
 
 QuadrilateralCartesian3D_Segment QuadrilateralCartesian3D_Segmentation::create_segment()
@@ -69,6 +79,11 @@ QuadrilateralCylindrical3D_Segmentation::QuadrilateralCylindrical3D_Segmentation
 	domain = &dom;
 }
 
+unsigned int QuadrilateralCylindrical3D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 QuadrilateralCylindrical3D_Segment QuadrilateralCylindrical3D_Segmentation::create_segment()
 {
 	QuadrilateralCylindrical3D_Segment_t seg = segmentation.make_segment();
@@ -99,6 +114,11 @@ QuadrilateralPolar2D_Segmentation::QuadrilateralPolar2D_Segmentation(Quadrilater
 	domain = &dom;
 }
 
+unsigned int QuadrilateralPolar2D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 QuadrilateralPolar2D_Segment QuadrilateralPolar2D_Segmentation::create_segment()
 {
 	QuadrilateralPolar2D_Segment_t seg = segmentation.make_segment();
@@ -127,6 +147,11 @@ QuadrilateralPolar2D_Domain_t & QuadrilateralPolar2D_Segmentation::get_domain()
 QuadrilateralSpherical3D_Segmentation::QuadrilateralSpherical3D_Segmentation(QuadrilateralSpherical3D_Domain &dom) : segmentation(dom.get_domain())
 {
 	domain = &dom;
+}
+
+unsigned int QuadrilateralSpherical3D_Segmentation::num_segments()
+{
+	return segmentation.size();
 }
 
 QuadrilateralSpherical3D_Segment QuadrilateralSpherical3D_Segmentation::create_segment()

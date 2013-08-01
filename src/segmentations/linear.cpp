@@ -9,6 +9,11 @@ LinearCartesian1D_Segmentation::LinearCartesian1D_Segmentation(LinearCartesian1D
 	domain = &dom;
 }
 
+unsigned int LinearCartesian1D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 LinearCartesian1D_Segment LinearCartesian1D_Segmentation::create_segment()
 {
 	LinearCartesian1D_Segment_t seg = segmentation.make_segment();
@@ -37,6 +42,11 @@ LinearCartesian1D_Domain_t & LinearCartesian1D_Segmentation::get_domain()
 LinearCartesian2D_Segmentation::LinearCartesian2D_Segmentation(LinearCartesian2D_Domain &dom) : segmentation(dom.get_domain())
 {
 	domain = &dom;
+}
+
+unsigned int LinearCartesian2D_Segmentation::num_segments()
+{
+	return segmentation.size();
 }
 
 LinearCartesian2D_Segment LinearCartesian2D_Segmentation::create_segment()
@@ -69,6 +79,11 @@ LinearCartesian3D_Segmentation::LinearCartesian3D_Segmentation(LinearCartesian3D
 	domain = &dom;
 }
 
+unsigned int LinearCartesian3D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 LinearCartesian3D_Segment LinearCartesian3D_Segmentation::create_segment()
 {
 	LinearCartesian3D_Segment_t seg = segmentation.make_segment();
@@ -97,6 +112,11 @@ LinearCartesian3D_Domain_t & LinearCartesian3D_Segmentation::get_domain()
 LinearCylindrical3D_Segmentation::LinearCylindrical3D_Segmentation(LinearCylindrical3D_Domain &dom) : segmentation(dom.get_domain())
 {
 	domain = &dom;
+}
+
+unsigned int LinearCylindrical3D_Segmentation::num_segments()
+{
+	return segmentation.size();
 }
 
 LinearCylindrical3D_Segment LinearCylindrical3D_Segmentation::create_segment()
@@ -129,6 +149,11 @@ LinearPolar2D_Segmentation::LinearPolar2D_Segmentation(LinearPolar2D_Domain &dom
 	domain = &dom;
 }
 
+unsigned int LinearPolar2D_Segmentation::num_segments()
+{
+	return segmentation.size();
+}
+
 LinearPolar2D_Segment LinearPolar2D_Segmentation::create_segment()
 {
 	LinearPolar2D_Segment_t seg = segmentation.make_segment();
@@ -157,6 +182,11 @@ LinearPolar2D_Domain_t & LinearPolar2D_Segmentation::get_domain()
 LinearSpherical3D_Segmentation::LinearSpherical3D_Segmentation(LinearSpherical3D_Domain &dom) : segmentation(dom.get_domain())
 {
 	domain = &dom;
+}
+
+unsigned int LinearSpherical3D_Segmentation::num_segments()
+{
+	return segmentation.size();
 }
 
 LinearSpherical3D_Segment LinearSpherical3D_Segmentation::create_segment()
