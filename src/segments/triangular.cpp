@@ -23,7 +23,7 @@ unsigned int TriangularCartesian2D_Segment::num_cells()
 	return range.size();
 }
 
-TriangularCartesian2D_Cell TriangularCartesian2D_Segment::create_cell(TriangularCartesian2D_Vertex vertex1, TriangularCartesian2D_Vertex vertex2, TriangularCartesian2D_Vertex vertex3)
+TriangularCartesian2D_Cell TriangularCartesian2D_Segment::make_cell(TriangularCartesian2D_Vertex vertex1, TriangularCartesian2D_Vertex vertex2, TriangularCartesian2D_Vertex vertex3)
 {
 	typedef viennagrid::result_of::handle<TriangularCartesian2D_Segment_t, TriangularCartesian2D_Cell_t>::type    CellHandle;
 	typedef TriangularCartesian2D_Cell_t                                                                          CellType;
@@ -68,7 +68,7 @@ unsigned int TriangularCartesian3D_Segment::num_cells()
 	return range.size();
 }
 
-TriangularCartesian3D_Cell TriangularCartesian3D_Segment::create_cell(TriangularCartesian3D_Vertex vertex1, TriangularCartesian3D_Vertex vertex2, TriangularCartesian3D_Vertex vertex3)
+TriangularCartesian3D_Cell TriangularCartesian3D_Segment::make_cell(TriangularCartesian3D_Vertex vertex1, TriangularCartesian3D_Vertex vertex2, TriangularCartesian3D_Vertex vertex3)
 {
 	typedef viennagrid::result_of::handle<TriangularCartesian3D_Segment_t, TriangularCartesian3D_Cell_t>::type    CellHandle;
 	typedef TriangularCartesian3D_Cell_t                                                                          CellType;
@@ -113,7 +113,7 @@ unsigned int TriangularCylindrical3D_Segment::num_cells()
 	return range.size();
 }
 
-TriangularCylindrical3D_Cell TriangularCylindrical3D_Segment::create_cell(TriangularCylindrical3D_Vertex vertex1, TriangularCylindrical3D_Vertex vertex2, TriangularCylindrical3D_Vertex vertex3)
+TriangularCylindrical3D_Cell TriangularCylindrical3D_Segment::make_cell(TriangularCylindrical3D_Vertex vertex1, TriangularCylindrical3D_Vertex vertex2, TriangularCylindrical3D_Vertex vertex3)
 {
 	typedef viennagrid::result_of::handle<TriangularCylindrical3D_Segment_t, TriangularCylindrical3D_Cell_t>::type    CellHandle;
 	typedef TriangularCylindrical3D_Cell_t                                                                            CellType;
@@ -158,7 +158,7 @@ unsigned int TriangularPolar2D_Segment::num_cells()
 	return range.size();
 }
 
-TriangularPolar2D_Cell TriangularPolar2D_Segment::create_cell(TriangularPolar2D_Vertex vertex1, TriangularPolar2D_Vertex vertex2, TriangularPolar2D_Vertex vertex3)
+TriangularPolar2D_Cell TriangularPolar2D_Segment::make_cell(TriangularPolar2D_Vertex vertex1, TriangularPolar2D_Vertex vertex2, TriangularPolar2D_Vertex vertex3)
 {
 	typedef viennagrid::result_of::handle<TriangularPolar2D_Segment_t, TriangularPolar2D_Cell_t>::type    CellHandle;
 	typedef TriangularPolar2D_Cell_t                                                                      CellType;
@@ -203,7 +203,7 @@ unsigned int TriangularSpherical3D_Segment::num_cells()
 	return range.size();
 }
 
-TriangularSpherical3D_Cell TriangularSpherical3D_Segment::create_cell(TriangularSpherical3D_Vertex vertex1, TriangularSpherical3D_Vertex vertex2, TriangularSpherical3D_Vertex vertex3)
+TriangularSpherical3D_Cell TriangularSpherical3D_Segment::make_cell(TriangularSpherical3D_Vertex vertex1, TriangularSpherical3D_Vertex vertex2, TriangularSpherical3D_Vertex vertex3)
 {
 	typedef viennagrid::result_of::handle<TriangularSpherical3D_Segment_t, TriangularSpherical3D_Cell_t>::type    CellHandle;
 	typedef TriangularSpherical3D_Cell_t                                                                          CellType;

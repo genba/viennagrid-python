@@ -23,7 +23,7 @@ unsigned int QuadrilateralCartesian2D_Segment::num_cells()
 	return range.size();
 }
 
-QuadrilateralCartesian2D_Cell QuadrilateralCartesian2D_Segment::create_cell(QuadrilateralCartesian2D_Vertex vertex1, QuadrilateralCartesian2D_Vertex vertex2, QuadrilateralCartesian2D_Vertex vertex3, QuadrilateralCartesian2D_Vertex vertex4)
+QuadrilateralCartesian2D_Cell QuadrilateralCartesian2D_Segment::make_cell(QuadrilateralCartesian2D_Vertex vertex1, QuadrilateralCartesian2D_Vertex vertex2, QuadrilateralCartesian2D_Vertex vertex3, QuadrilateralCartesian2D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralCartesian2D_Segment_t, QuadrilateralCartesian2D_Cell_t>::type    CellHandle;
 	typedef QuadrilateralCartesian2D_Cell_t                                                                             CellType;
@@ -69,7 +69,7 @@ unsigned int QuadrilateralCartesian3D_Segment::num_cells()
 	return range.size();
 }
 
-QuadrilateralCartesian3D_Cell QuadrilateralCartesian3D_Segment::create_cell(QuadrilateralCartesian3D_Vertex vertex1, QuadrilateralCartesian3D_Vertex vertex2, QuadrilateralCartesian3D_Vertex vertex3, QuadrilateralCartesian3D_Vertex vertex4)
+QuadrilateralCartesian3D_Cell QuadrilateralCartesian3D_Segment::make_cell(QuadrilateralCartesian3D_Vertex vertex1, QuadrilateralCartesian3D_Vertex vertex2, QuadrilateralCartesian3D_Vertex vertex3, QuadrilateralCartesian3D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralCartesian3D_Segment_t, QuadrilateralCartesian3D_Cell_t>::type    CellHandle;
 	typedef QuadrilateralCartesian3D_Cell_t                                                                             CellType;
@@ -115,7 +115,7 @@ unsigned int QuadrilateralCylindrical3D_Segment::num_cells()
 	return range.size();
 }
 
-QuadrilateralCylindrical3D_Cell QuadrilateralCylindrical3D_Segment::create_cell(QuadrilateralCylindrical3D_Vertex vertex1, QuadrilateralCylindrical3D_Vertex vertex2, QuadrilateralCylindrical3D_Vertex vertex3, QuadrilateralCylindrical3D_Vertex vertex4)
+QuadrilateralCylindrical3D_Cell QuadrilateralCylindrical3D_Segment::make_cell(QuadrilateralCylindrical3D_Vertex vertex1, QuadrilateralCylindrical3D_Vertex vertex2, QuadrilateralCylindrical3D_Vertex vertex3, QuadrilateralCylindrical3D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralCylindrical3D_Segment_t, QuadrilateralCylindrical3D_Cell_t>::type    CellHandle;
 	typedef QuadrilateralCylindrical3D_Cell_t                                                                               CellType;
@@ -161,7 +161,7 @@ unsigned int QuadrilateralPolar2D_Segment::num_cells()
 	return range.size();
 }
 
-QuadrilateralPolar2D_Cell QuadrilateralPolar2D_Segment::create_cell(QuadrilateralPolar2D_Vertex vertex1, QuadrilateralPolar2D_Vertex vertex2, QuadrilateralPolar2D_Vertex vertex3, QuadrilateralPolar2D_Vertex vertex4)
+QuadrilateralPolar2D_Cell QuadrilateralPolar2D_Segment::make_cell(QuadrilateralPolar2D_Vertex vertex1, QuadrilateralPolar2D_Vertex vertex2, QuadrilateralPolar2D_Vertex vertex3, QuadrilateralPolar2D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralPolar2D_Segment_t, QuadrilateralPolar2D_Cell_t>::type    CellHandle;
 	typedef QuadrilateralPolar2D_Cell_t                                                                         CellType;
@@ -207,7 +207,7 @@ unsigned int QuadrilateralSpherical3D_Segment::num_cells()
 	return range.size();
 }
 
-QuadrilateralSpherical3D_Cell QuadrilateralSpherical3D_Segment::create_cell(QuadrilateralSpherical3D_Vertex vertex1, QuadrilateralSpherical3D_Vertex vertex2, QuadrilateralSpherical3D_Vertex vertex3, QuadrilateralSpherical3D_Vertex vertex4)
+QuadrilateralSpherical3D_Cell QuadrilateralSpherical3D_Segment::make_cell(QuadrilateralSpherical3D_Vertex vertex1, QuadrilateralSpherical3D_Vertex vertex2, QuadrilateralSpherical3D_Vertex vertex3, QuadrilateralSpherical3D_Vertex vertex4)
 {
 	typedef viennagrid::result_of::handle<QuadrilateralSpherical3D_Segment_t, QuadrilateralSpherical3D_Cell_t>::type    CellHandle;
 	typedef QuadrilateralSpherical3D_Cell_t                                                                             CellType;

@@ -109,7 +109,7 @@ class Domain(object):
 	def __init__(self, config):
 		super(Domain, self).__init__()
 		self._config = config
-		self._domain = config.create_domain()
+		self._domain = config.make_domain()
 	
 	@property
 	def config(self):
@@ -131,9 +131,9 @@ class Domain(object):
 				return Vertex(self._domain.get_vertex(index))
 		return VertexList(self._domain)
 	
-	def add_vertex(self, point):
+	def make_vertex(self, point):
 		if isinstance(point._point, self.config.point_type):
-			self._domain.add_vertex(point._point)
+			self._domain.make_vertex(point._point)
 		else:
 			raise TypeError('wrong point type') # TODO: make error message more descriptive
 	
@@ -153,14 +153,14 @@ class Domain(object):
 	def write_vtk(self, path):
 		return self._domain.write_vtk(path)
 	
-	def _create_segmentation(self):
-		return self.config.create_segmentation(self._domain)
+	def _make_segmentation(self):
+		return self.config.make_segmentation(self._domain)
 
 class Segmentation(object):
 	def __init__(self, domain):
 		super(Segmentation, self).__init__()
 		self._domain = domain
-		self._segmentation = domain._create_segmentation()
+		self._segmentation = domain._make_segmentation()
 	
 	@property
 	def domain(self):
@@ -182,8 +182,8 @@ class Segmentation(object):
 				return Segment(self._segmentation.segments[index])
 		return SegmentList(self._segmentation)
 	
-	def create_segment(self):
-		return Segment(self._segmentation.create_segment())
+	def make_segment(self):
+		return Segment(self._segmentation.make_segment())
 	
 	def __iter__(self):
 		for segment in self._segmentation.segments:
@@ -210,9 +210,9 @@ class Segment(object):
 				return Cell(self._segment.cells[index])
 		return CellList(self._segment)
 	
-	def create_cell(self, *args, **kwargs):
+	def make_cell(self, *args, **kwargs):
 		vertices = [vertex._vertex for vertex in args]
-		return Cell(self._segment.create_cell(*vertices))
+		return Cell(self._segment.make_cell(*vertices))
 	
 	def __iter__(self):
 		for cell in self._segment.cells:

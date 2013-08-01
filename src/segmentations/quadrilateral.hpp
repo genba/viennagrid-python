@@ -20,7 +20,7 @@ class QuadrilateralCartesian2D_Segmentation
 public:
 	QuadrilateralCartesian2D_Segmentation(QuadrilateralCartesian2D_Domain &dom);
 	unsigned int num_segments();
-	QuadrilateralCartesian2D_Segment create_segment();
+	QuadrilateralCartesian2D_Segment make_segment();
 	list get_segments();
 	QuadrilateralCartesian2D_Domain_t & get_domain();
 };
@@ -36,7 +36,7 @@ class QuadrilateralCartesian3D_Segmentation
 public:
 	QuadrilateralCartesian3D_Segmentation(QuadrilateralCartesian3D_Domain &dom);
 	unsigned int num_segments();
-	QuadrilateralCartesian3D_Segment create_segment();
+	QuadrilateralCartesian3D_Segment make_segment();
 	list get_segments();
 	QuadrilateralCartesian3D_Domain_t & get_domain();
 };
@@ -52,7 +52,7 @@ class QuadrilateralCylindrical3D_Segmentation
 public:
 	QuadrilateralCylindrical3D_Segmentation(QuadrilateralCylindrical3D_Domain &dom);
 	unsigned int num_segments();
-	QuadrilateralCylindrical3D_Segment create_segment();
+	QuadrilateralCylindrical3D_Segment make_segment();
 	list get_segments();
 	QuadrilateralCylindrical3D_Domain_t & get_domain();
 };
@@ -68,7 +68,7 @@ class QuadrilateralPolar2D_Segmentation
 public:
 	QuadrilateralPolar2D_Segmentation(QuadrilateralPolar2D_Domain &dom);
 	unsigned int num_segments();
-	QuadrilateralPolar2D_Segment create_segment();
+	QuadrilateralPolar2D_Segment make_segment();
 	list get_segments();
 	QuadrilateralPolar2D_Domain_t & get_domain();
 };
@@ -84,7 +84,7 @@ class QuadrilateralSpherical3D_Segmentation
 public:
 	QuadrilateralSpherical3D_Segmentation(QuadrilateralSpherical3D_Domain &dom);
 	unsigned int num_segments();
-	QuadrilateralSpherical3D_Segment create_segment();
+	QuadrilateralSpherical3D_Segment make_segment();
 	list get_segments();
 	QuadrilateralSpherical3D_Domain_t & get_domain();
 };

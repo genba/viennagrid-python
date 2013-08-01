@@ -14,7 +14,7 @@ unsigned int TetrahedralCartesian3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TetrahedralCartesian3D_Segment TetrahedralCartesian3D_Segmentation::create_segment()
+TetrahedralCartesian3D_Segment TetrahedralCartesian3D_Segmentation::make_segment()
 {
 	TetrahedralCartesian3D_Segment_t seg = segmentation.make_segment();
 	TetrahedralCartesian3D_Segment new_segment(seg, *this);
@@ -49,7 +49,7 @@ unsigned int TetrahedralCylindrical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TetrahedralCylindrical3D_Segment TetrahedralCylindrical3D_Segmentation::create_segment()
+TetrahedralCylindrical3D_Segment TetrahedralCylindrical3D_Segmentation::make_segment()
 {
 	TetrahedralCylindrical3D_Segment_t seg = segmentation.make_segment();
 	TetrahedralCylindrical3D_Segment new_segment(seg, *this);
@@ -84,7 +84,7 @@ unsigned int TetrahedralSpherical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-TetrahedralSpherical3D_Segment TetrahedralSpherical3D_Segmentation::create_segment()
+TetrahedralSpherical3D_Segment TetrahedralSpherical3D_Segmentation::make_segment()
 {
 	TetrahedralSpherical3D_Segment_t seg = segmentation.make_segment();
 	TetrahedralSpherical3D_Segment new_segment(seg, *this);

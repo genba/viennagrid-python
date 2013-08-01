@@ -108,17 +108,17 @@ class Configuration(object):
 		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_Segmentation'])
 		return _wrapper.__getattribute__(classname)
 	
-	def create_point(self, *args, **kwargs):
+	def make_point(self, *args, **kwargs):
 		"""Create a new point based in this configuration"""
 		PointType = self.point_type
 		return PointType(*args, **kwargs)
 	
-	def create_domain(self, *args, **kwargs):
+	def make_domain(self, *args, **kwargs):
 		"""Create a new domain based in this configuration"""
 		DomainType = self.domain_type
 		return DomainType(*args, **kwargs)
 	
-	def create_segmentation(self, *args, **kwargs):
+	def make_segmentation(self, *args, **kwargs):
 		"""Create a new segmentation based in this configuration"""
 		SegmentationType = self.segmentation_type
 		return SegmentationType(*args, **kwargs)

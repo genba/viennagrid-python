@@ -20,7 +20,7 @@ public:
 	QuadrilateralCartesian2D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian2D point);
+	void make_vertex(PointCartesian2D point);
 	QuadrilateralCartesian2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -30,7 +30,7 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 	
-	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4);
+	void make_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4);
 	list get_cells();
 	
 	QuadrilateralCartesian2D_Domain_t & get_domain();
@@ -42,7 +42,7 @@ public:
 	QuadrilateralCartesian3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCartesian3D point);
+	void make_vertex(PointCartesian3D point);
 	QuadrilateralCartesian3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -52,7 +52,7 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 	
-	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
+	void make_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
 	list get_cells();
 	
 	QuadrilateralCartesian3D_Domain_t & get_domain();
@@ -64,7 +64,7 @@ public:
 	QuadrilateralCylindrical3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointCylindrical3D point);
+	void make_vertex(PointCylindrical3D point);
 	QuadrilateralCylindrical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -74,7 +74,7 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 	
-	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
+	void make_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
 	list get_cells();
 	
 	QuadrilateralCylindrical3D_Domain_t & get_domain();
@@ -86,7 +86,7 @@ public:
 	QuadrilateralPolar2D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointPolar2D point);
+	void make_vertex(PointPolar2D point);
 	QuadrilateralPolar2D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -96,7 +96,7 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 	
-	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4);
+	void make_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4);
 	list get_cells();
 	
 	QuadrilateralPolar2D_Domain_t & get_domain();
@@ -108,7 +108,7 @@ public:
 	QuadrilateralSpherical3D_Domain() {};
 	
 	unsigned int num_vertices();
-	void add_vertex(PointSpherical3D point);
+	void make_vertex(PointSpherical3D point);
 	QuadrilateralSpherical3D_Vertex get_vertex(unsigned int index);
 	list get_vertices();
 	
@@ -118,7 +118,7 @@ public:
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
 	
-	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
+	void make_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
 	list get_cells();
 	
 	QuadrilateralSpherical3D_Domain_t & get_domain();

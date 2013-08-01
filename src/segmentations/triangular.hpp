@@ -20,7 +20,7 @@ class TriangularCartesian2D_Segmentation
 public:
 	TriangularCartesian2D_Segmentation(TriangularCartesian2D_Domain &dom);
 	unsigned int num_segments();
-	TriangularCartesian2D_Segment create_segment();
+	TriangularCartesian2D_Segment make_segment();
 	list get_segments();
 	TriangularCartesian2D_Domain_t & get_domain();
 };
@@ -36,7 +36,7 @@ class TriangularCartesian3D_Segmentation
 public:
 	TriangularCartesian3D_Segmentation(TriangularCartesian3D_Domain &dom);
 	unsigned int num_segments();
-	TriangularCartesian3D_Segment create_segment();
+	TriangularCartesian3D_Segment make_segment();
 	list get_segments();
 	TriangularCartesian3D_Domain_t & get_domain();
 };
@@ -52,7 +52,7 @@ class TriangularCylindrical3D_Segmentation
 public:
 	TriangularCylindrical3D_Segmentation(TriangularCylindrical3D_Domain &dom);
 	unsigned int num_segments();
-	TriangularCylindrical3D_Segment create_segment();
+	TriangularCylindrical3D_Segment make_segment();
 	list get_segments();
 	TriangularCylindrical3D_Domain_t & get_domain();
 };
@@ -68,7 +68,7 @@ class TriangularPolar2D_Segmentation
 public:
 	TriangularPolar2D_Segmentation(TriangularPolar2D_Domain &dom);
 	unsigned int num_segments();
-	TriangularPolar2D_Segment create_segment();
+	TriangularPolar2D_Segment make_segment();
 	list get_segments();
 	TriangularPolar2D_Domain_t & get_domain();
 };
@@ -84,7 +84,7 @@ class TriangularSpherical3D_Segmentation
 public:
 	TriangularSpherical3D_Segmentation(TriangularSpherical3D_Domain &dom);
 	unsigned int num_segments();
-	TriangularSpherical3D_Segment create_segment();
+	TriangularSpherical3D_Segment make_segment();
 	list get_segments();
 	TriangularSpherical3D_Domain_t & get_domain();
 };

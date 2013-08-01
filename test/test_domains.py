@@ -28,7 +28,7 @@ class TestLinearCartesian1D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.LinearCartesian1D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -36,9 +36,9 @@ class TestLinearCartesian1D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -92,7 +92,7 @@ class TestLinearCartesian1D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -106,7 +106,7 @@ class TestLinearCartesian1D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -125,7 +125,7 @@ class TestLinearCartesian2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.LinearCartesian2D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -133,9 +133,9 @@ class TestLinearCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -189,7 +189,7 @@ class TestLinearCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -203,7 +203,7 @@ class TestLinearCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -222,7 +222,7 @@ class TestLinearCartesian3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.LinearCartesian3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -230,9 +230,9 @@ class TestLinearCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -286,7 +286,7 @@ class TestLinearCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -300,7 +300,7 @@ class TestLinearCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -319,7 +319,7 @@ class TestLinearCylindrical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.LinearCylindrical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -327,9 +327,9 @@ class TestLinearCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -383,7 +383,7 @@ class TestLinearCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -397,7 +397,7 @@ class TestLinearCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -416,7 +416,7 @@ class TestLinearPolar2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.LinearPolar2D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -424,9 +424,9 @@ class TestLinearPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -480,7 +480,7 @@ class TestLinearPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -494,7 +494,7 @@ class TestLinearPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -513,7 +513,7 @@ class TestLinearSpherical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.LinearSpherical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -521,9 +521,9 @@ class TestLinearSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -577,7 +577,7 @@ class TestLinearSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -591,7 +591,7 @@ class TestLinearSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -614,7 +614,7 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TriangularCartesian2D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -622,9 +622,9 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -678,7 +678,7 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -692,7 +692,7 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -711,7 +711,7 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TriangularCartesian3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -719,9 +719,9 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -775,7 +775,7 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -789,7 +789,7 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -808,7 +808,7 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TriangularCylindrical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -816,9 +816,9 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -872,7 +872,7 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -886,7 +886,7 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -905,7 +905,7 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TriangularPolar2D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -913,9 +913,9 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -969,7 +969,7 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -983,7 +983,7 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1002,7 +1002,7 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TriangularSpherical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1010,9 +1010,9 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1066,7 +1066,7 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1080,7 +1080,7 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1103,7 +1103,7 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.QuadrilateralCartesian2D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1111,9 +1111,9 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1167,7 +1167,7 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1181,7 +1181,7 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1200,7 +1200,7 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.QuadrilateralCartesian3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1208,9 +1208,9 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1264,7 +1264,7 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1278,7 +1278,7 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1297,7 +1297,7 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.QuadrilateralCylindrical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1305,9 +1305,9 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1361,7 +1361,7 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1375,7 +1375,7 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1394,7 +1394,7 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.QuadrilateralPolar2D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1402,9 +1402,9 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1458,7 +1458,7 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1472,7 +1472,7 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1491,7 +1491,7 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.QuadrilateralSpherical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1499,9 +1499,9 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1555,7 +1555,7 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1569,7 +1569,7 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1592,7 +1592,7 @@ class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TetrahedralCartesian3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1600,9 +1600,9 @@ class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1656,7 +1656,7 @@ class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1670,7 +1670,7 @@ class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1689,7 +1689,7 @@ class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TetrahedralCylindrical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1697,9 +1697,9 @@ class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1753,7 +1753,7 @@ class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1767,7 +1767,7 @@ class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1786,7 +1786,7 @@ class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 		self.domain = viennagrid_wrapper.TetrahedralSpherical3D_Domain()
 	
 	def test_vertices(self):
-		"""Test attributes 'num_vertices' and 'vertices', and methods 'add_vertex' and 'get_vertex'."""
+		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
 		
 		# After domain creation, there must be no vertices,
 		# since no vertices have been added to the domain.
@@ -1794,9 +1794,9 @@ class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain. After adding each vertex, check that 'num_vertices'
 		# returns the exact amount of vertices in the domain.
-		# This involves 'add_vertex'.
+		# This involves 'make_vertex'.
 		for i, point in enumerate(self.vertices):
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 			self.assertEqual(self.domain.num_vertices, i+1)
 		# Check that the total amount of vertices added matches 'num_vertices' at the end.
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
@@ -1850,7 +1850,7 @@ class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer
@@ -1864,7 +1864,7 @@ class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 		
 		# Add vertices to the domain
 		for point in self.vertices:
-			self.domain.add_vertex(point)
+			self.domain.make_vertex(point)
 		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
 		# Call writer

@@ -9,33 +9,33 @@ from viennagrid_wrapper import PointCartesian1D as Point
 
 # Create a domain and add 4 vertices to it
 domain = Domain()
-domain.add_vertex(Point(1))
-domain.add_vertex(Point(2))
-domain.add_vertex(Point(3))
-domain.add_vertex(Point(4))
+domain.make_vertex(Point(1))
+domain.make_vertex(Point(2))
+domain.make_vertex(Point(3))
+domain.make_vertex(Point(4))
 
 # Create a segmentation on the domain with 2 segments in it
 segmentation = Segmentation(domain)
-seg0 = segmentation.create_segment()
-seg1 = segmentation.create_segment()
+seg0 = segmentation.make_segment()
+seg1 = segmentation.make_segment()
 
 # Create cell #1 in seg0
 v1 = domain.vertices[0] # alternatively: domain.get_vertex(0), which may exhibit an improved preformance
 v2 = domain.vertices[1] # alternatively: domain.get_vertex(1), which may exhibit an improved preformance
-cell = seg0.create_cell(v1, v2)
+cell = seg0.make_cell(v1, v2)
 # Create cell #2 in seg0
 v1 = domain.vertices[2] # alternatively: domain.get_vertex(2), which may exhibit an improved preformance
 v2 = domain.vertices[3] # alternatively: domain.get_vertex(3), which may exhibit an improved preformance
-cell = seg0.create_cell(v1, v2)
+cell = seg0.make_cell(v1, v2)
 
 # Create cell #1 in seg1
 v1 = domain.vertices[0] # alternatively: domain.get_vertex(0), which may exhibit an improved preformance
 v2 = domain.vertices[1] # alternatively: domain.get_vertex(1), which may exhibit an improved preformance
-cell = seg1.create_cell(v1, v2)
+cell = seg1.make_cell(v1, v2)
 # Create cell #2 in seg1
 v1 = domain.vertices[2] # alternatively: domain.get_vertex(2), which may exhibit an improved preformance
 v2 = domain.vertices[3] # alternatively: domain.get_vertex(3), which may exhibit an improved preformance
-cell = seg1.create_cell(v1, v2)
+cell = seg1.make_cell(v1, v2)
 
 print('\nDomain has', len(domain.vertices), 'vertices:\n')
 for i, vertex in enumerate(domain.vertices):

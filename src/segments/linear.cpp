@@ -25,7 +25,7 @@ unsigned int LinearCartesian1D_Segment::num_cells()
 	return range.size();
 }
 
-LinearCartesian1D_Cell LinearCartesian1D_Segment::create_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2)
+LinearCartesian1D_Cell LinearCartesian1D_Segment::make_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2)
 {
 	typedef viennagrid::result_of::handle<LinearCartesian1D_Segment_t, LinearCartesian1D_Cell_t>::type    CellHandle;
 	typedef LinearCartesian1D_Cell_t                                                                      CellType;
@@ -69,7 +69,7 @@ unsigned int LinearCartesian2D_Segment::num_cells()
 	return range.size();
 }
 
-LinearCartesian2D_Cell LinearCartesian2D_Segment::create_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2)
+LinearCartesian2D_Cell LinearCartesian2D_Segment::make_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2)
 {
 	typedef viennagrid::result_of::handle<LinearCartesian2D_Segment_t, LinearCartesian2D_Cell_t>::type    CellHandle;
 	typedef LinearCartesian2D_Cell_t                                                                      CellType;
@@ -113,7 +113,7 @@ unsigned int LinearCartesian3D_Segment::num_cells()
 	return range.size();
 }
 
-LinearCartesian3D_Cell LinearCartesian3D_Segment::create_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2)
+LinearCartesian3D_Cell LinearCartesian3D_Segment::make_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2)
 {
 	typedef viennagrid::result_of::handle<LinearCartesian3D_Segment_t, LinearCartesian3D_Cell_t>::type    CellHandle;
 	typedef LinearCartesian3D_Cell_t                                                                      CellType;
@@ -157,7 +157,7 @@ unsigned int LinearCylindrical3D_Segment::num_cells()
 	return range.size();
 }
 
-LinearCylindrical3D_Cell LinearCylindrical3D_Segment::create_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2)
+LinearCylindrical3D_Cell LinearCylindrical3D_Segment::make_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2)
 {
 	typedef viennagrid::result_of::handle<LinearCylindrical3D_Segment_t, LinearCylindrical3D_Cell_t>::type    CellHandle;
 	typedef LinearCylindrical3D_Cell_t                                                                        CellType;
@@ -201,7 +201,7 @@ unsigned int LinearPolar2D_Segment::num_cells()
 	return range.size();
 }
 
-LinearPolar2D_Cell LinearPolar2D_Segment::create_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2)
+LinearPolar2D_Cell LinearPolar2D_Segment::make_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2)
 {
 	typedef viennagrid::result_of::handle<LinearPolar2D_Segment_t, LinearPolar2D_Cell_t>::type    CellHandle;
 	typedef        LinearPolar2D_Cell_t                                                           CellType;
@@ -245,7 +245,7 @@ unsigned int LinearSpherical3D_Segment::num_cells()
 	return range.size();
 }
 
-LinearSpherical3D_Cell LinearSpherical3D_Segment::create_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2)
+LinearSpherical3D_Cell LinearSpherical3D_Segment::make_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2)
 {
 	typedef viennagrid::result_of::handle<LinearSpherical3D_Segment_t, LinearSpherical3D_Cell_t>::type    CellHandle;
 	typedef LinearSpherical3D_Cell_t                                                                      CellType;

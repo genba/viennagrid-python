@@ -14,7 +14,7 @@ unsigned int LinearCartesian1D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-LinearCartesian1D_Segment LinearCartesian1D_Segmentation::create_segment()
+LinearCartesian1D_Segment LinearCartesian1D_Segmentation::make_segment()
 {
 	LinearCartesian1D_Segment_t seg = segmentation.make_segment();
 	LinearCartesian1D_Segment new_segment(seg, *this);
@@ -49,7 +49,7 @@ unsigned int LinearCartesian2D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-LinearCartesian2D_Segment LinearCartesian2D_Segmentation::create_segment()
+LinearCartesian2D_Segment LinearCartesian2D_Segmentation::make_segment()
 {
 	LinearCartesian2D_Segment_t seg = segmentation.make_segment();
 	LinearCartesian2D_Segment new_segment(seg, *this);
@@ -84,7 +84,7 @@ unsigned int LinearCartesian3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-LinearCartesian3D_Segment LinearCartesian3D_Segmentation::create_segment()
+LinearCartesian3D_Segment LinearCartesian3D_Segmentation::make_segment()
 {
 	LinearCartesian3D_Segment_t seg = segmentation.make_segment();
 	LinearCartesian3D_Segment new_segment(seg, *this);
@@ -119,7 +119,7 @@ unsigned int LinearCylindrical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-LinearCylindrical3D_Segment LinearCylindrical3D_Segmentation::create_segment()
+LinearCylindrical3D_Segment LinearCylindrical3D_Segmentation::make_segment()
 {
 	LinearCylindrical3D_Segment_t seg = segmentation.make_segment();
 	LinearCylindrical3D_Segment new_segment(seg, *this);
@@ -154,7 +154,7 @@ unsigned int LinearPolar2D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-LinearPolar2D_Segment LinearPolar2D_Segmentation::create_segment()
+LinearPolar2D_Segment LinearPolar2D_Segmentation::make_segment()
 {
 	LinearPolar2D_Segment_t seg = segmentation.make_segment();
 	LinearPolar2D_Segment new_segment(seg, *this);
@@ -189,7 +189,7 @@ unsigned int LinearSpherical3D_Segmentation::num_segments()
 	return segmentation.size();
 }
 
-LinearSpherical3D_Segment LinearSpherical3D_Segmentation::create_segment()
+LinearSpherical3D_Segment LinearSpherical3D_Segmentation::make_segment()
 {
 	LinearSpherical3D_Segment_t seg = segmentation.make_segment();
 	LinearSpherical3D_Segment new_segment(seg, *this);
