@@ -27,7 +27,7 @@ TetrahedralCartesian3D_Cell TetrahedralCartesian3D_Segment::create_cell(Tetrahed
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -65,7 +65,7 @@ TetrahedralCylindrical3D_Cell TetrahedralCylindrical3D_Segment::create_cell(Tetr
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -103,7 +103,7 @@ TetrahedralSpherical3D_Cell TetrahedralSpherical3D_Segment::create_cell(Tetrahed
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::tetrahedron_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }

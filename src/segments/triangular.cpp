@@ -26,7 +26,7 @@ TriangularCartesian2D_Cell TriangularCartesian2D_Segment::create_cell(Triangular
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -63,7 +63,7 @@ TriangularCartesian3D_Cell TriangularCartesian3D_Segment::create_cell(Triangular
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -100,7 +100,7 @@ TriangularCylindrical3D_Cell TriangularCylindrical3D_Segment::create_cell(Triang
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -137,7 +137,7 @@ TriangularPolar2D_Cell TriangularPolar2D_Segment::create_cell(TriangularPolar2D_
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -174,7 +174,7 @@ TriangularSpherical3D_Cell TriangularSpherical3D_Segment::create_cell(Triangular
 	vertices[2] = viennagrid::handle(segmentation->get_domain(), vertex3.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }

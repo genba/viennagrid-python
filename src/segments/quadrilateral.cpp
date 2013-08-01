@@ -27,7 +27,7 @@ QuadrilateralCartesian2D_Cell QuadrilateralCartesian2D_Segment::create_cell(Quad
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -65,7 +65,7 @@ QuadrilateralCartesian3D_Cell QuadrilateralCartesian3D_Segment::create_cell(Quad
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -103,7 +103,7 @@ QuadrilateralCylindrical3D_Cell QuadrilateralCylindrical3D_Segment::create_cell(
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -141,7 +141,7 @@ QuadrilateralPolar2D_Cell QuadrilateralPolar2D_Segment::create_cell(Quadrilatera
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
@@ -179,7 +179,7 @@ QuadrilateralSpherical3D_Cell QuadrilateralSpherical3D_Segment::create_cell(Quad
 	vertices[3] = viennagrid::handle(segmentation->get_domain(), vertex4.get_vertex());
 	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(segment, vertices.begin(), vertices.end());
 	
-	CellType cell = viennagrid::dereference_handle(segment, ch);
+	CellType &cell = viennagrid::dereference_handle(segment, ch);
 	
 	return cell;
 }
