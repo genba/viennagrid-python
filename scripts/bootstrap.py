@@ -69,7 +69,7 @@ def prompt(question, choices=[('y', 'yes'), ('n', 'no')], default='y', return_ty
 			shorthands.append(choice[0])
 		choice_str = '[%s]' % '/'.join(shorthands)
 	
-	sys.stdout.write(''.join(question, choice_str, '\n'))
+	sys.stdout.write(' '.join([question, choice_str, '']))
 	answer = raw_input()
 	if return_type is bool:
 		answer = answer.lower()
@@ -108,21 +108,38 @@ def download_boost(dest_dir, interactive=False, version=False, install=False):
 	# else: download default Boost version
 	
 	# Download Boost
-	os.chdir(dest_dir)
-	run_commad('wget -c -t inf -O %(boost_filename)s "%(boost_url)s"' % locals())
-	run_commad('tar xvjf "%(boost_filename)s"' % locals())
-	run_commad('ln -s "%s" boost' % boost_filename.replace('.tar.bz2', ''))
-	os.chdir('boost')
-	run_commad('./bootstrap.sh --with-libraries=python')
+	if interactive:
+		download = prompt('Download Boost?')
+	else:
+		download = True
+	if download:
+		os.chdir(dest_dir)
+		run_commad('wget -c -t inf -O %(boost_filename)s "%(boost_url)s"' % locals())
+		run_commad('tar xvjf "%(boost_filename)s"' % locals())
+		run_commad('ln -s "%s" boost' % boost_filename.replace('.tar.bz2', ''))
+		os.chdir('boost')
+		run_commad('./bootstrap.sh --with-libraries=python')
+		os.chdir('..')
 	
 	# Compile Boost
-	run_commad('./b2')
+	if interactive:
+		do_compilation = prompt('Compile Boost?')
+	else:
+		do_compilation = True
+	if do_compilation:
+		os.chdir(dest_dir)
+		os.chdir('boost')
+		run_commad('./b2')
+		os.chdir('..')
 	
 	# Install Boost
 	if interactive and not install:
 		install = prompt('Install Boost?')
 	if install:
+		os.chdir(dest_dir)
+		os.chdir('boost')
 		run_commad('sudo ./b2 install')
+		os.chdir('..')
 
 def update_git_submodules(interactive=False):
 	if interactive:
@@ -134,9 +151,15 @@ def update_git_submodules(interactive=False):
 		run_commad('git submodules update')
 
 def create_virtualenv(dest_dir, requirements=None, interactive=False):
-	run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
-	if requirements and os.path.isfile(requirements):
-		run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
+	if interactive:
+		create = prompt('Create virtual environment?')
+	else:
+		create = True
+	
+	if create:
+		run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
+		if requirements and os.path.isfile(requirements):
+			run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
 
 def checkout_branch(remote_branch, interactive=False):
 	if interactive:
@@ -167,7 +190,7 @@ def main(args):
 	
 	# If destination path for libraries is a directory, download Boost
 	if os.path.isdir(args.dest_dir):
-		download_boost(args.dest_dir, args.interactive, args.boost_version, args.install)
+		download_boost(args.dest_dir, interactive=args.interactive, version=args.boost_version, install=args.install)
 	# If destination path exists but is not a directory, show an error message and exit
 	else:
 		error_msg('Path "%s" is not a directory' % args.dest_dir)
@@ -194,9 +217,9 @@ if __name__ == '__main__':
 	parser.add_argument('-i', '--interactive', action='store_true', help='Enable interactive mode')
 	parser.add_argument('--boost-version', action='store', metavar='VERSION_NUMBER', default='auto', help='Force Boost version (or autodiscover latest if %(metavar)s=auto)')
 	parser.add_argument('-I', '--install', action='store_true', help='Install libraries after compiling')
-	parser.add_argument('-e', '--environment', action='store', dest='virtualenv_dest', default=None, help='Destination path for the Python virtual environment')
+	parser.add_argument('-e', '--environment', action='store', dest='virtualenv_dest', default='env', help='Destination path for the Python virtual environment')
 	parser.add_argument('-r', '--requirement', action='store', default=None, help='Install all packages listed in the requirements file to the virtual environment using pip')
-	parser.add_argument('-c', '--checkout', metavar='remote_branch', action='store', dest='remote_branch', help='Check out given remote branch to start development on that branch')
+	parser.add_argument('-c', '--checkout', metavar='remote_branch', action='store', default='origin/master', dest='remote_branch', help='Check out given remote branch to start development on that branch')
 	
 	if HAS_ARGCOMPLETE:
 		argcomplete.autocomplete(parser)
