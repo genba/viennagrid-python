@@ -33,6 +33,6 @@ add_custom_command (OUTPUT  ${OUTPUT}
                     COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT}
                     DEPENDS viennagrid_wrapper)
 
-add_custom_target (target ALL DEPENDS ${OUTPUT})
+add_custom_target (package ALL DEPENDS ${OUTPUT})
 
 install (CODE "execute_process (COMMAND python \"${SETUP_PY}\" install)")
