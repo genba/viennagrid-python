@@ -152,14 +152,22 @@ def update_git_submodules(interactive=False):
 
 def create_virtualenv(dest_dir, requirements=None, interactive=False, force=False):
 	if interactive:
-		create = prompt('Create virtual environment?')
+		create_virtualenv = prompt('Create virtual environment?')
 	else:
-		create = True
+		create_virtualenv = True
 	
-	if create:
-		run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
-		if requirements and os.path.isfile(requirements):
-			run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
+	if create_virtualenv:
+		if os.path.exists(dest_dir):
+			warning_msg('Destination path for virtual environment already exists.')
+			if not force:
+				create_virtualenv = prompt('Overwrite virtual environment?')
+		else:
+			os.mkdir(dest_dir)
+		
+		if create_virtualenv:
+			run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
+			if requirements and os.path.isfile(requirements):
+				run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
 
 def checkout_branch(remote_branch, interactive=False):
 	if interactive:
@@ -204,14 +212,9 @@ def main(args):
 	# If destination for virtual environment has been provided, create the virtual environment.
 	# If it hasn't been provided, don't do anything.
 	if args.virtualenv_dest:
-		# If destination path for the Python virtual environment exists, show an error message and exit
-		if os.path.exists(args.virtualenv_dest):
-			error_msg('Destination path for virtual environment already exists')
-		# If destination path for the Python virtual environment does not exist, set up virtual environment
-		else:
-			create_virtualenv(args.virtualenv_dest, requirements=args.requirement,
-			                                        interactive=args.interactive,
-			                                        force=args.force)
+		create_virtualenv(args.virtualenv_dest, requirements=args.requirement,
+		                                        interactive=args.interactive,
+		                                        force=args.force)
 	
 	# Checkout development branch
 	checkout_branch(args.remote_branch, interactive=args.interactive)
