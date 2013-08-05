@@ -7,7 +7,7 @@ set (TARGETS)
 find_program (SPHINX_BUILD_EXECUTABLE sphinx-build)
 if (SPHINX_BUILD_EXECUTABLE)
 	set (WRAPPER_LOCATION "${PROJECT_BINARY_DIR}/src") # TODO: find if CMake provides a better way to do this (like e.g. LIBRARY_PATH)
-	set (SPHINX_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sphinx/source")
+	set (SPHINX_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sphinx")
 	
 	# configured documentation tools and intermediate build results
 	set (SPHINX_CONF_DIR "${CMAKE_CURRENT_BINARY_DIR}/sphinx")
