@@ -24,7 +24,7 @@ configure_file (${MANIFEST_IN} ${MANIFEST} @ONLY)
 configure_file (${LICENSE_IN} ${LICENSE} @ONLY)
 configure_file (${CHANGES_IN} ${CHANGES} @ONLY)
 
-set (OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/build/timestamp")
+set (OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/timestamp")
 
 add_custom_command (OUTPUT  ${OUTPUT}
                     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
