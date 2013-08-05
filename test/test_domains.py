@@ -7,7 +7,7 @@ if len(sys.argv) > 1:
 
 import unittest
 
-import viennagrid_wrapper
+import viennagrid.wrapper
 
 from utils import *
 
@@ -18,14 +18,14 @@ from utils import *
 class TestLinearCartesian1D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian1D(1),
-			viennagrid_wrapper.PointCartesian1D(2),
-			viennagrid_wrapper.PointCartesian1D(3),
-			viennagrid_wrapper.PointCartesian1D(4),
-			viennagrid_wrapper.PointCartesian1D(5),
+			viennagrid.wrapper.PointCartesian1D(1),
+			viennagrid.wrapper.PointCartesian1D(2),
+			viennagrid.wrapper.PointCartesian1D(3),
+			viennagrid.wrapper.PointCartesian1D(4),
+			viennagrid.wrapper.PointCartesian1D(5),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCartesian1D_Domain()
+		self.domain = viennagrid.wrapper.LinearCartesian1D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -115,14 +115,14 @@ class TestLinearCartesian1D_Domain(unittest.TestCase):
 class TestLinearCartesian2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian2D(1, 2),
-			viennagrid_wrapper.PointCartesian2D(2, 3),
-			viennagrid_wrapper.PointCartesian2D(3, 4),
-			viennagrid_wrapper.PointCartesian2D(4, 5),
-			viennagrid_wrapper.PointCartesian2D(5, 6),
+			viennagrid.wrapper.PointCartesian2D(1, 2),
+			viennagrid.wrapper.PointCartesian2D(2, 3),
+			viennagrid.wrapper.PointCartesian2D(3, 4),
+			viennagrid.wrapper.PointCartesian2D(4, 5),
+			viennagrid.wrapper.PointCartesian2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCartesian2D_Domain()
+		self.domain = viennagrid.wrapper.LinearCartesian2D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -212,14 +212,14 @@ class TestLinearCartesian2D_Domain(unittest.TestCase):
 class TestLinearCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.LinearCartesian3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -309,14 +309,14 @@ class TestLinearCartesian3D_Domain(unittest.TestCase):
 class TestLinearCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.LinearCylindrical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -406,14 +406,14 @@ class TestLinearCylindrical3D_Domain(unittest.TestCase):
 class TestLinearPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointPolar2D(1, 2),
-			viennagrid_wrapper.PointPolar2D(2, 3),
-			viennagrid_wrapper.PointPolar2D(3, 4),
-			viennagrid_wrapper.PointPolar2D(4, 5),
-			viennagrid_wrapper.PointPolar2D(5, 6),
+			viennagrid.wrapper.PointPolar2D(1, 2),
+			viennagrid.wrapper.PointPolar2D(2, 3),
+			viennagrid.wrapper.PointPolar2D(3, 4),
+			viennagrid.wrapper.PointPolar2D(4, 5),
+			viennagrid.wrapper.PointPolar2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearPolar2D_Domain()
+		self.domain = viennagrid.wrapper.LinearPolar2D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -503,14 +503,14 @@ class TestLinearPolar2D_Domain(unittest.TestCase):
 class TestLinearSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.LinearSpherical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -604,14 +604,14 @@ class TestLinearSpherical3D_Domain(unittest.TestCase):
 class TestTriangularCartesian2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian2D(1, 2),
-			viennagrid_wrapper.PointCartesian2D(2, 3),
-			viennagrid_wrapper.PointCartesian2D(3, 4),
-			viennagrid_wrapper.PointCartesian2D(4, 5),
-			viennagrid_wrapper.PointCartesian2D(5, 6),
+			viennagrid.wrapper.PointCartesian2D(1, 2),
+			viennagrid.wrapper.PointCartesian2D(2, 3),
+			viennagrid.wrapper.PointCartesian2D(3, 4),
+			viennagrid.wrapper.PointCartesian2D(4, 5),
+			viennagrid.wrapper.PointCartesian2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularCartesian2D_Domain()
+		self.domain = viennagrid.wrapper.TriangularCartesian2D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -701,14 +701,14 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 class TestTriangularCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.TriangularCartesian3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -798,14 +798,14 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.TriangularCylindrical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -895,14 +895,14 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 class TestTriangularPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointPolar2D(1, 2),
-			viennagrid_wrapper.PointPolar2D(2, 3),
-			viennagrid_wrapper.PointPolar2D(3, 4),
-			viennagrid_wrapper.PointPolar2D(4, 5),
-			viennagrid_wrapper.PointPolar2D(5, 6),
+			viennagrid.wrapper.PointPolar2D(1, 2),
+			viennagrid.wrapper.PointPolar2D(2, 3),
+			viennagrid.wrapper.PointPolar2D(3, 4),
+			viennagrid.wrapper.PointPolar2D(4, 5),
+			viennagrid.wrapper.PointPolar2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularPolar2D_Domain()
+		self.domain = viennagrid.wrapper.TriangularPolar2D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -992,14 +992,14 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 class TestTriangularSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.TriangularSpherical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1093,14 +1093,14 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian2D(1, 2),
-			viennagrid_wrapper.PointCartesian2D(2, 3),
-			viennagrid_wrapper.PointCartesian2D(3, 4),
-			viennagrid_wrapper.PointCartesian2D(4, 5),
-			viennagrid_wrapper.PointCartesian2D(5, 6),
+			viennagrid.wrapper.PointCartesian2D(1, 2),
+			viennagrid.wrapper.PointCartesian2D(2, 3),
+			viennagrid.wrapper.PointCartesian2D(3, 4),
+			viennagrid.wrapper.PointCartesian2D(4, 5),
+			viennagrid.wrapper.PointCartesian2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralCartesian2D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralCartesian2D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1190,14 +1190,14 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralCartesian3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1287,14 +1287,14 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralCylindrical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1384,14 +1384,14 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointPolar2D(1, 2),
-			viennagrid_wrapper.PointPolar2D(2, 3),
-			viennagrid_wrapper.PointPolar2D(3, 4),
-			viennagrid_wrapper.PointPolar2D(4, 5),
-			viennagrid_wrapper.PointPolar2D(5, 6),
+			viennagrid.wrapper.PointPolar2D(1, 2),
+			viennagrid.wrapper.PointPolar2D(2, 3),
+			viennagrid.wrapper.PointPolar2D(3, 4),
+			viennagrid.wrapper.PointPolar2D(4, 5),
+			viennagrid.wrapper.PointPolar2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralPolar2D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralPolar2D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1481,14 +1481,14 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralSpherical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1582,14 +1582,14 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TetrahedralCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.TetrahedralCartesian3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1679,14 +1679,14 @@ class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TetrahedralCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.TetrahedralCylindrical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""
@@ -1776,14 +1776,14 @@ class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TetrahedralSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.TetrahedralSpherical3D_Domain()
 	
 	def test_vertices(self):
 		"""Test attributes 'num_vertices' and 'vertices', and methods 'make_vertex' and 'get_vertex'."""

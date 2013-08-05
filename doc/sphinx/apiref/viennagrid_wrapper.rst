@@ -1,4 +1,4 @@
-API reference of viennagrid_wrapper
+API reference of viennagrid.wrapper
 ***********************************
 
 .. toctree::
@@ -15,7 +15,7 @@ Free functions
 Points
 ======
 
-`viennagrid_wrapper` supports the following point types:
+`viennagrid.wrapper` supports the following point types:
 
 * cartesian 2D and 3D
 * cylindrical (3-dimensional)
@@ -26,11 +26,11 @@ all of them using double precision.
 
 For each type of point there is a separate class:
 
-* :py:class:`~viennagrid_wrapper.PointCartesian2D` for creating cartesian 2D points
-* :py:class:`~viennagrid_wrapper.PointCartesian3D` for creating cartesian 3D points
-* :py:class:`~viennagrid_wrapper.PointCylindrical3D` for creating cylindrical points
-* :py:class:`~viennagrid_wrapper.PointPolar2D` for creating polar points
-* :py:class:`~viennagrid_wrapper.PointSpherical3D` for creating spherical points
+* :py:class:`~viennagrid.wrapper.PointCartesian2D` for creating cartesian 2D points
+* :py:class:`~viennagrid.wrapper.PointCartesian3D` for creating cartesian 3D points
+* :py:class:`~viennagrid.wrapper.PointCylindrical3D` for creating cylindrical points
+* :py:class:`~viennagrid.wrapper.PointPolar2D` for creating polar points
+* :py:class:`~viennagrid.wrapper.PointSpherical3D` for creating spherical points
 
 .. autoclass:: PointCartesian2D
     :members:

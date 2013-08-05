@@ -9,9 +9,9 @@ In short, *ViennaGrid for Python* enables you to define and work with 2D and 3D 
 
 *ViennaGrid for Python* consists of two Python modules:
 
-1. `viennagrid_wrapper`
+1. `viennagrid.wrapper`
 2. `viennagrid`
 
-`viennagrid_wrapper` is the low-level module that wraps ViennaGrid's C++ classes and functions to Python. On the other hand, `viennagrid` is a higher-level module that provides a more Pythonic interface to ViennaGrid, and which is actually relies on `viennagrid_wrapper` to provide its functionality.
+`viennagrid.wrapper` is the low-level module that wraps ViennaGrid's C++ classes and functions to Python. On the other hand, `viennagrid` is a higher-level module that provides a more Pythonic interface to ViennaGrid, and which actually relies on `viennagrid.wrapper` to provide its functionality.
 
-In general, you will want to use `viennagrid` instead of `viennagrid_wrapper`. However, there may be some circumstances under which you may prefer to use `viennagrid_wrapper` directly. We will look into this with further detail in the :doc:`tutorial`.
+In general, you will want to use `viennagrid` instead of `viennagrid.wrapper`. However, there may be some circumstances under which you may prefer to use `viennagrid.wrapper` directly. We will look into this with further detail in the :doc:`tutorial`.

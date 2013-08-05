@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from viennagrid_wrapper import TriangularCartesian2D_Domain as Domain
-from viennagrid_wrapper import PointCartesian2D as Point
+from viennagrid.wrapper import TriangularCartesian2D_Domain as Domain
+from viennagrid.wrapper import PointCartesian2D as Point
 
 # Create an empty domain
 d = Domain()
