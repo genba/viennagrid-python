@@ -4,6 +4,9 @@ import viennagrid_wrapper as wrapper
 
 import config
 
+version = wrapper.version
+VERSION = version()
+
 class Point(object):
 	"""docstring for Point"""
 	def __init__(self, *args, **kwargs):
