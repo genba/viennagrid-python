@@ -31,7 +31,7 @@ char const * version()
 	return "0.1.0";
 }
 
-BOOST_PYTHON_MODULE(viennagrid_wrapper)
+BOOST_PYTHON_MODULE(wrapper)
 {
 	def("version", version, "Return the version number of 'viennagrid.wrapper'.");
 	

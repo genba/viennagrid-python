@@ -93,6 +93,6 @@ set (VIENNAGRID_WRAPPER_SRC
         ${VIENNAGRID_WRAPPER_CELLS_SRC}
         ${VIENNAGRID_WRAPPER_VERTICES_SRC})
 
-python_add_module (viennagrid_wrapper ${VIENNAGRID_WRAPPER_SRC})
-target_link_libraries (viennagrid_wrapper ${Boost_LIBRARIES})
-set_target_properties (viennagrid_wrapper PROPERTIES VERSION ${release} SOVERSION ${version})
+python_add_module (wrapper ${VIENNAGRID_WRAPPER_SRC})
+target_link_libraries (wrapper ${Boost_LIBRARIES})
+set_target_properties (wrapper PROPERTIES VERSION ${release} SOVERSION ${version})

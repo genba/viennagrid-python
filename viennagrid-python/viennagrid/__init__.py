@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*-
 
-import viennagrid_wrapper as wrapper
-
+import wrapper
 import config
 
 version = wrapper.version

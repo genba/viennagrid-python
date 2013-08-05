@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 
-import viennagrid_wrapper as _wrapper
+import wrapper
 
 ##########################
 # COORDINATE SYSTEM TAGS #
