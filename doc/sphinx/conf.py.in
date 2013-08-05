@@ -13,7 +13,7 @@
 
 import sys, os
 
-sys.path.append('@WRAPPER_LOCATION@')
+sys.path.append('@DISTUTILS_PACKAGE_PATH@')
 import viennagrid_wrapper
 
 # If extensions (or modules to document with autodoc) are in another directory,
