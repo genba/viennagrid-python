@@ -88,7 +88,7 @@ def run_commad(cmd, debug=False, stdin=None, stdout=None, stderr=None):
 	else:
 		subprocess.call(cmd, shell=True, stdin=stdin, stdout=stdout, stderr=stderr)
 
-def download_boost(dest_dir, interactive=False, version=False, install=False):
+def download_boost(dest_dir, interactive=False, version=False, install=False, force=False):
 	boost_version = DEFAULT_BOOST_VERSION
 	boost_url = DEFAULT_BOOST_URL
 	boost_filename = DEFAULT_BOOST_FILENAME
@@ -150,7 +150,7 @@ def update_git_submodules(interactive=False):
 	if update_submodules:
 		run_commad('git submodules update')
 
-def create_virtualenv(dest_dir, requirements=None, interactive=False):
+def create_virtualenv(dest_dir, requirements=None, interactive=False, force=False):
 	if interactive:
 		create = prompt('Create virtual environment?')
 	else:
@@ -190,13 +190,16 @@ def main(args):
 	
 	# If destination path for libraries is a directory, download Boost
 	if os.path.isdir(args.dest_dir):
-		download_boost(args.dest_dir, interactive=args.interactive, version=args.boost_version, install=args.install)
+		download_boost(args.dest_dir, install=args.install,
+		                              version=args.boost_version,
+		                              interactive=args.interactive,
+		                              force=args.force)
 	# If destination path exists but is not a directory, show an error message and exit
 	else:
 		error_msg('Path "%s" is not a directory' % args.dest_dir)
 	
 	# Download ViennaGrid (update Git submodules)
-	update_git_submodules(args.interactive)
+	update_git_submodules(interactive=args.interactive)
 	
 	# If destination for virtual environment has been provided, create the virtual environment.
 	# If it hasn't been provided, don't do anything.
@@ -206,7 +209,9 @@ def main(args):
 			error_msg('Destination path for virtual environment already exists')
 		# If destination path for the Python virtual environment does not exist, set up virtual environment
 		else:
-			create_virtualenv(args.virtualenv_dest, args.requirement, args.interactive)
+			create_virtualenv(args.virtualenv_dest, requirements=args.requirement,
+			                                        interactive=args.interactive,
+			                                        force=args.force)
 	
 	# Checkout development branch
 	checkout_branch(args.remote_branch, interactive=args.interactive)
@@ -220,6 +225,7 @@ if __name__ == '__main__':
 	parser.add_argument('-e', '--environment', action='store', dest='virtualenv_dest', default='env', help='Destination path for the Python virtual environment')
 	parser.add_argument('-r', '--requirement', action='store', default=None, help='Install all packages listed in the requirements file to the virtual environment using pip')
 	parser.add_argument('-c', '--checkout', metavar='remote_branch', action='store', default='origin/master', dest='remote_branch', help='Check out given remote branch to start development on that branch')
+	parser.add_argument('-f', '--force', action='store_true', help='Force overwrite existing files')
 	
 	if HAS_ARGCOMPLETE:
 		argcomplete.autocomplete(parser)
