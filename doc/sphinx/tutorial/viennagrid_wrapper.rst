@@ -1,5 +1,5 @@
-Using `viennagrid.wrapper`
-==========================
+Using :mod:`viennagrid.wrapper`
+===============================
 
 A mesh in ViennaGrid is composed of **cells** which, in turn, are defined by their **vertices**. All of the objects that conform the mesh are stored in a container called **domain**. In addition, a domain may be subdivided in **segments**.
 

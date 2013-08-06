@@ -1,5 +1,5 @@
-API reference of viennagrid
-***************************
+API reference of :mod:`viennagrid`
+==================================
 
 .. toctree::
    :maxdepth: 2

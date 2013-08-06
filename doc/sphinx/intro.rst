@@ -1,5 +1,6 @@
+************
 Introduction
-============
+************
 
 *ViennaGrid for Python* is a set of Python modules that make the functionality of `ViennaGrid <http://viennagrid.sourceforge.net/>`_ accessible to Python programmers.
 

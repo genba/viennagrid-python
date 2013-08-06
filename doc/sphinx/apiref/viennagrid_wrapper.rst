@@ -1,5 +1,5 @@
-API reference of viennagrid.wrapper
-***********************************
+API reference of :mod:`viennagrid.wrapper`
+==========================================
 
 .. toctree::
     :maxdepth: 2
@@ -8,12 +8,12 @@ API reference of viennagrid.wrapper
     :synopsis: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes from Python
 
 Free functions
-==============
+--------------
 
 .. autofunction:: version
 
 Points
-======
+------
 
 `viennagrid.wrapper` supports the following point types:
 
@@ -48,7 +48,7 @@ For each type of point there is a separate class:
     :members:
 
 Domains
-=======
+-------
 
 .. TRIANGULAR DOMAINS
 
@@ -96,7 +96,7 @@ Domains
     :members:
 
 Segments
-========
+--------
 
 .. TRIANGULAR SEGMENTS
 
@@ -144,7 +144,7 @@ Segments
     :members:
 
 Cells
-=====
+-----
 
 .. TRIANGULAR CELLS
 
