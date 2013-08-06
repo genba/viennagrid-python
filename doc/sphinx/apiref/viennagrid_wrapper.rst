@@ -1,11 +1,8 @@
 API reference of :mod:`viennagrid.wrapper`
 ==========================================
 
-.. toctree::
-    :maxdepth: 2
-
-.. automodule:: viennagrid_wrapper
-    :synopsis: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes from Python
+.. module:: viennagrid.wrapper
+    :synopsis: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes
 
 Free functions
 --------------
@@ -15,7 +12,7 @@ Free functions
 Points
 ------
 
-`viennagrid.wrapper` supports the following point types:
+:mod:`viennagrid.wrapper` supports the following point types:
 
 * cartesian 2D and 3D
 * cylindrical (3-dimensional)
