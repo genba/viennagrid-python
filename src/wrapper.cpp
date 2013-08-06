@@ -233,37 +233,37 @@ BOOST_PYTHON_MODULE(wrapper)
 	class_<LinearCartesian1D_Segmentation>("LinearCartesian1D_Segmentation", init<LinearCartesian1D_Domain &>())
 		.add_property("num_segments", &LinearCartesian1D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &LinearCartesian1D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &LinearCartesian1D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCartesian1D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<LinearCartesian2D_Segmentation>("LinearCartesian2D_Segmentation", init<LinearCartesian2D_Domain &>())
 		.add_property("num_segments", &LinearCartesian2D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &LinearCartesian2D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &LinearCartesian2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCartesian2D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<LinearCartesian3D_Segmentation>("LinearCartesian3D_Segmentation", init<LinearCartesian3D_Domain &>())
 		.add_property("num_segments", &LinearCartesian3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &LinearCartesian3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &LinearCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCartesian3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<LinearCylindrical3D_Segmentation>("LinearCylindrical3D_Segmentation", init<LinearCylindrical3D_Domain &>())
 		.add_property("num_segments", &LinearCylindrical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &LinearCylindrical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &LinearCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearCylindrical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<LinearPolar2D_Segmentation>("LinearPolar2D_Segmentation", init<LinearPolar2D_Domain &>())
 		.add_property("num_segments", &LinearPolar2D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &LinearPolar2D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &LinearPolar2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearPolar2D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<LinearSpherical3D_Segmentation>("LinearSpherical3D_Segmentation", init<LinearSpherical3D_Domain &>())
 		.add_property("num_segments", &LinearSpherical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &LinearSpherical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &LinearSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &LinearSpherical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	/*******************
@@ -428,31 +428,31 @@ BOOST_PYTHON_MODULE(wrapper)
 	class_<TriangularCartesian2D_Segmentation>("TriangularCartesian2D_Segmentation", init<TriangularCartesian2D_Domain &>())
 		.add_property("num_segments", &TriangularCartesian2D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TriangularCartesian2D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TriangularCartesian2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularCartesian2D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<TriangularCartesian3D_Segmentation>("TriangularCartesian3D_Segmentation", init<TriangularCartesian3D_Domain &>())
 		.add_property("num_segments", &TriangularCartesian3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TriangularCartesian3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TriangularCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularCartesian3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<TriangularCylindrical3D_Segmentation>("TriangularCylindrical3D_Segmentation", init<TriangularCylindrical3D_Domain &>())
 		.add_property("num_segments", &TriangularCylindrical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TriangularCylindrical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TriangularCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularCylindrical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<TriangularPolar2D_Segmentation>("TriangularPolar2D_Segmentation", init<TriangularPolar2D_Domain &>())
 		.add_property("num_segments", &TriangularPolar2D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TriangularPolar2D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TriangularPolar2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularPolar2D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<TriangularSpherical3D_Segmentation>("TriangularSpherical3D_Segmentation", init<TriangularSpherical3D_Domain &>())
 		.add_property("num_segments", &TriangularSpherical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TriangularSpherical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TriangularSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TriangularSpherical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	/***********************
@@ -603,31 +603,31 @@ BOOST_PYTHON_MODULE(wrapper)
 	class_<QuadrilateralCartesian2D_Segmentation>("QuadrilateralCartesian2D_Segmentation", init<QuadrilateralCartesian2D_Domain &>())
 		.add_property("num_segments", &QuadrilateralCartesian2D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &QuadrilateralCartesian2D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &QuadrilateralCartesian2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralCartesian2D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Segmentation>("QuadrilateralCartesian3D_Segmentation", init<QuadrilateralCartesian3D_Domain &>())
 		.add_property("num_segments", &QuadrilateralCartesian3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &QuadrilateralCartesian3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &QuadrilateralCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralCartesian3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Segmentation>("QuadrilateralCylindrical3D_Segmentation", init<QuadrilateralCylindrical3D_Domain &>())
 		.add_property("num_segments", &QuadrilateralCylindrical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &QuadrilateralCylindrical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &QuadrilateralCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralCylindrical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<QuadrilateralPolar2D_Segmentation>("QuadrilateralPolar2D_Segmentation", init<QuadrilateralPolar2D_Domain &>())
 		.add_property("num_segments", &QuadrilateralPolar2D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &QuadrilateralPolar2D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &QuadrilateralPolar2D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralPolar2D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Segmentation>("QuadrilateralSpherical3D_Segmentation", init<QuadrilateralSpherical3D_Domain &>())
 		.add_property("num_segments", &QuadrilateralSpherical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &QuadrilateralSpherical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &QuadrilateralSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &QuadrilateralSpherical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	/**************************
@@ -756,19 +756,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	class_<TetrahedralCartesian3D_Segmentation>("TetrahedralCartesian3D_Segmentation", init<TetrahedralCartesian3D_Domain &>())
 		.add_property("num_segments", &TetrahedralCartesian3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TetrahedralCartesian3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TetrahedralCartesian3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TetrahedralCartesian3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Segmentation>("TetrahedralCylindrical3D_Segmentation", init<TetrahedralCylindrical3D_Domain &>())
 		.add_property("num_segments", &TetrahedralCylindrical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TetrahedralCylindrical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TetrahedralCylindrical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TetrahedralCylindrical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	class_<TetrahedralSpherical3D_Segmentation>("TetrahedralSpherical3D_Segmentation", init<TetrahedralSpherical3D_Domain &>())
 		.add_property("num_segments", &TetrahedralSpherical3D_Segmentation::num_segments, "docstring")
 		.def("make_segment", &TetrahedralSpherical3D_Segmentation::make_segment, "docstring")
-		.add_property("segments", &TetrahedralSpherical3D_Segmentation::get_segments, "docstring")
+		.add_property("segments", &TetrahedralSpherical3D_Segmentation::get_segments, "Read-only property that returns a list containing all the segments in the segmentation.")
 	;
 	
 	/************************
