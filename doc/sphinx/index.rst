@@ -7,10 +7,11 @@ Welcome to the documentation of ViennaGrid for Python!
 ======================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :numbered:
 
    intro
+   install
    tutorial
    apiref
 
