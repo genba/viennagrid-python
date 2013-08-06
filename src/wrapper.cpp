@@ -271,37 +271,37 @@ BOOST_PYTHON_MODULE(wrapper)
 	 *******************/
 	
 	class_<LinearCartesian1D_Segment>("LinearCartesian1D_Segment", init<LinearCartesian1D_Segment_t &, LinearCartesian1D_Segmentation &>())
-		.add_property("num_cells", &LinearCartesian1D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &LinearCartesian1D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &LinearCartesian1D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCartesian1D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<LinearCartesian2D_Segment>("LinearCartesian2D_Segment", init<LinearCartesian2D_Segment_t &, LinearCartesian2D_Segmentation &>())
-		.add_property("num_cells", &LinearCartesian2D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &LinearCartesian2D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &LinearCartesian2D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<LinearCartesian3D_Segment>("LinearCartesian3D_Segment", init<LinearCartesian3D_Segment_t &, LinearCartesian3D_Segmentation &>())
-		.add_property("num_cells", &LinearCartesian3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &LinearCartesian3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &LinearCartesian3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<LinearCylindrical3D_Segment>("LinearCylindrical3D_Segment", init<LinearCylindrical3D_Segment_t &, LinearCylindrical3D_Segmentation &>())
-		.add_property("num_cells", &LinearCylindrical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &LinearCylindrical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &LinearCylindrical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<LinearPolar2D_Segment>("LinearPolar2D_Segment", init<LinearPolar2D_Segment_t &, LinearPolar2D_Segmentation &>())
-		.add_property("num_cells", &LinearPolar2D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &LinearPolar2D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &LinearPolar2D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<LinearSpherical3D_Segment>("LinearSpherical3D_Segment", init<LinearSpherical3D_Segment_t &, LinearSpherical3D_Segmentation &>())
-		.add_property("num_cells", &LinearSpherical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &LinearSpherical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &LinearSpherical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &LinearSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
@@ -460,31 +460,31 @@ BOOST_PYTHON_MODULE(wrapper)
 	 ***********************/
 	
 	class_<TriangularCartesian2D_Segment>("TriangularCartesian2D_Segment", init<TriangularCartesian2D_Segment_t &, TriangularCartesian2D_Segmentation &>())
-		.add_property("num_cells", &TriangularCartesian2D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TriangularCartesian2D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TriangularCartesian2D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<TriangularCartesian3D_Segment>("TriangularCartesian3D_Segment", init<TriangularCartesian3D_Segment_t &, TriangularCartesian3D_Segmentation &>())
-		.add_property("num_cells", &TriangularCartesian3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TriangularCartesian3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TriangularCartesian3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<TriangularCylindrical3D_Segment>("TriangularCylindrical3D_Segment", init<TriangularCylindrical3D_Segment_t &, TriangularCylindrical3D_Segmentation &>())
-		.add_property("num_cells", &TriangularCylindrical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TriangularCylindrical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TriangularCylindrical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<TriangularPolar2D_Segment>("TriangularPolar2D_Segment", init<TriangularPolar2D_Segment_t &, TriangularPolar2D_Segmentation &>())
-		.add_property("num_cells", &TriangularPolar2D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TriangularPolar2D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TriangularPolar2D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<TriangularSpherical3D_Segment>("TriangularSpherical3D_Segment", init<TriangularSpherical3D_Segment_t &, TriangularSpherical3D_Segmentation &>())
-		.add_property("num_cells", &TriangularSpherical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TriangularSpherical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TriangularSpherical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TriangularSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
@@ -635,31 +635,31 @@ BOOST_PYTHON_MODULE(wrapper)
 	 **************************/
 	
 	class_<QuadrilateralCartesian2D_Segment>("QuadrilateralCartesian2D_Segment", init<QuadrilateralCartesian2D_Segment_t &, QuadrilateralCartesian2D_Segmentation &>())
-		.add_property("num_cells", &QuadrilateralCartesian2D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &QuadrilateralCartesian2D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &QuadrilateralCartesian2D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralCartesian2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Segment>("QuadrilateralCartesian3D_Segment", init<QuadrilateralCartesian3D_Segment_t &, QuadrilateralCartesian3D_Segmentation &>())
-		.add_property("num_cells", &QuadrilateralCartesian3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &QuadrilateralCartesian3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &QuadrilateralCartesian3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Segment>("QuadrilateralCylindrical3D_Segment", init<QuadrilateralCylindrical3D_Segment_t &, QuadrilateralCylindrical3D_Segmentation &>())
-		.add_property("num_cells", &QuadrilateralCylindrical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &QuadrilateralCylindrical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &QuadrilateralCylindrical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<QuadrilateralPolar2D_Segment>("QuadrilateralPolar2D_Segment", init<QuadrilateralPolar2D_Segment_t &, QuadrilateralPolar2D_Segmentation &>())
-		.add_property("num_cells", &QuadrilateralPolar2D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &QuadrilateralPolar2D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &QuadrilateralPolar2D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralPolar2D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Segment>("QuadrilateralSpherical3D_Segment", init<QuadrilateralSpherical3D_Segment_t &, QuadrilateralSpherical3D_Segmentation &>())
-		.add_property("num_cells", &QuadrilateralSpherical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &QuadrilateralSpherical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &QuadrilateralSpherical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &QuadrilateralSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
@@ -776,19 +776,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	 ************************/
 	
 	class_<TetrahedralCartesian3D_Segment>("TetrahedralCartesian3D_Segment", init<TetrahedralCartesian3D_Segment_t &, TetrahedralCartesian3D_Segmentation &>())
-		.add_property("num_cells", &TetrahedralCartesian3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TetrahedralCartesian3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TetrahedralCartesian3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TetrahedralCartesian3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Segment>("TetrahedralCylindrical3D_Segment", init<TetrahedralCylindrical3D_Segment_t &, TetrahedralCylindrical3D_Segmentation &>())
-		.add_property("num_cells", &TetrahedralCylindrical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TetrahedralCylindrical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TetrahedralCylindrical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TetrahedralCylindrical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
 	
 	class_<TetrahedralSpherical3D_Segment>("TetrahedralSpherical3D_Segment", init<TetrahedralSpherical3D_Segment_t &, TetrahedralSpherical3D_Segmentation &>())
-		.add_property("num_cells", &TetrahedralSpherical3D_Segment::num_cells, "docstring")
+		.add_property("num_cells", &TetrahedralSpherical3D_Segment::num_cells, "Read-only property that returns the number of cells in the segment.")
 		.def("make_cell", &TetrahedralSpherical3D_Segment::make_cell, "Create a cell within the segment, taking the vertices of the cell as arguments.")
 		.add_property("cells", &TetrahedralSpherical3D_Segment::get_cells, "Read-only property that returns a list containing all the cells stored within the segment.")
 	;
