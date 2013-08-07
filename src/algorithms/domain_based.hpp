@@ -18,6 +18,7 @@ using namespace boost::python;
  * REFINE_UNIFORMLY *
  ********************/
 
+/*
 tuple LinearCartesian1D_Domain_refine_uniformly(LinearCartesian1D_Domain domain_in, LinearCartesian1D_Segmentation segmentation_in);
 tuple LinearCartesian2D_Domain_refine_uniformly(LinearCartesian2D_Domain domain_in, LinearCartesian2D_Segmentation segmentation_in);
 tuple LinearCartesian3D_Domain_refine_uniformly(LinearCartesian3D_Domain domain_in, LinearCartesian3D_Segmentation segmentation_in);
@@ -40,6 +41,7 @@ tuple QuadrilateralSpherical3D_Domain_refine_uniformly(QuadrilateralSpherical3D_
 tuple TetrahedralCartesian3D_Domain_refine_uniformly(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in);
 tuple TetrahedralCylindrical3D_Domain_refine_uniformly(TetrahedralCylindrical3D_Domain domain_in, TetrahedralCylindrical3D_Segmentation segmentation_in);
 tuple TetrahedralSpherical3D_Domain_refine_uniformly(TetrahedralSpherical3D_Domain domain_in, TetrahedralSpherical3D_Segmentation segmentation_in);
+*/
 
 /***********
  * SURFACE *

@@ -10,6 +10,7 @@
 
 // Linear
 
+/*
 tuple LinearCartesian1D_Domain_refine_uniformly(LinearCartesian1D_Domain domain_in, LinearCartesian1D_Segmentation segmentation_in)
 {
 	LinearCartesian1D_Domain          domain_out;
@@ -262,6 +263,7 @@ tuple TetrahedralSpherical3D_Domain_refine_uniformly(TetrahedralSpherical3D_Doma
 	
 	return make_tuple<TetrahedralSpherical3D_Domain, TetrahedralSpherical3D_Segmentation>(domain_out, segmentation_out);
 }
+*/
 
 /***********
  * SURFACE *

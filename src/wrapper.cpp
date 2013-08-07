@@ -869,6 +869,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * DOMAIN-BASED ALGORITHMS *
 	 ***************************/
 	
+	/*
 	def("LinearCartesian1D_Domain_refine_uniformly", &LinearCartesian1D_Domain_refine_uniformly, "docstring");
 	def("LinearCartesian2D_Domain_refine_uniformly", &LinearCartesian2D_Domain_refine_uniformly, "docstring");
 	def("LinearCartesian3D_Domain_refine_uniformly", &LinearCartesian3D_Domain_refine_uniformly, "docstring");
@@ -888,6 +889,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCartesian3D_Domain_refine_uniformly", &TetrahedralCartesian3D_Domain_refine_uniformly, "docstring");
 	def("TetrahedralCylindrical3D_Domain_refine_uniformly", &TetrahedralCylindrical3D_Domain_refine_uniformly, "docstring");
 	def("TetrahedralSpherical3D_Domain_refine_uniformly", &TetrahedralSpherical3D_Domain_refine_uniformly, "docstring");
+	*/
 	
 	def("LinearCartesian1D_Domain_surface", &LinearCartesian1D_Domain_surface, "docstring");
 	def("LinearCartesian2D_Domain_surface", &LinearCartesian2D_Domain_surface, "docstring");
