@@ -139,6 +139,7 @@ def download_boost(dest_dir, interactive=False, version=False, install=False, fo
 		os.chdir(dest_dir)
 		os.chdir('boost')
 		run_commad('sudo ./b2 install')
+		# FIXME: What do we do when sudo is not installed / set up (e.g. Debian)?
 		os.chdir('../..')
 
 def update_git_submodules(interactive=False):
@@ -167,6 +168,7 @@ def create_virtualenv(dest_dir, requirements=None, interactive=False, force=Fals
 		
 		if create_virtualenv:
 			run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
+			# FIXME: What do we do when virtualenv is not installed? Must check if it is.
 			if requirements and os.path.isfile(requirements):
 				run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
 
