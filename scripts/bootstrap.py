@@ -119,7 +119,7 @@ def download_boost(dest_dir, interactive=False, version=False, install=False, fo
 		run_commad('ln -s "%s" boost' % boost_filename.replace('.tar.bz2', ''))
 		os.chdir('boost')
 		run_commad('./bootstrap.sh --with-libraries=python')
-		os.chdir('..')
+		os.chdir('../..')
 	
 	# Compile Boost
 	if interactive:
@@ -130,7 +130,7 @@ def download_boost(dest_dir, interactive=False, version=False, install=False, fo
 		os.chdir(dest_dir)
 		os.chdir('boost')
 		run_commad('./b2')
-		os.chdir('..')
+		os.chdir('../..')
 	
 	# Install Boost
 	if interactive and not install:
@@ -139,7 +139,7 @@ def download_boost(dest_dir, interactive=False, version=False, install=False, fo
 		os.chdir(dest_dir)
 		os.chdir('boost')
 		run_commad('sudo ./b2 install')
-		os.chdir('..')
+		os.chdir('../..')
 
 def update_git_submodules(interactive=False):
 	if interactive:
