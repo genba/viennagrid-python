@@ -148,7 +148,8 @@ def update_git_submodules(interactive=False):
 		update_submodules = True
 	
 	if update_submodules:
-		run_commad('git submodules update')
+		run_commad('git submodule init')
+		run_commad('git submodule update')
 
 def create_virtualenv(dest_dir, requirements=None, interactive=False, force=False):
 	if interactive:
