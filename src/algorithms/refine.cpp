@@ -23,8 +23,8 @@ tuple TriangularCartesian2D_Domain_refine(TriangularCartesian2D_Domain domain_in
 	// Marks which edges should be refined
 	TriangularCartesian2D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TriangularCartesian2D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                                 it != edges.end();
+	                                               ++it)
 	{
 		if (predicate(TriangularCartesian2D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
@@ -56,8 +56,8 @@ tuple TriangularCartesian3D_Domain_refine(TriangularCartesian3D_Domain domain_in
 	// Marks which edges should be refined
 	TriangularCartesian3D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TriangularCartesian3D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                                 it != edges.end();
+	                                               ++it)
 	{
 		if (predicate(TriangularCartesian3D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
@@ -89,8 +89,8 @@ tuple TriangularCylindrical3D_Domain_refine(TriangularCylindrical3D_Domain domai
 	// Marks which edges should be refined
 	TriangularCylindrical3D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TriangularCylindrical3D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                                   it != edges.end();
+	                                                 ++it)
 	{
 		if (predicate(TriangularCylindrical3D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
@@ -122,8 +122,8 @@ tuple TriangularPolar2D_Domain_refine(TriangularPolar2D_Domain domain_in, Triang
 	// Marks which edges should be refined
 	TriangularPolar2D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TriangularPolar2D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                             it != edges.end();
+	                                           ++it)
 	{
 		if (predicate(TriangularPolar2D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
@@ -155,8 +155,8 @@ tuple TriangularSpherical3D_Domain_refine(TriangularSpherical3D_Domain domain_in
 	// Marks which edges should be refined
 	TriangularSpherical3D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TriangularSpherical3D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                                 it != edges.end();
+	                                               ++it)
 	{
 		if (predicate(TriangularSpherical3D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
@@ -190,8 +190,8 @@ tuple TetrahedralCartesian3D_Domain_refine(TetrahedralCartesian3D_Domain domain_
 	// Marks which edges should be refined
 	TetrahedralCartesian3D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TetrahedralCartesian3D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                                  it != edges.end();
+	                                                ++it)
 	{
 		if (predicate(TetrahedralCartesian3D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
@@ -223,8 +223,8 @@ tuple TetrahedralCylindrical3D_Domain_refine(TetrahedralCylindrical3D_Domain dom
 	// Marks which edges should be refined
 	TetrahedralCylindrical3D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TetrahedralCylindrical3D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                                    it != edges.end();
+	                                                  ++it)
 	{
 		if (predicate(TetrahedralCylindrical3D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
@@ -256,8 +256,8 @@ tuple TetrahedralSpherical3D_Domain_refine(TetrahedralSpherical3D_Domain domain_
 	// Marks which edges should be refined
 	TetrahedralSpherical3D_EdgeRange_t edges = viennagrid::elements(domain_in.get_domain());
 	for (TetrahedralSpherical3D_EdgeRange_t::iterator it = edges.begin();
-		                                         it != edges.end();
-		                                       ++it)
+	                                                  it != edges.end();
+	                                                ++it)
 	{
 		if (predicate(TetrahedralSpherical3D_Edge(*it)))
 			edge_refinement_flag_field(*it) = true;
