@@ -898,20 +898,6 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCylindrical3D_Cell_volume", &TetrahedralCylindrical3D_Cell_volume, "docstring");
 	def("TetrahedralSpherical3D_Cell_volume", &TetrahedralSpherical3D_Cell_volume, "docstring");
 	
-	/********************
-	 * REFINE_UNIFORMLY *
-	 ********************/
-	
-	def("TriangularCartesian2D_Domain_refine_uniformly", &TriangularCartesian2D_Domain_refine_uniformly, "docstring");
-	def("TriangularCartesian3D_Domain_refine_uniformly", &TriangularCartesian3D_Domain_refine_uniformly, "docstring");
-	def("TriangularCylindrical3D_Domain_refine_uniformly", &TriangularCylindrical3D_Domain_refine_uniformly, "docstring");
-	def("TriangularPolar2D_Domain_refine_uniformly", &TriangularPolar2D_Domain_refine_uniformly, "docstring");
-	def("TriangularSpherical3D_Domain_refine_uniformly", &TriangularSpherical3D_Domain_refine_uniformly, "docstring");
-	
-	def("TetrahedralCartesian3D_Domain_refine_uniformly", &TetrahedralCartesian3D_Domain_refine_uniformly, "docstring");
-	def("TetrahedralCylindrical3D_Domain_refine_uniformly", &TetrahedralCylindrical3D_Domain_refine_uniformly, "docstring");
-	def("TetrahedralSpherical3D_Domain_refine_uniformly", &TetrahedralSpherical3D_Domain_refine_uniformly, "docstring");
-	
 	/******************
 	 * DOMAIN-SURFACE *
 	 ******************/
@@ -992,6 +978,20 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCartesian3D_Segment_is_interface", &TetrahedralCartesian3D_Segment_is_interface, "docstring");
 	def("TetrahedralCylindrical3D_Segment_is_interface", &TetrahedralCylindrical3D_Segment_is_interface, "docstring");
 	def("TetrahedralSpherical3D_Segment_is_interface", &TetrahedralSpherical3D_Segment_is_interface, "docstring");
+	
+	/********************
+	 * REFINE_UNIFORMLY *
+	 ********************/
+	
+	def("TriangularCartesian2D_Domain_refine_uniformly", &TriangularCartesian2D_Domain_refine_uniformly, "docstring");
+	def("TriangularCartesian3D_Domain_refine_uniformly", &TriangularCartesian3D_Domain_refine_uniformly, "docstring");
+	def("TriangularCylindrical3D_Domain_refine_uniformly", &TriangularCylindrical3D_Domain_refine_uniformly, "docstring");
+	def("TriangularPolar2D_Domain_refine_uniformly", &TriangularPolar2D_Domain_refine_uniformly, "docstring");
+	def("TriangularSpherical3D_Domain_refine_uniformly", &TriangularSpherical3D_Domain_refine_uniformly, "docstring");
+	
+	def("TetrahedralCartesian3D_Domain_refine_uniformly", &TetrahedralCartesian3D_Domain_refine_uniformly, "docstring");
+	def("TetrahedralCylindrical3D_Domain_refine_uniformly", &TetrahedralCylindrical3D_Domain_refine_uniformly, "docstring");
+	def("TetrahedralSpherical3D_Domain_refine_uniformly", &TetrahedralSpherical3D_Domain_refine_uniformly, "docstring");
 	
 	/*******************
 	 * SEGMENT-SURFACE *
