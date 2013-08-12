@@ -31,6 +31,9 @@ using namespace boost::python;
 #include "vertices/quadrilateral.hpp"
 #include "vertices/tetrahedral.hpp"
 
+#include "edges/triangular.hpp"
+#include "edges/tetrahedral.hpp"
+
 #include "algorithms/cell_centroid.hpp"
 #include "algorithms/cell_circumcenter.hpp"
 #include "algorithms/cell_refine.hpp"
@@ -531,6 +534,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<TriangularSpherical3D_Vertex>("TriangularSpherical3D_Vertex", init<TriangularSpherical3D_Vertex_t &>())
 	;
 	
+	/********************
+	 * TRIANGULAR EDGES *
+	 ********************/
+	
+	class_<TriangularCartesian2D_Edge>("TriangularCartesian2D_Edge", init<TriangularCartesian2D_Edge_t &>())
+	;
+	
+	class_<TriangularCartesian3D_Edge>("TriangularCartesian3D_Edge", init<TriangularCartesian3D_Edge_t &>())
+	;
+	
+	class_<TriangularCylindrical3D_Edge>("TriangularCylindrical3D_Edge", init<TriangularCylindrical3D_Edge_t &>())
+	;
+	
+	class_<TriangularPolar2D_Edge>("TriangularPolar2D_Edge", init<TriangularPolar2D_Edge_t &>())
+	;
+	
+	class_<TriangularSpherical3D_Edge>("TriangularSpherical3D_Edge", init<TriangularSpherical3D_Edge_t &>())
+	;
+	
 	/*************************
 	 * QUADRILATERAL DOMAINS *
 	 *************************/
@@ -793,6 +815,19 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TetrahedralSpherical3D_Vertex>("TetrahedralSpherical3D_Vertex", init<TetrahedralSpherical3D_Vertex_t &>())
+	;
+	
+	/*********************
+	 * TETRAHEDRAL EDGES *
+	 *********************/
+	
+	class_<TetrahedralCartesian3D_Edge>("TetrahedralCartesian3D_Edge", init<TetrahedralCartesian3D_Edge_t &>())
+	;
+	
+	class_<TetrahedralCylindrical3D_Edge>("TetrahedralCylindrical3D_Edge", init<TetrahedralCylindrical3D_Edge_t &>())
+	;
+	
+	class_<TetrahedralSpherical3D_Edge>("TetrahedralSpherical3D_Edge", init<TetrahedralSpherical3D_Edge_t &>())
 	;
 	
 	/************
