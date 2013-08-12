@@ -14,4 +14,11 @@ typedef std::vector<bool>    EdgeRefinementFlagContainerType;
 typedef viennagrid::result_of::line<LinearCartesian1D_Domain_t>::type                   LinearCartesian1D_Edge_t;
 typedef viennagrid::result_of::line_range<LinearCartesian1D_Domain_t>::type             LinearCartesian1D_EdgeRange_t;
 
+/**************
+ * Triangular *
+ **************/
+
+typedef viennagrid::result_of::line<TriangularCartesian2D_Domain_t>::type          TriangularCartesian2D_Edge_t;
+typedef viennagrid::result_of::line_range<TriangularCartesian2D_Domain_t>::type    TriangularCartesian2D_EdgeRange_t;
+
 #endif /* end of include guard: EDGES_TYPES_HPP */
