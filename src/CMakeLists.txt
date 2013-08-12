@@ -87,7 +87,9 @@ set (VIENNAGRID_WRAPPER_VERTICES_SRC
 set (VIENNAGRID_WRAPPER_EDGES_SRC
         edges/types.hpp
         edges/triangular.hpp
-        edges/triangular.cpp)
+        edges/triangular.cpp
+        edges/tetrahedral.hpp
+        edges/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/cell_centroid.hpp
