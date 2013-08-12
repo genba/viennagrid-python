@@ -85,12 +85,30 @@ set (VIENNAGRID_WRAPPER_VERTICES_SRC
         vertices/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
-        algorithms/cell_based.hpp
-        algorithms/cell_based.cpp
-        algorithms/domain_based.hpp
-        algorithms/domain_based.cpp
-        algorithms/segment_based.hpp
-        algorithms/segment_based.cpp)
+        algorithms/cell_centroid.hpp
+        algorithms/cell_centroid.cpp
+        algorithms/cell_circumcenter.hpp
+        algorithms/cell_circumcenter.cpp
+        algorithms/cell_refine.hpp
+        algorithms/cell_refine.cpp
+        algorithms/cell_surface.hpp
+        algorithms/cell_surface.cpp
+        algorithms/cell_volume.hpp
+        algorithms/cell_volume.cpp
+        algorithms/domain_surface.hpp
+        algorithms/domain_surface.cpp
+        algorithms/domain_volume.hpp
+        algorithms/domain_volume.cpp
+        algorithms/is_interface.hpp
+        algorithms/is_interface.cpp
+        algorithms/refine.hpp
+        algorithms/refine.cpp
+        algorithms/refine_uniformly.hpp
+        algorithms/refine_uniformly.cpp
+        algorithms/segment_surface.hpp
+        algorithms/segment_surface.cpp
+        algorithms/segment_volume.hpp
+        algorithms/segment_volume.cpp)
 
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp
