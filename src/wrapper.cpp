@@ -1019,6 +1019,20 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCylindrical3D_Segment_is_interface", &TetrahedralCylindrical3D_Segment_is_interface, "docstring");
 	def("TetrahedralSpherical3D_Segment_is_interface", &TetrahedralSpherical3D_Segment_is_interface, "docstring");
 	
+	/**********
+	 * REFINE *
+	 **********/
+	
+	def("TriangularCartesian2D_Domain_refine", &TriangularCartesian2D_Domain_refine, "docstring");
+	def("TriangularCartesian3D_Domain_refine", &TriangularCartesian3D_Domain_refine, "docstring");
+	def("TriangularCylindrical3D_Domain_refine", &TriangularCylindrical3D_Domain_refine, "docstring");
+	def("TriangularPolar2D_Domain_refine", &TriangularPolar2D_Domain_refine, "docstring");
+	def("TriangularSpherical3D_Domain_refine", &TriangularSpherical3D_Domain_refine, "docstring");
+	
+	def("TetrahedralCartesian3D_Domain_refine", &TetrahedralCartesian3D_Domain_refine, "docstring");
+	def("TetrahedralCylindrical3D_Domain_refine", &TetrahedralCylindrical3D_Domain_refine, "docstring");
+	def("TetrahedralSpherical3D_Domain_refine", &TetrahedralSpherical3D_Domain_refine, "docstring");
+	
 	/********************
 	 * REFINE_UNIFORMLY *
 	 ********************/
