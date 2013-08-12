@@ -26,9 +26,18 @@ using namespace boost::python;
 #include "cells/quadrilateral.hpp"
 #include "cells/tetrahedral.hpp"
 
-#include "algorithms/cell_based.hpp"
-#include "algorithms/domain_based.hpp"
-#include "algorithms/segment_based.hpp"
+#include "algorithms/cell_centroid.hpp"
+#include "algorithms/cell_circumcenter.hpp"
+#include "algorithms/cell_refine.hpp"
+#include "algorithms/cell_surface.hpp"
+#include "algorithms/cell_volume.hpp"
+#include "algorithms/domain_surface.hpp"
+#include "algorithms/domain_volume.hpp"
+#include "algorithms/is_interface.hpp"
+#include "algorithms/refine.hpp"
+#include "algorithms/refine_uniformly.hpp"
+#include "algorithms/segment_surface.hpp"
+#include "algorithms/segment_volume.hpp"
 
 char const * version()
 {
