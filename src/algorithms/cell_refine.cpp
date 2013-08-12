@@ -172,3 +172,104 @@ tuple TriangularSpherical3D_Domain_cell_refine(TriangularSpherical3D_Domain doma
 	// Return refined domain and segmentation as a tuple: (refined_domain, refined_segmentation)
 	return make_tuple<TriangularSpherical3D_Domain, TriangularSpherical3D_Segmentation>(domain_out, segmentation_out);
 }
+
+// Tetrahedral
+
+tuple TetrahedralCartesian3D_Domain_cell_refine(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralCartesian3D_Cell &))
+{
+	TetrahedralCartesian3D_Domain          domain_out;
+	TetrahedralCartesian3D_Segmentation    segmentation_out(domain_out);
+	
+	// Vector of marks/flags that indicate which cells should be refined
+	
+	CellRefinementFlagContainerType     cell_refinement_flag_container;
+	
+	viennagrid::result_of::field<CellRefinementFlagContainerType,
+	                             TetrahedralCartesian3D_Cell_t>::type    cell_refinement_flag_field(cell_refinement_flag_container);
+	
+	// Marks which edges should be refined
+	TetrahedralCartesian3D_CellRange_t cells = viennagrid::elements(domain_in.get_domain());
+	for (TetrahedralCartesian3D_CellRange_t::iterator it = cells.begin();
+		                                              it != cells.end();
+		                                            ++it)
+	{
+		if (predicate(TetrahedralCartesian3D_Cell(*it)))
+			cell_refinement_flag_field(*it) = true;
+	}
+	
+	// Refine marked edges
+	viennagrid::cell_refine(domain_in.get_domain(),
+	                        segmentation_in.get_segmentation(),
+	                        domain_out.get_domain(),
+	                        segmentation_out.get_segmentation(),
+	                        cell_refinement_flag_field);
+	
+	// Return refined domain and segmentation as a tuple: (refined_domain, refined_segmentation)
+	return make_tuple<TetrahedralCartesian3D_Domain, TetrahedralCartesian3D_Segmentation>(domain_out, segmentation_out);
+}
+
+tuple TetrahedralCylindrical3D_Domain_cell_refine(TetrahedralCylindrical3D_Domain domain_in, TetrahedralCylindrical3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralCylindrical3D_Cell &))
+{
+	TetrahedralCylindrical3D_Domain          domain_out;
+	TetrahedralCylindrical3D_Segmentation    segmentation_out(domain_out);
+	
+	// Vector of marks/flags that indicate which cells should be refined
+	
+	CellRefinementFlagContainerType     cell_refinement_flag_container;
+	
+	viennagrid::result_of::field<CellRefinementFlagContainerType,
+	                             TetrahedralCylindrical3D_Cell_t>::type    cell_refinement_flag_field(cell_refinement_flag_container);
+	
+	// Marks which edges should be refined
+	TetrahedralCylindrical3D_CellRange_t cells = viennagrid::elements(domain_in.get_domain());
+	for (TetrahedralCylindrical3D_CellRange_t::iterator it = cells.begin();
+		                                                it != cells.end();
+		                                              ++it)
+	{
+		if (predicate(TetrahedralCylindrical3D_Cell(*it)))
+			cell_refinement_flag_field(*it) = true;
+	}
+	
+	// Refine marked edges
+	viennagrid::cell_refine(domain_in.get_domain(),
+	                        segmentation_in.get_segmentation(),
+	                        domain_out.get_domain(),
+	                        segmentation_out.get_segmentation(),
+	                        cell_refinement_flag_field);
+	
+	// Return refined domain and segmentation as a tuple: (refined_domain, refined_segmentation)
+	return make_tuple<TetrahedralCylindrical3D_Domain, TetrahedralCylindrical3D_Segmentation>(domain_out, segmentation_out);
+}
+
+tuple TetrahedralSpherical3D_Domain_cell_refine(TetrahedralSpherical3D_Domain domain_in, TetrahedralSpherical3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralSpherical3D_Cell &))
+{
+	TetrahedralSpherical3D_Domain          domain_out;
+	TetrahedralSpherical3D_Segmentation    segmentation_out(domain_out);
+	
+	// Vector of marks/flags that indicate which cells should be refined
+	
+	CellRefinementFlagContainerType     cell_refinement_flag_container;
+	
+	viennagrid::result_of::field<CellRefinementFlagContainerType,
+	                             TetrahedralSpherical3D_Cell_t>::type    cell_refinement_flag_field(cell_refinement_flag_container);
+	
+	// Marks which edges should be refined
+	TetrahedralSpherical3D_CellRange_t cells = viennagrid::elements(domain_in.get_domain());
+	for (TetrahedralSpherical3D_CellRange_t::iterator it = cells.begin();
+		                                              it != cells.end();
+		                                            ++it)
+	{
+		if (predicate(TetrahedralSpherical3D_Cell(*it)))
+			cell_refinement_flag_field(*it) = true;
+	}
+	
+	// Refine marked edges
+	viennagrid::cell_refine(domain_in.get_domain(),
+	                        segmentation_in.get_segmentation(),
+	                        domain_out.get_domain(),
+	                        segmentation_out.get_segmentation(),
+	                        cell_refinement_flag_field);
+	
+	// Return refined domain and segmentation as a tuple: (refined_domain, refined_segmentation)
+	return make_tuple<TetrahedralSpherical3D_Domain, TetrahedralSpherical3D_Segmentation>(domain_out, segmentation_out);
+}
