@@ -6,7 +6,9 @@
  * REFINE_UNIFORMLY *
  ********************/
 
-// Linear
+////////////
+// Linear //
+////////////
 
 /*
 tuple LinearCartesian1D_Domain_refine_uniformly(LinearCartesian1D_Domain domain_in, LinearCartesian1D_Segmentation segmentation_in)
@@ -86,8 +88,11 @@ tuple LinearSpherical3D_Domain_refine_uniformly(LinearSpherical3D_Domain domain_
 	
 	return make_tuple<LinearSpherical3D_Domain, LinearSpherical3D_Segmentation>(domain_out, segmentation_out);
 }
+*/
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 tuple TriangularCartesian2D_Domain_refine_uniformly(TriangularCartesian2D_Domain domain_in, TriangularCartesian2D_Segmentation segmentation_in)
 {
@@ -154,8 +159,11 @@ tuple TriangularSpherical3D_Domain_refine_uniformly(TriangularSpherical3D_Domain
 	return make_tuple<TriangularSpherical3D_Domain, TriangularSpherical3D_Segmentation>(domain_out, segmentation_out);
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
+/*
 tuple QuadrilateralCartesian2D_Domain_refine_uniformly(QuadrilateralCartesian2D_Domain domain_in, QuadrilateralCartesian2D_Segmentation segmentation_in)
 {
 	QuadrilateralCartesian2D_Domain          domain_out;
@@ -220,8 +228,11 @@ tuple QuadrilateralSpherical3D_Domain_refine_uniformly(QuadrilateralSpherical3D_
 	
 	return make_tuple<QuadrilateralSpherical3D_Domain, QuadrilateralSpherical3D_Segmentation>(domain_out, segmentation_out);
 }
+*/
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 tuple TetrahedralCartesian3D_Domain_refine_uniformly(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in)
 {
@@ -261,4 +272,3 @@ tuple TetrahedralSpherical3D_Domain_refine_uniformly(TetrahedralSpherical3D_Doma
 	
 	return make_tuple<TetrahedralSpherical3D_Domain, TetrahedralSpherical3D_Segmentation>(domain_out, segmentation_out);
 }
-*/
