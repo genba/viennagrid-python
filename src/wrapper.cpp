@@ -26,6 +26,11 @@ using namespace boost::python;
 #include "cells/quadrilateral.hpp"
 #include "cells/tetrahedral.hpp"
 
+#include "vertices/linear.hpp"
+#include "vertices/triangular.hpp"
+#include "vertices/quadrilateral.hpp"
+#include "vertices/tetrahedral.hpp"
+
 #include "algorithms/cell_centroid.hpp"
 #include "algorithms/cell_circumcenter.hpp"
 #include "algorithms/cell_refine.hpp"
