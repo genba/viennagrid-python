@@ -1074,9 +1074,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCylindrical3D_Segment_surface", &TetrahedralCylindrical3D_Segment_surface, "docstring");
 	def("TetrahedralSpherical3D_Segment_surface", &TetrahedralSpherical3D_Segment_surface, "docstring");
 	
-	/*************************
+	/******************
 	 * SEGMENT-VOLUME *
-	 *************************/
+	 ******************/
 	
 	def("LinearCartesian1D_Segment_volume", &LinearCartesian1D_Segment_volume, "docstring");
 	def("LinearCartesian2D_Segment_volume", &LinearCartesian2D_Segment_volume, "docstring");
