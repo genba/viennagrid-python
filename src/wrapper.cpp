@@ -884,6 +884,20 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCylindrical3D_Cell_circumcenter", &TetrahedralCylindrical3D_Cell_circumcenter, "docstring");
 	def("TetrahedralSpherical3D_Cell_circumcenter", &TetrahedralSpherical3D_Cell_circumcenter, "docstring");
 	
+	/***************
+	 * CELL_REFINE *
+	 ***************/
+	
+	def("TriangularCartesian2D_Domain_cell_refine", &TriangularCartesian2D_Domain_cell_refine, "docstring");
+	def("TriangularCartesian3D_Domain_cell_refine", &TriangularCartesian3D_Domain_cell_refine, "docstring");
+	def("TriangularCylindrical3D_Domain_cell_refine", &TriangularCylindrical3D_Domain_cell_refine, "docstring");
+	def("TriangularPolar2D_Domain_cell_refine", &TriangularPolar2D_Domain_cell_refine, "docstring");
+	def("TriangularSpherical3D_Domain_cell_refine", &TriangularSpherical3D_Domain_cell_refine, "docstring");
+	
+	def("TetrahedralCartesian3D_Domain_cell_refine", &TetrahedralCartesian3D_Domain_cell_refine, "docstring");
+	def("TetrahedralCylindrical3D_Domain_cell_refine", &TetrahedralCylindrical3D_Domain_cell_refine, "docstring");
+	def("TetrahedralSpherical3D_Domain_cell_refine", &TetrahedralSpherical3D_Domain_cell_refine, "docstring");
+	
 	/****************
 	 * CELL-SURFACE *
 	 ****************/
