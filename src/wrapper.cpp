@@ -34,6 +34,11 @@ using namespace boost::python;
 #include "edges/triangular.hpp"
 #include "edges/tetrahedral.hpp"
 
+#include "facets/linear.hpp"
+#include "facets/triangular.hpp"
+#include "facets/quadrilateral.hpp"
+#include "facets/tetrahedral.hpp"
+
 #include "algorithms/cell_centroid.hpp"
 #include "algorithms/cell_circumcenter.hpp"
 #include "algorithms/cell_refine.hpp"
@@ -374,6 +379,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<LinearSpherical3D_Vertex>("LinearSpherical3D_Vertex", init<LinearSpherical3D_Vertex_t &>())
 	;
 	
+	/*****************
+	 * LIENAR FACETS *
+	 *****************/
+	
+	class_<LinearCartesian1D_Facet>("LinearCartesian1D_Facet", init<LinearCartesian1D_Facet_t &>())
+	;
+	
+	class_<LinearCartesian2D_Facet>("LinearCartesian2D_Facet", init<LinearCartesian2D_Facet_t &>())
+	;
+	
+	class_<LinearCartesian3D_Facet>("LinearCartesian3D_Facet", init<LinearCartesian3D_Facet_t &>())
+	;
+	
+	class_<LinearCylindrical3D_Facet>("LinearCylindrical3D_Facet", init<LinearCylindrical3D_Facet_t &>())
+	;
+	
+	class_<LinearPolar2D_Facet>("LinearPolar2D_Facet", init<LinearPolar2D_Facet_t &>())
+	;
+	
+	class_<LinearSpherical3D_Facet>("LinearSpherical3D_Facet", init<LinearSpherical3D_Facet_t &>())
+	;
+	
 	/**********************
 	 * TRIANGULAR DOMAINS *
 	 **********************/
@@ -553,6 +580,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<TriangularSpherical3D_Edge>("TriangularSpherical3D_Edge", init<TriangularSpherical3D_Edge_t &>())
 	;
 	
+	/*********************
+	 * TRIANGULAR FACETS *
+	 *********************/
+	
+	class_<TriangularCartesian2D_Facet>("TriangularCartesian2D_Facet", init<TriangularCartesian2D_Facet_t &>())
+	;
+	
+	class_<TriangularCartesian3D_Facet>("TriangularCartesian3D_Facet", init<TriangularCartesian3D_Facet_t &>())
+	;
+	
+	class_<TriangularCylindrical3D_Facet>("TriangularCylindrical3D_Facet", init<TriangularCylindrical3D_Facet_t &>())
+	;
+	
+	class_<TriangularPolar2D_Facet>("TriangularPolar2D_Facet", init<TriangularPolar2D_Facet_t &>())
+	;
+	
+	class_<TriangularSpherical3D_Facet>("TriangularSpherical3D_Facet", init<TriangularSpherical3D_Facet_t &>())
+	;
+	
 	/*************************
 	 * QUADRILATERAL DOMAINS *
 	 *************************/
@@ -712,7 +758,26 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<QuadrilateralSpherical3D_Vertex>("QuadrilateralSpherical3D_Vertex", init<QuadrilateralSpherical3D_Vertex_t &>())
 	;
-
+	
+	/************************
+	 * QUADRILATERAL FACETS *
+	 ************************/
+	
+	class_<QuadrilateralCartesian2D_Facet>("QuadrilateralCartesian2D_Facet", init<QuadrilateralCartesian2D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralCartesian3D_Facet>("QuadrilateralCartesian3D_Facet", init<QuadrilateralCartesian3D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralCylindrical3D_Facet>("QuadrilateralCylindrical3D_Facet", init<QuadrilateralCylindrical3D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralPolar2D_Facet>("QuadrilateralPolar2D_Facet", init<QuadrilateralPolar2D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralSpherical3D_Facet>("QuadrilateralSpherical3D_Facet", init<QuadrilateralSpherical3D_Facet_t &>())
+	;
+	
 	/*************************
 	 * TETRAHEDRAL DOMAINS *
 	 *************************/
@@ -828,6 +893,19 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TetrahedralSpherical3D_Edge>("TetrahedralSpherical3D_Edge", init<TetrahedralSpherical3D_Edge_t &>())
+	;
+	
+	/**********************
+	 * TETRAHEDRAL FACETS *
+	 **********************/
+	
+	class_<TetrahedralCartesian3D_Facet>("TetrahedralCartesian3D_Facet", init<TetrahedralCartesian3D_Facet_t &>())
+	;
+	
+	class_<TetrahedralCylindrical3D_Facet>("TetrahedralCylindrical3D_Facet", init<TetrahedralCylindrical3D_Facet_t &>())
+	;
+	
+	class_<TetrahedralSpherical3D_Facet>("TetrahedralSpherical3D_Facet", init<TetrahedralSpherical3D_Facet_t &>())
 	;
 	
 	/************
