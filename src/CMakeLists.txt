@@ -94,7 +94,9 @@ set (VIENNAGRID_WRAPPER_EDGES_SRC
 set (VIENNAGRID_WRAPPER_FACETS_SRC
         facets/types.hpp
         facets/triangular.hpp
-        facets/triangular.cpp)
+        facets/triangular.cpp
+        facets/tetrahedral.hpp
+        facets/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/cell_centroid.hpp

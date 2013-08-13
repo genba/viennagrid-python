@@ -13,4 +13,12 @@ typedef viennagrid::result_of::facet<TriangularCylindrical3D_Domain_t>::type    
 typedef viennagrid::result_of::facet<TriangularPolar2D_Domain_t>::type           TriangularPolar2D_Facet_t;
 typedef viennagrid::result_of::facet<TriangularSpherical3D_Domain_t>::type       TriangularSpherical3D_Facet_t;
 
+/***************
+ * Tetrahedral *
+ ***************/
+
+typedef viennagrid::result_of::facet<TetrahedralCartesian3D_Domain_t>::type      TetrahedralCartesian3D_Facet_t;
+typedef viennagrid::result_of::facet<TetrahedralCylindrical3D_Domain_t>::type    TetrahedralCylindrical3D_Facet_t;
+typedef viennagrid::result_of::facet<TetrahedralSpherical3D_Domain_t>::type      TetrahedralSpherical3D_Facet_t;
+
 #endif /* end of include guard: FACETS_TYPES_HPP */
