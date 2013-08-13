@@ -358,7 +358,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	/*******************
-	 * LIENAR VERTICES *
+	 * LINEAR VERTICES *
 	 *******************/
 	
 	class_<LinearCartesian1D_Vertex>("LinearCartesian1D_Vertex", init<LinearCartesian1D_Vertex_t &>())
@@ -380,7 +380,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	/*****************
-	 * LIENAR FACETS *
+	 * LINEAR FACETS *
 	 *****************/
 	
 	class_<LinearCartesian1D_Facet>("LinearCartesian1D_Facet", init<LinearCartesian1D_Facet_t &>())
