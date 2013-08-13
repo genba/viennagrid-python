@@ -86,10 +86,25 @@ set (VIENNAGRID_WRAPPER_VERTICES_SRC
 
 set (VIENNAGRID_WRAPPER_EDGES_SRC
         edges/types.hpp
+        edges/linear.hpp
+        edges/linear.cpp
         edges/triangular.hpp
         edges/triangular.cpp
+        edges/quadrilateral.hpp
+        edges/quadrilateral.cpp
         edges/tetrahedral.hpp
         edges/tetrahedral.cpp)
+
+set (VIENNAGRID_WRAPPER_FACETS_SRC
+        facets/types.hpp
+        facets/linear.hpp
+        facets/linear.cpp
+        facets/triangular.hpp
+        facets/triangular.cpp
+        facets/quadrilateral.hpp
+        facets/quadrilateral.cpp
+        facets/tetrahedral.hpp
+        facets/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/cell_centroid.hpp
@@ -126,6 +141,7 @@ set (VIENNAGRID_WRAPPER_SRC
         ${VIENNAGRID_WRAPPER_CELLS_SRC}
         ${VIENNAGRID_WRAPPER_VERTICES_SRC}
         ${VIENNAGRID_WRAPPER_EDGES_SRC}
+        ${VIENNAGRID_WRAPPER_FACETS_SRC}
         ${VIENNAGRID_WRAPPER_ALGORITHMS_SRC})
 
 python_add_module (viennagrid_wrapper ${VIENNAGRID_WRAPPER_SRC})

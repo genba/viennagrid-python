@@ -31,8 +31,15 @@ using namespace boost::python;
 #include "vertices/quadrilateral.hpp"
 #include "vertices/tetrahedral.hpp"
 
+#include "edges/linear.hpp"
 #include "edges/triangular.hpp"
+#include "edges/quadrilateral.hpp"
 #include "edges/tetrahedral.hpp"
+
+#include "facets/linear.hpp"
+#include "facets/triangular.hpp"
+#include "facets/quadrilateral.hpp"
+#include "facets/tetrahedral.hpp"
 
 #include "algorithms/cell_centroid.hpp"
 #include "algorithms/cell_circumcenter.hpp"
@@ -353,7 +360,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	/*******************
-	 * LIENAR VERTICES *
+	 * LINEAR VERTICES *
 	 *******************/
 	
 	class_<LinearCartesian1D_Vertex>("LinearCartesian1D_Vertex", init<LinearCartesian1D_Vertex_t &>())
@@ -372,6 +379,50 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<LinearSpherical3D_Vertex>("LinearSpherical3D_Vertex", init<LinearSpherical3D_Vertex_t &>())
+	;
+	
+	/****************
+	 * LINEAR EDGES *
+	 ****************/
+	
+	class_<LinearCartesian1D_Edge>("LinearCartesian1D_Edge", init<LinearCartesian1D_Edge_t &>())
+	;
+	
+	class_<LinearCartesian2D_Edge>("LinearCartesian2D_Edge", init<LinearCartesian2D_Edge_t &>())
+	;
+	
+	class_<LinearCartesian3D_Edge>("LinearCartesian3D_Edge", init<LinearCartesian3D_Edge_t &>())
+	;
+	
+	class_<LinearCylindrical3D_Edge>("LinearCylindrical3D_Edge", init<LinearCylindrical3D_Edge_t &>())
+	;
+	
+	class_<LinearPolar2D_Edge>("LinearPolar2D_Edge", init<LinearPolar2D_Edge_t &>())
+	;
+	
+	class_<LinearSpherical3D_Edge>("LinearSpherical3D_Edge", init<LinearSpherical3D_Edge_t &>())
+	;
+	
+	/*****************
+	 * LINEAR FACETS *
+	 *****************/
+	
+	class_<LinearCartesian1D_Facet>("LinearCartesian1D_Facet", init<LinearCartesian1D_Facet_t &>())
+	;
+	
+	class_<LinearCartesian2D_Facet>("LinearCartesian2D_Facet", init<LinearCartesian2D_Facet_t &>())
+	;
+	
+	class_<LinearCartesian3D_Facet>("LinearCartesian3D_Facet", init<LinearCartesian3D_Facet_t &>())
+	;
+	
+	class_<LinearCylindrical3D_Facet>("LinearCylindrical3D_Facet", init<LinearCylindrical3D_Facet_t &>())
+	;
+	
+	class_<LinearPolar2D_Facet>("LinearPolar2D_Facet", init<LinearPolar2D_Facet_t &>())
+	;
+	
+	class_<LinearSpherical3D_Facet>("LinearSpherical3D_Facet", init<LinearSpherical3D_Facet_t &>())
 	;
 	
 	/**********************
@@ -553,6 +604,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<TriangularSpherical3D_Edge>("TriangularSpherical3D_Edge", init<TriangularSpherical3D_Edge_t &>())
 	;
 	
+	/*********************
+	 * TRIANGULAR FACETS *
+	 *********************/
+	
+	class_<TriangularCartesian2D_Facet>("TriangularCartesian2D_Facet", init<TriangularCartesian2D_Facet_t &>())
+	;
+	
+	class_<TriangularCartesian3D_Facet>("TriangularCartesian3D_Facet", init<TriangularCartesian3D_Facet_t &>())
+	;
+	
+	class_<TriangularCylindrical3D_Facet>("TriangularCylindrical3D_Facet", init<TriangularCylindrical3D_Facet_t &>())
+	;
+	
+	class_<TriangularPolar2D_Facet>("TriangularPolar2D_Facet", init<TriangularPolar2D_Facet_t &>())
+	;
+	
+	class_<TriangularSpherical3D_Facet>("TriangularSpherical3D_Facet", init<TriangularSpherical3D_Facet_t &>())
+	;
+	
 	/*************************
 	 * QUADRILATERAL DOMAINS *
 	 *************************/
@@ -712,7 +782,45 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<QuadrilateralSpherical3D_Vertex>("QuadrilateralSpherical3D_Vertex", init<QuadrilateralSpherical3D_Vertex_t &>())
 	;
-
+	
+	/***********************
+	 * QUADRILATERAL EDGES *
+	 ***********************/
+	
+	class_<QuadrilateralCartesian2D_Edge>("QuadrilateralCartesian2D_Edge", init<QuadrilateralCartesian2D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralCartesian3D_Edge>("QuadrilateralCartesian3D_Edge", init<QuadrilateralCartesian3D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralCylindrical3D_Edge>("QuadrilateralCylindrical3D_Edge", init<QuadrilateralCylindrical3D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralPolar2D_Edge>("QuadrilateralPolar2D_Edge", init<QuadrilateralPolar2D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralSpherical3D_Edge>("QuadrilateralSpherical3D_Edge", init<QuadrilateralSpherical3D_Edge_t &>())
+	;
+	
+	/************************
+	 * QUADRILATERAL FACETS *
+	 ************************/
+	
+	class_<QuadrilateralCartesian2D_Facet>("QuadrilateralCartesian2D_Facet", init<QuadrilateralCartesian2D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralCartesian3D_Facet>("QuadrilateralCartesian3D_Facet", init<QuadrilateralCartesian3D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralCylindrical3D_Facet>("QuadrilateralCylindrical3D_Facet", init<QuadrilateralCylindrical3D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralPolar2D_Facet>("QuadrilateralPolar2D_Facet", init<QuadrilateralPolar2D_Facet_t &>())
+	;
+	
+	class_<QuadrilateralSpherical3D_Facet>("QuadrilateralSpherical3D_Facet", init<QuadrilateralSpherical3D_Facet_t &>())
+	;
+	
 	/*************************
 	 * TETRAHEDRAL DOMAINS *
 	 *************************/
@@ -828,6 +936,19 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<TetrahedralSpherical3D_Edge>("TetrahedralSpherical3D_Edge", init<TetrahedralSpherical3D_Edge_t &>())
+	;
+	
+	/**********************
+	 * TETRAHEDRAL FACETS *
+	 **********************/
+	
+	class_<TetrahedralCartesian3D_Facet>("TetrahedralCartesian3D_Facet", init<TetrahedralCartesian3D_Facet_t &>())
+	;
+	
+	class_<TetrahedralCylindrical3D_Facet>("TetrahedralCylindrical3D_Facet", init<TetrahedralCylindrical3D_Facet_t &>())
+	;
+	
+	class_<TetrahedralSpherical3D_Facet>("TetrahedralSpherical3D_Facet", init<TetrahedralSpherical3D_Facet_t &>())
 	;
 	
 	/************
@@ -1006,32 +1127,79 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCylindrical3D_Domain_volume", &TetrahedralCylindrical3D_Domain_volume, "docstring");
 	def("TetrahedralSpherical3D_Domain_volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
 	
-	/****************
-	 * IS_INTERFACE *
-	 ****************/
+	/******************************
+	 * IS_INTERFACE (with facets) *
+	 ******************************/
 	
-	def("LinearCartesian1D_Segment_is_interface", &LinearCartesian1D_Segment_is_interface, "docstring");
-	def("LinearCartesian2D_Segment_is_interface", &LinearCartesian2D_Segment_is_interface, "docstring");
-	def("LinearCartesian3D_Segment_is_interface", &LinearCartesian3D_Segment_is_interface, "docstring");
-	def("LinearCylindrical3D_Segment_is_interface", &LinearCylindrical3D_Segment_is_interface, "docstring");
-	def("LinearPolar2D_Segment_is_interface", &LinearPolar2D_Segment_is_interface, "docstring");
-	def("LinearSpherical3D_Segment_is_interface", &LinearSpherical3D_Segment_is_interface, "docstring");
+	def("LinearCartesian1D_Facet_is_interface", &LinearCartesian1D_Facet_is_interface, "docstring");
+	def("LinearCartesian2D_Facet_is_interface", &LinearCartesian2D_Facet_is_interface, "docstring");
+	def("LinearCartesian3D_Facet_is_interface", &LinearCartesian3D_Facet_is_interface, "docstring");
+	def("LinearCylindrical3D_Facet_is_interface", &LinearCylindrical3D_Facet_is_interface, "docstring");
+	def("LinearPolar2D_Facet_is_interface", &LinearPolar2D_Facet_is_interface, "docstring");
+	def("LinearSpherical3D_Facet_is_interface", &LinearSpherical3D_Facet_is_interface, "docstring");
 	
-	def("TriangularCartesian2D_Segment_is_interface", &TriangularCartesian2D_Segment_is_interface, "docstring");
-	def("TriangularCartesian3D_Segment_is_interface", &TriangularCartesian3D_Segment_is_interface, "docstring");
-	def("TriangularCylindrical3D_Segment_is_interface", &TriangularCylindrical3D_Segment_is_interface, "docstring");
-	def("TriangularPolar2D_Segment_is_interface", &TriangularPolar2D_Segment_is_interface, "docstring");
-	def("TriangularSpherical3D_Segment_is_interface", &TriangularSpherical3D_Segment_is_interface, "docstring");
+	def("TriangularCartesian2D_Facet_is_interface", &TriangularCartesian2D_Facet_is_interface, "docstring");
+	def("TriangularCartesian3D_Facet_is_interface", &TriangularCartesian3D_Facet_is_interface, "docstring");
+	def("TriangularCylindrical3D_Facet_is_interface", &TriangularCylindrical3D_Facet_is_interface, "docstring");
+	def("TriangularPolar2D_Facet_is_interface", &TriangularPolar2D_Facet_is_interface, "docstring");
+	def("TriangularSpherical3D_Facet_is_interface", &TriangularSpherical3D_Facet_is_interface, "docstring");
 	
-	def("QuadrilateralCartesian2D_Segment_is_interface", &QuadrilateralCartesian2D_Segment_is_interface, "docstring");
-	def("QuadrilateralCartesian3D_Segment_is_interface", &QuadrilateralCartesian3D_Segment_is_interface, "docstring");
-	def("QuadrilateralCylindrical3D_Segment_is_interface", &QuadrilateralCylindrical3D_Segment_is_interface, "docstring");
-	def("QuadrilateralPolar2D_Segment_is_interface", &QuadrilateralPolar2D_Segment_is_interface, "docstring");
-	def("QuadrilateralSpherical3D_Segment_is_interface", &QuadrilateralSpherical3D_Segment_is_interface, "docstring");
+	def("QuadrilateralCartesian2D_Facet_is_interface", &QuadrilateralCartesian2D_Facet_is_interface, "docstring");
+	def("QuadrilateralCartesian3D_Facet_is_interface", &QuadrilateralCartesian3D_Facet_is_interface, "docstring");
+	def("QuadrilateralCylindrical3D_Facet_is_interface", &QuadrilateralCylindrical3D_Facet_is_interface, "docstring");
+	def("QuadrilateralPolar2D_Facet_is_interface", &QuadrilateralPolar2D_Facet_is_interface, "docstring");
+	def("QuadrilateralSpherical3D_Facet_is_interface", &QuadrilateralSpherical3D_Facet_is_interface, "docstring");
 	
-	def("TetrahedralCartesian3D_Segment_is_interface", &TetrahedralCartesian3D_Segment_is_interface, "docstring");
-	def("TetrahedralCylindrical3D_Segment_is_interface", &TetrahedralCylindrical3D_Segment_is_interface, "docstring");
-	def("TetrahedralSpherical3D_Segment_is_interface", &TetrahedralSpherical3D_Segment_is_interface, "docstring");
+	def("TetrahedralCartesian3D_Facet_is_interface", &TetrahedralCartesian3D_Facet_is_interface, "docstring");
+	def("TetrahedralCylindrical3D_Facet_is_interface", &TetrahedralCylindrical3D_Facet_is_interface, "docstring");
+	def("TetrahedralSpherical3D_Facet_is_interface", &TetrahedralSpherical3D_Facet_is_interface, "docstring");
+	
+	/*****************************
+	 * IS_INTERFACE (with edges) *
+	 *****************************/
+	
+	def("TriangularCartesian2D_Edge_is_interface", &TriangularCartesian2D_Edge_is_interface, "docstring");
+	def("TriangularCartesian3D_Edge_is_interface", &TriangularCartesian3D_Edge_is_interface, "docstring");
+	def("TriangularCylindrical3D_Edge_is_interface", &TriangularCylindrical3D_Edge_is_interface, "docstring");
+	def("TriangularPolar2D_Edge_is_interface", &TriangularPolar2D_Edge_is_interface, "docstring");
+	def("TriangularSpherical3D_Edge_is_interface", &TriangularSpherical3D_Edge_is_interface, "docstring");
+	
+	def("QuadrilateralCartesian2D_Edge_is_interface", &QuadrilateralCartesian2D_Edge_is_interface, "docstring");
+	def("QuadrilateralCartesian3D_Edge_is_interface", &QuadrilateralCartesian3D_Edge_is_interface, "docstring");
+	def("QuadrilateralCylindrical3D_Edge_is_interface", &QuadrilateralCylindrical3D_Edge_is_interface, "docstring");
+	def("QuadrilateralPolar2D_Edge_is_interface", &QuadrilateralPolar2D_Edge_is_interface, "docstring");
+	def("QuadrilateralSpherical3D_Edge_is_interface", &QuadrilateralSpherical3D_Edge_is_interface, "docstring");
+	
+	def("TetrahedralCartesian3D_Edge_is_interface", &TetrahedralCartesian3D_Edge_is_interface, "docstring");
+	def("TetrahedralCylindrical3D_Edge_is_interface", &TetrahedralCylindrical3D_Edge_is_interface, "docstring");
+	def("TetrahedralSpherical3D_Edge_is_interface", &TetrahedralSpherical3D_Edge_is_interface, "docstring");
+	
+	/********************************
+	 * IS_INTERFACE (with vertices) *
+	 ********************************/
+	
+	def("LinearCartesian1D_Vertex_is_interface", &LinearCartesian1D_Vertex_is_interface, "docstring");
+	def("LinearCartesian2D_Vertex_is_interface", &LinearCartesian2D_Vertex_is_interface, "docstring");
+	def("LinearCartesian3D_Vertex_is_interface", &LinearCartesian3D_Vertex_is_interface, "docstring");
+	def("LinearCylindrical3D_Vertex_is_interface", &LinearCylindrical3D_Vertex_is_interface, "docstring");
+	def("LinearPolar2D_Vertex_is_interface", &LinearPolar2D_Vertex_is_interface, "docstring");
+	def("LinearSpherical3D_Vertex_is_interface", &LinearSpherical3D_Vertex_is_interface, "docstring");
+	
+	def("TriangularCartesian2D_Vertex_is_interface", &TriangularCartesian2D_Vertex_is_interface, "docstring");
+	def("TriangularCartesian3D_Vertex_is_interface", &TriangularCartesian3D_Vertex_is_interface, "docstring");
+	def("TriangularCylindrical3D_Vertex_is_interface", &TriangularCylindrical3D_Vertex_is_interface, "docstring");
+	def("TriangularPolar2D_Vertex_is_interface", &TriangularPolar2D_Vertex_is_interface, "docstring");
+	def("TriangularSpherical3D_Vertex_is_interface", &TriangularSpherical3D_Vertex_is_interface, "docstring");
+	
+	def("QuadrilateralCartesian2D_Vertex_is_interface", &QuadrilateralCartesian2D_Vertex_is_interface, "docstring");
+	def("QuadrilateralCartesian3D_Vertex_is_interface", &QuadrilateralCartesian3D_Vertex_is_interface, "docstring");
+	def("QuadrilateralCylindrical3D_Vertex_is_interface", &QuadrilateralCylindrical3D_Vertex_is_interface, "docstring");
+	def("QuadrilateralPolar2D_Vertex_is_interface", &QuadrilateralPolar2D_Vertex_is_interface, "docstring");
+	def("QuadrilateralSpherical3D_Vertex_is_interface", &QuadrilateralSpherical3D_Vertex_is_interface, "docstring");
+	
+	def("TetrahedralCartesian3D_Vertex_is_interface", &TetrahedralCartesian3D_Vertex_is_interface, "docstring");
+	def("TetrahedralCylindrical3D_Vertex_is_interface", &TetrahedralCylindrical3D_Vertex_is_interface, "docstring");
+	def("TetrahedralSpherical3D_Vertex_is_interface", &TetrahedralSpherical3D_Vertex_is_interface, "docstring");
 	
 	/**********
 	 * REFINE *

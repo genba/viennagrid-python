@@ -112,11 +112,22 @@ def volume(cell):
 # DOMAIN/SEGMENT-BASED ALGORITHMS #
 ###################################
 
-def is_interface(seg):
-	if isinstance(seg, viennagrid.Segment):
-		seg = seg._segment
-	is_interface_fn = _wrapper.__getattribute('%s_is_interface' % seg.__class__.__name__)
-	return is_interface_fn(seg)
+def is_interface(seg0, seg1, boundary_elem):
+	if isinstance(seg0, viennagrid.Segment):
+		seg0 = seg0._segment
+	
+	if isinstance(seg1, viennagrid.Segment):
+		seg1 = seg1._segment
+	
+	if isinstance(boundary_elem, viennagrid.Facet):
+		boundary_elem = boundary_elem._facet
+	elif isinstance(boundary_elem, viennagrid.Edge):
+		boundary_elem = boundary_elem._edge
+	elif isinstance(boundary_elem, viennagrid.Vertex):
+		boundary_elem = boundary_elem._vertex
+	
+	is_interface_fn = _wrapper.__getattribute('%s_is_interface' % boundary_elem.__class__.__name__)
+	return is_interface_fn(seg0, seg1, boundary_elem)
 
 def refine(dom, seg):
 	"""Returns a tuple containing the output domain and segmentation after the refination."""
