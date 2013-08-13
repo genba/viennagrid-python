@@ -95,6 +95,8 @@ set (VIENNAGRID_WRAPPER_FACETS_SRC
         facets/types.hpp
         facets/triangular.hpp
         facets/triangular.cpp
+        facets/quadrilateral.hpp
+        facets/quadrilateral.cpp
         facets/tetrahedral.hpp
         facets/tetrahedral.cpp)
 

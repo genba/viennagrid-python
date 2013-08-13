@@ -13,6 +13,16 @@ typedef viennagrid::result_of::facet<TriangularCylindrical3D_Domain_t>::type    
 typedef viennagrid::result_of::facet<TriangularPolar2D_Domain_t>::type           TriangularPolar2D_Facet_t;
 typedef viennagrid::result_of::facet<TriangularSpherical3D_Domain_t>::type       TriangularSpherical3D_Facet_t;
 
+/*****************
+ * Quadrilateral *
+ *****************/
+
+typedef viennagrid::result_of::facet<QuadrilateralCartesian2D_Domain_t>::type       QuadrilateralCartesian2D_Facet_t;
+typedef viennagrid::result_of::facet<QuadrilateralCartesian3D_Domain_t>::type       QuadrilateralCartesian3D_Facet_t;
+typedef viennagrid::result_of::facet<QuadrilateralCylindrical3D_Domain_t>::type     QuadrilateralCylindrical3D_Facet_t;
+typedef viennagrid::result_of::facet<QuadrilateralPolar2D_Domain_t>::type           QuadrilateralPolar2D_Facet_t;
+typedef viennagrid::result_of::facet<QuadrilateralSpherical3D_Domain_t>::type       QuadrilateralSpherical3D_Facet_t;
+
 /***************
  * Tetrahedral *
  ***************/
