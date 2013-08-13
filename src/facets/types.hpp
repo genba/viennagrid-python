@@ -3,6 +3,17 @@
 
 #include "../domains/types.hpp"
 
+/**********
+ * Linear *
+ **********/
+
+typedef viennagrid::result_of::facet<LinearCartesian1D_Domain_t>::type              LinearCartesian1D_Facet_t;
+typedef viennagrid::result_of::facet<LinearCartesian2D_Domain_t>::type              LinearCartesian2D_Facet_t;
+typedef viennagrid::result_of::facet<LinearCartesian3D_Domain_t>::type              LinearCartesian3D_Facet_t;
+typedef viennagrid::result_of::facet<LinearCylindrical3D_Domain_t>::type            LinearCylindrical3D_Facet_t;
+typedef viennagrid::result_of::facet<LinearPolar2D_Domain_t>::type                  LinearPolar2D_Facet_t;
+typedef viennagrid::result_of::facet<LinearSpherical3D_Domain_t>::type              LinearSpherical3D_Facet_t;
+
 /**************
  * Triangular *
  **************/

@@ -93,6 +93,8 @@ set (VIENNAGRID_WRAPPER_EDGES_SRC
 
 set (VIENNAGRID_WRAPPER_FACETS_SRC
         facets/types.hpp
+        facets/linear.hpp
+        facets/linear.cpp
         facets/triangular.hpp
         facets/triangular.cpp
         facets/quadrilateral.hpp
