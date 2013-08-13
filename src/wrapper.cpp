@@ -31,7 +31,9 @@ using namespace boost::python;
 #include "vertices/quadrilateral.hpp"
 #include "vertices/tetrahedral.hpp"
 
+#include "edges/linear.hpp"
 #include "edges/triangular.hpp"
+#include "edges/quadrilateral.hpp"
 #include "edges/tetrahedral.hpp"
 
 #include "facets/linear.hpp"
@@ -377,6 +379,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<LinearSpherical3D_Vertex>("LinearSpherical3D_Vertex", init<LinearSpherical3D_Vertex_t &>())
+	;
+	
+	/****************
+	 * LINEAR EDGES *
+	 ****************/
+	
+	class_<LinearCartesian1D_Edge>("LinearCartesian1D_Edge", init<LinearCartesian1D_Edge_t &>())
+	;
+	
+	class_<LinearCartesian2D_Edge>("LinearCartesian2D_Edge", init<LinearCartesian2D_Edge_t &>())
+	;
+	
+	class_<LinearCartesian3D_Edge>("LinearCartesian3D_Edge", init<LinearCartesian3D_Edge_t &>())
+	;
+	
+	class_<LinearCylindrical3D_Edge>("LinearCylindrical3D_Edge", init<LinearCylindrical3D_Edge_t &>())
+	;
+	
+	class_<LinearPolar2D_Edge>("LinearPolar2D_Edge", init<LinearPolar2D_Edge_t &>())
+	;
+	
+	class_<LinearSpherical3D_Edge>("LinearSpherical3D_Edge", init<LinearSpherical3D_Edge_t &>())
 	;
 	
 	/*****************
@@ -757,6 +781,25 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	;
 	
 	class_<QuadrilateralSpherical3D_Vertex>("QuadrilateralSpherical3D_Vertex", init<QuadrilateralSpherical3D_Vertex_t &>())
+	;
+	
+	/***********************
+	 * QUADRILATERAL EDGES *
+	 ***********************/
+	
+	class_<QuadrilateralCartesian2D_Edge>("QuadrilateralCartesian2D_Edge", init<QuadrilateralCartesian2D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralCartesian3D_Edge>("QuadrilateralCartesian3D_Edge", init<QuadrilateralCartesian3D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralCylindrical3D_Edge>("QuadrilateralCylindrical3D_Edge", init<QuadrilateralCylindrical3D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralPolar2D_Edge>("QuadrilateralPolar2D_Edge", init<QuadrilateralPolar2D_Edge_t &>())
+	;
+	
+	class_<QuadrilateralSpherical3D_Edge>("QuadrilateralSpherical3D_Edge", init<QuadrilateralSpherical3D_Edge_t &>())
 	;
 	
 	/************************
