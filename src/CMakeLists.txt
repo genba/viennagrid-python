@@ -86,6 +86,8 @@ set (VIENNAGRID_WRAPPER_VERTICES_SRC
 
 set (VIENNAGRID_WRAPPER_EDGES_SRC
         edges/types.hpp
+        edges/linear.hpp
+        edges/linear.cpp
         edges/triangular.hpp
         edges/triangular.cpp
         edges/tetrahedral.hpp

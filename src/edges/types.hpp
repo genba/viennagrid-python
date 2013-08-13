@@ -7,6 +7,28 @@
 
 typedef std::vector<bool>    EdgeRefinementFlagContainerType;
 
+/**********
+ * Linear *
+ **********/
+
+typedef viennagrid::result_of::line<LinearCartesian1D_Domain_t>::type          LinearCartesian1D_Edge_t;
+typedef viennagrid::result_of::line_range<LinearCartesian1D_Domain_t>::type    LinearCartesian1D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<LinearCartesian2D_Domain_t>::type          LinearCartesian2D_Edge_t;
+typedef viennagrid::result_of::line_range<LinearCartesian2D_Domain_t>::type    LinearCartesian2D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<LinearCartesian3D_Domain_t>::type          LinearCartesian3D_Edge_t;
+typedef viennagrid::result_of::line_range<LinearCartesian3D_Domain_t>::type    LinearCartesian3D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<LinearCylindrical3D_Domain_t>::type          LinearCylindrical3D_Edge_t;
+typedef viennagrid::result_of::line_range<LinearCylindrical3D_Domain_t>::type    LinearCylindrical3D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<LinearPolar2D_Domain_t>::type          LinearPolar2D_Edge_t;
+typedef viennagrid::result_of::line_range<LinearPolar2D_Domain_t>::type    LinearPolar2D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<LinearSpherical3D_Domain_t>::type          LinearSpherical3D_Edge_t;
+typedef viennagrid::result_of::line_range<LinearSpherical3D_Domain_t>::type    LinearSpherical3D_EdgeRange_t;
+
 /**************
  * Triangular *
  **************/
