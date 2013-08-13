@@ -48,6 +48,25 @@ typedef viennagrid::result_of::line_range<TriangularPolar2D_Domain_t>::type    T
 typedef viennagrid::result_of::line<TriangularSpherical3D_Domain_t>::type          TriangularSpherical3D_Edge_t;
 typedef viennagrid::result_of::line_range<TriangularSpherical3D_Domain_t>::type    TriangularSpherical3D_EdgeRange_t;
 
+/*****************
+ * Quadrilateral *
+ *****************/
+
+typedef viennagrid::result_of::line<QuadrilateralCartesian2D_Domain_t>::type          QuadrilateralCartesian2D_Edge_t;
+typedef viennagrid::result_of::line_range<QuadrilateralCartesian2D_Domain_t>::type    QuadrilateralCartesian2D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<QuadrilateralCartesian3D_Domain_t>::type          QuadrilateralCartesian3D_Edge_t;
+typedef viennagrid::result_of::line_range<QuadrilateralCartesian3D_Domain_t>::type    QuadrilateralCartesian3D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<QuadrilateralCylindrical3D_Domain_t>::type          QuadrilateralCylindrical3D_Edge_t;
+typedef viennagrid::result_of::line_range<QuadrilateralCylindrical3D_Domain_t>::type    QuadrilateralCylindrical3D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<QuadrilateralPolar2D_Domain_t>::type          QuadrilateralPolar2D_Edge_t;
+typedef viennagrid::result_of::line_range<QuadrilateralPolar2D_Domain_t>::type    QuadrilateralPolar2D_EdgeRange_t;
+
+typedef viennagrid::result_of::line<QuadrilateralSpherical3D_Domain_t>::type          QuadrilateralSpherical3D_Edge_t;
+typedef viennagrid::result_of::line_range<QuadrilateralSpherical3D_Domain_t>::type    QuadrilateralSpherical3D_EdgeRange_t;
+
 /***************
  * Tetrahedral *
  ***************/

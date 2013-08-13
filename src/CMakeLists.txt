@@ -90,6 +90,8 @@ set (VIENNAGRID_WRAPPER_EDGES_SRC
         edges/linear.cpp
         edges/triangular.hpp
         edges/triangular.cpp
+        edges/quadrilateral.hpp
+        edges/quadrilateral.cpp
         edges/tetrahedral.hpp
         edges/tetrahedral.cpp)
 
