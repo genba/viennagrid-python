@@ -1,5 +1,5 @@
-#ifndef FACETS_QUADRILATERAL
-#define FACETS_QUADRILATERAL
+#ifndef FACETS_QUADRILATERAL_HPP
+#define FACETS_QUADRILATERAL_HPP
 
 #include "types.hpp"
 
@@ -63,4 +63,4 @@ public:
 	QuadrilateralSpherical3D_Facet_t & get_facet();
 };
 
-#endif
+#endif /* end of include guard: FACETS_QUADRILATERAL_HPP */

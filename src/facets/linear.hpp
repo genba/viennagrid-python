@@ -75,4 +75,4 @@ public:
 	LinearSpherical3D_Facet_t & get_facet();
 };
 
-#endif
+#endif /* end of include guard: FACETS_LINEAR_HPP */
