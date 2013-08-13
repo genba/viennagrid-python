@@ -1154,6 +1154,26 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCylindrical3D_Facet_is_interface", &TetrahedralCylindrical3D_Facet_is_interface, "docstring");
 	def("TetrahedralSpherical3D_Facet_is_interface", &TetrahedralSpherical3D_Facet_is_interface, "docstring");
 	
+	/*****************************
+	 * IS_INTERFACE (with edges) *
+	 *****************************/
+	
+	def("TriangularCartesian2D_Edge_is_interface", &TriangularCartesian2D_Edge_is_interface, "docstring");
+	def("TriangularCartesian3D_Edge_is_interface", &TriangularCartesian3D_Edge_is_interface, "docstring");
+	def("TriangularCylindrical3D_Edge_is_interface", &TriangularCylindrical3D_Edge_is_interface, "docstring");
+	def("TriangularPolar2D_Edge_is_interface", &TriangularPolar2D_Edge_is_interface, "docstring");
+	def("TriangularSpherical3D_Edge_is_interface", &TriangularSpherical3D_Edge_is_interface, "docstring");
+	
+	def("QuadrilateralCartesian2D_Edge_is_interface", &QuadrilateralCartesian2D_Edge_is_interface, "docstring");
+	def("QuadrilateralCartesian3D_Edge_is_interface", &QuadrilateralCartesian3D_Edge_is_interface, "docstring");
+	def("QuadrilateralCylindrical3D_Edge_is_interface", &QuadrilateralCylindrical3D_Edge_is_interface, "docstring");
+	def("QuadrilateralPolar2D_Edge_is_interface", &QuadrilateralPolar2D_Edge_is_interface, "docstring");
+	def("QuadrilateralSpherical3D_Edge_is_interface", &QuadrilateralSpherical3D_Edge_is_interface, "docstring");
+	
+	def("TetrahedralCartesian3D_Edge_is_interface", &TetrahedralCartesian3D_Edge_is_interface, "docstring");
+	def("TetrahedralCylindrical3D_Edge_is_interface", &TetrahedralCylindrical3D_Edge_is_interface, "docstring");
+	def("TetrahedralSpherical3D_Edge_is_interface", &TetrahedralSpherical3D_Edge_is_interface, "docstring");
+	
 	/********************************
 	 * IS_INTERFACE (with vertices) *
 	 ********************************/

@@ -121,6 +121,8 @@ def is_interface(seg0, seg1, boundary_elem):
 	
 	if isinstance(boundary_elem, viennagrid.Facet):
 		boundary_elem = boundary_elem._facet
+	elif isinstance(boundary_elem, viennagrid.Edge):
+		boundary_elem = boundary_elem._edge
 	elif isinstance(boundary_elem, viennagrid.Vertex):
 		boundary_elem = boundary_elem._vertex
 	
