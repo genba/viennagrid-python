@@ -79,8 +79,7 @@ def norm(point, norm_type=2):
 def centroid(cell):
 	if isinstance(cell, viennagrid.Cell):
 		cell = cell._cell
-	centroid_fn = _wrapper.__getattribute('%s_centroid' % cell.__class__.__name__)
-	return centroid_fn(cell)
+	return _wrapper.centroid(cell)
 
 def circumcenter(cell):
 	if isinstance(cell, viennagrid.Cell):

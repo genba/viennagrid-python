@@ -956,28 +956,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * CENTROID *
 	 ************/
 	
-	def("LinearCartesian1D_Cell_centroid", &LinearCartesian1D_Cell_centroid, "docstring");
-	def("LinearCartesian2D_Cell_centroid", &LinearCartesian2D_Cell_centroid, "docstring");
-	def("LinearCartesian3D_Cell_centroid", &LinearCartesian3D_Cell_centroid, "docstring");
-	def("LinearCylindrical3D_Cell_centroid", &LinearCylindrical3D_Cell_centroid, "docstring");
-	def("LinearPolar2D_Cell_centroid", &LinearPolar2D_Cell_centroid, "docstring");
-	def("LinearSpherical3D_Cell_centroid", &LinearSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &LinearCartesian1D_Cell_centroid, "docstring");
+	def("centroid", &LinearCartesian2D_Cell_centroid, "docstring");
+	def("centroid", &LinearCartesian3D_Cell_centroid, "docstring");
+	def("centroid", &LinearCylindrical3D_Cell_centroid, "docstring");
+	def("centroid", &LinearPolar2D_Cell_centroid, "docstring");
+	def("centroid", &LinearSpherical3D_Cell_centroid, "docstring");
 	
-	def("TriangularCartesian2D_Cell_centroid", &TriangularCartesian2D_Cell_centroid, "docstring");
-	def("TriangularCartesian3D_Cell_centroid", &TriangularCartesian3D_Cell_centroid, "docstring");
-	def("TriangularCylindrical3D_Cell_centroid", &TriangularCylindrical3D_Cell_centroid, "docstring");
-	def("TriangularPolar2D_Cell_centroid", &TriangularPolar2D_Cell_centroid, "docstring");
-	def("TriangularSpherical3D_Cell_centroid", &TriangularSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &TriangularCartesian2D_Cell_centroid, "docstring");
+	def("centroid", &TriangularCartesian3D_Cell_centroid, "docstring");
+	def("centroid", &TriangularCylindrical3D_Cell_centroid, "docstring");
+	def("centroid", &TriangularPolar2D_Cell_centroid, "docstring");
+	def("centroid", &TriangularSpherical3D_Cell_centroid, "docstring");
 	
-	def("QuadrilateralCartesian2D_Cell_centroid", &QuadrilateralCartesian2D_Cell_centroid, "docstring");
-	def("QuadrilateralCartesian3D_Cell_centroid", &QuadrilateralCartesian3D_Cell_centroid, "docstring");
-	def("QuadrilateralCylindrical3D_Cell_centroid", &QuadrilateralCylindrical3D_Cell_centroid, "docstring");
-	def("QuadrilateralPolar2D_Cell_centroid", &QuadrilateralPolar2D_Cell_centroid, "docstring");
-	def("QuadrilateralSpherical3D_Cell_centroid", &QuadrilateralSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &QuadrilateralCartesian2D_Cell_centroid, "docstring");
+	def("centroid", &QuadrilateralCartesian3D_Cell_centroid, "docstring");
+	def("centroid", &QuadrilateralCylindrical3D_Cell_centroid, "docstring");
+	def("centroid", &QuadrilateralPolar2D_Cell_centroid, "docstring");
+	def("centroid", &QuadrilateralSpherical3D_Cell_centroid, "docstring");
 	
-	def("TetrahedralCartesian3D_Cell_centroid", &TetrahedralCartesian3D_Cell_centroid, "docstring");
-	def("TetrahedralCylindrical3D_Cell_centroid", &TetrahedralCylindrical3D_Cell_centroid, "docstring");
-	def("TetrahedralSpherical3D_Cell_centroid", &TetrahedralSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &TetrahedralCartesian3D_Cell_centroid, "docstring");
+	def("centroid", &TetrahedralCylindrical3D_Cell_centroid, "docstring");
+	def("centroid", &TetrahedralSpherical3D_Cell_centroid, "docstring");
 	
 	/****************
 	 * CIRCUMCENTER *
