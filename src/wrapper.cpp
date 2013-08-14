@@ -1051,28 +1051,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * CELL-VOLUME *
 	 ***************/
 	
-	def("LinearCartesian1D_Cell_volume", &LinearCartesian1D_Cell_volume, "docstring");
-	def("LinearCartesian2D_Cell_volume", &LinearCartesian2D_Cell_volume, "docstring");
-	def("LinearCartesian3D_Cell_volume", &LinearCartesian3D_Cell_volume, "docstring");
-	def("LinearCylindrical3D_Cell_volume", &LinearCylindrical3D_Cell_volume, "docstring");
-	def("LinearPolar2D_Cell_volume", &LinearPolar2D_Cell_volume, "docstring");
-	def("LinearSpherical3D_Cell_volume", &LinearSpherical3D_Cell_volume, "docstring");
+	def("volume", &LinearCartesian1D_Cell_volume, "docstring");
+	def("volume", &LinearCartesian2D_Cell_volume, "docstring");
+	def("volume", &LinearCartesian3D_Cell_volume, "docstring");
+	def("volume", &LinearCylindrical3D_Cell_volume, "docstring");
+	def("volume", &LinearPolar2D_Cell_volume, "docstring");
+	def("volume", &LinearSpherical3D_Cell_volume, "docstring");
 	
-	def("TriangularCartesian2D_Cell_volume", &TriangularCartesian2D_Cell_volume, "docstring");
-	def("TriangularCartesian3D_Cell_volume", &TriangularCartesian3D_Cell_volume, "docstring");
-	def("TriangularCylindrical3D_Cell_volume", &TriangularCylindrical3D_Cell_volume, "docstring");
-	def("TriangularPolar2D_Cell_volume", &TriangularPolar2D_Cell_volume, "docstring");
-	def("TriangularSpherical3D_Cell_volume", &TriangularSpherical3D_Cell_volume, "docstring");
+	def("volume", &TriangularCartesian2D_Cell_volume, "docstring");
+	def("volume", &TriangularCartesian3D_Cell_volume, "docstring");
+	def("volume", &TriangularCylindrical3D_Cell_volume, "docstring");
+	def("volume", &TriangularPolar2D_Cell_volume, "docstring");
+	def("volume", &TriangularSpherical3D_Cell_volume, "docstring");
 	
-	def("QuadrilateralCartesian2D_Cell_volume", &QuadrilateralCartesian2D_Cell_volume, "docstring");
-	def("QuadrilateralCartesian3D_Cell_volume", &QuadrilateralCartesian3D_Cell_volume, "docstring");
-	def("QuadrilateralCylindrical3D_Cell_volume", &QuadrilateralCylindrical3D_Cell_volume, "docstring");
-	def("QuadrilateralPolar2D_Cell_volume", &QuadrilateralPolar2D_Cell_volume, "docstring");
-	def("QuadrilateralSpherical3D_Cell_volume", &QuadrilateralSpherical3D_Cell_volume, "docstring");
+	def("volume", &QuadrilateralCartesian2D_Cell_volume, "docstring");
+	def("volume", &QuadrilateralCartesian3D_Cell_volume, "docstring");
+	def("volume", &QuadrilateralCylindrical3D_Cell_volume, "docstring");
+	def("volume", &QuadrilateralPolar2D_Cell_volume, "docstring");
+	def("volume", &QuadrilateralSpherical3D_Cell_volume, "docstring");
 	
-	def("TetrahedralCartesian3D_Cell_volume", &TetrahedralCartesian3D_Cell_volume, "docstring");
-	def("TetrahedralCylindrical3D_Cell_volume", &TetrahedralCylindrical3D_Cell_volume, "docstring");
-	def("TetrahedralSpherical3D_Cell_volume", &TetrahedralSpherical3D_Cell_volume, "docstring");
+	def("volume", &TetrahedralCartesian3D_Cell_volume, "docstring");
+	def("volume", &TetrahedralCylindrical3D_Cell_volume, "docstring");
+	def("volume", &TetrahedralSpherical3D_Cell_volume, "docstring");
 	
 	/******************
 	 * DOMAIN-SURFACE *
@@ -1105,28 +1105,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * DOMAIN-VOLUME *
 	 *****************/
 	
-	def("LinearCartesian1D_Domain_volume", &LinearCartesian1D_Domain_volume, "docstring");
-	def("LinearCartesian2D_Domain_volume", &LinearCartesian2D_Domain_volume, "docstring");
-	def("LinearCartesian3D_Domain_volume", &LinearCartesian3D_Domain_volume, "docstring");
-	def("LinearCylindrical3D_Domain_volume", &LinearCylindrical3D_Domain_volume, "docstring");
-	def("LinearPolar2D_Domain_volume", &LinearPolar2D_Domain_volume, "docstring");
-	def("LinearSpherical3D_Domain_volume", &LinearSpherical3D_Domain_volume, "docstring");
+	def("volume", &LinearCartesian1D_Domain_volume, "docstring");
+	def("volume", &LinearCartesian2D_Domain_volume, "docstring");
+	def("volume", &LinearCartesian3D_Domain_volume, "docstring");
+	def("volume", &LinearCylindrical3D_Domain_volume, "docstring");
+	def("volume", &LinearPolar2D_Domain_volume, "docstring");
+	def("volume", &LinearSpherical3D_Domain_volume, "docstring");
 	
-	def("TriangularCartesian2D_Domain_volume", &TriangularCartesian2D_Domain_volume, "docstring");
-	def("TriangularCartesian3D_Domain_volume", &TriangularCartesian3D_Domain_volume, "docstring");
-	def("TriangularCylindrical3D_Domain_volume", &TriangularCylindrical3D_Domain_volume, "docstring");
-	def("TriangularPolar2D_Domain_volume", &TriangularPolar2D_Domain_volume, "docstring");
-	def("TriangularSpherical3D_Domain_volume", &TriangularSpherical3D_Domain_volume, "docstring");
+	def("volume", &TriangularCartesian2D_Domain_volume, "docstring");
+	def("volume", &TriangularCartesian3D_Domain_volume, "docstring");
+	def("volume", &TriangularCylindrical3D_Domain_volume, "docstring");
+	def("volume", &TriangularPolar2D_Domain_volume, "docstring");
+	def("volume", &TriangularSpherical3D_Domain_volume, "docstring");
 	
-	def("QuadrilateralCartesian2D_Domain_volume", &QuadrilateralCartesian2D_Domain_volume, "docstring");
-	def("QuadrilateralCartesian3D_Domain_volume", &QuadrilateralCartesian3D_Domain_volume, "docstring");
-	def("QuadrilateralCylindrical3D_Domain_volume", &QuadrilateralCylindrical3D_Domain_volume, "docstring");
-	def("QuadrilateralPolar2D_Domain_volume", &QuadrilateralPolar2D_Domain_volume, "docstring");
-	def("QuadrilateralSpherical3D_Domain_volume", &QuadrilateralSpherical3D_Domain_volume, "docstring");
+	def("volume", &QuadrilateralCartesian2D_Domain_volume, "docstring");
+	def("volume", &QuadrilateralCartesian3D_Domain_volume, "docstring");
+	def("volume", &QuadrilateralCylindrical3D_Domain_volume, "docstring");
+	def("volume", &QuadrilateralPolar2D_Domain_volume, "docstring");
+	def("volume", &QuadrilateralSpherical3D_Domain_volume, "docstring");
 	
-	def("TetrahedralCartesian3D_Domain_volume", &TetrahedralCartesian3D_Domain_volume, "docstring");
-	def("TetrahedralCylindrical3D_Domain_volume", &TetrahedralCylindrical3D_Domain_volume, "docstring");
-	def("TetrahedralSpherical3D_Domain_volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
+	def("volume", &TetrahedralCartesian3D_Domain_volume, "docstring");
+	def("volume", &TetrahedralCylindrical3D_Domain_volume, "docstring");
+	def("volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
 	
 	/******************************************
 	 * IS_INTERFACE (with domains and facets) *
@@ -1409,26 +1409,26 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * SEGMENT-VOLUME *
 	 ******************/
 	
-	def("LinearCartesian1D_Segment_volume", &LinearCartesian1D_Segment_volume, "docstring");
-	def("LinearCartesian2D_Segment_volume", &LinearCartesian2D_Segment_volume, "docstring");
-	def("LinearCartesian3D_Segment_volume", &LinearCartesian3D_Segment_volume, "docstring");
-	def("LinearCylindrical3D_Segment_volume", &LinearCylindrical3D_Segment_volume, "docstring");
-	def("LinearPolar2D_Segment_volume", &LinearPolar2D_Segment_volume, "docstring");
-	def("LinearSpherical3D_Segment_volume", &LinearSpherical3D_Segment_volume, "docstring");
+	def("volume", &LinearCartesian1D_Segment_volume, "docstring");
+	def("volume", &LinearCartesian2D_Segment_volume, "docstring");
+	def("volume", &LinearCartesian3D_Segment_volume, "docstring");
+	def("volume", &LinearCylindrical3D_Segment_volume, "docstring");
+	def("volume", &LinearPolar2D_Segment_volume, "docstring");
+	def("volume", &LinearSpherical3D_Segment_volume, "docstring");
 	
-	def("TriangularCartesian2D_Segment_volume", &TriangularCartesian2D_Segment_volume, "docstring");
-	def("TriangularCartesian3D_Segment_volume", &TriangularCartesian3D_Segment_volume, "docstring");
-	def("TriangularCylindrical3D_Segment_volume", &TriangularCylindrical3D_Segment_volume, "docstring");
-	def("TriangularPolar2D_Segment_volume", &TriangularPolar2D_Segment_volume, "docstring");
-	def("TriangularSpherical3D_Segment_volume", &TriangularSpherical3D_Segment_volume, "docstring");
+	def("volume", &TriangularCartesian2D_Segment_volume, "docstring");
+	def("volume", &TriangularCartesian3D_Segment_volume, "docstring");
+	def("volume", &TriangularCylindrical3D_Segment_volume, "docstring");
+	def("volume", &TriangularPolar2D_Segment_volume, "docstring");
+	def("volume", &TriangularSpherical3D_Segment_volume, "docstring");
 	
-	def("QuadrilateralCartesian2D_Segment_volume", &QuadrilateralCartesian2D_Segment_volume, "docstring");
-	def("QuadrilateralCartesian3D_Segment_volume", &QuadrilateralCartesian3D_Segment_volume, "docstring");
-	def("QuadrilateralCylindrical3D_Segment_volume", &QuadrilateralCylindrical3D_Segment_volume, "docstring");
-	def("QuadrilateralPolar2D_Segment_volume", &QuadrilateralPolar2D_Segment_volume, "docstring");
-	def("QuadrilateralSpherical3D_Segment_volume", &QuadrilateralSpherical3D_Segment_volume, "docstring");
+	def("volume", &QuadrilateralCartesian2D_Segment_volume, "docstring");
+	def("volume", &QuadrilateralCartesian3D_Segment_volume, "docstring");
+	def("volume", &QuadrilateralCylindrical3D_Segment_volume, "docstring");
+	def("volume", &QuadrilateralPolar2D_Segment_volume, "docstring");
+	def("volume", &QuadrilateralSpherical3D_Segment_volume, "docstring");
 	
-	def("TetrahedralCartesian3D_Segment_volume", &TetrahedralCartesian3D_Segment_volume, "docstring");
-	def("TetrahedralCylindrical3D_Segment_volume", &TetrahedralCylindrical3D_Segment_volume, "docstring");
-	def("TetrahedralSpherical3D_Segment_volume", &TetrahedralSpherical3D_Segment_volume, "docstring");
+	def("volume", &TetrahedralCartesian3D_Segment_volume, "docstring");
+	def("volume", &TetrahedralCylindrical3D_Segment_volume, "docstring");
+	def("volume", &TetrahedralSpherical3D_Segment_volume, "docstring");
 }

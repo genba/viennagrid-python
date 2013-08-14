@@ -102,8 +102,7 @@ def volume(cell):
 		cell = cell._domain
 	elif isinstance(cell, viennagrid.Segment):
 		cell = cell._segment
-	volume_fn = _wrapper.__getattribute('%s_volume' % cell.__class__.__name__)
-	return volume_fn(cell)
+	return _wrapper.volume(cell)
 
 ###################################
 # DOMAIN/SEGMENT-BASED ALGORITHMS #
