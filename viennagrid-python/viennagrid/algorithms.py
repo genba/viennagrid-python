@@ -84,8 +84,7 @@ def centroid(cell):
 def circumcenter(cell):
 	if isinstance(cell, viennagrid.Cell):
 		cell = cell._cell
-	circumcenter_fn = _wrapper.__getattribute('%s_circumcenter' % cell.__class__.__name__)
-	return circumcenter_fn(cell)
+	return _wrapper.circumcenter(cell)
 
 def surface(cell):
 	if isinstance(cell, viennagrid.Cell):

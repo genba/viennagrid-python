@@ -983,28 +983,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * CIRCUMCENTER *
 	 ****************/
 	
-	def("LinearCartesian1D_Cell_circumcenter", &LinearCartesian1D_Cell_circumcenter, "docstring");
-	def("LinearCartesian2D_Cell_circumcenter", &LinearCartesian2D_Cell_circumcenter, "docstring");
-	def("LinearCartesian3D_Cell_circumcenter", &LinearCartesian3D_Cell_circumcenter, "docstring");
-	def("LinearCylindrical3D_Cell_circumcenter", &LinearCylindrical3D_Cell_circumcenter, "docstring");
-	def("LinearPolar2D_Cell_circumcenter", &LinearPolar2D_Cell_circumcenter, "docstring");
-	def("LinearSpherical3D_Cell_circumcenter", &LinearSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &LinearCartesian1D_Cell_circumcenter, "docstring");
+	def("circumcenter", &LinearCartesian2D_Cell_circumcenter, "docstring");
+	def("circumcenter", &LinearCartesian3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &LinearCylindrical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &LinearPolar2D_Cell_circumcenter, "docstring");
+	def("circumcenter", &LinearSpherical3D_Cell_circumcenter, "docstring");
 	
-	def("TriangularCartesian2D_Cell_circumcenter", &TriangularCartesian2D_Cell_circumcenter, "docstring");
-	def("TriangularCartesian3D_Cell_circumcenter", &TriangularCartesian3D_Cell_circumcenter, "docstring");
-	def("TriangularCylindrical3D_Cell_circumcenter", &TriangularCylindrical3D_Cell_circumcenter, "docstring");
-	def("TriangularPolar2D_Cell_circumcenter", &TriangularPolar2D_Cell_circumcenter, "docstring");
-	def("TriangularSpherical3D_Cell_circumcenter", &TriangularSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TriangularCartesian2D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TriangularCartesian3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TriangularCylindrical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TriangularPolar2D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TriangularSpherical3D_Cell_circumcenter, "docstring");
 	
-	def("QuadrilateralCartesian2D_Cell_circumcenter", &QuadrilateralCartesian2D_Cell_circumcenter, "docstring");
-	def("QuadrilateralCartesian3D_Cell_circumcenter", &QuadrilateralCartesian3D_Cell_circumcenter, "docstring");
-	def("QuadrilateralCylindrical3D_Cell_circumcenter", &QuadrilateralCylindrical3D_Cell_circumcenter, "docstring");
-	def("QuadrilateralPolar2D_Cell_circumcenter", &QuadrilateralPolar2D_Cell_circumcenter, "docstring");
-	def("QuadrilateralSpherical3D_Cell_circumcenter", &QuadrilateralSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &QuadrilateralCartesian2D_Cell_circumcenter, "docstring");
+	def("circumcenter", &QuadrilateralCartesian3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &QuadrilateralCylindrical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &QuadrilateralPolar2D_Cell_circumcenter, "docstring");
+	def("circumcenter", &QuadrilateralSpherical3D_Cell_circumcenter, "docstring");
 	
-	def("TetrahedralCartesian3D_Cell_circumcenter", &TetrahedralCartesian3D_Cell_circumcenter, "docstring");
-	def("TetrahedralCylindrical3D_Cell_circumcenter", &TetrahedralCylindrical3D_Cell_circumcenter, "docstring");
-	def("TetrahedralSpherical3D_Cell_circumcenter", &TetrahedralSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TetrahedralCartesian3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TetrahedralCylindrical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TetrahedralSpherical3D_Cell_circumcenter, "docstring");
 	
 	/***************
 	 * CELL_REFINE *
