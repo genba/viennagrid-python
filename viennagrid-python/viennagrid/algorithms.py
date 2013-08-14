@@ -112,6 +112,21 @@ def volume(cell):
 # DOMAIN/SEGMENT-BASED ALGORITHMS #
 ###################################
 
+def is_boundary(domseg, interface_elem):
+	if isinstance(domseg, viennagrid.Domain):
+		domseg = domseg._domain
+	elif isinstance(domseg, viennagrid.Segment):
+		domseg = domseg._segment
+	
+	if isinstance(interface_elem, viennagrid.Facet):
+		interface_elem = interface_elem._facet
+	elif isinstance(interface_elem, viennagrid.Edge):
+		interface_elem = interface_elem._edge
+	elif isinstance(interface_elem, viennagrid.Vertex):
+		interface_elem = interface_elem._vertex
+	
+	return _wrapper.is_boundary(domseg, interface_elem)
+
 def is_interface(seg0, seg1, boundary_elem):
 	if isinstance(seg0, viennagrid.Segment):
 		seg0 = seg0._segment

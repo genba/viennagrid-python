@@ -121,6 +121,8 @@ set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/domain_surface.cpp
         algorithms/domain_volume.hpp
         algorithms/domain_volume.cpp
+        algorithms/is_boundary.hpp
+        algorithms/is_boundary.cpp
         algorithms/is_interface.hpp
         algorithms/is_interface.cpp
         algorithms/refine.hpp
