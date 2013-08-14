@@ -1129,7 +1129,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
 	
 	/******************************************
-	 * IS_INTERFACE (with domains and facets) *
+	 * IS_BOUNDARY (with domains and facets) *
 	 ******************************************/
 	
 	def("is_boundary", &LinearCartesian1D_Domain_Facet_is_boundary, "docstring");
@@ -1156,7 +1156,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("is_boundary", &TetrahedralSpherical3D_Domain_Facet_is_boundary, "docstring");
 	
 	/*****************************************
-	 * IS_INTERFACE (with domains and edges) *
+	 * IS_BOUNDARY (with domains and edges) *
 	 *****************************************/
 	
 	def("is_boundary", &TriangularCartesian2D_Domain_Edge_is_boundary, "docstring");
@@ -1176,7 +1176,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("is_boundary", &TetrahedralSpherical3D_Domain_Edge_is_boundary, "docstring");
 	
 	/********************************************
-	 * IS_INTERFACE (with domains and vertices) *
+	 * IS_BOUNDARY (with domains and vertices) *
 	 ********************************************/
 	
 	def("is_boundary", &LinearCartesian1D_Domain_Vertex_is_boundary, "docstring");
@@ -1203,7 +1203,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("is_boundary", &TetrahedralSpherical3D_Domain_Vertex_is_boundary, "docstring");
 	
 	/*******************************************
-	 * IS_INTERFACE (with segments and facets) *
+	 * IS_BOUNDARY (with segments and facets) *
 	 *******************************************/
 	
 	def("is_boundary", &LinearCartesian1D_Segment_Facet_is_boundary, "docstring");
@@ -1230,7 +1230,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("is_boundary", &TetrahedralSpherical3D_Segment_Facet_is_boundary, "docstring");
 	
 	/******************************************
-	 * IS_INTERFACE (with segments and edges) *
+	 * IS_BOUNDARY (with segments and edges) *
 	 ******************************************/
 	
 	def("is_boundary", &TriangularCartesian2D_Segment_Edge_is_boundary, "docstring");
@@ -1250,7 +1250,7 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("is_boundary", &TetrahedralSpherical3D_Segment_Edge_is_boundary, "docstring");
 	
 	/*********************************************
-	 * IS_INTERFACE (with segments and vertices) *
+	 * IS_BOUNDARY (with segments and vertices) *
 	 *********************************************/
 	
 	def("is_boundary", &LinearCartesian1D_Segment_Vertex_is_boundary, "docstring");
