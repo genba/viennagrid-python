@@ -159,3 +159,11 @@ def refine_uniformly(dom, seg):
 		seg = seg._segmentation
 	refine_uniformly_fn = _wrapper.__getattribute('%s_refine_uniformly' % dom.__class__.__name__)
 	return refine_uniformly_fn(dom, seg)
+
+def cell_refine(dom, seg, predicate):
+	"""Returns a tuple containing the output domain and segmentation after the refination."""
+	if isinstance(dom, viennagrid.Domain):
+		dom = dom._domain
+	if isinstance(seg, viennagrid.Segmentation):
+		seg = seg._segmentation
+	return _wrapper.cell_refine(dom, seg, predicate)
