@@ -113,40 +113,6 @@ bool TetrahedralSpherical3D_Domain_Facet_is_boundary(TetrahedralSpherical3D_Doma
  * IS_INTERFACE (with domains and edges) *
  *****************************************/
 
-// Linear
-
-/*
-bool LinearCartesian1D_Domain_Edge_is_boundary(LinearCartesian1D_Domain dom, LinearCartesian1D_Edge edge)
-{
-	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
-}
-
-bool LinearCartesian2D_Domain_Edge_is_boundary(LinearCartesian2D_Domain dom, LinearCartesian2D_Edge edge)
-{
-	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
-}
-
-bool LinearCartesian3D_Domain_Edge_is_boundary(LinearCartesian3D_Domain dom, LinearCartesian3D_Edge edge)
-{
-	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
-}
-
-bool LinearCylindrical3D_Domain_Edge_is_boundary(LinearCylindrical3D_Domain dom, LinearCylindrical3D_Edge edge)
-{
-	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
-}
-
-bool LinearPolar2D_Domain_Edge_is_boundary(LinearPolar2D_Domain dom, LinearPolar2D_Edge edge)
-{
-	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
-}
-
-bool LinearSpherical3D_Domain_Edge_is_boundary(LinearSpherical3D_Domain dom, LinearSpherical3D_Edge edge)
-{
-	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
-}
-*/
-
 // Triangular
 
 bool TriangularCartesian2D_Domain_Edge_is_boundary(TriangularCartesian2D_Domain dom, TriangularCartesian2D_Edge edge)
@@ -435,40 +401,6 @@ bool TetrahedralSpherical3D_Segment_Facet_is_boundary(TetrahedralSpherical3D_Seg
 /******************************************
  * IS_INTERFACE (with segments and edges) *
  ******************************************/
-
-// Linear
-
-/*
-bool LinearCartesian1D_Segment_Edge_is_boundary(LinearCartesian1D_Segment seg, LinearCartesian1D_Edge edge)
-{
-	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
-}
-
-bool LinearCartesian2D_Segment_Edge_is_boundary(LinearCartesian2D_Segment seg, LinearCartesian2D_Edge edge)
-{
-	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
-}
-
-bool LinearCartesian3D_Segment_Edge_is_boundary(LinearCartesian3D_Segment seg, LinearCartesian3D_Edge edge)
-{
-	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
-}
-
-bool LinearCylindrical3D_Segment_Edge_is_boundary(LinearCylindrical3D_Segment seg, LinearCylindrical3D_Edge edge)
-{
-	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
-}
-
-bool LinearPolar2D_Segment_Edge_is_boundary(LinearPolar2D_Segment seg, LinearPolar2D_Edge edge)
-{
-	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
-}
-
-bool LinearSpherical3D_Segment_Edge_is_boundary(LinearSpherical3D_Segment seg, LinearSpherical3D_Edge edge)
-{
-	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
-}
-*/
 
 // Triangular
 
