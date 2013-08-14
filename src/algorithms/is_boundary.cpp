@@ -3,7 +3,7 @@
 #include <viennagrid/algorithm/boundary.hpp>
 
 /******************************************
- * IS_INTERFACE (with domains and facets) *
+ * IS_BOUNDARY (with domains and facets) *
  ******************************************/
 
 // Linear
@@ -110,7 +110,7 @@ bool TetrahedralSpherical3D_Domain_Facet_is_boundary(TetrahedralSpherical3D_Doma
 }
 
 /*****************************************
- * IS_INTERFACE (with domains and edges) *
+ * IS_BOUNDARY (with domains and edges) *
  *****************************************/
 
 // Triangular
@@ -185,7 +185,7 @@ bool TetrahedralSpherical3D_Domain_Edge_is_boundary(TetrahedralSpherical3D_Domai
 }
 
 /********************************************
- * IS_INTERFACE (with domains and vertices) *
+ * IS_BOUNDARY (with domains and vertices) *
  ********************************************/
 
 // Linear
@@ -292,7 +292,7 @@ bool TetrahedralSpherical3D_Domain_Vertex_is_boundary(TetrahedralSpherical3D_Dom
 }
 
 /*******************************************
- * IS_INTERFACE (with segments and facets) *
+ * IS_BOUNDARY (with segments and facets) *
  *******************************************/
 
 // Linear
@@ -399,7 +399,7 @@ bool TetrahedralSpherical3D_Segment_Facet_is_boundary(TetrahedralSpherical3D_Seg
 }
 
 /******************************************
- * IS_INTERFACE (with segments and edges) *
+ * IS_BOUNDARY (with segments and edges) *
  ******************************************/
 
 // Triangular
@@ -474,7 +474,7 @@ bool TetrahedralSpherical3D_Segment_Edge_is_boundary(TetrahedralSpherical3D_Segm
 }
 
 /*********************************************
- * IS_INTERFACE (with segments and vertices) *
+ * IS_BOUNDARY (with segments and vertices) *
  *********************************************/
 
 // Linear

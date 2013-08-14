@@ -21,7 +21,7 @@
 #include "../edges/tetrahedral.hpp"
 
 /******************************************
- * IS_INTERFACE (with domains and facets) *
+ * IS_BOUNDARY (with domains and facets) *
  ******************************************/
 
 bool LinearCartesian1D_Domain_Facet_is_boundary(LinearCartesian1D_Domain dom, LinearCartesian1D_Facet facet);
@@ -48,7 +48,7 @@ bool TetrahedralCylindrical3D_Domain_Facet_is_boundary(TetrahedralCylindrical3D_
 bool TetrahedralSpherical3D_Domain_Facet_is_boundary(TetrahedralSpherical3D_Domain dom, TetrahedralSpherical3D_Facet facet);
 
 /*****************************************
- * IS_INTERFACE (with domains and edges) *
+ * IS_BOUNDARY (with domains and edges) *
  *****************************************/
 
 bool TriangularCartesian2D_Domain_Edge_is_boundary(TriangularCartesian2D_Domain dom, TriangularCartesian2D_Edge edge);
@@ -68,7 +68,7 @@ bool TetrahedralCylindrical3D_Domain_Edge_is_boundary(TetrahedralCylindrical3D_D
 bool TetrahedralSpherical3D_Domain_Edge_is_boundary(TetrahedralSpherical3D_Domain dom, TetrahedralSpherical3D_Edge edge);
 
 /********************************************
- * IS_INTERFACE (with domains and vertices) *
+ * IS_BOUNDARY (with domains and vertices) *
  ********************************************/
 
 bool LinearCartesian1D_Domain_Vertex_is_boundary(LinearCartesian1D_Domain dom, LinearCartesian1D_Vertex vertex);
@@ -95,7 +95,7 @@ bool TetrahedralCylindrical3D_Domain_Vertex_is_boundary(TetrahedralCylindrical3D
 bool TetrahedralSpherical3D_Domain_Vertex_is_boundary(TetrahedralSpherical3D_Domain dom, TetrahedralSpherical3D_Vertex vertex);
 
 /*******************************************
- * IS_INTERFACE (with segments and facets) *
+ * IS_BOUNDARY (with segments and facets) *
  *******************************************/
 
 bool LinearCartesian1D_Segment_Facet_is_boundary(LinearCartesian1D_Segment seg, LinearCartesian1D_Facet facet);
@@ -122,7 +122,7 @@ bool TetrahedralCylindrical3D_Segment_Facet_is_boundary(TetrahedralCylindrical3D
 bool TetrahedralSpherical3D_Segment_Facet_is_boundary(TetrahedralSpherical3D_Segment seg, TetrahedralSpherical3D_Facet facet);
 
 /******************************************
- * IS_INTERFACE (with segments and edges) *
+ * IS_BOUNDARY (with segments and edges) *
  ******************************************/
 
 bool TriangularCartesian2D_Segment_Edge_is_boundary(TriangularCartesian2D_Segment seg, TriangularCartesian2D_Edge edge);
@@ -142,7 +142,7 @@ bool TetrahedralCylindrical3D_Segment_Edge_is_boundary(TetrahedralCylindrical3D_
 bool TetrahedralSpherical3D_Segment_Edge_is_boundary(TetrahedralSpherical3D_Segment seg, TetrahedralSpherical3D_Edge edge);
 
 /*********************************************
- * IS_INTERFACE (with segments and vertices) *
+ * IS_BOUNDARY (with segments and vertices) *
  *********************************************/
 
 bool LinearCartesian1D_Segment_Vertex_is_boundary(LinearCartesian1D_Segment seg, LinearCartesian1D_Vertex vertex);
