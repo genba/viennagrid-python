@@ -4,10 +4,6 @@ import viennagrid_wrapper as _wrapper
 
 _SUPPORTED_NORMS = (1, 2, 'inf')
 
-###########################
-# VECTOR-BASED ALGORITHMS #
-###########################
-
 def inner_prod(point1, point2):
 	# Try to get method 'inner_prod' from 'point1'. If it doesn't have the method,
 	# it means it's not a cartesian point. Thus, convert to cartesian coordinates
@@ -72,41 +68,23 @@ def norm(point, norm_type=2):
 	else:
 		raise ValueError('unsupported norm type: %(norm_type)s')
 
-###########################
-# N-CELL-BASED ALGORITHMS #
-###########################
-
 def centroid(cell):
 	if isinstance(cell, viennagrid.Cell):
 		cell = cell._cell
 	return _wrapper.centroid(cell)
 
+def cell_refine(dom, seg, predicate):
+	"""Returns a tuple containing the output domain and segmentation after the refination."""
+	if isinstance(dom, viennagrid.Domain):
+		dom = dom._domain
+	if isinstance(seg, viennagrid.Segmentation):
+		seg = seg._segmentation
+	return _wrapper.cell_refine(dom, seg, predicate)
+
 def circumcenter(cell):
 	if isinstance(cell, viennagrid.Cell):
 		cell = cell._cell
 	return _wrapper.circumcenter(cell)
-
-def surface(cell):
-	if isinstance(cell, viennagrid.Cell):
-		cell = cell._cell
-	elif isinstance(cell, viennagrid.Domain):
-		cell = cell._domain
-	elif isinstance(cell, viennagrid.Segment):
-		cell = cell._segment
-	return _wrapper.surface(cell)
-
-def volume(cell):
-	if isinstance(cell, viennagrid.Cell):
-		cell = cell._cell
-	elif isinstance(cell, viennagrid.Domain):
-		cell = cell._domain
-	elif isinstance(cell, viennagrid.Segment):
-		cell = cell._segment
-	return _wrapper.volume(cell)
-
-###################################
-# DOMAIN/SEGMENT-BASED ALGORITHMS #
-###################################
 
 def is_boundary(domseg, interface_elem):
 	if isinstance(domseg, viennagrid.Domain):
@@ -155,10 +133,20 @@ def refine_uniformly(dom, seg):
 		seg = seg._segmentation
 	return _wrapper.refine_uniformly(dom, seg)
 
-def cell_refine(dom, seg, predicate):
-	"""Returns a tuple containing the output domain and segmentation after the refination."""
-	if isinstance(dom, viennagrid.Domain):
-		dom = dom._domain
-	if isinstance(seg, viennagrid.Segmentation):
-		seg = seg._segmentation
-	return _wrapper.cell_refine(dom, seg, predicate)
+def surface(cell):
+	if isinstance(cell, viennagrid.Cell):
+		cell = cell._cell
+	elif isinstance(cell, viennagrid.Domain):
+		cell = cell._domain
+	elif isinstance(cell, viennagrid.Segment):
+		cell = cell._segment
+	return _wrapper.surface(cell)
+
+def volume(cell):
+	if isinstance(cell, viennagrid.Cell):
+		cell = cell._cell
+	elif isinstance(cell, viennagrid.Domain):
+		cell = cell._domain
+	elif isinstance(cell, viennagrid.Segment):
+		cell = cell._segment
+	return _wrapper.volume(cell)
