@@ -48,6 +48,7 @@ using namespace boost::python;
 #include "algorithms/cell_volume.hpp"
 #include "algorithms/domain_surface.hpp"
 #include "algorithms/domain_volume.hpp"
+#include "algorithms/is_boundary.hpp"
 #include "algorithms/is_interface.hpp"
 #include "algorithms/refine.hpp"
 #include "algorithms/refine_uniformly.hpp"
@@ -1126,6 +1127,154 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("TetrahedralCartesian3D_Domain_volume", &TetrahedralCartesian3D_Domain_volume, "docstring");
 	def("TetrahedralCylindrical3D_Domain_volume", &TetrahedralCylindrical3D_Domain_volume, "docstring");
 	def("TetrahedralSpherical3D_Domain_volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
+	
+	/******************************************
+	 * IS_INTERFACE (with domains and facets) *
+	 ******************************************/
+	
+	def("is_boundary", &LinearCartesian1D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian2D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCylindrical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearPolar2D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearSpherical3D_Domain_Facet_is_boundary, "docstring");
+	
+	def("is_boundary", &TriangularCartesian2D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularCylindrical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularPolar2D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularSpherical3D_Domain_Facet_is_boundary, "docstring");
+	
+	def("is_boundary", &QuadrilateralCartesian2D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralPolar2D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralSpherical3D_Domain_Facet_is_boundary, "docstring");
+	
+	def("is_boundary", &TetrahedralCartesian3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCylindrical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralSpherical3D_Domain_Facet_is_boundary, "docstring");
+	
+	/*****************************************
+	 * IS_INTERFACE (with domains and edges) *
+	 *****************************************/
+	
+	def("is_boundary", &TriangularCartesian2D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularCylindrical3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularPolar2D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularSpherical3D_Domain_Edge_is_boundary, "docstring");
+	
+	def("is_boundary", &QuadrilateralCartesian2D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralPolar2D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralSpherical3D_Domain_Edge_is_boundary, "docstring");
+	
+	def("is_boundary", &TetrahedralCartesian3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCylindrical3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralSpherical3D_Domain_Edge_is_boundary, "docstring");
+	
+	/********************************************
+	 * IS_INTERFACE (with domains and vertices) *
+	 ********************************************/
+	
+	def("is_boundary", &LinearCartesian1D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian2D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCylindrical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearPolar2D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	
+	def("is_boundary", &TriangularCartesian2D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularCylindrical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularPolar2D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	
+	def("is_boundary", &QuadrilateralCartesian2D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralPolar2D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	
+	def("is_boundary", &TetrahedralCartesian3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCylindrical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	
+	/*******************************************
+	 * IS_INTERFACE (with segments and facets) *
+	 *******************************************/
+	
+	def("is_boundary", &LinearCartesian1D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian2D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCylindrical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearPolar2D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearSpherical3D_Segment_Facet_is_boundary, "docstring");
+	
+	def("is_boundary", &TriangularCartesian2D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularCylindrical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularPolar2D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularSpherical3D_Segment_Facet_is_boundary, "docstring");
+	
+	def("is_boundary", &QuadrilateralCartesian2D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralPolar2D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralSpherical3D_Segment_Facet_is_boundary, "docstring");
+	
+	def("is_boundary", &TetrahedralCartesian3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCylindrical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralSpherical3D_Segment_Facet_is_boundary, "docstring");
+	
+	/******************************************
+	 * IS_INTERFACE (with segments and edges) *
+	 ******************************************/
+	
+	def("is_boundary", &TriangularCartesian2D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularCylindrical3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularPolar2D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularSpherical3D_Segment_Edge_is_boundary, "docstring");
+	
+	def("is_boundary", &QuadrilateralCartesian2D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralPolar2D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralSpherical3D_Segment_Edge_is_boundary, "docstring");
+	
+	def("is_boundary", &TetrahedralCartesian3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCylindrical3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralSpherical3D_Segment_Edge_is_boundary, "docstring");
+	
+	/*********************************************
+	 * IS_INTERFACE (with segments and vertices) *
+	 *********************************************/
+	
+	def("is_boundary", &LinearCartesian1D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian2D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCylindrical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearPolar2D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearSpherical3D_Segment_Vertex_is_boundary, "docstring");
+	
+	def("is_boundary", &TriangularCartesian2D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularCylindrical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularPolar2D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularSpherical3D_Segment_Vertex_is_boundary, "docstring");
+	
+	def("is_boundary", &QuadrilateralCartesian2D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralPolar2D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralSpherical3D_Segment_Vertex_is_boundary, "docstring");
+	
+	def("is_boundary", &TetrahedralCartesian3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCylindrical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralSpherical3D_Segment_Vertex_is_boundary, "docstring");
 	
 	/******************************
 	 * IS_INTERFACE (with facets) *
