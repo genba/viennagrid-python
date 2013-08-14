@@ -1024,28 +1024,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * CELL-SURFACE *
 	 ****************/
 	
-	def("LinearCartesian1D_Cell_surface", &LinearCartesian1D_Cell_surface, "docstring");
-	def("LinearCartesian2D_Cell_surface", &LinearCartesian2D_Cell_surface, "docstring");
-	def("LinearCartesian3D_Cell_surface", &LinearCartesian3D_Cell_surface, "docstring");
-	def("LinearCylindrical3D_Cell_surface", &LinearCylindrical3D_Cell_surface, "docstring");
-	def("LinearPolar2D_Cell_surface", &LinearPolar2D_Cell_surface, "docstring");
-	def("LinearSpherical3D_Cell_surface", &LinearSpherical3D_Cell_surface, "docstring");
+	def("surface", &LinearCartesian1D_Cell_surface, "docstring");
+	def("surface", &LinearCartesian2D_Cell_surface, "docstring");
+	def("surface", &LinearCartesian3D_Cell_surface, "docstring");
+	def("surface", &LinearCylindrical3D_Cell_surface, "docstring");
+	def("surface", &LinearPolar2D_Cell_surface, "docstring");
+	def("surface", &LinearSpherical3D_Cell_surface, "docstring");
 	
-	def("TriangularCartesian2D_Cell_surface", &TriangularCartesian2D_Cell_surface, "docstring");
-	def("TriangularCartesian3D_Cell_surface", &TriangularCartesian3D_Cell_surface, "docstring");
-	def("TriangularCylindrical3D_Cell_surface", &TriangularCylindrical3D_Cell_surface, "docstring");
-	def("TriangularPolar2D_Cell_surface", &TriangularPolar2D_Cell_surface, "docstring");
-	def("TriangularSpherical3D_Cell_surface", &TriangularSpherical3D_Cell_surface, "docstring");
+	def("surface", &TriangularCartesian2D_Cell_surface, "docstring");
+	def("surface", &TriangularCartesian3D_Cell_surface, "docstring");
+	def("surface", &TriangularCylindrical3D_Cell_surface, "docstring");
+	def("surface", &TriangularPolar2D_Cell_surface, "docstring");
+	def("surface", &TriangularSpherical3D_Cell_surface, "docstring");
 	
-	def("QuadrilateralCartesian2D_Cell_surface", &QuadrilateralCartesian2D_Cell_surface, "docstring");
-	def("QuadrilateralCartesian3D_Cell_surface", &QuadrilateralCartesian3D_Cell_surface, "docstring");
-	def("QuadrilateralCylindrical3D_Cell_surface", &QuadrilateralCylindrical3D_Cell_surface, "docstring");
-	def("QuadrilateralPolar2D_Cell_surface", &QuadrilateralPolar2D_Cell_surface, "docstring");
-	def("QuadrilateralSpherical3D_Cell_surface", &QuadrilateralSpherical3D_Cell_surface, "docstring");
+	def("surface", &QuadrilateralCartesian2D_Cell_surface, "docstring");
+	def("surface", &QuadrilateralCartesian3D_Cell_surface, "docstring");
+	def("surface", &QuadrilateralCylindrical3D_Cell_surface, "docstring");
+	def("surface", &QuadrilateralPolar2D_Cell_surface, "docstring");
+	def("surface", &QuadrilateralSpherical3D_Cell_surface, "docstring");
 	
-	def("TetrahedralCartesian3D_Cell_surface", &TetrahedralCartesian3D_Cell_surface, "docstring");
-	def("TetrahedralCylindrical3D_Cell_surface", &TetrahedralCylindrical3D_Cell_surface, "docstring");
-	def("TetrahedralSpherical3D_Cell_surface", &TetrahedralSpherical3D_Cell_surface, "docstring");
+	def("surface", &TetrahedralCartesian3D_Cell_surface, "docstring");
+	def("surface", &TetrahedralCylindrical3D_Cell_surface, "docstring");
+	def("surface", &TetrahedralSpherical3D_Cell_surface, "docstring");
 	
 	/***************
 	 * CELL-VOLUME *
@@ -1078,28 +1078,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * DOMAIN-SURFACE *
 	 ******************/
 	
-	def("LinearCartesian1D_Domain_surface", &LinearCartesian1D_Domain_surface, "docstring");
-	def("LinearCartesian2D_Domain_surface", &LinearCartesian2D_Domain_surface, "docstring");
-	def("LinearCartesian3D_Domain_surface", &LinearCartesian3D_Domain_surface, "docstring");
-	def("LinearCylindrical3D_Domain_surface", &LinearCylindrical3D_Domain_surface, "docstring");
-	def("LinearPolar2D_Domain_surface", &LinearPolar2D_Domain_surface, "docstring");
-	def("LinearSpherical3D_Domain_surface", &LinearSpherical3D_Domain_surface, "docstring");
+	def("surface", &LinearCartesian1D_Domain_surface, "docstring");
+	def("surface", &LinearCartesian2D_Domain_surface, "docstring");
+	def("surface", &LinearCartesian3D_Domain_surface, "docstring");
+	def("surface", &LinearCylindrical3D_Domain_surface, "docstring");
+	def("surface", &LinearPolar2D_Domain_surface, "docstring");
+	def("surface", &LinearSpherical3D_Domain_surface, "docstring");
 	
-	def("TriangularCartesian2D_Domain_surface", &TriangularCartesian2D_Domain_surface, "docstring");
-	def("TriangularCartesian3D_Domain_surface", &TriangularCartesian3D_Domain_surface, "docstring");
-	def("TriangularCylindrical3D_Domain_surface", &TriangularCylindrical3D_Domain_surface, "docstring");
-	def("TriangularPolar2D_Domain_surface", &TriangularPolar2D_Domain_surface, "docstring");
-	def("TriangularSpherical3D_Domain_surface", &TriangularSpherical3D_Domain_surface, "docstring");
+	def("surface", &TriangularCartesian2D_Domain_surface, "docstring");
+	def("surface", &TriangularCartesian3D_Domain_surface, "docstring");
+	def("surface", &TriangularCylindrical3D_Domain_surface, "docstring");
+	def("surface", &TriangularPolar2D_Domain_surface, "docstring");
+	def("surface", &TriangularSpherical3D_Domain_surface, "docstring");
 	
-	def("QuadrilateralCartesian2D_Domain_surface", &QuadrilateralCartesian2D_Domain_surface, "docstring");
-	def("QuadrilateralCartesian3D_Domain_surface", &QuadrilateralCartesian3D_Domain_surface, "docstring");
-	def("QuadrilateralCylindrical3D_Domain_surface", &QuadrilateralCylindrical3D_Domain_surface, "docstring");
-	def("QuadrilateralPolar2D_Domain_surface", &QuadrilateralPolar2D_Domain_surface, "docstring");
-	def("QuadrilateralSpherical3D_Domain_surface", &QuadrilateralSpherical3D_Domain_surface, "docstring");
+	def("surface", &QuadrilateralCartesian2D_Domain_surface, "docstring");
+	def("surface", &QuadrilateralCartesian3D_Domain_surface, "docstring");
+	def("surface", &QuadrilateralCylindrical3D_Domain_surface, "docstring");
+	def("surface", &QuadrilateralPolar2D_Domain_surface, "docstring");
+	def("surface", &QuadrilateralSpherical3D_Domain_surface, "docstring");
 	
-	def("TetrahedralCartesian3D_Domain_surface", &TetrahedralCartesian3D_Domain_surface, "docstring");
-	def("TetrahedralCylindrical3D_Domain_surface", &TetrahedralCylindrical3D_Domain_surface, "docstring");
-	def("TetrahedralSpherical3D_Domain_surface", &TetrahedralSpherical3D_Domain_surface, "docstring");
+	def("surface", &TetrahedralCartesian3D_Domain_surface, "docstring");
+	def("surface", &TetrahedralCylindrical3D_Domain_surface, "docstring");
+	def("surface", &TetrahedralSpherical3D_Domain_surface, "docstring");
 	
 	/*****************
 	 * DOMAIN-VOLUME *
@@ -1382,28 +1382,28 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 * SEGMENT-SURFACE *
 	 *******************/
 	
-	def("LinearCartesian1D_Segment_surface", &LinearCartesian1D_Segment_surface, "docstring");
-	def("LinearCartesian2D_Segment_surface", &LinearCartesian2D_Segment_surface, "docstring");
-	def("LinearCartesian3D_Segment_surface", &LinearCartesian3D_Segment_surface, "docstring");
-	def("LinearCylindrical3D_Segment_surface", &LinearCylindrical3D_Segment_surface, "docstring");
-	def("LinearPolar2D_Segment_surface", &LinearPolar2D_Segment_surface, "docstring");
-	def("LinearSpherical3D_Segment_surface", &LinearSpherical3D_Segment_surface, "docstring");
+	def("surface", &LinearCartesian1D_Segment_surface, "docstring");
+	def("surface", &LinearCartesian2D_Segment_surface, "docstring");
+	def("surface", &LinearCartesian3D_Segment_surface, "docstring");
+	def("surface", &LinearCylindrical3D_Segment_surface, "docstring");
+	def("surface", &LinearPolar2D_Segment_surface, "docstring");
+	def("surface", &LinearSpherical3D_Segment_surface, "docstring");
 	
-	def("TriangularCartesian2D_Segment_surface", &TriangularCartesian2D_Segment_surface, "docstring");
-	def("TriangularCartesian3D_Segment_surface", &TriangularCartesian3D_Segment_surface, "docstring");
-	def("TriangularCylindrical3D_Segment_surface", &TriangularCylindrical3D_Segment_surface, "docstring");
-	def("TriangularPolar2D_Segment_surface", &TriangularPolar2D_Segment_surface, "docstring");
-	def("TriangularSpherical3D_Segment_surface", &TriangularSpherical3D_Segment_surface, "docstring");
+	def("surface", &TriangularCartesian2D_Segment_surface, "docstring");
+	def("surface", &TriangularCartesian3D_Segment_surface, "docstring");
+	def("surface", &TriangularCylindrical3D_Segment_surface, "docstring");
+	def("surface", &TriangularPolar2D_Segment_surface, "docstring");
+	def("surface", &TriangularSpherical3D_Segment_surface, "docstring");
 	
-	def("QuadrilateralCartesian2D_Segment_surface", &QuadrilateralCartesian2D_Segment_surface, "docstring");
-	def("QuadrilateralCartesian3D_Segment_surface", &QuadrilateralCartesian3D_Segment_surface, "docstring");
-	def("QuadrilateralCylindrical3D_Segment_surface", &QuadrilateralCylindrical3D_Segment_surface, "docstring");
-	def("QuadrilateralPolar2D_Segment_surface", &QuadrilateralPolar2D_Segment_surface, "docstring");
-	def("QuadrilateralSpherical3D_Segment_surface", &QuadrilateralSpherical3D_Segment_surface, "docstring");
+	def("surface", &QuadrilateralCartesian2D_Segment_surface, "docstring");
+	def("surface", &QuadrilateralCartesian3D_Segment_surface, "docstring");
+	def("surface", &QuadrilateralCylindrical3D_Segment_surface, "docstring");
+	def("surface", &QuadrilateralPolar2D_Segment_surface, "docstring");
+	def("surface", &QuadrilateralSpherical3D_Segment_surface, "docstring");
 	
-	def("TetrahedralCartesian3D_Segment_surface", &TetrahedralCartesian3D_Segment_surface, "docstring");
-	def("TetrahedralCylindrical3D_Segment_surface", &TetrahedralCylindrical3D_Segment_surface, "docstring");
-	def("TetrahedralSpherical3D_Segment_surface", &TetrahedralSpherical3D_Segment_surface, "docstring");
+	def("surface", &TetrahedralCartesian3D_Segment_surface, "docstring");
+	def("surface", &TetrahedralCylindrical3D_Segment_surface, "docstring");
+	def("surface", &TetrahedralSpherical3D_Segment_surface, "docstring");
 	
 	/******************
 	 * SEGMENT-VOLUME *

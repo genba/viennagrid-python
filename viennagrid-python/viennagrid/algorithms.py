@@ -93,8 +93,7 @@ def surface(cell):
 		cell = cell._domain
 	elif isinstance(cell, viennagrid.Segment):
 		cell = cell._segment
-	surface_fn = _wrapper.__getattribute('%s_surface' % cell.__class__.__name__)
-	return surface_fn(cell)
+	return _wrapper.surface(cell)
 
 def volume(cell):
 	if isinstance(cell, viennagrid.Cell):
