@@ -107,6 +107,8 @@ set (VIENNAGRID_WRAPPER_FACETS_SRC
         facets/tetrahedral.cpp)
 
 set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
+        algorithms/apply_voronoi.hpp
+        algorithms/apply_voronoi.cpp
         algorithms/cell_centroid.hpp
         algorithms/cell_centroid.cpp
         algorithms/cell_circumcenter.hpp
