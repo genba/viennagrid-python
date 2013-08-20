@@ -3,6 +3,8 @@ project (ViennaGridWrapper)
 set (version 0.1)
 set (release 0.1.0)
 
+set (DOXYGEN_INPUT "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
+
 # Find Python header files (Python.h)
 find_package (PythonLibs REQUIRED)
 include_directories (${PYTHON_INCLUDE_PATH})
