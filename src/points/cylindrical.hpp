@@ -41,7 +41,7 @@ public:
 	PointCylindrical3D(double x, double y, double z);
 	
 	/**
-	 * Initialize point in the DIM cartesian space from a ViennaGrid point.
+	 * Initialize point in the cylindrical space from a ViennaGrid point.
 	 *
 	 * What this makes is to set the pointer to point to the ViennaGrid point and thus solves the issue caused by
 	 * the fact that the ViennaGrid point was being copied, thus not being able to get references to the points
