@@ -15,7 +15,7 @@ using namespace boost::python;
 class PointPolar2D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type.
-	**/
+	 */
 	PointPolar_t *point;
 	
 	int id;
@@ -27,7 +27,7 @@ public:
 	 * and allocates memory in the heap for storing the point. As one would normally think, this should be paired
 	 * with a destructor that frees the allocated memory. However, when we free the memory in the destructor, the
 	 * program aborts and states that the program tried to perform a double-free.
-	**/
+	 */
 	PointPolar2D();
 	
 	/**
@@ -37,7 +37,7 @@ public:
 	 * and allocates memory in the heap for storing the point. As one would normally think, this should be paired
 	 * with a destructor that frees the allocated memory. However, when we free the memory in the destructor, the
 	 * program aborts and states that the program tried to perform a double-free.
-	**/
+	 */
 	PointPolar2D(double x, double y);
 	
 	/**
@@ -53,78 +53,78 @@ public:
 	 * has been used. At first, one would think that it should be distinguished in some way when the object has been
 	 * instantiated using this constructor or any other constructor in order for the destructor to only free when
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
-	**/
+	 */
 	PointPolar2D(PointPolar_t &initial_point, unsigned int initial_id=0);
 	
 	/**
 	 * Get the dimension of the point. For 2D points, this always returns 2.
-	**/
+	 */
 	size_t get_dimension();
 	
 	/**
 	 * Get the name of the coordinate system. For cartesian points, this always returns 'cartesian'.
-	**/
+	 */
 	const char * get_coord_system();
 	
 	/**
 	 * Get the coordinate at given index (0 for x, 1 for y).
-	**/
+	 */
 	double get_coord(unsigned int index);
 	
 	/**
 	 * Set the coordinate at given index (0 for x, 1 for y).
-	**/
+	 */
 	void set_coord(unsigned int index, double new_value);
 	
 	/**
 	 * Get coordinates as a Python list.
-	**/
+	 */
 	list get_coord_list();
 	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.
-	**/
+	 */
 	PointPolar2D & operator=(const PointPolar2D &other);
 	
 	/**
 	 * Addition operator which adds two points coordinate by coordinate.
-	**/
+	 */
 	PointPolar2D operator+(const PointPolar2D &other);
 	
 	/**
 	 * Subtraction operator which subtracts two points coordinate by coordinate.
-	**/
+	 */
 	PointPolar2D operator-(const PointPolar2D &other);
 	
 	/**
 	 * Multiplication operator which multiplies a point and a scalar (real) number, coordinate by coordinate.
-	**/
+	 */
 	PointPolar2D operator*(const double factor);
 	
 	/**
 	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
-	**/
+	 */
 	PointPolar2D operator/(const double factor);
 	
 	/**
 	 * Unary operator which inverts the coordinates of a point.
-	**/
+	 */
 	PointPolar2D operator-();
 	
 	/**
 	 * Get ViennaGrid point.
-	**/
+	 */
 	PointPolar_t & get_point();
 	
 	/**
 	 * Get ID of the point within the domain it is assigned to (if applicable).
-	**/
+	 */
 	unsigned int get_id();
 	
 	/**
 	 * Set ID of the point within the domain it is assigned to.
-	**/
+	 */
 	void set_id(unsigned int new_id);
 	
 	PointCartesian2D to_cartesian();
