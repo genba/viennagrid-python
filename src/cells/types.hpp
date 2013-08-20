@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid cells.
+ */
+
 #ifndef TYPES_HPP_NFUQ9SMB
 #define TYPES_HPP_NFUQ9SMB
 

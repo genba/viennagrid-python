@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid segments.
+ */
+
 #ifndef TYPES_HPP_LQVAVLAX
 #define TYPES_HPP_LQVAVLAX
 

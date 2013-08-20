@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions for wrapped domains of lines.
+ */
+
 #ifndef DOMAINS_LINEAR_HPP
 #define DOMAINS_LINEAR_HPP
 

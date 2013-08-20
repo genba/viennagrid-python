@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions of wrapped segments from triangular domains.
+ */
+
 #ifndef TRIANGULAR_HPP_ASEQMOCM
 #define TRIANGULAR_HPP_ASEQMOCM
 

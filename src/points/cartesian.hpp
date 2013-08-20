@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions for wrapped cartesian points.
+ */
+
 #ifndef CARTESIAN_HPP_40UV2UQE
 #define CARTESIAN_HPP_40UV2UQE
 

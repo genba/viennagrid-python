@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid domains.
+ */
+
 #ifndef TYPES_HPP_O176Z3NS
 #define TYPES_HPP_O176Z3NS
 

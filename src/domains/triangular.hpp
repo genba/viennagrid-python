@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions for wrapped domains of triangles.
+ */
+
 #ifndef TRIANGULAR_HPP_40OZO3A3
 #define TRIANGULAR_HPP_40OZO3A3
 

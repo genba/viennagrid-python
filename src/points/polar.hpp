@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions for wrapped polar points.
+ */
+
 #ifndef POLAR_HPP_HL2P4D4
 #define POLAR_HPP_HL2P4D4
 

@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions of wrapped vertices from triangular domains.
+ */
+
 #ifndef VERTICES_TRIANGULAR_HPP
 #define VERTICES_TRIANGULAR_HPP
 

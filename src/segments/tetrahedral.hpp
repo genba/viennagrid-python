@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions of wrapped segments from tetrahedral domains.
+ */
+
 #ifndef TETRAHEDRAL_HPP_ASEQMOCM
 #define TETRAHEDRAL_HPP_ASEQMOCM
 

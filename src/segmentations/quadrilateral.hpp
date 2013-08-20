@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions of wrapped segmentations from quadrilateral domains.
+ */
+
 #ifndef SEGMENTATION_QUADRILATERAL_HPP
 #define SEGMENTATION_QUADRILATERAL_HPP
 

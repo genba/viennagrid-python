@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions of wrapped segments from linear domains.
+ */
+
 #ifndef SEGMENTS_LINEAR_HPP
 #define SEGMENTS_LINEAR_HPP
 

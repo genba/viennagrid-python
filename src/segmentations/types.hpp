@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid segmentations.
+ */
+
 #ifndef SEGMENTATION_TYPES_HPP
 #define SEGMENTATION_TYPES_HPP
 

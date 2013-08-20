@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions for wrapped domains of tetrahedra.
+ */
+
 #ifndef TETRAHEDRAL_HPP_66FKMIZO
 #define TETRAHEDRAL_HPP_66FKMIZO
 

@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions for wrapped spherical points.
+ */
+
 #ifndef SPHERICAL_HPP_LPABEBWU
 #define SPHERICAL_HPP_LPABEBWU
 

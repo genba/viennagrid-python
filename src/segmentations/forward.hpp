@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Forward definitions needed to use segmentations when defining other classes.
+ */
+
 #ifndef SEGMENTATIONS_FORWARD_HPP
 #define SEGMENTATIONS_FORWARD_HPP
 
