@@ -2,6 +2,7 @@
 #define ALGORITHMS_APPLY_VORONOI_HPP
 
 #include "../domains/triangular.hpp"
+#include "../domains/quadrilateral.hpp"
 #include "../domains/tetrahedral.hpp"
 
 /*****************
@@ -13,6 +14,12 @@ void TriangularCartesian3D_Domain_apply_voronoi(TriangularCartesian3D_Domain dom
 void TriangularCylindrical3D_Domain_apply_voronoi(TriangularCylindrical3D_Domain domain);
 void TriangularPolar2D_Domain_apply_voronoi(TriangularPolar2D_Domain domain);
 void TriangularSpherical3D_Domain_apply_voronoi(TriangularSpherical3D_Domain domain);
+
+void QuadrilateralCartesian2D_Domain_apply_voronoi(QuadrilateralCartesian2D_Domain domain);
+void QuadrilateralCartesian3D_Domain_apply_voronoi(QuadrilateralCartesian3D_Domain domain);
+void QuadrilateralCylindrical3D_Domain_apply_voronoi(QuadrilateralCylindrical3D_Domain domain);
+void QuadrilateralPolar2D_Domain_apply_voronoi(QuadrilateralPolar2D_Domain domain);
+void QuadrilateralSpherical3D_Domain_apply_voronoi(QuadrilateralSpherical3D_Domain domain);
 
 void TetrahedralCartesian3D_Domain_apply_voronoi(TetrahedralCartesian3D_Domain domain);
 void TetrahedralCylindrical3D_Domain_apply_voronoi(TetrahedralCylindrical3D_Domain domain);

@@ -158,6 +158,153 @@ void TriangularSpherical3D_Domain_apply_voronoi(TriangularSpherical3D_Domain dom
 	);
 }
 
+// Quadrilateral
+
+void QuadrilateralCartesian2D_Domain_apply_voronoi(QuadrilateralCartesian2D_Domain domain)
+{
+	typedef QuadrilateralCartesian2D_Domain_t      DomainType;
+	typedef QuadrilateralCartesian2D_Edge_t        EdgeType;
+	typedef QuadrilateralCartesian2D_Vertex_t      VertexType;
+	typedef QuadrilateralCartesian2D_Cell_t        CellType;
+	
+	typedef viennagrid::result_of::const_cell_handle<DomainType>::type    ConstCellHandleType;
+	
+	std::deque<double>    interface_areas;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    interface_contributions;
+	
+	std::deque<double>    vertex_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    vertex_box_volume_contributions;
+	
+	std::deque<double>    edge_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    edge_box_volume_contributions;
+	
+	viennagrid::apply_voronoi<CellType>(
+		domain.get_domain(),
+		viennagrid::make_accessor<EdgeType>(interface_areas),
+		viennagrid::make_accessor<EdgeType>(interface_contributions),
+		viennagrid::make_accessor<VertexType>(vertex_box_volumes),
+		viennagrid::make_accessor<VertexType>(vertex_box_volume_contributions),
+		viennagrid::make_accessor<EdgeType>(edge_box_volumes),
+		viennagrid::make_accessor<EdgeType>(edge_box_volume_contributions)
+	);
+}
+
+void QuadrilateralCartesian3D_Domain_apply_voronoi(QuadrilateralCartesian3D_Domain domain)
+{
+	typedef QuadrilateralCartesian3D_Domain_t      DomainType;
+	typedef QuadrilateralCartesian3D_Edge_t        EdgeType;
+	typedef QuadrilateralCartesian3D_Vertex_t      VertexType;
+	typedef QuadrilateralCartesian3D_Cell_t        CellType;
+	
+	typedef viennagrid::result_of::const_cell_handle<DomainType>::type    ConstCellHandleType;
+	
+	std::deque<double>    interface_areas;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    interface_contributions;
+	
+	std::deque<double>    vertex_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    vertex_box_volume_contributions;
+	
+	std::deque<double>    edge_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    edge_box_volume_contributions;
+	
+	viennagrid::apply_voronoi<CellType>(
+		domain.get_domain(),
+		viennagrid::make_accessor<EdgeType>(interface_areas),
+		viennagrid::make_accessor<EdgeType>(interface_contributions),
+		viennagrid::make_accessor<VertexType>(vertex_box_volumes),
+		viennagrid::make_accessor<VertexType>(vertex_box_volume_contributions),
+		viennagrid::make_accessor<EdgeType>(edge_box_volumes),
+		viennagrid::make_accessor<EdgeType>(edge_box_volume_contributions)
+	);
+}
+
+void QuadrilateralCylindrical3D_Domain_apply_voronoi(QuadrilateralCylindrical3D_Domain domain)
+{
+	typedef QuadrilateralCylindrical3D_Domain_t      DomainType;
+	typedef QuadrilateralCylindrical3D_Edge_t        EdgeType;
+	typedef QuadrilateralCylindrical3D_Vertex_t      VertexType;
+	typedef QuadrilateralCylindrical3D_Cell_t        CellType;
+	
+	typedef viennagrid::result_of::const_cell_handle<DomainType>::type    ConstCellHandleType;
+	
+	std::deque<double>    interface_areas;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    interface_contributions;
+	
+	std::deque<double>    vertex_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    vertex_box_volume_contributions;
+	
+	std::deque<double>    edge_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    edge_box_volume_contributions;
+	
+	viennagrid::apply_voronoi<CellType>(
+		domain.get_domain(),
+		viennagrid::make_accessor<EdgeType>(interface_areas),
+		viennagrid::make_accessor<EdgeType>(interface_contributions),
+		viennagrid::make_accessor<VertexType>(vertex_box_volumes),
+		viennagrid::make_accessor<VertexType>(vertex_box_volume_contributions),
+		viennagrid::make_accessor<EdgeType>(edge_box_volumes),
+		viennagrid::make_accessor<EdgeType>(edge_box_volume_contributions)
+	);
+}
+
+void QuadrilateralPolar2D_Domain_apply_voronoi(QuadrilateralPolar2D_Domain domain)
+{
+	typedef QuadrilateralPolar2D_Domain_t      DomainType;
+	typedef QuadrilateralPolar2D_Edge_t        EdgeType;
+	typedef QuadrilateralPolar2D_Vertex_t      VertexType;
+	typedef QuadrilateralPolar2D_Cell_t        CellType;
+	
+	typedef viennagrid::result_of::const_cell_handle<DomainType>::type    ConstCellHandleType;
+	
+	std::deque<double>    interface_areas;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    interface_contributions;
+	
+	std::deque<double>    vertex_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    vertex_box_volume_contributions;
+	
+	std::deque<double>    edge_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    edge_box_volume_contributions;
+	
+	viennagrid::apply_voronoi<CellType>(
+		domain.get_domain(),
+		viennagrid::make_accessor<EdgeType>(interface_areas),
+		viennagrid::make_accessor<EdgeType>(interface_contributions),
+		viennagrid::make_accessor<VertexType>(vertex_box_volumes),
+		viennagrid::make_accessor<VertexType>(vertex_box_volume_contributions),
+		viennagrid::make_accessor<EdgeType>(edge_box_volumes),
+		viennagrid::make_accessor<EdgeType>(edge_box_volume_contributions)
+	);
+}
+
+void QuadrilateralSpherical3D_Domain_apply_voronoi(QuadrilateralSpherical3D_Domain domain)
+{
+	typedef QuadrilateralSpherical3D_Domain_t      DomainType;
+	typedef QuadrilateralSpherical3D_Edge_t        EdgeType;
+	typedef QuadrilateralSpherical3D_Vertex_t      VertexType;
+	typedef QuadrilateralSpherical3D_Cell_t        CellType;
+	
+	typedef viennagrid::result_of::const_cell_handle<DomainType>::type    ConstCellHandleType;
+	
+	std::deque<double>    interface_areas;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    interface_contributions;
+	
+	std::deque<double>    vertex_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    vertex_box_volume_contributions;
+	
+	std::deque<double>    edge_box_volumes;
+	std::deque<viennagrid::result_of::voronoi_cell_contribution<ConstCellHandleType>::type>    edge_box_volume_contributions;
+	
+	viennagrid::apply_voronoi<CellType>(
+		domain.get_domain(),
+		viennagrid::make_accessor<EdgeType>(interface_areas),
+		viennagrid::make_accessor<EdgeType>(interface_contributions),
+		viennagrid::make_accessor<VertexType>(vertex_box_volumes),
+		viennagrid::make_accessor<VertexType>(vertex_box_volume_contributions),
+		viennagrid::make_accessor<EdgeType>(edge_box_volumes),
+		viennagrid::make_accessor<EdgeType>(edge_box_volume_contributions)
+	);
+}
+
 // Tetrahedral
 
 void TetrahedralCartesian3D_Domain_apply_voronoi(TetrahedralCartesian3D_Domain domain)
