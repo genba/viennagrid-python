@@ -131,7 +131,7 @@ public:
 	 * Convert to cartesian 3D point.
 	 */
 	PointCartesian3D to_cartesian();
-
+	
 	/**
 	 * Convert to spherical point.
 	 */

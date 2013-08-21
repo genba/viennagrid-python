@@ -162,7 +162,7 @@ public:
 	double norm_2();
 	
 	/**
-	 * Calculate the \f$ \inf \f$-norm of the point.
+	 * Calculate the ∞-norm of the point.
 	 */
 	double norm_inf();
 };
@@ -322,7 +322,7 @@ public:
 	double norm_2();
 	
 	/**
-	 * Calculate the \f$ \inf \f$-norm of the point.
+	 * Calculate the ∞-norm of the point.
 	 */
 	double norm_inf();
 };
@@ -486,7 +486,7 @@ public:
 	double norm_2();
 	
 	/**
-	 * Calculate the \f$ \inf \f$-norm of the point.
+	 * Calculate the ∞-norm of the point.
 	 */
 	double norm_inf();
 };
