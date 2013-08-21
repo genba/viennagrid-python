@@ -18,7 +18,7 @@ class PointPolar2D {
 	 */
 	PointPolar_t *point;
 	
-	int id;
+	int id; // TODO: move to vertex
 public:
 	/**
 	 * Initialize point in the 2D cartesian space with coordinates (0, 0).

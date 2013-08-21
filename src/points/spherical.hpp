@@ -18,7 +18,7 @@ class PointSpherical3D {
 	 */
 	PointSpherical_t *point;
 	
-	int id;
+	int id; // TODO: move to vertex
 public:
 	/**
 	 * Initialize point in the 3D cartesian space with coordinates (0, 0, 0).

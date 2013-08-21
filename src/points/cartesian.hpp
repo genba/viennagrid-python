@@ -24,7 +24,7 @@ class PointCartesian1D {
 	 * Otherwise, its value will be the ID of the point within the domain, i.e. its index
 	 * in the vector of vertices.
 	 */
-	int id;
+	int id; // TODO: move to vertex
 public:
 	/**
 	 * Initialize point in the 1D cartesian space with coordinates (0, 0).
@@ -179,7 +179,7 @@ class PointCartesian2D {
 	 * Otherwise, its value will be the ID of the point within the domain, i.e. its index
 	 * in the vector of vertices.
 	 */
-	int id;
+	int id; // TODO: move to vertex
 public:
 	/**
 	 * Initialize point in the 2D cartesian space with coordinates (0, 0).
@@ -333,7 +333,7 @@ class PointCartesian3D {
 	 */
 	PointCartesian3D_t *point;
 	
-	int id;
+	int id; // TODO: move to vertex
 public:
 	/**
 	 * Initialize point in the 3D cartesian space with coordinates (0, 0, 0).
