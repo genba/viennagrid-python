@@ -162,3 +162,8 @@ def cell_refine(dom, seg, predicate):
 	if isinstance(seg, viennagrid.Segmentation):
 		seg = seg._segmentation
 	return _wrapper.cell_refine(dom, seg, predicate)
+
+def apply_voronoi(dom):
+	if isinstance(dom, viennagrid.Domain):
+		dom = dom._domain
+	_wrapper.apply_voronoi(dom)
