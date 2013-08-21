@@ -18,75 +18,159 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
-////////////////////////
-// Line, cartesian 1D //
-////////////////////////
-
+/**
+ * Wrapped cell of a linear, cartesian 1D domain..
+ */
 class LinearCartesian1D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	LinearCartesian1D_Cell_t    *cell;
 public:
 	LinearCartesian1D_Cell(LinearCartesian1D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-////////////////////////
-// Line, cartesian 2D //
-////////////////////////
-
+/**
+ * Wrapped cell of a linear, cartesian 2D domain.
+ */
 class LinearCartesian2D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	LinearCartesian2D_Cell_t    *cell;
 public:
 	LinearCartesian2D_Cell(LinearCartesian2D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-////////////////////////
-// Line, cartesian 3D //
-////////////////////////
-
+/**
+ * Wrapped cell of a linear, cartesian 3D domain.
+ */
 class LinearCartesian3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	LinearCartesian3D_Cell_t    *cell;
 public:
 	LinearCartesian3D_Cell(LinearCartesian3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-////////////////////////////
-// Line, cylindrical (3D) //
-////////////////////////////
-
+/**
+ * Wrapped cell of a linear, cylindrical domain.
+ */
 class LinearCylindrical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	LinearCylindrical3D_Cell_t    *cell;
 public:
 	LinearCylindrical3D_Cell(LinearCylindrical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-//////////////////////
-// Line, polar (2D) //
-//////////////////////
-
+/**
+ * Wrapped cell of a linear, polar domain.
+ */
 class LinearPolar2D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	LinearPolar2D_Cell_t    *cell;
 public:
 	LinearPolar2D_Cell(LinearPolar2D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-//////////////////////////
-// Line, spherical (3D) //
-//////////////////////////
-
+/**
+ * Wrapped cell of a linear, spherical domain.
+ */
 class LinearSpherical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	LinearSpherical3D_Cell_t    *cell;
 public:
 	LinearSpherical3D_Cell(LinearSpherical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 

@@ -16,39 +16,72 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
-///////////////////////////////
-// Tetrahedral, cartesian 3D //
-///////////////////////////////
-
+/**
+ * Wrapped cell of a tetrahedral, cartesian 3D domain.
+ */
 class TetrahedralCartesian3D_Cell {
 	TetrahedralCartesian3D_Cell_t *cell;
 public:
 	TetrahedralCartesian3D_Cell(TetrahedralCartesian3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-///////////////////////////////////
-// Tetrahedral, cylindrical (3D) //
-///////////////////////////////////
-
+/**
+ * Wrapped cell of a tetrahedral, cylindrical 3D domain.
+ */
 class TetrahedralCylindrical3D_Cell {
 	TetrahedralCylindrical3D_Cell_t *cell;
 public:
 	TetrahedralCylindrical3D_Cell(TetrahedralCylindrical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-/////////////////////////////////
-// Tetrahedral, spherical (3D) //
-/////////////////////////////////
-
+/**
+ * Wrapped cell of a tetrahedral, spherical 3D domain.
+ */
 class TetrahedralSpherical3D_Cell {
 	TetrahedralSpherical3D_Cell_t *cell;
 public:
 	TetrahedralSpherical3D_Cell(TetrahedralSpherical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 

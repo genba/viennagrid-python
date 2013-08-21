@@ -16,63 +16,118 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
-/////////////////////////////////
-// Quadrilateral, cartesian 2D //
-/////////////////////////////////
-
+/**
+ * Wrapped cell of a quadrilateral, cartesian 2D domain.
+ */
 class QuadrilateralCartesian2D_Cell {
 	QuadrilateralCartesian2D_Cell_t    *cell;
 public:
 	QuadrilateralCartesian2D_Cell(QuadrilateralCartesian2D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-/////////////////////////////////
-// Quadrilateral, cartesian 3D //
-/////////////////////////////////
-
+/**
+ * Wrapped cell of a quadrilateral, cartesian 3D domain.
+ */
 class QuadrilateralCartesian3D_Cell {
 	QuadrilateralCartesian3D_Cell_t    *cell;
 public:
 	QuadrilateralCartesian3D_Cell(QuadrilateralCartesian3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-/////////////////////////////////////
-// Quadrilateral, cylindrical (3D) //
-/////////////////////////////////////
-
+/**
+ * Wrapped cell of a quadrilateral, cylindrical 3D domain.
+ */
 class QuadrilateralCylindrical3D_Cell {
 	QuadrilateralCylindrical3D_Cell_t    *cell;
 public:
 	QuadrilateralCylindrical3D_Cell(QuadrilateralCylindrical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-///////////////////////////////
-// Quadrilateral, polar (2D) //
-///////////////////////////////
-
+/**
+ * Wrapped cell of a quadrilateral, polar 2D domain.
+ */
 class QuadrilateralPolar2D_Cell {
 	QuadrilateralPolar2D_Cell_t    *cell;
 public:
 	QuadrilateralPolar2D_Cell(QuadrilateralPolar2D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-///////////////////////////////////
-// Quadrilateral, spherical (3D) //
-///////////////////////////////////
-
+/**
+ * Wrapped cell of a quadrilateral, spherical 3D domain.
+ */
 class QuadrilateralSpherical3D_Cell {
 	QuadrilateralSpherical3D_Cell_t    *cell;
 public:
 	QuadrilateralSpherical3D_Cell(QuadrilateralSpherical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 

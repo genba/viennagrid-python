@@ -16,63 +16,118 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
-////////////////////////////
-// Triangle, cartesian 2D //
-////////////////////////////
-
+/**
+ * Wrapped cell of a triangular, cartesian 2D domain.
+ */
 class TriangularCartesian2D_Cell {
 	TriangularCartesian2D_Cell_t    *cell;
 public:
 	TriangularCartesian2D_Cell(TriangularCartesian2D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-////////////////////////////
-// Triangle, cartesian 3D //
-////////////////////////////
-
+/**
+ * Wrapped cell of a triangular, cartesian 3D domain.
+ */
 class TriangularCartesian3D_Cell {
 	TriangularCartesian3D_Cell_t    *cell;
 public:
 	TriangularCartesian3D_Cell(TriangularCartesian3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-////////////////////////////////
-// Triangle, cylindrical (3D) //
-////////////////////////////////
-
+/**
+ * Wrapped cell of a triangular, cylindrical 3D domain.
+ */
 class TriangularCylindrical3D_Cell {
 	TriangularCylindrical3D_Cell_t    *cell;
 public:
 	TriangularCylindrical3D_Cell(TriangularCylindrical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-//////////////////////////
-// Triangle, polar (2D) //
-//////////////////////////
-
+/**
+ * Wrapped cell of a triangular, polar 2D domain.
+ */
 class TriangularPolar2D_Cell {
 	TriangularPolar2D_Cell_t    *cell;
 public:
 	TriangularPolar2D_Cell(TriangularPolar2D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
-//////////////////////////////
-// Triangle, spherical (3D) //
-//////////////////////////////
-
+/**
+ * Wrapped cell of a triangular, spherical 3D domain.
+ */
 class TriangularSpherical3D_Cell {
 	TriangularSpherical3D_Cell_t    *cell;
 public:
 	TriangularSpherical3D_Cell(TriangularSpherical3D_Cell_t &initial_cell);
+	
+	/**
+	 * Return the number of vertices that form the cell.
+	 *
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+
+	/**
+	 * Get a Python list containing all the vertices that form the cell.
+	 *
+	 * @return Python list
+	 */
 	list get_vertices();
 };
 
