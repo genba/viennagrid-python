@@ -53,6 +53,7 @@ using namespace boost::python;
 #include "algorithms/is_interface.hpp"
 #include "algorithms/refine.hpp"
 #include "algorithms/refine_uniformly.hpp"
+#include "algorithms/scale.hpp"
 #include "algorithms/segment_surface.hpp"
 #include "algorithms/segment_volume.hpp"
 #include "algorithms/spanned_volume.hpp"
@@ -1406,6 +1407,33 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("refine_uniformly", &TetrahedralCartesian3D_Domain_refine_uniformly, "docstring");
 	def("refine_uniformly", &TetrahedralCylindrical3D_Domain_refine_uniformly, "docstring");
 	def("refine_uniformly", &TetrahedralSpherical3D_Domain_refine_uniformly, "docstring");
+	
+	/*********
+	 * SCALE *
+	 *********/
+	
+	def("scale", &LinearCartesian1D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &LinearCartesian2D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &LinearCartesian3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &LinearCylindrical3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &LinearPolar2D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &LinearSpherical3D_Domain_scale, "Scale a domain by a given factor.");
+	
+	def("scale", &TriangularCartesian2D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &TriangularCartesian3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &TriangularCylindrical3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &TriangularPolar2D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &TriangularSpherical3D_Domain_scale, "Scale a domain by a given factor.");
+	
+	def("scale", &QuadrilateralCartesian2D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &QuadrilateralCartesian3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &QuadrilateralCylindrical3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &QuadrilateralPolar2D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &QuadrilateralSpherical3D_Domain_scale, "Scale a domain by a given factor.");
+	
+	def("scale", &TetrahedralCartesian3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &TetrahedralCylindrical3D_Domain_scale, "Scale a domain by a given factor.");
+	def("scale", &TetrahedralSpherical3D_Domain_scale, "Scale a domain by a given factor.");
 	
 	/*******************
 	 * SEGMENT-SURFACE *
