@@ -41,6 +41,7 @@ using namespace boost::python;
 #include "facets/quadrilateral.hpp"
 #include "facets/tetrahedral.hpp"
 
+#include "algorithms/apply_voronoi.hpp"
 #include "algorithms/cell_centroid.hpp"
 #include "algorithms/cell_circumcenter.hpp"
 #include "algorithms/cell_refine.hpp"
@@ -951,6 +952,33 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	
 	class_<TetrahedralSpherical3D_Facet>("TetrahedralSpherical3D_Facet", init<TetrahedralSpherical3D_Facet_t &>())
 	;
+	
+	/*****************
+	 * APPLY_VORONOI *
+	 *****************/
+	
+	def("apply_voronoi", &LinearCartesian1D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &LinearCartesian2D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &LinearCartesian3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &LinearCylindrical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &LinearPolar2D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &LinearSpherical3D_Domain_apply_voronoi, "docstring");
+	
+	def("apply_voronoi", &TriangularCartesian2D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TriangularCartesian3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TriangularCylindrical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TriangularPolar2D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TriangularSpherical3D_Domain_apply_voronoi, "docstring");
+	
+	def("apply_voronoi", &QuadrilateralCartesian2D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &QuadrilateralCartesian3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &QuadrilateralCylindrical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &QuadrilateralPolar2D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &QuadrilateralSpherical3D_Domain_apply_voronoi, "docstring");
+	
+	def("apply_voronoi", &TetrahedralCartesian3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TetrahedralCylindrical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TetrahedralSpherical3D_Domain_apply_voronoi, "docstring");
 	
 	/************
 	 * CENTROID *

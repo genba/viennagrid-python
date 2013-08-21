@@ -68,6 +68,11 @@ def norm(point, norm_type=2):
 	else:
 		raise ValueError('unsupported norm type: %(norm_type)s')
 
+def apply_voronoi(dom):
+	if isinstance(dom, viennagrid.Domain):
+		dom = dom._domain
+	_wrapper.apply_voronoi(dom)
+
 def centroid(cell):
 	if isinstance(cell, viennagrid.Cell):
 		cell = cell._cell
