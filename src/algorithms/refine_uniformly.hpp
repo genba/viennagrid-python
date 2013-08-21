@@ -28,4 +28,4 @@ tuple TetrahedralCartesian3D_Domain_refine_uniformly(TetrahedralCartesian3D_Doma
 tuple TetrahedralCylindrical3D_Domain_refine_uniformly(TetrahedralCylindrical3D_Domain domain_in, TetrahedralCylindrical3D_Segmentation segmentation_in);
 tuple TetrahedralSpherical3D_Domain_refine_uniformly(TetrahedralSpherical3D_Domain domain_in, TetrahedralSpherical3D_Segmentation segmentation_in);
 
-#endif
+#endif /* end of include guard: ALGORITHMS_REFINE_UNIFORMLY_HPP */

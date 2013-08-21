@@ -33,4 +33,4 @@ double TetrahedralCartesian3D_Segment_volume(TetrahedralCartesian3D_Segment segm
 double TetrahedralCylindrical3D_Segment_volume(TetrahedralCylindrical3D_Segment segment);
 double TetrahedralSpherical3D_Segment_volume(TetrahedralSpherical3D_Segment segment);
 
-#endif
+#endif /* end of include guard: ALGORITHMS_SEGMENT_VOLUME_HPP */

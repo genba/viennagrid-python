@@ -33,4 +33,4 @@ double TetrahedralCartesian3D_Domain_volume(TetrahedralCartesian3D_Domain domain
 double TetrahedralCylindrical3D_Domain_volume(TetrahedralCylindrical3D_Domain domain);
 double TetrahedralSpherical3D_Domain_volume(TetrahedralSpherical3D_Domain domain);
 
-#endif
+#endif /* end of include guard: ALGORITHMS_DOMAIN_VOLUME_HPP */

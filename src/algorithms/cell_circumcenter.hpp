@@ -41,4 +41,4 @@ PointCartesian3D TetrahedralCartesian3D_Cell_circumcenter(TetrahedralCartesian3D
 PointCylindrical3D TetrahedralCylindrical3D_Cell_circumcenter(TetrahedralCylindrical3D_Cell cell);
 PointSpherical3D TetrahedralSpherical3D_Cell_circumcenter(TetrahedralSpherical3D_Cell cell);
 
-#endif
+#endif /* end of include guard: ALGORHITHMS_CELL_CIRCUMCENTER_HPP */

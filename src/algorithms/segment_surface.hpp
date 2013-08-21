@@ -33,4 +33,4 @@ double TetrahedralCartesian3D_Segment_surface(TetrahedralCartesian3D_Segment seg
 double TetrahedralCylindrical3D_Segment_surface(TetrahedralCylindrical3D_Segment segment);
 double TetrahedralSpherical3D_Segment_surface(TetrahedralSpherical3D_Segment segment);
 
-#endif
+#endif /* end of include guard: ALGORITHMS_SEGMENT_SURFACE_HPP */

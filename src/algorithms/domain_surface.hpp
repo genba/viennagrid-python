@@ -33,4 +33,4 @@ double TetrahedralCartesian3D_Domain_surface(TetrahedralCartesian3D_Domain domai
 double TetrahedralCylindrical3D_Domain_surface(TetrahedralCylindrical3D_Domain domain);
 double TetrahedralSpherical3D_Domain_surface(TetrahedralSpherical3D_Domain domain);
 
-#endif
+#endif /* end of include guard: ALGORITHMS_DOMAIN_SURFACE_HPP */

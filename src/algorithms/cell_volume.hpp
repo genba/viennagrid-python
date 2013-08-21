@@ -41,4 +41,4 @@ double TetrahedralCartesian3D_Cell_volume(TetrahedralCartesian3D_Cell cell);
 double TetrahedralCylindrical3D_Cell_volume(TetrahedralCylindrical3D_Cell cell);
 double TetrahedralSpherical3D_Cell_volume(TetrahedralSpherical3D_Cell cell);
 
-#endif
+#endif /* end of include guard: ALGORHITHMS_CELL_VOLUME_HPP */

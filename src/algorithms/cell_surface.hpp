@@ -41,4 +41,4 @@ double TetrahedralCartesian3D_Cell_surface(TetrahedralCartesian3D_Cell cell);
 double TetrahedralCylindrical3D_Cell_surface(TetrahedralCylindrical3D_Cell cell);
 double TetrahedralSpherical3D_Cell_surface(TetrahedralSpherical3D_Cell cell);
 
-#endif
+#endif /* end of include guard: ALGORHITHMS_CELL_SURFACE_HPP */
