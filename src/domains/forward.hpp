@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Forward definitions needed to use domains when defining other classes.
+ * @brief Forward declarations needed to use domains when defining other classes.
  */
 
 #ifndef FORWARD_HPP_MPKJBME9

@@ -19,14 +19,40 @@ using namespace boost::python;
 
 #include <string>
 
+/**
+ * Domain of lines in the cartesian 3D space.
+ */
 class TetrahedralCartesian3D_Domain {
 	TetrahedralCartesian3D_Domain_t     domain;
 public:
 	TetrahedralCartesian3D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointCartesian3D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	TetrahedralCartesian3D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
@@ -41,14 +67,40 @@ public:
 	TetrahedralCartesian3D_Domain_t & get_domain();
 };
 
+/**
+ * Domain of lines in the cylindrical space.
+ */
 class TetrahedralCylindrical3D_Domain {
 	TetrahedralCylindrical3D_Domain_t     domain;
 public:
 	TetrahedralCylindrical3D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointCylindrical3D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	TetrahedralCylindrical3D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
@@ -63,14 +115,40 @@ public:
 	TetrahedralCylindrical3D_Domain_t & get_domain();
 };
 
+/**
+ * Domain of lines in the spherical space.
+ */
 class TetrahedralSpherical3D_Domain {
 	TetrahedralSpherical3D_Domain_t     domain;
 public:
 	TetrahedralSpherical3D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointSpherical3D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	TetrahedralSpherical3D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);

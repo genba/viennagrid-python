@@ -19,14 +19,40 @@ using namespace boost::python;
 
 #include <string>
 
+/**
+ * Domain of lines in the cartesian 2D space.
+ */
 class QuadrilateralCartesian2D_Domain {
 	QuadrilateralCartesian2D_Domain_t    domain;
 public:
 	QuadrilateralCartesian2D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointCartesian2D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	QuadrilateralCartesian2D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
@@ -41,14 +67,40 @@ public:
 	QuadrilateralCartesian2D_Domain_t & get_domain();
 };
 
+/**
+ * Domain of lines in the cartesian 3D space.
+ */
 class QuadrilateralCartesian3D_Domain {
 	QuadrilateralCartesian3D_Domain_t     domain;
 public:
 	QuadrilateralCartesian3D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointCartesian3D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	QuadrilateralCartesian3D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
@@ -63,14 +115,40 @@ public:
 	QuadrilateralCartesian3D_Domain_t & get_domain();
 };
 
+/**
+ * Domain of lines in the cylindrical space.
+ */
 class QuadrilateralCylindrical3D_Domain {
 	QuadrilateralCylindrical3D_Domain_t     domain;
 public:
 	QuadrilateralCylindrical3D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointCylindrical3D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	QuadrilateralCylindrical3D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
@@ -85,14 +163,40 @@ public:
 	QuadrilateralCylindrical3D_Domain_t & get_domain();
 };
 
+/**
+ * Domain of lines in the polar space.
+ */
 class QuadrilateralPolar2D_Domain {
 	QuadrilateralPolar2D_Domain_t     domain;
 public:
 	QuadrilateralPolar2D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointPolar2D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	QuadrilateralPolar2D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
@@ -107,14 +211,40 @@ public:
 	QuadrilateralPolar2D_Domain_t & get_domain();
 };
 
+/**
+ * Domain of lines in the spherical space.
+ */
 class QuadrilateralSpherical3D_Domain {
 	QuadrilateralSpherical3D_Domain_t     domain;
 public:
 	QuadrilateralSpherical3D_Domain() {};
 	
+	/**
+	 * Return the number of vertices contained in the domain.
+	 * 
+	 * @return unsigned integer
+	 */
 	unsigned int num_vertices();
+	
+	/**
+	 * Create a new vertex in the domain based on the given point.
+	 * 
+	 * @param point Point that represents the vertex. The point object will be copied.
+	 */
 	void make_vertex(PointSpherical3D point);
+	
+	/**
+	 * Return the vertex identified by the given index.
+	 * 
+	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 */
 	QuadrilateralSpherical3D_Vertex get_vertex(unsigned int index);
+	
+	/**
+	 * Return a Python list containing all the vertices of the domain.
+	 * 
+	 * @return Python list
+	 */
 	list get_vertices();
 	
 	void read_netgen(std::string const &filename);
