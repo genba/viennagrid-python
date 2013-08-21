@@ -146,9 +146,24 @@ public:
 	 */
 	void set_id(unsigned int new_id);
 	
+	/**
+	 * Calculate the dot product of two points.
+	 */
 	double inner_prod(PointCartesian1D &other);
+	
+	/**
+	 * Calculate the 1-norm of the point.
+	 */
 	double norm_1();
+	
+	/**
+	 * Calculate the 2-norm of the point.
+	 */
 	double norm_2();
+	
+	/**
+	 * Calculate the \f$ \inf \f$-norm of the point.
+	 */
 	double norm_inf();
 };
 
@@ -286,11 +301,29 @@ public:
 	 */
 	void set_id(unsigned int new_id);
 	
+	/**
+	 * Convert to polar point.
+	 */
 	PointPolar2D to_polar();
 	
+	/**
+	 * Calculate the dot product of two points.
+	 */
 	double inner_prod(PointCartesian2D &other);
+	
+	/**
+	 * Calculate the 1-norm of the point.
+	 */
 	double norm_1();
+	
+	/**
+	 * Calculate the 2-norm of the point.
+	 */
 	double norm_2();
+	
+	/**
+	 * Calculate the \f$ \inf \f$-norm of the point.
+	 */
 	double norm_inf();
 };
 
@@ -422,13 +455,39 @@ public:
 	 */
 	void set_id(unsigned int new_id);
 	
+	/**
+	 * Convert to cylindrical point.
+	 */
 	PointCylindrical3D to_cylindrical();
+	
+	/**
+	 * Convert to spherical point.
+	 */
 	PointSpherical3D to_spherical();
 	
+	/**
+	 * Calculate the dot product of two points.
+	 */
 	double inner_prod(PointCartesian3D &other);
+	
+	/**
+	 * Calculate the cross product of two points.
+	 */
 	PointCartesian3D cross_prod(PointCartesian3D &other);
+	
+	/**
+	 * Calculate the 1-norm of the point.
+	 */
 	double norm_1();
+	
+	/**
+	 * Calculate the 2-norm of the point.
+	 */
 	double norm_2();
+	
+	/**
+	 * Calculate the \f$ \inf \f$-norm of the point.
+	 */
 	double norm_inf();
 };
 

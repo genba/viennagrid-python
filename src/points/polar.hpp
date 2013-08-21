@@ -127,6 +127,9 @@ public:
 	 */
 	void set_id(unsigned int new_id);
 	
+	/**
+	 * Convert to cartesian 2D point.
+	 */
 	PointCartesian2D to_cartesian();
 };
 

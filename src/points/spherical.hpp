@@ -127,7 +127,14 @@ public:
 	 */
 	void set_id(unsigned int new_id);
 	
+	/**
+	 * Convert to cartesian 3D point.
+	 */
 	PointCartesian3D to_cartesian();
+	
+	/**
+	 * Convert to cylindrical point.
+	 */
 	PointCylindrical3D to_cylindrical();
 };
 
