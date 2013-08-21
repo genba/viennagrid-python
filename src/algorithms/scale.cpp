@@ -2,7 +2,9 @@
 
 #include <viennagrid/algorithm/scale.hpp>
 
-// Linear
+////////////
+// Linear //
+////////////
 
 void LinearCartesian1D_Domain_scale(LinearCartesian1D_Domain domain, double factor)
 {
@@ -34,7 +36,9 @@ void LinearSpherical3D_Domain_scale(LinearSpherical3D_Domain domain, double fact
 	viennagrid::scale(domain.get_domain(), factor);
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 void TriangularCartesian2D_Domain_scale(TriangularCartesian2D_Domain domain, double factor)
 {
@@ -61,7 +65,9 @@ void TriangularSpherical3D_Domain_scale(TriangularSpherical3D_Domain domain, dou
 	viennagrid::scale(domain.get_domain(), factor);
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 void QuadrilateralCartesian2D_Domain_scale(QuadrilateralCartesian2D_Domain domain, double factor)
 {
@@ -88,7 +94,9 @@ void QuadrilateralSpherical3D_Domain_scale(QuadrilateralSpherical3D_Domain domai
 	viennagrid::scale(domain.get_domain(), factor);
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 void TetrahedralCartesian3D_Domain_scale(TetrahedralCartesian3D_Domain domain, double factor)
 {
