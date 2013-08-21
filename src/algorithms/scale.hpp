@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Implement function to scale domains by a given factor.
+ */
+
 #ifndef ALGORITHMS_SCALE_HPP
 #define ALGORITHMS_SCALE_HPP
 
