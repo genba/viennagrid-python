@@ -134,7 +134,9 @@ set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/segment_surface.hpp
         algorithms/segment_surface.cpp
         algorithms/segment_volume.hpp
-        algorithms/segment_volume.cpp)
+        algorithms/segment_volume.cpp
+        algorithms/spanned_volume.hpp
+        algorithms/spanned_volume.cpp)
 
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp
