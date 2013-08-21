@@ -24,4 +24,4 @@ class TetrahedralCartesian3D_Segmentation;
 class TetrahedralCylindrical3D_Segmentation;
 class TetrahedralSpherical3D_Segmentation;
 
-#endif
+#endif /* end of include guard: SEGMENTATIONS_FORWARD_HPP */

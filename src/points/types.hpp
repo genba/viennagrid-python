@@ -1,5 +1,5 @@
-#ifndef TYPES_HPP_JQNC6IJC
-#define TYPES_HPP_JQNC6IJC
+#ifndef POINTS_TYPES_HPP
+#define POINTS_TYPES_HPP
 
 #include <viennagrid/forwards.hpp>
 #include <viennagrid/domain/element_creation.hpp>
@@ -12,4 +12,4 @@ typedef viennagrid::point_t<double, viennagrid::cylindrical_cs>      PointCylind
 typedef viennagrid::point_t<double, viennagrid::polar_cs>            PointPolar_t;
 typedef viennagrid::point_t<double, viennagrid::spherical_cs>        PointSpherical_t;
 
-#endif /* end of include guard: TYPES_HPP_JQNC6IJC */
+#endif /* end of include guard: POINTS_TYPES_HPP */

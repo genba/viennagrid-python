@@ -1,5 +1,5 @@
-#ifndef TYPES_HPP_O176Z3NS
-#define TYPES_HPP_O176Z3NS
+#ifndef DOMAINS_TYPES_HPP
+#define DOMAINS_TYPES_HPP
 
 #include <viennagrid/forwards.hpp>
 #include <viennagrid/domain/domain.hpp>
@@ -171,4 +171,4 @@ struct TetrahedralSpherical3D_DomainConfig {
 };
 typedef viennagrid::domain_t<TetrahedralSpherical3D_DomainConfig>                                    TetrahedralSpherical3D_Domain_t;
 
-#endif /* end of include guard: TYPES_HPP_O176Z3NS */
+#endif /* end of include guard: DOMAINS_TYPES_HPP */

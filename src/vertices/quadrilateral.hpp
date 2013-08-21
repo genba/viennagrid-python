@@ -1,5 +1,5 @@
-#ifndef VERTICES_QUADRILATERAL
-#define VERTICES_QUADRILATERAL
+#ifndef VERTICES_QUADRILATERAL_HPP
+#define VERTICES_QUADRILATERAL_HPP
 
 #include "types.hpp"
 
@@ -63,4 +63,4 @@ public:
 	QuadrilateralSpherical3D_Vertex_t & get_vertex();
 };
 
-#endif
+#endif /* end of include guard: VERTICES_QUADRILATERAL_HPP */

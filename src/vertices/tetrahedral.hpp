@@ -1,5 +1,5 @@
-#ifndef VERTICES_TETRAHEDRAL
-#define VERTICES_TETRAHEDRAL
+#ifndef VERTICES_TETRAHEDRAL_HPP
+#define VERTICES_TETRAHEDRAL_HPP
 
 #include "types.hpp"
 
@@ -39,4 +39,4 @@ public:
 	TetrahedralSpherical3D_Vertex_t & get_vertex();
 };
 
-#endif
+#endif /* end of include guard: VERTICES_TETRAHEDRAL_HPP */

@@ -1,5 +1,5 @@
-#ifndef SEGMENTATION_TYPES_HPP
-#define SEGMENTATION_TYPES_HPP
+#ifndef SEGMENTATIONS_TYPES_HPP
+#define SEGMENTATIONS_TYPES_HPP
 
 #include "../domains/types.hpp"
 
@@ -76,4 +76,4 @@ typedef viennagrid::result_of::segmentation<TetrahedralCylindrical3D_Domain_t>::
 // Tetrahedral, spherical (3D)
 typedef viennagrid::result_of::segmentation<TetrahedralSpherical3D_Domain_t>::type        TetrahedralSpherical3D_Segmentation_t;
 
-#endif
+#endif /* end of include guard: SEGMENTATIONS_TYPES_HPP */

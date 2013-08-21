@@ -1,5 +1,5 @@
-#ifndef QUADRILATERAL_HPP_ASEQMOCM
-#define QUADRILATERAL_HPP_ASEQMOCM
+#ifndef SEGMENTS_QUADRILATERAL_HPP
+#define SEGMENTS_QUADRILATERAL_HPP
 
 #include "types.hpp"
 
@@ -92,4 +92,4 @@ public:
 	list get_cells();
 };
 
-#endif /* end of include guard: QUADRILATERAL_HPP_ASEQMOCM */
+#endif /* end of include guard: SEGMENTS_QUADRILATERAL_HPP */

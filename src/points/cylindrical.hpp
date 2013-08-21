@@ -1,5 +1,5 @@
-#ifndef CYLINDRICAL_HPP_P07EFHVO
-#define CYLINDRICAL_HPP_P07EFHVO
+#ifndef POINTS_CYLINDRICAL_HPP
+#define POINTS_CYLINDRICAL_HPP
 
 #include "types.hpp"
 #include "forward.hpp"
@@ -126,4 +126,4 @@ public:
 	PointSpherical3D to_spherical();
 };
 
-#endif /* end of include guard: CYLINDRICAL_HPP_P07EFHVO */
+#endif /* end of include guard: POINTS_CYLINDRICAL_HPP */

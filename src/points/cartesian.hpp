@@ -1,5 +1,5 @@
-#ifndef CARTESIAN_HPP_40UV2UQE
-#define CARTESIAN_HPP_40UV2UQE
+#ifndef POINTS_CARTESIAN_HPP
+#define POINTS_CARTESIAN_HPP
 
 #include "types.hpp"
 #include "forward.hpp"
@@ -427,4 +427,4 @@ public:
 	double norm_inf();
 };
 
-#endif /* end of include guard: CARTESIAN_HPP_40UV2UQE */
+#endif /* end of include guard: POINTS_CARTESIAN_HPP */

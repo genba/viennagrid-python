@@ -107,4 +107,4 @@ public:
 	list get_cells();
 };
 
-#endif
+#endif /* end of include guard: SEGMENTS_LINEAR_HPP */

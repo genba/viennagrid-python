@@ -1,5 +1,5 @@
-#ifndef TYPES_HPP_NFUQ9SMB
-#define TYPES_HPP_NFUQ9SMB
+#ifndef CELLS_TYPES_HPP
+#define CELLS_TYPES_HPP
 
 #include "../domains/types.hpp"
 
@@ -76,4 +76,4 @@ typedef viennagrid::result_of::element<TetrahedralCylindrical3D_Domain_t, vienna
 // Tetrahedral, spherical (3D)
 typedef viennagrid::result_of::element<TetrahedralSpherical3D_Domain_t, viennagrid::tetrahedron_tag>::type      TetrahedralSpherical3D_Cell_t;
 
-#endif /* end of include guard: TYPES_HPP_NFUQ9SMB */
+#endif /* end of include guard: CELLS_TYPES_HPP */

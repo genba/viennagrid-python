@@ -1,5 +1,5 @@
-#ifndef FORWARD_HPP_MPKJBME9
-#define FORWARD_HPP_MPKJBME9
+#ifndef DOMAINS_FORWARD_HPP
+#define DOMAINS_FORWARD_HPP
 
 class LinearCartesian1D_Domain;
 class LinearCartesian2D_Domain;
@@ -24,4 +24,4 @@ class TetrahedralCartesian3D_Domain;
 class TetrahedralCylindrical3D_Domain;
 class TetrahedralSpherical3D_Domain;
 
-#endif /* end of include guard: FORWARD_HPP_MPKJBME9 */
+#endif /* end of include guard: DOMAINS_FORWARD_HPP */

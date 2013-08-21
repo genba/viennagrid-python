@@ -1,5 +1,5 @@
-#ifndef TRIANGULAR_HPP_ASEQMOCM
-#define TRIANGULAR_HPP_ASEQMOCM
+#ifndef SEGMENTS_TRIANGULAR_HPP
+#define SEGMENTS_TRIANGULAR_HPP
 
 #include "types.hpp"
 
@@ -92,4 +92,4 @@ public:
 	list get_cells();
 };
 
-#endif /* end of include guard: TRIANGULAR_HPP_ASEQMOCM */
+#endif /* end of include guard: SEGMENTS_TRIANGULAR_HPP */

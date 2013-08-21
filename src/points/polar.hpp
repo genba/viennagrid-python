@@ -1,5 +1,5 @@
-#ifndef POLAR_HPP_HL2P4D4
-#define POLAR_HPP_HL2P4D4
+#ifndef POINTS_POLAR_HPP
+#define POINTS_POLAR_HPP
 
 #include "types.hpp"
 #include "forward.hpp"
@@ -125,4 +125,4 @@ public:
 	PointCartesian2D to_cartesian();
 };
 
-#endif /* end of include guard: POLAR_HPP_HL2P4D4 */
+#endif /* end of include guard: POINTS_POLAR_HPP */

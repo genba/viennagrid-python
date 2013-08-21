@@ -1,5 +1,5 @@
-#ifndef SEGMENTATION_TETRAHEDRAL_HPP
-#define SEGMENTATION_TETRAHEDRAL_HPP
+#ifndef SEGMENTATIONS_TETRAHEDRAL_HPP
+#define SEGMENTATIONS_TETRAHEDRAL_HPP
 
 #include "types.hpp"
 
@@ -57,4 +57,4 @@ public:
 	TetrahedralSpherical3D_Domain_t & get_domain();
 };
 
-#endif
+#endif /* end of include guard: SEGMENTATIONS_TETRAHEDRAL_HPP */

@@ -75,4 +75,4 @@ public:
 	LinearSpherical3D_Vertex_t & get_vertex();
 };
 
-#endif
+#endif /* end of include guard: VERTICES_LINEAR_HPP */

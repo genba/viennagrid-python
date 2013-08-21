@@ -1,5 +1,5 @@
-#ifndef TYPES_HPP_LQVAVLAX
-#define TYPES_HPP_LQVAVLAX
+#ifndef SEGMENTS_TYPES_HPP
+#define SEGMENTS_TYPES_HPP
 
 #include "../domains/types.hpp"
 #include "../segmentations/types.hpp"
@@ -77,4 +77,4 @@ typedef viennagrid::result_of::segment<TetrahedralCylindrical3D_Segmentation_t>:
 // Tetrahedral, spherical (3D)
 typedef viennagrid::result_of::segment<TetrahedralSpherical3D_Segmentation_t>::type      TetrahedralSpherical3D_Segment_t;
 
-#endif /* end of include guard: TYPES_HPP_LQVAVLAX */
+#endif /* end of include guard: SEGMENTS_TYPES_HPP */

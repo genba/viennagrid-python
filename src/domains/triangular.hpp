@@ -1,5 +1,5 @@
-#ifndef TRIANGULAR_HPP_40OZO3A3
-#define TRIANGULAR_HPP_40OZO3A3
+#ifndef DOMAINS_TRIANGULAR_HPP
+#define DOMAINS_TRIANGULAR_HPP
 
 #include "types.hpp"
 #include "../points/cartesian.hpp"
@@ -129,4 +129,4 @@ public:
 	TriangularSpherical3D_Domain_t & get_domain();
 };
 
-#endif /* end of include guard: TRIANGULAR_HPP_40OZO3A3 */
+#endif /* end of include guard: DOMAINS_TRIANGULAR_HPP */

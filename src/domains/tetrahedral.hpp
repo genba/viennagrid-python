@@ -1,5 +1,5 @@
-#ifndef TETRAHEDRAL_HPP_66FKMIZO
-#define TETRAHEDRAL_HPP_66FKMIZO
+#ifndef DOMAINS_TETRAHEDRAL_HPP
+#define DOMAINS_TETRAHEDRAL_HPP
 
 #include "types.hpp"
 #include "../points/cartesian.hpp"
@@ -71,4 +71,4 @@ public:
 	TetrahedralSpherical3D_Domain_t & get_domain();
 };
 
-#endif /* end of include guard: TETRAHEDRAL_HPP_66FKMIZO */
+#endif /* end of include guard: DOMAINS_TETRAHEDRAL_HPP */

@@ -1,5 +1,5 @@
-#ifndef TETRAHEDRAL_HPP_ASEQMOCM
-#define TETRAHEDRAL_HPP_ASEQMOCM
+#ifndef SEGMENTS_TETRAHEDRAL_HPP
+#define SEGMENTS_TETRAHEDRAL_HPP
 
 #include "types.hpp"
 
@@ -62,4 +62,4 @@ public:
 	list get_cells();
 };
 
-#endif /* end of include guard: TETRAHEDRAL_HPP_ASEQMOCM */
+#endif /* end of include guard: SEGMENTS_TETRAHEDRAL_HPP */

@@ -1,5 +1,5 @@
-#ifndef SPHERICAL_HPP_LPABEBWU
-#define SPHERICAL_HPP_LPABEBWU
+#ifndef POINTS_SPHERICAL_HPP
+#define POINTS_SPHERICAL_HPP
 
 #include "types.hpp"
 #include "forward.hpp"
@@ -126,4 +126,4 @@ public:
 	PointCylindrical3D to_cylindrical();
 };
 
-#endif /* end of include guard: SPHERICAL_HPP_LPABEBWU */
+#endif /* end of include guard: POINTS_SPHERICAL_HPP */

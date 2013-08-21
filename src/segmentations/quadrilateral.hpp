@@ -1,5 +1,5 @@
-#ifndef SEGMENTATION_QUADRILATERAL_HPP
-#define SEGMENTATION_QUADRILATERAL_HPP
+#ifndef SEGMENTATIONS_QUADRILATERAL_HPP
+#define SEGMENTATIONS_QUADRILATERAL_HPP
 
 #include "types.hpp"
 
@@ -89,4 +89,4 @@ public:
 	QuadrilateralSpherical3D_Domain_t & get_domain();
 };
 
-#endif
+#endif /* end of include guard: SEGMENTATIONS_QUADRILATERAL_HPP */

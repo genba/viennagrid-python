@@ -1,5 +1,5 @@
-#ifndef SEGMENTATION_LINEAR_HPP
-#define SEGMENTATION_LINEAR_HPP
+#ifndef SEGMENTATIONS_LINEAR_HPP
+#define SEGMENTATIONS_LINEAR_HPP
 
 #include "types.hpp"
 
@@ -105,4 +105,4 @@ public:
 	LinearSpherical3D_Domain_t & get_domain();
 };
 
-#endif
+#endif /* end of include guard: SEGMENTATIONS_LINEAR_HPP */

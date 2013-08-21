@@ -1,5 +1,5 @@
-#ifndef TYPES_HPP_1AMW8QS7
-#define TYPES_HPP_1AMW8QS7
+#ifndef VERTICES_TYPES_HPP
+#define VERTICES_TYPES_HPP
 
 #include "../domains/types.hpp"
 
@@ -95,4 +95,4 @@ typedef viennagrid::result_of::element<TetrahedralSpherical3D_Domain_t, viennagr
 typedef viennagrid::result_of::handle<TetrahedralSpherical3D_Domain_t, viennagrid::vertex_tag>::type               TetrahedralSpherical3D_VertexHandle_t;
 typedef viennagrid::result_of::element_range<TetrahedralSpherical3D_Domain_t, viennagrid::vertex_tag>::type        TetrahedralSpherical3D_VertexRange_t;
 
-#endif /* end of include guard: TYPES_HPP_1AMW8QS7 */
+#endif /* end of include guard: VERTICES_TYPES_HPP */

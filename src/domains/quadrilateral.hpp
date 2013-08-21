@@ -1,5 +1,5 @@
-#ifndef QUADRILATERAL_HPP_N3ZDFQTY
-#define QUADRILATERAL_HPP_N3ZDFQTY
+#ifndef DOMAINS_QUADRILATERAL_HPP
+#define DOMAINS_QUADRILATERAL_HPP
 
 #include "types.hpp"
 #include "../points/cartesian.hpp"
@@ -109,4 +109,4 @@ public:
 	QuadrilateralSpherical3D_Domain_t & get_domain();
 };
 
-#endif /* end of include guard: QUADRILATERAL_HPP_N3ZDFQTY */
+#endif /* end of include guard: DOMAINS_QUADRILATERAL_HPP */

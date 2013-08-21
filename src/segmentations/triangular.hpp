@@ -1,5 +1,5 @@
-#ifndef SEGMENTATION_TRIANGULAR_HPP
-#define SEGMENTATION_TRIANGULAR_HPP
+#ifndef SEGMENTATIONS_TRIANGULAR_HPP
+#define SEGMENTATIONS_TRIANGULAR_HPP
 
 #include "types.hpp"
 
@@ -89,4 +89,4 @@ public:
 	TriangularSpherical3D_Domain_t & get_domain();
 };
 
-#endif
+#endif /* end of include guard: SEGMENTATIONS_TRIANGULAR_HPP */
