@@ -155,3 +155,20 @@ def volume(cell):
 	elif isinstance(cell, viennagrid.Segment):
 		cell = cell._segment
 	return _wrapper.volume(cell)
+
+def spanned_volume(*args):
+	point_list = []
+	
+	for point in args:
+		# If the point is a high-level point, get the low-level point
+		if isinstance(point, viennagrid.Point):
+			point = point._point
+		
+		# If point is not cartesian, convert it
+		if point.coord_system != 'cartesian':
+			point = point.to_cartesian()
+		
+		# Append the point to the list
+		point_list.append(point)
+	
+	return _wrapper.spanned_volume(point_list)
