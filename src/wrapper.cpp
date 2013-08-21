@@ -55,6 +55,7 @@ using namespace boost::python;
 #include "algorithms/refine_uniformly.hpp"
 #include "algorithms/segment_surface.hpp"
 #include "algorithms/segment_volume.hpp"
+#include "algorithms/spanned_volume.hpp"
 
 char const * version()
 {
@@ -1459,4 +1460,17 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	def("volume", &TetrahedralCartesian3D_Segment_volume, "docstring");
 	def("volume", &TetrahedralCylindrical3D_Segment_volume, "docstring");
 	def("volume", &TetrahedralSpherical3D_Segment_volume, "docstring");
+	
+	/******************
+	 * SPANNED_VOLUME *
+	 ******************/
+	
+	def("spanned_volume", &LinearCartesian1D_spanned_volume, "Calculate the volume spanned by a set of points.");
+	def("spanned_volume", &LinearCartesian2D_spanned_volume, "Calculate the volume spanned by a set of points.");
+	def("spanned_volume", &LinearCartesian3D_spanned_volume, "Calculate the volume spanned by a set of points.");
+	
+	def("spanned_volume", &TriangularCartesian2D_spanned_volume, "Calculate the volume spanned by a set of points.");
+	def("spanned_volume", &TriangularCartesian3D_spanned_volume, "Calculate the volume spanned by a set of points.");
+	
+	def("spanned_volume", &TetrahedralCartesian3D_spanned_volume, "Calculate the volume spanned by a set of points.");
 }
