@@ -25,6 +25,14 @@ class PointPolar2D {
 	 */
 	PointPolar_t *point;
 	
+	/**
+	 * ID of the point within the domain it is assigned to (if applicable).
+	 * If the point is not assigned to any domain as a vertex, its value is -1.
+	 * Otherwise, its value will be the ID of the point within the domain, i.e. its index
+	 * in the vector of vertices.
+	 * 
+	 * @since 0.1.0
+	 */
 	int id; // TODO: move to vertex
 public:
 	/**
@@ -189,8 +197,26 @@ public:
 	 * @since 0.1.0
 	 */
 	PointCartesian2D to_cartesian();
+	
+	/**
+	 * Calculate the 1-norm of the point.
+	 * 
+	 * @since 0.1.0
+	 */
 	double norm_1();
+	
+	/**
+	 * Calculate the 2-norm of the point.
+	 * 
+	 * @since 0.1.0
+	 */
 	double norm_2();
+	
+	/**
+	 * Calculate the ∞-norm of the point.
+	 * 
+	 * @since 0.1.0
+	 */
 	double norm_inf();
 };
 
