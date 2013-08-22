@@ -12,6 +12,11 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
+/**
+ * Cartesian 1D point.
+ * 
+ * @since 0.1.0
+ */
 class PointCartesian1D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type that actually stores the information about the point.
@@ -167,6 +172,11 @@ public:
 	double norm_inf();
 };
 
+/**
+ * Cartesian 2D point.
+ * 
+ * @since 0.1.0
+ */
 class PointCartesian2D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type that actually stores the information about the point.
@@ -327,6 +337,11 @@ public:
 	double norm_inf();
 };
 
+/**
+ * Cartesian 3D point.
+ * 
+ * @since 0.1.0
+ */
 class PointCartesian3D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type.

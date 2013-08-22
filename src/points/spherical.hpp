@@ -12,6 +12,11 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
+/**
+ * Spherical point.
+ * 
+ * @since 0.1.0
+ */
 class PointSpherical3D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type.

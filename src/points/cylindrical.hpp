@@ -12,6 +12,11 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
+/**
+ * Cylindrical point.
+ * 
+ * @since 0.1.0
+ */
 class PointCylindrical3D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type.
