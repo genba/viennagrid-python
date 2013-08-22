@@ -30,6 +30,7 @@ public:
 	unsigned int num_cells();
 	LinearCartesian1D_Cell make_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2);
 	list get_cells();
+	LinearCartesian1D_Segment_t & get_segment();
 };
 
 ////////////////////////
@@ -45,6 +46,7 @@ public:
 	unsigned int num_cells();
 	LinearCartesian2D_Cell make_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2);
 	list get_cells();
+	LinearCartesian2D_Segment_t & get_segment();
 };
 
 ////////////////////////
@@ -60,6 +62,7 @@ public:
 	unsigned int num_cells();
 	LinearCartesian3D_Cell make_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2);
 	list get_cells();
+	LinearCartesian3D_Segment_t & get_segment();
 };
 
 ////////////////////////////
@@ -75,6 +78,7 @@ public:
 	unsigned int num_cells();
 	LinearCylindrical3D_Cell make_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2);
 	list get_cells();
+	LinearCylindrical3D_Segment_t & get_segment();
 };
 
 //////////////////////
@@ -90,6 +94,7 @@ public:
 	unsigned int num_cells();
 	LinearPolar2D_Cell make_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2);
 	list get_cells();
+	LinearPolar2D_Segment_t & get_segment();
 };
 
 //////////////////////////
@@ -105,6 +110,7 @@ public:
 	unsigned int num_cells();
 	LinearSpherical3D_Cell make_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2);
 	list get_cells();
+	LinearSpherical3D_Segment_t & get_segment();
 };
 
 #endif /* end of include guard: SEGMENTS_LINEAR_HPP */

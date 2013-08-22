@@ -68,7 +68,7 @@ public:
 	 * allocated memory. However, when we free the memory in the destructor, the program
 	 * aborts and states that the program tried to perform a double-free.
 	**/
-	PointCartesian1D(PointCartesian1D_t initial_point, unsigned int initial_id=-1);
+	PointCartesian1D(PointCartesian1D_t &initial_point, unsigned int initial_id=-1);
 	
 	/**
 	 * Get the dimension of the point. For 1D points, this always returns 1.
@@ -208,7 +208,7 @@ public:
 	 * allocated memory. However, when we free the memory in the destructor, the program
 	 * aborts and states that the program tried to perform a double-free.
 	**/
-	PointCartesian2D(PointCartesian2D_t initial_point, unsigned int initial_id=-1);
+	PointCartesian2D(PointCartesian2D_t &initial_point, unsigned int initial_id=-1);
 	
 	/**
 	 * Get the dimension of the point. For 2D points, this always returns 2.
@@ -344,7 +344,7 @@ public:
 	 * allocated memory. However, when we free the memory in the destructor, the program
 	 * aborts and states that the program tried to perform a double-free.
 	**/
-	PointCartesian3D(PointCartesian3D_t initial_point, unsigned int initial_id=-1);
+	PointCartesian3D(PointCartesian3D_t &initial_point, unsigned int initial_id=-1);
 	
 	/**
 	 * Get the dimension of the point. For 3D points, this always returns 3.

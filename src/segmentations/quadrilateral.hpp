@@ -23,6 +23,7 @@ public:
 	QuadrilateralCartesian2D_Segment make_segment();
 	list get_segments();
 	QuadrilateralCartesian2D_Domain_t & get_domain();
+	QuadrilateralCartesian2D_Segmentation_t & get_segmentation();
 };
 
 ////////////////////////////////
@@ -39,6 +40,7 @@ public:
 	QuadrilateralCartesian3D_Segment make_segment();
 	list get_segments();
 	QuadrilateralCartesian3D_Domain_t & get_domain();
+	QuadrilateralCartesian3D_Segmentation_t & get_segmentation();
 };
 
 //////////////////////////////////
@@ -55,6 +57,7 @@ public:
 	QuadrilateralCylindrical3D_Segment make_segment();
 	list get_segments();
 	QuadrilateralCylindrical3D_Domain_t & get_domain();
+	QuadrilateralCylindrical3D_Segmentation_t & get_segmentation();
 };
 
 ////////////////////////////
@@ -71,6 +74,7 @@ public:
 	QuadrilateralPolar2D_Segment make_segment();
 	list get_segments();
 	QuadrilateralPolar2D_Domain_t & get_domain();
+	QuadrilateralPolar2D_Segmentation_t & get_segmentation();
 };
 
 ////////////////////////////////
@@ -87,6 +91,7 @@ public:
 	QuadrilateralSpherical3D_Segment make_segment();
 	list get_segments();
 	QuadrilateralSpherical3D_Domain_t & get_domain();
+	QuadrilateralSpherical3D_Segmentation_t & get_segmentation();
 };
 
 #endif /* end of include guard: SEGMENTATIONS_QUADRILATERAL_HPP */

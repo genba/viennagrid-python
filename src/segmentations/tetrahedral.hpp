@@ -23,6 +23,7 @@ public:
 	TetrahedralCartesian3D_Segment make_segment();
 	list get_segments();
 	TetrahedralCartesian3D_Domain_t & get_domain();
+	TetrahedralCartesian3D_Segmentation_t & get_segmentation();
 };
 
 ////////////////////////////////
@@ -39,6 +40,7 @@ public:
 	TetrahedralCylindrical3D_Segment make_segment();
 	list get_segments();
 	TetrahedralCylindrical3D_Domain_t & get_domain();
+	TetrahedralCylindrical3D_Segmentation_t & get_segmentation();
 };
 
 //////////////////////////////
@@ -55,6 +57,7 @@ public:
 	TetrahedralSpherical3D_Segment make_segment();
 	list get_segments();
 	TetrahedralSpherical3D_Domain_t & get_domain();
+	TetrahedralSpherical3D_Segmentation_t & get_segmentation();
 };
 
 #endif /* end of include guard: SEGMENTATIONS_TETRAHEDRAL_HPP */

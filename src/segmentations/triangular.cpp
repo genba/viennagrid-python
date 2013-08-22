@@ -35,6 +35,11 @@ TriangularCartesian2D_Domain_t & TriangularCartesian2D_Segmentation::get_domain(
 	return domain->get_domain();
 }
 
+TriangularCartesian2D_Segmentation_t & TriangularCartesian2D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ////////////////////////////////////////
 // TriangularCartesian3D_Segmentation //
 ////////////////////////////////////////
@@ -68,6 +73,11 @@ list TriangularCartesian3D_Segmentation::get_segments()
 TriangularCartesian3D_Domain_t & TriangularCartesian3D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+TriangularCartesian3D_Segmentation_t & TriangularCartesian3D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }
 
 //////////////////////////////////////////
@@ -105,6 +115,11 @@ TriangularCylindrical3D_Domain_t & TriangularCylindrical3D_Segmentation::get_dom
 	return domain->get_domain();
 }
 
+TriangularCylindrical3D_Segmentation_t & TriangularCylindrical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ////////////////////////////////////
 // TriangularPolar2D_Segmentation //
 ////////////////////////////////////
@@ -140,6 +155,11 @@ TriangularPolar2D_Domain_t & TriangularPolar2D_Segmentation::get_domain()
 	return domain->get_domain();
 }
 
+TriangularPolar2D_Segmentation_t & TriangularPolar2D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ////////////////////////////////////////
 // TriangularSpherical3D_Segmentation //
 ////////////////////////////////////////
@@ -173,4 +193,9 @@ list TriangularSpherical3D_Segmentation::get_segments()
 TriangularSpherical3D_Domain_t & TriangularSpherical3D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+TriangularSpherical3D_Segmentation_t & TriangularSpherical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }

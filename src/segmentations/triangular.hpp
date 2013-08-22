@@ -23,6 +23,7 @@ public:
 	TriangularCartesian2D_Segment make_segment();
 	list get_segments();
 	TriangularCartesian2D_Domain_t & get_domain();
+	TriangularCartesian2D_Segmentation_t & get_segmentation();
 };
 
 /////////////////////////////
@@ -39,6 +40,7 @@ public:
 	TriangularCartesian3D_Segment make_segment();
 	list get_segments();
 	TriangularCartesian3D_Domain_t & get_domain();
+	TriangularCartesian3D_Segmentation_t & get_segmentation();
 };
 
 ///////////////////////////////
@@ -55,6 +57,7 @@ public:
 	TriangularCylindrical3D_Segment make_segment();
 	list get_segments();
 	TriangularCylindrical3D_Domain_t & get_domain();
+	TriangularCylindrical3D_Segmentation_t & get_segmentation();
 };
 
 /////////////////////////
@@ -71,6 +74,7 @@ public:
 	TriangularPolar2D_Segment make_segment();
 	list get_segments();
 	TriangularPolar2D_Domain_t & get_domain();
+	TriangularPolar2D_Segmentation_t & get_segmentation();
 };
 
 /////////////////////////////
@@ -87,6 +91,7 @@ public:
 	TriangularSpherical3D_Segment make_segment();
 	list get_segments();
 	TriangularSpherical3D_Domain_t & get_domain();
+	TriangularSpherical3D_Segmentation_t & get_segmentation();
 };
 
 #endif /* end of include guard: SEGMENTATIONS_TRIANGULAR_HPP */

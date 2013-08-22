@@ -21,6 +21,7 @@ public:
 	TetrahedralCartesian3D_Cell(TetrahedralCartesian3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	TetrahedralCartesian3D_Cell_t & get_cell();
 };
 
 ///////////////////////////////////
@@ -33,6 +34,7 @@ public:
 	TetrahedralCylindrical3D_Cell(TetrahedralCylindrical3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	TetrahedralCylindrical3D_Cell_t & get_cell();
 };
 
 /////////////////////////////////
@@ -45,6 +47,7 @@ public:
 	TetrahedralSpherical3D_Cell(TetrahedralSpherical3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	TetrahedralSpherical3D_Cell_t & get_cell();
 };
 
 #endif
