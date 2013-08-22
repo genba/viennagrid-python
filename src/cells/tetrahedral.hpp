@@ -30,13 +30,17 @@ public:
 	 * @return unsigned integer
 	 */
 	unsigned int num_vertices();
-
+	
 	/**
 	 * Get a Python list containing all the vertices that form the cell.
 	 *
 	 * @return Python list
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a reference to the ViennaGrid cell.
+	 */
 	TetrahedralCartesian3D_Cell_t & get_cell();
 };
 
@@ -54,13 +58,17 @@ public:
 	 * @return unsigned integer
 	 */
 	unsigned int num_vertices();
-
+	
 	/**
 	 * Get a Python list containing all the vertices that form the cell.
 	 *
 	 * @return Python list
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a reference to the ViennaGrid cell.
+	 */
 	TetrahedralCylindrical3D_Cell_t & get_cell();
 };
 
@@ -78,13 +86,17 @@ public:
 	 * @return unsigned integer
 	 */
 	unsigned int num_vertices();
-
+	
 	/**
 	 * Get a Python list containing all the vertices that form the cell.
 	 *
 	 * @return Python list
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a reference to the ViennaGrid cell.
+	 */
 	TetrahedralSpherical3D_Cell_t & get_cell();
 };
 
