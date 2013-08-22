@@ -10,11 +10,15 @@
 
 /**
  * Wrapped facet of a triangular, cartesian 2D domain.
+ * 
+ * @since 0.1.0
  */
 class TriangularCartesian2D_Facet
 {
 	/**
 	 * Pointer to the ViennaGrid facet type.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCartesian2D_Facet_t    *facet;
 public:
@@ -22,17 +26,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid facet.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCartesian2D_Facet_t & get_facet();
 };
 
 /**
  * Wrapped facet of a triangular, cartesian 3D domain.
+ * 
+ * @since 0.1.0
  */
 class TriangularCartesian3D_Facet
 {
 	/**
 	 * Pointer to the ViennaGrid facet type.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCartesian3D_Facet_t    *facet;
 public:
@@ -40,17 +50,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid facet.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCartesian3D_Facet_t & get_facet();
 };
 
 /**
  * Wrapped facet of a triangular, cylindrical domain.
+ * 
+ * @since 0.1.0
  */
 class TriangularCylindrical3D_Facet
 {
 	/**
 	 * Pointer to the ViennaGrid facet type.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCylindrical3D_Facet_t    *facet;
 public:
@@ -58,17 +74,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid facet.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCylindrical3D_Facet_t & get_facet();
 };
 
 /**
  * Wrapped facet of a triangular, polar domain.
+ * 
+ * @since 0.1.0
  */
 class TriangularPolar2D_Facet
 {
 	/**
 	 * Pointer to the ViennaGrid facet type.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularPolar2D_Facet_t    *facet;
 public:
@@ -76,17 +98,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid facet.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularPolar2D_Facet_t & get_facet();
 };
 
 /**
  * Wrapped facet of a triangular, spherical domain.
+ * 
+ * @since 0.1.0
  */
 class TriangularSpherical3D_Facet
 {
 	/**
 	 * Pointer to the ViennaGrid facet type.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularSpherical3D_Facet_t    *facet;
 public:
@@ -94,6 +122,8 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid facet.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularSpherical3D_Facet_t & get_facet();
 };
