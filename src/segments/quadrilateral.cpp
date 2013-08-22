@@ -51,6 +51,11 @@ list QuadrilateralCartesian2D_Segment::get_cells()
 	return cells;
 }
 
+QuadrilateralCartesian2D_Segment_t & QuadrilateralCartesian2D_Segment::get_segment()
+{
+	return segment;
+}
+
 //////////////////////////////////////
 // QuadrilateralCartesian3D_Segment //
 //////////////////////////////////////
@@ -95,6 +100,11 @@ list QuadrilateralCartesian3D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<QuadrilateralCartesian3D_Cell>(QuadrilateralCartesian3D_Cell(*it));
 	return cells;
+}
+
+QuadrilateralCartesian3D_Segment_t & QuadrilateralCartesian3D_Segment::get_segment()
+{
+	return segment;
 }
 
 ////////////////////////////////////////
@@ -143,6 +153,11 @@ list QuadrilateralCylindrical3D_Segment::get_cells()
 	return cells;
 }
 
+QuadrilateralCylindrical3D_Segment_t & QuadrilateralCylindrical3D_Segment::get_segment()
+{
+	return segment;
+}
+
 //////////////////////////////////
 // QuadrilateralPolar2D_Segment //
 //////////////////////////////////
@@ -189,6 +204,11 @@ list QuadrilateralPolar2D_Segment::get_cells()
 	return cells;
 }
 
+QuadrilateralPolar2D_Segment_t & QuadrilateralPolar2D_Segment::get_segment()
+{
+	return segment;
+}
+
 //////////////////////////////////////
 // QuadrilateralSpherical3D_Segment //
 //////////////////////////////////////
@@ -233,4 +253,9 @@ list QuadrilateralSpherical3D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<QuadrilateralSpherical3D_Cell>(QuadrilateralSpherical3D_Cell(*it));
 	return cells;
+}
+
+QuadrilateralSpherical3D_Segment_t & QuadrilateralSpherical3D_Segment::get_segment()
+{
+	return segment;
 }

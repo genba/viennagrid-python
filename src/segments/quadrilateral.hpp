@@ -35,6 +35,7 @@ public:
 	unsigned int num_cells();
 	QuadrilateralCartesian2D_Cell make_cell(QuadrilateralCartesian2D_Vertex vertex1, QuadrilateralCartesian2D_Vertex vertex2, QuadrilateralCartesian2D_Vertex vertex3, QuadrilateralCartesian2D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralCartesian2D_Segment_t & get_segment();
 };
 
 /////////////////////////////////
@@ -50,6 +51,7 @@ public:
 	unsigned int num_cells();
 	QuadrilateralCartesian3D_Cell make_cell(QuadrilateralCartesian3D_Vertex vertex1, QuadrilateralCartesian3D_Vertex vertex2, QuadrilateralCartesian3D_Vertex vertex3, QuadrilateralCartesian3D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralCartesian3D_Segment_t & get_segment();
 };
 
 /////////////////////////////////////
@@ -65,6 +67,7 @@ public:
 	unsigned int num_cells();
 	QuadrilateralCylindrical3D_Cell make_cell(QuadrilateralCylindrical3D_Vertex vertex1, QuadrilateralCylindrical3D_Vertex vertex2, QuadrilateralCylindrical3D_Vertex vertex3, QuadrilateralCylindrical3D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralCylindrical3D_Segment_t & get_segment();
 };
 
 ///////////////////////////////
@@ -80,6 +83,7 @@ public:
 	unsigned int num_cells();
 	QuadrilateralPolar2D_Cell make_cell(QuadrilateralPolar2D_Vertex vertex1, QuadrilateralPolar2D_Vertex vertex2, QuadrilateralPolar2D_Vertex vertex3, QuadrilateralPolar2D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralPolar2D_Segment_t & get_segment();
 };
 
 ///////////////////////////////////
@@ -95,6 +99,7 @@ public:
 	unsigned int num_cells();
 	QuadrilateralSpherical3D_Cell make_cell(QuadrilateralSpherical3D_Vertex vertex1, QuadrilateralSpherical3D_Vertex vertex2, QuadrilateralSpherical3D_Vertex vertex3, QuadrilateralSpherical3D_Vertex vertex4);
 	list get_cells();
+	QuadrilateralSpherical3D_Segment_t & get_segment();
 };
 
 #endif /* end of include guard: QUADRILATERAL_HPP_ASEQMOCM */

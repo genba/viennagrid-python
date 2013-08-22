@@ -35,6 +35,7 @@ public:
 	unsigned int num_cells();
 	TriangularCartesian2D_Cell make_cell(TriangularCartesian2D_Vertex vertex1, TriangularCartesian2D_Vertex vertex2, TriangularCartesian2D_Vertex vertex3);
 	list get_cells();
+	TriangularCartesian2D_Segment_t & get_segment();
 };
 
 ////////////////////////////
@@ -50,6 +51,7 @@ public:
 	unsigned int num_cells();
 	TriangularCartesian3D_Cell make_cell(TriangularCartesian3D_Vertex vertex1, TriangularCartesian3D_Vertex vertex2, TriangularCartesian3D_Vertex vertex3);
 	list get_cells();
+	TriangularCartesian3D_Segment_t & get_segment();
 };
 
 ////////////////////////////////
@@ -65,6 +67,7 @@ public:
 	unsigned int num_cells();
 	TriangularCylindrical3D_Cell make_cell(TriangularCylindrical3D_Vertex vertex1, TriangularCylindrical3D_Vertex vertex2, TriangularCylindrical3D_Vertex vertex3);
 	list get_cells();
+	TriangularCylindrical3D_Segment_t & get_segment();
 };
 
 //////////////////////////
@@ -80,6 +83,7 @@ public:
 	unsigned int num_cells();
 	TriangularPolar2D_Cell make_cell(TriangularPolar2D_Vertex vertex1, TriangularPolar2D_Vertex vertex2, TriangularPolar2D_Vertex vertex3);
 	list get_cells();
+	TriangularPolar2D_Segment_t & get_segment();
 };
 
 //////////////////////////////
@@ -95,6 +99,7 @@ public:
 	unsigned int num_cells();
 	TriangularSpherical3D_Cell make_cell(TriangularSpherical3D_Vertex vertex1, TriangularSpherical3D_Vertex vertex2, TriangularSpherical3D_Vertex vertex3);
 	list get_cells();
+	TriangularSpherical3D_Segment_t & get_segment();
 };
 
 #endif /* end of include guard: TRIANGULAR_HPP_ASEQMOCM */

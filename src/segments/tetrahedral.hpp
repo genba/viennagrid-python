@@ -35,6 +35,7 @@ public:
 	unsigned int num_cells();
 	TetrahedralCartesian3D_Cell make_cell(TetrahedralCartesian3D_Vertex vertex1, TetrahedralCartesian3D_Vertex vertex2, TetrahedralCartesian3D_Vertex vertex3, TetrahedralCartesian3D_Vertex vertex4);
 	list get_cells();
+	TetrahedralCartesian3D_Segment_t & get_segment();
 };
 
 ///////////////////////////////////
@@ -50,6 +51,7 @@ public:
 	unsigned int num_cells();
 	TetrahedralCylindrical3D_Cell make_cell(TetrahedralCylindrical3D_Vertex vertex1, TetrahedralCylindrical3D_Vertex vertex2, TetrahedralCylindrical3D_Vertex vertex3, TetrahedralCylindrical3D_Vertex vertex4);
 	list get_cells();
+	TetrahedralCylindrical3D_Segment_t & get_segment();
 };
 
 /////////////////////////////////
@@ -65,6 +67,7 @@ public:
 	unsigned int num_cells();
 	TetrahedralSpherical3D_Cell make_cell(TetrahedralSpherical3D_Vertex vertex1, TetrahedralSpherical3D_Vertex vertex2, TetrahedralSpherical3D_Vertex vertex3, TetrahedralSpherical3D_Vertex vertex4);
 	list get_cells();
+	TetrahedralSpherical3D_Segment_t & get_segment();
 };
 
 #endif /* end of include guard: TETRAHEDRAL_HPP_ASEQMOCM */

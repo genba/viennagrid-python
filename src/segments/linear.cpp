@@ -51,6 +51,11 @@ list LinearCartesian1D_Segment::get_cells()
 	return cells;
 }
 
+LinearCartesian1D_Segment_t & LinearCartesian1D_Segment::get_segment()
+{
+	return segment;
+}
+
 ///////////////////////////////
 // LinearCartesian2D_Segment //
 ///////////////////////////////
@@ -93,6 +98,11 @@ list LinearCartesian2D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<LinearCartesian2D_Cell>(LinearCartesian2D_Cell(*it));
 	return cells;
+}
+
+LinearCartesian2D_Segment_t & LinearCartesian2D_Segment::get_segment()
+{
+	return segment;
 }
 
 ///////////////////////////////
@@ -139,6 +149,11 @@ list LinearCartesian3D_Segment::get_cells()
 	return cells;
 }
 
+LinearCartesian3D_Segment_t & LinearCartesian3D_Segment::get_segment()
+{
+	return segment;
+}
+
 /////////////////////////////////
 // LinearCylindrical3D_Segment //
 /////////////////////////////////
@@ -181,6 +196,11 @@ list LinearCylindrical3D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<LinearCylindrical3D_Cell>(LinearCylindrical3D_Cell(*it));
 	return cells;
+}
+
+LinearCylindrical3D_Segment_t & LinearCylindrical3D_Segment::get_segment()
+{
+	return segment;
 }
 
 ///////////////////////////
@@ -227,6 +247,11 @@ list LinearPolar2D_Segment::get_cells()
 	return cells;
 }
 
+LinearPolar2D_Segment_t & LinearPolar2D_Segment::get_segment()
+{
+	return segment;
+}
+
 ///////////////////////////////
 // LinearSpherical3D_Segment //
 ///////////////////////////////
@@ -269,4 +294,9 @@ list LinearSpherical3D_Segment::get_cells()
 	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
 		cells.append<LinearSpherical3D_Cell>(LinearSpherical3D_Cell(*it));
 	return cells;
+}
+
+LinearSpherical3D_Segment_t & LinearSpherical3D_Segment::get_segment()
+{
+	return segment;
 }

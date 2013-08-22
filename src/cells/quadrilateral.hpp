@@ -37,6 +37,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	QuadrilateralCartesian2D_Cell_t & get_cell();
 };
 
 /**
@@ -60,6 +61,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	QuadrilateralCartesian3D_Cell_t & get_cell();
 };
 
 /**
@@ -83,6 +85,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	QuadrilateralCylindrical3D_Cell_t & get_cell();
 };
 
 /**
@@ -106,6 +109,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	QuadrilateralPolar2D_Cell_t & get_cell();
 };
 
 /**
@@ -129,6 +133,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	QuadrilateralSpherical3D_Cell_t & get_cell();
 };
 
 #endif

@@ -37,6 +37,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	TetrahedralCartesian3D_Cell_t & get_cell();
 };
 
 /**
@@ -60,6 +61,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	TetrahedralCylindrical3D_Cell_t & get_cell();
 };
 
 /**
@@ -83,6 +85,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	TetrahedralSpherical3D_Cell_t & get_cell();
 };
 
 #endif

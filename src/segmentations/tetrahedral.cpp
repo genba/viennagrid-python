@@ -35,6 +35,11 @@ TetrahedralCartesian3D_Domain_t & TetrahedralCartesian3D_Segmentation::get_domai
 	return domain->get_domain();
 }
 
+TetrahedralCartesian3D_Segmentation_t & TetrahedralCartesian3D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 ///////////////////////////////////////////
 // TetrahedralCylindrical3D_Segmentation //
 ///////////////////////////////////////////
@@ -70,6 +75,11 @@ TetrahedralCylindrical3D_Domain_t & TetrahedralCylindrical3D_Segmentation::get_d
 	return domain->get_domain();
 }
 
+TetrahedralCylindrical3D_Segmentation_t & TetrahedralCylindrical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
+}
+
 /////////////////////////////////////////
 // TetrahedralSpherical3D_Segmentation //
 /////////////////////////////////////////
@@ -103,4 +113,9 @@ list TetrahedralSpherical3D_Segmentation::get_segments()
 TetrahedralSpherical3D_Domain_t & TetrahedralSpherical3D_Segmentation::get_domain()
 {
 	return domain->get_domain();
+}
+
+TetrahedralSpherical3D_Segmentation_t & TetrahedralSpherical3D_Segmentation::get_segmentation()
+{
+	return segmentation;
 }

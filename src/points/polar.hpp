@@ -54,7 +54,20 @@ public:
 	 * instantiated using this constructor or any other constructor in order for the destructor to only free when
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
 	 */
-	PointPolar2D(PointPolar_t &initial_point, unsigned int initial_id=0);
+	PointPolar2D(PointPolar_t *initial_point, unsigned int initial_id=0);
+	
+	/**
+	 * Initialize point in the polar space from a ViennaGrid point by copying it.
+	 * 
+	 * This constructor is meant to be used by the wrapper code when the programmer runs
+	 * an algorithm on points. Hence, it needs to allocate memory in the heap for the new
+	 * ViennaGrid point.
+	 * 
+	 * As one would normally think, this should be paired with a destructor that frees the
+	 * allocated memory. However, when we free the memory in the destructor, the program
+	 * aborts and states that the program tried to perform a double-free.
+	**/
+	PointPolar2D(PointPolar_t &initial_point, unsigned int initial_id=-1);
 	
 	/**
 	 * Get the dimension of the point. For 2D points, this always returns 2.
@@ -131,6 +144,9 @@ public:
 	 * Convert to cartesian 2D point.
 	 */
 	PointCartesian2D to_cartesian();
+	double norm_1();
+	double norm_2();
+	double norm_inf();
 };
 
 #endif /* end of include guard: POLAR_HPP_HL2P4D4 */

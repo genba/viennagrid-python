@@ -42,6 +42,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	LinearCartesian1D_Cell_t & get_cell();
 };
 
 /**
@@ -68,6 +69,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	LinearCartesian2D_Cell_t & get_cell();
 };
 
 /**
@@ -94,6 +96,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	LinearCartesian3D_Cell_t & get_cell();
 };
 
 /**
@@ -120,6 +123,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	LinearCylindrical3D_Cell_t & get_cell();
 };
 
 /**
@@ -146,6 +150,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	LinearPolar2D_Cell_t & get_cell();
 };
 
 /**
@@ -172,6 +177,7 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	LinearSpherical3D_Cell_t & get_cell();
 };
 
 #endif
