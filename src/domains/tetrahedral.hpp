@@ -25,6 +25,10 @@ using namespace boost::python;
  * @since 0.1.0
  */
 class TetrahedralCartesian3D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	TetrahedralCartesian3D_Domain_t     domain;
 public:
 	TetrahedralCartesian3D_Domain() {};
@@ -66,6 +70,12 @@ public:
 	void make_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
 	list get_cells();
 	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	TetrahedralCartesian3D_Domain_t & get_domain();
 };
 
@@ -75,6 +85,10 @@ public:
  * @since 0.1.0
  */
 class TetrahedralCylindrical3D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	TetrahedralCylindrical3D_Domain_t     domain;
 public:
 	TetrahedralCylindrical3D_Domain() {};
@@ -116,6 +130,12 @@ public:
 	void make_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
 	list get_cells();
 	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	TetrahedralCylindrical3D_Domain_t & get_domain();
 };
 
@@ -125,6 +145,10 @@ public:
  * @since 0.1.0
  */
 class TetrahedralSpherical3D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	TetrahedralSpherical3D_Domain_t     domain;
 public:
 	TetrahedralSpherical3D_Domain() {};
@@ -166,6 +190,12 @@ public:
 	void make_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
 	list get_cells();
 	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	TetrahedralSpherical3D_Domain_t & get_domain();
 };
 

@@ -23,6 +23,10 @@ using namespace boost::python;
  * @since 0.1.0
  */
 class LinearCartesian1D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCartesian1D_Domain_t    domain;
 public:
 	LinearCartesian1D_Domain() {};
@@ -68,7 +72,13 @@ public:
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
-
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCartesian1D_Domain_t & get_domain();
 };
 
@@ -78,6 +88,10 @@ public:
  * @since 0.1.0
  */
 class LinearCartesian2D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCartesian2D_Domain_t    domain;
 public:
 	LinearCartesian2D_Domain() {};
@@ -123,7 +137,13 @@ public:
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
-
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCartesian2D_Domain_t & get_domain();
 };
 
@@ -133,6 +153,10 @@ public:
  * @since 0.1.0
  */
 class LinearCartesian3D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCartesian3D_Domain_t    domain;
 public:
 	LinearCartesian3D_Domain() {};
@@ -178,7 +202,13 @@ public:
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
-
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCartesian3D_Domain_t & get_domain();
 };
 
@@ -188,6 +218,10 @@ public:
  * @since 0.1.0
  */
 class LinearCylindrical3D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCylindrical3D_Domain_t    domain;
 public:
 	LinearCylindrical3D_Domain() {};
@@ -233,7 +267,13 @@ public:
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
-
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearCylindrical3D_Domain_t & get_domain();
 };
 
@@ -243,6 +283,10 @@ public:
  * @since 0.1.0
  */
 class LinearPolar2D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearPolar2D_Domain_t    domain;
 public:
 	LinearPolar2D_Domain() {};
@@ -288,7 +332,13 @@ public:
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
-
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearPolar2D_Domain_t & get_domain();
 };
 
@@ -298,6 +348,10 @@ public:
  * @since 0.1.0
  */
 class LinearSpherical3D_Domain {
+	/**
+	 * ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearSpherical3D_Domain_t    domain;
 public:
 	LinearSpherical3D_Domain() {};
@@ -343,7 +397,13 @@ public:
 	
 	void write_opendx(std::string const &filename);
 	void write_vtk(std::string const &filename);
-
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object.
+	 * @since 0.1.0
+	 */
 	LinearSpherical3D_Domain_t & get_domain();
 };
 
