@@ -20,6 +20,8 @@ using namespace boost::python;
 class PointCylindrical3D {
 	/**
 	 * Pointer to the low-level ViennaGrid point type.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical_t *point;
 	
@@ -32,6 +34,8 @@ public:
 	 * and allocates memory in the heap for storing the point. As one would normally think, this should be paired
 	 * with a destructor that frees the allocated memory. However, when we free the memory in the destructor, the
 	 * program aborts and states that the program tried to perform a double-free.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D();
 	
@@ -42,6 +46,8 @@ public:
 	 * and allocates memory in the heap for storing the point. As one would normally think, this should be paired
 	 * with a destructor that frees the allocated memory. However, when we free the memory in the destructor, the
 	 * program aborts and states that the program tried to perform a double-free.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D(double x, double y, double z);
 	
@@ -58,6 +64,8 @@ public:
 	 * has been used. At first, one would think that it should be distinguished in some way when the object has been
 	 * instantiated using this constructor or any other constructor in order for the destructor to only free when
 	 * another constructor has been called, not this one. However, we have shown that no freeing action is need at all.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D(PointCylindrical_t *initial_point, unsigned int initial_id=0);
 	
@@ -71,87 +79,121 @@ public:
 	 * As one would normally think, this should be paired with a destructor that frees the
 	 * allocated memory. However, when we free the memory in the destructor, the program
 	 * aborts and states that the program tried to perform a double-free.
-	**/
+	 * 
+	 * @since 0.1.0
+	 */
 	PointCylindrical3D(PointCylindrical_t &initial_point, unsigned int initial_id=-1);
 	
 	/**
 	 * Get the dimension of the point. For 3D points, this always returns 3.
+	 * 
+	 * @since 0.1.0
 	 */
 	size_t get_dimension();
 	
 	/**
 	 * Get the name of the coordinate system. For cartesian points, this always returns 'cartesian'.
+	 * 
+	 * @since 0.1.0
 	 */
 	const char * get_coord_system();
 	
 	/**
 	 * Get the coordinate at given index (0 for x, 1 for y, 2 for z).
+	 * 
+	 * @since 0.1.0
 	 */
 	double get_coord(unsigned int index);
 	
 	/**
 	 * Set the coordinate at given index (0 for x, 1 for y, 2 for z).
+	 * 
+	 * @since 0.1.0
 	 */
 	void set_coord(unsigned int index, double new_value);
 	
 	/**
 	 * Get coordinates as a Python list.
+	 * 
+	 * @since 0.1.0
 	 */
 	list get_coord_list();
 	
 	/**
 	 * Assignment operator that copies the coordinates of the right operand to the left operand.
 	 * This operator cannot be wrapped to Python explicitly.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D & operator=(const PointCylindrical3D &other);
 	
 	/**
 	 * Addition operator which adds two points coordinate by coordinate.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D operator+(const PointCylindrical3D &other);
 	
 	/**
 	 * Subtraction operator which subtracts two points coordinate by coordinate.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D operator-(const PointCylindrical3D &other);
 	
 	/**
 	 * Multiplication operator which multiplies a point and a scalar (real) number, coordinate by coordinate.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D operator*(const double factor);
 	
 	/**
 	 * Division operator which divides a point and a scalar (real) number, coordinate by coordinate.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D operator/(const double factor);
 	
 	/**
 	 * Unary operator which inverts the coordinates of a point.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical3D operator-();
 	
 	/**
 	 * Get ViennaGrid point.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCylindrical_t & get_point();
 	
 	/**
 	 * Get ID of the point within the domain it is assigned to (if applicable).
+	 * 
+	 * @since 0.1.0
 	 */
 	unsigned int get_id();
 	
 	/**
 	 * Set ID of the point within the domain it is assigned to.
+	 * 
+	 * @since 0.1.0
 	 */
 	void set_id(unsigned int new_id);
 	
 	/**
 	 * Convert to cartesian 3D point.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointCartesian3D to_cartesian();
 	
 	/**
 	 * Convert to spherical point.
+	 * 
+	 * @since 0.1.0
 	 */
 	PointSpherical3D to_spherical();
 	double norm_1();
