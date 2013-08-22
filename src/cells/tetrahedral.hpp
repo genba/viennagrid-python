@@ -20,6 +20,9 @@ using namespace boost::python;
  * Wrapped cell of a tetrahedral, cartesian 3D domain.
  */
 class TetrahedralCartesian3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TetrahedralCartesian3D_Cell_t *cell;
 public:
 	TetrahedralCartesian3D_Cell(TetrahedralCartesian3D_Cell_t &initial_cell);
@@ -48,6 +51,9 @@ public:
  * Wrapped cell of a tetrahedral, cylindrical 3D domain.
  */
 class TetrahedralCylindrical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TetrahedralCylindrical3D_Cell_t *cell;
 public:
 	TetrahedralCylindrical3D_Cell(TetrahedralCylindrical3D_Cell_t &initial_cell);
@@ -76,6 +82,9 @@ public:
  * Wrapped cell of a tetrahedral, spherical 3D domain.
  */
 class TetrahedralSpherical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TetrahedralSpherical3D_Cell_t *cell;
 public:
 	TetrahedralSpherical3D_Cell(TetrahedralSpherical3D_Cell_t &initial_cell);

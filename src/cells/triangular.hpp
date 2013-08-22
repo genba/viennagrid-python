@@ -20,6 +20,9 @@ using namespace boost::python;
  * Wrapped cell of a triangular, cartesian 2D domain.
  */
 class TriangularCartesian2D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TriangularCartesian2D_Cell_t    *cell;
 public:
 	TriangularCartesian2D_Cell(TriangularCartesian2D_Cell_t &initial_cell);
@@ -48,6 +51,9 @@ public:
  * Wrapped cell of a triangular, cartesian 3D domain.
  */
 class TriangularCartesian3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TriangularCartesian3D_Cell_t    *cell;
 public:
 	TriangularCartesian3D_Cell(TriangularCartesian3D_Cell_t &initial_cell);
@@ -76,6 +82,9 @@ public:
  * Wrapped cell of a triangular, cylindrical 3D domain.
  */
 class TriangularCylindrical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TriangularCylindrical3D_Cell_t    *cell;
 public:
 	TriangularCylindrical3D_Cell(TriangularCylindrical3D_Cell_t &initial_cell);
@@ -104,6 +113,9 @@ public:
  * Wrapped cell of a triangular, polar 2D domain.
  */
 class TriangularPolar2D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TriangularPolar2D_Cell_t    *cell;
 public:
 	TriangularPolar2D_Cell(TriangularPolar2D_Cell_t &initial_cell);
@@ -132,6 +144,9 @@ public:
  * Wrapped cell of a triangular, spherical 3D domain.
  */
 class TriangularSpherical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	TriangularSpherical3D_Cell_t    *cell;
 public:
 	TriangularSpherical3D_Cell(TriangularSpherical3D_Cell_t &initial_cell);

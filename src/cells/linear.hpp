@@ -19,7 +19,7 @@
 using namespace boost::python;
 
 /**
- * Wrapped cell of a linear, cartesian 1D domain..
+ * Wrapped cell of a linear, cartesian 1D domain.
  */
 class LinearCartesian1D_Cell {
 	/**

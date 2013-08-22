@@ -20,6 +20,9 @@ using namespace boost::python;
  * Wrapped cell of a quadrilateral, cartesian 2D domain.
  */
 class QuadrilateralCartesian2D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	QuadrilateralCartesian2D_Cell_t    *cell;
 public:
 	QuadrilateralCartesian2D_Cell(QuadrilateralCartesian2D_Cell_t &initial_cell);
@@ -48,6 +51,9 @@ public:
  * Wrapped cell of a quadrilateral, cartesian 3D domain.
  */
 class QuadrilateralCartesian3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	QuadrilateralCartesian3D_Cell_t    *cell;
 public:
 	QuadrilateralCartesian3D_Cell(QuadrilateralCartesian3D_Cell_t &initial_cell);
@@ -76,6 +82,9 @@ public:
  * Wrapped cell of a quadrilateral, cylindrical 3D domain.
  */
 class QuadrilateralCylindrical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	QuadrilateralCylindrical3D_Cell_t    *cell;
 public:
 	QuadrilateralCylindrical3D_Cell(QuadrilateralCylindrical3D_Cell_t &initial_cell);
@@ -104,6 +113,9 @@ public:
  * Wrapped cell of a quadrilateral, polar 2D domain.
  */
 class QuadrilateralPolar2D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	QuadrilateralPolar2D_Cell_t    *cell;
 public:
 	QuadrilateralPolar2D_Cell(QuadrilateralPolar2D_Cell_t &initial_cell);
@@ -132,6 +144,9 @@ public:
  * Wrapped cell of a quadrilateral, spherical 3D domain.
  */
 class QuadrilateralSpherical3D_Cell {
+	/**
+	 * Pointer to the ViennaGrid cell type.
+	 */
 	QuadrilateralSpherical3D_Cell_t    *cell;
 public:
 	QuadrilateralSpherical3D_Cell(QuadrilateralSpherical3D_Cell_t &initial_cell);
