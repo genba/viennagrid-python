@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid facets.
+ */
+
 #ifndef FACETS_TYPES_HPP
 #define FACETS_TYPES_HPP
 
