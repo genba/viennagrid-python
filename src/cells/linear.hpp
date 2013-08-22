@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped cells from linear domains.
+ * @brief Class definitions for cells of linear domains.
  */
 
 #ifndef CELLS_LINEAR_HPP

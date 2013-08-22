@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped cells from tetrahedral domains.
+ * @brief Class definitions for cells of tetrahedral domains.
  */
 
 #ifndef CELLS_TETRAHEDRAL_HPP

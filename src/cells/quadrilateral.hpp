@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped cells from quadrilateral domains.
+ * @brief Class definitions for cells of quadrilateral domains.
  */
 
 #ifndef CELLS_QUADRILATERAL_HPP

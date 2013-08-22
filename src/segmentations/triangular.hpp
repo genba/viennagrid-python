@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped segmentations from triangular domains.
+ * @brief Class definitions for segmentations of triangular domains.
  */
 
 #ifndef SEGMENTATION_TRIANGULAR_HPP

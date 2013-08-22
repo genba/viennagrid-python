@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped vertices from quadrilateral domains.
+ * @brief Class definitions for vertices of quadrilateral domains.
  */
 
 #ifndef VERTICES_QUADRILATERAL

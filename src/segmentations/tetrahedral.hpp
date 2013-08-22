@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped segmentations from tetrahedral domains.
+ * @brief Class definitions for segmentations of tetrahedral domains.
  */
 
 #ifndef SEGMENTATION_TETRAHEDRAL_HPP

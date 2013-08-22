@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped segments from quadrilateral domains.
+ * @brief Class definitions for segments of quadrilateral domains.
  */
 
 #ifndef QUADRILATERAL_HPP_ASEQMOCM

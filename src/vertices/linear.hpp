@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped vertices from linear domains.
+ * @brief Class definitions for vertices of linear domains.
  */
 
 #ifndef VERTICES_LINEAR_HPP

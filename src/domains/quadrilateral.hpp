@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions for wrapped domains of quadrilaterals.
+ * @brief Class definitions for domains of quadrilaterals.
  */
 
 #ifndef QUADRILATERAL_HPP_N3ZDFQTY

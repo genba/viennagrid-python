@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped segments from linear domains.
+ * @brief Class definitions for segments of linear domains.
  */
 
 #ifndef SEGMENTS_LINEAR_HPP

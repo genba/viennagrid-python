@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped vertices from tetrahedral domains.
+ * @brief Class definitions for vertices of tetrahedral domains.
  */
 
 #ifndef VERTICES_TETRAHEDRAL

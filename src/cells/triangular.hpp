@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Class definitions of wrapped cells from triangular domains.
+ * @brief Class definitions for cells of triangular domains.
  */
 
 #ifndef CELLS_TRIANGULAR_HPP
