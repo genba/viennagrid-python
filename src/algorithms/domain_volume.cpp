@@ -2,11 +2,9 @@
 
 #include <viennagrid/algorithm/volume.hpp>
 
-/**********
- * VOLUME *
- **********/
-
-// Linear
+////////////
+// Linear //
+////////////
 
 double LinearCartesian1D_Domain_volume(LinearCartesian1D_Domain domain)
 {
@@ -38,7 +36,9 @@ double LinearSpherical3D_Domain_volume(LinearSpherical3D_Domain domain)
 	return viennagrid::volume(domain.get_domain());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 double TriangularCartesian2D_Domain_volume(TriangularCartesian2D_Domain domain)
 {
@@ -65,7 +65,9 @@ double TriangularSpherical3D_Domain_volume(TriangularSpherical3D_Domain domain)
 	return viennagrid::volume(domain.get_domain());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 double QuadrilateralCartesian2D_Domain_volume(QuadrilateralCartesian2D_Domain domain)
 {
@@ -92,7 +94,9 @@ double QuadrilateralSpherical3D_Domain_volume(QuadrilateralSpherical3D_Domain do
 	return viennagrid::volume(domain.get_domain());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 double TetrahedralCartesian3D_Domain_volume(TetrahedralCartesian3D_Domain domain)
 {

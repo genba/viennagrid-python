@@ -2,11 +2,9 @@
 
 #include <viennagrid/algorithm/centroid.hpp>
 
-/************
- * CENTROID *
- ************/
-
-// Linear
+////////////
+// Linear //
+////////////
 
 PointCartesian1D LinearCartesian1D_Cell_centroid(LinearCartesian1D_Cell cell)
 {
@@ -44,7 +42,9 @@ PointSpherical3D LinearSpherical3D_Cell_centroid(LinearSpherical3D_Cell cell)
 	return PointSpherical3D(point);
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 PointCartesian2D TriangularCartesian2D_Cell_centroid(TriangularCartesian2D_Cell cell)
 {
@@ -76,7 +76,9 @@ PointSpherical3D TriangularSpherical3D_Cell_centroid(TriangularSpherical3D_Cell 
 	return PointSpherical3D(point);
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 PointCartesian2D QuadrilateralCartesian2D_Cell_centroid(QuadrilateralCartesian2D_Cell cell)
 {
@@ -108,7 +110,9 @@ PointSpherical3D QuadrilateralSpherical3D_Cell_centroid(QuadrilateralSpherical3D
 	return PointSpherical3D(point);
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 PointCartesian3D TetrahedralCartesian3D_Cell_centroid(TetrahedralCartesian3D_Cell cell)
 {

@@ -2,11 +2,9 @@
 
 #include <viennagrid/algorithm/refine.hpp>
 
-/**********
- * REFINE *
- **********/
-
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 tuple TriangularCartesian2D_Domain_refine(TriangularCartesian2D_Domain domain_in, TriangularCartesian2D_Segmentation segmentation_in, bool (*predicate)(const TriangularCartesian2D_Edge &))
 {
@@ -173,7 +171,9 @@ tuple TriangularSpherical3D_Domain_refine(TriangularSpherical3D_Domain domain_in
 	return make_tuple<TriangularSpherical3D_Domain, TriangularSpherical3D_Segmentation>(domain_out, segmentation_out);
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 tuple TetrahedralCartesian3D_Domain_refine(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralCartesian3D_Edge &))
 {

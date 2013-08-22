@@ -2,12 +2,10 @@
 
 #include <viennagrid/algorithm/surface.hpp>
 
-/***********
- * SURFACE *
- ***********/
+////////////
+// Linear //
+////////////
 
-// Linear
- 
 double LinearCartesian1D_Cell_surface(LinearCartesian1D_Cell cell)
 {
 	return viennagrid::surface(cell.get_cell());
@@ -38,7 +36,9 @@ double LinearSpherical3D_Cell_surface(LinearSpherical3D_Cell cell)
 	return viennagrid::surface(cell.get_cell());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 double TriangularCartesian2D_Cell_surface(TriangularCartesian2D_Cell cell)
 {
@@ -65,7 +65,9 @@ double TriangularSpherical3D_Cell_surface(TriangularSpherical3D_Cell cell)
 	return viennagrid::surface(cell.get_cell());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 double QuadrilateralCartesian2D_Cell_surface(QuadrilateralCartesian2D_Cell cell)
 {
@@ -92,7 +94,9 @@ double QuadrilateralSpherical3D_Cell_surface(QuadrilateralSpherical3D_Cell cell)
 	return viennagrid::surface(cell.get_cell());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 double TetrahedralCartesian3D_Cell_surface(TetrahedralCartesian3D_Cell cell)
 {

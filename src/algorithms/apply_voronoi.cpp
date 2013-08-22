@@ -7,11 +7,9 @@
 
 #include <deque>
 
-/*****************
- * APPLY_VORONOI *
- *****************/
-
-// Linear
+////////////
+// Linear //
+////////////
 
 void LinearCartesian1D_Domain_apply_voronoi(LinearCartesian1D_Domain domain)
 {
@@ -187,7 +185,9 @@ void LinearSpherical3D_Domain_apply_voronoi(LinearSpherical3D_Domain domain)
 	);
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 void TriangularCartesian2D_Domain_apply_voronoi(TriangularCartesian2D_Domain domain)
 {
@@ -334,7 +334,9 @@ void TriangularSpherical3D_Domain_apply_voronoi(TriangularSpherical3D_Domain dom
 	);
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 void QuadrilateralCartesian2D_Domain_apply_voronoi(QuadrilateralCartesian2D_Domain domain)
 {
@@ -481,7 +483,9 @@ void QuadrilateralSpherical3D_Domain_apply_voronoi(QuadrilateralSpherical3D_Doma
 	);
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 void TetrahedralCartesian3D_Domain_apply_voronoi(TetrahedralCartesian3D_Domain domain)
 {
