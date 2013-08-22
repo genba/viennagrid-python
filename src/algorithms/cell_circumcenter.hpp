@@ -28,6 +28,8 @@ using namespace boost::python;
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian1D LinearCartesian1D_Cell_circumcenter(LinearCartesian1D_Cell cell);
 
@@ -36,6 +38,8 @@ PointCartesian1D LinearCartesian1D_Cell_circumcenter(LinearCartesian1D_Cell cell
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian2D LinearCartesian2D_Cell_circumcenter(LinearCartesian2D_Cell cell);
 
@@ -44,6 +48,8 @@ PointCartesian2D LinearCartesian2D_Cell_circumcenter(LinearCartesian2D_Cell cell
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian3D LinearCartesian3D_Cell_circumcenter(LinearCartesian3D_Cell cell);
 
@@ -52,6 +58,8 @@ PointCartesian3D LinearCartesian3D_Cell_circumcenter(LinearCartesian3D_Cell cell
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCylindrical3D LinearCylindrical3D_Cell_circumcenter(LinearCylindrical3D_Cell cell);
 
@@ -60,6 +68,8 @@ PointCylindrical3D LinearCylindrical3D_Cell_circumcenter(LinearCylindrical3D_Cel
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointPolar2D LinearPolar2D_Cell_circumcenter(LinearPolar2D_Cell cell);
 
@@ -68,6 +78,8 @@ PointPolar2D LinearPolar2D_Cell_circumcenter(LinearPolar2D_Cell cell);
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointSpherical3D LinearSpherical3D_Cell_circumcenter(LinearSpherical3D_Cell cell);
 
@@ -80,6 +92,8 @@ PointSpherical3D LinearSpherical3D_Cell_circumcenter(LinearSpherical3D_Cell cell
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian2D TriangularCartesian2D_Cell_circumcenter(TriangularCartesian2D_Cell cell);
 
@@ -88,6 +102,8 @@ PointCartesian2D TriangularCartesian2D_Cell_circumcenter(TriangularCartesian2D_C
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian3D TriangularCartesian3D_Cell_circumcenter(TriangularCartesian3D_Cell cell);
 
@@ -96,6 +112,8 @@ PointCartesian3D TriangularCartesian3D_Cell_circumcenter(TriangularCartesian3D_C
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCylindrical3D TriangularCylindrical3D_Cell_circumcenter(TriangularCylindrical3D_Cell cell);
 
@@ -104,6 +122,8 @@ PointCylindrical3D TriangularCylindrical3D_Cell_circumcenter(TriangularCylindric
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointPolar2D TriangularPolar2D_Cell_circumcenter(TriangularPolar2D_Cell cell);
 
@@ -112,6 +132,8 @@ PointPolar2D TriangularPolar2D_Cell_circumcenter(TriangularPolar2D_Cell cell);
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointSpherical3D TriangularSpherical3D_Cell_circumcenter(TriangularSpherical3D_Cell cell);
 
@@ -124,6 +146,8 @@ PointSpherical3D TriangularSpherical3D_Cell_circumcenter(TriangularSpherical3D_C
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian2D QuadrilateralCartesian2D_Cell_circumcenter(QuadrilateralCartesian2D_Cell cell);
 
@@ -132,6 +156,8 @@ PointCartesian2D QuadrilateralCartesian2D_Cell_circumcenter(QuadrilateralCartesi
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian3D QuadrilateralCartesian3D_Cell_circumcenter(QuadrilateralCartesian3D_Cell cell);
 
@@ -140,6 +166,8 @@ PointCartesian3D QuadrilateralCartesian3D_Cell_circumcenter(QuadrilateralCartesi
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCylindrical3D QuadrilateralCylindrical3D_Cell_circumcenter(QuadrilateralCylindrical3D_Cell cell);
 
@@ -148,6 +176,8 @@ PointCylindrical3D QuadrilateralCylindrical3D_Cell_circumcenter(QuadrilateralCyl
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointPolar2D QuadrilateralPolar2D_Cell_circumcenter(QuadrilateralPolar2D_Cell cell);
 
@@ -156,6 +186,8 @@ PointPolar2D QuadrilateralPolar2D_Cell_circumcenter(QuadrilateralPolar2D_Cell ce
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointSpherical3D QuadrilateralSpherical3D_Cell_circumcenter(QuadrilateralSpherical3D_Cell cell);
 
@@ -168,6 +200,8 @@ PointSpherical3D QuadrilateralSpherical3D_Cell_circumcenter(QuadrilateralSpheric
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCartesian3D TetrahedralCartesian3D_Cell_circumcenter(TetrahedralCartesian3D_Cell cell);
 
@@ -176,6 +210,8 @@ PointCartesian3D TetrahedralCartesian3D_Cell_circumcenter(TetrahedralCartesian3D
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointCylindrical3D TetrahedralCylindrical3D_Cell_circumcenter(TetrahedralCylindrical3D_Cell cell);
 
@@ -184,6 +220,8 @@ PointCylindrical3D TetrahedralCylindrical3D_Cell_circumcenter(TetrahedralCylindr
  * 
  * @param cell The cell whose circumcenter will be computed.
  * @return Point that represents the circumcenter of the cell.
+ * 
+ * @since 0.1.0
  */
 PointSpherical3D TetrahedralSpherical3D_Cell_circumcenter(TetrahedralSpherical3D_Cell cell);
 

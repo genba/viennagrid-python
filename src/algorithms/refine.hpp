@@ -35,6 +35,8 @@ using namespace boost::python;
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularCartesian2D_Domain_refine(TriangularCartesian2D_Domain domain_in, TriangularCartesian2D_Segmentation segmentation_in, bool (*predicate)(const TriangularCartesian2D_Edge &));
 
@@ -48,6 +50,8 @@ tuple TriangularCartesian2D_Domain_refine(TriangularCartesian2D_Domain domain_in
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularCartesian3D_Domain_refine(TriangularCartesian3D_Domain domain_in, TriangularCartesian3D_Segmentation segmentation_in, bool (*predicate)(const TriangularCartesian3D_Edge &));
 
@@ -61,6 +65,8 @@ tuple TriangularCartesian3D_Domain_refine(TriangularCartesian3D_Domain domain_in
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularCylindrical3D_Domain_refine(TriangularCylindrical3D_Domain domain_in, TriangularCylindrical3D_Segmentation segmentation_in, bool (*predicate)(const TriangularCylindrical3D_Edge &));
 
@@ -74,6 +80,8 @@ tuple TriangularCylindrical3D_Domain_refine(TriangularCylindrical3D_Domain domai
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularPolar2D_Domain_refine(TriangularPolar2D_Domain domain_in, TriangularPolar2D_Segmentation segmentation_in, bool (*predicate)(const TriangularPolar2D_Edge &));
 
@@ -87,6 +95,8 @@ tuple TriangularPolar2D_Domain_refine(TriangularPolar2D_Domain domain_in, Triang
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularSpherical3D_Domain_refine(TriangularSpherical3D_Domain domain_in, TriangularSpherical3D_Segmentation segmentation_in, bool (*predicate)(const TriangularSpherical3D_Edge &));
 
@@ -104,6 +114,8 @@ tuple TriangularSpherical3D_Domain_refine(TriangularSpherical3D_Domain domain_in
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TetrahedralCartesian3D_Domain_refine(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralCartesian3D_Edge &));
 
@@ -117,6 +129,8 @@ tuple TetrahedralCartesian3D_Domain_refine(TetrahedralCartesian3D_Domain domain_
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TetrahedralCylindrical3D_Domain_refine(TetrahedralCylindrical3D_Domain domain_in, TetrahedralCylindrical3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralCylindrical3D_Edge &));
 
@@ -130,6 +144,8 @@ tuple TetrahedralCylindrical3D_Domain_refine(TetrahedralCylindrical3D_Domain dom
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TetrahedralSpherical3D_Domain_refine(TetrahedralSpherical3D_Domain domain_in, TetrahedralSpherical3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralSpherical3D_Edge &));
 

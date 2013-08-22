@@ -34,6 +34,8 @@ using namespace boost::python;
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularCartesian2D_Domain_refine_uniformly(TriangularCartesian2D_Domain domain_in, TriangularCartesian2D_Segmentation segmentation_in);
 
@@ -45,6 +47,8 @@ tuple TriangularCartesian2D_Domain_refine_uniformly(TriangularCartesian2D_Domain
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularCartesian3D_Domain_refine_uniformly(TriangularCartesian3D_Domain domain_in, TriangularCartesian3D_Segmentation segmentation_in);
 
@@ -56,6 +60,8 @@ tuple TriangularCartesian3D_Domain_refine_uniformly(TriangularCartesian3D_Domain
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularCylindrical3D_Domain_refine_uniformly(TriangularCylindrical3D_Domain domain_in, TriangularCylindrical3D_Segmentation segmentation_in);
 
@@ -67,6 +73,8 @@ tuple TriangularCylindrical3D_Domain_refine_uniformly(TriangularCylindrical3D_Do
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularPolar2D_Domain_refine_uniformly(TriangularPolar2D_Domain domain_in, TriangularPolar2D_Segmentation segmentation_in);
 
@@ -78,6 +86,8 @@ tuple TriangularPolar2D_Domain_refine_uniformly(TriangularPolar2D_Domain domain_
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TriangularSpherical3D_Domain_refine_uniformly(TriangularSpherical3D_Domain domain_in, TriangularSpherical3D_Segmentation segmentation_in);
 
@@ -93,6 +103,8 @@ tuple TriangularSpherical3D_Domain_refine_uniformly(TriangularSpherical3D_Domain
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TetrahedralCartesian3D_Domain_refine_uniformly(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in);
 
@@ -104,6 +116,8 @@ tuple TetrahedralCartesian3D_Domain_refine_uniformly(TetrahedralCartesian3D_Doma
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TetrahedralCylindrical3D_Domain_refine_uniformly(TetrahedralCylindrical3D_Domain domain_in, TetrahedralCylindrical3D_Segmentation segmentation_in);
 
@@ -115,6 +129,8 @@ tuple TetrahedralCylindrical3D_Domain_refine_uniformly(TetrahedralCylindrical3D_
  * @return Python tuple with two elements:
  *         1. the refined domain, and
  *         2. the refined segmentation.
+ * 
+ * @since 0.1.0
  */
 tuple TetrahedralSpherical3D_Domain_refine_uniformly(TetrahedralSpherical3D_Domain domain_in, TetrahedralSpherical3D_Segmentation segmentation_in);
 

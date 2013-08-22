@@ -20,6 +20,8 @@
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double LinearCartesian1D_Domain_surface(LinearCartesian1D_Domain domain);
 
@@ -28,6 +30,8 @@ double LinearCartesian1D_Domain_surface(LinearCartesian1D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double LinearCartesian2D_Domain_surface(LinearCartesian2D_Domain domain);
 
@@ -36,6 +40,8 @@ double LinearCartesian2D_Domain_surface(LinearCartesian2D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double LinearCartesian3D_Domain_surface(LinearCartesian3D_Domain domain);
 
@@ -44,6 +50,8 @@ double LinearCartesian3D_Domain_surface(LinearCartesian3D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double LinearCylindrical3D_Domain_surface(LinearCylindrical3D_Domain domain);
 
@@ -52,6 +60,8 @@ double LinearCylindrical3D_Domain_surface(LinearCylindrical3D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double LinearPolar2D_Domain_surface(LinearPolar2D_Domain domain);
 
@@ -60,6 +70,8 @@ double LinearPolar2D_Domain_surface(LinearPolar2D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double LinearSpherical3D_Domain_surface(LinearSpherical3D_Domain domain);
 
@@ -72,6 +84,8 @@ double LinearSpherical3D_Domain_surface(LinearSpherical3D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TriangularCartesian2D_Domain_surface(TriangularCartesian2D_Domain domain);
 
@@ -80,6 +94,8 @@ double TriangularCartesian2D_Domain_surface(TriangularCartesian2D_Domain domain)
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TriangularCartesian3D_Domain_surface(TriangularCartesian3D_Domain domain);
 
@@ -88,6 +104,8 @@ double TriangularCartesian3D_Domain_surface(TriangularCartesian3D_Domain domain)
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TriangularCylindrical3D_Domain_surface(TriangularCylindrical3D_Domain domain);
 
@@ -96,6 +114,8 @@ double TriangularCylindrical3D_Domain_surface(TriangularCylindrical3D_Domain dom
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TriangularPolar2D_Domain_surface(TriangularPolar2D_Domain domain);
 
@@ -104,6 +124,8 @@ double TriangularPolar2D_Domain_surface(TriangularPolar2D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TriangularSpherical3D_Domain_surface(TriangularSpherical3D_Domain domain);
 
@@ -116,6 +138,8 @@ double TriangularSpherical3D_Domain_surface(TriangularSpherical3D_Domain domain)
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double QuadrilateralCartesian2D_Domain_surface(QuadrilateralCartesian2D_Domain domain);
 
@@ -124,6 +148,8 @@ double QuadrilateralCartesian2D_Domain_surface(QuadrilateralCartesian2D_Domain d
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double QuadrilateralCartesian3D_Domain_surface(QuadrilateralCartesian3D_Domain domain);
 
@@ -132,6 +158,8 @@ double QuadrilateralCartesian3D_Domain_surface(QuadrilateralCartesian3D_Domain d
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double QuadrilateralCylindrical3D_Domain_surface(QuadrilateralCylindrical3D_Domain domain);
 
@@ -140,6 +168,8 @@ double QuadrilateralCylindrical3D_Domain_surface(QuadrilateralCylindrical3D_Doma
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double QuadrilateralPolar2D_Domain_surface(QuadrilateralPolar2D_Domain domain);
 
@@ -148,6 +178,8 @@ double QuadrilateralPolar2D_Domain_surface(QuadrilateralPolar2D_Domain domain);
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double QuadrilateralSpherical3D_Domain_surface(QuadrilateralSpherical3D_Domain domain);
 
@@ -160,6 +192,8 @@ double QuadrilateralSpherical3D_Domain_surface(QuadrilateralSpherical3D_Domain d
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TetrahedralCartesian3D_Domain_surface(TetrahedralCartesian3D_Domain domain);
 
@@ -168,6 +202,8 @@ double TetrahedralCartesian3D_Domain_surface(TetrahedralCartesian3D_Domain domai
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TetrahedralCylindrical3D_Domain_surface(TetrahedralCylindrical3D_Domain domain);
 
@@ -176,6 +212,8 @@ double TetrahedralCylindrical3D_Domain_surface(TetrahedralCylindrical3D_Domain d
  * 
  * @param domain Domain whose surface will be computed.
  * @return Real number in double precision which represents the surface of the domain.
+ * 
+ * @since 0.1.0
  */
 double TetrahedralSpherical3D_Domain_surface(TetrahedralSpherical3D_Domain domain);
 

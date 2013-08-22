@@ -18,16 +18,22 @@
 
 /**
  * Calculate the spanned volume (length) of a line in the 1D cartesian space.
+ * 
+ * @since 0.1.0
  */
 double LinearCartesian1D_spanned_volume(PointCartesian1D p1, PointCartesian1D p2);
 
 /**
  * Calculate the spanned volume (length) of a line in the 2D cartesian space.
+ * 
+ * @since 0.1.0
  */
 double LinearCartesian2D_spanned_volume(PointCartesian2D p1, PointCartesian2D p2);
 
 /**
  * Calculate the spanned volume (length) of a line in the 3D cartesian space.
+ * 
+ * @since 0.1.0
  */
 double LinearCartesian3D_spanned_volume(PointCartesian3D p1, PointCartesian3D p2);
 
@@ -37,11 +43,15 @@ double LinearCartesian3D_spanned_volume(PointCartesian3D p1, PointCartesian3D p2
 
 /**
  * Calculate the spanned volume (surface) of a triangle in the 2D cartesian space.
+ * 
+ * @since 0.1.0
  */
 double TriangularCartesian2D_spanned_volume(PointCartesian2D p1, PointCartesian2D p2, PointCartesian2D p3);
 
 /**
  * Calculate the spanned volume (surface) of a triangle in the 3D cartesian space.
+ * 
+ * @since 0.1.0
  */
 double TriangularCartesian3D_spanned_volume(PointCartesian3D p1, PointCartesian3D p2, PointCartesian3D p3);
 
@@ -51,6 +61,8 @@ double TriangularCartesian3D_spanned_volume(PointCartesian3D p1, PointCartesian3
 
 /**
  * Calculate the spanned volume (volume) of a tetrahedron in the 3D cartesian space.
+ * 
+ * @since 0.1.0
  */
 double TetrahedralCartesian3D_spanned_volume(PointCartesian3D p1, PointCartesian3D p2, PointCartesian3D p3, PointCartesian3D p4);
 
