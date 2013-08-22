@@ -21,6 +21,8 @@ using namespace boost::python;
 
 /**
  * Domain of lines in the cartesian 2D space.
+ * 
+ * @since 0.1.0
  */
 class TriangularCartesian2D_Domain {
 	TriangularCartesian2D_Domain_t    domain;
@@ -31,6 +33,8 @@ public:
 	 * Return the number of vertices contained in the domain.
 	 * 
 	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
 	 */
 	unsigned int num_vertices();
 	
@@ -38,6 +42,8 @@ public:
 	 * Create a new vertex in the domain based on the given point.
 	 * 
 	 * @param point Point that represents the vertex. The point object will be copied.
+	 * 
+	 * @since 0.1.0
 	 */
 	void make_vertex(PointCartesian2D point);
 	
@@ -45,6 +51,8 @@ public:
 	 * Return the vertex identified by the given index.
 	 * 
 	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCartesian2D_Vertex get_vertex(unsigned int index);
 	
@@ -52,6 +60,8 @@ public:
 	 * Return a Python list containing all the vertices of the domain.
 	 * 
 	 * @return Python list
+	 * 
+	 * @since 0.1.0
 	 */
 	list get_vertices();
 	
@@ -66,6 +76,8 @@ public:
 
 /**
  * Domain of lines in the cartesian 3D space.
+ * 
+ * @since 0.1.0
  */
 class TriangularCartesian3D_Domain {
 	TriangularCartesian3D_Domain_t    domain;
@@ -76,6 +88,8 @@ public:
 	 * Return the number of vertices contained in the domain.
 	 * 
 	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
 	 */
 	unsigned int num_vertices();
 	
@@ -83,6 +97,8 @@ public:
 	 * Create a new vertex in the domain based on the given point.
 	 * 
 	 * @param point Point that represents the vertex. The point object will be copied.
+	 * 
+	 * @since 0.1.0
 	 */
 	void make_vertex(PointCartesian3D point);
 	
@@ -90,6 +106,8 @@ public:
 	 * Return the vertex identified by the given index.
 	 * 
 	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCartesian3D_Vertex get_vertex(unsigned int index);
 	
@@ -97,6 +115,8 @@ public:
 	 * Return a Python list containing all the vertices of the domain.
 	 * 
 	 * @return Python list
+	 * 
+	 * @since 0.1.0
 	 */
 	list get_vertices();
 	
@@ -111,6 +131,8 @@ public:
 
 /**
  * Domain of lines in the cylindrical space.
+ * 
+ * @since 0.1.0
  */
 class TriangularCylindrical3D_Domain {
 	TriangularCylindrical3D_Domain_t    domain;
@@ -121,6 +143,8 @@ public:
 	 * Return the number of vertices contained in the domain.
 	 * 
 	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
 	 */
 	unsigned int num_vertices();
 	
@@ -128,6 +152,8 @@ public:
 	 * Create a new vertex in the domain based on the given point.
 	 * 
 	 * @param point Point that represents the vertex. The point object will be copied.
+	 * 
+	 * @since 0.1.0
 	 */
 	void make_vertex(PointCylindrical3D point);
 	
@@ -135,6 +161,8 @@ public:
 	 * Return the vertex identified by the given index.
 	 * 
 	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularCylindrical3D_Vertex get_vertex(unsigned int index);
 	
@@ -142,6 +170,8 @@ public:
 	 * Return a Python list containing all the vertices of the domain.
 	 * 
 	 * @return Python list
+	 * 
+	 * @since 0.1.0
 	 */
 	list get_vertices();
 	
@@ -156,6 +186,8 @@ public:
 
 /**
  * Domain of lines in the polar space.
+ * 
+ * @since 0.1.0
  */
 class TriangularPolar2D_Domain {
 	TriangularPolar2D_Domain_t    domain;
@@ -166,6 +198,8 @@ public:
 	 * Return the number of vertices contained in the domain.
 	 * 
 	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
 	 */
 	unsigned int num_vertices();
 	
@@ -173,6 +207,8 @@ public:
 	 * Create a new vertex in the domain based on the given point.
 	 * 
 	 * @param point Point that represents the vertex. The point object will be copied.
+	 * 
+	 * @since 0.1.0
 	 */
 	void make_vertex(PointPolar2D point);
 	
@@ -180,6 +216,8 @@ public:
 	 * Return the vertex identified by the given index.
 	 * 
 	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularPolar2D_Vertex get_vertex(unsigned int index);
 	
@@ -187,6 +225,8 @@ public:
 	 * Return a Python list containing all the vertices of the domain.
 	 * 
 	 * @return Python list
+	 * 
+	 * @since 0.1.0
 	 */
 	list get_vertices();
 	
@@ -201,6 +241,8 @@ public:
 
 /**
  * Domain of lines in the spherical space.
+ * 
+ * @since 0.1.0
  */
 class TriangularSpherical3D_Domain {
 	TriangularSpherical3D_Domain_t    domain;
@@ -211,6 +253,8 @@ public:
 	 * Return the number of vertices contained in the domain.
 	 * 
 	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
 	 */
 	unsigned int num_vertices();
 	
@@ -218,6 +262,8 @@ public:
 	 * Create a new vertex in the domain based on the given point.
 	 * 
 	 * @param point Point that represents the vertex. The point object will be copied.
+	 * 
+	 * @since 0.1.0
 	 */
 	void make_vertex(PointSpherical3D point);
 	
@@ -225,6 +271,8 @@ public:
 	 * Return the vertex identified by the given index.
 	 * 
 	 * @param index Numerical vertex ID as assigned by ViennaGrid on vertex creation.
+	 * 
+	 * @since 0.1.0
 	 */
 	TriangularSpherical3D_Vertex get_vertex(unsigned int index);
 	
@@ -232,6 +280,8 @@ public:
 	 * Return a Python list containing all the vertices of the domain.
 	 * 
 	 * @return Python list
+	 * 
+	 * @since 0.1.0
 	 */
 	list get_vertices();
 	

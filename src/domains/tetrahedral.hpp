@@ -21,6 +21,8 @@ using namespace boost::python;
 
 /**
  * Domain of lines in the cartesian 3D space.
+ * 
+ * @since 0.1.0
  */
 class TetrahedralCartesian3D_Domain {
 	TetrahedralCartesian3D_Domain_t     domain;
@@ -69,6 +71,8 @@ public:
 
 /**
  * Domain of lines in the cylindrical space.
+ * 
+ * @since 0.1.0
  */
 class TetrahedralCylindrical3D_Domain {
 	TetrahedralCylindrical3D_Domain_t     domain;
@@ -117,6 +121,8 @@ public:
 
 /**
  * Domain of lines in the spherical space.
+ * 
+ * @since 0.1.0
  */
 class TetrahedralSpherical3D_Domain {
 	TetrahedralSpherical3D_Domain_t     domain;
