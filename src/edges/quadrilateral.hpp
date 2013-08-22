@@ -10,11 +10,15 @@
 
 /**
  * Wrapped edge of a quadrilateral, cartesian 2D domain.
+ * 
+ * @since 0.1.0
  */
 class QuadrilateralCartesian2D_Edge
 {
 	/**
 	 * Pointer to the ViennaGrid edge type.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralCartesian2D_Edge_t    *edge;
 public:
@@ -22,17 +26,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid edge.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralCartesian2D_Edge_t & get_edge();
 };
 
 /**
  * Wrapped edge of a quadrilateral, cartesian 3D domain.
+ * 
+ * @since 0.1.0
  */
 class QuadrilateralCartesian3D_Edge
 {
 	/**
 	 * Pointer to the ViennaGrid edge type.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralCartesian3D_Edge_t    *edge;
 public:
@@ -40,17 +50,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid edge.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralCartesian3D_Edge_t & get_edge();
 };
 
 /**
  * Wrapped edge of a quadrilateral, cylindrical domain.
+ * 
+ * @since 0.1.0
  */
 class QuadrilateralCylindrical3D_Edge
 {
 	/**
 	 * Pointer to the ViennaGrid edge type.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralCylindrical3D_Edge_t    *edge;
 public:
@@ -58,17 +74,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid edge.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralCylindrical3D_Edge_t & get_edge();
 };
 
 /**
  * Wrapped edge of a quadrilateral, polar domain.
+ * 
+ * @since 0.1.0
  */
 class QuadrilateralPolar2D_Edge
 {
 	/**
 	 * Pointer to the ViennaGrid edge type.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralPolar2D_Edge_t    *edge;
 public:
@@ -76,17 +98,23 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid edge.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralPolar2D_Edge_t & get_edge();
 };
 
 /**
  * Wrapped edge of a quadrilateral, spherical domain.
+ * 
+ * @since 0.1.0
  */
 class QuadrilateralSpherical3D_Edge
 {
 	/**
 	 * Pointer to the ViennaGrid edge type.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralSpherical3D_Edge_t    *edge;
 public:
@@ -94,6 +122,8 @@ public:
 	
 	/**
 	 * Get a reference to the ViennaGrid edge.
+	 * 
+	 * @since 0.1.0
 	 */
 	QuadrilateralSpherical3D_Edge_t & get_edge();
 };
