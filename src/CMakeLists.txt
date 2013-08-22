@@ -131,6 +131,8 @@ set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/refine.cpp
         algorithms/refine_uniformly.hpp
         algorithms/refine_uniformly.cpp
+        algorithms/scale.hpp
+        algorithms/scale.cpp
         algorithms/segment_surface.hpp
         algorithms/segment_surface.cpp
         algorithms/segment_volume.hpp
