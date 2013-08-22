@@ -8,10 +8,6 @@
 
 #include "../domains/types.hpp"
 
-//#include <viennagrid/forwards.hpp>
-//#include <viennagrid/domain/domain.hpp>
-//#include <viennagrid/domain/topology.hpp>
-//#include <viennagrid/config/topology_config.hpp>
 #include <viennagrid/domain/segmentation.hpp>
 
 /***************
