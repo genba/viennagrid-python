@@ -48,8 +48,10 @@ API reference of :mod:`viennagrid`
 	.. automethod:: __iter__
 
 .. autoclass:: Cell
-    :members:
-	:undoc-members:
+
+	.. automethod:: __init__
+	.. autoattribute:: vertices
+	.. automethod:: __iter__
 
 .. autoclass:: Vertex
     :members:

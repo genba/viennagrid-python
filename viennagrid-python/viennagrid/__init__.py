@@ -442,12 +442,48 @@ class Segment(object):
 			yield Cell(cell)
 
 class Cell(object):
+	"""Wrapper class that represents a cell."""
 	def __init__(self, cell):
+		"""
+		Create a new cell based on the given low-level ViennaGrid cell.
+		
+		:param cell: Low-level ViennaGrid cell to be wrapped in this high-level object.
+		:type cell: Low-level cell type from :mod:`viennagrid.wrapper`
+		"""
 		super(Cell, self).__init__()
 		self._cell = cell
 	
 	@property
 	def vertices(self):
+		"""
+		Return an object that allows accessing the list of all vertices that form the cell.
+		
+		This object provides the following methods:
+		
+		.. method:: __call__()
+		
+			This returns a Python list containing all the vertices of the cell, in ascendent order of indices: ::
+			
+				vertex_list = cell.vertices()
+		
+		.. method:: __len__()
+		
+			This allows you to get  the number of vertices in the cell as though it were a Python list: ::
+			
+				num_vertices = len(cell.vertices)
+		
+		.. method:: __iter__()
+		
+			This allows you to get an iterator over the vertices of the cell like this: ::
+			
+				iterator = iter(cell.vertices)
+		
+		.. method:: __getitem__(index)
+		
+			This allows you to access each vertex by its index using bracket notation: ::
+			
+				s0 = cell.vertices[0]
+		"""
 		class VertexList(object):
 			def __init__(self, cell):
 				self.cell = cell
@@ -463,6 +499,11 @@ class Cell(object):
 		return VertexList(self._cell)
 	
 	def __iter__(self):
+		"""
+		Return a generator object to iterate over all the vertices that form the cell.
+		
+		:returns: A generator over all the vertices of the cell
+		"""
 		for vertex in self._cell.vertices:
 			yield Vertex(vertex)
 
