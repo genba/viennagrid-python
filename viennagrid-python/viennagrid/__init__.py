@@ -166,7 +166,7 @@ class Domain(object):
 	
 	def make_vertex(self, point):
 		if isinstance(point._point, self.config.point_type):
-			self._domain.make_vertex(point._point)
+			return self._domain.make_vertex(point._point)
 		else:
 			raise TypeError('wrong point type') # TODO: make error message more descriptive
 	
