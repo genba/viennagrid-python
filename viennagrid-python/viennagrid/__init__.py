@@ -249,3 +249,13 @@ class Vertex(object):
 	def __init__(self, vertex):
 		super(Vertex, self).__init__()
 		self._vertex = vertex
+
+class Facet(object):
+	def __init__(self, facet):
+		super(Facet, self).__init__()
+		self._facet = facet
+
+class Edge(object):
+	def __init__(self, edge):
+		super(Edge, self).__init__()
+		self._edge = edge

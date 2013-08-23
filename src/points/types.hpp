@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid points.
+ */
+
 #ifndef TYPES_HPP_JQNC6IJC
 #define TYPES_HPP_JQNC6IJC
 

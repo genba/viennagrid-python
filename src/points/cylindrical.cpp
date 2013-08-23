@@ -14,9 +14,15 @@ PointCylindrical3D::PointCylindrical3D(double x, double y, double z)
 	id = -1;
 }
 
+PointCylindrical3D::PointCylindrical3D(PointCylindrical_t *initial_point, unsigned int initial_id)
+{
+	point = initial_point;
+	id = initial_id;
+}
+
 PointCylindrical3D::PointCylindrical3D(PointCylindrical_t &initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = new PointCylindrical_t(initial_point);
 	id = initial_id;
 }
 
@@ -110,4 +116,19 @@ PointSpherical3D PointCylindrical3D::to_spherical()
 {
 	PointSpherical_t new_point = get_point();
 	return PointSpherical3D(new_point.at(0), new_point.at(1), new_point.at(2));
+}
+
+double PointCylindrical3D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointCylindrical3D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointCylindrical3D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
 }

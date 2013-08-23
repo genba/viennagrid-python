@@ -13,9 +13,15 @@ PointPolar2D::PointPolar2D(double x, double y)
 	id = -1;
 }
 
+PointPolar2D::PointPolar2D(PointPolar_t *initial_point, unsigned int initial_id)
+{
+	point = initial_point;
+	id = initial_id;
+}
+
 PointPolar2D::PointPolar2D(PointPolar_t &initial_point, unsigned int initial_id)
 {
-	point = &initial_point;
+	point = new PointPolar_t(initial_point);
 	id = initial_id;
 }
 
@@ -102,4 +108,19 @@ PointCartesian2D PointPolar2D::to_cartesian()
 {
 	PointCartesian2D_t new_point = get_point();
 	return PointCartesian2D(new_point.at(0), new_point.at(1));
+}
+
+double PointPolar2D::norm_1()
+{
+	return viennagrid::norm_1(get_point());
+}
+
+double PointPolar2D::norm_2()
+{
+	return viennagrid::norm_2(get_point());
+}
+
+double PointPolar2D::norm_inf()
+{
+	return viennagrid::norm_inf(get_point());
 }

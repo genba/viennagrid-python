@@ -1,7 +1,16 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid cells.
+ */
+
 #ifndef TYPES_HPP_NFUQ9SMB
 #define TYPES_HPP_NFUQ9SMB
 
 #include "../domains/types.hpp"
+
+#include <vector>
+
+typedef std::vector<bool>    CellRefinementFlagContainerType;
 
 /***************
  * LINEAR MESH *
@@ -31,18 +40,23 @@ typedef viennagrid::result_of::element<LinearSpherical3D_Domain_t, viennagrid::l
 
 // Triangle, cartesian 2D
 typedef viennagrid::result_of::element<TriangularCartesian2D_Domain_t, viennagrid::triangle_tag>::type      TriangularCartesian2D_Cell_t;
+typedef viennagrid::result_of::cell_range<TriangularCartesian2D_Domain_t>::type                             TriangularCartesian2D_CellRange_t;
 
 // Triangle, cartesian 3D
 typedef viennagrid::result_of::element<TriangularCartesian3D_Domain_t, viennagrid::triangle_tag>::type      TriangularCartesian3D_Cell_t;
+typedef viennagrid::result_of::cell_range<TriangularCartesian3D_Domain_t>::type                             TriangularCartesian3D_CellRange_t;
 
 // Triangle, cylindrical (3D)
 typedef viennagrid::result_of::element<TriangularCylindrical3D_Domain_t, viennagrid::triangle_tag>::type    TriangularCylindrical3D_Cell_t;
+typedef viennagrid::result_of::cell_range<TriangularCylindrical3D_Domain_t>::type                           TriangularCylindrical3D_CellRange_t;
 
 // Triangle, polar (2D)
 typedef viennagrid::result_of::element<TriangularPolar2D_Domain_t, viennagrid::triangle_tag>::type          TriangularPolar2D_Cell_t;
+typedef viennagrid::result_of::cell_range<TriangularPolar2D_Domain_t>::type                                 TriangularPolar2D_CellRange_t;
 
 // Triangle, spherical (3D)
 typedef viennagrid::result_of::element<TriangularSpherical3D_Domain_t, viennagrid::triangle_tag>::type      TriangularSpherical3D_Cell_t;
+typedef viennagrid::result_of::cell_range<TriangularSpherical3D_Domain_t>::type                             TriangularSpherical3D_CellRange_t;
 
 /**********************
  * QUADRILATERAL MESH *
@@ -69,11 +83,14 @@ typedef viennagrid::result_of::element<QuadrilateralSpherical3D_Domain_t, vienna
 
 // Tetrahedral, cartesian 3D
 typedef viennagrid::result_of::element<TetrahedralCartesian3D_Domain_t, viennagrid::tetrahedron_tag>::type      TetrahedralCartesian3D_Cell_t;
+typedef viennagrid::result_of::cell_range<TetrahedralCartesian3D_Domain_t>::type                                TetrahedralCartesian3D_CellRange_t;
 
 // Tetrahedral, cylindrical (3D)
 typedef viennagrid::result_of::element<TetrahedralCylindrical3D_Domain_t, viennagrid::tetrahedron_tag>::type    TetrahedralCylindrical3D_Cell_t;
+typedef viennagrid::result_of::cell_range<TetrahedralCylindrical3D_Domain_t>::type                              TetrahedralCylindrical3D_CellRange_t;
 
 // Tetrahedral, spherical (3D)
 typedef viennagrid::result_of::element<TetrahedralSpherical3D_Domain_t, viennagrid::tetrahedron_tag>::type      TetrahedralSpherical3D_Cell_t;
+typedef viennagrid::result_of::cell_range<TetrahedralSpherical3D_Domain_t>::type                                TetrahedralSpherical3D_CellRange_t;
 
 #endif /* end of include guard: TYPES_HPP_NFUQ9SMB */

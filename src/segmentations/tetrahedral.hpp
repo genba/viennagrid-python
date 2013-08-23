@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Class definitions for segmentations of tetrahedral domains.
+ */
+
 #ifndef SEGMENTATION_TETRAHEDRAL_HPP
 #define SEGMENTATION_TETRAHEDRAL_HPP
 
@@ -9,52 +14,199 @@
 #include <boost/python.hpp>
 using namespace boost::python;
 
-//////////////////////////////
-// TETRAHEDRAL CARTESIAN 3D //
-//////////////////////////////
-
+/**
+ * Wrapped segmentation of a tetrahedral, cartesian 3D domain.
+ * 
+ * @since 0.1.0
+ */
 class TetrahedralCartesian3D_Segmentation
 {
+	/**
+	 * ViennaGrid segmentation object.
+	 * @since 0.1.0
+	 */
 	TetrahedralCartesian3D_Segmentation_t    segmentation;
+	
+	/**
+	 * Pointer to the wrapped domain to which the segmentation corresponds.
+	 * @since 0.1.0
+	 */
 	TetrahedralCartesian3D_Domain           *domain;
 public:
 	TetrahedralCartesian3D_Segmentation(TetrahedralCartesian3D_Domain &dom);
+	
+	/**
+	 * Return the number of segments that form the segmentation.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
 	unsigned int num_segments();
+	
+	/**
+	 * Create a new segment in the segmentation.
+	 *
+	 * @return The newly created segment.
+	 * 
+	 * @since 0.1.0
+	 */
 	TetrahedralCartesian3D_Segment make_segment();
+	
+	/**
+	 * Return a Python list containing all the segments that form the segmentation.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_segments();
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object to which the segmentation corresponds.
+	 * 
+	 * @return Reference to the ViennaGrid domain object to which the segmentation corresponds.
+	 * @since 0.1.0
+	 */
 	TetrahedralCartesian3D_Domain_t & get_domain();
+
+	/**
+	 * Get a reference to the ViennaGrind segmentation object.
+	 * 
+	 * @return Reference to the ViennaGrid domain object to which the segmentation corresponds.
+	 * @since 0.1.0
+	 */
+	TetrahedralCartesian3D_Segmentation_t & get_segmentation();
 };
 
-////////////////////////////////
-// TETRAHEDRAL CYLINDRICAL 3D //
-////////////////////////////////
-
+/**
+ * Wrapped segmentation of a tetrahedral, cylindrical domain.
+ * 
+ * @since 0.1.0
+ */
 class TetrahedralCylindrical3D_Segmentation
 {
+	/**
+	 * ViennaGrid segmentation object.
+	 * @since 0.1.0
+	 */
 	TetrahedralCylindrical3D_Segmentation_t    segmentation;
+	
+	/**
+	 * Pointer to the wrapped domain to which the segmentation corresponds.
+	 * @since 0.1.0
+	 */
 	TetrahedralCylindrical3D_Domain           *domain;
 public:
 	TetrahedralCylindrical3D_Segmentation(TetrahedralCylindrical3D_Domain &dom);
+	
+	/**
+	 * Return the number of segments that form the segmentation.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
 	unsigned int num_segments();
+	
+	/**
+	 * Create a new segment in the segmentation.
+	 *
+	 * @return The newly created segment.
+	 * 
+	 * @since 0.1.0
+	 */
 	TetrahedralCylindrical3D_Segment make_segment();
+	
+	/**
+	 * Return a Python list containing all the segments that form the segmentation.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_segments();
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object to which the segmentation corresponds.
+	 * 
+	 * @return Reference to the ViennaGrid domain object to which the segmentation corresponds.
+	 * @since 0.1.0
+	 */
 	TetrahedralCylindrical3D_Domain_t & get_domain();
+	
+	/**
+	 * Get a reference to the ViennaGrind segmentation object.
+	 * 
+	 * @return Reference to the ViennaGrid segmentation object.
+	 * @since 0.1.0
+	 */
+	TetrahedralCylindrical3D_Segmentation_t & get_segmentation();
 };
 
-//////////////////////////////
-// TETRAHEDRAL SPHERICAL 3D //
-//////////////////////////////
-
+/**
+ * Wrapped segmentation of a tetrahedral, spherical domain.
+ * 
+ * @since 0.1.0
+ */
 class TetrahedralSpherical3D_Segmentation
 {
+	/**
+	 * ViennaGrid segmentation object.
+	 * @since 0.1.0
+	 */
 	TetrahedralSpherical3D_Segmentation_t    segmentation;
+	
+	/**
+	 * Pointer to the wrapped domain to which the segmentation corresponds.
+	 * @since 0.1.0
+	 */
 	TetrahedralSpherical3D_Domain           *domain;
 public:
 	TetrahedralSpherical3D_Segmentation(TetrahedralSpherical3D_Domain &dom);
+	
+	/**
+	 * Return the number of segments that form the segmentation.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
 	unsigned int num_segments();
+	
+	/**
+	 * Create a new segment in the segmentation.
+	 *
+	 * @return The newly created segment.
+	 * 
+	 * @since 0.1.0
+	 */
 	TetrahedralSpherical3D_Segment make_segment();
+	
+	/**
+	 * Return a Python list containing all the segments that form the segmentation.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_segments();
+	
+	/**
+	 * Get a reference to the ViennaGrid domain object to which the segmentation corresponds.
+	 * 
+	 * @return Reference to the ViennaGrid domain object to which the segmentation corresponds.
+	 * @since 0.1.0
+	 */
 	TetrahedralSpherical3D_Domain_t & get_domain();
+	
+	/**
+	 * Get a reference to the ViennaGrind segmentation object.
+	 * 
+	 * @return Reference to the ViennaGrid segmentation object.
+	 * @since 0.1.0
+	 */
+	TetrahedralSpherical3D_Segmentation_t & get_segmentation();
 };
 
 #endif

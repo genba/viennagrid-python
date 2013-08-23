@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid vertices.
+ */
+
 #ifndef TYPES_HPP_1AMW8QS7
 #define TYPES_HPP_1AMW8QS7
 
