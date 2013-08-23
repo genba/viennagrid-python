@@ -285,17 +285,54 @@ class Domain(object):
 		return self.config.make_segmentation(self._domain)
 
 class Segmentation(object):
+	"""Wrapper class that represents a segmentation of a wrapped domain."""
 	def __init__(self, domain):
+		"""
+		Create a new segmentation of the given domain.
+		
+		:param domain: Domain on which to base the segmentation.
+		:type domain: :class:`viennagrid.Domain`
+		"""
 		super(Segmentation, self).__init__()
 		self._domain = domain
 		self._segmentation = domain._make_segmentation()
 	
 	@property
 	def domain(self):
+		"""Return the domain to which this segmentation corresponds."""
 		return self._domain
 	
 	@property
 	def segments(self):
+		"""
+		Return an object that allows accessing the list of all segments contained in the segmentation.
+		
+		This object provides the following methods:
+		
+		.. method:: __call__()
+		
+			This returns a Python list containing all the segments of the segmentation, in ascendent order of indices: ::
+			
+				segment_list = segmentation.segments()
+		
+		.. method:: __len__()
+		
+			This allows you to get  the number of segments in the segmentation as though it were a Python list: ::
+			
+				num_segments = len(segmentation.segments)
+		
+		.. method:: __iter__()
+		
+			This allows you to get an iterator over the segments of the segmentation like this: ::
+			
+				iterator = iter(segmentation.segments)
+		
+		.. method:: __getitem__(index)
+		
+			This allows you to access each segment by its index using bracket notation: ::
+			
+				s0 = segmentation.segments[0]
+		"""
 		class SegmentList(object):
 			def __init__(self, segmentation):
 				self._segmentation = segmentation
@@ -311,9 +348,19 @@ class Segmentation(object):
 		return SegmentList(self._segmentation)
 	
 	def make_segment(self):
+		"""
+		Create a new segment in the segmentation and return it.
+		
+		:returns: A :class:`~viennagrid.Segment` object --- the newly created segment
+		"""
 		return Segment(self._segmentation.make_segment())
 	
 	def __iter__(self):
+		"""
+		Return a generator object to iterate over all the segments contained in the segmentation.
+		
+		:returns: A generator over all the segments of the segmentation
+		"""
 		for segment in self._segmentation.segments:
 			yield Segment(segment)
 

@@ -33,8 +33,12 @@ API reference of :mod:`viennagrid`
 	.. automethod:: write_vtk
 
 .. autoclass:: Segmentation
-    :members:
-	:undoc-members:
+
+	.. automethod:: __init__
+	.. autoattribute:: domain
+	.. autoattribute:: segments
+	.. automethod:: make_segment
+	.. automethod:: __iter__
 
 .. autoclass:: Segment
     :members:
