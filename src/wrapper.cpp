@@ -1043,427 +1043,427 @@ BOOST_PYTHON_MODULE(wrapper)
 	 * CENTROID *
 	 ************/
 	
-	def("centroid", &LinearCartesian1D_Cell_centroid, "docstring");
-	def("centroid", &LinearCartesian2D_Cell_centroid, "docstring");
-	def("centroid", &LinearCartesian3D_Cell_centroid, "docstring");
-	def("centroid", &LinearCylindrical3D_Cell_centroid, "docstring");
-	def("centroid", &LinearPolar2D_Cell_centroid, "docstring");
-	def("centroid", &LinearSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &LinearCartesian1D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &LinearCartesian2D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &LinearCartesian3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &LinearCylindrical3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &LinearPolar2D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &LinearSpherical3D_Cell_centroid, "Compute the centroid of a cell.");
 	
-	def("centroid", &TriangularCartesian2D_Cell_centroid, "docstring");
-	def("centroid", &TriangularCartesian3D_Cell_centroid, "docstring");
-	def("centroid", &TriangularCylindrical3D_Cell_centroid, "docstring");
-	def("centroid", &TriangularPolar2D_Cell_centroid, "docstring");
-	def("centroid", &TriangularSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &TriangularCartesian2D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &TriangularCartesian3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &TriangularCylindrical3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &TriangularPolar2D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &TriangularSpherical3D_Cell_centroid, "Compute the centroid of a cell.");
 	
-	def("centroid", &QuadrilateralCartesian2D_Cell_centroid, "docstring");
-	def("centroid", &QuadrilateralCartesian3D_Cell_centroid, "docstring");
-	def("centroid", &QuadrilateralCylindrical3D_Cell_centroid, "docstring");
-	def("centroid", &QuadrilateralPolar2D_Cell_centroid, "docstring");
-	def("centroid", &QuadrilateralSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &QuadrilateralCartesian2D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &QuadrilateralCartesian3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &QuadrilateralCylindrical3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &QuadrilateralPolar2D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &QuadrilateralSpherical3D_Cell_centroid, "Compute the centroid of a cell.");
 	
-	def("centroid", &TetrahedralCartesian3D_Cell_centroid, "docstring");
-	def("centroid", &TetrahedralCylindrical3D_Cell_centroid, "docstring");
-	def("centroid", &TetrahedralSpherical3D_Cell_centroid, "docstring");
+	def("centroid", &TetrahedralCartesian3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &TetrahedralCylindrical3D_Cell_centroid, "Compute the centroid of a cell.");
+	def("centroid", &TetrahedralSpherical3D_Cell_centroid, "Compute the centroid of a cell.");
 	
 	/****************
 	 * CIRCUMCENTER *
 	 ****************/
 	
-	def("circumcenter", &LinearCartesian1D_Cell_circumcenter, "docstring");
-	def("circumcenter", &LinearCartesian2D_Cell_circumcenter, "docstring");
-	def("circumcenter", &LinearCartesian3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &LinearCylindrical3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &LinearPolar2D_Cell_circumcenter, "docstring");
-	def("circumcenter", &LinearSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &LinearCartesian1D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &LinearCartesian2D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &LinearCartesian3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &LinearCylindrical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &LinearPolar2D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &LinearSpherical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
 	
-	def("circumcenter", &TriangularCartesian2D_Cell_circumcenter, "docstring");
-	def("circumcenter", &TriangularCartesian3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &TriangularCylindrical3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &TriangularPolar2D_Cell_circumcenter, "docstring");
-	def("circumcenter", &TriangularSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TriangularCartesian2D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &TriangularCartesian3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &TriangularCylindrical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &TriangularPolar2D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &TriangularSpherical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
 	
-	def("circumcenter", &QuadrilateralCartesian2D_Cell_circumcenter, "docstring");
-	def("circumcenter", &QuadrilateralCartesian3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &QuadrilateralCylindrical3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &QuadrilateralPolar2D_Cell_circumcenter, "docstring");
-	def("circumcenter", &QuadrilateralSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &QuadrilateralCartesian2D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &QuadrilateralCartesian3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &QuadrilateralCylindrical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &QuadrilateralPolar2D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &QuadrilateralSpherical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
 	
-	def("circumcenter", &TetrahedralCartesian3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &TetrahedralCylindrical3D_Cell_circumcenter, "docstring");
-	def("circumcenter", &TetrahedralSpherical3D_Cell_circumcenter, "docstring");
+	def("circumcenter", &TetrahedralCartesian3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &TetrahedralCylindrical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
+	def("circumcenter", &TetrahedralSpherical3D_Cell_circumcenter, "Compute the circumcenter of a cell.");
 	
 	/***************
 	 * CELL_REFINE *
 	 ***************/
 	
-	def("cell_refine", &TriangularCartesian2D_Domain_cell_refine, "docstring");
-	def("cell_refine", &TriangularCartesian3D_Domain_cell_refine, "docstring");
-	def("cell_refine", &TriangularCylindrical3D_Domain_cell_refine, "docstring");
-	def("cell_refine", &TriangularPolar2D_Domain_cell_refine, "docstring");
-	def("cell_refine", &TriangularSpherical3D_Domain_cell_refine, "docstring");
+	def("cell_refine", &TriangularCartesian2D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
+	def("cell_refine", &TriangularCartesian3D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
+	def("cell_refine", &TriangularCylindrical3D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
+	def("cell_refine", &TriangularPolar2D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
+	def("cell_refine", &TriangularSpherical3D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
 	
-	def("cell_refine", &TetrahedralCartesian3D_Domain_cell_refine, "docstring");
-	def("cell_refine", &TetrahedralCylindrical3D_Domain_cell_refine, "docstring");
-	def("cell_refine", &TetrahedralSpherical3D_Domain_cell_refine, "docstring");
+	def("cell_refine", &TetrahedralCartesian3D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
+	def("cell_refine", &TetrahedralCylindrical3D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
+	def("cell_refine", &TetrahedralSpherical3D_Domain_cell_refine, "Refine all cells of the given domain and segmentation which match a given predicate.");
 	
 	/****************
 	 * CELL-SURFACE *
 	 ****************/
 	
-	def("surface", &LinearCartesian1D_Cell_surface, "docstring");
-	def("surface", &LinearCartesian2D_Cell_surface, "docstring");
-	def("surface", &LinearCartesian3D_Cell_surface, "docstring");
-	def("surface", &LinearCylindrical3D_Cell_surface, "docstring");
-	def("surface", &LinearPolar2D_Cell_surface, "docstring");
-	def("surface", &LinearSpherical3D_Cell_surface, "docstring");
+	def("surface", &LinearCartesian1D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &LinearCartesian2D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &LinearCartesian3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &LinearCylindrical3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &LinearPolar2D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &LinearSpherical3D_Cell_surface, "Calculate the surface of a cell.");
 	
-	def("surface", &TriangularCartesian2D_Cell_surface, "docstring");
-	def("surface", &TriangularCartesian3D_Cell_surface, "docstring");
-	def("surface", &TriangularCylindrical3D_Cell_surface, "docstring");
-	def("surface", &TriangularPolar2D_Cell_surface, "docstring");
-	def("surface", &TriangularSpherical3D_Cell_surface, "docstring");
+	def("surface", &TriangularCartesian2D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &TriangularCartesian3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &TriangularCylindrical3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &TriangularPolar2D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &TriangularSpherical3D_Cell_surface, "Calculate the surface of a cell.");
 	
-	def("surface", &QuadrilateralCartesian2D_Cell_surface, "docstring");
-	def("surface", &QuadrilateralCartesian3D_Cell_surface, "docstring");
-	def("surface", &QuadrilateralCylindrical3D_Cell_surface, "docstring");
-	def("surface", &QuadrilateralPolar2D_Cell_surface, "docstring");
-	def("surface", &QuadrilateralSpherical3D_Cell_surface, "docstring");
+	def("surface", &QuadrilateralCartesian2D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &QuadrilateralCartesian3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &QuadrilateralCylindrical3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &QuadrilateralPolar2D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &QuadrilateralSpherical3D_Cell_surface, "Calculate the surface of a cell.");
 	
-	def("surface", &TetrahedralCartesian3D_Cell_surface, "docstring");
-	def("surface", &TetrahedralCylindrical3D_Cell_surface, "docstring");
-	def("surface", &TetrahedralSpherical3D_Cell_surface, "docstring");
+	def("surface", &TetrahedralCartesian3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &TetrahedralCylindrical3D_Cell_surface, "Calculate the surface of a cell.");
+	def("surface", &TetrahedralSpherical3D_Cell_surface, "Calculate the surface of a cell.");
 	
 	/***************
 	 * CELL-VOLUME *
 	 ***************/
 	
-	def("volume", &LinearCartesian1D_Cell_volume, "docstring");
-	def("volume", &LinearCartesian2D_Cell_volume, "docstring");
-	def("volume", &LinearCartesian3D_Cell_volume, "docstring");
-	def("volume", &LinearCylindrical3D_Cell_volume, "docstring");
-	def("volume", &LinearPolar2D_Cell_volume, "docstring");
-	def("volume", &LinearSpherical3D_Cell_volume, "docstring");
+	def("volume", &LinearCartesian1D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &LinearCartesian2D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &LinearCartesian3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &LinearCylindrical3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &LinearPolar2D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &LinearSpherical3D_Cell_volume, "Calculate the volume of a cell.");
 	
-	def("volume", &TriangularCartesian2D_Cell_volume, "docstring");
-	def("volume", &TriangularCartesian3D_Cell_volume, "docstring");
-	def("volume", &TriangularCylindrical3D_Cell_volume, "docstring");
-	def("volume", &TriangularPolar2D_Cell_volume, "docstring");
-	def("volume", &TriangularSpherical3D_Cell_volume, "docstring");
+	def("volume", &TriangularCartesian2D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &TriangularCartesian3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &TriangularCylindrical3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &TriangularPolar2D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &TriangularSpherical3D_Cell_volume, "Calculate the volume of a cell.");
 	
-	def("volume", &QuadrilateralCartesian2D_Cell_volume, "docstring");
-	def("volume", &QuadrilateralCartesian3D_Cell_volume, "docstring");
-	def("volume", &QuadrilateralCylindrical3D_Cell_volume, "docstring");
-	def("volume", &QuadrilateralPolar2D_Cell_volume, "docstring");
-	def("volume", &QuadrilateralSpherical3D_Cell_volume, "docstring");
+	def("volume", &QuadrilateralCartesian2D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &QuadrilateralCartesian3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &QuadrilateralCylindrical3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &QuadrilateralPolar2D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &QuadrilateralSpherical3D_Cell_volume, "Calculate the volume of a cell.");
 	
-	def("volume", &TetrahedralCartesian3D_Cell_volume, "docstring");
-	def("volume", &TetrahedralCylindrical3D_Cell_volume, "docstring");
-	def("volume", &TetrahedralSpherical3D_Cell_volume, "docstring");
+	def("volume", &TetrahedralCartesian3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &TetrahedralCylindrical3D_Cell_volume, "Calculate the volume of a cell.");
+	def("volume", &TetrahedralSpherical3D_Cell_volume, "Calculate the volume of a cell.");
 	
 	/******************
 	 * DOMAIN-SURFACE *
 	 ******************/
 	
-	def("surface", &LinearCartesian1D_Domain_surface, "docstring");
-	def("surface", &LinearCartesian2D_Domain_surface, "docstring");
-	def("surface", &LinearCartesian3D_Domain_surface, "docstring");
-	def("surface", &LinearCylindrical3D_Domain_surface, "docstring");
-	def("surface", &LinearPolar2D_Domain_surface, "docstring");
-	def("surface", &LinearSpherical3D_Domain_surface, "docstring");
+	def("surface", &LinearCartesian1D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &LinearCartesian2D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &LinearCartesian3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &LinearCylindrical3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &LinearPolar2D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &LinearSpherical3D_Domain_surface, "Calculate the surface of a domain.");
 	
-	def("surface", &TriangularCartesian2D_Domain_surface, "docstring");
-	def("surface", &TriangularCartesian3D_Domain_surface, "docstring");
-	def("surface", &TriangularCylindrical3D_Domain_surface, "docstring");
-	def("surface", &TriangularPolar2D_Domain_surface, "docstring");
-	def("surface", &TriangularSpherical3D_Domain_surface, "docstring");
+	def("surface", &TriangularCartesian2D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &TriangularCartesian3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &TriangularCylindrical3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &TriangularPolar2D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &TriangularSpherical3D_Domain_surface, "Calculate the surface of a domain.");
 	
-	def("surface", &QuadrilateralCartesian2D_Domain_surface, "docstring");
-	def("surface", &QuadrilateralCartesian3D_Domain_surface, "docstring");
-	def("surface", &QuadrilateralCylindrical3D_Domain_surface, "docstring");
-	def("surface", &QuadrilateralPolar2D_Domain_surface, "docstring");
-	def("surface", &QuadrilateralSpherical3D_Domain_surface, "docstring");
+	def("surface", &QuadrilateralCartesian2D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &QuadrilateralCartesian3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &QuadrilateralCylindrical3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &QuadrilateralPolar2D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &QuadrilateralSpherical3D_Domain_surface, "Calculate the surface of a domain.");
 	
-	def("surface", &TetrahedralCartesian3D_Domain_surface, "docstring");
-	def("surface", &TetrahedralCylindrical3D_Domain_surface, "docstring");
-	def("surface", &TetrahedralSpherical3D_Domain_surface, "docstring");
+	def("surface", &TetrahedralCartesian3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &TetrahedralCylindrical3D_Domain_surface, "Calculate the surface of a domain.");
+	def("surface", &TetrahedralSpherical3D_Domain_surface, "Calculate the surface of a domain.");
 	
 	/*****************
 	 * DOMAIN-VOLUME *
 	 *****************/
 	
-	def("volume", &LinearCartesian1D_Domain_volume, "docstring");
-	def("volume", &LinearCartesian2D_Domain_volume, "docstring");
-	def("volume", &LinearCartesian3D_Domain_volume, "docstring");
-	def("volume", &LinearCylindrical3D_Domain_volume, "docstring");
-	def("volume", &LinearPolar2D_Domain_volume, "docstring");
-	def("volume", &LinearSpherical3D_Domain_volume, "docstring");
+	def("volume", &LinearCartesian1D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &LinearCartesian2D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &LinearCartesian3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &LinearCylindrical3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &LinearPolar2D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &LinearSpherical3D_Domain_volume, "Calculate the volume of a domain.");
 	
-	def("volume", &TriangularCartesian2D_Domain_volume, "docstring");
-	def("volume", &TriangularCartesian3D_Domain_volume, "docstring");
-	def("volume", &TriangularCylindrical3D_Domain_volume, "docstring");
-	def("volume", &TriangularPolar2D_Domain_volume, "docstring");
-	def("volume", &TriangularSpherical3D_Domain_volume, "docstring");
+	def("volume", &TriangularCartesian2D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &TriangularCartesian3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &TriangularCylindrical3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &TriangularPolar2D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &TriangularSpherical3D_Domain_volume, "Calculate the volume of a domain.");
 	
-	def("volume", &QuadrilateralCartesian2D_Domain_volume, "docstring");
-	def("volume", &QuadrilateralCartesian3D_Domain_volume, "docstring");
-	def("volume", &QuadrilateralCylindrical3D_Domain_volume, "docstring");
-	def("volume", &QuadrilateralPolar2D_Domain_volume, "docstring");
-	def("volume", &QuadrilateralSpherical3D_Domain_volume, "docstring");
+	def("volume", &QuadrilateralCartesian2D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &QuadrilateralCartesian3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &QuadrilateralCylindrical3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &QuadrilateralPolar2D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &QuadrilateralSpherical3D_Domain_volume, "Calculate the volume of a domain.");
 	
-	def("volume", &TetrahedralCartesian3D_Domain_volume, "docstring");
-	def("volume", &TetrahedralCylindrical3D_Domain_volume, "docstring");
-	def("volume", &TetrahedralSpherical3D_Domain_volume, "docstring");
+	def("volume", &TetrahedralCartesian3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &TetrahedralCylindrical3D_Domain_volume, "Calculate the volume of a domain.");
+	def("volume", &TetrahedralSpherical3D_Domain_volume, "Calculate the volume of a domain.");
 	
 	/******************************************
 	 * IS_BOUNDARY (with domains and facets) *
 	 ******************************************/
 	
-	def("is_boundary", &LinearCartesian1D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian2D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearCylindrical3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearPolar2D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearSpherical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian1D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian2D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearCylindrical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearPolar2D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearSpherical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &TriangularCartesian2D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularCartesian3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularCylindrical3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularPolar2D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularSpherical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian2D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularCartesian3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularCylindrical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularPolar2D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularSpherical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &QuadrilateralCartesian2D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCartesian3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralPolar2D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralSpherical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian2D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCartesian3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralPolar2D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralSpherical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &TetrahedralCartesian3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralCylindrical3D_Domain_Facet_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralSpherical3D_Domain_Facet_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCartesian3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TetrahedralCylindrical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TetrahedralSpherical3D_Domain_Facet_is_boundary, "Return True if the given facet is a boundary element of the given domain. Otherwise, return False.");
 	
 	/*****************************************
 	 * IS_BOUNDARY (with domains and edges) *
 	 *****************************************/
 	
-	def("is_boundary", &TriangularCartesian2D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularCartesian3D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularCylindrical3D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularPolar2D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularSpherical3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian2D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularCartesian3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularCylindrical3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularPolar2D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularSpherical3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &QuadrilateralCartesian2D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCartesian3D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralPolar2D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralSpherical3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian2D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCartesian3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralPolar2D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralSpherical3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &TetrahedralCartesian3D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralCylindrical3D_Domain_Edge_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralSpherical3D_Domain_Edge_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCartesian3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TetrahedralCylindrical3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TetrahedralSpherical3D_Domain_Edge_is_boundary, "Return True if the given edge is a boundary element of the given domain. Otherwise, return False.");
 	
 	/********************************************
 	 * IS_BOUNDARY (with domains and vertices) *
 	 ********************************************/
 	
-	def("is_boundary", &LinearCartesian1D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian2D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearCylindrical3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearPolar2D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian1D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian2D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearCylindrical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearPolar2D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &LinearSpherical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &TriangularCartesian2D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularCartesian3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularCylindrical3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularPolar2D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian2D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularCartesian3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularCylindrical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularPolar2D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TriangularSpherical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &QuadrilateralCartesian2D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCartesian3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralPolar2D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian2D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCartesian3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCylindrical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralPolar2D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralSpherical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
 	
-	def("is_boundary", &TetrahedralCartesian3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralCylindrical3D_Domain_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralSpherical3D_Domain_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCartesian3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TetrahedralCylindrical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
+	def("is_boundary", &TetrahedralSpherical3D_Domain_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given domain. Otherwise, return False.");
 	
 	/*******************************************
 	 * IS_BOUNDARY (with segments and facets) *
 	 *******************************************/
 	
-	def("is_boundary", &LinearCartesian1D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian2D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearCylindrical3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearPolar2D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &LinearSpherical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian1D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian2D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearCylindrical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearPolar2D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearSpherical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &TriangularCartesian2D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularCartesian3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularCylindrical3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularPolar2D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &TriangularSpherical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian2D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularCartesian3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularCylindrical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularPolar2D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularSpherical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &QuadrilateralCartesian2D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCartesian3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralPolar2D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralSpherical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian2D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCartesian3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralPolar2D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralSpherical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &TetrahedralCartesian3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralCylindrical3D_Segment_Facet_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralSpherical3D_Segment_Facet_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCartesian3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TetrahedralCylindrical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TetrahedralSpherical3D_Segment_Facet_is_boundary, "Return True if the given facet is a boundary element of the given segment. Otherwise, return False.");
 	
 	/******************************************
 	 * IS_BOUNDARY (with segments and edges) *
 	 ******************************************/
 	
-	def("is_boundary", &TriangularCartesian2D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularCartesian3D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularCylindrical3D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularPolar2D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &TriangularSpherical3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian2D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularCartesian3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularCylindrical3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularPolar2D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularSpherical3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &QuadrilateralCartesian2D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCartesian3D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralPolar2D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralSpherical3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian2D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCartesian3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralPolar2D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralSpherical3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &TetrahedralCartesian3D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralCylindrical3D_Segment_Edge_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralSpherical3D_Segment_Edge_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCartesian3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TetrahedralCylindrical3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TetrahedralSpherical3D_Segment_Edge_is_boundary, "Return True if the given edge is a boundary element of the given segment. Otherwise, return False.");
 	
 	/*********************************************
 	 * IS_BOUNDARY (with segments and vertices) *
 	 *********************************************/
 	
-	def("is_boundary", &LinearCartesian1D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian2D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearCartesian3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearCylindrical3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearPolar2D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &LinearSpherical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &LinearCartesian1D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian2D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearCartesian3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearCylindrical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearPolar2D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &LinearSpherical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &TriangularCartesian2D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularCartesian3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularCylindrical3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularPolar2D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TriangularSpherical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TriangularCartesian2D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularCartesian3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularCylindrical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularPolar2D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TriangularSpherical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &QuadrilateralCartesian2D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCartesian3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralPolar2D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &QuadrilateralSpherical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &QuadrilateralCartesian2D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCartesian3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralCylindrical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralPolar2D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &QuadrilateralSpherical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
 	
-	def("is_boundary", &TetrahedralCartesian3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralCylindrical3D_Segment_Vertex_is_boundary, "docstring");
-	def("is_boundary", &TetrahedralSpherical3D_Segment_Vertex_is_boundary, "docstring");
+	def("is_boundary", &TetrahedralCartesian3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TetrahedralCylindrical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
+	def("is_boundary", &TetrahedralSpherical3D_Segment_Vertex_is_boundary, "Return True if the given vertex is a boundary element of the given segment. Otherwise, return False.");
 	
 	/******************************
 	 * IS_INTERFACE (with facets) *
 	 ******************************/
 	
-	def("is_interface", &LinearCartesian1D_Facet_is_interface, "docstring");
-	def("is_interface", &LinearCartesian2D_Facet_is_interface, "docstring");
-	def("is_interface", &LinearCartesian3D_Facet_is_interface, "docstring");
-	def("is_interface", &LinearCylindrical3D_Facet_is_interface, "docstring");
-	def("is_interface", &LinearPolar2D_Facet_is_interface, "docstring");
-	def("is_interface", &LinearSpherical3D_Facet_is_interface, "docstring");
+	def("is_interface", &LinearCartesian1D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearCartesian2D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearCartesian3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearCylindrical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearPolar2D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearSpherical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &TriangularCartesian2D_Facet_is_interface, "docstring");
-	def("is_interface", &TriangularCartesian3D_Facet_is_interface, "docstring");
-	def("is_interface", &TriangularCylindrical3D_Facet_is_interface, "docstring");
-	def("is_interface", &TriangularPolar2D_Facet_is_interface, "docstring");
-	def("is_interface", &TriangularSpherical3D_Facet_is_interface, "docstring");
+	def("is_interface", &TriangularCartesian2D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularCartesian3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularCylindrical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularPolar2D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularSpherical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &QuadrilateralCartesian2D_Facet_is_interface, "docstring");
-	def("is_interface", &QuadrilateralCartesian3D_Facet_is_interface, "docstring");
-	def("is_interface", &QuadrilateralCylindrical3D_Facet_is_interface, "docstring");
-	def("is_interface", &QuadrilateralPolar2D_Facet_is_interface, "docstring");
-	def("is_interface", &QuadrilateralSpherical3D_Facet_is_interface, "docstring");
+	def("is_interface", &QuadrilateralCartesian2D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralCartesian3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralCylindrical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralPolar2D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralSpherical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &TetrahedralCartesian3D_Facet_is_interface, "docstring");
-	def("is_interface", &TetrahedralCylindrical3D_Facet_is_interface, "docstring");
-	def("is_interface", &TetrahedralSpherical3D_Facet_is_interface, "docstring");
+	def("is_interface", &TetrahedralCartesian3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TetrahedralCylindrical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TetrahedralSpherical3D_Facet_is_interface, "Return True if the given facet is an interface element of the given segments. Otherwise, return False.");
 	
 	/*****************************
 	 * IS_INTERFACE (with edges) *
 	 *****************************/
 	
-	def("is_interface", &TriangularCartesian2D_Edge_is_interface, "docstring");
-	def("is_interface", &TriangularCartesian3D_Edge_is_interface, "docstring");
-	def("is_interface", &TriangularCylindrical3D_Edge_is_interface, "docstring");
-	def("is_interface", &TriangularPolar2D_Edge_is_interface, "docstring");
-	def("is_interface", &TriangularSpherical3D_Edge_is_interface, "docstring");
+	def("is_interface", &TriangularCartesian2D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularCartesian3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularCylindrical3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularPolar2D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularSpherical3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &QuadrilateralCartesian2D_Edge_is_interface, "docstring");
-	def("is_interface", &QuadrilateralCartesian3D_Edge_is_interface, "docstring");
-	def("is_interface", &QuadrilateralCylindrical3D_Edge_is_interface, "docstring");
-	def("is_interface", &QuadrilateralPolar2D_Edge_is_interface, "docstring");
-	def("is_interface", &QuadrilateralSpherical3D_Edge_is_interface, "docstring");
+	def("is_interface", &QuadrilateralCartesian2D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralCartesian3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralCylindrical3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralPolar2D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralSpherical3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &TetrahedralCartesian3D_Edge_is_interface, "docstring");
-	def("is_interface", &TetrahedralCylindrical3D_Edge_is_interface, "docstring");
-	def("is_interface", &TetrahedralSpherical3D_Edge_is_interface, "docstring");
+	def("is_interface", &TetrahedralCartesian3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TetrahedralCylindrical3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TetrahedralSpherical3D_Edge_is_interface, "Return True if the given edge is an interface element of the given segments. Otherwise, return False.");
 	
 	/********************************
 	 * IS_INTERFACE (with vertices) *
 	 ********************************/
 	
-	def("is_interface", &LinearCartesian1D_Vertex_is_interface, "docstring");
-	def("is_interface", &LinearCartesian2D_Vertex_is_interface, "docstring");
-	def("is_interface", &LinearCartesian3D_Vertex_is_interface, "docstring");
-	def("is_interface", &LinearCylindrical3D_Vertex_is_interface, "docstring");
-	def("is_interface", &LinearPolar2D_Vertex_is_interface, "docstring");
-	def("is_interface", &LinearSpherical3D_Vertex_is_interface, "docstring");
+	def("is_interface", &LinearCartesian1D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearCartesian2D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearCartesian3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearCylindrical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearPolar2D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &LinearSpherical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &TriangularCartesian2D_Vertex_is_interface, "docstring");
-	def("is_interface", &TriangularCartesian3D_Vertex_is_interface, "docstring");
-	def("is_interface", &TriangularCylindrical3D_Vertex_is_interface, "docstring");
-	def("is_interface", &TriangularPolar2D_Vertex_is_interface, "docstring");
-	def("is_interface", &TriangularSpherical3D_Vertex_is_interface, "docstring");
+	def("is_interface", &TriangularCartesian2D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularCartesian3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularCylindrical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularPolar2D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TriangularSpherical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &QuadrilateralCartesian2D_Vertex_is_interface, "docstring");
-	def("is_interface", &QuadrilateralCartesian3D_Vertex_is_interface, "docstring");
-	def("is_interface", &QuadrilateralCylindrical3D_Vertex_is_interface, "docstring");
-	def("is_interface", &QuadrilateralPolar2D_Vertex_is_interface, "docstring");
-	def("is_interface", &QuadrilateralSpherical3D_Vertex_is_interface, "docstring");
+	def("is_interface", &QuadrilateralCartesian2D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralCartesian3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralCylindrical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralPolar2D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &QuadrilateralSpherical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
 	
-	def("is_interface", &TetrahedralCartesian3D_Vertex_is_interface, "docstring");
-	def("is_interface", &TetrahedralCylindrical3D_Vertex_is_interface, "docstring");
-	def("is_interface", &TetrahedralSpherical3D_Vertex_is_interface, "docstring");
+	def("is_interface", &TetrahedralCartesian3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TetrahedralCylindrical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
+	def("is_interface", &TetrahedralSpherical3D_Vertex_is_interface, "Return True if the given vertex is an interface element of the given segments. Otherwise, return False.");
 	
 	/**********
 	 * REFINE *
 	 **********/
 	
-	def("refine", &TriangularCartesian2D_Domain_refine, "docstring");
-	def("refine", &TriangularCartesian3D_Domain_refine, "docstring");
-	def("refine", &TriangularCylindrical3D_Domain_refine, "docstring");
-	def("refine", &TriangularPolar2D_Domain_refine, "docstring");
-	def("refine", &TriangularSpherical3D_Domain_refine, "docstring");
+	def("refine", &TriangularCartesian2D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
+	def("refine", &TriangularCartesian3D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
+	def("refine", &TriangularCylindrical3D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
+	def("refine", &TriangularPolar2D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
+	def("refine", &TriangularSpherical3D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
 	
-	def("refine", &TetrahedralCartesian3D_Domain_refine, "docstring");
-	def("refine", &TetrahedralCylindrical3D_Domain_refine, "docstring");
-	def("refine", &TetrahedralSpherical3D_Domain_refine, "docstring");
+	def("refine", &TetrahedralCartesian3D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
+	def("refine", &TetrahedralCylindrical3D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
+	def("refine", &TetrahedralSpherical3D_Domain_refine, "Refine all edges of the given domain and segmentation which match a given predicate.");
 	
 	/********************
 	 * REFINE_UNIFORMLY *
 	 ********************/
 	
-	def("refine_uniformly", &TriangularCartesian2D_Domain_refine_uniformly, "docstring");
-	def("refine_uniformly", &TriangularCartesian3D_Domain_refine_uniformly, "docstring");
-	def("refine_uniformly", &TriangularCylindrical3D_Domain_refine_uniformly, "docstring");
-	def("refine_uniformly", &TriangularPolar2D_Domain_refine_uniformly, "docstring");
-	def("refine_uniformly", &TriangularSpherical3D_Domain_refine_uniformly, "docstring");
+	def("refine_uniformly", &TriangularCartesian2D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
+	def("refine_uniformly", &TriangularCartesian3D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
+	def("refine_uniformly", &TriangularCylindrical3D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
+	def("refine_uniformly", &TriangularPolar2D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
+	def("refine_uniformly", &TriangularSpherical3D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
 	
-	def("refine_uniformly", &TetrahedralCartesian3D_Domain_refine_uniformly, "docstring");
-	def("refine_uniformly", &TetrahedralCylindrical3D_Domain_refine_uniformly, "docstring");
-	def("refine_uniformly", &TetrahedralSpherical3D_Domain_refine_uniformly, "docstring");
+	def("refine_uniformly", &TetrahedralCartesian3D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
+	def("refine_uniformly", &TetrahedralCylindrical3D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
+	def("refine_uniformly", &TetrahedralSpherical3D_Domain_refine_uniformly, "Refine all edges of the given domain and segmentation.");
 	
 	/*********
 	 * SCALE *
@@ -1496,55 +1496,55 @@ BOOST_PYTHON_MODULE(wrapper)
 	 * SEGMENT-SURFACE *
 	 *******************/
 	
-	def("surface", &LinearCartesian1D_Segment_surface, "docstring");
-	def("surface", &LinearCartesian2D_Segment_surface, "docstring");
-	def("surface", &LinearCartesian3D_Segment_surface, "docstring");
-	def("surface", &LinearCylindrical3D_Segment_surface, "docstring");
-	def("surface", &LinearPolar2D_Segment_surface, "docstring");
-	def("surface", &LinearSpherical3D_Segment_surface, "docstring");
+	def("surface", &LinearCartesian1D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &LinearCartesian2D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &LinearCartesian3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &LinearCylindrical3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &LinearPolar2D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &LinearSpherical3D_Segment_surface, "Calculate the surface of the given segment.");
 	
-	def("surface", &TriangularCartesian2D_Segment_surface, "docstring");
-	def("surface", &TriangularCartesian3D_Segment_surface, "docstring");
-	def("surface", &TriangularCylindrical3D_Segment_surface, "docstring");
-	def("surface", &TriangularPolar2D_Segment_surface, "docstring");
-	def("surface", &TriangularSpherical3D_Segment_surface, "docstring");
+	def("surface", &TriangularCartesian2D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &TriangularCartesian3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &TriangularCylindrical3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &TriangularPolar2D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &TriangularSpherical3D_Segment_surface, "Calculate the surface of the given segment.");
 	
-	def("surface", &QuadrilateralCartesian2D_Segment_surface, "docstring");
-	def("surface", &QuadrilateralCartesian3D_Segment_surface, "docstring");
-	def("surface", &QuadrilateralCylindrical3D_Segment_surface, "docstring");
-	def("surface", &QuadrilateralPolar2D_Segment_surface, "docstring");
-	def("surface", &QuadrilateralSpherical3D_Segment_surface, "docstring");
+	def("surface", &QuadrilateralCartesian2D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &QuadrilateralCartesian3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &QuadrilateralCylindrical3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &QuadrilateralPolar2D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &QuadrilateralSpherical3D_Segment_surface, "Calculate the surface of the given segment.");
 	
-	def("surface", &TetrahedralCartesian3D_Segment_surface, "docstring");
-	def("surface", &TetrahedralCylindrical3D_Segment_surface, "docstring");
-	def("surface", &TetrahedralSpherical3D_Segment_surface, "docstring");
+	def("surface", &TetrahedralCartesian3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &TetrahedralCylindrical3D_Segment_surface, "Calculate the surface of the given segment.");
+	def("surface", &TetrahedralSpherical3D_Segment_surface, "Calculate the surface of the given segment.");
 	
 	/******************
 	 * SEGMENT-VOLUME *
 	 ******************/
 	
-	def("volume", &LinearCartesian1D_Segment_volume, "docstring");
-	def("volume", &LinearCartesian2D_Segment_volume, "docstring");
-	def("volume", &LinearCartesian3D_Segment_volume, "docstring");
-	def("volume", &LinearCylindrical3D_Segment_volume, "docstring");
-	def("volume", &LinearPolar2D_Segment_volume, "docstring");
-	def("volume", &LinearSpherical3D_Segment_volume, "docstring");
+	def("volume", &LinearCartesian1D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &LinearCartesian2D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &LinearCartesian3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &LinearCylindrical3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &LinearPolar2D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &LinearSpherical3D_Segment_volume, "Calculate the volume of the given segment.");
 	
-	def("volume", &TriangularCartesian2D_Segment_volume, "docstring");
-	def("volume", &TriangularCartesian3D_Segment_volume, "docstring");
-	def("volume", &TriangularCylindrical3D_Segment_volume, "docstring");
-	def("volume", &TriangularPolar2D_Segment_volume, "docstring");
-	def("volume", &TriangularSpherical3D_Segment_volume, "docstring");
+	def("volume", &TriangularCartesian2D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &TriangularCartesian3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &TriangularCylindrical3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &TriangularPolar2D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &TriangularSpherical3D_Segment_volume, "Calculate the volume of the given segment.");
 	
-	def("volume", &QuadrilateralCartesian2D_Segment_volume, "docstring");
-	def("volume", &QuadrilateralCartesian3D_Segment_volume, "docstring");
-	def("volume", &QuadrilateralCylindrical3D_Segment_volume, "docstring");
-	def("volume", &QuadrilateralPolar2D_Segment_volume, "docstring");
-	def("volume", &QuadrilateralSpherical3D_Segment_volume, "docstring");
+	def("volume", &QuadrilateralCartesian2D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &QuadrilateralCartesian3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &QuadrilateralCylindrical3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &QuadrilateralPolar2D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &QuadrilateralSpherical3D_Segment_volume, "Calculate the volume of the given segment.");
 	
-	def("volume", &TetrahedralCartesian3D_Segment_volume, "docstring");
-	def("volume", &TetrahedralCylindrical3D_Segment_volume, "docstring");
-	def("volume", &TetrahedralSpherical3D_Segment_volume, "docstring");
+	def("volume", &TetrahedralCartesian3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &TetrahedralCylindrical3D_Segment_volume, "Calculate the volume of the given segment.");
+	def("volume", &TetrahedralSpherical3D_Segment_volume, "Calculate the volume of the given segment.");
 	
 	/******************
 	 * SPANNED_VOLUME *
