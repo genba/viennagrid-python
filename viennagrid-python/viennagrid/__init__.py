@@ -508,16 +508,37 @@ class Cell(object):
 			yield Vertex(vertex)
 
 class Vertex(object):
+	"""Wrapper class that represents a vertex."""
 	def __init__(self, vertex):
+		"""
+		Create a new vertex based on the given low-level ViennaGrid vertex.
+		
+		:param vertex: Low-level ViennaGrid vertex to be wrapped in this high-level object.
+		:type vertex: Low-level vertex type from :mod:`viennagrid.wrapper`
+		"""
 		super(Vertex, self).__init__()
 		self._vertex = vertex
 
 class Facet(object):
+	"""Wrapper class that represents a facet of a cell."""
 	def __init__(self, facet):
+		"""
+		Create a new facet based on the given low-level ViennaGrid facet.
+		
+		:param facet: Low-level ViennaGrid facet to be wrapped in this high-level object.
+		:type facet: Low-level facet type from :mod:`viennagrid.wrapper`
+		"""
 		super(Facet, self).__init__()
 		self._facet = facet
 
 class Edge(object):
+	"""Wrapper class that represents an edge of a cell."""
 	def __init__(self, edge):
+		"""
+		Create a new edge based on the given low-level ViennaGrid edge.
+		
+		:param edge: Low-level ViennaGrid edge to be wrapped in this high-level object.
+		:type edge: Low-level edge type from :mod:`viennagrid.wrapper`
+		"""
 		super(Edge, self).__init__()
 		self._edge = edge

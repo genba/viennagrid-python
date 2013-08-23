@@ -54,8 +54,16 @@ API reference of :mod:`viennagrid`
 	.. automethod:: __iter__
 
 .. autoclass:: Vertex
-    :members:
-	:undoc-members:
+
+	.. automethod:: __init__
+
+.. autoclass:: Facet
+
+	.. automethod:: __init__
+
+.. autoclass:: Edge
+
+	.. automethod:: __init__
 
 :mod:`viennagrid.config` --- Configuration classes for domain definition
 ------------------------------------------------------------------------
