@@ -365,12 +365,48 @@ class Segmentation(object):
 			yield Segment(segment)
 
 class Segment(object):
+	"""Wrapper class that represents a segment contained in a segmentation."""
 	def __init__(self, segment):
+		"""
+		Create a new segment based on the given low-level ViennaGrid segment.
+		
+		:param segment: Low-level ViennaGrid segment to be wrapped in this high-level object.
+		:type segment: Low-level segment type from :mod:`viennagrid.wrapper`
+		"""
 		super(Segment, self).__init__()
 		self._segment = segment
 	
 	@property
 	def cells(self):
+		"""
+		Return an object that allows accessing the list of all cells contained in the segment.
+		
+		This object provides the following methods:
+		
+		.. method:: __call__()
+		
+			This returns a Python list containing all the cells of the segment, in ascendent order of indices: ::
+			
+				cell_list = segment.cells()
+		
+		.. method:: __len__()
+		
+			This allows you to get  the number of cells in the segment as though it were a Python list: ::
+			
+				num_cells = len(segment.cells)
+		
+		.. method:: __iter__()
+		
+			This allows you to get an iterator over the cells of the segment like this: ::
+			
+				iterator = iter(segment.cells)
+		
+		.. method:: __getitem__(index)
+		
+			This allows you to access each cell by its index using bracket notation: ::
+			
+				s0 = segment.cells[0]
+		"""
 		class CellList(object):
 			def __init__(self, segment):
 				self._segment = segment
@@ -386,10 +422,22 @@ class Segment(object):
 		return CellList(self._segment)
 	
 	def make_cell(self, *args, **kwargs):
+		"""
+		Create a new cell in the segment and return it.
+		
+		As positional parameters you must pass as many vertices (:class:`~viennagrid.Vertex` objects) as needed to define a cell of the type and dimension of the domain.
+		
+		:returns: A :class:`~viennagrid.Cell` object --- the newly created cell
+		"""
 		vertices = [vertex._vertex for vertex in args]
 		return Cell(self._segment.make_cell(*vertices))
 	
 	def __iter__(self):
+		"""
+		Return a generator object to iterate over all the cells contained in the segment.
+		
+		:returns: A generator over all the cells of the segment
+		"""
 		for cell in self._segment.cells:
 			yield Cell(cell)
 

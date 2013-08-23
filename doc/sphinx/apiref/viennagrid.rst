@@ -41,8 +41,11 @@ API reference of :mod:`viennagrid`
 	.. automethod:: __iter__
 
 .. autoclass:: Segment
-    :members:
-	:undoc-members:
+
+	.. automethod:: __init__
+	.. autoattribute:: cells
+	.. automethod:: make_cell
+	.. automethod:: __iter__
 
 .. autoclass:: Cell
     :members:
