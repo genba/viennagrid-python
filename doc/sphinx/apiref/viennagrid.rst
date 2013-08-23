@@ -21,8 +21,16 @@ API reference of :mod:`viennagrid`
 	.. automethod:: __getattr__
 
 .. autoclass:: Domain
-    :members:
-	:undoc-members:
+
+	.. automethod:: __init__
+	.. autoattribute:: config
+	.. autoattribute:: vertices
+	.. automethod:: make_vertex
+	.. automethod:: __iter__
+	.. automethod:: read_netgen
+	.. automethod:: read_vtk
+	.. automethod:: write_opendx
+	.. automethod:: write_vtk
 
 .. autoclass:: Segmentation
     :members:

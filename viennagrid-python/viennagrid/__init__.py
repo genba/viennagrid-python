@@ -138,18 +138,57 @@ class Point(object):
 		return self._point.__getattribute__(attr)
 
 class Domain(object):
-	"""docstring for Domain"""
+	"""Wrapper class that represents a domain of any supported domain configuration."""
 	def __init__(self, config):
+		"""
+		Create a new domain with the given configuration.
+		
+		:param config: Configuration on which the new domain should be based.
+		:type config: :class:`viennagrid.config.Configuration`
+		"""
 		super(Domain, self).__init__()
 		self._config = config
 		self._domain = config.make_domain()
 	
 	@property
 	def config(self):
+		"""
+		Return the configuration object of this domain (instance of
+		:class:`viennagrid.config.Configuration`).
+		"""
 		return self._config
 	
 	@property
 	def vertices(self):
+		"""
+		Return an object that allows accessing the list of all vertices contained in the domain.
+		
+		This object provides the following methods:
+		
+		.. method:: __call__()
+		
+			This returns a Python list containing all the vertices of the domain, in ascendent order of indices: ::
+			
+				vertex_list = domain.vertices()
+		
+		.. method:: __len__()
+		
+			This allows you to get  the number of vertices in the domain as though it were a Python list: ::
+			
+				num_vertices = len(domain.vertices)
+		
+		.. method:: __iter__()
+		
+			This allows you to get an iterator over the vertices of the domain like this: ::
+			
+				iterator = iter(domain.vertices)
+		
+		.. method:: __getitem__(index)
+		
+			This allows you to access each vertex by its index using bracket notation: ::
+			
+				v0 = domain.vertices[0]
+		"""
 		class VertexList(object):
 			def __init__(self, domain):
 				self._domain = domain
@@ -165,28 +204,84 @@ class Domain(object):
 		return VertexList(self._domain)
 	
 	def make_vertex(self, point):
+		"""
+		Create a new vertex in the domain with the coordinates of the given point and return it.
+		
+		The point and its coordinates will be copied, the point will not be referenced itself.
+		Instead, a new point will be created.
+		
+		:param point: Point on which to base the vertex.
+		:type point: :class:`viennagrid.Point`
+		
+		:returns: A :class:`~viennagrid.Vertex` object --- the newly created vertex
+		"""
 		if isinstance(point._point, self.config.point_type):
 			return self._domain.make_vertex(point._point)
 		else:
 			raise TypeError('wrong point type') # TODO: make error message more descriptive
 	
 	def __iter__(self):
+		"""
+		Return a generator object to iterate over all the vertices contained in the domain.
+		
+		:returns: A generator over all the vertices of the domain
+		"""
 		for vertex in self._domain.vertices:
 			yield Vertex(vertex)
 	
 	def read_netgen(self, path):
+		"""
+		Read domain and segmentation data from the Netgen file found at the given path.
+		
+		:param path: Path to the file
+		:type path: str
+		
+		.. note::
+			This method still doesn't work because it's not fully implemented in ViennaGrid.
+		"""
 		return self._domain.read_netgen(path)
 	
 	def read_vtk(self, path):
+		"""
+		Read domain and segmentation data from the VTK file found at the given path.
+		
+		:param path: Path to the file
+		:type path: str
+		
+		.. note::
+			This method still doesn't work because it's not fully implemented in ViennaGrid.
+		"""
 		return self._domain.read_vtk(path)
 	
 	def write_opendx(self, path):
+		"""
+		Write domain and segmentation data to the OpenDX file found at the given path.
+		
+		:param path: Path to the file
+		:type path: str
+		
+		.. note::
+			This method still doesn't work because it's not fully implemented in ViennaGrid.
+		"""
 		return self._domain.write_opendx(path)
 	
 	def write_vtk(self, path):
+		"""
+		Write domain and segmentation data to the VTK file found at the given path.
+		
+		:param path: Path to the file
+		:type path: str
+		
+		.. note::
+			This method still doesn't work because it's not fully implemented in ViennaGrid.
+		"""
 		return self._domain.write_vtk(path)
 	
 	def _make_segmentation(self):
+		"""
+		Create a new segmentation object and return.
+		This is a helper method intended for internal use only.
+		"""
 		return self.config.make_segmentation(self._domain)
 
 class Segmentation(object):
