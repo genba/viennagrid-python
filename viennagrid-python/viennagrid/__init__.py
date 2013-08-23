@@ -7,8 +7,15 @@ version = wrapper.version
 VERSION = version()
 
 class Point(object):
-	"""docstring for Point"""
+	"""Wrapper class that represents a point of any supported coordinate system and dimension."""
+	
 	def __init__(self, *args, **kwargs):
+		"""
+		Define a new point specifying its coordinate system, dimension and, optionally, coordinates.
+		
+		The supported signatures are as follows:
+		"""
+		
 		super(Point, self).__init__()
 		
 		_coords = None
@@ -78,32 +85,56 @@ class Point(object):
 	
 	@property
 	def coords(self):
+		"""Return a list containing the coordinates of the point."""
 		return self._point.coords
 	
 	@property
 	def coord_system(self):
+		"""Return the coordinate system tag of the point as seen in :mod:`viennagrid.config`."""
 		return self._point.coord_system
 	
 	@property
 	def dim(self):
+		"""Return the integer dimension of the space where the point is defined."""
 		return self._point.dim
 	
 	def __add__(self, other):
+		"""Add two points."""
 		return self._point + other._point
 	
 	def __sub__(self, other):
+		"""Subtract two points."""
 		return self._point - other._point
 	
 	def __mul__(self, scalar):
+		"""Multiply a point by a scalar number (coordinate-wise)."""
 		return self._point * scalar
 	
 	def __div__(self, scalar):
+		"""Divide a point by a scalar number (coordinate-wise)."""
 		return self._point / scalar
 	
 	def __neg__(self):
+		"""Negate a point (i.e. negate each coordinate of the point)."""
 		return -self._point
 	
 	def __getattr__(self, attr):
+		"""
+		If the requested attribute is not present in this class, try to get it from
+		the low-level point class. This serves the purpose of calling the methods for
+		coordinate system conversion and norm computation:
+		
+		* to_cartesian()
+		* to_cylindrical()
+		* to_polar()
+		* to_spherical()
+		* norm_1()
+		* norm_2()
+		* norm_inf()
+		
+		Please, notice that not of all these methods are present in all point classes,
+		but only the applicable ones.
+		"""
 		return self._point.__getattribute__(attr)
 
 class Domain(object):

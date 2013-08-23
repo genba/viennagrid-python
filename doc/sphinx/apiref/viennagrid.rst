@@ -8,8 +8,17 @@ API reference of :mod:`viennagrid`
 	:synopsis: High-level classes for mesh representation
 
 .. autoclass:: Point
-    :members:
-	:undoc-members:
+
+	.. automethod:: __init__
+	.. autoattribute:: coords
+	.. autoattribute:: coord_system
+	.. autoattribute:: dim
+	.. automethod:: __add__
+	.. automethod:: __sub__
+	.. automethod:: __mul__
+	.. automethod:: __div__
+	.. automethod:: __neg__
+	.. automethod:: __getattr__
 
 .. autoclass:: Domain
     :members:
