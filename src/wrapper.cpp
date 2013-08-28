@@ -386,21 +386,27 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 *******************/
 	
 	class_<LinearCartesian1D_Vertex>("LinearCartesian1D_Vertex", init<LinearCartesian1D_Vertex_t &>())
+		.def("to_point", &LinearCartesian1D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<LinearCartesian2D_Vertex>("LinearCartesian2D_Vertex", init<LinearCartesian2D_Vertex_t &>())
+		.def("to_point", &LinearCartesian2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<LinearCartesian3D_Vertex>("LinearCartesian3D_Vertex", init<LinearCartesian3D_Vertex_t &>())
+		.def("to_point", &LinearCartesian3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<LinearCylindrical3D_Vertex>("LinearCylindrical3D_Vertex", init<LinearCylindrical3D_Vertex_t &>())
+		.def("to_point", &LinearCylindrical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<LinearPolar2D_Vertex>("LinearPolar2D_Vertex", init<LinearPolar2D_Vertex_t &>())
+		.def("to_point", &LinearPolar2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<LinearSpherical3D_Vertex>("LinearSpherical3D_Vertex", init<LinearSpherical3D_Vertex_t &>())
+		.def("to_point", &LinearSpherical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	/****************
@@ -608,18 +614,23 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 ***********************/
 	
 	class_<TriangularCartesian2D_Vertex>("TriangularCartesian2D_Vertex", init<TriangularCartesian2D_Vertex_t &>())
+		.def("to_point", &TriangularCartesian2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularCartesian3D_Vertex>("TriangularCartesian3D_Vertex", init<TriangularCartesian3D_Vertex_t &>())
+		.def("to_point", &TriangularCartesian3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularCylindrical3D_Vertex>("TriangularCylindrical3D_Vertex", init<TriangularCylindrical3D_Vertex_t &>())
+		.def("to_point", &TriangularCylindrical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularPolar2D_Vertex>("TriangularPolar2D_Vertex", init<TriangularPolar2D_Vertex_t &>())
+		.def("to_point", &TriangularPolar2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularSpherical3D_Vertex>("TriangularSpherical3D_Vertex", init<TriangularSpherical3D_Vertex_t &>())
+		.def("to_point", &TriangularSpherical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	/********************
@@ -821,18 +832,23 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 **************************/
 	
 	class_<QuadrilateralCartesian2D_Vertex>("QuadrilateralCartesian2D_Vertex", init<QuadrilateralCartesian2D_Vertex_t &>())
+		.def("to_point", &QuadrilateralCartesian2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Vertex>("QuadrilateralCartesian3D_Vertex", init<QuadrilateralCartesian3D_Vertex_t &>())
+		.def("to_point", &QuadrilateralCartesian3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Vertex>("QuadrilateralCylindrical3D_Vertex", init<QuadrilateralCylindrical3D_Vertex_t &>())
+		.def("to_point", &QuadrilateralCylindrical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<QuadrilateralPolar2D_Vertex>("QuadrilateralPolar2D_Vertex", init<QuadrilateralPolar2D_Vertex_t &>())
+		.def("to_point", &QuadrilateralPolar2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Vertex>("QuadrilateralSpherical3D_Vertex", init<QuadrilateralSpherical3D_Vertex_t &>())
+		.def("to_point", &QuadrilateralSpherical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	/***********************
@@ -978,12 +994,15 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 ************************/
 	
 	class_<TetrahedralCartesian3D_Vertex>("TetrahedralCartesian3D_Vertex", init<TetrahedralCartesian3D_Vertex_t &>())
+		.def("to_point", &TetrahedralCartesian3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Vertex>("TetrahedralCylindrical3D_Vertex", init<TetrahedralCylindrical3D_Vertex_t &>())
+		.def("to_point", &TetrahedralCylindrical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TetrahedralSpherical3D_Vertex>("TetrahedralSpherical3D_Vertex", init<TetrahedralSpherical3D_Vertex_t &>())
+		.def("to_point", &TetrahedralSpherical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	/*********************
