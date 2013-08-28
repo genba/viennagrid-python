@@ -614,18 +614,23 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 ***********************/
 	
 	class_<TriangularCartesian2D_Vertex>("TriangularCartesian2D_Vertex", init<TriangularCartesian2D_Vertex_t &>())
+		.def("to_point", &TriangularCartesian2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularCartesian3D_Vertex>("TriangularCartesian3D_Vertex", init<TriangularCartesian3D_Vertex_t &>())
+		.def("to_point", &TriangularCartesian3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularCylindrical3D_Vertex>("TriangularCylindrical3D_Vertex", init<TriangularCylindrical3D_Vertex_t &>())
+		.def("to_point", &TriangularCylindrical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularPolar2D_Vertex>("TriangularPolar2D_Vertex", init<TriangularPolar2D_Vertex_t &>())
+		.def("to_point", &TriangularPolar2D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TriangularSpherical3D_Vertex>("TriangularSpherical3D_Vertex", init<TriangularSpherical3D_Vertex_t &>())
+		.def("to_point", &TriangularSpherical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	/********************
