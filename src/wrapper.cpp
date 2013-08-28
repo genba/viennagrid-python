@@ -994,12 +994,15 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	 ************************/
 	
 	class_<TetrahedralCartesian3D_Vertex>("TetrahedralCartesian3D_Vertex", init<TetrahedralCartesian3D_Vertex_t &>())
+		.def("to_point", &TetrahedralCartesian3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Vertex>("TetrahedralCylindrical3D_Vertex", init<TetrahedralCylindrical3D_Vertex_t &>())
+		.def("to_point", &TetrahedralCylindrical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	class_<TetrahedralSpherical3D_Vertex>("TetrahedralSpherical3D_Vertex", init<TetrahedralSpherical3D_Vertex_t &>())
+		.def("to_point", &TetrahedralSpherical3D_Vertex::to_point, "Convert the vertex object to a point object.")
 	;
 	
 	/*********************
