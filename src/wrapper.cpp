@@ -378,31 +378,37 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<LinearCartesian1D_Cell>("LinearCartesian1D_Cell", init<LinearCartesian1D_Cell_t &>())
 		.add_property("num_vertices", &LinearCartesian1D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &LinearCartesian1D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &LinearCartesian1D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<LinearCartesian2D_Cell>("LinearCartesian2D_Cell", init<LinearCartesian2D_Cell_t &>())
 		.add_property("num_vertices", &LinearCartesian2D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &LinearCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &LinearCartesian2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<LinearCartesian3D_Cell>("LinearCartesian3D_Cell", init<LinearCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &LinearCartesian3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &LinearCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &LinearCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<LinearCylindrical3D_Cell>("LinearCylindrical3D_Cell", init<LinearCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &LinearCylindrical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &LinearCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &LinearCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<LinearPolar2D_Cell>("LinearPolar2D_Cell", init<LinearPolar2D_Cell_t &>())
 		.add_property("num_vertices", &LinearPolar2D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &LinearPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &LinearPolar2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<LinearSpherical3D_Cell>("LinearSpherical3D_Cell", init<LinearSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &LinearSpherical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &LinearSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &LinearSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	/*******************
@@ -621,26 +627,31 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<TriangularCartesian2D_Cell>("TriangularCartesian2D_Cell", init<TriangularCartesian2D_Cell_t &>())
 		.add_property("num_vertices", &TriangularCartesian2D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TriangularCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TriangularCartesian2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<TriangularCartesian3D_Cell>("TriangularCartesian3D_Cell", init<TriangularCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularCartesian3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TriangularCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TriangularCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<TriangularCylindrical3D_Cell>("TriangularCylindrical3D_Cell", init<TriangularCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularCylindrical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TriangularCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TriangularCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<TriangularPolar2D_Cell>("TriangularPolar2D_Cell", init<TriangularPolar2D_Cell_t &>())
 		.add_property("num_vertices", &TriangularPolar2D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TriangularPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TriangularPolar2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<TriangularSpherical3D_Cell>("TriangularSpherical3D_Cell", init<TriangularSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularSpherical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TriangularSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TriangularSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	/***********************
@@ -849,26 +860,31 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<QuadrilateralCartesian2D_Cell>("QuadrilateralCartesian2D_Cell", init<QuadrilateralCartesian2D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralCartesian2D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &QuadrilateralCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &QuadrilateralCartesian2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Cell>("QuadrilateralCartesian3D_Cell", init<QuadrilateralCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralCartesian3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &QuadrilateralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &QuadrilateralCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Cell>("QuadrilateralCylindrical3D_Cell", init<QuadrilateralCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralCylindrical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &QuadrilateralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &QuadrilateralCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<QuadrilateralPolar2D_Cell>("QuadrilateralPolar2D_Cell", init<QuadrilateralPolar2D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralPolar2D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &QuadrilateralPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &QuadrilateralPolar2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<QuadrilateralSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralSpherical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &QuadrilateralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &QuadrilateralSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	/**************************
@@ -1027,16 +1043,19 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 	class_<TetrahedralCartesian3D_Cell>("TetrahedralCartesian3D_Cell", init<TetrahedralCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &TetrahedralCartesian3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TetrahedralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TetrahedralCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Cell>("TetrahedralCylindrical3D_Cell", init<TetrahedralCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &TetrahedralCylindrical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TetrahedralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TetrahedralCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	class_<TetrahedralSpherical3D_Cell>("TetrahedralSpherical3D_Cell", init<TetrahedralSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &TetrahedralSpherical3D_Cell::num_vertices, "docstring")
 		.add_property("vertices", &TetrahedralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
+		.add_property("facets", &TetrahedralSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
 	;
 	
 	/************************
