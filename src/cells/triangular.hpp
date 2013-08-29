@@ -22,6 +22,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TriangularCartesian2D_Cell_t & get_cell();
 };
 
@@ -36,6 +37,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TriangularCartesian3D_Cell_t & get_cell();
 };
 
@@ -50,6 +52,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TriangularCylindrical3D_Cell_t & get_cell();
 };
 
@@ -64,6 +67,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TriangularPolar2D_Cell_t & get_cell();
 };
 
@@ -78,6 +82,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TriangularSpherical3D_Cell_t & get_cell();
 };
 

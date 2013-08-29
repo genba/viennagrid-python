@@ -2,6 +2,7 @@
 
 #include "../vertices/triangular.hpp"
 #include "../facets/triangular.hpp"
+#include "../edges/triangular.hpp"
 
 ////////////////////////////
 // Triangle, cartesian 2D //
@@ -53,6 +54,25 @@ list TriangularCartesian2D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list TriangularCartesian2D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TriangularCartesian2D_Cell_t                              CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TriangularCartesian2D_Edge>(TriangularCartesian2D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 TriangularCartesian2D_Cell_t & TriangularCartesian2D_Cell::get_cell()
@@ -112,6 +132,25 @@ list TriangularCartesian3D_Cell::get_facets()
 	return facets;
 }
 
+list TriangularCartesian3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TriangularCartesian3D_Cell_t                              CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TriangularCartesian3D_Edge>(TriangularCartesian3D_Edge(*eocit));
+	}
+	
+	return edges;
+}
+
 TriangularCartesian3D_Cell_t & TriangularCartesian3D_Cell::get_cell()
 {
 	return *cell;
@@ -167,6 +206,25 @@ list TriangularCylindrical3D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list TriangularCylindrical3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TriangularCylindrical3D_Cell_t                            CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TriangularCylindrical3D_Edge>(TriangularCylindrical3D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 TriangularCylindrical3D_Cell_t & TriangularCylindrical3D_Cell::get_cell()
@@ -226,6 +284,25 @@ list TriangularPolar2D_Cell::get_facets()
 	return facets;
 }
 
+list TriangularPolar2D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TriangularPolar2D_Cell_t                                  CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TriangularPolar2D_Edge>(TriangularPolar2D_Edge(*eocit));
+	}
+	
+	return edges;
+}
+
 TriangularPolar2D_Cell_t & TriangularPolar2D_Cell::get_cell()
 {
 	return *cell;
@@ -281,6 +358,25 @@ list TriangularSpherical3D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list TriangularSpherical3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TriangularSpherical3D_Cell_t                              CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TriangularSpherical3D_Edge>(TriangularSpherical3D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 TriangularSpherical3D_Cell_t & TriangularSpherical3D_Cell::get_cell()
