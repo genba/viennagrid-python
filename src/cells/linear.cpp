@@ -28,7 +28,7 @@ list LinearCartesian1D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCartesian1D_Vertex>(LinearCartesian1D_Vertex(*voeit));
 	}
@@ -85,7 +85,7 @@ list LinearCartesian2D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCartesian2D_Vertex>(LinearCartesian2D_Vertex(*voeit));
 	}
@@ -142,7 +142,7 @@ list LinearCartesian3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCartesian3D_Vertex>(LinearCartesian3D_Vertex(*voeit));
 	}
@@ -199,7 +199,7 @@ list LinearCylindrical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCylindrical3D_Vertex>(LinearCylindrical3D_Vertex(*voeit));
 	}
@@ -256,7 +256,7 @@ list LinearPolar2D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearPolar2D_Vertex>(LinearPolar2D_Vertex(*voeit));
 	}
@@ -313,7 +313,7 @@ list LinearSpherical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearSpherical3D_Vertex>(LinearSpherical3D_Vertex(*voeit));
 	}

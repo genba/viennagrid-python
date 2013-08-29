@@ -28,7 +28,7 @@ list TetrahedralCartesian3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<TetrahedralCartesian3D_Vertex>(TetrahedralCartesian3D_Vertex(*voeit));
 	}
@@ -85,7 +85,7 @@ list TetrahedralCylindrical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<TetrahedralCylindrical3D_Vertex>(TetrahedralCylindrical3D_Vertex(*voeit));
 	}
@@ -142,7 +142,7 @@ list TetrahedralSpherical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<TetrahedralSpherical3D_Vertex>(TetrahedralSpherical3D_Vertex(*voeit));
 	}

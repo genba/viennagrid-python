@@ -28,7 +28,7 @@ list QuadrilateralCartesian2D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<QuadrilateralCartesian2D_Vertex>(QuadrilateralCartesian2D_Vertex(*voeit));
 	}
@@ -85,7 +85,7 @@ list QuadrilateralCartesian3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<QuadrilateralCartesian3D_Vertex>(QuadrilateralCartesian3D_Vertex(*voeit));
 	}
@@ -142,7 +142,7 @@ list QuadrilateralCylindrical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<QuadrilateralCylindrical3D_Vertex>(QuadrilateralCylindrical3D_Vertex(*voeit));
 	}
@@ -199,7 +199,7 @@ list QuadrilateralPolar2D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<QuadrilateralPolar2D_Vertex>(QuadrilateralPolar2D_Vertex(*voeit));
 	}
@@ -256,7 +256,7 @@ list QuadrilateralSpherical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<QuadrilateralSpherical3D_Vertex>(QuadrilateralSpherical3D_Vertex(*voeit));
 	}
