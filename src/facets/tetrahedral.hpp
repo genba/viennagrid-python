@@ -3,6 +3,9 @@
 
 #include "types.hpp"
 
+#include <boost/python.hpp>
+using namespace boost::python;
+
 //////////////////////////////////
 // TetrahedralCartesian3D_Facet //
 //////////////////////////////////
@@ -12,6 +15,7 @@ class TetrahedralCartesian3D_Facet
 	TetrahedralCartesian3D_Facet_t    *facet;
 public:
 	TetrahedralCartesian3D_Facet(TetrahedralCartesian3D_Facet_t &initial_facet);
+	list get_edges();
 	TetrahedralCartesian3D_Facet_t & get_facet();
 };
 
@@ -24,6 +28,7 @@ class TetrahedralCylindrical3D_Facet
 	TetrahedralCylindrical3D_Facet_t    *facet;
 public:
 	TetrahedralCylindrical3D_Facet(TetrahedralCylindrical3D_Facet_t &initial_facet);
+	list get_edges();
 	TetrahedralCylindrical3D_Facet_t & get_facet();
 };
 
@@ -36,6 +41,7 @@ class TetrahedralSpherical3D_Facet
 	TetrahedralSpherical3D_Facet_t    *facet;
 public:
 	TetrahedralSpherical3D_Facet(TetrahedralSpherical3D_Facet_t &initial_facet);
+	list get_edges();
 	TetrahedralSpherical3D_Facet_t & get_facet();
 };
 
