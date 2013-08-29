@@ -1,6 +1,7 @@
 #include "tetrahedral.hpp"
 
 #include "../vertices/tetrahedral.hpp"
+#include "../facets/tetrahedral.hpp"
 
 ///////////////////////////////
 // Tetrahedral, cartesian 3D //
@@ -33,6 +34,25 @@ list TetrahedralCartesian3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+list TetrahedralCartesian3D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef TetrahedralCartesian3D_Cell_t                               CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<TetrahedralCartesian3D_Facet>(TetrahedralCartesian3D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 TetrahedralCartesian3D_Cell_t & TetrahedralCartesian3D_Cell::get_cell()
@@ -73,6 +93,25 @@ list TetrahedralCylindrical3D_Cell::get_vertices()
 	return vertices;
 }
 
+list TetrahedralCylindrical3D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef TetrahedralCylindrical3D_Cell_t                             CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<TetrahedralCylindrical3D_Facet>(TetrahedralCylindrical3D_Facet(*focit));
+	}
+	
+	return facets;
+}
+
 TetrahedralCylindrical3D_Cell_t & TetrahedralCylindrical3D_Cell::get_cell()
 {
 	return *cell;
@@ -109,6 +148,25 @@ list TetrahedralSpherical3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+list TetrahedralSpherical3D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef TetrahedralSpherical3D_Cell_t                               CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<TetrahedralSpherical3D_Facet>(TetrahedralSpherical3D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 TetrahedralSpherical3D_Cell_t & TetrahedralSpherical3D_Cell::get_cell()
