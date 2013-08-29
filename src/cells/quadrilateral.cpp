@@ -2,6 +2,7 @@
 
 #include "../vertices/quadrilateral.hpp"
 #include "../facets/quadrilateral.hpp"
+#include "../edges/quadrilateral.hpp"
 
 /////////////////////////////////
 // Quadrilateral, cartesian 2D //
@@ -53,6 +54,25 @@ list QuadrilateralCartesian2D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list QuadrilateralCartesian2D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef QuadrilateralCartesian2D_Cell_t                           CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<QuadrilateralCartesian2D_Edge>(QuadrilateralCartesian2D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 QuadrilateralCartesian2D_Cell_t & QuadrilateralCartesian2D_Cell::get_cell()
@@ -112,6 +132,25 @@ list QuadrilateralCartesian3D_Cell::get_facets()
 	return facets;
 }
 
+list QuadrilateralCartesian3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef QuadrilateralCartesian3D_Cell_t                           CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<QuadrilateralCartesian3D_Edge>(QuadrilateralCartesian3D_Edge(*eocit));
+	}
+	
+	return edges;
+}
+
 QuadrilateralCartesian3D_Cell_t & QuadrilateralCartesian3D_Cell::get_cell()
 {
 	return *cell;
@@ -167,6 +206,25 @@ list QuadrilateralCylindrical3D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list QuadrilateralCylindrical3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef QuadrilateralCylindrical3D_Cell_t                         CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<QuadrilateralCylindrical3D_Edge>(QuadrilateralCylindrical3D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 QuadrilateralCylindrical3D_Cell_t & QuadrilateralCylindrical3D_Cell::get_cell()
@@ -226,6 +284,25 @@ list QuadrilateralPolar2D_Cell::get_facets()
 	return facets;
 }
 
+list QuadrilateralPolar2D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef QuadrilateralPolar2D_Cell_t                               CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<QuadrilateralPolar2D_Edge>(QuadrilateralPolar2D_Edge(*eocit));
+	}
+	
+	return edges;
+}
+
 QuadrilateralPolar2D_Cell_t & QuadrilateralPolar2D_Cell::get_cell()
 {
 	return *cell;
@@ -281,6 +358,25 @@ list QuadrilateralSpherical3D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list QuadrilateralSpherical3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef QuadrilateralSpherical3D_Cell_t                           CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<QuadrilateralSpherical3D_Edge>(QuadrilateralSpherical3D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 QuadrilateralSpherical3D_Cell_t & QuadrilateralSpherical3D_Cell::get_cell()
