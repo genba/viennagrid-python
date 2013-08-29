@@ -2,6 +2,7 @@
 
 #include "../vertices/tetrahedral.hpp"
 #include "../facets/tetrahedral.hpp"
+#include "../edges/tetrahedral.hpp"
 
 ///////////////////////////////
 // Tetrahedral, cartesian 3D //
@@ -53,6 +54,25 @@ list TetrahedralCartesian3D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list TetrahedralCartesian3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TetrahedralCartesian3D_Cell_t                             CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TetrahedralCartesian3D_Edge>(TetrahedralCartesian3D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 TetrahedralCartesian3D_Cell_t & TetrahedralCartesian3D_Cell::get_cell()
@@ -112,6 +132,25 @@ list TetrahedralCylindrical3D_Cell::get_facets()
 	return facets;
 }
 
+list TetrahedralCylindrical3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TetrahedralCylindrical3D_Cell_t                           CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TetrahedralCylindrical3D_Edge>(TetrahedralCylindrical3D_Edge(*eocit));
+	}
+	
+	return edges;
+}
+
 TetrahedralCylindrical3D_Cell_t & TetrahedralCylindrical3D_Cell::get_cell()
 {
 	return *cell;
@@ -167,6 +206,25 @@ list TetrahedralSpherical3D_Cell::get_facets()
 	}
 	
 	return facets;
+}
+
+list TetrahedralSpherical3D_Cell::get_edges()
+{
+	list edges;
+	
+	typedef TetrahedralSpherical3D_Cell_t                             CellType;
+	typedef viennagrid::result_of::edge_range<CellType>::type         EdgeOnCellRange;
+	typedef viennagrid::result_of::iterator<EdgeOnCellRange>::type    EdgeOnCellIterator;
+	
+	EdgeOnCellRange edges_on_cell = viennagrid::elements(*cell);
+	for (EdgeOnCellIterator eocit = edges_on_cell.begin();
+	                        eocit != edges_on_cell.end();
+	                      ++eocit)
+	{
+		edges.append<TetrahedralSpherical3D_Edge>(TetrahedralSpherical3D_Edge(*eocit));
+	}
+	
+	return edges;
 }
 
 TetrahedralSpherical3D_Cell_t & TetrahedralSpherical3D_Cell::get_cell()
