@@ -22,6 +22,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TetrahedralCartesian3D_Cell_t & get_cell();
 };
 
@@ -36,6 +37,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TetrahedralCylindrical3D_Cell_t & get_cell();
 };
 
@@ -50,6 +52,7 @@ public:
 	unsigned int num_vertices();
 	list get_vertices();
 	list get_facets();
+	list get_edges();
 	TetrahedralSpherical3D_Cell_t & get_cell();
 };
 
