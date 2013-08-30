@@ -81,11 +81,14 @@ void TriangularCartesian2D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void TriangularCartesian2D_Domain::write_vtk(std::string const &filename)
+void TriangularCartesian2D_Domain::write_vtk(std::string const &filename, TriangularCartesian2D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<TriangularCartesian2D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 ////////////////////////////
@@ -160,11 +163,14 @@ void TriangularCartesian3D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void TriangularCartesian3D_Domain::write_vtk(std::string const &filename)
+void TriangularCartesian3D_Domain::write_vtk(std::string const &filename, TriangularCartesian3D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<TriangularCartesian3D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 ////////////////////////////////
@@ -239,11 +245,14 @@ void TriangularCylindrical3D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void TriangularCylindrical3D_Domain::write_vtk(std::string const &filename)
+void TriangularCylindrical3D_Domain::write_vtk(std::string const &filename, TriangularCylindrical3D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<TriangularCylindrical3D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 //////////////////////////
@@ -318,11 +327,14 @@ void TriangularPolar2D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void TriangularPolar2D_Domain::write_vtk(std::string const &filename)
+void TriangularPolar2D_Domain::write_vtk(std::string const &filename, TriangularPolar2D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<TriangularPolar2D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 //////////////////////////////
@@ -397,9 +409,12 @@ void TriangularSpherical3D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void TriangularSpherical3D_Domain::write_vtk(std::string const &filename)
+void TriangularSpherical3D_Domain::write_vtk(std::string const &filename, TriangularSpherical3D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<TriangularSpherical3D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
