@@ -540,7 +540,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &QuadrilateralCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &QuadrilateralCartesian2D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &QuadrilateralCartesian2D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &QuadrilateralCartesian2D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &QuadrilateralCartesian2D_Domain::write_vtk,
+		                   QuadrilateralCartesian2D_Domain_overloads(args("filename", "segmentation"),
+		                                                             "Write mesh data to a VTK file."))
 	;
 	
 	class_<QuadrilateralCartesian3D_Domain>("QuadrilateralCartesian3D_Domain")
@@ -551,7 +553,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &QuadrilateralCartesian3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &QuadrilateralCartesian3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &QuadrilateralCartesian3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &QuadrilateralCartesian3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &QuadrilateralCartesian3D_Domain::write_vtk,
+		                   QuadrilateralCartesian3D_Domain_overloads(args("filename", "segmentation"),
+		                                                             "Write mesh data to a VTK file."))
 	;
 	
 	class_<QuadrilateralCylindrical3D_Domain>("QuadrilateralCylindrical3D_Domain")
@@ -562,7 +566,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &QuadrilateralCylindrical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &QuadrilateralCylindrical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &QuadrilateralCylindrical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &QuadrilateralCylindrical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &QuadrilateralCylindrical3D_Domain::write_vtk,
+		                   QuadrilateralCylindrical3D_Domain_overloads(args("filename", "segmentation"),
+		                                                               "Write mesh data to a VTK file."))
 	;
 	
 	class_<QuadrilateralPolar2D_Domain>("QuadrilateralPolar2D_Domain")
@@ -573,7 +579,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &QuadrilateralPolar2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &QuadrilateralPolar2D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &QuadrilateralPolar2D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &QuadrilateralPolar2D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &QuadrilateralPolar2D_Domain::write_vtk,
+		                   QuadrilateralPolar2D_Domain_overloads(args("filename", "segmentation"),
+		                                                         "Write mesh data to a VTK file."))
 	;
 	
 	class_<QuadrilateralSpherical3D_Domain>("QuadrilateralSpherical3D_Domain")
@@ -584,7 +592,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &QuadrilateralSpherical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &QuadrilateralSpherical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &QuadrilateralSpherical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &QuadrilateralSpherical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &QuadrilateralSpherical3D_Domain::write_vtk,
+		                   QuadrilateralSpherical3D_Domain_overloads(args("filename", "segmentation"),
+		                                                             "Write mesh data to a VTK file."))
 	;
 	
 	/*******************************
