@@ -3,7 +3,7 @@
 
 #include "types.hpp"
 
-#include "../domains/tetrahedral.hpp"
+#include "../domains/forward.hpp"
 #include "../segments/tetrahedral.hpp"
 
 #include <boost/python.hpp>

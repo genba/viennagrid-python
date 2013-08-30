@@ -1,4 +1,5 @@
 #include "linear.hpp"
+#include "../domains/linear.hpp"
 
 ////////////////////////////////////
 // LinearCartesian1D_Segmentation //

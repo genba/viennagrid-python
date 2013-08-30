@@ -1,4 +1,5 @@
 #include "triangular.hpp"
+#include "../domains/triangular.hpp"
 
 ////////////////////////////////////////
 // TriangularCartesian2D_Segmentation //

@@ -3,7 +3,7 @@
 
 #include "types.hpp"
 
-#include "../domains/linear.hpp"
+#include "../domains/forward.hpp"
 #include "../segments/linear.hpp"
 
 #include <boost/python.hpp>

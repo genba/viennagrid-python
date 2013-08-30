@@ -1,4 +1,5 @@
 #include "tetrahedral.hpp"
+#include "../domains/tetrahedral.hpp"
 
 /////////////////////////////////////////
 // TetrahedralCartesian3D_Segmentation //

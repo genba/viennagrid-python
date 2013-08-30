@@ -3,7 +3,7 @@
 
 #include "types.hpp"
 
-#include "../domains/triangular.hpp"
+#include "../domains/forward.hpp"
 #include "../segments/triangular.hpp"
 
 #include <boost/python.hpp>

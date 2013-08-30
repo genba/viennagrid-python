@@ -3,7 +3,7 @@
 
 #include "types.hpp"
 
-#include "../domains/quadrilateral.hpp"
+#include "../domains/forward.hpp"
 #include "../segments/quadrilateral.hpp"
 
 #include <boost/python.hpp>

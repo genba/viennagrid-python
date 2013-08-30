@@ -1,4 +1,5 @@
 #include "quadrilateral.hpp"
+#include "../domains/quadrilateral.hpp"
 
 ///////////////////////////////////////////
 // QuadrilateralCartesian2D_Segmentation //
