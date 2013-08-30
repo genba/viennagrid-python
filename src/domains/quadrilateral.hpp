@@ -29,13 +29,15 @@ public:
 	QuadrilateralCartesian2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, QuadrilateralCartesian2D_Segmentation *segmentation = NULL);
 	
 	void create_cell(PointCartesian2D vertex1, PointCartesian2D vertex2, PointCartesian2D vertex3, PointCartesian2D vertex4);
 	list get_cells();
 	
 	QuadrilateralCartesian2D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(QuadrilateralCartesian2D_Domain_overloads, QuadrilateralCartesian2D_Domain::write_vtk, 1, 2)
 
 class QuadrilateralCartesian3D_Domain {
 	QuadrilateralCartesian3D_Domain_t     domain;
@@ -51,13 +53,15 @@ public:
 	QuadrilateralCartesian3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, QuadrilateralCartesian3D_Segmentation *segmentation = NULL);
 	
 	void create_cell(PointCartesian3D vertex1, PointCartesian3D vertex2, PointCartesian3D vertex3, PointCartesian3D vertex4);
 	list get_cells();
 	
 	QuadrilateralCartesian3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(QuadrilateralCartesian3D_Domain_overloads, QuadrilateralCartesian3D_Domain::write_vtk, 1, 2)
 
 class QuadrilateralCylindrical3D_Domain {
 	QuadrilateralCylindrical3D_Domain_t     domain;
@@ -73,13 +77,15 @@ public:
 	QuadrilateralCylindrical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, QuadrilateralCylindrical3D_Segmentation *segmentation = NULL);
 	
 	void create_cell(PointCylindrical3D vertex1, PointCylindrical3D vertex2, PointCylindrical3D vertex3, PointCylindrical3D vertex4);
 	list get_cells();
 	
 	QuadrilateralCylindrical3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(QuadrilateralCylindrical3D_Domain_overloads, QuadrilateralCylindrical3D_Domain::write_vtk, 1, 2)
 
 class QuadrilateralPolar2D_Domain {
 	QuadrilateralPolar2D_Domain_t     domain;
@@ -95,13 +101,15 @@ public:
 	QuadrilateralPolar2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, QuadrilateralPolar2D_Segmentation *segmentation = NULL);
 	
 	void create_cell(PointPolar2D vertex1, PointPolar2D vertex2, PointPolar2D vertex3, PointPolar2D vertex4);
 	list get_cells();
 	
 	QuadrilateralPolar2D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(QuadrilateralPolar2D_Domain_overloads, QuadrilateralPolar2D_Domain::write_vtk, 1, 2)
 
 class QuadrilateralSpherical3D_Domain {
 	QuadrilateralSpherical3D_Domain_t     domain;
@@ -117,12 +125,14 @@ public:
 	QuadrilateralSpherical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, QuadrilateralSpherical3D_Segmentation *segmentation = NULL);
 	
 	void create_cell(PointSpherical3D vertex1, PointSpherical3D vertex2, PointSpherical3D vertex3, PointSpherical3D vertex4);
 	list get_cells();
 	
 	QuadrilateralSpherical3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(QuadrilateralSpherical3D_Domain_overloads, QuadrilateralSpherical3D_Domain::write_vtk, 1, 2)
 
 #endif /* end of include guard: QUADRILATERAL_HPP_N3ZDFQTY */

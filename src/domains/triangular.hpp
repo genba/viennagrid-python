@@ -33,10 +33,12 @@ public:
 	TriangularCartesian2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, TriangularCartesian2D_Segmentation *segmentation = NULL);
 
 	TriangularCartesian2D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TriangularCartesian2D_Domain_overloads, TriangularCartesian2D_Domain::write_vtk, 1, 2)
 
 ////////////////////////////
 // Triangle, cartesian 3D //
@@ -56,10 +58,12 @@ public:
 	TriangularCartesian3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, TriangularCartesian3D_Segmentation *segmentation = NULL);
 
 	TriangularCartesian3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TriangularCartesian3D_Domain_overloads, TriangularCartesian3D_Domain::write_vtk, 1, 2)
 
 ////////////////////////////////
 // Triangle, cylindrical (3D) //
@@ -79,10 +83,12 @@ public:
 	TriangularCylindrical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, TriangularCylindrical3D_Segmentation *segmentation = NULL);
 
 	TriangularCylindrical3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TriangularCylindrical3D_Domain_overloads, TriangularCylindrical3D_Domain::write_vtk, 1, 2)
 
 //////////////////////////
 // Triangle, polar (2D) //
@@ -102,10 +108,12 @@ public:
 	TriangularPolar2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, TriangularPolar2D_Segmentation *segmentation = NULL);
 
 	TriangularPolar2D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TriangularPolar2D_Domain_overloads, TriangularPolar2D_Domain::write_vtk, 1, 2)
 
 //////////////////////////////
 // Triangle, spherical (3D) //
@@ -125,9 +133,11 @@ public:
 	TriangularSpherical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, TriangularSpherical3D_Segmentation *segmentation = NULL);
 
 	TriangularSpherical3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TriangularSpherical3D_Domain_overloads, TriangularSpherical3D_Domain::write_vtk, 1, 2)
 
 #endif /* end of include guard: TRIANGULAR_HPP_40OZO3A3 */

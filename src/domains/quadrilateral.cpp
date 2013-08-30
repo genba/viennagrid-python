@@ -81,11 +81,14 @@ void QuadrilateralCartesian2D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void QuadrilateralCartesian2D_Domain::write_vtk(std::string const &filename)
+void QuadrilateralCartesian2D_Domain::write_vtk(std::string const &filename, QuadrilateralCartesian2D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<QuadrilateralCartesian2D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 /////////////////////////////////
@@ -160,11 +163,14 @@ void QuadrilateralCartesian3D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void QuadrilateralCartesian3D_Domain::write_vtk(std::string const &filename)
+void QuadrilateralCartesian3D_Domain::write_vtk(std::string const &filename, QuadrilateralCartesian3D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<QuadrilateralCartesian3D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 /////////////////////////////////////
@@ -239,11 +245,14 @@ void QuadrilateralCylindrical3D_Domain::write_opendx(std::string const &filename
 	my_dx_writer(domain, filename);
 }
 
-void QuadrilateralCylindrical3D_Domain::write_vtk(std::string const &filename)
+void QuadrilateralCylindrical3D_Domain::write_vtk(std::string const &filename, QuadrilateralCylindrical3D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<QuadrilateralCylindrical3D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 ///////////////////////////////
@@ -318,11 +327,14 @@ void QuadrilateralPolar2D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void QuadrilateralPolar2D_Domain::write_vtk(std::string const &filename)
+void QuadrilateralPolar2D_Domain::write_vtk(std::string const &filename, QuadrilateralPolar2D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<QuadrilateralPolar2D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 ///////////////////////////////////
@@ -397,9 +409,12 @@ void QuadrilateralSpherical3D_Domain::write_opendx(std::string const &filename)
 	my_dx_writer(domain, filename);
 }
 
-void QuadrilateralSpherical3D_Domain::write_vtk(std::string const &filename)
+void QuadrilateralSpherical3D_Domain::write_vtk(std::string const &filename, QuadrilateralSpherical3D_Segmentation *segmentation)
 {
 	viennagrid::io::vtk_writer<QuadrilateralSpherical3D_Domain_t>    my_vtk_writer;
 	
-	my_vtk_writer(domain, filename);
+	if (segmentation == NULL)
+		my_vtk_writer(domain, filename);
+	else
+		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }

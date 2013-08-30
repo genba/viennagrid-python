@@ -31,10 +31,12 @@ public:
 	LinearCartesian1D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, LinearCartesian1D_Segmentation *segmentation = NULL);
 
 	LinearCartesian1D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCartesian1D_Domain_overloads, LinearCartesian1D_Domain::write_vtk, 1, 2)
 
 //////////////////////////
 // Linear, cartesian 2D //
@@ -54,10 +56,12 @@ public:
 	LinearCartesian2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, LinearCartesian2D_Segmentation *segmentation = NULL);
 
 	LinearCartesian2D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCartesian2D_Domain_overloads, LinearCartesian2D_Domain::write_vtk, 1, 2)
 
 //////////////////////////
 // Linear, cartesian 3D //
@@ -77,10 +81,12 @@ public:
 	LinearCartesian3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, LinearCartesian3D_Segmentation *segmentation = NULL);
 
 	LinearCartesian3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCartesian3D_Domain_overloads, LinearCartesian3D_Domain::write_vtk, 1, 2)
 
 //////////////////////////////
 // Linear, cylindrical (3D) //
@@ -100,10 +106,12 @@ public:
 	LinearCylindrical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, LinearCylindrical3D_Segmentation *segmentation = NULL);
 
 	LinearCylindrical3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCylindrical3D_Domain_overloads, LinearCylindrical3D_Domain::write_vtk, 1, 2)
 
 ////////////////////////
 // Linear, polar (2D) //
@@ -123,10 +131,12 @@ public:
 	LinearPolar2D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, LinearPolar2D_Segmentation *segmentation = NULL);
 
 	LinearPolar2D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearPolar2D_Domain_overloads, LinearPolar2D_Domain::write_vtk, 1, 2)
 
 ////////////////////////////
 // Linear, spherical (3D) //
@@ -146,9 +156,11 @@ public:
 	LinearSpherical3D_Segmentation read_vtk(std::string const &filename);
 	
 	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename);
+	void write_vtk(std::string const &filename, LinearSpherical3D_Segmentation *segmentation = NULL);
 
 	LinearSpherical3D_Domain_t & get_domain();
 };
+
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearSpherical3D_Domain_overloads, LinearSpherical3D_Domain::write_vtk, 1, 2)
 
 #endif
