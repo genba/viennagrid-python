@@ -21,6 +21,7 @@ public:
 	QuadrilateralCartesian2D_Cell(QuadrilateralCartesian2D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	QuadrilateralCartesian2D_Cell_t & get_cell();
 };
 
@@ -34,6 +35,7 @@ public:
 	QuadrilateralCartesian3D_Cell(QuadrilateralCartesian3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	QuadrilateralCartesian3D_Cell_t & get_cell();
 };
 
@@ -47,6 +49,7 @@ public:
 	QuadrilateralCylindrical3D_Cell(QuadrilateralCylindrical3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	QuadrilateralCylindrical3D_Cell_t & get_cell();
 };
 
@@ -60,6 +63,7 @@ public:
 	QuadrilateralPolar2D_Cell(QuadrilateralPolar2D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	QuadrilateralPolar2D_Cell_t & get_cell();
 };
 
@@ -73,6 +77,7 @@ public:
 	QuadrilateralSpherical3D_Cell(QuadrilateralSpherical3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	QuadrilateralSpherical3D_Cell_t & get_cell();
 };
 

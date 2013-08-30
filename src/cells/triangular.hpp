@@ -21,6 +21,7 @@ public:
 	TriangularCartesian2D_Cell(TriangularCartesian2D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	TriangularCartesian2D_Cell_t & get_cell();
 };
 
@@ -34,6 +35,7 @@ public:
 	TriangularCartesian3D_Cell(TriangularCartesian3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	TriangularCartesian3D_Cell_t & get_cell();
 };
 
@@ -47,6 +49,7 @@ public:
 	TriangularCylindrical3D_Cell(TriangularCylindrical3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	TriangularCylindrical3D_Cell_t & get_cell();
 };
 
@@ -60,6 +63,7 @@ public:
 	TriangularPolar2D_Cell(TriangularPolar2D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	TriangularPolar2D_Cell_t & get_cell();
 };
 
@@ -73,6 +77,7 @@ public:
 	TriangularSpherical3D_Cell(TriangularSpherical3D_Cell_t &initial_cell);
 	unsigned int num_vertices();
 	list get_vertices();
+	list get_facets();
 	TriangularSpherical3D_Cell_t & get_cell();
 };
 

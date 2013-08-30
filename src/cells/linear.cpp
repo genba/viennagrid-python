@@ -1,5 +1,8 @@
 #include "linear.hpp"
 
+#include "../vertices/linear.hpp"
+#include "../facets/linear.hpp"
+
 ////////////////////////
 // Line, cartesian 1D //
 ////////////////////////
@@ -25,12 +28,31 @@ list LinearCartesian1D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCartesian1D_Vertex>(LinearCartesian1D_Vertex(*voeit));
 	}
 	
 	return vertices;
+}
+
+list LinearCartesian1D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef LinearCartesian1D_Cell_t                                    CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<LinearCartesian1D_Facet>(LinearCartesian1D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 LinearCartesian1D_Cell_t & LinearCartesian1D_Cell::get_cell()
@@ -63,12 +85,31 @@ list LinearCartesian2D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCartesian2D_Vertex>(LinearCartesian2D_Vertex(*voeit));
 	}
 	
 	return vertices;
+}
+
+list LinearCartesian2D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef LinearCartesian2D_Cell_t                                    CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<LinearCartesian2D_Facet>(LinearCartesian2D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 LinearCartesian2D_Cell_t & LinearCartesian2D_Cell::get_cell()
@@ -101,12 +142,31 @@ list LinearCartesian3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCartesian3D_Vertex>(LinearCartesian3D_Vertex(*voeit));
 	}
 	
 	return vertices;
+}
+
+list LinearCartesian3D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef LinearCartesian3D_Cell_t                                    CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<LinearCartesian3D_Facet>(LinearCartesian3D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 LinearCartesian3D_Cell_t & LinearCartesian3D_Cell::get_cell()
@@ -139,12 +199,31 @@ list LinearCylindrical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearCylindrical3D_Vertex>(LinearCylindrical3D_Vertex(*voeit));
 	}
 	
 	return vertices;
+}
+
+list LinearCylindrical3D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef LinearCylindrical3D_Cell_t                                    CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<LinearCylindrical3D_Facet>(LinearCylindrical3D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 LinearCylindrical3D_Cell_t & LinearCylindrical3D_Cell::get_cell()
@@ -177,12 +256,31 @@ list LinearPolar2D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearPolar2D_Vertex>(LinearPolar2D_Vertex(*voeit));
 	}
 	
 	return vertices;
+}
+
+list LinearPolar2D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef LinearPolar2D_Cell_t                                    CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<LinearPolar2D_Facet>(LinearPolar2D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 LinearPolar2D_Cell_t & LinearPolar2D_Cell::get_cell()
@@ -215,12 +313,31 @@ list LinearSpherical3D_Cell::get_vertices()
 	VertexOnElementRange vertices_on_element = viennagrid::elements<viennagrid::vertex_tag>(*cell);
 	for (VertexOnElementIterator voeit = vertices_on_element.begin();
 	                             voeit != vertices_on_element.end();
-	                             ++voeit)
+	                           ++voeit)
 	{
 		vertices.append<LinearSpherical3D_Vertex>(LinearSpherical3D_Vertex(*voeit));
 	}
 	
 	return vertices;
+}
+
+list LinearSpherical3D_Cell::get_facets()
+{
+	list facets;
+	
+	typedef LinearSpherical3D_Cell_t                                    CellType;
+	typedef viennagrid::result_of::facet_range<CellType>::type          FacetOnCellRange;
+	typedef viennagrid::result_of::iterator<FacetOnCellRange>::type     FacetOnCellIterator;
+	
+	FacetOnCellRange facets_on_cell = viennagrid::elements(*cell);
+	for (FacetOnCellIterator focit = facets_on_cell.begin();
+	                         focit != facets_on_cell.end();
+	                       ++focit)
+	{
+		facets.append<LinearSpherical3D_Facet>(LinearSpherical3D_Facet(*focit));
+	}
+	
+	return facets;
 }
 
 LinearSpherical3D_Cell_t & LinearSpherical3D_Cell::get_cell()
