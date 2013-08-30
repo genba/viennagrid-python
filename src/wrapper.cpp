@@ -180,7 +180,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &LinearCartesian1D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &LinearCartesian1D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &LinearCartesian1D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &LinearCartesian1D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &LinearCartesian1D_Domain::write_vtk,
+		                   LinearCartesian1D_Domain_overloads(args("filename", "segmentation"),
+		                                                      "Write mesh data to a VTK file."))
 	;
 	
 	class_<LinearCartesian2D_Domain>("LinearCartesian2D_Domain")
@@ -191,7 +193,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &LinearCartesian2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &LinearCartesian2D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &LinearCartesian2D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &LinearCartesian2D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &LinearCartesian2D_Domain::write_vtk,
+		                   LinearCartesian2D_Domain_overloads(args("filename", "segmentation"),
+		                                                      "Write mesh data to a VTK file."))
 	;
 	
 	class_<LinearCartesian3D_Domain>("LinearCartesian3D_Domain")
@@ -202,7 +206,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &LinearCartesian3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &LinearCartesian3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &LinearCartesian3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &LinearCartesian3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &LinearCartesian3D_Domain::write_vtk,
+		                   LinearCartesian3D_Domain_overloads(args("filename", "segmentation"),
+		                                                      "Write mesh data to a VTK file."))
 	;
 	
 	class_<LinearCylindrical3D_Domain>("LinearCylindrical3D_Domain")
@@ -213,7 +219,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &LinearCylindrical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &LinearCylindrical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &LinearCylindrical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &LinearCylindrical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &LinearCylindrical3D_Domain::write_vtk,
+		                   LinearCylindrical3D_Domain_overloads(args("filename", "segmentation"),
+		                                                        "Write mesh data to a VTK file."))
 	;
 	
 	class_<LinearPolar2D_Domain>("LinearPolar2D_Domain")
@@ -224,7 +232,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &LinearPolar2D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &LinearPolar2D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &LinearPolar2D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &LinearPolar2D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &LinearPolar2D_Domain::write_vtk,
+		                   LinearPolar2D_Domain_overloads(args("filename", "segmentation"),
+		                                                  "Write mesh data to a VTK file."))
 	;
 	
 	class_<LinearSpherical3D_Domain>("LinearSpherical3D_Domain")
@@ -235,7 +245,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &LinearSpherical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &LinearSpherical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &LinearSpherical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &LinearSpherical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &LinearSpherical3D_Domain::write_vtk,
+		                   LinearSpherical3D_Domain_overloads(args("filename", "segmentation"),
+		                                                      "Write mesh data to a VTK file."))
 	;
 	
 	/************************
