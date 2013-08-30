@@ -710,7 +710,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &TetrahedralCartesian3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &TetrahedralCartesian3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &TetrahedralCartesian3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &TetrahedralCartesian3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &TetrahedralCartesian3D_Domain::write_vtk,
+		                   TetrahedralCartesian3D_Domain_overloads(args("filename", "segmentation"),
+		                                                           "Write mesh data to a VTK file."))
 	;
 	
 	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
@@ -721,7 +723,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &TetrahedralCylindrical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &TetrahedralCylindrical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &TetrahedralCylindrical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &TetrahedralCylindrical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &TetrahedralCylindrical3D_Domain::write_vtk,
+		                   TetrahedralCylindrical3D_Domain_overloads(args("filename", "segmentation"),
+		                                                             "Write mesh data to a VTK file."))
 	;
 	
 	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
@@ -732,7 +736,9 @@ BOOST_PYTHON_MODULE(viennagrid_wrapper)
 		.def("read_netgen", &TetrahedralSpherical3D_Domain::read_netgen, "Read mesh data from a Netgen file.")
 		.def("read_vtk", &TetrahedralSpherical3D_Domain::read_vtk, "Read mesh data from a VTK file.")
 		.def("write_opendx", &TetrahedralSpherical3D_Domain::write_opendx, "Write mesh data to an OpenDX file.")
-		.def("write_vtk", &TetrahedralSpherical3D_Domain::write_vtk, "Write mesh data to a VTK file.")
+		.def("write_vtk", &TetrahedralSpherical3D_Domain::write_vtk,
+		                   TetrahedralSpherical3D_Domain_overloads(args("filename", "segmentation"),
+		                                                           "Write mesh data to a VTK file."))
 	;
 	
 	/*****************************
