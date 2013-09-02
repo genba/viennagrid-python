@@ -1,12 +1,13 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid segmentations.
+ */
+
 #ifndef SEGMENTATIONS_TYPES_HPP
 #define SEGMENTATIONS_TYPES_HPP
 
 #include "../domains/types.hpp"
 
-//#include <viennagrid/forwards.hpp>
-//#include <viennagrid/domain/domain.hpp>
-//#include <viennagrid/domain/topology.hpp>
-//#include <viennagrid/config/topology_config.hpp>
 #include <viennagrid/domain/segmentation.hpp>
 
 /***************

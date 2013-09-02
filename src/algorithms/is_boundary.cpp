@@ -6,7 +6,9 @@
  * IS_BOUNDARY (with domains and facets) *
  ******************************************/
 
-// Linear
+////////////
+// Linear //
+////////////
 
 bool LinearCartesian1D_Domain_Facet_is_boundary(LinearCartesian1D_Domain dom, LinearCartesian1D_Facet facet)
 {
@@ -38,7 +40,9 @@ bool LinearSpherical3D_Domain_Facet_is_boundary(LinearSpherical3D_Domain dom, Li
 	return viennagrid::is_boundary(dom.get_domain(), facet.get_facet());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Domain_Facet_is_boundary(TriangularCartesian2D_Domain dom, TriangularCartesian2D_Facet facet)
 {
@@ -65,7 +69,9 @@ bool TriangularSpherical3D_Domain_Facet_is_boundary(TriangularSpherical3D_Domain
 	return viennagrid::is_boundary(dom.get_domain(), facet.get_facet());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Domain_Facet_is_boundary(QuadrilateralCartesian2D_Domain dom, QuadrilateralCartesian2D_Facet facet)
 {
@@ -92,7 +98,9 @@ bool QuadrilateralSpherical3D_Domain_Facet_is_boundary(QuadrilateralSpherical3D_
 	return viennagrid::is_boundary(dom.get_domain(), facet.get_facet());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Domain_Facet_is_boundary(TetrahedralCartesian3D_Domain dom, TetrahedralCartesian3D_Facet facet)
 {
@@ -113,7 +121,9 @@ bool TetrahedralSpherical3D_Domain_Facet_is_boundary(TetrahedralSpherical3D_Doma
  * IS_BOUNDARY (with domains and edges) *
  *****************************************/
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Domain_Edge_is_boundary(TriangularCartesian2D_Domain dom, TriangularCartesian2D_Edge edge)
 {
@@ -140,7 +150,9 @@ bool TriangularSpherical3D_Domain_Edge_is_boundary(TriangularSpherical3D_Domain 
 	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Domain_Edge_is_boundary(QuadrilateralCartesian2D_Domain dom, QuadrilateralCartesian2D_Edge edge)
 {
@@ -167,7 +179,9 @@ bool QuadrilateralSpherical3D_Domain_Edge_is_boundary(QuadrilateralSpherical3D_D
 	return viennagrid::is_boundary(dom.get_domain(), edge.get_edge());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Domain_Edge_is_boundary(TetrahedralCartesian3D_Domain dom, TetrahedralCartesian3D_Edge edge)
 {
@@ -188,7 +202,9 @@ bool TetrahedralSpherical3D_Domain_Edge_is_boundary(TetrahedralSpherical3D_Domai
  * IS_BOUNDARY (with domains and vertices) *
  ********************************************/
 
-// Linear
+////////////
+// Linear //
+////////////
 
 bool LinearCartesian1D_Domain_Vertex_is_boundary(LinearCartesian1D_Domain dom, LinearCartesian1D_Vertex vertex)
 {
@@ -220,7 +236,9 @@ bool LinearSpherical3D_Domain_Vertex_is_boundary(LinearSpherical3D_Domain dom, L
 	return viennagrid::is_boundary(dom.get_domain(), vertex.get_vertex());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Domain_Vertex_is_boundary(TriangularCartesian2D_Domain dom, TriangularCartesian2D_Vertex vertex)
 {
@@ -247,7 +265,9 @@ bool TriangularSpherical3D_Domain_Vertex_is_boundary(TriangularSpherical3D_Domai
 	return viennagrid::is_boundary(dom.get_domain(), vertex.get_vertex());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Domain_Vertex_is_boundary(QuadrilateralCartesian2D_Domain dom, QuadrilateralCartesian2D_Vertex vertex)
 {
@@ -274,7 +294,9 @@ bool QuadrilateralSpherical3D_Domain_Vertex_is_boundary(QuadrilateralSpherical3D
 	return viennagrid::is_boundary(dom.get_domain(), vertex.get_vertex());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Domain_Vertex_is_boundary(TetrahedralCartesian3D_Domain dom, TetrahedralCartesian3D_Vertex vertex)
 {
@@ -295,7 +317,9 @@ bool TetrahedralSpherical3D_Domain_Vertex_is_boundary(TetrahedralSpherical3D_Dom
  * IS_BOUNDARY (with segments and facets) *
  *******************************************/
 
-// Linear
+////////////
+// Linear //
+////////////
 
 bool LinearCartesian1D_Segment_Facet_is_boundary(LinearCartesian1D_Segment seg, LinearCartesian1D_Facet facet)
 {
@@ -327,7 +351,9 @@ bool LinearSpherical3D_Segment_Facet_is_boundary(LinearSpherical3D_Segment seg, 
 	return viennagrid::is_boundary(seg.get_segment(), facet.get_facet());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Segment_Facet_is_boundary(TriangularCartesian2D_Segment seg, TriangularCartesian2D_Facet facet)
 {
@@ -354,7 +380,9 @@ bool TriangularSpherical3D_Segment_Facet_is_boundary(TriangularSpherical3D_Segme
 	return viennagrid::is_boundary(seg.get_segment(), facet.get_facet());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Segment_Facet_is_boundary(QuadrilateralCartesian2D_Segment seg, QuadrilateralCartesian2D_Facet facet)
 {
@@ -381,7 +409,9 @@ bool QuadrilateralSpherical3D_Segment_Facet_is_boundary(QuadrilateralSpherical3D
 	return viennagrid::is_boundary(seg.get_segment(), facet.get_facet());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Segment_Facet_is_boundary(TetrahedralCartesian3D_Segment seg, TetrahedralCartesian3D_Facet facet)
 {
@@ -402,7 +432,9 @@ bool TetrahedralSpherical3D_Segment_Facet_is_boundary(TetrahedralSpherical3D_Seg
  * IS_BOUNDARY (with segments and edges) *
  ******************************************/
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Segment_Edge_is_boundary(TriangularCartesian2D_Segment seg, TriangularCartesian2D_Edge edge)
 {
@@ -429,7 +461,9 @@ bool TriangularSpherical3D_Segment_Edge_is_boundary(TriangularSpherical3D_Segmen
 	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Segment_Edge_is_boundary(QuadrilateralCartesian2D_Segment seg, QuadrilateralCartesian2D_Edge edge)
 {
@@ -456,7 +490,9 @@ bool QuadrilateralSpherical3D_Segment_Edge_is_boundary(QuadrilateralSpherical3D_
 	return viennagrid::is_boundary(seg.get_segment(), edge.get_edge());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Segment_Edge_is_boundary(TetrahedralCartesian3D_Segment seg, TetrahedralCartesian3D_Edge edge)
 {
@@ -477,7 +513,9 @@ bool TetrahedralSpherical3D_Segment_Edge_is_boundary(TetrahedralSpherical3D_Segm
  * IS_BOUNDARY (with segments and vertices) *
  *********************************************/
 
-// Linear
+////////////
+// Linear //
+////////////
 
 bool LinearCartesian1D_Segment_Vertex_is_boundary(LinearCartesian1D_Segment seg, LinearCartesian1D_Vertex vertex)
 {
@@ -509,7 +547,9 @@ bool LinearSpherical3D_Segment_Vertex_is_boundary(LinearSpherical3D_Segment seg,
 	return viennagrid::is_boundary(seg.get_segment(), vertex.get_vertex());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Segment_Vertex_is_boundary(TriangularCartesian2D_Segment seg, TriangularCartesian2D_Vertex vertex)
 {
@@ -536,7 +576,9 @@ bool TriangularSpherical3D_Segment_Vertex_is_boundary(TriangularSpherical3D_Segm
 	return viennagrid::is_boundary(seg.get_segment(), vertex.get_vertex());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Segment_Vertex_is_boundary(QuadrilateralCartesian2D_Segment seg, QuadrilateralCartesian2D_Vertex vertex)
 {
@@ -563,7 +605,9 @@ bool QuadrilateralSpherical3D_Segment_Vertex_is_boundary(QuadrilateralSpherical3
 	return viennagrid::is_boundary(seg.get_segment(), vertex.get_vertex());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Segment_Vertex_is_boundary(TetrahedralCartesian3D_Segment seg, TetrahedralCartesian3D_Vertex vertex)
 {

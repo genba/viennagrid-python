@@ -2,12 +2,10 @@
 
 #include <viennagrid/algorithm/volume.hpp>
 
-/**********
- * VOLUME *
- **********/
+////////////
+// Linear //
+////////////
 
-// Linear
- 
 double LinearCartesian1D_Cell_volume(LinearCartesian1D_Cell cell)
 {
 	return viennagrid::volume(cell.get_cell());
@@ -38,7 +36,9 @@ double LinearSpherical3D_Cell_volume(LinearSpherical3D_Cell cell)
 	return viennagrid::volume(cell.get_cell());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 double TriangularCartesian2D_Cell_volume(TriangularCartesian2D_Cell cell)
 {
@@ -65,7 +65,9 @@ double TriangularSpherical3D_Cell_volume(TriangularSpherical3D_Cell cell)
 	return viennagrid::volume(cell.get_cell());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 double QuadrilateralCartesian2D_Cell_volume(QuadrilateralCartesian2D_Cell cell)
 {
@@ -92,7 +94,9 @@ double QuadrilateralSpherical3D_Cell_volume(QuadrilateralSpherical3D_Cell cell)
 	return viennagrid::volume(cell.get_cell());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 double TetrahedralCartesian3D_Cell_volume(TetrahedralCartesian3D_Cell cell)
 {

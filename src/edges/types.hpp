@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid edges.
+ */
+
 #ifndef EDGES_TYPES_HPP
 #define EDGES_TYPES_HPP
 

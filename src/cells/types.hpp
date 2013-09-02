@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Type definitions for ViennaGrid cells.
+ */
+
 #ifndef CELLS_TYPES_HPP
 #define CELLS_TYPES_HPP
 

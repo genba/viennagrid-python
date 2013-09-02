@@ -20,6 +20,8 @@
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void LinearCartesian1D_Domain_scale(LinearCartesian1D_Domain domain, double factor);
 
@@ -28,6 +30,8 @@ void LinearCartesian1D_Domain_scale(LinearCartesian1D_Domain domain, double fact
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void LinearCartesian2D_Domain_scale(LinearCartesian2D_Domain domain, double factor);
 
@@ -36,6 +40,8 @@ void LinearCartesian2D_Domain_scale(LinearCartesian2D_Domain domain, double fact
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void LinearCartesian3D_Domain_scale(LinearCartesian3D_Domain domain, double factor);
 
@@ -44,6 +50,8 @@ void LinearCartesian3D_Domain_scale(LinearCartesian3D_Domain domain, double fact
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void LinearCylindrical3D_Domain_scale(LinearCylindrical3D_Domain domain, double factor);
 
@@ -52,6 +60,8 @@ void LinearCylindrical3D_Domain_scale(LinearCylindrical3D_Domain domain, double 
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void LinearPolar2D_Domain_scale(LinearPolar2D_Domain domain, double factor);
 
@@ -60,6 +70,8 @@ void LinearPolar2D_Domain_scale(LinearPolar2D_Domain domain, double factor);
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void LinearSpherical3D_Domain_scale(LinearSpherical3D_Domain domain, double factor);
 
@@ -72,6 +84,8 @@ void LinearSpherical3D_Domain_scale(LinearSpherical3D_Domain domain, double fact
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TriangularCartesian2D_Domain_scale(TriangularCartesian2D_Domain domain, double factor);
 
@@ -80,6 +94,8 @@ void TriangularCartesian2D_Domain_scale(TriangularCartesian2D_Domain domain, dou
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TriangularCartesian3D_Domain_scale(TriangularCartesian3D_Domain domain, double factor);
 
@@ -88,6 +104,8 @@ void TriangularCartesian3D_Domain_scale(TriangularCartesian3D_Domain domain, dou
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TriangularCylindrical3D_Domain_scale(TriangularCylindrical3D_Domain domain, double factor);
 
@@ -96,6 +114,8 @@ void TriangularCylindrical3D_Domain_scale(TriangularCylindrical3D_Domain domain,
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TriangularPolar2D_Domain_scale(TriangularPolar2D_Domain domain, double factor);
 
@@ -104,6 +124,8 @@ void TriangularPolar2D_Domain_scale(TriangularPolar2D_Domain domain, double fact
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TriangularSpherical3D_Domain_scale(TriangularSpherical3D_Domain domain, double factor);
 
@@ -116,6 +138,8 @@ void TriangularSpherical3D_Domain_scale(TriangularSpherical3D_Domain domain, dou
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void QuadrilateralCartesian2D_Domain_scale(QuadrilateralCartesian2D_Domain domain, double factor);
 
@@ -124,6 +148,8 @@ void QuadrilateralCartesian2D_Domain_scale(QuadrilateralCartesian2D_Domain domai
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void QuadrilateralCartesian3D_Domain_scale(QuadrilateralCartesian3D_Domain domain, double factor);
 
@@ -132,6 +158,8 @@ void QuadrilateralCartesian3D_Domain_scale(QuadrilateralCartesian3D_Domain domai
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void QuadrilateralCylindrical3D_Domain_scale(QuadrilateralCylindrical3D_Domain domain, double factor);
 
@@ -140,6 +168,8 @@ void QuadrilateralCylindrical3D_Domain_scale(QuadrilateralCylindrical3D_Domain d
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void QuadrilateralPolar2D_Domain_scale(QuadrilateralPolar2D_Domain domain, double factor);
 
@@ -148,6 +178,8 @@ void QuadrilateralPolar2D_Domain_scale(QuadrilateralPolar2D_Domain domain, doubl
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void QuadrilateralSpherical3D_Domain_scale(QuadrilateralSpherical3D_Domain domain, double factor);
 
@@ -160,6 +192,8 @@ void QuadrilateralSpherical3D_Domain_scale(QuadrilateralSpherical3D_Domain domai
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TetrahedralCartesian3D_Domain_scale(TetrahedralCartesian3D_Domain domain, double factor);
 
@@ -168,6 +202,8 @@ void TetrahedralCartesian3D_Domain_scale(TetrahedralCartesian3D_Domain domain, d
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TetrahedralCylindrical3D_Domain_scale(TetrahedralCylindrical3D_Domain domain, double factor);
 
@@ -176,6 +212,8 @@ void TetrahedralCylindrical3D_Domain_scale(TetrahedralCylindrical3D_Domain domai
  * 
  * @param domain Domain to be scaled.
  * @param factor Scalation factor.
+ * 
+ * @since 0.1.0
  */
 void TetrahedralSpherical3D_Domain_scale(TetrahedralSpherical3D_Domain domain, double factor);
 

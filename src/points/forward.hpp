@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Forward definitions needed to use points when defining other classes.
+ */
+
 #ifndef POINTS_FORWARD_HPP
 #define POINTS_FORWARD_HPP
 

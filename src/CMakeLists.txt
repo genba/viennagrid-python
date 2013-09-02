@@ -3,6 +3,8 @@ project (ViennaGridWrapper)
 set (version 0.1)
 set (release 0.1.0)
 
+set (DOXYGEN_INPUT "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
+
 # Find Python header files (Python.h)
 find_package (PythonLibs REQUIRED)
 include_directories (${PYTHON_INCLUDE_PATH})
@@ -153,6 +155,6 @@ set (VIENNAGRID_WRAPPER_SRC
         ${VIENNAGRID_WRAPPER_FACETS_SRC}
         ${VIENNAGRID_WRAPPER_ALGORITHMS_SRC})
 
-python_add_module (viennagrid_wrapper ${VIENNAGRID_WRAPPER_SRC})
-target_link_libraries (viennagrid_wrapper ${Boost_LIBRARIES})
-set_target_properties (viennagrid_wrapper PROPERTIES VERSION ${release} SOVERSION ${version})
+python_add_module (wrapper ${VIENNAGRID_WRAPPER_SRC})
+target_link_libraries (wrapper ${Boost_LIBRARIES})
+set_target_properties (wrapper PROPERTIES VERSION ${release} SOVERSION ${version})

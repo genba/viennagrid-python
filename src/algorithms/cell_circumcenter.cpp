@@ -2,12 +2,10 @@
 
 #include <viennagrid/algorithm/circumcenter.hpp>
 
-/****************
- * CIRCUMCENTER *
- ****************/
+////////////
+// Linear //
+////////////
 
-// Linear
- 
 PointCartesian1D LinearCartesian1D_Cell_circumcenter(LinearCartesian1D_Cell cell)
 {
 	PointCartesian1D_t point = viennagrid::circumcenter(cell.get_cell());
@@ -44,7 +42,9 @@ PointSpherical3D LinearSpherical3D_Cell_circumcenter(LinearSpherical3D_Cell cell
 	return PointSpherical3D(point);
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 PointCartesian2D TriangularCartesian2D_Cell_circumcenter(TriangularCartesian2D_Cell cell)
 {
@@ -76,7 +76,9 @@ PointSpherical3D TriangularSpherical3D_Cell_circumcenter(TriangularSpherical3D_C
 	return PointSpherical3D(point);
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 PointCartesian2D QuadrilateralCartesian2D_Cell_circumcenter(QuadrilateralCartesian2D_Cell cell)
 {
@@ -108,7 +110,9 @@ PointSpherical3D QuadrilateralSpherical3D_Cell_circumcenter(QuadrilateralSpheric
 	return PointSpherical3D(point);
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 PointCartesian3D TetrahedralCartesian3D_Cell_circumcenter(TetrahedralCartesian3D_Cell cell)
 {

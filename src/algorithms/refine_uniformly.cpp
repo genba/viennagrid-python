@@ -2,10 +2,6 @@
 
 #include <viennagrid/algorithm/refine.hpp>
 
-/********************
- * REFINE_UNIFORMLY *
- ********************/
-
 ////////////////
 // Triangular //
 ////////////////

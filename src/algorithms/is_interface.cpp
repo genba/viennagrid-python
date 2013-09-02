@@ -6,7 +6,9 @@
  * IS_INTERFACE (with facets) *
  ******************************/
 
-// Linear
+////////////
+// Linear //
+////////////
 
 bool LinearCartesian1D_Facet_is_interface(LinearCartesian1D_Segment seg0, LinearCartesian1D_Segment seg1, LinearCartesian1D_Facet facet)
 {
@@ -38,7 +40,9 @@ bool LinearSpherical3D_Facet_is_interface(LinearSpherical3D_Segment seg0, Linear
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), facet.get_facet());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Facet_is_interface(TriangularCartesian2D_Segment seg0, TriangularCartesian2D_Segment seg1, TriangularCartesian2D_Facet facet)
 {
@@ -65,7 +69,9 @@ bool TriangularSpherical3D_Facet_is_interface(TriangularSpherical3D_Segment seg0
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), facet.get_facet());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Facet_is_interface(QuadrilateralCartesian2D_Segment seg0, QuadrilateralCartesian2D_Segment seg1, QuadrilateralCartesian2D_Facet facet)
 {
@@ -92,7 +98,9 @@ bool QuadrilateralSpherical3D_Facet_is_interface(QuadrilateralSpherical3D_Segmen
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), facet.get_facet());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Facet_is_interface(TetrahedralCartesian3D_Segment seg0, TetrahedralCartesian3D_Segment seg1, TetrahedralCartesian3D_Facet facet)
 {
@@ -113,7 +121,9 @@ bool TetrahedralSpherical3D_Facet_is_interface(TetrahedralSpherical3D_Segment se
  * IS_INTERFACE (with edges) *
  *****************************/
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Edge_is_interface(TriangularCartesian2D_Segment seg0, TriangularCartesian2D_Segment seg1, TriangularCartesian2D_Edge edge)
 {
@@ -140,7 +150,9 @@ bool TriangularSpherical3D_Edge_is_interface(TriangularSpherical3D_Segment seg0,
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), edge.get_edge());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Edge_is_interface(QuadrilateralCartesian2D_Segment seg0, QuadrilateralCartesian2D_Segment seg1, QuadrilateralCartesian2D_Edge edge)
 {
@@ -167,7 +179,9 @@ bool QuadrilateralSpherical3D_Edge_is_interface(QuadrilateralSpherical3D_Segment
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), edge.get_edge());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Edge_is_interface(TetrahedralCartesian3D_Segment seg0, TetrahedralCartesian3D_Segment seg1, TetrahedralCartesian3D_Edge edge)
 {
@@ -188,7 +202,9 @@ bool TetrahedralSpherical3D_Edge_is_interface(TetrahedralSpherical3D_Segment seg
  * IS_INTERFACE (with vertices) *
  ********************************/
 
-// Linear
+////////////
+// Linear //
+////////////
 
 bool LinearCartesian1D_Vertex_is_interface(LinearCartesian1D_Segment seg0, LinearCartesian1D_Segment seg1, LinearCartesian1D_Vertex vertex)
 {
@@ -220,7 +236,9 @@ bool LinearSpherical3D_Vertex_is_interface(LinearSpherical3D_Segment seg0, Linea
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), vertex.get_vertex());
 }
 
-// Triangular
+////////////////
+// Triangular //
+////////////////
 
 bool TriangularCartesian2D_Vertex_is_interface(TriangularCartesian2D_Segment seg0, TriangularCartesian2D_Segment seg1, TriangularCartesian2D_Vertex vertex)
 {
@@ -247,7 +265,9 @@ bool TriangularSpherical3D_Vertex_is_interface(TriangularSpherical3D_Segment seg
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), vertex.get_vertex());
 }
 
-// Quadrilateral
+///////////////////
+// Quadrilateral //
+///////////////////
 
 bool QuadrilateralCartesian2D_Vertex_is_interface(QuadrilateralCartesian2D_Segment seg0, QuadrilateralCartesian2D_Segment seg1, QuadrilateralCartesian2D_Vertex vertex)
 {
@@ -274,7 +294,9 @@ bool QuadrilateralSpherical3D_Vertex_is_interface(QuadrilateralSpherical3D_Segme
 	return viennagrid::is_interface(seg0.get_segment(), seg1.get_segment(), vertex.get_vertex());
 }
 
-// Tetrahedral
+/////////////////
+// Tetrahedral //
+/////////////////
 
 bool TetrahedralCartesian3D_Vertex_is_interface(TetrahedralCartesian3D_Segment seg0, TetrahedralCartesian3D_Segment seg1, TetrahedralCartesian3D_Vertex vertex)
 {
