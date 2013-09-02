@@ -41,6 +41,16 @@ CELL_TAGS = (LINE_TAG, TRIANGLE_TAG, TETRAHEDRON_TAG, QUADRILATERAL_TAG, HEXAHED
 #######################
 
 class Configuration(object):
+	"""
+	This class stores the necessary information to characterize the configuration of a domain:
+	
+	* numeric type (data type used for number representation)
+	* coordinate system
+	* dimension of the space
+	* cell tag (string that identifies which type of cell the domain consists of)
+	
+	and provides useful functions for retrieving the appropriate types for points, domains and segmentations.
+	"""
 	def __init__(self, cell_tag, coord_system, dim=None):
 		super(Configuration, self).__init__()
 		
@@ -76,18 +86,22 @@ class Configuration(object):
 	
 	@property
 	def numeric_type(self):
+		"""Return the data type used for number representation (this is always the string `'double'`)."""
 		return self._numeric_type
 	
 	@property
 	def coord_system(self):
+		"""Return the coordinate system tag."""
 		return self._coord_system
 	
 	@property
 	def cell_tag(self):
+		"""Return the cell tag."""
 		return self._cell_tag
 	
 	@property
 	def dim(self):
+		"""Return the dimension of the space as an integer."""
 		return self._dim
 	
 	@property
@@ -109,17 +123,28 @@ class Configuration(object):
 		return _wrapper.__getattribute__(classname)
 	
 	def make_point(self, *args, **kwargs):
-		"""Create a new point based in this configuration"""
+		"""
+		Create a new low-level (:mod:`viennagrid.wrapper`) point based in this configuration
+		
+		As arguments you can pass the coordinates of the point to create, or nothing at all.
+		If you specify the coordinates of the point, the number of arguments must match the dimension of the space
+		(i.e. the number of coordinates that the are needed to describe the location of the point in the space).
+		"""
 		PointType = self.point_type
 		return PointType(*args, **kwargs)
 	
-	def make_domain(self, *args, **kwargs):
-		"""Create a new domain based in this configuration"""
+	def make_domain(self):
+		"""Create a new low-level (:mod:`viennagrid.wrapper`) domain based in this configuration"""
 		DomainType = self.domain_type
-		return DomainType(*args, **kwargs)
+		return DomainType()
 	
-	def make_segmentation(self, *args, **kwargs):
-		"""Create a new segmentation based in this configuration"""
+	def make_segmentation(self, domain):
+		"""
+		Create a new low-level (:mod:`viennagrid.wrapper`) segmentation based in this configuration.
+		
+		:param domain: Domain on which to base the segmentation.
+		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class
+		"""
 		SegmentationType = self.segmentation_type
 		return SegmentationType(*args, **kwargs)
 
