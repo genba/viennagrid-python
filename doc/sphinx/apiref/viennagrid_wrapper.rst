@@ -92,6 +92,54 @@ Domains
 .. autoclass:: TetrahedralSpherical3D_Domain
     :members:
 
+Segmentations
+-------------
+
+.. TRIANGULAR SEGMENTATIONS
+
+.. autoclass:: TriangularCartesian2D_Segmentation
+    :members:
+
+.. autoclass:: TriangularCartesian3D_Segmentation
+    :members:
+
+.. autoclass:: TriangularCylindrical3D_Segmentation
+    :members:
+
+.. autoclass:: TriangularPolar2D_Segmentation
+    :members:
+
+.. autoclass:: TriangularSpherical3D_Segmentation
+    :members:
+
+.. QUADRILATERAL SEGMENTATIONS
+
+.. autoclass:: QuadrilateralCartesian2D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralCartesian3D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralCylindrical3D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralPolar2D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralSpherical3D_Segmentation
+    :members:
+
+.. TETRAHEDRAL SEGMENTATIONS
+
+.. autoclass:: TetrahedralCartesian3D_Segmentation
+    :members:
+
+.. autoclass:: TetrahedralCylindrical3D_Segmentation
+    :members:
+
+.. autoclass:: TetrahedralSpherical3D_Segmentation
+    :members:
+
 Segments
 --------
 
