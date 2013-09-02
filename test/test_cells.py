@@ -7,7 +7,7 @@ if len(sys.argv) > 1:
 
 import unittest
 
-import viennagrid_wrapper
+import viennagrid.wrapper
 
 ##################
 # LINEAR DOMAINS #
@@ -17,19 +17,19 @@ class TestLinearCartesian1D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian1D(1),
-			viennagrid_wrapper.PointCartesian1D(2),
-			viennagrid_wrapper.PointCartesian1D(3),
-			viennagrid_wrapper.PointCartesian1D(4),
-			viennagrid_wrapper.PointCartesian1D(5),
+			viennagrid.wrapper.PointCartesian1D(1),
+			viennagrid.wrapper.PointCartesian1D(2),
+			viennagrid.wrapper.PointCartesian1D(3),
+			viennagrid.wrapper.PointCartesian1D(4),
+			viennagrid.wrapper.PointCartesian1D(5),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCartesian1D_Domain()
+		self.domain = viennagrid.wrapper.LinearCartesian1D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.LinearCartesian1D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.LinearCartesian1D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -51,19 +51,19 @@ class TestLinearCartesian2D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian2D(1, 2),
-			viennagrid_wrapper.PointCartesian2D(2, 3),
-			viennagrid_wrapper.PointCartesian2D(3, 4),
-			viennagrid_wrapper.PointCartesian2D(4, 5),
-			viennagrid_wrapper.PointCartesian2D(5, 6),
+			viennagrid.wrapper.PointCartesian2D(1, 2),
+			viennagrid.wrapper.PointCartesian2D(2, 3),
+			viennagrid.wrapper.PointCartesian2D(3, 4),
+			viennagrid.wrapper.PointCartesian2D(4, 5),
+			viennagrid.wrapper.PointCartesian2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCartesian2D_Domain()
+		self.domain = viennagrid.wrapper.LinearCartesian2D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.LinearCartesian2D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.LinearCartesian2D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -85,19 +85,19 @@ class TestLinearCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.LinearCartesian3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.LinearCartesian3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.LinearCartesian3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -119,19 +119,19 @@ class TestLinearCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.LinearCylindrical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.LinearCylindrical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.LinearCylindrical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -153,19 +153,19 @@ class TestLinearPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointPolar2D(1, 2),
-			viennagrid_wrapper.PointPolar2D(2, 3),
-			viennagrid_wrapper.PointPolar2D(3, 4),
-			viennagrid_wrapper.PointPolar2D(4, 5),
-			viennagrid_wrapper.PointPolar2D(5, 6),
+			viennagrid.wrapper.PointPolar2D(1, 2),
+			viennagrid.wrapper.PointPolar2D(2, 3),
+			viennagrid.wrapper.PointPolar2D(3, 4),
+			viennagrid.wrapper.PointPolar2D(4, 5),
+			viennagrid.wrapper.PointPolar2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearPolar2D_Domain()
+		self.domain = viennagrid.wrapper.LinearPolar2D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.LinearPolar2D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.LinearPolar2D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -187,19 +187,19 @@ class TestLinearSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.LinearSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.LinearSpherical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.LinearSpherical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.LinearSpherical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -225,19 +225,19 @@ class TestTriangularCartesian2D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian2D(1, 2),
-			viennagrid_wrapper.PointCartesian2D(2, 3),
-			viennagrid_wrapper.PointCartesian2D(3, 4),
-			viennagrid_wrapper.PointCartesian2D(4, 5),
-			viennagrid_wrapper.PointCartesian2D(5, 6),
+			viennagrid.wrapper.PointCartesian2D(1, 2),
+			viennagrid.wrapper.PointCartesian2D(2, 3),
+			viennagrid.wrapper.PointCartesian2D(3, 4),
+			viennagrid.wrapper.PointCartesian2D(4, 5),
+			viennagrid.wrapper.PointCartesian2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularCartesian2D_Domain()
+		self.domain = viennagrid.wrapper.TriangularCartesian2D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TriangularCartesian2D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TriangularCartesian2D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -260,19 +260,19 @@ class TestTriangularCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.TriangularCartesian3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TriangularCartesian3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TriangularCartesian3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -295,19 +295,19 @@ class TestTriangularCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.TriangularCylindrical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TriangularCylindrical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TriangularCylindrical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -330,19 +330,19 @@ class TestTriangularPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointPolar2D(1, 2),
-			viennagrid_wrapper.PointPolar2D(2, 3),
-			viennagrid_wrapper.PointPolar2D(3, 4),
-			viennagrid_wrapper.PointPolar2D(4, 5),
-			viennagrid_wrapper.PointPolar2D(5, 6),
+			viennagrid.wrapper.PointPolar2D(1, 2),
+			viennagrid.wrapper.PointPolar2D(2, 3),
+			viennagrid.wrapper.PointPolar2D(3, 4),
+			viennagrid.wrapper.PointPolar2D(4, 5),
+			viennagrid.wrapper.PointPolar2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularPolar2D_Domain()
+		self.domain = viennagrid.wrapper.TriangularPolar2D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TriangularPolar2D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TriangularPolar2D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -365,19 +365,19 @@ class TestTriangularSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TriangularSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.TriangularSpherical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TriangularSpherical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TriangularSpherical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -404,19 +404,19 @@ class TestQuadrilateralCartesian2D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian2D(1, 2),
-			viennagrid_wrapper.PointCartesian2D(2, 3),
-			viennagrid_wrapper.PointCartesian2D(3, 4),
-			viennagrid_wrapper.PointCartesian2D(4, 5),
-			viennagrid_wrapper.PointCartesian2D(5, 6),
+			viennagrid.wrapper.PointCartesian2D(1, 2),
+			viennagrid.wrapper.PointCartesian2D(2, 3),
+			viennagrid.wrapper.PointCartesian2D(3, 4),
+			viennagrid.wrapper.PointCartesian2D(4, 5),
+			viennagrid.wrapper.PointCartesian2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralCartesian2D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralCartesian2D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.QuadrilateralCartesian2D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.QuadrilateralCartesian2D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -440,19 +440,19 @@ class TestQuadrilateralCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralCartesian3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.QuadrilateralCartesian3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.QuadrilateralCartesian3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -476,19 +476,19 @@ class TestQuadrilateralCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralCylindrical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.QuadrilateralCylindrical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.QuadrilateralCylindrical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -512,19 +512,19 @@ class TestQuadrilateralPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointPolar2D(1, 2),
-			viennagrid_wrapper.PointPolar2D(2, 3),
-			viennagrid_wrapper.PointPolar2D(3, 4),
-			viennagrid_wrapper.PointPolar2D(4, 5),
-			viennagrid_wrapper.PointPolar2D(5, 6),
+			viennagrid.wrapper.PointPolar2D(1, 2),
+			viennagrid.wrapper.PointPolar2D(2, 3),
+			viennagrid.wrapper.PointPolar2D(3, 4),
+			viennagrid.wrapper.PointPolar2D(4, 5),
+			viennagrid.wrapper.PointPolar2D(5, 6),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralPolar2D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralPolar2D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.QuadrilateralPolar2D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.QuadrilateralPolar2D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -548,19 +548,19 @@ class TestQuadrilateralSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.QuadrilateralSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.QuadrilateralSpherical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.QuadrilateralSpherical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.QuadrilateralSpherical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -588,19 +588,19 @@ class TestTetrahedralCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCartesian3D(1, 2, 7),
-			viennagrid_wrapper.PointCartesian3D(2, 3, 7),
-			viennagrid_wrapper.PointCartesian3D(3, 4, 7),
-			viennagrid_wrapper.PointCartesian3D(4, 5, 7),
-			viennagrid_wrapper.PointCartesian3D(5, 6, 7),
+			viennagrid.wrapper.PointCartesian3D(1, 2, 7),
+			viennagrid.wrapper.PointCartesian3D(2, 3, 7),
+			viennagrid.wrapper.PointCartesian3D(3, 4, 7),
+			viennagrid.wrapper.PointCartesian3D(4, 5, 7),
+			viennagrid.wrapper.PointCartesian3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TetrahedralCartesian3D_Domain()
+		self.domain = viennagrid.wrapper.TetrahedralCartesian3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TetrahedralCartesian3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TetrahedralCartesian3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -624,19 +624,19 @@ class TestTetrahedralCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointCylindrical3D(1, 2, 7),
-			viennagrid_wrapper.PointCylindrical3D(2, 3, 7),
-			viennagrid_wrapper.PointCylindrical3D(3, 4, 7),
-			viennagrid_wrapper.PointCylindrical3D(4, 5, 7),
-			viennagrid_wrapper.PointCylindrical3D(5, 6, 7),
+			viennagrid.wrapper.PointCylindrical3D(1, 2, 7),
+			viennagrid.wrapper.PointCylindrical3D(2, 3, 7),
+			viennagrid.wrapper.PointCylindrical3D(3, 4, 7),
+			viennagrid.wrapper.PointCylindrical3D(4, 5, 7),
+			viennagrid.wrapper.PointCylindrical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TetrahedralCylindrical3D_Domain()
+		self.domain = viennagrid.wrapper.TetrahedralCylindrical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TetrahedralCylindrical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TetrahedralCylindrical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()
@@ -660,19 +660,19 @@ class TestTetrahedralSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
 		# Create domain and add vertices
 		self.vertices = [
-			viennagrid_wrapper.PointSpherical3D(1, 2, 7),
-			viennagrid_wrapper.PointSpherical3D(2, 3, 7),
-			viennagrid_wrapper.PointSpherical3D(3, 4, 7),
-			viennagrid_wrapper.PointSpherical3D(4, 5, 7),
-			viennagrid_wrapper.PointSpherical3D(5, 6, 7),
+			viennagrid.wrapper.PointSpherical3D(1, 2, 7),
+			viennagrid.wrapper.PointSpherical3D(2, 3, 7),
+			viennagrid.wrapper.PointSpherical3D(3, 4, 7),
+			viennagrid.wrapper.PointSpherical3D(4, 5, 7),
+			viennagrid.wrapper.PointSpherical3D(5, 6, 7),
 		]
 		self.num_vertices = len(self.vertices)
-		self.domain = viennagrid_wrapper.TetrahedralSpherical3D_Domain()
+		self.domain = viennagrid.wrapper.TetrahedralSpherical3D_Domain()
 		for point in self.vertices:
 			self.domain.make_vertex(point)
 		
 		# Create a segmentation on the domain
-		self.segmentation = viennagrid_wrapper.TetrahedralSpherical3D_Segmentation(self.domain)
+		self.segmentation = viennagrid.wrapper.TetrahedralSpherical3D_Segmentation(self.domain)
 		
 		# Create a new segment within the segmentation
 		self.segment = self.segmentation.make_segment()

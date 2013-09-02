@@ -28,11 +28,11 @@ set (OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/timestamp")
 
 add_custom_command (OUTPUT  ${OUTPUT}
                     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
-                    COMMAND ${CMAKE_COMMAND} -E copy "${LIBRARY_OUTPUT_PATH}/viennagrid_wrapper.so" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
+                    COMMAND ${CMAKE_COMMAND} -E copy "${LIBRARY_OUTPUT_PATH}/wrapper.so" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
                     COMMAND python "${SETUP_PY}" sdist
                     COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT}
-                    DEPENDS viennagrid_wrapper)
+                    DEPENDS wrapper)
 
-add_custom_target (target ALL DEPENDS ${OUTPUT})
+add_custom_target (package ALL DEPENDS ${OUTPUT})
 
 install (CODE "execute_process (COMMAND python \"${SETUP_PY}\" install)")

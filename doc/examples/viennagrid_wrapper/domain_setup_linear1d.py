@@ -3,9 +3,9 @@
 
 from __future__ import print_function
 
-from viennagrid_wrapper import LinearCartesian1D_Domain as Domain
-from viennagrid_wrapper import LinearCartesian1D_Segmentation as Segmentation
-from viennagrid_wrapper import PointCartesian1D as Point
+from viennagrid.wrapper import LinearCartesian1D_Domain as Domain
+from viennagrid.wrapper import LinearCartesian1D_Segmentation as Segmentation
+from viennagrid.wrapper import PointCartesian1D as Point
 
 # Create a domain and add 4 vertices to it
 domain = Domain()

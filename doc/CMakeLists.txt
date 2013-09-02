@@ -6,8 +6,8 @@ set (TARGETS)
 # If sphinx-build cannot be found, issue a warning and continue, but do not add target for Sphinx documentation.
 find_program (SPHINX_BUILD_EXECUTABLE sphinx-build)
 if (SPHINX_BUILD_EXECUTABLE)
-	set (WRAPPER_LOCATION "${PROJECT_BINARY_DIR}/src") # TODO: find if CMake provides a better way to do this (like e.g. LIBRARY_PATH)
-	set (SPHINX_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sphinx/source")
+	set (DISTUTILS_PACKAGE_PATH "${CMAKE_BINARY_DIR}/viennagrid-python")
+	set (SPHINX_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sphinx")
 	
 	# configured documentation tools and intermediate build results
 	set (SPHINX_CONF_DIR "${CMAKE_CURRENT_BINARY_DIR}/sphinx")
@@ -19,7 +19,7 @@ if (SPHINX_BUILD_EXECUTABLE)
 	configure_file("${SPHINX_SRC_DIR}/conf.py.in" "${SPHINX_CONF_DIR}/conf.py" @ONLY)
 	add_custom_target (sphinx
 	                   ${SPHINX_BUILD_EXECUTABLE} -q -b html -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_HTML_DIR}"
-	                   DEPENDS viennagrid_wrapper)
+	                   DEPENDS package)
 	set (TARGETS ${TARGETS} sphinx)
 else (SPHINX_BUILD_EXECUTABLE)
 	message (WARNING "sphinx-build not found")

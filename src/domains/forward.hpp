@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Forward declarations needed to use domains when defining other classes.
+ */
+
 #ifndef FORWARD_HPP_MPKJBME9
 #define FORWARD_HPP_MPKJBME9
 

@@ -1,21 +1,18 @@
-API reference of viennagrid_wrapper
-***********************************
+API reference of :mod:`viennagrid.wrapper`
+==========================================
 
-.. toctree::
-    :maxdepth: 2
-
-.. automodule:: viennagrid_wrapper
-    :synopsis: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes from Python
+.. module:: viennagrid.wrapper
+    :synopsis: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes
 
 Free functions
-==============
+--------------
 
 .. autofunction:: version
 
 Points
-======
+------
 
-`viennagrid_wrapper` supports the following point types:
+:mod:`viennagrid.wrapper` supports the following point types:
 
 * cartesian 2D and 3D
 * cylindrical (3-dimensional)
@@ -26,11 +23,11 @@ all of them using double precision.
 
 For each type of point there is a separate class:
 
-* :py:class:`~viennagrid_wrapper.PointCartesian2D` for creating cartesian 2D points
-* :py:class:`~viennagrid_wrapper.PointCartesian3D` for creating cartesian 3D points
-* :py:class:`~viennagrid_wrapper.PointCylindrical3D` for creating cylindrical points
-* :py:class:`~viennagrid_wrapper.PointPolar2D` for creating polar points
-* :py:class:`~viennagrid_wrapper.PointSpherical3D` for creating spherical points
+* :py:class:`~viennagrid.wrapper.PointCartesian2D` for creating cartesian 2D points
+* :py:class:`~viennagrid.wrapper.PointCartesian3D` for creating cartesian 3D points
+* :py:class:`~viennagrid.wrapper.PointCylindrical3D` for creating cylindrical points
+* :py:class:`~viennagrid.wrapper.PointPolar2D` for creating polar points
+* :py:class:`~viennagrid.wrapper.PointSpherical3D` for creating spherical points
 
 .. autoclass:: PointCartesian2D
     :members:
@@ -48,7 +45,7 @@ For each type of point there is a separate class:
     :members:
 
 Domains
-=======
+-------
 
 .. TRIANGULAR DOMAINS
 
@@ -95,8 +92,56 @@ Domains
 .. autoclass:: TetrahedralSpherical3D_Domain
     :members:
 
+Segmentations
+-------------
+
+.. TRIANGULAR SEGMENTATIONS
+
+.. autoclass:: TriangularCartesian2D_Segmentation
+    :members:
+
+.. autoclass:: TriangularCartesian3D_Segmentation
+    :members:
+
+.. autoclass:: TriangularCylindrical3D_Segmentation
+    :members:
+
+.. autoclass:: TriangularPolar2D_Segmentation
+    :members:
+
+.. autoclass:: TriangularSpherical3D_Segmentation
+    :members:
+
+.. QUADRILATERAL SEGMENTATIONS
+
+.. autoclass:: QuadrilateralCartesian2D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralCartesian3D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralCylindrical3D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralPolar2D_Segmentation
+    :members:
+
+.. autoclass:: QuadrilateralSpherical3D_Segmentation
+    :members:
+
+.. TETRAHEDRAL SEGMENTATIONS
+
+.. autoclass:: TetrahedralCartesian3D_Segmentation
+    :members:
+
+.. autoclass:: TetrahedralCylindrical3D_Segmentation
+    :members:
+
+.. autoclass:: TetrahedralSpherical3D_Segmentation
+    :members:
+
 Segments
-========
+--------
 
 .. TRIANGULAR SEGMENTS
 
@@ -144,7 +189,7 @@ Segments
     :members:
 
 Cells
-=====
+-----
 
 .. TRIANGULAR CELLS
 

@@ -33,6 +33,11 @@ list LinearCartesian1D_Cell::get_vertices()
 	return vertices;
 }
 
+LinearCartesian1D_Cell_t & LinearCartesian1D_Cell::get_cell()
+{
+	return *cell;
+}
+
 ////////////////////////
 // Line, cartesian 2D //
 ////////////////////////
@@ -64,6 +69,11 @@ list LinearCartesian2D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+LinearCartesian2D_Cell_t & LinearCartesian2D_Cell::get_cell()
+{
+	return *cell;
 }
 
 ////////////////////////
@@ -99,6 +109,11 @@ list LinearCartesian3D_Cell::get_vertices()
 	return vertices;
 }
 
+LinearCartesian3D_Cell_t & LinearCartesian3D_Cell::get_cell()
+{
+	return *cell;
+}
+
 ////////////////////////////
 // Line, cylindrical (3D) //
 ////////////////////////////
@@ -130,6 +145,11 @@ list LinearCylindrical3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+LinearCylindrical3D_Cell_t & LinearCylindrical3D_Cell::get_cell()
+{
+	return *cell;
 }
 
 //////////////////////
@@ -165,6 +185,11 @@ list LinearPolar2D_Cell::get_vertices()
 	return vertices;
 }
 
+LinearPolar2D_Cell_t & LinearPolar2D_Cell::get_cell()
+{
+	return *cell;
+}
+
 //////////////////////////
 // Line, spherical (3D) //
 //////////////////////////
@@ -196,4 +221,9 @@ list LinearSpherical3D_Cell::get_vertices()
 	}
 	
 	return vertices;
+}
+
+LinearSpherical3D_Cell_t & LinearSpherical3D_Cell::get_cell()
+{
+	return *cell;
 }
