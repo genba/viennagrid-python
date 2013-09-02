@@ -195,3 +195,10 @@ Common configurations
 	
 		Configuration(HEXAHEDRON_TAG, CARTESIAN, 3)
 
+:mod:`viennagrid.algorithms` --- Common algorithms on mesh elements
+-------------------------------------------------------------------
+
+.. automodule:: viennagrid.algorithms
+	:members:
+	:undoc-members:
+	:synopsis: Common algorithms on mesh elements
