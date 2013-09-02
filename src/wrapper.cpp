@@ -1016,28 +1016,28 @@ BOOST_PYTHON_MODULE(wrapper)
 	 * APPLY_VORONOI *
 	 *****************/
 	
-	def("apply_voronoi", &LinearCartesian1D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &LinearCartesian2D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &LinearCartesian3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &LinearCylindrical3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &LinearPolar2D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &LinearSpherical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &LinearCartesian1D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &LinearCartesian2D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &LinearCartesian3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &LinearCylindrical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &LinearPolar2D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &LinearSpherical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
 	
-	def("apply_voronoi", &TriangularCartesian2D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &TriangularCartesian3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &TriangularCylindrical3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &TriangularPolar2D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &TriangularSpherical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TriangularCartesian2D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &TriangularCartesian3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &TriangularCylindrical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &TriangularPolar2D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &TriangularSpherical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
 	
-	def("apply_voronoi", &QuadrilateralCartesian2D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &QuadrilateralCartesian3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &QuadrilateralCylindrical3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &QuadrilateralPolar2D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &QuadrilateralSpherical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &QuadrilateralCartesian2D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &QuadrilateralCartesian3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &QuadrilateralCylindrical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &QuadrilateralPolar2D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &QuadrilateralSpherical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
 	
-	def("apply_voronoi", &TetrahedralCartesian3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &TetrahedralCylindrical3D_Domain_apply_voronoi, "docstring");
-	def("apply_voronoi", &TetrahedralSpherical3D_Domain_apply_voronoi, "docstring");
+	def("apply_voronoi", &TetrahedralCartesian3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &TetrahedralCylindrical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
+	def("apply_voronoi", &TetrahedralSpherical3D_Domain_apply_voronoi, "Compute Voronoi information of the given domain.");
 	
 	/************
 	 * CENTROID *
