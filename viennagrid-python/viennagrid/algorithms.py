@@ -156,6 +156,19 @@ def volume(cell):
 		cell = cell._segment
 	return _wrapper.volume(cell)
 
+def scale(dom, factor):
+	"""
+	Scale a domain by a given factor.
+	
+	:param dom: Domain to be scaled
+	:type dom: :class:`viennagrid.Domain` or any domain class from :mod:`viennagrid.wrapper`
+	:param factor: Scale factor
+	:type factor: float
+	"""
+	if isinstance(dom, viennagrid.Domain):
+		dom = dom._domain
+	viennagrid.wrapper.scale(dom, factor)
+
 def spanned_volume(*args):
 	point_list = []
 	
