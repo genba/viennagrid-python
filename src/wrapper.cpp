@@ -58,6 +58,8 @@ using namespace boost::python;
 #include "algorithms/segment_volume.hpp"
 #include "algorithms/spanned_volume.hpp"
 
+#include "io/read_netgen.hpp"
+
 #include "exception_translator.hpp"
 
 #include <viennagrid/io/helper.hpp>
@@ -1646,4 +1648,85 @@ BOOST_PYTHON_MODULE(wrapper)
 	def("spanned_volume", &TriangularCartesian3D_spanned_volume, "Calculate the volume spanned by a set of points.");
 	
 	def("spanned_volume", &TetrahedralCartesian3D_spanned_volume, "Calculate the volume spanned by a set of points.");
+	
+	/***************
+	 * READ_NETGEN *
+	 ***************/
+	
+	////////////
+	// LINEAR //
+	////////////
+	
+	def("read_netgen", LinearCartesian1D_Domain_read_netgen,
+	                   LinearCartesian1D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	def("read_netgen", LinearCartesian2D_Domain_read_netgen,
+	                   LinearCartesian2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	def("read_netgen", LinearCartesian3D_Domain_read_netgen,
+	                   LinearCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	def("read_netgen", LinearCylindrical3D_Domain_read_netgen,
+	                   LinearCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                    "docstring"));
+	def("read_netgen", LinearPolar2D_Domain_read_netgen,
+	                   LinearPolar2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                              "docstring"));
+	def("read_netgen", LinearSpherical3D_Domain_read_netgen,
+	                   LinearSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	
+	////////////////
+	// TRIANGULAR //
+	////////////////
+	
+	def("read_netgen", TriangularCartesian2D_Domain_read_netgen,
+	                   TriangularCartesian2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                      "docstring"));
+	def("read_netgen", TriangularCartesian3D_Domain_read_netgen,
+	                   TriangularCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                      "docstring"));
+	def("read_netgen", TriangularCylindrical3D_Domain_read_netgen,
+	                   TriangularCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                        "docstring"));
+	def("read_netgen", TriangularPolar2D_Domain_read_netgen,
+	                   TriangularPolar2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	def("read_netgen", TriangularSpherical3D_Domain_read_netgen,
+	                   TriangularSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                      "docstring"));
+	
+	///////////////////
+	// QUADRILATERAL //
+	///////////////////
+	
+	def("read_netgen", QuadrilateralCartesian2D_Domain_read_netgen,
+	                   QuadrilateralCartesian2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                         "docstring"));
+	def("read_netgen", QuadrilateralCartesian3D_Domain_read_netgen,
+	                   QuadrilateralCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                         "docstring"));
+	def("read_netgen", QuadrilateralCylindrical3D_Domain_read_netgen,
+	                   QuadrilateralCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                           "docstring"));
+	def("read_netgen", QuadrilateralPolar2D_Domain_read_netgen,
+	                   QuadrilateralPolar2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                     "docstring"));
+	def("read_netgen", QuadrilateralSpherical3D_Domain_read_netgen,
+	                   QuadrilateralSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                         "docstring"));
+	
+	/////////////////
+	// TETRAHEDRAL //
+	/////////////////
+	
+	def("read_netgen", TetrahedralCartesian3D_Domain_read_netgen,
+	                   TetrahedralCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                       "docstring"));
+	def("read_netgen", TetrahedralCylindrical3D_Domain_read_netgen,
+	                   TetrahedralCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                         "docstring"));
+	def("read_netgen", TetrahedralSpherical3D_Domain_read_netgen,
+	                   TetrahedralSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
+	                                                                       "docstring"));
 }
