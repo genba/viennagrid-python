@@ -59,6 +59,7 @@ using namespace boost::python;
 #include "algorithms/spanned_volume.hpp"
 
 #include "io/read_netgen.hpp"
+#include "io/read_vtk.hpp"
 
 #include "exception_translator.hpp"
 
@@ -1729,4 +1730,85 @@ BOOST_PYTHON_MODULE(wrapper)
 	def("read_netgen", TetrahedralSpherical3D_Domain_read_netgen,
 	                   TetrahedralSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
 	                                                                       "docstring"));
+	
+	/************
+	 * READ_VTK *
+	 ************/
+	
+	////////////
+	// LINEAR //
+	////////////
+	
+	def("read_vtk", LinearCartesian1D_Domain_read_vtk,
+	                LinearCartesian1D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                            "docstring"));
+	def("read_vtk", LinearCartesian2D_Domain_read_vtk,
+	                LinearCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                            "docstring"));
+	def("read_vtk", LinearCartesian3D_Domain_read_vtk,
+	                LinearCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                            "docstring"));
+	def("read_vtk", LinearCylindrical3D_Domain_read_vtk,
+	                LinearCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                              "docstring"));
+	def("read_vtk", LinearPolar2D_Domain_read_vtk,
+	                LinearPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                        "docstring"));
+	def("read_vtk", LinearSpherical3D_Domain_read_vtk,
+	                LinearSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                            "docstring"));
+	
+	////////////////
+	// TRIANGULAR //
+	////////////////
+	
+	def("read_vtk", TriangularCartesian2D_Domain_read_vtk,
+	                TriangularCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                "docstring"));
+	def("read_vtk", TriangularCartesian3D_Domain_read_vtk,
+	                TriangularCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                "docstring"));
+	def("read_vtk", TriangularCylindrical3D_Domain_read_vtk,
+	                TriangularCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	def("read_vtk", TriangularPolar2D_Domain_read_vtk,
+	                TriangularPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                            "docstring"));
+	def("read_vtk", TriangularSpherical3D_Domain_read_vtk,
+	                TriangularSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                "docstring"));
+	
+	///////////////////
+	// QUADRILATERAL //
+	///////////////////
+	
+	def("read_vtk", QuadrilateralCartesian2D_Domain_read_vtk,
+	                QuadrilateralCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                   "docstring"));
+	def("read_vtk", QuadrilateralCartesian3D_Domain_read_vtk,
+	                QuadrilateralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                   "docstring"));
+	def("read_vtk", QuadrilateralCylindrical3D_Domain_read_vtk,
+	                QuadrilateralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                     "docstring"));
+	def("read_vtk", QuadrilateralPolar2D_Domain_read_vtk,
+	                QuadrilateralPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                               "docstring"));
+	def("read_vtk", QuadrilateralSpherical3D_Domain_read_vtk,
+	                QuadrilateralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                   "docstring"));
+	
+	/////////////////
+	// TETRAHEDRAL //
+	/////////////////
+	
+	def("read_vtk", TetrahedralCartesian3D_Domain_read_vtk,
+	                TetrahedralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                 "docstring"));
+	def("read_vtk", TetrahedralCylindrical3D_Domain_read_vtk,
+	                TetrahedralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                   "docstring"));
+	def("read_vtk", TetrahedralSpherical3D_Domain_read_vtk,
+	                TetrahedralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                 "docstring"));
 }
