@@ -142,6 +142,16 @@ set (VIENNAGRID_WRAPPER_ALGORITHMS_SRC
         algorithms/spanned_volume.hpp
         algorithms/spanned_volume.cpp)
 
+set (VIENNAGRID_WRAPPER_IO_SRC
+        io/read_netgen.hpp
+        io/read_netgen.cpp
+        io/read_vtk.hpp
+        io/read_vtk.cpp
+        io/write_opendx.hpp
+        io/write_opendx.cpp
+        io/write_vtk.hpp
+        io/write_vtk.cpp)
+
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp
         exception_translator.hpp
@@ -153,7 +163,8 @@ set (VIENNAGRID_WRAPPER_SRC
         ${VIENNAGRID_WRAPPER_VERTICES_SRC}
         ${VIENNAGRID_WRAPPER_EDGES_SRC}
         ${VIENNAGRID_WRAPPER_FACETS_SRC}
-        ${VIENNAGRID_WRAPPER_ALGORITHMS_SRC})
+        ${VIENNAGRID_WRAPPER_ALGORITHMS_SRC}
+        ${VIENNAGRID_WRAPPER_IO_SRC})
 
 python_add_module (wrapper ${VIENNAGRID_WRAPPER_SRC})
 target_link_libraries (wrapper ${Boost_LIBRARIES})
