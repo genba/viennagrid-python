@@ -61,6 +61,7 @@ using namespace boost::python;
 #include "io/read_netgen.hpp"
 #include "io/read_vtk.hpp"
 #include "io/write_opendx.hpp"
+#include "io/write_vtk.hpp"
 
 #include "exception_translator.hpp"
 
@@ -1855,4 +1856,85 @@ BOOST_PYTHON_MODULE(wrapper)
 	def("write_opendx", &TetrahedralCartesian3D_Domain_write_opendx, "docstring");
 	def("write_opendx", &TetrahedralCylindrical3D_Domain_write_opendx, "docstring");
 	def("write_opendx", &TetrahedralSpherical3D_Domain_write_opendx, "docstring");
+	
+	/*************
+	 * WRITE_VTK *
+	 *************/
+	
+	////////////
+	// LINEAR //
+	////////////
+	
+	def("write_vtk", LinearCartesian1D_Domain_write_vtk,
+	                 LinearCartesian1D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                              "docstring"));
+	def("write_vtk", LinearCartesian2D_Domain_write_vtk,
+	                 LinearCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                              "docstring"));
+	def("write_vtk", LinearCartesian3D_Domain_write_vtk,
+	                 LinearCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                              "docstring"));
+	def("write_vtk", LinearCylindrical3D_Domain_write_vtk,
+	                 LinearCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                "docstring"));
+	def("write_vtk", LinearPolar2D_Domain_write_vtk,
+	                 LinearPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                          "docstring"));
+	def("write_vtk", LinearSpherical3D_Domain_write_vtk,
+	                 LinearSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                              "docstring"));
+	
+	////////////////
+	// TRIANGULAR //
+	////////////////
+	
+	def("write_vtk", TriangularCartesian2D_Domain_write_vtk,
+	                 TriangularCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	def("write_vtk", TriangularCartesian3D_Domain_write_vtk,
+	                 TriangularCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	def("write_vtk", TriangularCylindrical3D_Domain_write_vtk,
+	                 TriangularCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                    "docstring"));
+	def("write_vtk", TriangularPolar2D_Domain_write_vtk,
+	                 TriangularPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                              "docstring"));
+	def("write_vtk", TriangularSpherical3D_Domain_write_vtk,
+	                 TriangularSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                  "docstring"));
+	
+	///////////////////
+	// QUADRILATERAL //
+	///////////////////
+	
+	def("write_vtk", QuadrilateralCartesian2D_Domain_write_vtk,
+	                 QuadrilateralCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                     "docstring"));
+	def("write_vtk", QuadrilateralCartesian3D_Domain_write_vtk,
+	                 QuadrilateralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                     "docstring"));
+	def("write_vtk", QuadrilateralCylindrical3D_Domain_write_vtk,
+	                 QuadrilateralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                       "docstring"));
+	def("write_vtk", QuadrilateralPolar2D_Domain_write_vtk,
+	                 QuadrilateralPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                 "docstring"));
+	def("write_vtk", QuadrilateralSpherical3D_Domain_write_vtk,
+	                 QuadrilateralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                     "docstring"));
+	
+	/////////////////
+	// TETRAHEDRAL //
+	/////////////////
+	
+	def("write_vtk", TetrahedralCartesian3D_Domain_write_vtk,
+	                 TetrahedralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                   "docstring"));
+	def("write_vtk", TetrahedralCylindrical3D_Domain_write_vtk,
+	                 TetrahedralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                     "docstring"));
+	def("write_vtk", TetrahedralSpherical3D_Domain_write_vtk,
+	                 TetrahedralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                                                                   "docstring"));
 }
