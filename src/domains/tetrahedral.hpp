@@ -62,12 +62,6 @@ public:
 	 */
 	list get_vertices();
 	
-	TetrahedralCartesian3D_Segmentation read_netgen(std::string const &filename);
-	TetrahedralCartesian3D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, TetrahedralCartesian3D_Segmentation *segment = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -76,8 +70,6 @@ public:
 	 */
 	TetrahedralCartesian3D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TetrahedralCartesian3D_Domain_overloads, TetrahedralCartesian3D_Domain::write_vtk, 1, 2)
 
 /**
  * Domain of lines in the cylindrical space.
@@ -121,12 +113,6 @@ public:
 	 */
 	list get_vertices();
 	
-	TetrahedralCylindrical3D_Segmentation read_netgen(std::string const &filename);
-	TetrahedralCylindrical3D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, TetrahedralCylindrical3D_Segmentation *segment = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -135,8 +121,6 @@ public:
 	 */
 	TetrahedralCylindrical3D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TetrahedralCylindrical3D_Domain_overloads, TetrahedralCylindrical3D_Domain::write_vtk, 1, 2)
 
 /**
  * Domain of lines in the spherical space.
@@ -180,12 +164,6 @@ public:
 	 */
 	list get_vertices();
 	
-	TetrahedralSpherical3D_Segmentation read_netgen(std::string const &filename);
-	TetrahedralSpherical3D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, TetrahedralSpherical3D_Segmentation *segment = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -194,7 +172,5 @@ public:
 	 */
 	TetrahedralSpherical3D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(TetrahedralSpherical3D_Domain_overloads, TetrahedralSpherical3D_Domain::write_vtk, 1, 2)
 
 #endif /* end of include guard: DOMAINS_TETRAHEDRAL_HPP */
