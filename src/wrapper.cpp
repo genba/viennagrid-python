@@ -1548,22 +1548,22 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_netgen", LinearCartesian1D_Domain_read_netgen,
 	                   LinearCartesian1D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Read mesh data from a Netgen file."));
 	def("read_netgen", LinearCartesian2D_Domain_read_netgen,
 	                   LinearCartesian2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Read mesh data from a Netgen file."));
 	def("read_netgen", LinearCartesian3D_Domain_read_netgen,
 	                   LinearCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Read mesh data from a Netgen file."));
 	def("read_netgen", LinearCylindrical3D_Domain_read_netgen,
 	                   LinearCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                    "docstring"));
+	                                                                    "Read mesh data from a Netgen file."));
 	def("read_netgen", LinearPolar2D_Domain_read_netgen,
 	                   LinearPolar2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                              "docstring"));
+	                                                              "Read mesh data from a Netgen file."));
 	def("read_netgen", LinearSpherical3D_Domain_read_netgen,
 	                   LinearSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Read mesh data from a Netgen file."));
 	
 	////////////////
 	// TRIANGULAR //
@@ -1571,19 +1571,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_netgen", TriangularCartesian2D_Domain_read_netgen,
 	                   TriangularCartesian2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                      "docstring"));
+	                                                                      "Read mesh data from a Netgen file."));
 	def("read_netgen", TriangularCartesian3D_Domain_read_netgen,
 	                   TriangularCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                      "docstring"));
+	                                                                      "Read mesh data from a Netgen file."));
 	def("read_netgen", TriangularCylindrical3D_Domain_read_netgen,
 	                   TriangularCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                        "docstring"));
+	                                                                        "Read mesh data from a Netgen file."));
 	def("read_netgen", TriangularPolar2D_Domain_read_netgen,
 	                   TriangularPolar2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Read mesh data from a Netgen file."));
 	def("read_netgen", TriangularSpherical3D_Domain_read_netgen,
 	                   TriangularSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                      "docstring"));
+	                                                                      "Read mesh data from a Netgen file."));
 	
 	///////////////////
 	// QUADRILATERAL //
@@ -1591,19 +1591,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_netgen", QuadrilateralCartesian2D_Domain_read_netgen,
 	                   QuadrilateralCartesian2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                         "docstring"));
+	                                                                         "Read mesh data from a Netgen file."));
 	def("read_netgen", QuadrilateralCartesian3D_Domain_read_netgen,
 	                   QuadrilateralCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                         "docstring"));
+	                                                                         "Read mesh data from a Netgen file."));
 	def("read_netgen", QuadrilateralCylindrical3D_Domain_read_netgen,
 	                   QuadrilateralCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                           "docstring"));
+	                                                                           "Read mesh data from a Netgen file."));
 	def("read_netgen", QuadrilateralPolar2D_Domain_read_netgen,
 	                   QuadrilateralPolar2D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                     "docstring"));
+	                                                                     "Read mesh data from a Netgen file."));
 	def("read_netgen", QuadrilateralSpherical3D_Domain_read_netgen,
 	                   QuadrilateralSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                         "docstring"));
+	                                                                         "Read mesh data from a Netgen file."));
 	
 	/////////////////
 	// TETRAHEDRAL //
@@ -1611,13 +1611,13 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_netgen", TetrahedralCartesian3D_Domain_read_netgen,
 	                   TetrahedralCartesian3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                       "docstring"));
+	                                                                       "Read mesh data from a Netgen file."));
 	def("read_netgen", TetrahedralCylindrical3D_Domain_read_netgen,
 	                   TetrahedralCylindrical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                         "docstring"));
+	                                                                         "Read mesh data from a Netgen file."));
 	def("read_netgen", TetrahedralSpherical3D_Domain_read_netgen,
 	                   TetrahedralSpherical3D_Domain_read_netgen_overloads(args("filename", "domain", "segmentation"),
-	                                                                       "docstring"));
+	                                                                       "Read mesh data from a Netgen file."));
 	
 	/************
 	 * READ_VTK *
@@ -1629,22 +1629,22 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_vtk", LinearCartesian1D_Domain_read_vtk,
 	                LinearCartesian1D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                            "docstring"));
+	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCartesian2D_Domain_read_vtk,
 	                LinearCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                            "docstring"));
+	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCartesian3D_Domain_read_vtk,
 	                LinearCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                            "docstring"));
+	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCylindrical3D_Domain_read_vtk,
 	                LinearCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                              "docstring"));
+	                                                              "Read mesh data from a VTK file."));
 	def("read_vtk", LinearPolar2D_Domain_read_vtk,
 	                LinearPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                        "docstring"));
+	                                                        "Read mesh data from a VTK file."));
 	def("read_vtk", LinearSpherical3D_Domain_read_vtk,
 	                LinearSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                            "docstring"));
+	                                                            "Read mesh data from a VTK file."));
 	
 	////////////////
 	// TRIANGULAR //
@@ -1652,19 +1652,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_vtk", TriangularCartesian2D_Domain_read_vtk,
 	                TriangularCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                "docstring"));
+	                                                                "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularCartesian3D_Domain_read_vtk,
 	                TriangularCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                "docstring"));
+	                                                                "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularCylindrical3D_Domain_read_vtk,
 	                TriangularCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularPolar2D_Domain_read_vtk,
 	                TriangularPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                            "docstring"));
+	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularSpherical3D_Domain_read_vtk,
 	                TriangularSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                "docstring"));
+	                                                                "Read mesh data from a VTK file."));
 	
 	///////////////////
 	// QUADRILATERAL //
@@ -1672,19 +1672,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_vtk", QuadrilateralCartesian2D_Domain_read_vtk,
 	                QuadrilateralCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                   "docstring"));
+	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralCartesian3D_Domain_read_vtk,
 	                QuadrilateralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                   "docstring"));
+	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralCylindrical3D_Domain_read_vtk,
 	                QuadrilateralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                     "docstring"));
+	                                                                     "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralPolar2D_Domain_read_vtk,
 	                QuadrilateralPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                               "docstring"));
+	                                                               "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralSpherical3D_Domain_read_vtk,
 	                QuadrilateralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                   "docstring"));
+	                                                                   "Read mesh data from a VTK file."));
 	
 	/////////////////
 	// TETRAHEDRAL //
@@ -1692,13 +1692,13 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("read_vtk", TetrahedralCartesian3D_Domain_read_vtk,
 	                TetrahedralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                 "docstring"));
+	                                                                 "Read mesh data from a VTK file."));
 	def("read_vtk", TetrahedralCylindrical3D_Domain_read_vtk,
 	                TetrahedralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                   "docstring"));
+	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", TetrahedralSpherical3D_Domain_read_vtk,
 	                TetrahedralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                 "docstring"));
+	                                                                 "Read mesh data from a VTK file."));
 	
 	/****************
 	 * WRITE_OPENDX *
@@ -1708,40 +1708,40 @@ BOOST_PYTHON_MODULE(wrapper)
 	// LINEAR //
 	////////////
 	
-	def("write_opendx", &LinearCartesian1D_Domain_write_opendx, "docstring");
-	def("write_opendx", &LinearCartesian2D_Domain_write_opendx, "docstring");
-	def("write_opendx", &LinearCartesian3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &LinearCylindrical3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &LinearPolar2D_Domain_write_opendx, "docstring");
-	def("write_opendx", &LinearSpherical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &LinearCartesian1D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &LinearCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &LinearCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &LinearCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &LinearPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &LinearSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
 	
 	////////////////
 	// TRIANGULAR //
 	////////////////
 	
-	def("write_opendx", &TriangularCartesian2D_Domain_write_opendx, "docstring");
-	def("write_opendx", &TriangularCartesian3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &TriangularCylindrical3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &TriangularPolar2D_Domain_write_opendx, "docstring");
-	def("write_opendx", &TriangularSpherical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TriangularCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &TriangularCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &TriangularCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &TriangularPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &TriangularSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
 	
 	///////////////////
 	// QUADRILATERAL //
 	///////////////////
 	
-	def("write_opendx", &QuadrilateralCartesian2D_Domain_write_opendx, "docstring");
-	def("write_opendx", &QuadrilateralCartesian3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &QuadrilateralCylindrical3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &QuadrilateralPolar2D_Domain_write_opendx, "docstring");
-	def("write_opendx", &QuadrilateralSpherical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &QuadrilateralCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &QuadrilateralCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &QuadrilateralCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &QuadrilateralPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &QuadrilateralSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
 	
 	/////////////////
 	// TETRAHEDRAL //
 	/////////////////
 	
-	def("write_opendx", &TetrahedralCartesian3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &TetrahedralCylindrical3D_Domain_write_opendx, "docstring");
-	def("write_opendx", &TetrahedralSpherical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TetrahedralCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &TetrahedralCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", &TetrahedralSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
 	
 	/*************
 	 * WRITE_VTK *
@@ -1753,22 +1753,22 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("write_vtk", LinearCartesian1D_Domain_write_vtk,
 	                 LinearCartesian1D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                              "docstring"));
+	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCartesian2D_Domain_write_vtk,
 	                 LinearCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                              "docstring"));
+	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCartesian3D_Domain_write_vtk,
 	                 LinearCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                              "docstring"));
+	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCylindrical3D_Domain_write_vtk,
 	                 LinearCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                "docstring"));
+	                                                                "Write mesh data to a VTK file."));
 	def("write_vtk", LinearPolar2D_Domain_write_vtk,
 	                 LinearPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                          "docstring"));
+	                                                          "Write mesh data to a VTK file."));
 	def("write_vtk", LinearSpherical3D_Domain_write_vtk,
 	                 LinearSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                              "docstring"));
+	                                                              "Write mesh data to a VTK file."));
 	
 	////////////////
 	// TRIANGULAR //
@@ -1776,19 +1776,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("write_vtk", TriangularCartesian2D_Domain_write_vtk,
 	                 TriangularCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularCartesian3D_Domain_write_vtk,
 	                 TriangularCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularCylindrical3D_Domain_write_vtk,
 	                 TriangularCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                    "docstring"));
+	                                                                    "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularPolar2D_Domain_write_vtk,
 	                 TriangularPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                              "docstring"));
+	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularSpherical3D_Domain_write_vtk,
 	                 TriangularSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                  "docstring"));
+	                                                                  "Write mesh data to a VTK file."));
 	
 	///////////////////
 	// QUADRILATERAL //
@@ -1796,19 +1796,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("write_vtk", QuadrilateralCartesian2D_Domain_write_vtk,
 	                 QuadrilateralCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                     "docstring"));
+	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralCartesian3D_Domain_write_vtk,
 	                 QuadrilateralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                     "docstring"));
+	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralCylindrical3D_Domain_write_vtk,
 	                 QuadrilateralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                       "docstring"));
+	                                                                       "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralPolar2D_Domain_write_vtk,
 	                 QuadrilateralPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                 "docstring"));
+	                                                                 "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralSpherical3D_Domain_write_vtk,
 	                 QuadrilateralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                     "docstring"));
+	                                                                     "Write mesh data to a VTK file."));
 	
 	/////////////////
 	// TETRAHEDRAL //
@@ -1816,11 +1816,11 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	def("write_vtk", TetrahedralCartesian3D_Domain_write_vtk,
 	                 TetrahedralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                   "docstring"));
+	                                                                   "Write mesh data to a VTK file."));
 	def("write_vtk", TetrahedralCylindrical3D_Domain_write_vtk,
 	                 TetrahedralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                     "docstring"));
+	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", TetrahedralSpherical3D_Domain_write_vtk,
 	                 TetrahedralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
-	                                                                   "docstring"));
+	                                                                   "Write mesh data to a VTK file."));
 }
