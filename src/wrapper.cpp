@@ -60,6 +60,7 @@ using namespace boost::python;
 
 #include "io/read_netgen.hpp"
 #include "io/read_vtk.hpp"
+#include "io/write_opendx.hpp"
 
 #include "exception_translator.hpp"
 
@@ -1811,4 +1812,47 @@ BOOST_PYTHON_MODULE(wrapper)
 	def("read_vtk", TetrahedralSpherical3D_Domain_read_vtk,
 	                TetrahedralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
 	                                                                 "docstring"));
+	
+	/****************
+	 * WRITE_OPENDX *
+	 ****************/
+	
+	////////////
+	// LINEAR //
+	////////////
+	
+	def("write_opendx", &LinearCartesian1D_Domain_write_opendx, "docstring");
+	def("write_opendx", &LinearCartesian2D_Domain_write_opendx, "docstring");
+	def("write_opendx", &LinearCartesian3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &LinearCylindrical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &LinearPolar2D_Domain_write_opendx, "docstring");
+	def("write_opendx", &LinearSpherical3D_Domain_write_opendx, "docstring");
+	
+	////////////////
+	// TRIANGULAR //
+	////////////////
+	
+	def("write_opendx", &TriangularCartesian2D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TriangularCartesian3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TriangularCylindrical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TriangularPolar2D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TriangularSpherical3D_Domain_write_opendx, "docstring");
+	
+	///////////////////
+	// QUADRILATERAL //
+	///////////////////
+	
+	def("write_opendx", &QuadrilateralCartesian2D_Domain_write_opendx, "docstring");
+	def("write_opendx", &QuadrilateralCartesian3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &QuadrilateralCylindrical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &QuadrilateralPolar2D_Domain_write_opendx, "docstring");
+	def("write_opendx", &QuadrilateralSpherical3D_Domain_write_opendx, "docstring");
+	
+	/////////////////
+	// TETRAHEDRAL //
+	/////////////////
+	
+	def("write_opendx", &TetrahedralCartesian3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TetrahedralCylindrical3D_Domain_write_opendx, "docstring");
+	def("write_opendx", &TetrahedralSpherical3D_Domain_write_opendx, "docstring");
 }
