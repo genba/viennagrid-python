@@ -13,7 +13,12 @@ class Point(object):
 		"""
 		Define a new point specifying its coordinate system, dimension and, optionally, coordinates.
 		
-		The supported signatures are as follows:
+		Args:
+			coordinates of the point (optional)
+		
+		Kwargs:
+			* coord_system: coordinate system tag (if omitted, cartesian is assumed)
+			* dim: dimension of the space (optional if coordinates are specified)
 		"""
 		
 		super(Point, self).__init__()
@@ -486,7 +491,7 @@ class Cell(object):
 		"""
 		class VertexList(object):
 			def __init__(self, cell):
-				self.cell = cell
+				self._cell = cell
 			def __call__(self):
 				return [Vertex(v) for v in self._cell.vertices]
 			def __len__(self):
@@ -497,6 +502,11 @@ class Cell(object):
 			def __getitem__(self, index):
 				return Vertex(self._cell.vertices[index])
 		return VertexList(self._cell)
+	
+	@property
+	def facets(self):
+		"""Return a list containing the facets of the cell."""
+		return self._cell.facets
 	
 	def __iter__(self):
 		"""
@@ -518,6 +528,17 @@ class Vertex(object):
 		"""
 		super(Vertex, self).__init__()
 		self._vertex = vertex
+	
+	def to_point(self):
+		"""
+		Convert this vertex to a point.
+		
+		:returns: :class:`viennagrid.Point`
+		"""
+		low_level_point = self._vertex.to_point()
+		coords = low_level_point.coords
+		coord_system = low_level_point.coord_system
+		return viennagrid.Point(*coords, coord_system=coord_system)
 
 class Facet(object):
 	"""Wrapper class that represents a facet of a cell."""
