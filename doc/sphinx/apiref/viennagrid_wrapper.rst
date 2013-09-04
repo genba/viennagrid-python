@@ -8,6 +8,10 @@ Free functions
 --------------
 
 .. autofunction:: version
+.. autofunction:: read_netgen
+.. autofunction:: read_vtk
+.. autofunction:: write_opendx
+.. autofunction:: write_vtk
 
 Points
 ------
