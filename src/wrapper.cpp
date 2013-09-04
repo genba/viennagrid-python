@@ -70,7 +70,7 @@ char const * version()
 
 BOOST_PYTHON_MODULE(wrapper)
 {
-	def("version", version, "Return the version number of 'viennagrid_wrapper'.");
+	def("version", version, "Return the version number of the wrapper.");
 
 	/*************************
 	 * EXCEPTION TRANSLATORS *
