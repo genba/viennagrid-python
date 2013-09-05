@@ -26,7 +26,6 @@ setup(
 		'Intended Audience :: Developers',
 	],
 	license='LICENSE.txt',
-	package_dir={'': SETUP_DIR},
 	packages=['viennagrid', 'viennagrid.test'],
 	package_data={'viennagrid': ['wrapper.so']},
 	provides=['viennagrid'],

@@ -19,7 +19,7 @@ if (SPHINX_BUILD_EXECUTABLE)
 	configure_file("${SPHINX_SRC_DIR}/conf.py.in" "${SPHINX_CONF_DIR}/conf.py" @ONLY)
 	add_custom_target (sphinx
 	                   ${SPHINX_BUILD_EXECUTABLE} -q -b html -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_HTML_DIR}"
-	                   DEPENDS package)
+	                   DEPENDS packagesrc)
 	set (TARGETS ${TARGETS} sphinx)
 else (SPHINX_BUILD_EXECUTABLE)
 	message (WARNING "sphinx-build not found")
