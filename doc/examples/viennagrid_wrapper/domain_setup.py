@@ -1,49 +1,118 @@
 #!/usr/bin/env python
+# 
+# This example shows how to set up a domain using the low-level ViennaGrid
+# wrapper for Python (viennagrid.wrapper).
+
+# In this example, we will set up a domain of triangles in the cartesian 2D
+# spaces. To do that, we have to import the appropriate data types for, whose
+# name is usually preceeded by a prefix formed by the type of cell (Triangular),
+# the coordinate system (Cartesian) and the space dimension (2D).
+# 
+# Because a name formed like that is very long, it is not very handy to import
+# it as is, so we will rather rename the imported objects on rename, in order
+# to make the names shorter.
 
 from viennagrid.wrapper import TriangularCartesian2D_Domain as Domain
+from viennagrid.wrapper import TriangularCartesian2D_Segmentation as Segmentation
 from viennagrid.wrapper import PointCartesian2D as Point
 
 # Create an empty domain
-d = Domain()
 
-d.vertices # This returns an empty list, since there are no vertices yet
-d.segments # This returns an empty list, since there are no segments yet
+domain = Domain()
 
-# Add vertices to the domain. These vertices will then be used to define cells.
-d.make_vertex(Point(0, 0)) # Vertex with ID #0
-d.make_vertex(Point(1, 0)) # Vertex with ID #1
-d.make_vertex(Point(2, 0)) # Vertex with ID #2
-d.make_vertex(Point(2, 1)) # Vertex with ID #3
-d.make_vertex(Point(1, 1)) # Vertex with ID #4
-d.make_vertex(Point(0, 1)) # Vertex with ID #5
+# Add vertices to the domain. These vertices will then be used to define
+# cells.
 
-d.vertices # This returns a list with all the vertices added until now
-d.vertices[1].coords # This returns a list with the coordinates of the second vertex that was added
+domain.make_vertex(Point(0, 0)) # Vertex with ID #0
+domain.make_vertex(Point(1, 0)) # Vertex with ID #1
+domain.make_vertex(Point(2, 0)) # Vertex with ID #2
+domain.make_vertex(Point(2, 1)) # Vertex with ID #3
+domain.make_vertex(Point(1, 1)) # Vertex with ID #4
+domain.make_vertex(Point(0, 1)) # Vertex with ID #5
 
-# Create 2 segments in the domain
-d.make_segments(2)
+# This returns a list with all the vertices added until now
 
-d.segments # This returns a list with all the segments created until now (in this case: 2)
-d.segments[0].cells # This should return the list of cells in the first segment, but it's empty, because we haven't added any cells yet
+domain.vertices
 
-# Create 2 cells in the first segment. Since the domain is a triangular domain, cells are triangles.
-s0 = d.segments[0]
-s0.make_cell(d.vertices[0], d.vertices[1], d.vertices[5]) # Cell with vertices 0-1-5
-s0.make_cell(d.vertices[1], d.vertices[4], d.vertices[5]) # Cell with vertices 1-4-5
+# You could thus get a vertex by accessing the right position of the list,
+# like this (in order to get the first vertex that was added to the domain):
 
-s0.cells # The list of cells in the segment is no longer empty, now you get two cells
-s0.cells[0].vertices # This returns a list of the vertices that form the first cell of segment 0
+v0 = domain.vertices[0]
+
+# However, using 'domain.vertices' requires that the list be fully created
+# every time the 'vertices' property of 'domain' is accessed. If the domain
+# contains a lot of vertices, this will be highly inefficient.
+# 
+# Getting the list will be good if you want to iterate over all vertices, but
+# if you want to access only one vertex, use the 'get_vertex' method instead:
+
+v0 = domain.get_vertex(0)
+
+# Vertices are of type 'TriangularCartesian2D_Vertex' in this case, which
+# can be converted to the corresponding point type (in this case:
+# 'PointCartesian2D'). Once we have the point, we can get its coordinates:
+
+p = v0.to_point()
+p.coords
+
+# Create a segmentation of the domain
+
+segmentation = Segmentation(domain)
+
+# Create 2 segments in the segmentation of the domain
+
+seg0 = segmentation.make_segment()
+seg1 = segmentation.make_segment()
+
+# This returns a list with all the segments created until now (in this case 2)
+
+segmentation.segments
+
+# Create 2 cells in the first segment. Since the domain is a triangular domain,
+# cells are triangles and three vertices must be specified to create a cell.
+
+seg0.make_cell(domain.get_vertex(0), domain.get_vertex(1), domain.get_vertex(5))
+seg0.make_cell(domain.get_vertex(1), domain.get_vertex(4), domain.get_vertex(5))
+
+# This returns the list of cells in the first segment
+
+seg0.cells
+
+# This returns a list of the vertices that form the first cell of segment 0
+
+seg0.cells[0].vertices
+
 # Let's see what coordinates do the vertices of cell 0 have
-for v in s0.cells[0].vertices:
-	print v.coords
 
-# Create 2 cells in the second segment. Since the domain is a triangular domain, cells are triangles.
-s1 = d.segments[1]
-s1.make_cell(d.vertices[1], d.vertices[2], d.vertices[4]) # Cell with vertices 1-2-4
-s1.make_cell(d.vertices[3], d.vertices[2], d.vertices[4]) # Cell with vertices 3-2-4
+print 'Vertices of cell 0 from segment 0:\n'
+for v in seg0.cells[0].vertices:
+	print '\t', v.to_point().coords
+print
 
-s1.cells # The list of cells in the segment is no longer empty, now you get two cells
-s1.cells[0].vertices # This returns a list of the vertices that form the first cell of segment 1
+# Create 2 cells in the second segment. This time, we will use variable to
+# make the code shorter.
+
+v1 = domain.get_vertex(1)
+v2 = domain.get_vertex(2)
+v3 = domain.get_vertex(4)
+seg1.make_cell(v1, v2, v3)
+
+v1 = domain.get_vertex(3)
+v2 = domain.get_vertex(2)
+v3 = domain.get_vertex(4)
+seg1.make_cell(v1, v2, v3)
+
+# This returns the list of cells in the second segment
+
+seg1.cells
+
+# This returns a list of the vertices that form the first cell of segment 1
+
+seg1.cells[0].vertices
+
 # Let's see what coordinates do the vertices of cell 0 have
-for v in s1.cells[0].vertices:
-	print v.coords
+
+print 'Vertices of cell 0 from segment 1:\n'
+for v in seg1.cells[0].vertices:
+	print '\t', v.to_point().coords
+print
