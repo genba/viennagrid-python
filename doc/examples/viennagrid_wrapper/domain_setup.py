@@ -3,8 +3,10 @@
 # This example shows how to set up a domain using the low-level ViennaGrid
 # wrapper for Python (viennagrid.wrapper).
 
+from __future__ import print_function
+
 # In this example, we will set up a domain of triangles in the cartesian 2D
-# spaces. To do that, we have to import the appropriate data types for, whose
+# space. To do that, we have to import the appropriate data types for, whose
 # name is usually preceeded by a prefix formed by the type of cell (Triangular),
 # the coordinate system (Cartesian) and the space dimension (2D).
 # 
@@ -82,13 +84,6 @@ seg0.cells
 
 seg0.cells[0].vertices
 
-# Let's see what coordinates do the vertices of cell 0 have
-
-print 'Vertices of cell 0 from segment 0:\n'
-for v in seg0.cells[0].vertices:
-	print '\t', v.to_point().coords
-print
-
 # Create 2 cells in the second segment. This time, we will use variable to
 # make the code shorter.
 
@@ -110,9 +105,12 @@ seg1.cells
 
 seg1.cells[0].vertices
 
-# Let's see what coordinates do the vertices of cell 0 have
+# Let's see what cells are contained in each segment
 
-print 'Vertices of cell 0 from segment 1:\n'
-for v in seg1.cells[0].vertices:
-	print '\t', v.to_point().coords
-print
+print()
+for seg_no, seg in enumerate(segmentation.segments):
+	print('Segment #%(seg_no)s:\n' % locals())
+	for cell_no, cell in enumerate(seg.cells):
+		vertices = ', '.join(str(vertex.to_point().coords) for vertex in cell.vertices)
+		print('\tCell #%(cell_no)s has vertices %(vertices)s' % locals())
+	print()
