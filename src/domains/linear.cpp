@@ -63,43 +63,6 @@ list LinearCartesian1D_Domain::get_vertices()
 	return vertices;
 }
 
-LinearCartesian1D_Segmentation LinearCartesian1D_Domain::read_netgen(std::string const &filename)
-{
-	viennagrid::io::netgen_reader     my_netgen_reader;
-	LinearCartesian1D_Segmentation    segmentation(*this);
-	
-	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
-
-	return segmentation;
-}
-
-LinearCartesian1D_Segmentation LinearCartesian1D_Domain::read_vtk(std::string const &filename)
-{
-	viennagrid::io::vtk_reader<LinearCartesian1D_Domain_t, LinearCartesian1D_Segmentation_t>    my_vtk_reader;
-	LinearCartesian1D_Segmentation                                                              segmentation(*this);
-	
-	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
-	
-	return segmentation;
-}
-
-void LinearCartesian1D_Domain::write_opendx(std::string const &filename)
-{
-	viennagrid::io::opendx_writer<LinearCartesian1D_Domain_t>    my_dx_writer;
-	
-	my_dx_writer(domain, filename);
-}
-
-void LinearCartesian1D_Domain::write_vtk(std::string const &filename, LinearCartesian1D_Segmentation *segmentation)
-{
-	viennagrid::io::vtk_writer<LinearCartesian1D_Domain_t>    my_vtk_writer;
-	
-	if (segmentation == NULL)
-		my_vtk_writer(domain, filename);
-	else
-		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
-}
-
 ////////////////////////////
 // Triangle, cartesian 2D //
 ////////////////////////////
@@ -150,43 +113,6 @@ list LinearCartesian2D_Domain::get_vertices()
 		vertices.append<LinearCartesian2D_Vertex>(LinearCartesian2D_Vertex(*it));
 	
 	return vertices;
-}
-
-LinearCartesian2D_Segmentation LinearCartesian2D_Domain::read_netgen(std::string const &filename)
-{
-	viennagrid::io::netgen_reader     my_netgen_reader;
-	LinearCartesian2D_Segmentation    segmentation(*this);
-	
-	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
-
-	return segmentation;
-}
-
-LinearCartesian2D_Segmentation LinearCartesian2D_Domain::read_vtk(std::string const &filename)
-{
-	viennagrid::io::vtk_reader<LinearCartesian2D_Domain_t, LinearCartesian2D_Segmentation_t>    my_vtk_reader;
-	LinearCartesian2D_Segmentation                                                              segmentation(*this);
-	
-	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
-	
-	return segmentation;
-}
-
-void LinearCartesian2D_Domain::write_opendx(std::string const &filename)
-{
-	viennagrid::io::opendx_writer<LinearCartesian2D_Domain_t>    my_dx_writer;
-	
-	my_dx_writer(domain, filename);
-}
-
-void LinearCartesian2D_Domain::write_vtk(std::string const &filename, LinearCartesian2D_Segmentation *segmentation)
-{
-	viennagrid::io::vtk_writer<LinearCartesian2D_Domain_t>    my_vtk_writer;
-	
-	if (segmentation == NULL)
-		my_vtk_writer(domain, filename);
-	else
-		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 ////////////////////////////
@@ -241,43 +167,6 @@ list LinearCartesian3D_Domain::get_vertices()
 	return vertices;
 }
 
-LinearCartesian3D_Segmentation LinearCartesian3D_Domain::read_netgen(std::string const &filename)
-{
-	viennagrid::io::netgen_reader     my_netgen_reader;
-	LinearCartesian3D_Segmentation    segmentation(*this);
-	
-	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
-
-	return segmentation;
-}
-
-LinearCartesian3D_Segmentation LinearCartesian3D_Domain::read_vtk(std::string const &filename)
-{
-	viennagrid::io::vtk_reader<LinearCartesian3D_Domain_t, LinearCartesian3D_Segmentation_t>    my_vtk_reader;
-	LinearCartesian3D_Segmentation                                                              segmentation(*this);
-	
-	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
-	
-	return segmentation;
-}
-
-void LinearCartesian3D_Domain::write_opendx(std::string const &filename)
-{
-	viennagrid::io::opendx_writer<LinearCartesian3D_Domain_t>    my_dx_writer;
-	
-	my_dx_writer(domain, filename);
-}
-
-void LinearCartesian3D_Domain::write_vtk(std::string const &filename, LinearCartesian3D_Segmentation *segmentation)
-{
-	viennagrid::io::vtk_writer<LinearCartesian3D_Domain_t>    my_vtk_writer;
-	
-	if (segmentation == NULL)
-		my_vtk_writer(domain, filename);
-	else
-		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
-}
-
 ////////////////////////////////
 // Triangle, cylindrical (3D) //
 ////////////////////////////////
@@ -328,43 +217,6 @@ list LinearCylindrical3D_Domain::get_vertices()
 		vertices.append<LinearCylindrical3D_Vertex>(LinearCylindrical3D_Vertex(*it));
 	
 	return vertices;
-}
-
-LinearCylindrical3D_Segmentation LinearCylindrical3D_Domain::read_netgen(std::string const &filename)
-{
-	viennagrid::io::netgen_reader       my_netgen_reader;
-	LinearCylindrical3D_Segmentation    segmentation(*this);
-	
-	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
-
-	return segmentation;
-}
-
-LinearCylindrical3D_Segmentation LinearCylindrical3D_Domain::read_vtk(std::string const &filename)
-{
-	viennagrid::io::vtk_reader<LinearCylindrical3D_Domain_t, LinearCylindrical3D_Segmentation_t>    my_vtk_reader;
-	LinearCylindrical3D_Segmentation                                                                segmentation(*this);
-	
-	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
-	
-	return segmentation;
-}
-
-void LinearCylindrical3D_Domain::write_opendx(std::string const &filename)
-{
-	viennagrid::io::opendx_writer<LinearCylindrical3D_Domain_t>    my_dx_writer;
-	
-	my_dx_writer(domain, filename);
-}
-
-void LinearCylindrical3D_Domain::write_vtk(std::string const &filename, LinearCylindrical3D_Segmentation *segmentation)
-{
-	viennagrid::io::vtk_writer<LinearCylindrical3D_Domain_t>    my_vtk_writer;
-	
-	if (segmentation == NULL)
-		my_vtk_writer(domain, filename);
-	else
-		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }
 
 //////////////////////////
@@ -419,43 +271,6 @@ list LinearPolar2D_Domain::get_vertices()
 	return vertices;
 }
 
-LinearPolar2D_Segmentation LinearPolar2D_Domain::read_netgen(std::string const &filename)
-{
-	viennagrid::io::netgen_reader    my_netgen_reader;
-	LinearPolar2D_Segmentation       segmentation(*this);
-	
-	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
-
-	return segmentation;
-}
-
-LinearPolar2D_Segmentation LinearPolar2D_Domain::read_vtk(std::string const &filename)
-{
-	viennagrid::io::vtk_reader<LinearPolar2D_Domain_t, LinearPolar2D_Segmentation_t>    my_vtk_reader;
-	LinearPolar2D_Segmentation                                                          segmentation(*this);
-	
-	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
-	
-	return segmentation;
-}
-
-void LinearPolar2D_Domain::write_opendx(std::string const &filename)
-{
-	viennagrid::io::opendx_writer<LinearPolar2D_Domain_t>    my_dx_writer;
-	
-	my_dx_writer(domain, filename);
-}
-
-void LinearPolar2D_Domain::write_vtk(std::string const &filename, LinearPolar2D_Segmentation *segmentation)
-{
-	viennagrid::io::vtk_writer<LinearPolar2D_Domain_t>    my_vtk_writer;
-	
-	if (segmentation == NULL)
-		my_vtk_writer(domain, filename);
-	else
-		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
-}
-
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -506,41 +321,4 @@ list LinearSpherical3D_Domain::get_vertices()
 		vertices.append<LinearSpherical3D_Vertex>(LinearSpherical3D_Vertex(*it));
 	
 	return vertices;
-}
-
-LinearSpherical3D_Segmentation LinearSpherical3D_Domain::read_netgen(std::string const &filename)
-{
-	viennagrid::io::netgen_reader     my_netgen_reader;
-	LinearSpherical3D_Segmentation    segmentation(*this);
-	
-	my_netgen_reader(domain, segmentation.get_segmentation(), filename);
-
-	return segmentation;
-}
-
-LinearSpherical3D_Segmentation LinearSpherical3D_Domain::read_vtk(std::string const &filename)
-{
-	viennagrid::io::vtk_reader<LinearSpherical3D_Domain_t, LinearSpherical3D_Segmentation_t>    my_vtk_reader;
-	LinearSpherical3D_Segmentation                                                              segmentation(*this);
-	
-	my_vtk_reader(domain, segmentation.get_segmentation(), filename);
-	
-	return segmentation;
-}
-
-void LinearSpherical3D_Domain::write_opendx(std::string const &filename)
-{
-	viennagrid::io::opendx_writer<LinearSpherical3D_Domain_t>    my_dx_writer;
-	
-	my_dx_writer(domain, filename);
-}
-
-void LinearSpherical3D_Domain::write_vtk(std::string const &filename, LinearSpherical3D_Segmentation *segmentation)
-{
-	viennagrid::io::vtk_writer<LinearSpherical3D_Domain_t>    my_vtk_writer;
-	
-	if (segmentation == NULL)
-		my_vtk_writer(domain, filename);
-	else
-		my_vtk_writer(domain, segmentation->get_segmentation(), filename);
 }

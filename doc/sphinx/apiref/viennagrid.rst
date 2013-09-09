@@ -202,3 +202,12 @@ Common configurations
 	:members:
 	:undoc-members:
 	:synopsis: Common algorithms on mesh elements
+
+
+:mod:`viennagrid.io` --- Input/output functions
+-----------------------------------------------
+
+.. automodule:: viennagrid.io
+	:members:
+	:undoc-members:
+	:synopsis: Input/output functions

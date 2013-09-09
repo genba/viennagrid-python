@@ -68,12 +68,6 @@ public:
 	 */
 	list get_vertices();
 	
-	LinearCartesian1D_Segmentation read_netgen(std::string const &filename);
-	LinearCartesian1D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, LinearCartesian1D_Segmentation *segmentation = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -82,8 +76,6 @@ public:
 	 */
 	LinearCartesian1D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCartesian1D_Domain_overloads, LinearCartesian1D_Domain::write_vtk, 1, 2)
 
 //////////////////////////
 // Linear, cartesian 2D //
@@ -139,12 +131,6 @@ public:
 	 */
 	list get_vertices();
 	
-	LinearCartesian2D_Segmentation read_netgen(std::string const &filename);
-	LinearCartesian2D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, LinearCartesian2D_Segmentation *segmentation = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -153,8 +139,6 @@ public:
 	 */
 	LinearCartesian2D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCartesian2D_Domain_overloads, LinearCartesian2D_Domain::write_vtk, 1, 2)
 
 //////////////////////////
 // Linear, cartesian 3D //
@@ -210,12 +194,6 @@ public:
 	 */
 	list get_vertices();
 	
-	LinearCartesian3D_Segmentation read_netgen(std::string const &filename);
-	LinearCartesian3D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, LinearCartesian3D_Segmentation *segmentation = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -224,8 +202,6 @@ public:
 	 */
 	LinearCartesian3D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCartesian3D_Domain_overloads, LinearCartesian3D_Domain::write_vtk, 1, 2)
 
 //////////////////////////////
 // Linear, cylindrical (3D) //
@@ -281,12 +257,6 @@ public:
 	 */
 	list get_vertices();
 	
-	LinearCylindrical3D_Segmentation read_netgen(std::string const &filename);
-	LinearCylindrical3D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, LinearCylindrical3D_Segmentation *segmentation = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -295,8 +265,6 @@ public:
 	 */
 	LinearCylindrical3D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearCylindrical3D_Domain_overloads, LinearCylindrical3D_Domain::write_vtk, 1, 2)
 
 ////////////////////////
 // Linear, polar (2D) //
@@ -352,12 +320,6 @@ public:
 	 */
 	list get_vertices();
 	
-	LinearPolar2D_Segmentation read_netgen(std::string const &filename);
-	LinearPolar2D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, LinearPolar2D_Segmentation *segmentation = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -366,8 +328,6 @@ public:
 	 */
 	LinearPolar2D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearPolar2D_Domain_overloads, LinearPolar2D_Domain::write_vtk, 1, 2)
 
 ////////////////////////////
 // Linear, spherical (3D) //
@@ -423,12 +383,6 @@ public:
 	 */
 	list get_vertices();
 	
-	LinearSpherical3D_Segmentation read_netgen(std::string const &filename);
-	LinearSpherical3D_Segmentation read_vtk(std::string const &filename);
-	
-	void write_opendx(std::string const &filename);
-	void write_vtk(std::string const &filename, LinearSpherical3D_Segmentation *segmentation = NULL);
-	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
@@ -437,7 +391,5 @@ public:
 	 */
 	LinearSpherical3D_Domain_t & get_domain();
 };
-
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(LinearSpherical3D_Domain_overloads, LinearSpherical3D_Domain::write_vtk, 1, 2)
 
 #endif

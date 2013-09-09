@@ -10,7 +10,7 @@ To install from source, your system must satisfy the following dependencies:
 * **Python development libraries** (header files) for your Python version
 * **A modern C++ compiler** (any recent version of g++ or clang will do a good job)
 
-`Boost.Python <http://www.boost.org/>`_ (1.53.0 or greater) and `ViennaGrid <http://viennagrid.sourceforge.net/>`_ (1.0.1 or greater) are also required to compile ViennaGrid for Python, but, if you don't have them, you can follow the steps in section :ref:`setting-up-devel-environ` to install them. On the other hand, if you already have them, you can skip directly to section :ref:`configuring-source` (provided that you don't want to create a virtual environment, which is done in section :ref:`setting-up-devel-environ`).
+`Boost.Python <http://www.boost.org/>`_ (1.53.0 or greater) and `ViennaGrid <http://viennagrid.sourceforge.net/>`_ (1.1.0 or greater) are also required to compile ViennaGrid for Python, but, if you don't have them, you can follow the steps in section :ref:`setting-up-devel-environ` to install them. On the other hand, if you already have them, you can skip directly to section :ref:`configuring-source` (provided that you don't want to create a virtual environment, which is done in section :ref:`setting-up-devel-environ`).
 
 Downloading the source code of ViennaGrid for Python
 ----------------------------------------------------
