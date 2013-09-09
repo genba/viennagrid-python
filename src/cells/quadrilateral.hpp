@@ -57,6 +57,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_facets();
+	
+	/**
+	 * Get a Python list containing all the edges that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_edges();
 	
 	/**
@@ -108,6 +116,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_facets();
+	
+	/**
+	 * Get a Python list containing all the edges that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_edges();
 	
 	/**
@@ -159,6 +175,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_facets();
+	
+	/**
+	 * Get a Python list containing all the edges that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_edges();
 	
 	/**
@@ -210,6 +234,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_facets();
+	
+	/**
+	 * Get a Python list containing all the edges that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_edges();
 	
 	/**
@@ -261,6 +293,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_facets();
+	
+	/**
+	 * Get a Python list containing all the edges that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_edges();
 	
 	/**
