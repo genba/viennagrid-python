@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 
-import wrapper
+import wrapper as _wrapper
 
 ##########################
 # COORDINATE SYSTEM TAGS #
