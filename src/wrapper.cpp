@@ -567,30 +567,35 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("num_vertices", &TriangularCartesian2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularCartesian2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularCartesian2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularCartesian3D_Cell>("TriangularCartesian3D_Cell", init<TriangularCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularCartesian3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularCartesian3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularCylindrical3D_Cell>("TriangularCylindrical3D_Cell", init<TriangularCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularCylindrical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularCylindrical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularPolar2D_Cell>("TriangularPolar2D_Cell", init<TriangularPolar2D_Cell_t &>())
 		.add_property("num_vertices", &TriangularPolar2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularPolar2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularPolar2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularSpherical3D_Cell>("TriangularSpherical3D_Cell", init<TriangularSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularSpherical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularSpherical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	/***********************
@@ -770,30 +775,35 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("num_vertices", &QuadrilateralCartesian2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralCartesian2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralCartesian2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Cell>("QuadrilateralCartesian3D_Cell", init<QuadrilateralCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralCartesian3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralCartesian3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Cell>("QuadrilateralCylindrical3D_Cell", init<QuadrilateralCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralCylindrical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralCylindrical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralPolar2D_Cell>("QuadrilateralPolar2D_Cell", init<QuadrilateralPolar2D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralPolar2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralPolar2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralPolar2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<QuadrilateralSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralSpherical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralSpherical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	/**************************
@@ -935,18 +945,21 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("num_vertices", &TetrahedralCartesian3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TetrahedralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TetrahedralCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TetrahedralCartesian3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Cell>("TetrahedralCylindrical3D_Cell", init<TetrahedralCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &TetrahedralCylindrical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TetrahedralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TetrahedralCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TetrahedralCylindrical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TetrahedralSpherical3D_Cell>("TetrahedralSpherical3D_Cell", init<TetrahedralSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &TetrahedralSpherical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TetrahedralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TetrahedralSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TetrahedralSpherical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	/************************
