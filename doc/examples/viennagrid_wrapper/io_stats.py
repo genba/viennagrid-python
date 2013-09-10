@@ -36,7 +36,7 @@ end_time = time.time()
 elapsed_time = end_time - start_time
 
 print('Elapsed time: ', elapsed_time, ' seconds (', elapsed_time / 60, ')', sep='')
-print('Read domain with', domain.num_vertices, 'vertices')
+print('Read domain with', domain.num_vertices, 'vertices and', domain.num_cells, 'cells')
 
 # In case we want to read not only the domain information, but also the segmentation
 # information from the mesh file, we would have to create an empty domain and an
@@ -53,7 +53,7 @@ end_time = time.time()
 elapsed_time = end_time - start_time
 
 print('Elapsed time: ', elapsed_time, ' seconds (', elapsed_time / 60, ')', sep='')
-print('Read domain with', domain.num_vertices, 'vertices')
+print('Read domain with', domain.num_vertices, 'vertices and', domain.num_cells, 'cells')
 print('Read segmentation with', segmentation.num_segments, 'segmets')
 for i, seg in enumerate(segmentation.segments):
 	print('Segment #', i, ' contains ', seg.num_cells, ' cells', sep='')
