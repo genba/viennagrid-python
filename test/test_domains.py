@@ -49,6 +49,27 @@ class TestLinearCartesian1D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearCartesian2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -84,6 +105,27 @@ class TestLinearCartesian2D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -119,6 +161,27 @@ class TestLinearCartesian3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -154,6 +217,27 @@ class TestLinearCylindrical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -189,6 +273,27 @@ class TestLinearPolar2D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -224,6 +329,27 @@ class TestLinearSpherical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 ######################
 # TRIANGULAR DOMAINS #
@@ -263,6 +389,29 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -298,6 +447,29 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -333,6 +505,29 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -368,6 +563,29 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -403,6 +621,29 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 #########################
 # QUADRILATERAL DOMAINS #
@@ -442,6 +683,31 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -477,6 +743,31 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -512,6 +803,31 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -547,6 +863,31 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -582,6 +923,31 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 #######################
 # TETRAHEDRAL DOMAINS #
@@ -621,6 +987,31 @@ class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -656,6 +1047,31 @@ class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -691,6 +1107,31 @@ class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 		
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
+	
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
+		
+		for point in self.vertices:
+			self.domain.make_vertex(point)
+		
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
+		
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
+		
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 if __name__ == '__main__':
 	unittest.main()
