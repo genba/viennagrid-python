@@ -172,7 +172,7 @@ class Domain(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the vertices of the domain, in ascendent order of indices: ::
+			This returns a Python list containing all the vertices of the domain, in ascending order of indices: ::
 			
 				vertex_list = domain.vertices()
 		
@@ -316,7 +316,7 @@ class Segmentation(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the segments of the segmentation, in ascendent order of indices: ::
+			This returns a Python list containing all the segments of the segmentation, in ascending order of indices: ::
 			
 				segment_list = segmentation.segments()
 		
@@ -369,7 +369,7 @@ class Segmentation(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the cells of the domain, in ascendent order of indices: ::
+			This returns a Python list containing all the cells of the domain, in ascending order of indices: ::
 			
 				cell_list = domain.cells()
 		
@@ -446,7 +446,7 @@ class Segment(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the cells of the segment, in ascendent order of indices: ::
+			This returns a Python list containing all the cells of the segment, in ascending order of indices: ::
 			
 				cell_list = segment.cells()
 		
@@ -523,7 +523,7 @@ class Cell(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the vertices of the cell, in ascendent order of indices: ::
+			This returns a Python list containing all the vertices of the cell, in ascending order of indices: ::
 			
 				vertex_list = cell.vertices()
 		
