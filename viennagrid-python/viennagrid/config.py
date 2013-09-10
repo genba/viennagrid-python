@@ -146,7 +146,7 @@ class Configuration(object):
 		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class
 		"""
 		SegmentationType = self.segmentation_type
-		return SegmentationType(*args, **kwargs)
+		return SegmentationType(domain)
 
 #########################
 # COMMON CONFIGURATIONS #

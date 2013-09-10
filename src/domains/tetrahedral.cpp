@@ -1,16 +1,7 @@
 #include "tetrahedral.hpp"
-#include "../segments/types.hpp"
-#include "../vertices/types.hpp"
-#include "../cells/types.hpp"
-#include "../cells/tetrahedral.hpp"
 
-#include <viennagrid/io/netgen_reader.hpp>
-#include <viennagrid/io/vtk_reader.hpp>
-#include <viennagrid/io/opendx_writer.hpp>
-#include <viennagrid/io/vtk_writer.hpp>
-
-#include <stdexcept>
 #include <string>
+#include <stdexcept>
 
 ///////////////////////////////
 // Tetrahedral, cartesian 3D //
@@ -62,6 +53,42 @@ list TetrahedralCartesian3D_Domain::get_vertices()
 		vertices.append<TetrahedralCartesian3D_Vertex>(TetrahedralCartesian3D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int TetrahedralCartesian3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralCartesian3D_Domain_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TetrahedralCartesian3D_Cell TetrahedralCartesian3D_Domain::make_cell(TetrahedralCartesian3D_Vertex vertex1, TetrahedralCartesian3D_Vertex vertex2, TetrahedralCartesian3D_Vertex vertex3, TetrahedralCartesian3D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<TetrahedralCartesian3D_Domain_t, TetrahedralCartesian3D_Cell_t>::type    CellHandle;
+	typedef TetrahedralCartesian3D_Cell_t                                                                          CellType;
+	
+	viennagrid::storage::static_array<TetrahedralCartesian3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::tetrahedron_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TetrahedralCartesian3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralCartesian3D_Domain_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TetrahedralCartesian3D_Cell>(TetrahedralCartesian3D_Cell(*it));
+	return cells;
 }
 
 ///////////////////////////////////
@@ -116,6 +143,42 @@ list TetrahedralCylindrical3D_Domain::get_vertices()
 	return vertices;
 }
 
+unsigned int TetrahedralCylindrical3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralCylindrical3D_Domain_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TetrahedralCylindrical3D_Cell TetrahedralCylindrical3D_Domain::make_cell(TetrahedralCylindrical3D_Vertex vertex1, TetrahedralCylindrical3D_Vertex vertex2, TetrahedralCylindrical3D_Vertex vertex3, TetrahedralCylindrical3D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<TetrahedralCylindrical3D_Domain_t, TetrahedralCylindrical3D_Cell_t>::type    CellHandle;
+	typedef TetrahedralCylindrical3D_Cell_t                                                                            CellType;
+	
+	viennagrid::storage::static_array<TetrahedralCylindrical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::tetrahedron_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TetrahedralCylindrical3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralCylindrical3D_Domain_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TetrahedralCylindrical3D_Cell>(TetrahedralCylindrical3D_Cell(*it));
+	return cells;
+}
+
 /////////////////////////////////
 // Tetrahedral, spherical (3D) //
 /////////////////////////////////
@@ -166,4 +229,40 @@ list TetrahedralSpherical3D_Domain::get_vertices()
 		vertices.append<TetrahedralSpherical3D_Vertex>(TetrahedralSpherical3D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int TetrahedralSpherical3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralSpherical3D_Domain_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TetrahedralSpherical3D_Cell TetrahedralSpherical3D_Domain::make_cell(TetrahedralSpherical3D_Vertex vertex1, TetrahedralSpherical3D_Vertex vertex2, TetrahedralSpherical3D_Vertex vertex3, TetrahedralSpherical3D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<TetrahedralSpherical3D_Domain_t, TetrahedralSpherical3D_Cell_t>::type    CellHandle;
+	typedef TetrahedralSpherical3D_Cell_t                                                                          CellType;
+	
+	viennagrid::storage::static_array<TetrahedralSpherical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::tetrahedron_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TetrahedralSpherical3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TetrahedralSpherical3D_Domain_t, viennagrid::tetrahedron_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TetrahedralSpherical3D_Cell>(TetrahedralSpherical3D_Cell(*it));
+	return cells;
 }

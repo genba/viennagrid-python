@@ -27,20 +27,22 @@ class TestDomain_LinearCartesian1D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -62,10 +64,10 @@ class TestDomain_LinearCartesian1D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -94,20 +96,22 @@ class TestDomain_LinearCartesian2D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -129,10 +133,11 @@ class TestDomain_LinearCartesian2D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -161,20 +166,22 @@ class TestDomain_LinearCartesian3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -196,10 +203,11 @@ class TestDomain_LinearCartesian3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -228,20 +236,22 @@ class TestDomain_LinearCylindrical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -263,10 +273,11 @@ class TestDomain_LinearCylindrical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -295,20 +306,22 @@ class TestDomain_LinearPolar2D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -330,10 +343,11 @@ class TestDomain_LinearPolar2D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -362,20 +376,22 @@ class TestDomain_LinearSpherical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -397,10 +413,11 @@ class TestDomain_LinearSpherical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -433,20 +450,22 @@ class TestDomain_TriangularCartesian2D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -468,10 +487,11 @@ class TestDomain_TriangularCartesian2D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -500,20 +520,22 @@ class TestDomain_TriangularCartesian3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -535,10 +557,11 @@ class TestDomain_TriangularCartesian3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -567,20 +590,22 @@ class TestDomain_TriangularCylindrical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -602,10 +627,11 @@ class TestDomain_TriangularCylindrical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -634,20 +660,22 @@ class TestDomain_TriangularPolar2D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -669,10 +697,11 @@ class TestDomain_TriangularPolar2D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -701,20 +730,22 @@ class TestDomain_TriangularSpherical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -736,10 +767,11 @@ class TestDomain_TriangularSpherical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -772,20 +804,22 @@ class TestDomain_QuadrilateralCartesian2D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -807,10 +841,11 @@ class TestDomain_QuadrilateralCartesian2D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -839,20 +874,22 @@ class TestDomain_QuadrilateralCartesian3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -874,10 +911,11 @@ class TestDomain_QuadrilateralCartesian3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -906,20 +944,22 @@ class TestDomain_QuadrilateralCylindrical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -941,10 +981,11 @@ class TestDomain_QuadrilateralCylindrical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -973,20 +1014,22 @@ class TestDomain_QuadrilateralPolar2D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -1008,10 +1051,11 @@ class TestDomain_QuadrilateralPolar2D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -1040,20 +1084,22 @@ class TestDomain_QuadrilateralSpherical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -1075,10 +1121,11 @@ class TestDomain_QuadrilateralSpherical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -1111,20 +1158,22 @@ class TestDomain_TetrahedralCartesian3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -1146,10 +1195,11 @@ class TestDomain_TetrahedralCartesian3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -1178,20 +1228,22 @@ class TestDomain_TetrahedralCylindrical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -1213,10 +1265,11 @@ class TestDomain_TetrahedralCylindrical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	
@@ -1245,20 +1298,22 @@ class TestDomain_TetrahedralSpherical3D(unittest.TestCase):
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 	
 	def test_vertices(self):
 		self.assertEqual(self.domain.vertices(), [])
 		self.assertEqual(len(self.domain.vertices), 0)
 		for vertex in self.domain.vertices:
 			self.assertTrue(isinstance(vertex, viennagrid.Vertex))
-		# self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0) # FIXME: doesn't raise, because get_vertex doesn't raise
+		self.assertRaises(IndexError, self.domain.vertices.__getitem__, 0)
+		# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 		# self.assertEqual(self.domain.vertices[0:1], [])
 		# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+		# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		for i, point in enumerate(self.vertices):
 			self.domain.make_vertex(point)
@@ -1280,10 +1335,11 @@ class TestDomain_TetrahedralSpherical3D(unittest.TestCase):
 					count += 1
 			self.assertEqual(count, len(self.domain.vertices))
 			
-			# self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices) # FIXME: doesn't raise, because get_vertex doesn't raise
+			self.assertRaises(IndexError, self.domain.vertices.__getitem__, self.num_vertices)
+			# Slices are not supported. Trying to get a slice will raise an ArgumentError:
 			# self.assertEqual(self.domain.vertices[0:1], [])
 			# self.assertEqual(self.domain.vertices.__getitem__(slice(0, 1)), [])
-			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1)) # slices are not supported
+			# self.assertRaises(ArgumentError, self.domain.vertices.__getitem__, slice(0, 1))
 		
 		self.assertEqual(len(self.domain.vertices), self.num_vertices)
 	

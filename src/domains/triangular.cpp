@@ -1,16 +1,7 @@
 #include "triangular.hpp"
-#include "../segments/types.hpp"
-#include "../vertices/types.hpp"
-#include "../cells/types.hpp"
-#include "../cells/triangular.hpp"
 
-#include <viennagrid/io/netgen_reader.hpp>
-#include <viennagrid/io/vtk_reader.hpp>
-#include <viennagrid/io/opendx_writer.hpp>
-#include <viennagrid/io/vtk_writer.hpp>
-
-#include <stdexcept>
 #include <string>
+#include <stdexcept>
 
 ////////////////////////////
 // Triangle, cartesian 2D //
@@ -62,6 +53,41 @@ list TriangularCartesian2D_Domain::get_vertices()
 		vertices.append<TriangularCartesian2D_Vertex>(TriangularCartesian2D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int TriangularCartesian2D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularCartesian2D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TriangularCartesian2D_Cell TriangularCartesian2D_Domain::make_cell(TriangularCartesian2D_Vertex vertex1, TriangularCartesian2D_Vertex vertex2, TriangularCartesian2D_Vertex vertex3)
+{
+	typedef viennagrid::result_of::handle<TriangularCartesian2D_Domain_t, TriangularCartesian2D_Cell_t>::type    CellHandle;
+	typedef TriangularCartesian2D_Cell_t                                                                         CellType;
+	
+	viennagrid::storage::static_array<TriangularCartesian2D_VertexHandle_t, 3> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TriangularCartesian2D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularCartesian2D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularCartesian2D_Cell>(TriangularCartesian2D_Cell(*it));
+	return cells;
 }
 
 ////////////////////////////
@@ -116,6 +142,41 @@ list TriangularCartesian3D_Domain::get_vertices()
 	return vertices;
 }
 
+unsigned int TriangularCartesian3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularCartesian3D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TriangularCartesian3D_Cell TriangularCartesian3D_Domain::make_cell(TriangularCartesian3D_Vertex vertex1, TriangularCartesian3D_Vertex vertex2, TriangularCartesian3D_Vertex vertex3)
+{
+	typedef viennagrid::result_of::handle<TriangularCartesian3D_Domain_t, TriangularCartesian3D_Cell_t>::type    CellHandle;
+	typedef TriangularCartesian3D_Cell_t                                                                         CellType;
+	
+	viennagrid::storage::static_array<TriangularCartesian3D_VertexHandle_t, 3> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TriangularCartesian3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularCartesian3D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularCartesian3D_Cell>(TriangularCartesian3D_Cell(*it));
+	return cells;
+}
+
 ////////////////////////////////
 // Triangle, cylindrical (3D) //
 ////////////////////////////////
@@ -166,6 +227,41 @@ list TriangularCylindrical3D_Domain::get_vertices()
 		vertices.append<TriangularCylindrical3D_Vertex>(TriangularCylindrical3D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int TriangularCylindrical3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularCylindrical3D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TriangularCylindrical3D_Cell TriangularCylindrical3D_Domain::make_cell(TriangularCylindrical3D_Vertex vertex1, TriangularCylindrical3D_Vertex vertex2, TriangularCylindrical3D_Vertex vertex3)
+{
+	typedef viennagrid::result_of::handle<TriangularCylindrical3D_Domain_t, TriangularCylindrical3D_Cell_t>::type    CellHandle;
+	typedef TriangularCylindrical3D_Cell_t                                                                           CellType;
+	
+	viennagrid::storage::static_array<TriangularCylindrical3D_VertexHandle_t, 3> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TriangularCylindrical3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularCylindrical3D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularCylindrical3D_Cell>(TriangularCylindrical3D_Cell(*it));
+	return cells;
 }
 
 //////////////////////////
@@ -220,6 +316,41 @@ list TriangularPolar2D_Domain::get_vertices()
 	return vertices;
 }
 
+unsigned int TriangularPolar2D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularPolar2D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TriangularPolar2D_Cell TriangularPolar2D_Domain::make_cell(TriangularPolar2D_Vertex vertex1, TriangularPolar2D_Vertex vertex2, TriangularPolar2D_Vertex vertex3)
+{
+	typedef viennagrid::result_of::handle<TriangularPolar2D_Domain_t, TriangularPolar2D_Cell_t>::type    CellHandle;
+	typedef TriangularPolar2D_Cell_t                                                                         CellType;
+	
+	viennagrid::storage::static_array<TriangularPolar2D_VertexHandle_t, 3> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TriangularPolar2D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularPolar2D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularPolar2D_Cell>(TriangularPolar2D_Cell(*it));
+	return cells;
+}
+
 //////////////////////////////
 // Triangle, spherical (3D) //
 //////////////////////////////
@@ -270,4 +401,39 @@ list TriangularSpherical3D_Domain::get_vertices()
 		vertices.append<TriangularSpherical3D_Vertex>(TriangularSpherical3D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int TriangularSpherical3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularSpherical3D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+TriangularSpherical3D_Cell TriangularSpherical3D_Domain::make_cell(TriangularSpherical3D_Vertex vertex1, TriangularSpherical3D_Vertex vertex2, TriangularSpherical3D_Vertex vertex3)
+{
+	typedef viennagrid::result_of::handle<TriangularSpherical3D_Domain_t, TriangularSpherical3D_Cell_t>::type    CellHandle;
+	typedef TriangularSpherical3D_Cell_t                                                                         CellType;
+	
+	viennagrid::storage::static_array<TriangularSpherical3D_VertexHandle_t, 3> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::triangle_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list TriangularSpherical3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<TriangularSpherical3D_Domain_t, viennagrid::triangle_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<TriangularSpherical3D_Cell>(TriangularSpherical3D_Cell(*it));
+	return cells;
 }

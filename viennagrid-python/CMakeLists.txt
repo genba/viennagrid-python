@@ -3,6 +3,12 @@ project (ViennaGridPythonPackage)
 
 find_package (PythonInterp REQUIRED)
 
+set (PYTHON_SRC_FILES
+          "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/__init__.py"
+          "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/config.py"
+          "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/io.py"
+          "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/algorithms.py")
+
 set (SETUP_PY_IN "${CMAKE_CURRENT_SOURCE_DIR}/setup.py")
 set (SETUP_PY    "${CMAKE_CURRENT_BINARY_DIR}/setup.py")
 
@@ -33,7 +39,8 @@ add_custom_command (OUTPUT ${PACKAGESRC_OUTPUT}
                     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
                     COMMAND ${CMAKE_COMMAND} -E copy "${LIBRARY_OUTPUT_PATH}/wrapper.so" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
                     COMMAND ${CMAKE_COMMAND} -E touch ${PACKAGESRC_OUTPUT}
-                    DEPENDS wrapper)
+                    SOURCES ${PYTHON_SRC_FILES}
+                    DEPENDS wrapper ${PYTHON_SRC_FILES})
 
 add_custom_target (packagesrc ALL DEPENDS ${PACKAGESRC_OUTPUT})
 

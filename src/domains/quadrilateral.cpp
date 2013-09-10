@@ -1,16 +1,7 @@
 #include "quadrilateral.hpp"
-#include "../segments/types.hpp"
-#include "../vertices/types.hpp"
-#include "../cells/types.hpp"
-#include "../cells/quadrilateral.hpp"
 
-#include <viennagrid/io/netgen_reader.hpp>
-#include <viennagrid/io/vtk_reader.hpp>
-#include <viennagrid/io/opendx_writer.hpp>
-#include <viennagrid/io/vtk_writer.hpp>
-
-#include <stdexcept>
 #include <string>
+#include <stdexcept>
 
 /////////////////////////////////
 // Quadrilateral, cartesian 2D //
@@ -62,6 +53,42 @@ list QuadrilateralCartesian2D_Domain::get_vertices()
 		vertices.append<QuadrilateralCartesian2D_Vertex>(QuadrilateralCartesian2D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int QuadrilateralCartesian2D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian2D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+QuadrilateralCartesian2D_Cell QuadrilateralCartesian2D_Domain::make_cell(QuadrilateralCartesian2D_Vertex vertex1, QuadrilateralCartesian2D_Vertex vertex2, QuadrilateralCartesian2D_Vertex vertex3, QuadrilateralCartesian2D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<QuadrilateralCartesian2D_Domain_t, QuadrilateralCartesian2D_Cell_t>::type    CellHandle;
+	typedef QuadrilateralCartesian2D_Cell_t                                                                            CellType;
+	
+	viennagrid::storage::static_array<QuadrilateralCartesian2D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list QuadrilateralCartesian2D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian2D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralCartesian2D_Cell>(QuadrilateralCartesian2D_Cell(*it));
+	return cells;
 }
 
 /////////////////////////////////
@@ -116,6 +143,42 @@ list QuadrilateralCartesian3D_Domain::get_vertices()
 	return vertices;
 }
 
+unsigned int QuadrilateralCartesian3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian3D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+QuadrilateralCartesian3D_Cell QuadrilateralCartesian3D_Domain::make_cell(QuadrilateralCartesian3D_Vertex vertex1, QuadrilateralCartesian3D_Vertex vertex2, QuadrilateralCartesian3D_Vertex vertex3, QuadrilateralCartesian3D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<QuadrilateralCartesian3D_Domain_t, QuadrilateralCartesian3D_Cell_t>::type    CellHandle;
+	typedef QuadrilateralCartesian3D_Cell_t                                                                            CellType;
+	
+	viennagrid::storage::static_array<QuadrilateralCartesian3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list QuadrilateralCartesian3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCartesian3D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralCartesian3D_Cell>(QuadrilateralCartesian3D_Cell(*it));
+	return cells;
+}
+
 /////////////////////////////////////
 // Quadrilateral, cylindrical (3D) //
 /////////////////////////////////////
@@ -166,6 +229,42 @@ list QuadrilateralCylindrical3D_Domain::get_vertices()
 		vertices.append<QuadrilateralCylindrical3D_Vertex>(QuadrilateralCylindrical3D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int QuadrilateralCylindrical3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCylindrical3D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+QuadrilateralCylindrical3D_Cell QuadrilateralCylindrical3D_Domain::make_cell(QuadrilateralCylindrical3D_Vertex vertex1, QuadrilateralCylindrical3D_Vertex vertex2, QuadrilateralCylindrical3D_Vertex vertex3, QuadrilateralCylindrical3D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<QuadrilateralCylindrical3D_Domain_t, QuadrilateralCylindrical3D_Cell_t>::type    CellHandle;
+	typedef QuadrilateralCylindrical3D_Cell_t                                                                              CellType;
+	
+	viennagrid::storage::static_array<QuadrilateralCylindrical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list QuadrilateralCylindrical3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralCylindrical3D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralCylindrical3D_Cell>(QuadrilateralCylindrical3D_Cell(*it));
+	return cells;
 }
 
 ///////////////////////////////
@@ -220,6 +319,42 @@ list QuadrilateralPolar2D_Domain::get_vertices()
 	return vertices;
 }
 
+unsigned int QuadrilateralPolar2D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralPolar2D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+QuadrilateralPolar2D_Cell QuadrilateralPolar2D_Domain::make_cell(QuadrilateralPolar2D_Vertex vertex1, QuadrilateralPolar2D_Vertex vertex2, QuadrilateralPolar2D_Vertex vertex3, QuadrilateralPolar2D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<QuadrilateralPolar2D_Domain_t, QuadrilateralPolar2D_Cell_t>::type    CellHandle;
+	typedef QuadrilateralPolar2D_Cell_t                                                                        CellType;
+	
+	viennagrid::storage::static_array<QuadrilateralPolar2D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list QuadrilateralPolar2D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralPolar2D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralPolar2D_Cell>(QuadrilateralPolar2D_Cell(*it));
+	return cells;
+}
+
 ///////////////////////////////////
 // Quadrilateral, spherical (3D) //
 ///////////////////////////////////
@@ -270,4 +405,40 @@ list QuadrilateralSpherical3D_Domain::get_vertices()
 		vertices.append<QuadrilateralSpherical3D_Vertex>(QuadrilateralSpherical3D_Vertex(*it));
 	
 	return vertices;
+}
+
+unsigned int QuadrilateralSpherical3D_Domain::num_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralSpherical3D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	range_type range = viennagrid::elements(domain);
+	return range.size();
+}
+
+QuadrilateralSpherical3D_Cell QuadrilateralSpherical3D_Domain::make_cell(QuadrilateralSpherical3D_Vertex vertex1, QuadrilateralSpherical3D_Vertex vertex2, QuadrilateralSpherical3D_Vertex vertex3, QuadrilateralSpherical3D_Vertex vertex4)
+{
+	typedef viennagrid::result_of::handle<QuadrilateralSpherical3D_Domain_t, QuadrilateralSpherical3D_Cell_t>::type    CellHandle;
+	typedef QuadrilateralSpherical3D_Cell_t                                                                            CellType;
+	
+	viennagrid::storage::static_array<QuadrilateralSpherical3D_VertexHandle_t, 4> vertices;
+	vertices[0] = viennagrid::handle(domain, vertex1.get_vertex());
+	vertices[1] = viennagrid::handle(domain, vertex2.get_vertex());
+	vertices[2] = viennagrid::handle(domain, vertex3.get_vertex());
+	vertices[3] = viennagrid::handle(domain, vertex4.get_vertex());
+	CellHandle ch = viennagrid::make_element<viennagrid::quadrilateral_tag>(domain, vertices.begin(), vertices.end());
+	
+	CellType &cell = viennagrid::dereference_handle(domain, ch);
+	
+	return cell;
+}
+
+list QuadrilateralSpherical3D_Domain::get_cells()
+{
+	typedef viennagrid::result_of::element_range<QuadrilateralSpherical3D_Domain_t, viennagrid::quadrilateral_tag>::type    range_type;
+	
+	list cells;
+	range_type range = viennagrid::elements(domain);
+	for (range_type::iterator it = range.begin(); it != range.end(); ++it)
+		cells.append<QuadrilateralSpherical3D_Cell>(QuadrilateralSpherical3D_Cell(*it));
+	return cells;
 }

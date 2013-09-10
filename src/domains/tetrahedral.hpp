@@ -13,12 +13,10 @@
 #include "../points/spherical.hpp"
 
 #include "../vertices/tetrahedral.hpp"
-#include "../segmentations/tetrahedral.hpp"
+#include "../cells/tetrahedral.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
-
-#include <string>
 
 /**
  * Domain of lines in the cartesian 3D space.
@@ -61,6 +59,38 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	
+	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 * @param vertex3
+	 * @param vertex4
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	TetrahedralCartesian3D_Cell make_cell(TetrahedralCartesian3D_Vertex vertex1, TetrahedralCartesian3D_Vertex vertex2, TetrahedralCartesian3D_Vertex vertex3, TetrahedralCartesian3D_Vertex vertex4);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
 	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
@@ -114,6 +144,38 @@ public:
 	list get_vertices();
 	
 	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 * @param vertex3
+	 * @param vertex4
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	TetrahedralCylindrical3D_Cell make_cell(TetrahedralCylindrical3D_Vertex vertex1, TetrahedralCylindrical3D_Vertex vertex2, TetrahedralCylindrical3D_Vertex vertex3, TetrahedralCylindrical3D_Vertex vertex4);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
+	
+	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
 	 * @return Reference to the ViennaGrid domain object.
@@ -163,6 +225,38 @@ public:
 	 * @return Python list
 	 */
 	list get_vertices();
+	
+	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 * @param vertex3
+	 * @param vertex4
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	TetrahedralSpherical3D_Cell make_cell(TetrahedralSpherical3D_Vertex vertex1, TetrahedralSpherical3D_Vertex vertex2, TetrahedralSpherical3D_Vertex vertex3, TetrahedralSpherical3D_Vertex vertex4);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
 	
 	/**
 	 * Get a reference to the ViennaGrid domain object.

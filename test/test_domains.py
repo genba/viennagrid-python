@@ -50,67 +50,26 @@ class TestLinearCartesian1D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearCartesian2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -147,67 +106,26 @@ class TestLinearCartesian2D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -244,67 +162,26 @@ class TestLinearCartesian3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -341,67 +218,26 @@ class TestLinearCylindrical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -438,67 +274,26 @@ class TestLinearPolar2D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestLinearSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -535,67 +330,26 @@ class TestLinearSpherical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 ######################
 # TRIANGULAR DOMAINS #
@@ -636,67 +390,28 @@ class TestTriangularCartesian2D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -733,67 +448,28 @@ class TestTriangularCartesian3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -830,67 +506,28 @@ class TestTriangularCylindrical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -927,67 +564,28 @@ class TestTriangularPolar2D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTriangularSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -1024,67 +622,28 @@ class TestTriangularSpherical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 #########################
 # QUADRILATERAL DOMAINS #
@@ -1125,67 +684,30 @@ class TestQuadrilateralCartesian2D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -1222,67 +744,30 @@ class TestQuadrilateralCartesian3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -1319,67 +804,30 @@ class TestQuadrilateralCylindrical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -1416,67 +864,30 @@ class TestQuadrilateralPolar2D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -1513,67 +924,30 @@ class TestQuadrilateralSpherical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 #######################
 # TETRAHEDRAL DOMAINS #
@@ -1614,67 +988,30 @@ class TestTetrahedralCartesian3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -1711,67 +1048,30 @@ class TestTetrahedralCylindrical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 	def setUp(self):
@@ -1808,67 +1108,30 @@ class TestTetrahedralSpherical3D_Domain(unittest.TestCase):
 		# Check that 'vertices' returns the correct amount of vertices.
 		self.assertEqual(len(self.vertices), len(self.domain.vertices))
 	
-	@unittest.skip('test fails: mesh-file cannot be opened')
-	def test_read_netgen(self):
-		"""Test method 'read_netgen'."""
+	def test_make_cell(self):
+		"""Test method 'make_cell' and attribute 'cells' of class 'Domain'."""
 		
-		file_path = 'meshfiles/sshape2d.mesh'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_netgen(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test fails: pvd-file cannot be opened and last assert is not true for the other files')
-	def test_read_vtk(self):
-		"""Test method 'read_vtk'."""
-		
-		#file_path = 'meshfiles/multi_segment_tri_0.vtu'
-		#file_path = 'meshfiles/multi_segment_tri_1.vtu'
-		file_path = 'meshfiles/multi_segment_tri_main.pvd'
-		
-		# There must be no verrtices in the domain, since the file has not been read yet
-		# and no vertices have been added.
-		self.assertEqual(self.domain.num_vertices, 0)
-		# Call reader
-		self.domain.read_vtk(file_path)
-		# Now the number of vertices must be greater than zero, because the domain has
-		# been initialized according to the contents of the mesh file that has just been
-		# read (provided that the mesh file contains at least one vertex).
-		self.assertTrue(self.domain.num_vertices > 0)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_opendx(self):
-		"""Test method 'writer_opendx'."""
-		
-		file_path = ''
-		
-		# Add vertices to the domain
 		for point in self.vertices:
 			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
 		
-		# Call writer
-		self.domain.writer_opendx(file_path)
-	
-	@unittest.skip('test case not finished: file-path and a way to check the file contents are still missing')
-	def test_writer_vtk(self):
-		"""Test method 'writer_vtk'."""
+		self.assertEqual(len(self.domain.cells), 0)
+		self.assertEqual(self.domain.num_cells, 0)
 		
-		file_path = ''
+		v1 = self.domain.get_vertex(0)
+		v2 = self.domain.get_vertex(1)
+		v3 = self.domain.get_vertex(2)
+		v4 = self.domain.get_vertex(3)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 1)
+		self.assertEqual(self.domain.num_cells, 1)
 		
-		# Add vertices to the domain
-		for point in self.vertices:
-			self.domain.make_vertex(point)
-		self.assertEqual(self.domain.num_vertices, self.num_vertices)
-		
-		# Call writer
-		self.domain.writer_vtk(file_path)
+		v1 = self.domain.get_vertex(1)
+		v2 = self.domain.get_vertex(2)
+		v3 = self.domain.get_vertex(3)
+		v4 = self.domain.get_vertex(4)
+		self.domain.make_cell(v1, v2, v3, v4)
+		self.assertEqual(len(self.domain.cells), 2)
+		self.assertEqual(self.domain.num_cells, 2)
 
 if __name__ == '__main__':
 	unittest.main()

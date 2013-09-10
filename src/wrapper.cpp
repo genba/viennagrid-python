@@ -223,6 +223,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCartesian1D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCartesian1D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCartesian1D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCartesian1D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCartesian1D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian1D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearCartesian2D_Domain>("LinearCartesian2D_Domain")
@@ -230,6 +233,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCartesian2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCartesian2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCartesian2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearCartesian3D_Domain>("LinearCartesian3D_Domain")
@@ -237,6 +243,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearCylindrical3D_Domain>("LinearCylindrical3D_Domain")
@@ -244,6 +253,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearPolar2D_Domain>("LinearPolar2D_Domain")
@@ -251,6 +263,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearPolar2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearPolar2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearPolar2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearSpherical3D_Domain>("LinearSpherical3D_Domain")
@@ -258,6 +273,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/************************
@@ -461,6 +479,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularCartesian2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularCartesian2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularCartesian2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularCartesian3D_Domain>("TriangularCartesian3D_Domain")
@@ -468,6 +489,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("TriangularCylindrical3D_Domain")
@@ -475,6 +499,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularPolar2D_Domain>("TriangularPolar2D_Domain")
@@ -482,6 +509,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularPolar2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularPolar2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularPolar2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularSpherical3D_Domain>("TriangularSpherical3D_Domain")
@@ -489,6 +519,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/****************************
@@ -669,6 +702,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralCartesian2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralCartesian2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralCartesian2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Domain>("QuadrilateralCartesian3D_Domain")
@@ -676,6 +712,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Domain>("QuadrilateralCylindrical3D_Domain")
@@ -683,6 +722,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralPolar2D_Domain>("QuadrilateralPolar2D_Domain")
@@ -690,6 +732,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralPolar2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralPolar2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralPolar2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Domain>("QuadrilateralSpherical3D_Domain")
@@ -697,6 +742,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/*******************************
@@ -877,6 +925,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TetrahedralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TetrahedralCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TetrahedralCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TetrahedralCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
@@ -884,6 +935,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TetrahedralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TetrahedralCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TetrahedralCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TetrahedralCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
@@ -891,6 +945,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TetrahedralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TetrahedralSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TetrahedralSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TetrahedralSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/*****************************

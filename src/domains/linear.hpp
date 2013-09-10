@@ -13,7 +13,7 @@
 #include "../points/spherical.hpp"
 
 #include "../vertices/linear.hpp"
-#include "../segmentations/linear.hpp"
+#include "../cells/linear.hpp"
 
 #include <boost/python.hpp>
 using namespace boost::python;
@@ -67,6 +67,36 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	LinearCartesian1D_Cell make_cell(LinearCartesian1D_Vertex vertex1, LinearCartesian1D_Vertex vertex2);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
 	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
@@ -132,6 +162,36 @@ public:
 	list get_vertices();
 	
 	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	LinearCartesian2D_Cell make_cell(LinearCartesian2D_Vertex vertex1, LinearCartesian2D_Vertex vertex2);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
+	
+	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
 	 * @return Reference to the ViennaGrid domain object.
@@ -193,6 +253,36 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	LinearCartesian3D_Cell make_cell(LinearCartesian3D_Vertex vertex1, LinearCartesian3D_Vertex vertex2);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
 	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
@@ -258,6 +348,36 @@ public:
 	list get_vertices();
 	
 	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	LinearCylindrical3D_Cell make_cell(LinearCylindrical3D_Vertex vertex1, LinearCylindrical3D_Vertex vertex2);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
+	
+	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
 	 * @return Reference to the ViennaGrid domain object.
@@ -321,6 +441,36 @@ public:
 	list get_vertices();
 	
 	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	LinearPolar2D_Cell make_cell(LinearPolar2D_Vertex vertex1, LinearPolar2D_Vertex vertex2);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
+	
+	/**
 	 * Get a reference to the ViennaGrid domain object.
 	 * 
 	 * @return Reference to the ViennaGrid domain object.
@@ -382,6 +532,36 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Return the number of cells contained in the segment.
+	 *
+	 * @return unsigned integer
+	 * 
+	 * @since 0.1.0
+	 */
+	unsigned int num_cells();
+	
+	/**
+	 * Create a new cell in the segment.
+	 *
+	 * @param vertex1
+	 * @param vertex2
+	 *
+	 * @return The newly created cell.
+	 * 
+	 * @since 0.1.0
+	 */
+	LinearSpherical3D_Cell make_cell(LinearSpherical3D_Vertex vertex1, LinearSpherical3D_Vertex vertex2);
+	
+	/**
+	 * Return a Python list containing all the cells contained in the segment.
+	 * 
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
+	list get_cells();
 	
 	/**
 	 * Get a reference to the ViennaGrid domain object.
