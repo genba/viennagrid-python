@@ -22,6 +22,10 @@ from viennagrid.wrapper import read_netgen
 
 import time
 
+import os
+
+file_path = os.path.join(os.path.split(__file__)[0], '../data/half-trigate.mesh')
+
 # In case we want to read only the domain information from the mesh file, we would
 # just create an empty domain and call the Netgen reader on it with the file path
 # where the mesh file can be found.
@@ -30,7 +34,7 @@ domain = Domain()
 
 start_time = time.time()
 
-read_netgen('../data/half-trigate.mesh', domain)
+read_netgen(file_path, domain)
 
 end_time = time.time()
 elapsed_time = end_time - start_time
@@ -47,7 +51,7 @@ segmentation = Segmentation(domain)
 
 start_time = time.time()
 
-read_netgen('../data/half-trigate.mesh', domain, segmentation)
+read_netgen(file_path, domain, segmentation)
 
 end_time = time.time()
 elapsed_time = end_time - start_time

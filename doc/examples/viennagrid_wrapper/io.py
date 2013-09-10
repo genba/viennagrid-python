@@ -19,12 +19,16 @@ from viennagrid.wrapper import TriangularCartesian3D_Domain as Domain
 from viennagrid.wrapper import TriangularCartesian3D_Segmentation as Segmentation
 from viennagrid.wrapper import read_netgen
 
+import os
+
+file_path = os.path.join(os.path.split(__file__)[0], '../data/half-trigate.mesh')
+
 # In case we want to read only the domain information from the mesh file, we would
 # just create an empty domain and call the Netgen reader on it with the file path
 # where the mesh file can be found.
 
 domain = Domain()
-read_netgen('../data/half-trigate.mesh', domain)
+read_netgen(file_path, domain)
 
 # In case we want to read not only the domain information, but also the segmentation
 # information from the mesh file, we would have to create an empty domain and an
@@ -32,4 +36,4 @@ read_netgen('../data/half-trigate.mesh', domain)
 
 domain = Domain()
 segmentation = Segmentation(domain)
-read_netgen('../data/half-trigate.mesh', domain, segmentation)
+read_netgen(file_path, domain, segmentation)
