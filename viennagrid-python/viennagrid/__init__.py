@@ -360,6 +360,62 @@ class Segmentation(object):
 		"""
 		return Segment(self._segmentation.make_segment())
 	
+	@property
+	def cells(self):
+		"""
+		Return an object that allows accessing the list of all cells contained in the domain.
+		
+		This object provides the following methods:
+		
+		.. method:: __call__()
+		
+			This returns a Python list containing all the cells of the domain, in ascendent order of indices: ::
+			
+				cell_list = domain.cells()
+		
+		.. method:: __len__()
+		
+			This allows you to get  the number of cells in the domain as though it were a Python list: ::
+			
+				num_cells = len(domain.cells)
+		
+		.. method:: __iter__()
+		
+			This allows you to get an iterator over the cells of the domain like this: ::
+			
+				iterator = iter(domain.cells)
+		
+		.. method:: __getitem__(index)
+		
+			This allows you to access each cell by its index using bracket notation: ::
+			
+				s0 = domain.cells[0]
+		"""
+		class CellList(object):
+			def __init__(self, domain):
+				self._domain = domain
+			def __call__(self):
+				return [Cell(c) for c in self._domain.cells]
+			def __len__(self):
+				return self._domain.num_cells
+			def __iter__(self):
+				for c in self._domain.cells:
+					yield Cell(c)
+			def __getitem__(self, index):
+				return Cell(self._domain.cells[index])
+		return CellList(self._domain)
+	
+	def make_cell(self, *args, **kwargs):
+		"""
+		Create a new cell in the domain and return it.
+		
+		As positional parameters you must pass as many vertices (:class:`~viennagrid.Vertex` objects) as needed to define a cell of the type and dimension of the domain.
+		
+		:returns: A :class:`~viennagrid.Cell` object --- the newly created cell
+		"""
+		vertices = [vertex._vertex for vertex in args]
+		return Cell(self._domain.make_cell(*vertices))
+	
 	def __iter__(self):
 		"""
 		Return a generator object to iterate over all the segments contained in the segmentation.
