@@ -322,13 +322,15 @@ class TestTriangularCartesian2D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -367,13 +369,15 @@ class TestTriangularCartesian3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -412,13 +416,15 @@ class TestTriangularCylindrical3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -457,13 +463,15 @@ class TestTriangularPolar2D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -502,13 +510,15 @@ class TestTriangularSpherical3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -551,13 +561,17 @@ class TestQuadrilateralCartesian2D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -596,13 +610,17 @@ class TestQuadrilateralCartesian3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -641,13 +659,17 @@ class TestQuadrilateralCylindrical3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -686,13 +708,17 @@ class TestQuadrilateralPolar2D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -731,13 +757,17 @@ class TestQuadrilateralSpherical3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -780,13 +810,17 @@ class TestTetrahedralCartesian3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -825,13 +859,17 @@ class TestTetrahedralCylindrical3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
@@ -870,13 +908,17 @@ class TestTetrahedralSpherical3D_Segmentation(unittest.TestCase):
 			
 			v1 = self.domain.get_vertex(0)
 			v2 = self.domain.get_vertex(1)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(2)
+			v4 = self.domain.get_vertex(3)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 1)
 			self.assertEqual(segment.num_cells, 1)
 			
 			v1 = self.domain.get_vertex(1)
 			v2 = self.domain.get_vertex(2)
-			segment.make_cell(v1, v2)
+			v3 = self.domain.get_vertex(3)
+			v4 = self.domain.get_vertex(4)
+			segment.make_cell(v1, v2, v3, v4)
 			self.assertEqual(len(segment.cells), 2)
 			self.assertEqual(segment.num_cells, 2)
 
