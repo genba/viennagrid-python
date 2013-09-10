@@ -39,7 +39,7 @@ read_netgen(file_path, domain)
 end_time = time.time()
 elapsed_time = end_time - start_time
 
-print('Elapsed time: ', elapsed_time, ' seconds (', elapsed_time / 60, ')', sep='')
+print('Elapsed time: ', elapsed_time, ' seconds (', elapsed_time / 60, 'minutes )', sep='')
 print('Read domain with', domain.num_vertices, 'vertices and', domain.num_cells, 'cells')
 
 # In case we want to read not only the domain information, but also the segmentation
@@ -56,7 +56,7 @@ read_netgen(file_path, domain, segmentation)
 end_time = time.time()
 elapsed_time = end_time - start_time
 
-print('Elapsed time: ', elapsed_time, ' seconds (', elapsed_time / 60, ')', sep='')
+print('Elapsed time: ', elapsed_time, ' seconds (', elapsed_time / 60, 'minutes )', sep='')
 print('Read domain with', domain.num_vertices, 'vertices and', domain.num_cells, 'cells')
 print('Read segmentation with', segmentation.num_segments, 'segmets')
 for i, seg in enumerate(segmentation.segments):
