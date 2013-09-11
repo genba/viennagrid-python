@@ -85,7 +85,7 @@ seg0.cells
 seg0.cells[0].vertices
 
 # Create 2 cells in the second segment. This time, we will use variable to
-# make the code shorter.
+# make the code easier to read.
 
 v1 = domain.get_vertex(1)
 v2 = domain.get_vertex(2)
