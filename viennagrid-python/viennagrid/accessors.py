@@ -9,6 +9,14 @@ VERTEX_ACCESSOR = 'vertex'
 class Accessor(object):
 	"""Wrapper class that represents an accessor for vertices or cells."""
 	def __init__(self, accessor_type, domain_config):
+		"""
+		Create a new accessor object.
+		
+		:param accessor_type: Type of element to be accessed by the accessor.
+		:type accessor_type: str (:attr:`viennagrid.accessors.CELL_ACCESSOR` or :attr:`viennagrid.accessors.VERTEX_ACCESSOR`)
+		:param domain_config: Configuration of the domain.
+		:type domain_config: :class:`viennagrid.config.Configuration`
+		"""
 		super(Accessor, self).__init__()
 		self._config = domain_config
 		try:
