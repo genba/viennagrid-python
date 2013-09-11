@@ -7,7 +7,8 @@ set (PYTHON_SRC_FILES
           "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/__init__.py"
           "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/config.py"
           "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/io.py"
-          "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/algorithms.py")
+          "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/algorithms.py"
+          "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid/accessors.py")
 
 set (SETUP_PY_IN "${CMAKE_CURRENT_SOURCE_DIR}/setup.py")
 set (SETUP_PY    "${CMAKE_CURRENT_BINARY_DIR}/setup.py")
