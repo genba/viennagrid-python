@@ -486,32 +486,32 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<LinearCartesian1D_Vertex_Accessor>("LinearCartesian1D_Vertex_Accessor")
 		.def("get_value", &LinearCartesian1D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCartesian1D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian1D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearCartesian2D_Vertex_Accessor>("LinearCartesian2D_Vertex_Accessor")
 		.def("get_value", &LinearCartesian2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCartesian2D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearCartesian3D_Vertex_Accessor>("LinearCartesian3D_Vertex_Accessor")
 		.def("get_value", &LinearCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCartesian3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearCylindrical3D_Vertex_Accessor>("LinearCylindrical3D_Vertex_Accessor")
 		.def("get_value", &LinearCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCylindrical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearPolar2D_Vertex_Accessor>("LinearPolar2D_Vertex_Accessor")
 		.def("get_value", &LinearPolar2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearPolar2D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearPolar2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearSpherical3D_Vertex_Accessor>("LinearSpherical3D_Vertex_Accessor")
 		.def("get_value", &LinearSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearSpherical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/*************************
@@ -520,32 +520,32 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<LinearCartesian1D_Cell_Accessor>("LinearCartesian1D_Cell_Accessor")
 		.def("get_value", &LinearCartesian1D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCartesian1D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCartesian1D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearCartesian2D_Cell_Accessor>("LinearCartesian2D_Cell_Accessor")
 		.def("get_value", &LinearCartesian2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCartesian2D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCartesian2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearCartesian3D_Cell_Accessor>("LinearCartesian3D_Cell_Accessor")
 		.def("get_value", &LinearCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCartesian3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearCylindrical3D_Cell_Accessor>("LinearCylindrical3D_Cell_Accessor")
 		.def("get_value", &LinearCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCylindrical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearPolar2D_Cell_Accessor>("LinearPolar2D_Cell_Accessor")
 		.def("get_value", &LinearPolar2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearPolar2D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearPolar2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearSpherical3D_Cell_Accessor>("LinearSpherical3D_Cell_Accessor")
 		.def("get_value", &LinearSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearSpherical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/************************
@@ -554,32 +554,32 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<LinearCartesian1D_Vertex_Field>("LinearCartesian1D_Vertex_Field", init<double>())
 		.def("get_value", &LinearCartesian1D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCartesian1D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian1D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearCartesian2D_Vertex_Field>("LinearCartesian2D_Vertex_Field", init<double>())
 		.def("get_value", &LinearCartesian2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCartesian2D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearCartesian3D_Vertex_Field>("LinearCartesian3D_Vertex_Field", init<double>())
 		.def("get_value", &LinearCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCartesian3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearCylindrical3D_Vertex_Field>("LinearCylindrical3D_Vertex_Field", init<double>())
 		.def("get_value", &LinearCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearCylindrical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearPolar2D_Vertex_Field>("LinearPolar2D_Vertex_Field", init<double>())
 		.def("get_value", &LinearPolar2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearPolar2D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearPolar2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<LinearSpherical3D_Vertex_Field>("LinearSpherical3D_Vertex_Field", init<double>())
 		.def("get_value", &LinearSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &LinearSpherical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &LinearSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/**********************
@@ -588,32 +588,32 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<LinearCartesian1D_Cell_Field>("LinearCartesian1D_Cell_Field", init<double>())
 		.def("get_value", &LinearCartesian1D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCartesian1D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCartesian1D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearCartesian2D_Cell_Field>("LinearCartesian2D_Cell_Field", init<double>())
 		.def("get_value", &LinearCartesian2D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCartesian2D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCartesian2D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearCartesian3D_Cell_Field>("LinearCartesian3D_Cell_Field", init<double>())
 		.def("get_value", &LinearCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCartesian3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearCylindrical3D_Cell_Field>("LinearCylindrical3D_Cell_Field", init<double>())
 		.def("get_value", &LinearCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearCylindrical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearPolar2D_Cell_Field>("LinearPolar2D_Cell_Field", init<double>())
 		.def("get_value", &LinearPolar2D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearPolar2D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearPolar2D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<LinearSpherical3D_Cell_Field>("LinearSpherical3D_Cell_Field", init<double>())
 		.def("get_value", &LinearSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &LinearSpherical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &LinearSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/**********************
@@ -845,27 +845,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TriangularCartesian2D_Vertex_Accessor>("TriangularCartesian2D_Vertex_Accessor")
 		.def("get_value", &TriangularCartesian2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularCartesian2D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularCartesian3D_Vertex_Accessor>("TriangularCartesian3D_Vertex_Accessor")
 		.def("get_value", &TriangularCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularCartesian3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularCylindrical3D_Vertex_Accessor>("TriangularCylindrical3D_Vertex_Accessor")
 		.def("get_value", &TriangularCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularCylindrical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularPolar2D_Vertex_Accessor>("TriangularPolar2D_Vertex_Accessor")
 		.def("get_value", &TriangularPolar2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularPolar2D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularPolar2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularSpherical3D_Vertex_Accessor>("TriangularSpherical3D_Vertex_Accessor")
 		.def("get_value", &TriangularSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularSpherical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/*****************************
@@ -874,27 +874,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TriangularCartesian2D_Cell_Accessor>("TriangularCartesian2D_Cell_Accessor")
 		.def("get_value", &TriangularCartesian2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularCartesian2D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularCartesian3D_Cell_Accessor>("TriangularCartesian3D_Cell_Accessor")
 		.def("get_value", &TriangularCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularCartesian3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularCylindrical3D_Cell_Accessor>("TriangularCylindrical3D_Cell_Accessor")
 		.def("get_value", &TriangularCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularCylindrical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularPolar2D_Cell_Accessor>("TriangularPolar2D_Cell_Accessor")
 		.def("get_value", &TriangularPolar2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularPolar2D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularPolar2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularSpherical3D_Cell_Accessor>("TriangularSpherical3D_Cell_Accessor")
 		.def("get_value", &TriangularSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularSpherical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/****************************
@@ -903,27 +903,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TriangularCartesian2D_Vertex_Field>("TriangularCartesian2D_Vertex_Field", init<double>())
 		.def("get_value", &TriangularCartesian2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularCartesian2D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularCartesian3D_Vertex_Field>("TriangularCartesian3D_Vertex_Field", init<double>())
 		.def("get_value", &TriangularCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularCartesian3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularCylindrical3D_Vertex_Field>("TriangularCylindrical3D_Vertex_Field", init<double>())
 		.def("get_value", &TriangularCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularCylindrical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularPolar2D_Vertex_Field>("TriangularPolar2D_Vertex_Field", init<double>())
 		.def("get_value", &TriangularPolar2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularPolar2D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularPolar2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TriangularSpherical3D_Vertex_Field>("TriangularSpherical3D_Vertex_Field", init<double>())
 		.def("get_value", &TriangularSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TriangularSpherical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TriangularSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/**************************
@@ -932,27 +932,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TriangularCartesian2D_Cell_Field>("TriangularCartesian2D_Cell_Field", init<double>())
 		.def("get_value", &TriangularCartesian2D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularCartesian2D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian2D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularCartesian3D_Cell_Field>("TriangularCartesian3D_Cell_Field", init<double>())
 		.def("get_value", &TriangularCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularCartesian3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularCylindrical3D_Cell_Field>("TriangularCylindrical3D_Cell_Field", init<double>())
 		.def("get_value", &TriangularCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularCylindrical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularPolar2D_Cell_Field>("TriangularPolar2D_Cell_Field", init<double>())
 		.def("get_value", &TriangularPolar2D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularPolar2D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularPolar2D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TriangularSpherical3D_Cell_Field>("TriangularSpherical3D_Cell_Field", init<double>())
 		.def("get_value", &TriangularSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TriangularSpherical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TriangularSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/*************************
@@ -1184,27 +1184,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<QuadrilateralCartesian2D_Vertex_Accessor>("QuadrilateralCartesian2D_Vertex_Accessor")
 		.def("get_value", &QuadrilateralCartesian2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralCartesian2D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Vertex_Accessor>("QuadrilateralCartesian3D_Vertex_Accessor")
 		.def("get_value", &QuadrilateralCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralCartesian3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Vertex_Accessor>("QuadrilateralCylindrical3D_Vertex_Accessor")
 		.def("get_value", &QuadrilateralCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralCylindrical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralPolar2D_Vertex_Accessor>("QuadrilateralPolar2D_Vertex_Accessor")
 		.def("get_value", &QuadrilateralPolar2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralPolar2D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralPolar2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Vertex_Accessor>("QuadrilateralSpherical3D_Vertex_Accessor")
 		.def("get_value", &QuadrilateralSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralSpherical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/********************************
@@ -1213,27 +1213,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<QuadrilateralCartesian2D_Cell_Accessor>("QuadrilateralCartesian2D_Cell_Accessor")
 		.def("get_value", &QuadrilateralCartesian2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralCartesian2D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Cell_Accessor>("QuadrilateralCartesian3D_Cell_Accessor")
 		.def("get_value", &QuadrilateralCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralCartesian3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Cell_Accessor>("QuadrilateralCylindrical3D_Cell_Accessor")
 		.def("get_value", &QuadrilateralCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralCylindrical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralPolar2D_Cell_Accessor>("QuadrilateralPolar2D_Cell_Accessor")
 		.def("get_value", &QuadrilateralPolar2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralPolar2D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralPolar2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Cell_Accessor>("QuadrilateralSpherical3D_Cell_Accessor")
 		.def("get_value", &QuadrilateralSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralSpherical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/*******************************
@@ -1242,27 +1242,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<QuadrilateralCartesian2D_Vertex_Field>("QuadrilateralCartesian2D_Vertex_Field", init<double>())
 		.def("get_value", &QuadrilateralCartesian2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralCartesian2D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Vertex_Field>("QuadrilateralCartesian3D_Vertex_Field", init<double>())
 		.def("get_value", &QuadrilateralCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralCartesian3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Vertex_Field>("QuadrilateralCylindrical3D_Vertex_Field", init<double>())
 		.def("get_value", &QuadrilateralCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralCylindrical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralPolar2D_Vertex_Field>("QuadrilateralPolar2D_Vertex_Field", init<double>())
 		.def("get_value", &QuadrilateralPolar2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralPolar2D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralPolar2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Vertex_Field>("QuadrilateralSpherical3D_Vertex_Field", init<double>())
 		.def("get_value", &QuadrilateralSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &QuadrilateralSpherical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/*****************************
@@ -1271,27 +1271,27 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<QuadrilateralCartesian2D_Cell_Field>("QuadrilateralCartesian2D_Cell_Field", init<double>())
 		.def("get_value", &QuadrilateralCartesian2D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralCartesian2D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian2D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Cell_Field>("QuadrilateralCartesian3D_Cell_Field", init<double>())
 		.def("get_value", &QuadrilateralCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralCartesian3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Cell_Field>("QuadrilateralCylindrical3D_Cell_Field", init<double>())
 		.def("get_value", &QuadrilateralCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralCylindrical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralPolar2D_Cell_Field>("QuadrilateralPolar2D_Cell_Field", init<double>())
 		.def("get_value", &QuadrilateralPolar2D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralPolar2D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralPolar2D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Cell_Field>("QuadrilateralSpherical3D_Cell_Field", init<double>())
 		.def("get_value", &QuadrilateralSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &QuadrilateralSpherical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &QuadrilateralSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/*************************
@@ -1445,17 +1445,17 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TetrahedralCartesian3D_Vertex_Accessor>("TetrahedralCartesian3D_Vertex_Accessor")
 		.def("get_value", &TetrahedralCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TetrahedralCartesian3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Vertex_Accessor>("TetrahedralCylindrical3D_Vertex_Accessor")
 		.def("get_value", &TetrahedralCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TetrahedralCylindrical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TetrahedralSpherical3D_Vertex_Accessor>("TetrahedralSpherical3D_Vertex_Accessor")
 		.def("get_value", &TetrahedralSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TetrahedralSpherical3D_Vertex_Accessor::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TetrahedralSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/******************************
@@ -1464,17 +1464,17 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TetrahedralCartesian3D_Cell_Accessor>("TetrahedralCartesian3D_Cell_Accessor")
 		.def("get_value", &TetrahedralCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TetrahedralCartesian3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TetrahedralCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Cell_Accessor>("TetrahedralCylindrical3D_Cell_Accessor")
 		.def("get_value", &TetrahedralCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TetrahedralCylindrical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TetrahedralCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TetrahedralSpherical3D_Cell_Accessor>("TetrahedralSpherical3D_Cell_Accessor")
 		.def("get_value", &TetrahedralSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TetrahedralSpherical3D_Cell_Accessor::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TetrahedralSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/*****************************
@@ -1483,17 +1483,17 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TetrahedralCartesian3D_Vertex_Field>("TetrahedralCartesian3D_Vertex_Field", init<double>())
 		.def("get_value", &TetrahedralCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TetrahedralCartesian3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Vertex_Field>("TetrahedralCylindrical3D_Vertex_Field", init<double>())
 		.def("get_value", &TetrahedralCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TetrahedralCylindrical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	class_<TetrahedralSpherical3D_Vertex_Field>("TetrahedralSpherical3D_Vertex_Field", init<double>())
 		.def("get_value", &TetrahedralSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
-		.def("set_value", &TetrahedralSpherical3D_Vertex_Field::get_value, "Set the value associated with the given vertex.")
+		.def("set_value", &TetrahedralSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
 	;
 	
 	/***************************
@@ -1502,17 +1502,17 @@ BOOST_PYTHON_MODULE(wrapper)
 	
 	class_<TetrahedralCartesian3D_Cell_Field>("TetrahedralCartesian3D_Cell_Field", init<double>())
 		.def("get_value", &TetrahedralCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TetrahedralCartesian3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TetrahedralCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Cell_Field>("TetrahedralCylindrical3D_Cell_Field", init<double>())
 		.def("get_value", &TetrahedralCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TetrahedralCylindrical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TetrahedralCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	class_<TetrahedralSpherical3D_Cell_Field>("TetrahedralSpherical3D_Cell_Field", init<double>())
 		.def("get_value", &TetrahedralSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
-		.def("set_value", &TetrahedralSpherical3D_Cell_Field::get_value, "Set the value associated with the given cell.")
+		.def("set_value", &TetrahedralSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/*****************
