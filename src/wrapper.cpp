@@ -2276,22 +2276,22 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////
 	
 	def("write_vtk", LinearCartesian1D_Domain_write_vtk,
-	                 LinearCartesian1D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCartesian1D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCartesian2D_Domain_write_vtk,
-	                 LinearCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCartesian3D_Domain_write_vtk,
-	                 LinearCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCylindrical3D_Domain_write_vtk,
-	                 LinearCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Write mesh data to a VTK file."));
 	def("write_vtk", LinearPolar2D_Domain_write_vtk,
-	                 LinearPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                          "Write mesh data to a VTK file."));
 	def("write_vtk", LinearSpherical3D_Domain_write_vtk,
-	                 LinearSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	
 	////////////////
@@ -2299,19 +2299,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////////
 	
 	def("write_vtk", TriangularCartesian2D_Domain_write_vtk,
-	                 TriangularCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularCartesian3D_Domain_write_vtk,
-	                 TriangularCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularCylindrical3D_Domain_write_vtk,
-	                 TriangularCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                    "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularPolar2D_Domain_write_vtk,
-	                 TriangularPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularSpherical3D_Domain_write_vtk,
-	                 TriangularSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Write mesh data to a VTK file."));
 	
 	///////////////////
@@ -2319,19 +2319,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	///////////////////
 	
 	def("write_vtk", QuadrilateralCartesian2D_Domain_write_vtk,
-	                 QuadrilateralCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralCartesian3D_Domain_write_vtk,
-	                 QuadrilateralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralCylindrical3D_Domain_write_vtk,
-	                 QuadrilateralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                       "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralPolar2D_Domain_write_vtk,
-	                 QuadrilateralPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                 "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralSpherical3D_Domain_write_vtk,
-	                 QuadrilateralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	
 	/////////////////
@@ -2339,12 +2339,12 @@ BOOST_PYTHON_MODULE(wrapper)
 	/////////////////
 	
 	def("write_vtk", TetrahedralCartesian3D_Domain_write_vtk,
-	                 TetrahedralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TetrahedralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Write mesh data to a VTK file."));
 	def("write_vtk", TetrahedralCylindrical3D_Domain_write_vtk,
-	                 TetrahedralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TetrahedralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", TetrahedralSpherical3D_Domain_write_vtk,
-	                 TetrahedralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TetrahedralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Write mesh data to a VTK file."));
 }
