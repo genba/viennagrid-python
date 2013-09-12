@@ -2152,22 +2152,22 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////
 	
 	def("read_vtk", LinearCartesian1D_Domain_read_vtk,
-	                LinearCartesian1D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCartesian1D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCartesian2D_Domain_read_vtk,
-	                LinearCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCartesian3D_Domain_read_vtk,
-	                LinearCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCylindrical3D_Domain_read_vtk,
-	                LinearCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Read mesh data from a VTK file."));
 	def("read_vtk", LinearPolar2D_Domain_read_vtk,
-	                LinearPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                        "Read mesh data from a VTK file."));
 	def("read_vtk", LinearSpherical3D_Domain_read_vtk,
-	                LinearSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	
 	////////////////
@@ -2175,19 +2175,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////////
 	
 	def("read_vtk", TriangularCartesian2D_Domain_read_vtk,
-	                TriangularCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularCartesian3D_Domain_read_vtk,
-	                TriangularCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularCylindrical3D_Domain_read_vtk,
-	                TriangularCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularPolar2D_Domain_read_vtk,
-	                TriangularPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularSpherical3D_Domain_read_vtk,
-	                TriangularSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Read mesh data from a VTK file."));
 	
 	///////////////////
@@ -2195,19 +2195,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	///////////////////
 	
 	def("read_vtk", QuadrilateralCartesian2D_Domain_read_vtk,
-	                QuadrilateralCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralCartesian3D_Domain_read_vtk,
-	                QuadrilateralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralCylindrical3D_Domain_read_vtk,
-	                QuadrilateralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralPolar2D_Domain_read_vtk,
-	                QuadrilateralPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                               "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralSpherical3D_Domain_read_vtk,
-	                QuadrilateralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	
 	/////////////////
@@ -2215,13 +2215,13 @@ BOOST_PYTHON_MODULE(wrapper)
 	/////////////////
 	
 	def("read_vtk", TetrahedralCartesian3D_Domain_read_vtk,
-	                TetrahedralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TetrahedralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                 "Read mesh data from a VTK file."));
 	def("read_vtk", TetrahedralCylindrical3D_Domain_read_vtk,
-	                TetrahedralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TetrahedralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", TetrahedralSpherical3D_Domain_read_vtk,
-	                TetrahedralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TetrahedralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                 "Read mesh data from a VTK file."));
 	
 	/****************
