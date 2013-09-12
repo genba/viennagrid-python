@@ -54,6 +54,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCartesian1D_Vertex &vertex, double new_value);
+	
+	LinearCartesian1D_Vertex_Field_t & get_field();
 };
 
 /**
@@ -95,6 +97,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCartesian2D_Vertex &vertex, double new_value);
+	
+	LinearCartesian2D_Vertex_Field_t & get_field();
 };
 
 /**
@@ -136,6 +140,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCartesian3D_Vertex &vertex, double new_value);
+	
+	LinearCartesian3D_Vertex_Field_t & get_field();
 };
 
 /**
@@ -177,6 +183,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCylindrical3D_Vertex &vertex, double new_value);
+	
+	LinearCylindrical3D_Vertex_Field_t & get_field();
 };
 
 /**
@@ -218,6 +226,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearPolar2D_Vertex &vertex, double new_value);
+	
+	LinearPolar2D_Vertex_Field_t & get_field();
 };
 
 /**
@@ -259,6 +269,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearSpherical3D_Vertex &vertex, double new_value);
+	
+	LinearSpherical3D_Vertex_Field_t & get_field();
 };
 
 /***************
@@ -304,6 +316,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCartesian1D_Cell &cell, double new_value);
+	
+	LinearCartesian1D_Cell_Field_t & get_field();
 };
 
 /**
@@ -345,6 +359,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCartesian2D_Cell &cell, double new_value);
+	
+	LinearCartesian2D_Cell_Field_t & get_field();
 };
 
 /**
@@ -386,6 +402,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCartesian3D_Cell &cell, double new_value);
+	
+	LinearCartesian3D_Cell_Field_t & get_field();
 };
 
 /**
@@ -427,6 +445,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearCylindrical3D_Cell &cell, double new_value);
+	
+	LinearCylindrical3D_Cell_Field_t & get_field();
 };
 
 /**
@@ -468,6 +488,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearPolar2D_Cell &cell, double new_value);
+	
+	LinearPolar2D_Cell_Field_t & get_field();
 };
 
 /**
@@ -509,6 +531,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(LinearSpherical3D_Cell &cell, double new_value);
+	
+	LinearSpherical3D_Cell_Field_t & get_field();
 };
 
 #endif /* end of include guard: FIELDS_LINEAR_HPP */
