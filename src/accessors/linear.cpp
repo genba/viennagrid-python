@@ -29,6 +29,11 @@ void LinearCartesian1D_Vertex_Accessor::set_value(LinearCartesian1D_Vertex &vert
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+LinearCartesian1D_Vertex_Accessor_t & LinearCartesian1D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////////
 // LinearCartesian2D_Vertex_Accessor //
 ///////////////////////////////////////
@@ -52,6 +57,11 @@ double LinearCartesian2D_Vertex_Accessor::get_value(LinearCartesian2D_Vertex &ve
 void LinearCartesian2D_Vertex_Accessor::set_value(LinearCartesian2D_Vertex &vertex, double new_value)
 {
 	(*accessor)(vertex.get_vertex()) = new_value;
+}
+
+LinearCartesian2D_Vertex_Accessor_t & LinearCartesian2D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 ///////////////////////////////////////
@@ -79,6 +89,11 @@ void LinearCartesian3D_Vertex_Accessor::set_value(LinearCartesian3D_Vertex &vert
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+LinearCartesian3D_Vertex_Accessor_t & LinearCartesian3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////////////
 // LinearCylindrical3D_Vertex_Accessor //
 /////////////////////////////////////////
@@ -102,6 +117,11 @@ double LinearCylindrical3D_Vertex_Accessor::get_value(LinearCylindrical3D_Vertex
 void LinearCylindrical3D_Vertex_Accessor::set_value(LinearCylindrical3D_Vertex &vertex, double new_value)
 {
 	(*accessor)(vertex.get_vertex()) = new_value;
+}
+
+LinearCylindrical3D_Vertex_Accessor_t & LinearCylindrical3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 ///////////////////////////////////
@@ -129,6 +149,11 @@ void LinearPolar2D_Vertex_Accessor::set_value(LinearPolar2D_Vertex &vertex, doub
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+LinearPolar2D_Vertex_Accessor_t & LinearPolar2D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////////
 // LinearSpherical3D_Vertex_Accessor //
 ///////////////////////////////////////
@@ -152,6 +177,11 @@ double LinearSpherical3D_Vertex_Accessor::get_value(LinearSpherical3D_Vertex &ve
 void LinearSpherical3D_Vertex_Accessor::set_value(LinearSpherical3D_Vertex &vertex, double new_value)
 {
 	(*accessor)(vertex.get_vertex()) = new_value;
+}
+
+LinearSpherical3D_Vertex_Accessor_t & LinearSpherical3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 /******************
@@ -183,6 +213,11 @@ void LinearCartesian1D_Cell_Accessor::set_value(LinearCartesian1D_Cell &cell, do
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+LinearCartesian1D_Cell_Accessor_t & LinearCartesian1D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////////
 // LinearCartesian2D_Cell_Accessor //
 /////////////////////////////////////
@@ -206,6 +241,11 @@ double LinearCartesian2D_Cell_Accessor::get_value(LinearCartesian2D_Cell &cell)
 void LinearCartesian2D_Cell_Accessor::set_value(LinearCartesian2D_Cell &cell, double new_value)
 {
 	(*accessor)(cell.get_cell()) = new_value;
+}
+
+LinearCartesian2D_Cell_Accessor_t & LinearCartesian2D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 /////////////////////////////////////
@@ -233,6 +273,11 @@ void LinearCartesian3D_Cell_Accessor::set_value(LinearCartesian3D_Cell &cell, do
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+LinearCartesian3D_Cell_Accessor_t & LinearCartesian3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////////
 // LinearCylindrical3D_Cell_Accessor //
 ///////////////////////////////////////
@@ -256,6 +301,11 @@ double LinearCylindrical3D_Cell_Accessor::get_value(LinearCylindrical3D_Cell &ce
 void LinearCylindrical3D_Cell_Accessor::set_value(LinearCylindrical3D_Cell &cell, double new_value)
 {
 	(*accessor)(cell.get_cell()) = new_value;
+}
+
+LinearCylindrical3D_Cell_Accessor_t & LinearCylindrical3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 /////////////////////////////////
@@ -283,6 +333,11 @@ void LinearPolar2D_Cell_Accessor::set_value(LinearPolar2D_Cell &cell, double new
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+LinearPolar2D_Cell_Accessor_t & LinearPolar2D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////////
 // LinearSpherical3D_Cell_Accessor //
 /////////////////////////////////////
@@ -306,4 +361,9 @@ double LinearSpherical3D_Cell_Accessor::get_value(LinearSpherical3D_Cell &cell)
 void LinearSpherical3D_Cell_Accessor::set_value(LinearSpherical3D_Cell &cell, double new_value)
 {
 	(*accessor)(cell.get_cell()) = new_value;
+}
+
+LinearSpherical3D_Cell_Accessor_t & LinearSpherical3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
 }
