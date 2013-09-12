@@ -2232,40 +2232,78 @@ BOOST_PYTHON_MODULE(wrapper)
 	// LINEAR //
 	////////////
 	
-	def("write_opendx", &LinearCartesian1D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", LinearCartesian1D_Domain_write_opendx,
+	                    LinearCartesian1D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearCartesian2D_Domain_write_opendx,
+	                    LinearCartesian2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearCartesian3D_Domain_write_opendx,
+	                    LinearCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearCylindrical3D_Domain_write_opendx,
+	                    LinearCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                      "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearPolar2D_Domain_write_opendx,
+	                    LinearPolar2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearSpherical3D_Domain_write_opendx,
+	                    LinearSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
 	
 	////////////////
 	// TRIANGULAR //
 	////////////////
 	
-	def("write_opendx", &TriangularCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", TriangularCartesian2D_Domain_write_opendx,
+	                    TriangularCartesian2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                        "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularCartesian3D_Domain_write_opendx,
+	                    TriangularCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                        "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularCylindrical3D_Domain_write_opendx,
+	                    TriangularCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                          "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularPolar2D_Domain_write_opendx,
+	                    TriangularPolar2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularSpherical3D_Domain_write_opendx,
+	                    TriangularSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                        "Write mesh data to an OpenDX file."));
 	
 	///////////////////
 	// QUADRILATERAL //
 	///////////////////
 	
-	def("write_opendx", &QuadrilateralCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", QuadrilateralCartesian2D_Domain_write_opendx,
+	                    QuadrilateralCartesian2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralCartesian3D_Domain_write_opendx,
+	                    QuadrilateralCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralCylindrical3D_Domain_write_opendx,
+	                    QuadrilateralCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                             "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralPolar2D_Domain_write_opendx,
+	                    QuadrilateralPolar2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                       "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralSpherical3D_Domain_write_opendx,
+	                    QuadrilateralSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
 	
 	/////////////////
 	// TETRAHEDRAL //
 	/////////////////
 	
-	def("write_opendx", &TetrahedralCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TetrahedralCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TetrahedralSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", TetrahedralCartesian3D_Domain_write_opendx,
+	                    TetrahedralCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                         "Write mesh data to an OpenDX file."));
+	def("write_opendx", TetrahedralCylindrical3D_Domain_write_opendx,
+	                    TetrahedralCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
+	def("write_opendx", TetrahedralSpherical3D_Domain_write_opendx,
+	                    TetrahedralSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                         "Write mesh data to an OpenDX file."));
 	
 	/*************
 	 * WRITE_VTK *
