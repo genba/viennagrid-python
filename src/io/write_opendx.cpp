@@ -12,12 +12,15 @@
 
 #include <viennagrid/io/opendx_writer.hpp>
 
+#include <string>
+
 ////////////
 // LINEAR //
 ////////////
 
-void LinearCartesian1D_Domain_write_opendx(std::string const &filename,
-                                           LinearCartesian1D_Domain *domain, dict accessors)
+void LinearCartesian1D_Domain_write_opendx(str filename,
+                                           LinearCartesian1D_Domain domain,
+                                           dict accessors)
 {
 	viennagrid::io::opendx_writer<LinearCartesian1D_Domain_t>    my_dx_writer;
 	
@@ -50,11 +53,12 @@ void LinearCartesian1D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void LinearCartesian2D_Domain_write_opendx(std::string const &filename,
-                                           LinearCartesian2D_Domain *domain, dict accessors)
+void LinearCartesian2D_Domain_write_opendx(str filename,
+                                           LinearCartesian2D_Domain domain,
+                                           dict accessors)
 {
 	viennagrid::io::opendx_writer<LinearCartesian2D_Domain_t>    my_dx_writer;
 	
@@ -87,11 +91,12 @@ void LinearCartesian2D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void LinearCartesian3D_Domain_write_opendx(std::string const &filename,
-                                           LinearCartesian3D_Domain *domain, dict accessors)
+void LinearCartesian3D_Domain_write_opendx(str filename,
+                                           LinearCartesian3D_Domain domain,
+                                           dict accessors)
 {
 	viennagrid::io::opendx_writer<LinearCartesian3D_Domain_t>    my_dx_writer;
 	
@@ -124,11 +129,12 @@ void LinearCartesian3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void LinearCylindrical3D_Domain_write_opendx(std::string const &filename,
-                                             LinearCylindrical3D_Domain *domain, dict accessors)
+void LinearCylindrical3D_Domain_write_opendx(str filename,
+                                             LinearCylindrical3D_Domain domain,
+                                             dict accessors)
 {
 	viennagrid::io::opendx_writer<LinearCylindrical3D_Domain_t>    my_dx_writer;
 	
@@ -161,11 +167,12 @@ void LinearCylindrical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void LinearPolar2D_Domain_write_opendx(std::string const &filename,
-                                       LinearPolar2D_Domain *domain, dict accessors)
+void LinearPolar2D_Domain_write_opendx(str filename,
+                                       LinearPolar2D_Domain domain,
+                                       dict accessors)
 {
 	viennagrid::io::opendx_writer<LinearPolar2D_Domain_t>    my_dx_writer;
 	
@@ -198,11 +205,12 @@ void LinearPolar2D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void LinearSpherical3D_Domain_write_opendx(std::string const &filename,
-                                           LinearSpherical3D_Domain *domain, dict accessors)
+void LinearSpherical3D_Domain_write_opendx(str filename,
+                                           LinearSpherical3D_Domain domain,
+                                           dict accessors)
 {
 	viennagrid::io::opendx_writer<LinearSpherical3D_Domain_t>    my_dx_writer;
 	
@@ -235,15 +243,16 @@ void LinearSpherical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
 ////////////////
 // TRIANGULAR //
 ////////////////
 
-void TriangularCartesian2D_Domain_write_opendx(std::string const &filename,
-                                               TriangularCartesian2D_Domain *domain, dict accessors)
+void TriangularCartesian2D_Domain_write_opendx(str filename,
+                                               TriangularCartesian2D_Domain domain,
+                                               dict accessors)
 {
 	viennagrid::io::opendx_writer<TriangularCartesian2D_Domain_t>    my_dx_writer;
 	
@@ -276,11 +285,12 @@ void TriangularCartesian2D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void TriangularCartesian3D_Domain_write_opendx(std::string const &filename,
-                                               TriangularCartesian3D_Domain *domain, dict accessors)
+void TriangularCartesian3D_Domain_write_opendx(str filename,
+                                               TriangularCartesian3D_Domain domain,
+                                               dict accessors)
 {
 	viennagrid::io::opendx_writer<TriangularCartesian3D_Domain_t>    my_dx_writer;
 	
@@ -313,11 +323,12 @@ void TriangularCartesian3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void TriangularCylindrical3D_Domain_write_opendx(std::string const &filename,
-                                                 TriangularCylindrical3D_Domain *domain, dict accessors)
+void TriangularCylindrical3D_Domain_write_opendx(str filename,
+                                                 TriangularCylindrical3D_Domain domain,
+                                                 dict accessors)
 {
 	viennagrid::io::opendx_writer<TriangularCylindrical3D_Domain_t>    my_dx_writer;
 	
@@ -350,11 +361,12 @@ void TriangularCylindrical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void TriangularPolar2D_Domain_write_opendx(std::string const &filename,
-                                           TriangularPolar2D_Domain *domain, dict accessors)
+void TriangularPolar2D_Domain_write_opendx(str filename,
+                                           TriangularPolar2D_Domain domain,
+                                           dict accessors)
 {
 	viennagrid::io::opendx_writer<TriangularPolar2D_Domain_t>    my_dx_writer;
 	
@@ -387,11 +399,12 @@ void TriangularPolar2D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void TriangularSpherical3D_Domain_write_opendx(std::string const &filename,
-                                               TriangularSpherical3D_Domain *domain, dict accessors)
+void TriangularSpherical3D_Domain_write_opendx(str filename,
+                                               TriangularSpherical3D_Domain domain,
+                                               dict accessors)
 {
 	viennagrid::io::opendx_writer<TriangularSpherical3D_Domain_t>    my_dx_writer;
 	
@@ -424,15 +437,16 @@ void TriangularSpherical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
 ///////////////////
 // QUADRILATERAL //
 ///////////////////
 
-void QuadrilateralCartesian2D_Domain_write_opendx(std::string const &filename,
-                                                  QuadrilateralCartesian2D_Domain *domain, dict accessors)
+void QuadrilateralCartesian2D_Domain_write_opendx(str filename,
+                                                  QuadrilateralCartesian2D_Domain domain,
+                                                  dict accessors)
 {
 	viennagrid::io::opendx_writer<QuadrilateralCartesian2D_Domain_t>    my_dx_writer;
 	
@@ -465,11 +479,12 @@ void QuadrilateralCartesian2D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void QuadrilateralCartesian3D_Domain_write_opendx(std::string const &filename,
-                                                  QuadrilateralCartesian3D_Domain *domain, dict accessors)
+void QuadrilateralCartesian3D_Domain_write_opendx(str filename,
+                                                  QuadrilateralCartesian3D_Domain domain,
+                                                  dict accessors)
 {
 	viennagrid::io::opendx_writer<QuadrilateralCartesian3D_Domain_t>    my_dx_writer;
 	
@@ -502,11 +517,12 @@ void QuadrilateralCartesian3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void QuadrilateralCylindrical3D_Domain_write_opendx(std::string const &filename,
-                                                    QuadrilateralCylindrical3D_Domain *domain, dict accessors)
+void QuadrilateralCylindrical3D_Domain_write_opendx(str filename,
+                                                    QuadrilateralCylindrical3D_Domain domain,
+                                                    dict accessors)
 {
 	viennagrid::io::opendx_writer<QuadrilateralCylindrical3D_Domain_t>    my_dx_writer;
 	
@@ -539,11 +555,12 @@ void QuadrilateralCylindrical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void QuadrilateralPolar2D_Domain_write_opendx(std::string const &filename,
-                                              QuadrilateralPolar2D_Domain *domain, dict accessors)
+void QuadrilateralPolar2D_Domain_write_opendx(str filename,
+                                              QuadrilateralPolar2D_Domain domain,
+                                              dict accessors)
 {
 	viennagrid::io::opendx_writer<QuadrilateralPolar2D_Domain_t>    my_dx_writer;
 	
@@ -576,11 +593,12 @@ void QuadrilateralPolar2D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void QuadrilateralSpherical3D_Domain_write_opendx(std::string const &filename,
-                                                  QuadrilateralSpherical3D_Domain *domain, dict accessors)
+void QuadrilateralSpherical3D_Domain_write_opendx(str filename,
+                                                  QuadrilateralSpherical3D_Domain domain,
+                                                  dict accessors)
 {
 	viennagrid::io::opendx_writer<QuadrilateralSpherical3D_Domain_t>    my_dx_writer;
 	
@@ -613,15 +631,16 @@ void QuadrilateralSpherical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
 /////////////////
 // TETRAHEDRAL //
 /////////////////
 
-void TetrahedralCartesian3D_Domain_write_opendx(std::string const &filename,
-                                                TetrahedralCartesian3D_Domain *domain, dict accessors)
+void TetrahedralCartesian3D_Domain_write_opendx(str filename,
+                                                TetrahedralCartesian3D_Domain domain,
+                                                dict accessors)
 {
 	viennagrid::io::opendx_writer<TetrahedralCartesian3D_Domain_t>    my_dx_writer;
 	
@@ -654,11 +673,12 @@ void TetrahedralCartesian3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void TetrahedralCylindrical3D_Domain_write_opendx(std::string const &filename,
-                                                  TetrahedralCylindrical3D_Domain *domain, dict accessors)
+void TetrahedralCylindrical3D_Domain_write_opendx(str filename,
+                                                  TetrahedralCylindrical3D_Domain domain,
+                                                  dict accessors)
 {
 	viennagrid::io::opendx_writer<TetrahedralCylindrical3D_Domain_t>    my_dx_writer;
 	
@@ -691,11 +711,12 @@ void TetrahedralCylindrical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
 
-void TetrahedralSpherical3D_Domain_write_opendx(std::string const &filename,
-                                                TetrahedralSpherical3D_Domain *domain, dict accessors)
+void TetrahedralSpherical3D_Domain_write_opendx(str filename,
+                                                TetrahedralSpherical3D_Domain domain,
+                                                dict accessors)
 {
 	viennagrid::io::opendx_writer<TetrahedralSpherical3D_Domain_t>    my_dx_writer;
 	
@@ -728,5 +749,5 @@ void TetrahedralSpherical3D_Domain_write_opendx(std::string const &filename,
 		}
 	}
 	
-	my_dx_writer(domain->get_domain(), filename);
+	my_dx_writer(domain.get_domain(), extract<std::string>(filename));
 }
