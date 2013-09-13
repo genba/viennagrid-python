@@ -29,6 +29,11 @@ void TetrahedralCartesian3D_Vertex_Field::set_value(TetrahedralCartesian3D_Verte
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+TetrahedralCartesian3D_Vertex_Field_t & TetrahedralCartesian3D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////////
 // TetrahedralCylindrical3D_Vertex_Field //
 /////////////////////////////////////////
@@ -54,6 +59,11 @@ void TetrahedralCylindrical3D_Vertex_Field::set_value(TetrahedralCylindrical3D_V
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+TetrahedralCylindrical3D_Vertex_Field_t & TetrahedralCylindrical3D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // TetrahedralSpherical3D_Vertex_Field //
 ///////////////////////////////////////
@@ -77,6 +87,11 @@ double TetrahedralSpherical3D_Vertex_Field::get_value(TetrahedralSpherical3D_Ver
 void TetrahedralSpherical3D_Vertex_Field::set_value(TetrahedralSpherical3D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+TetrahedralSpherical3D_Vertex_Field_t & TetrahedralSpherical3D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 /***************
@@ -108,6 +123,11 @@ void TetrahedralCartesian3D_Cell_Field::set_value(TetrahedralCartesian3D_Cell &c
 	(*field)(cell.get_cell()) = new_value;
 }
 
+TetrahedralCartesian3D_Cell_Field_t & TetrahedralCartesian3D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // TetrahedralCylindrical3D_Cell_Field //
 ///////////////////////////////////////
@@ -133,6 +153,11 @@ void TetrahedralCylindrical3D_Cell_Field::set_value(TetrahedralCylindrical3D_Cel
 	(*field)(cell.get_cell()) = new_value;
 }
 
+TetrahedralCylindrical3D_Cell_Field_t & TetrahedralCylindrical3D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////
 // TetrahedralSpherical3D_Cell_Field //
 /////////////////////////////////////
@@ -156,4 +181,9 @@ double TetrahedralSpherical3D_Cell_Field::get_value(TetrahedralSpherical3D_Cell 
 void TetrahedralSpherical3D_Cell_Field::set_value(TetrahedralSpherical3D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+TetrahedralSpherical3D_Cell_Field_t & TetrahedralSpherical3D_Cell_Field::get_field()
+{
+	return *field;
 }

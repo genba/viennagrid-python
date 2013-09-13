@@ -29,6 +29,11 @@ void QuadrilateralCartesian2D_Vertex_Field::set_value(QuadrilateralCartesian2D_V
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+QuadrilateralCartesian2D_Vertex_Field_t & QuadrilateralCartesian2D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // QuadrilateralCartesian3D_Vertex_Field //
 ///////////////////////////////////////
@@ -52,6 +57,11 @@ double QuadrilateralCartesian3D_Vertex_Field::get_value(QuadrilateralCartesian3D
 void QuadrilateralCartesian3D_Vertex_Field::set_value(QuadrilateralCartesian3D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+QuadrilateralCartesian3D_Vertex_Field_t & QuadrilateralCartesian3D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 /////////////////////////////////////////
@@ -79,6 +89,11 @@ void QuadrilateralCylindrical3D_Vertex_Field::set_value(QuadrilateralCylindrical
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+QuadrilateralCylindrical3D_Vertex_Field_t & QuadrilateralCylindrical3D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////
 // QuadrilateralPolar2D_Vertex_Field //
 ///////////////////////////////////
@@ -104,6 +119,11 @@ void QuadrilateralPolar2D_Vertex_Field::set_value(QuadrilateralPolar2D_Vertex &v
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+QuadrilateralPolar2D_Vertex_Field_t & QuadrilateralPolar2D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // QuadrilateralSpherical3D_Vertex_Field //
 ///////////////////////////////////////
@@ -127,6 +147,11 @@ double QuadrilateralSpherical3D_Vertex_Field::get_value(QuadrilateralSpherical3D
 void QuadrilateralSpherical3D_Vertex_Field::set_value(QuadrilateralSpherical3D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+QuadrilateralSpherical3D_Vertex_Field_t & QuadrilateralSpherical3D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 /***************
@@ -158,6 +183,11 @@ void QuadrilateralCartesian2D_Cell_Field::set_value(QuadrilateralCartesian2D_Cel
 	(*field)(cell.get_cell()) = new_value;
 }
 
+QuadrilateralCartesian2D_Cell_Field_t & QuadrilateralCartesian2D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////
 // QuadrilateralCartesian3D_Cell_Field //
 /////////////////////////////////////
@@ -181,6 +211,11 @@ double QuadrilateralCartesian3D_Cell_Field::get_value(QuadrilateralCartesian3D_C
 void QuadrilateralCartesian3D_Cell_Field::set_value(QuadrilateralCartesian3D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+QuadrilateralCartesian3D_Cell_Field_t & QuadrilateralCartesian3D_Cell_Field::get_field()
+{
+	return *field;
 }
 
 ///////////////////////////////////////
@@ -208,6 +243,11 @@ void QuadrilateralCylindrical3D_Cell_Field::set_value(QuadrilateralCylindrical3D
 	(*field)(cell.get_cell()) = new_value;
 }
 
+QuadrilateralCylindrical3D_Cell_Field_t & QuadrilateralCylindrical3D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////
 // QuadrilateralPolar2D_Cell_Field //
 /////////////////////////////////
@@ -233,6 +273,11 @@ void QuadrilateralPolar2D_Cell_Field::set_value(QuadrilateralPolar2D_Cell &cell,
 	(*field)(cell.get_cell()) = new_value;
 }
 
+QuadrilateralPolar2D_Cell_Field_t & QuadrilateralPolar2D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////
 // QuadrilateralSpherical3D_Cell_Field //
 /////////////////////////////////////
@@ -256,4 +301,9 @@ double QuadrilateralSpherical3D_Cell_Field::get_value(QuadrilateralSpherical3D_C
 void QuadrilateralSpherical3D_Cell_Field::set_value(QuadrilateralSpherical3D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+QuadrilateralSpherical3D_Cell_Field_t & QuadrilateralSpherical3D_Cell_Field::get_field()
+{
+	return *field;
 }

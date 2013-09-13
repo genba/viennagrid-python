@@ -29,6 +29,11 @@ void TriangularCartesian2D_Vertex_Accessor::set_value(TriangularCartesian2D_Vert
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+TriangularCartesian2D_Vertex_Accessor_t & TriangularCartesian2D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////////
 // TriangularCartesian3D_Vertex_Accessor //
 ///////////////////////////////////////
@@ -52,6 +57,11 @@ double TriangularCartesian3D_Vertex_Accessor::get_value(TriangularCartesian3D_Ve
 void TriangularCartesian3D_Vertex_Accessor::set_value(TriangularCartesian3D_Vertex &vertex, double new_value)
 {
 	(*accessor)(vertex.get_vertex()) = new_value;
+}
+
+TriangularCartesian3D_Vertex_Accessor_t & TriangularCartesian3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 /////////////////////////////////////////
@@ -79,6 +89,11 @@ void TriangularCylindrical3D_Vertex_Accessor::set_value(TriangularCylindrical3D_
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+TriangularCylindrical3D_Vertex_Accessor_t & TriangularCylindrical3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////
 // TriangularPolar2D_Vertex_Accessor //
 ///////////////////////////////////
@@ -104,6 +119,11 @@ void TriangularPolar2D_Vertex_Accessor::set_value(TriangularPolar2D_Vertex &vert
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+TriangularPolar2D_Vertex_Accessor_t & TriangularPolar2D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////////
 // TriangularSpherical3D_Vertex_Accessor //
 ///////////////////////////////////////
@@ -127,6 +147,11 @@ double TriangularSpherical3D_Vertex_Accessor::get_value(TriangularSpherical3D_Ve
 void TriangularSpherical3D_Vertex_Accessor::set_value(TriangularSpherical3D_Vertex &vertex, double new_value)
 {
 	(*accessor)(vertex.get_vertex()) = new_value;
+}
+
+TriangularSpherical3D_Vertex_Accessor_t & TriangularSpherical3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 /******************
@@ -158,6 +183,11 @@ void TriangularCartesian2D_Cell_Accessor::set_value(TriangularCartesian2D_Cell &
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+TriangularCartesian2D_Cell_Accessor_t & TriangularCartesian2D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////////
 // TriangularCartesian3D_Cell_Accessor //
 /////////////////////////////////////
@@ -181,6 +211,11 @@ double TriangularCartesian3D_Cell_Accessor::get_value(TriangularCartesian3D_Cell
 void TriangularCartesian3D_Cell_Accessor::set_value(TriangularCartesian3D_Cell &cell, double new_value)
 {
 	(*accessor)(cell.get_cell()) = new_value;
+}
+
+TriangularCartesian3D_Cell_Accessor_t & TriangularCartesian3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 ///////////////////////////////////////
@@ -208,6 +243,11 @@ void TriangularCylindrical3D_Cell_Accessor::set_value(TriangularCylindrical3D_Ce
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+TriangularCylindrical3D_Cell_Accessor_t & TriangularCylindrical3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////
 // TriangularPolar2D_Cell_Accessor //
 /////////////////////////////////
@@ -233,6 +273,11 @@ void TriangularPolar2D_Cell_Accessor::set_value(TriangularPolar2D_Cell &cell, do
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+TriangularPolar2D_Cell_Accessor_t & TriangularPolar2D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////////
 // TriangularSpherical3D_Cell_Accessor //
 /////////////////////////////////////
@@ -256,4 +301,9 @@ double TriangularSpherical3D_Cell_Accessor::get_value(TriangularSpherical3D_Cell
 void TriangularSpherical3D_Cell_Accessor::set_value(TriangularSpherical3D_Cell &cell, double new_value)
 {
 	(*accessor)(cell.get_cell()) = new_value;
+}
+
+TriangularSpherical3D_Cell_Accessor_t & TriangularSpherical3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
 }

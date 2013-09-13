@@ -29,6 +29,11 @@ void LinearCartesian1D_Vertex_Field::set_value(LinearCartesian1D_Vertex &vertex,
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+LinearCartesian1D_Vertex_Field_t & LinearCartesian1D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // LinearCartesian2D_Vertex_Field //
 ///////////////////////////////////////
@@ -52,6 +57,11 @@ double LinearCartesian2D_Vertex_Field::get_value(LinearCartesian2D_Vertex &verte
 void LinearCartesian2D_Vertex_Field::set_value(LinearCartesian2D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+LinearCartesian2D_Vertex_Field_t & LinearCartesian2D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 ///////////////////////////////////////
@@ -79,6 +89,11 @@ void LinearCartesian3D_Vertex_Field::set_value(LinearCartesian3D_Vertex &vertex,
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+LinearCartesian3D_Vertex_Field_t & LinearCartesian3D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////////
 // LinearCylindrical3D_Vertex_Field //
 /////////////////////////////////////////
@@ -102,6 +117,11 @@ double LinearCylindrical3D_Vertex_Field::get_value(LinearCylindrical3D_Vertex &v
 void LinearCylindrical3D_Vertex_Field::set_value(LinearCylindrical3D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+LinearCylindrical3D_Vertex_Field_t & LinearCylindrical3D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 ///////////////////////////////////
@@ -129,6 +149,11 @@ void LinearPolar2D_Vertex_Field::set_value(LinearPolar2D_Vertex &vertex, double 
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+LinearPolar2D_Vertex_Field_t & LinearPolar2D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // LinearSpherical3D_Vertex_Field //
 ///////////////////////////////////////
@@ -152,6 +177,11 @@ double LinearSpherical3D_Vertex_Field::get_value(LinearSpherical3D_Vertex &verte
 void LinearSpherical3D_Vertex_Field::set_value(LinearSpherical3D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+LinearSpherical3D_Vertex_Field_t & LinearSpherical3D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 /***************
@@ -183,6 +213,11 @@ void LinearCartesian1D_Cell_Field::set_value(LinearCartesian1D_Cell &cell, doubl
 	(*field)(cell.get_cell()) = new_value;
 }
 
+LinearCartesian1D_Cell_Field_t & LinearCartesian1D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////
 // LinearCartesian2D_Cell_Field //
 /////////////////////////////////////
@@ -206,6 +241,11 @@ double LinearCartesian2D_Cell_Field::get_value(LinearCartesian2D_Cell &cell)
 void LinearCartesian2D_Cell_Field::set_value(LinearCartesian2D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+LinearCartesian2D_Cell_Field_t & LinearCartesian2D_Cell_Field::get_field()
+{
+	return *field;
 }
 
 /////////////////////////////////////
@@ -233,6 +273,11 @@ void LinearCartesian3D_Cell_Field::set_value(LinearCartesian3D_Cell &cell, doubl
 	(*field)(cell.get_cell()) = new_value;
 }
 
+LinearCartesian3D_Cell_Field_t & LinearCartesian3D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // LinearCylindrical3D_Cell_Field //
 ///////////////////////////////////////
@@ -256,6 +301,11 @@ double LinearCylindrical3D_Cell_Field::get_value(LinearCylindrical3D_Cell &cell)
 void LinearCylindrical3D_Cell_Field::set_value(LinearCylindrical3D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+LinearCylindrical3D_Cell_Field_t & LinearCylindrical3D_Cell_Field::get_field()
+{
+	return *field;
 }
 
 /////////////////////////////////
@@ -283,6 +333,11 @@ void LinearPolar2D_Cell_Field::set_value(LinearPolar2D_Cell &cell, double new_va
 	(*field)(cell.get_cell()) = new_value;
 }
 
+LinearPolar2D_Cell_Field_t & LinearPolar2D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////
 // LinearSpherical3D_Cell_Field //
 /////////////////////////////////////
@@ -306,4 +361,9 @@ double LinearSpherical3D_Cell_Field::get_value(LinearSpherical3D_Cell &cell)
 void LinearSpherical3D_Cell_Field::set_value(LinearSpherical3D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+LinearSpherical3D_Cell_Field_t & LinearSpherical3D_Cell_Field::get_field()
+{
+	return *field;
 }

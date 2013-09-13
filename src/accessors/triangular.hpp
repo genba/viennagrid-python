@@ -54,6 +54,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularCartesian2D_Vertex &vertex, double new_value);
+	
+	TriangularCartesian2D_Vertex_Accessor_t & get_accessor();
 };
 
 /**
@@ -95,6 +97,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularCartesian3D_Vertex &vertex, double new_value);
+	
+	TriangularCartesian3D_Vertex_Accessor_t & get_accessor();
 };
 
 /**
@@ -136,6 +140,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularCylindrical3D_Vertex &vertex, double new_value);
+	
+	TriangularCylindrical3D_Vertex_Accessor_t & get_accessor();
 };
 
 /**
@@ -177,6 +183,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularPolar2D_Vertex &vertex, double new_value);
+	
+	TriangularPolar2D_Vertex_Accessor_t & get_accessor();
 };
 
 /**
@@ -218,6 +226,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularSpherical3D_Vertex &vertex, double new_value);
+	
+	TriangularSpherical3D_Vertex_Accessor_t & get_accessor();
 };
 
 /******************
@@ -263,6 +273,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularCartesian2D_Cell &cell, double new_value);
+	
+	TriangularCartesian2D_Cell_Accessor_t & get_accessor();
 };
 
 /**
@@ -304,6 +316,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularCartesian3D_Cell &cell, double new_value);
+	
+	TriangularCartesian3D_Cell_Accessor_t & get_accessor();
 };
 
 /**
@@ -345,6 +359,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularCylindrical3D_Cell &cell, double new_value);
+	
+	TriangularCylindrical3D_Cell_Accessor_t & get_accessor();
 };
 
 /**
@@ -386,6 +402,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularPolar2D_Cell &cell, double new_value);
+	
+	TriangularPolar2D_Cell_Accessor_t & get_accessor();
 };
 
 /**
@@ -427,6 +445,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TriangularSpherical3D_Cell &cell, double new_value);
+	
+	TriangularSpherical3D_Cell_Accessor_t & get_accessor();
 };
 
 #endif /* end of include guard: ACCESSORS_TRIANGULAR_HPP */

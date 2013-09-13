@@ -29,6 +29,11 @@ void QuadrilateralCartesian2D_Vertex_Accessor::set_value(QuadrilateralCartesian2
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+QuadrilateralCartesian2D_Vertex_Accessor_t QuadrilateralCartesian2D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////////
 // QuadrilateralCartesian3D_Vertex_Accessor //
 ///////////////////////////////////////
@@ -52,6 +57,11 @@ double QuadrilateralCartesian3D_Vertex_Accessor::get_value(QuadrilateralCartesia
 void QuadrilateralCartesian3D_Vertex_Accessor::set_value(QuadrilateralCartesian3D_Vertex &vertex, double new_value)
 {
 	(*accessor)(vertex.get_vertex()) = new_value;
+}
+
+QuadrilateralCartesian3D_Vertex_Accessor_t QuadrilateralCartesian3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 /////////////////////////////////////////
@@ -79,6 +89,11 @@ void QuadrilateralCylindrical3D_Vertex_Accessor::set_value(QuadrilateralCylindri
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+QuadrilateralCylindrical3D_Vertex_Accessor_t QuadrilateralCylindrical3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////
 // QuadrilateralPolar2D_Vertex_Accessor //
 ///////////////////////////////////
@@ -104,6 +119,11 @@ void QuadrilateralPolar2D_Vertex_Accessor::set_value(QuadrilateralPolar2D_Vertex
 	(*accessor)(vertex.get_vertex()) = new_value;
 }
 
+QuadrilateralPolar2D_Vertex_Accessor_t QuadrilateralPolar2D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 ///////////////////////////////////////
 // QuadrilateralSpherical3D_Vertex_Accessor //
 ///////////////////////////////////////
@@ -127,6 +147,11 @@ double QuadrilateralSpherical3D_Vertex_Accessor::get_value(QuadrilateralSpherica
 void QuadrilateralSpherical3D_Vertex_Accessor::set_value(QuadrilateralSpherical3D_Vertex &vertex, double new_value)
 {
 	(*accessor)(vertex.get_vertex()) = new_value;
+}
+
+QuadrilateralSpherical3D_Vertex_Accessor_t QuadrilateralSpherical3D_Vertex_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 /******************
@@ -158,6 +183,11 @@ void QuadrilateralCartesian2D_Cell_Accessor::set_value(QuadrilateralCartesian2D_
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+QuadrilateralCartesian2D_Cell_Accessor_t QuadrilateralCartesian2D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////////
 // QuadrilateralCartesian3D_Cell_Accessor //
 /////////////////////////////////////
@@ -181,6 +211,11 @@ double QuadrilateralCartesian3D_Cell_Accessor::get_value(QuadrilateralCartesian3
 void QuadrilateralCartesian3D_Cell_Accessor::set_value(QuadrilateralCartesian3D_Cell &cell, double new_value)
 {
 	(*accessor)(cell.get_cell()) = new_value;
+}
+
+QuadrilateralCartesian3D_Cell_Accessor_t QuadrilateralCartesian3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
 }
 
 ///////////////////////////////////////
@@ -208,6 +243,11 @@ void QuadrilateralCylindrical3D_Cell_Accessor::set_value(QuadrilateralCylindrica
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+QuadrilateralCylindrical3D_Cell_Accessor_t QuadrilateralCylindrical3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////
 // QuadrilateralPolar2D_Cell_Accessor //
 /////////////////////////////////
@@ -233,6 +273,11 @@ void QuadrilateralPolar2D_Cell_Accessor::set_value(QuadrilateralPolar2D_Cell &ce
 	(*accessor)(cell.get_cell()) = new_value;
 }
 
+QuadrilateralPolar2D_Cell_Accessor_t QuadrilateralPolar2D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
+}
+
 /////////////////////////////////////
 // QuadrilateralSpherical3D_Cell_Accessor //
 /////////////////////////////////////
@@ -256,4 +301,9 @@ double QuadrilateralSpherical3D_Cell_Accessor::get_value(QuadrilateralSpherical3
 void QuadrilateralSpherical3D_Cell_Accessor::set_value(QuadrilateralSpherical3D_Cell &cell, double new_value)
 {
 	(*accessor)(cell.get_cell()) = new_value;
+}
+
+QuadrilateralSpherical3D_Cell_Accessor_t QuadrilateralSpherical3D_Cell_Accessor::get_accessor()
+{
+	return *accessor;
 }

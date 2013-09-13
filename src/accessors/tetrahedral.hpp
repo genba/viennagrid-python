@@ -54,6 +54,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TetrahedralCartesian3D_Vertex &vertex, double new_value);
+	
+	TetrahedralCartesian3D_Vertex_Accessor_t get_accessor();
 };
 
 /**
@@ -95,6 +97,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TetrahedralCylindrical3D_Vertex &vertex, double new_value);
+	
+	TetrahedralCylindrical3D_Vertex_Accessor_t get_accessor();
 };
 
 /**
@@ -136,6 +140,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TetrahedralSpherical3D_Vertex &vertex, double new_value);
+	
+	TetrahedralSpherical3D_Vertex_Accessor_t get_accessor();
 };
 
 /******************
@@ -181,6 +187,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TetrahedralCartesian3D_Cell &cell, double new_value);
+	
+	TetrahedralCartesian3D_Cell_Accessor_t get_accessor();
 };
 
 /**
@@ -222,6 +230,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TetrahedralCylindrical3D_Cell &cell, double new_value);
+	
+	TetrahedralCylindrical3D_Cell_Accessor_t get_accessor();
 };
 
 /**
@@ -263,6 +273,8 @@ public:
 	 * @since 0.1.0
 	 */
 	void set_value(TetrahedralSpherical3D_Cell &cell, double new_value);
+	
+	TetrahedralSpherical3D_Cell_Accessor_t get_accessor();
 };
 
 #endif /* end of include guard: ACCESSORS_TETRAHEDRAL_HPP */

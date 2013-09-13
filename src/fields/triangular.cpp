@@ -29,6 +29,11 @@ void TriangularCartesian2D_Vertex_Field::set_value(TriangularCartesian2D_Vertex 
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+TriangularCartesian2D_Vertex_Field_t & TriangularCartesian2D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // TriangularCartesian3D_Vertex_Field //
 ///////////////////////////////////////
@@ -52,6 +57,11 @@ double TriangularCartesian3D_Vertex_Field::get_value(TriangularCartesian3D_Verte
 void TriangularCartesian3D_Vertex_Field::set_value(TriangularCartesian3D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+TriangularCartesian3D_Vertex_Field_t & TriangularCartesian3D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 /////////////////////////////////////////
@@ -79,6 +89,11 @@ void TriangularCylindrical3D_Vertex_Field::set_value(TriangularCylindrical3D_Ver
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+TriangularCylindrical3D_Vertex_Field_t & TriangularCylindrical3D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////
 // TriangularPolar2D_Vertex_Field //
 ///////////////////////////////////
@@ -104,6 +119,11 @@ void TriangularPolar2D_Vertex_Field::set_value(TriangularPolar2D_Vertex &vertex,
 	(*field)(vertex.get_vertex()) = new_value;
 }
 
+TriangularPolar2D_Vertex_Field_t & TriangularPolar2D_Vertex_Field::get_field()
+{
+	return *field;
+}
+
 ///////////////////////////////////////
 // TriangularSpherical3D_Vertex_Field //
 ///////////////////////////////////////
@@ -127,6 +147,11 @@ double TriangularSpherical3D_Vertex_Field::get_value(TriangularSpherical3D_Verte
 void TriangularSpherical3D_Vertex_Field::set_value(TriangularSpherical3D_Vertex &vertex, double new_value)
 {
 	(*field)(vertex.get_vertex()) = new_value;
+}
+
+TriangularSpherical3D_Vertex_Field_t & TriangularSpherical3D_Vertex_Field::get_field()
+{
+	return *field;
 }
 
 /***************
@@ -158,6 +183,11 @@ void TriangularCartesian2D_Cell_Field::set_value(TriangularCartesian2D_Cell &cel
 	(*field)(cell.get_cell()) = new_value;
 }
 
+TriangularCartesian2D_Cell_Field_t & TriangularCartesian2D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////
 // TriangularCartesian3D_Cell_Field //
 /////////////////////////////////////
@@ -181,6 +211,11 @@ double TriangularCartesian3D_Cell_Field::get_value(TriangularCartesian3D_Cell &c
 void TriangularCartesian3D_Cell_Field::set_value(TriangularCartesian3D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+TriangularCartesian3D_Cell_Field_t & TriangularCartesian3D_Cell_Field::get_field()
+{
+	return *field;
 }
 
 ///////////////////////////////////////
@@ -208,6 +243,11 @@ void TriangularCylindrical3D_Cell_Field::set_value(TriangularCylindrical3D_Cell 
 	(*field)(cell.get_cell()) = new_value;
 }
 
+TriangularCylindrical3D_Cell_Field_t & TriangularCylindrical3D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////
 // TriangularPolar2D_Cell_Field //
 /////////////////////////////////
@@ -233,6 +273,11 @@ void TriangularPolar2D_Cell_Field::set_value(TriangularPolar2D_Cell &cell, doubl
 	(*field)(cell.get_cell()) = new_value;
 }
 
+TriangularPolar2D_Cell_Field_t & TriangularPolar2D_Cell_Field::get_field()
+{
+	return *field;
+}
+
 /////////////////////////////////////
 // TriangularSpherical3D_Cell_Field //
 /////////////////////////////////////
@@ -256,4 +301,9 @@ double TriangularSpherical3D_Cell_Field::get_value(TriangularSpherical3D_Cell &c
 void TriangularSpherical3D_Cell_Field::set_value(TriangularSpherical3D_Cell &cell, double new_value)
 {
 	(*field)(cell.get_cell()) = new_value;
+}
+
+TriangularSpherical3D_Cell_Field_t & TriangularSpherical3D_Cell_Field::get_field()
+{
+	return *field;
 }
