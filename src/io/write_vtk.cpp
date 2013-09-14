@@ -34,8 +34,8 @@ void LinearCartesian1D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		LinearCartesian1D_Segmentation *segmentation;
-		dict *accessors;
+		LinearCartesian1D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -56,36 +56,42 @@ void LinearCartesian1D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "LinearCartesian1D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				LinearCartesian1D_Vertex_Accessor my_accessor = extract<LinearCartesian1D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian1D_Cell_Accessor")
-			{
-				LinearCartesian1D_Cell_Accessor my_accessor = extract<LinearCartesian1D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian1D_Vertex_Field")
-			{
-				LinearCartesian1D_Vertex_Field my_field = extract<LinearCartesian1D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian1D_Cell_Field")
-			{
-				LinearCartesian1D_Cell_Field my_field = extract<LinearCartesian1D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "LinearCartesian1D_Vertex_Accessor")
+				{
+					LinearCartesian1D_Vertex_Accessor my_accessor = extract<LinearCartesian1D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian1D_Cell_Accessor")
+				{
+					LinearCartesian1D_Cell_Accessor my_accessor = extract<LinearCartesian1D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian1D_Vertex_Field")
+				{
+					LinearCartesian1D_Vertex_Field my_field = extract<LinearCartesian1D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian1D_Cell_Field")
+				{
+					LinearCartesian1D_Cell_Field my_field = extract<LinearCartesian1D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -107,8 +113,8 @@ void LinearCartesian2D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		LinearCartesian2D_Segmentation *segmentation;
-		dict *accessors;
+		LinearCartesian2D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -129,36 +135,42 @@ void LinearCartesian2D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "LinearCartesian2D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				LinearCartesian2D_Vertex_Accessor my_accessor = extract<LinearCartesian2D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian2D_Cell_Accessor")
-			{
-				LinearCartesian2D_Cell_Accessor my_accessor = extract<LinearCartesian2D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian2D_Vertex_Field")
-			{
-				LinearCartesian2D_Vertex_Field my_field = extract<LinearCartesian2D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian2D_Cell_Field")
-			{
-				LinearCartesian2D_Cell_Field my_field = extract<LinearCartesian2D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "LinearCartesian2D_Vertex_Accessor")
+				{
+					LinearCartesian2D_Vertex_Accessor my_accessor = extract<LinearCartesian2D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian2D_Cell_Accessor")
+				{
+					LinearCartesian2D_Cell_Accessor my_accessor = extract<LinearCartesian2D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian2D_Vertex_Field")
+				{
+					LinearCartesian2D_Vertex_Field my_field = extract<LinearCartesian2D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian2D_Cell_Field")
+				{
+					LinearCartesian2D_Cell_Field my_field = extract<LinearCartesian2D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -180,8 +192,8 @@ void LinearCartesian3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		LinearCartesian3D_Segmentation *segmentation;
-		dict *accessors;
+		LinearCartesian3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -202,36 +214,42 @@ void LinearCartesian3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "LinearCartesian3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				LinearCartesian3D_Vertex_Accessor my_accessor = extract<LinearCartesian3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian3D_Cell_Accessor")
-			{
-				LinearCartesian3D_Cell_Accessor my_accessor = extract<LinearCartesian3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian3D_Vertex_Field")
-			{
-				LinearCartesian3D_Vertex_Field my_field = extract<LinearCartesian3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCartesian3D_Cell_Field")
-			{
-				LinearCartesian3D_Cell_Field my_field = extract<LinearCartesian3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "LinearCartesian3D_Vertex_Accessor")
+				{
+					LinearCartesian3D_Vertex_Accessor my_accessor = extract<LinearCartesian3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian3D_Cell_Accessor")
+				{
+					LinearCartesian3D_Cell_Accessor my_accessor = extract<LinearCartesian3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian3D_Vertex_Field")
+				{
+					LinearCartesian3D_Vertex_Field my_field = extract<LinearCartesian3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCartesian3D_Cell_Field")
+				{
+					LinearCartesian3D_Cell_Field my_field = extract<LinearCartesian3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -253,8 +271,8 @@ void LinearCylindrical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		LinearCylindrical3D_Segmentation *segmentation;
-		dict *accessors;
+		LinearCylindrical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -275,36 +293,42 @@ void LinearCylindrical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "LinearCylindrical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				LinearCylindrical3D_Vertex_Accessor my_accessor = extract<LinearCylindrical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCylindrical3D_Cell_Accessor")
-			{
-				LinearCylindrical3D_Cell_Accessor my_accessor = extract<LinearCylindrical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCylindrical3D_Vertex_Field")
-			{
-				LinearCylindrical3D_Vertex_Field my_field = extract<LinearCylindrical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearCylindrical3D_Cell_Field")
-			{
-				LinearCylindrical3D_Cell_Field my_field = extract<LinearCylindrical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "LinearCylindrical3D_Vertex_Accessor")
+				{
+					LinearCylindrical3D_Vertex_Accessor my_accessor = extract<LinearCylindrical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCylindrical3D_Cell_Accessor")
+				{
+					LinearCylindrical3D_Cell_Accessor my_accessor = extract<LinearCylindrical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCylindrical3D_Vertex_Field")
+				{
+					LinearCylindrical3D_Vertex_Field my_field = extract<LinearCylindrical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearCylindrical3D_Cell_Field")
+				{
+					LinearCylindrical3D_Cell_Field my_field = extract<LinearCylindrical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -326,8 +350,8 @@ void LinearPolar2D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		LinearPolar2D_Segmentation *segmentation;
-		dict *accessors;
+		LinearPolar2D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -348,36 +372,42 @@ void LinearPolar2D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "LinearPolar2D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				LinearPolar2D_Vertex_Accessor my_accessor = extract<LinearPolar2D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearPolar2D_Cell_Accessor")
-			{
-				LinearPolar2D_Cell_Accessor my_accessor = extract<LinearPolar2D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearPolar2D_Vertex_Field")
-			{
-				LinearPolar2D_Vertex_Field my_field = extract<LinearPolar2D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearPolar2D_Cell_Field")
-			{
-				LinearPolar2D_Cell_Field my_field = extract<LinearPolar2D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "LinearPolar2D_Vertex_Accessor")
+				{
+					LinearPolar2D_Vertex_Accessor my_accessor = extract<LinearPolar2D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearPolar2D_Cell_Accessor")
+				{
+					LinearPolar2D_Cell_Accessor my_accessor = extract<LinearPolar2D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearPolar2D_Vertex_Field")
+				{
+					LinearPolar2D_Vertex_Field my_field = extract<LinearPolar2D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearPolar2D_Cell_Field")
+				{
+					LinearPolar2D_Cell_Field my_field = extract<LinearPolar2D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -399,8 +429,8 @@ void LinearSpherical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		LinearSpherical3D_Segmentation *segmentation;
-		dict *accessors;
+		LinearSpherical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -421,36 +451,42 @@ void LinearSpherical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "LinearSpherical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				LinearSpherical3D_Vertex_Accessor my_accessor = extract<LinearSpherical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearSpherical3D_Cell_Accessor")
-			{
-				LinearSpherical3D_Cell_Accessor my_accessor = extract<LinearSpherical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearSpherical3D_Vertex_Field")
-			{
-				LinearSpherical3D_Vertex_Field my_field = extract<LinearSpherical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "LinearSpherical3D_Cell_Field")
-			{
-				LinearSpherical3D_Cell_Field my_field = extract<LinearSpherical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "LinearSpherical3D_Vertex_Accessor")
+				{
+					LinearSpherical3D_Vertex_Accessor my_accessor = extract<LinearSpherical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearSpherical3D_Cell_Accessor")
+				{
+					LinearSpherical3D_Cell_Accessor my_accessor = extract<LinearSpherical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearSpherical3D_Vertex_Field")
+				{
+					LinearSpherical3D_Vertex_Field my_field = extract<LinearSpherical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "LinearSpherical3D_Cell_Field")
+				{
+					LinearSpherical3D_Cell_Field my_field = extract<LinearSpherical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -476,8 +512,8 @@ void TriangularCartesian2D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TriangularCartesian2D_Segmentation *segmentation;
-		dict *accessors;
+		TriangularCartesian2D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -498,36 +534,42 @@ void TriangularCartesian2D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TriangularCartesian2D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TriangularCartesian2D_Vertex_Accessor my_accessor = extract<TriangularCartesian2D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCartesian2D_Cell_Accessor")
-			{
-				TriangularCartesian2D_Cell_Accessor my_accessor = extract<TriangularCartesian2D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCartesian2D_Vertex_Field")
-			{
-				TriangularCartesian2D_Vertex_Field my_field = extract<TriangularCartesian2D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCartesian2D_Cell_Field")
-			{
-				TriangularCartesian2D_Cell_Field my_field = extract<TriangularCartesian2D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TriangularCartesian2D_Vertex_Accessor")
+				{
+					TriangularCartesian2D_Vertex_Accessor my_accessor = extract<TriangularCartesian2D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCartesian2D_Cell_Accessor")
+				{
+					TriangularCartesian2D_Cell_Accessor my_accessor = extract<TriangularCartesian2D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCartesian2D_Vertex_Field")
+				{
+					TriangularCartesian2D_Vertex_Field my_field = extract<TriangularCartesian2D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCartesian2D_Cell_Field")
+				{
+					TriangularCartesian2D_Cell_Field my_field = extract<TriangularCartesian2D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -549,8 +591,8 @@ void TriangularCartesian3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TriangularCartesian3D_Segmentation *segmentation;
-		dict *accessors;
+		TriangularCartesian3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -571,36 +613,42 @@ void TriangularCartesian3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TriangularCartesian3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TriangularCartesian3D_Vertex_Accessor my_accessor = extract<TriangularCartesian3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCartesian3D_Cell_Accessor")
-			{
-				TriangularCartesian3D_Cell_Accessor my_accessor = extract<TriangularCartesian3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCartesian3D_Vertex_Field")
-			{
-				TriangularCartesian3D_Vertex_Field my_field = extract<TriangularCartesian3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCartesian3D_Cell_Field")
-			{
-				TriangularCartesian3D_Cell_Field my_field = extract<TriangularCartesian3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TriangularCartesian3D_Vertex_Accessor")
+				{
+					TriangularCartesian3D_Vertex_Accessor my_accessor = extract<TriangularCartesian3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCartesian3D_Cell_Accessor")
+				{
+					TriangularCartesian3D_Cell_Accessor my_accessor = extract<TriangularCartesian3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCartesian3D_Vertex_Field")
+				{
+					TriangularCartesian3D_Vertex_Field my_field = extract<TriangularCartesian3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCartesian3D_Cell_Field")
+				{
+					TriangularCartesian3D_Cell_Field my_field = extract<TriangularCartesian3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -622,8 +670,8 @@ void TriangularCylindrical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TriangularCylindrical3D_Segmentation *segmentation;
-		dict *accessors;
+		TriangularCylindrical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -644,36 +692,42 @@ void TriangularCylindrical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TriangularCylindrical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TriangularCylindrical3D_Vertex_Accessor my_accessor = extract<TriangularCylindrical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCylindrical3D_Cell_Accessor")
-			{
-				TriangularCylindrical3D_Cell_Accessor my_accessor = extract<TriangularCylindrical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCylindrical3D_Vertex_Field")
-			{
-				TriangularCylindrical3D_Vertex_Field my_field = extract<TriangularCylindrical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularCylindrical3D_Cell_Field")
-			{
-				TriangularCylindrical3D_Cell_Field my_field = extract<TriangularCylindrical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TriangularCylindrical3D_Vertex_Accessor")
+				{
+					TriangularCylindrical3D_Vertex_Accessor my_accessor = extract<TriangularCylindrical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCylindrical3D_Cell_Accessor")
+				{
+					TriangularCylindrical3D_Cell_Accessor my_accessor = extract<TriangularCylindrical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCylindrical3D_Vertex_Field")
+				{
+					TriangularCylindrical3D_Vertex_Field my_field = extract<TriangularCylindrical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularCylindrical3D_Cell_Field")
+				{
+					TriangularCylindrical3D_Cell_Field my_field = extract<TriangularCylindrical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -695,8 +749,8 @@ void TriangularPolar2D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TriangularPolar2D_Segmentation *segmentation;
-		dict *accessors;
+		TriangularPolar2D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -717,36 +771,42 @@ void TriangularPolar2D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TriangularPolar2D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TriangularPolar2D_Vertex_Accessor my_accessor = extract<TriangularPolar2D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularPolar2D_Cell_Accessor")
-			{
-				TriangularPolar2D_Cell_Accessor my_accessor = extract<TriangularPolar2D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularPolar2D_Vertex_Field")
-			{
-				TriangularPolar2D_Vertex_Field my_field = extract<TriangularPolar2D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularPolar2D_Cell_Field")
-			{
-				TriangularPolar2D_Cell_Field my_field = extract<TriangularPolar2D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TriangularPolar2D_Vertex_Accessor")
+				{
+					TriangularPolar2D_Vertex_Accessor my_accessor = extract<TriangularPolar2D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularPolar2D_Cell_Accessor")
+				{
+					TriangularPolar2D_Cell_Accessor my_accessor = extract<TriangularPolar2D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularPolar2D_Vertex_Field")
+				{
+					TriangularPolar2D_Vertex_Field my_field = extract<TriangularPolar2D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularPolar2D_Cell_Field")
+				{
+					TriangularPolar2D_Cell_Field my_field = extract<TriangularPolar2D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -768,8 +828,8 @@ void TriangularSpherical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TriangularSpherical3D_Segmentation *segmentation;
-		dict *accessors;
+		TriangularSpherical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -790,36 +850,42 @@ void TriangularSpherical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TriangularSpherical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TriangularSpherical3D_Vertex_Accessor my_accessor = extract<TriangularSpherical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularSpherical3D_Cell_Accessor")
-			{
-				TriangularSpherical3D_Cell_Accessor my_accessor = extract<TriangularSpherical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularSpherical3D_Vertex_Field")
-			{
-				TriangularSpherical3D_Vertex_Field my_field = extract<TriangularSpherical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TriangularSpherical3D_Cell_Field")
-			{
-				TriangularSpherical3D_Cell_Field my_field = extract<TriangularSpherical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TriangularSpherical3D_Vertex_Accessor")
+				{
+					TriangularSpherical3D_Vertex_Accessor my_accessor = extract<TriangularSpherical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularSpherical3D_Cell_Accessor")
+				{
+					TriangularSpherical3D_Cell_Accessor my_accessor = extract<TriangularSpherical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularSpherical3D_Vertex_Field")
+				{
+					TriangularSpherical3D_Vertex_Field my_field = extract<TriangularSpherical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TriangularSpherical3D_Cell_Field")
+				{
+					TriangularSpherical3D_Cell_Field my_field = extract<TriangularSpherical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -845,8 +911,8 @@ void QuadrilateralCartesian2D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		QuadrilateralCartesian2D_Segmentation *segmentation;
-		dict *accessors;
+		QuadrilateralCartesian2D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -867,36 +933,42 @@ void QuadrilateralCartesian2D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "QuadrilateralCartesian2D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				QuadrilateralCartesian2D_Vertex_Accessor my_accessor = extract<QuadrilateralCartesian2D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCartesian2D_Cell_Accessor")
-			{
-				QuadrilateralCartesian2D_Cell_Accessor my_accessor = extract<QuadrilateralCartesian2D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCartesian2D_Vertex_Field")
-			{
-				QuadrilateralCartesian2D_Vertex_Field my_field = extract<QuadrilateralCartesian2D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCartesian2D_Cell_Field")
-			{
-				QuadrilateralCartesian2D_Cell_Field my_field = extract<QuadrilateralCartesian2D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "QuadrilateralCartesian2D_Vertex_Accessor")
+				{
+					QuadrilateralCartesian2D_Vertex_Accessor my_accessor = extract<QuadrilateralCartesian2D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCartesian2D_Cell_Accessor")
+				{
+					QuadrilateralCartesian2D_Cell_Accessor my_accessor = extract<QuadrilateralCartesian2D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCartesian2D_Vertex_Field")
+				{
+					QuadrilateralCartesian2D_Vertex_Field my_field = extract<QuadrilateralCartesian2D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCartesian2D_Cell_Field")
+				{
+					QuadrilateralCartesian2D_Cell_Field my_field = extract<QuadrilateralCartesian2D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -918,8 +990,8 @@ void QuadrilateralCartesian3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		QuadrilateralCartesian3D_Segmentation *segmentation;
-		dict *accessors;
+		QuadrilateralCartesian3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -940,36 +1012,42 @@ void QuadrilateralCartesian3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "QuadrilateralCartesian3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				QuadrilateralCartesian3D_Vertex_Accessor my_accessor = extract<QuadrilateralCartesian3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCartesian3D_Cell_Accessor")
-			{
-				QuadrilateralCartesian3D_Cell_Accessor my_accessor = extract<QuadrilateralCartesian3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCartesian3D_Vertex_Field")
-			{
-				QuadrilateralCartesian3D_Vertex_Field my_field = extract<QuadrilateralCartesian3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCartesian3D_Cell_Field")
-			{
-				QuadrilateralCartesian3D_Cell_Field my_field = extract<QuadrilateralCartesian3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "QuadrilateralCartesian3D_Vertex_Accessor")
+				{
+					QuadrilateralCartesian3D_Vertex_Accessor my_accessor = extract<QuadrilateralCartesian3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCartesian3D_Cell_Accessor")
+				{
+					QuadrilateralCartesian3D_Cell_Accessor my_accessor = extract<QuadrilateralCartesian3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCartesian3D_Vertex_Field")
+				{
+					QuadrilateralCartesian3D_Vertex_Field my_field = extract<QuadrilateralCartesian3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCartesian3D_Cell_Field")
+				{
+					QuadrilateralCartesian3D_Cell_Field my_field = extract<QuadrilateralCartesian3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -991,8 +1069,8 @@ void QuadrilateralCylindrical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		QuadrilateralCylindrical3D_Segmentation *segmentation;
-		dict *accessors;
+		QuadrilateralCylindrical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -1013,36 +1091,42 @@ void QuadrilateralCylindrical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "QuadrilateralCylindrical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				QuadrilateralCylindrical3D_Vertex_Accessor my_accessor = extract<QuadrilateralCylindrical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCylindrical3D_Cell_Accessor")
-			{
-				QuadrilateralCylindrical3D_Cell_Accessor my_accessor = extract<QuadrilateralCylindrical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCylindrical3D_Vertex_Field")
-			{
-				QuadrilateralCylindrical3D_Vertex_Field my_field = extract<QuadrilateralCylindrical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralCylindrical3D_Cell_Field")
-			{
-				QuadrilateralCylindrical3D_Cell_Field my_field = extract<QuadrilateralCylindrical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "QuadrilateralCylindrical3D_Vertex_Accessor")
+				{
+					QuadrilateralCylindrical3D_Vertex_Accessor my_accessor = extract<QuadrilateralCylindrical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCylindrical3D_Cell_Accessor")
+				{
+					QuadrilateralCylindrical3D_Cell_Accessor my_accessor = extract<QuadrilateralCylindrical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCylindrical3D_Vertex_Field")
+				{
+					QuadrilateralCylindrical3D_Vertex_Field my_field = extract<QuadrilateralCylindrical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralCylindrical3D_Cell_Field")
+				{
+					QuadrilateralCylindrical3D_Cell_Field my_field = extract<QuadrilateralCylindrical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -1064,8 +1148,8 @@ void QuadrilateralPolar2D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		QuadrilateralPolar2D_Segmentation *segmentation;
-		dict *accessors;
+		QuadrilateralPolar2D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -1086,36 +1170,42 @@ void QuadrilateralPolar2D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "QuadrilateralPolar2D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				QuadrilateralPolar2D_Vertex_Accessor my_accessor = extract<QuadrilateralPolar2D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralPolar2D_Cell_Accessor")
-			{
-				QuadrilateralPolar2D_Cell_Accessor my_accessor = extract<QuadrilateralPolar2D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralPolar2D_Vertex_Field")
-			{
-				QuadrilateralPolar2D_Vertex_Field my_field = extract<QuadrilateralPolar2D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralPolar2D_Cell_Field")
-			{
-				QuadrilateralPolar2D_Cell_Field my_field = extract<QuadrilateralPolar2D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "QuadrilateralPolar2D_Vertex_Accessor")
+				{
+					QuadrilateralPolar2D_Vertex_Accessor my_accessor = extract<QuadrilateralPolar2D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralPolar2D_Cell_Accessor")
+				{
+					QuadrilateralPolar2D_Cell_Accessor my_accessor = extract<QuadrilateralPolar2D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralPolar2D_Vertex_Field")
+				{
+					QuadrilateralPolar2D_Vertex_Field my_field = extract<QuadrilateralPolar2D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralPolar2D_Cell_Field")
+				{
+					QuadrilateralPolar2D_Cell_Field my_field = extract<QuadrilateralPolar2D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -1137,8 +1227,8 @@ void QuadrilateralSpherical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		QuadrilateralSpherical3D_Segmentation *segmentation;
-		dict *accessors;
+		QuadrilateralSpherical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -1159,36 +1249,42 @@ void QuadrilateralSpherical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "QuadrilateralSpherical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				QuadrilateralSpherical3D_Vertex_Accessor my_accessor = extract<QuadrilateralSpherical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralSpherical3D_Cell_Accessor")
-			{
-				QuadrilateralSpherical3D_Cell_Accessor my_accessor = extract<QuadrilateralSpherical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralSpherical3D_Vertex_Field")
-			{
-				QuadrilateralSpherical3D_Vertex_Field my_field = extract<QuadrilateralSpherical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "QuadrilateralSpherical3D_Cell_Field")
-			{
-				QuadrilateralSpherical3D_Cell_Field my_field = extract<QuadrilateralSpherical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "QuadrilateralSpherical3D_Vertex_Accessor")
+				{
+					QuadrilateralSpherical3D_Vertex_Accessor my_accessor = extract<QuadrilateralSpherical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralSpherical3D_Cell_Accessor")
+				{
+					QuadrilateralSpherical3D_Cell_Accessor my_accessor = extract<QuadrilateralSpherical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralSpherical3D_Vertex_Field")
+				{
+					QuadrilateralSpherical3D_Vertex_Field my_field = extract<QuadrilateralSpherical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "QuadrilateralSpherical3D_Cell_Field")
+				{
+					QuadrilateralSpherical3D_Cell_Field my_field = extract<QuadrilateralSpherical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -1214,8 +1310,8 @@ void TetrahedralCartesian3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TetrahedralCartesian3D_Segmentation *segmentation;
-		dict *accessors;
+		TetrahedralCartesian3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -1236,36 +1332,42 @@ void TetrahedralCartesian3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TetrahedralCartesian3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TetrahedralCartesian3D_Vertex_Accessor my_accessor = extract<TetrahedralCartesian3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralCartesian3D_Cell_Accessor")
-			{
-				TetrahedralCartesian3D_Cell_Accessor my_accessor = extract<TetrahedralCartesian3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralCartesian3D_Vertex_Field")
-			{
-				TetrahedralCartesian3D_Vertex_Field my_field = extract<TetrahedralCartesian3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralCartesian3D_Cell_Field")
-			{
-				TetrahedralCartesian3D_Cell_Field my_field = extract<TetrahedralCartesian3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TetrahedralCartesian3D_Vertex_Accessor")
+				{
+					TetrahedralCartesian3D_Vertex_Accessor my_accessor = extract<TetrahedralCartesian3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralCartesian3D_Cell_Accessor")
+				{
+					TetrahedralCartesian3D_Cell_Accessor my_accessor = extract<TetrahedralCartesian3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralCartesian3D_Vertex_Field")
+				{
+					TetrahedralCartesian3D_Vertex_Field my_field = extract<TetrahedralCartesian3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralCartesian3D_Cell_Field")
+				{
+					TetrahedralCartesian3D_Cell_Field my_field = extract<TetrahedralCartesian3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -1287,8 +1389,8 @@ void TetrahedralCylindrical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TetrahedralCylindrical3D_Segmentation *segmentation;
-		dict *accessors;
+		TetrahedralCylindrical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -1309,36 +1411,42 @@ void TetrahedralCylindrical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TetrahedralCylindrical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TetrahedralCylindrical3D_Vertex_Accessor my_accessor = extract<TetrahedralCylindrical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralCylindrical3D_Cell_Accessor")
-			{
-				TetrahedralCylindrical3D_Cell_Accessor my_accessor = extract<TetrahedralCylindrical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralCylindrical3D_Vertex_Field")
-			{
-				TetrahedralCylindrical3D_Vertex_Field my_field = extract<TetrahedralCylindrical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralCylindrical3D_Cell_Field")
-			{
-				TetrahedralCylindrical3D_Cell_Field my_field = extract<TetrahedralCylindrical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TetrahedralCylindrical3D_Vertex_Accessor")
+				{
+					TetrahedralCylindrical3D_Vertex_Accessor my_accessor = extract<TetrahedralCylindrical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralCylindrical3D_Cell_Accessor")
+				{
+					TetrahedralCylindrical3D_Cell_Accessor my_accessor = extract<TetrahedralCylindrical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralCylindrical3D_Vertex_Field")
+				{
+					TetrahedralCylindrical3D_Vertex_Field my_field = extract<TetrahedralCylindrical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralCylindrical3D_Cell_Field")
+				{
+					TetrahedralCylindrical3D_Cell_Field my_field = extract<TetrahedralCylindrical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
 
@@ -1360,8 +1468,8 @@ void TetrahedralSpherical3D_Domain_write_vtk(str filename,
 	// write_vtk(filename, domain, segmentation, accessors)
 	else
 	{
-		TetrahedralSpherical3D_Segmentation *segmentation;
-		dict *accessors;
+		TetrahedralSpherical3D_Segmentation *segmentation = NULL;
+		dict *accessors = NULL;
 		
 		// If arg2 is an empty dictionary, this means that either of the following signatures have been used:
 		// write_vtk(filename, domain, segmentation)
@@ -1382,35 +1490,41 @@ void TetrahedralSpherical3D_Domain_write_vtk(str filename,
 			accessors = (dict *) &arg2;
 		}
 		
-		list keys = accessors->keys();
-		list values = accessors->values();
-		for (int i = 0; i < len(keys); ++i)
+		if (accessors != NULL)
 		{
-			std::string quantity_name = extract<std::string>(keys[i]);
-			object accessor = values[i];
-			object accessor_cls_name = accessor.attr("__class__").attr("__name__");
-			if (accessor_cls_name == "TetrahedralSpherical3D_Vertex_Accessor")
+			list keys = accessors->keys();
+			list values = accessors->values();
+			for (int i = 0; i < len(keys); ++i)
 			{
-				TetrahedralSpherical3D_Vertex_Accessor my_accessor = extract<TetrahedralSpherical3D_Vertex_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralSpherical3D_Cell_Accessor")
-			{
-				TetrahedralSpherical3D_Cell_Accessor my_accessor = extract<TetrahedralSpherical3D_Cell_Accessor>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralSpherical3D_Vertex_Field")
-			{
-				TetrahedralSpherical3D_Vertex_Field my_field = extract<TetrahedralSpherical3D_Vertex_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
-			}
-			else if (accessor_cls_name == "TetrahedralSpherical3D_Cell_Field")
-			{
-				TetrahedralSpherical3D_Cell_Field my_field = extract<TetrahedralSpherical3D_Cell_Field>(accessor);
-				viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				std::string quantity_name = extract<std::string>(keys[i]);
+				object accessor = values[i];
+				object accessor_cls_name = accessor.attr("__class__").attr("__name__");
+				if (accessor_cls_name == "TetrahedralSpherical3D_Vertex_Accessor")
+				{
+					TetrahedralSpherical3D_Vertex_Accessor my_accessor = extract<TetrahedralSpherical3D_Vertex_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralSpherical3D_Cell_Accessor")
+				{
+					TetrahedralSpherical3D_Cell_Accessor my_accessor = extract<TetrahedralSpherical3D_Cell_Accessor>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_accessor.get_accessor(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralSpherical3D_Vertex_Field")
+				{
+					TetrahedralSpherical3D_Vertex_Field my_field = extract<TetrahedralSpherical3D_Vertex_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_vertices(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
+				else if (accessor_cls_name == "TetrahedralSpherical3D_Cell_Field")
+				{
+					TetrahedralSpherical3D_Cell_Field my_field = extract<TetrahedralSpherical3D_Cell_Field>(accessor);
+					viennagrid::io::add_scalar_data_on_cells(my_vtk_writer, my_field.get_field(), quantity_name);
+				}
 			}
 		}
 		
-		my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
+		if (segmentation == NULL)
+			my_vtk_writer(domain.get_domain(), extract<std::string>(filename));
+		else
+			my_vtk_writer(domain.get_domain(), segmentation->get_segmentation(), extract<std::string>(filename));
 	}
 }
