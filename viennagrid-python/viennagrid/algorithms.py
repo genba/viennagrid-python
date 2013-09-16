@@ -233,16 +233,16 @@ def is_boundary(domseg, boundary_elem):
 		raise TypeError('parameter at position 1 is not a valid domain or segment')
 	
 	try:
-		if isinstance(interface_elem, viennagrid.Facet):
-			interface_elem = interface_elem._facet
-		elif isinstance(interface_elem, viennagrid.Edge):
-			interface_elem = interface_elem._edge
-		elif isinstance(interface_elem, viennagrid.Vertex):
-			interface_elem = interface_elem._vertex
+		if isinstance(boundary_elem, viennagrid.Facet):
+			boundary_elem = boundary_elem._facet
+		elif isinstance(boundary_elem, viennagrid.Edge):
+			boundary_elem = boundary_elem._edge
+		elif isinstance(boundary_elem, viennagrid.Vertex):
+			boundary_elem = boundary_elem._vertex
 	except AttributeError:
 		raise TypeError('parameter at position 2 is not a valid boundary element')
 	
-	return viennagrid.wrapper.is_boundary(domseg, interface_elem)
+	return viennagrid.wrapper.is_boundary(domseg, boundary_elem)
 
 def is_interface(seg0, seg1, interface_elem):
 	"""
@@ -270,16 +270,16 @@ def is_interface(seg0, seg1, interface_elem):
 		raise TypeError('parameter at position 2 is not a valid segment')
 	
 	try:
-		if isinstance(boundary_elem, viennagrid.Facet):
-			boundary_elem = boundary_elem._facet
-		elif isinstance(boundary_elem, viennagrid.Edge):
-			boundary_elem = boundary_elem._edge
-		elif isinstance(boundary_elem, viennagrid.Vertex):
-			boundary_elem = boundary_elem._vertex
+		if isinstance(interface_elem, viennagrid.Facet):
+			interface_elem = interface_elem._facet
+		elif isinstance(interface_elem, viennagrid.Edge):
+			interface_elem = interface_elem._edge
+		elif isinstance(interface_elem, viennagrid.Vertex):
+			interface_elem = interface_elem._vertex
 	except AttributeError:
 		raise TypeError('parameter at position 3 is not a valid interface element')
 	
-	return viennagrid.wrapper.is_interface(seg0, seg1, boundary_elem)
+	return viennagrid.wrapper.is_interface(seg0, seg1, interface_elem)
 
 def refine(dom, seg, predicate):
 	"""
@@ -357,7 +357,7 @@ def surface(elem):
 	"""
 	try:
 		if isinstance(elem, viennagrid.Cell):
-			elem = elem._elem
+			elem = elem._cell
 		elif isinstance(elem, viennagrid.Domain):
 			elem = elem._domain
 		elif isinstance(elem, viennagrid.Segment):
@@ -378,7 +378,7 @@ def volume(elem):
 	"""
 	try:
 		if isinstance(elem, viennagrid.Cell):
-			elem = elem._elem
+			elem = elem._cell
 		elif isinstance(elem, viennagrid.Domain):
 			elem = elem._domain
 		elif isinstance(elem, viennagrid.Segment):
@@ -399,7 +399,7 @@ def scale(dom, factor):
 	:raises: TypeError
 	"""
 	try:
-		dom._domain
+		dom = dom._domain
 	except AttributeError:
 		raise TypeError('parameter at position 1 is not a valid domain')
 	viennagrid.wrapper.scale(dom, factor)
@@ -430,4 +430,4 @@ def spanned_volume(*args):
 		# Append the point to the list
 		point_list.append(point)
 	
-	return viennagrid.wrapper.spanned_volume(point_list)
+	return viennagrid.wrapper.spanned_volume(*point_list)

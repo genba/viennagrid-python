@@ -600,7 +600,7 @@ class Vertex(object):
 		low_level_point = self._vertex.to_point()
 		coords = low_level_point.coords
 		coord_system = low_level_point.coord_system
-		return viennagrid.Point(*coords, coord_system=coord_system)
+		return Point(*coords, coord_system=coord_system)
 
 class Facet(object):
 	"""Wrapper class that represents a facet of a cell."""
