@@ -1,5 +1,7 @@
 #-*- coding: utf-8 -*-
 
+import viennagrid
+
 import wrapper as _wrapper
 import config as _config
 
@@ -33,9 +35,9 @@ class Accessor(object):
 		
 		:returns: float --- the value corresponding to the element
 		"""
-		if isinstance(elem, Vertex):
+		if isinstance(elem, viennagrid.Vertex):
 			elem = elem._vertex
-		elif isinstance(elem, cell):
+		elif isinstance(elem, viennagrid.Cell):
 			elem = elem._cell
 		return self._accessor.get_value(elem)
 	
@@ -48,9 +50,9 @@ class Accessor(object):
 		:param new_value: the new value to asssign to the element
 		:type new_value: float
 		"""
-		if isinstance(elem, Vertex):
+		if isinstance(elem, viennagrid.Vertex):
 			elem = elem._vertex
-		elif isinstance(elem, cell):
+		elif isinstance(elem, viennagrid.Cell):
 			elem = elem._cell
 		self._accessor.set_value(elem, new_value)
 
@@ -83,9 +85,9 @@ class Field(object):
 		
 		:returns: float --- the value corresponding to the element
 		"""
-		if isinstance(elem, Vertex):
+		if isinstance(elem, viennagrid.Vertex):
 			elem = elem._vertex
-		elif isinstance(elem, cell):
+		elif isinstance(elem, viennagrid.Cell):
 			elem = elem._cell
 		return self._accessor.get_value(elem)
 	
@@ -98,8 +100,8 @@ class Field(object):
 		:param new_value: the new value to asssign to the element
 		:type new_value: float
 		"""
-		if isinstance(elem, Vertex):
+		if isinstance(elem, viennagrid.Vertex):
 			elem = elem._vertex
-		elif isinstance(elem, cell):
+		elif isinstance(elem, viennagrid.Cell):
 			elem = elem._cell
 		self._accessor.set_value(elem, new_value)
