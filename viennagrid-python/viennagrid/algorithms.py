@@ -159,7 +159,8 @@ def centroid(cell):
 		cell = cell._cell
 	except AttributeError:
 		raise TypeError('parameter at position 1 is not a valid cell')
-	return viennagrid.Point(viennagrid.wrapper.centroid(cell))
+	point = viennagrid.wrapper.centroid(cell)
+	return viennagrid.Point(*point.coords, coord_sytem=point.coord_system)
 
 def cell_refine(dom, seg, predicate):
 	"""
@@ -207,7 +208,8 @@ def circumcenter(cell):
 		cell = cell._cell
 	except AttributeError:
 		raise TypeError('parameter at position 1 is not a valid cell')
-	return viennagrid.Point(viennagrid.wrapper.circumcenter(cell))
+	point = viennagrid.wrapper.circumcenter(cell)
+	return viennagrid.Point(*point.coords, coord_system=point.coord_system)
 
 def is_boundary(domseg, boundary_elem):
 	"""

@@ -43,7 +43,8 @@ class Point(object):
 		if len(args) in config.SUPPORTED_DIMENSIONS[_coord_system]:
 			for i, elem in enumerate(args):
 				if not isinstance(elem, (int, long, float, complex)):
-					raise TypeError('Coordinate %(i)d is non-numeric. Point coordinates must be numeric.' % locals())
+					cls_name = elem.__class__.__name__
+					raise TypeError('Coordinate %(i)d is non-numeric. Point coordinates must be numeric, got an instance of "%(cls_name)s" instead.' % locals())
 			_coords = args
 			_dim = len(args)
 			
