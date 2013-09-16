@@ -170,6 +170,8 @@ def cell_refine(dom, seg, predicate):
 	:type dom: :class:`viennagrid.Domain`
 	:param seg: Segmentation of the domain to refine
 	:type seg: :class:`viennagrid.Segmentation`
+	:param predicate: Function that tells whether a cell should be refined or not
+	:type predicate: function object that accepts a cell as parameter and returns a boolean
 	
 	:returns: A two-element tuple containing the output domain and segmentation after the refinement.
 	:raises: TypeError
@@ -289,6 +291,8 @@ def refine(dom, seg, predicate):
 	:type dom: :class:`viennagrid.Domain`
 	:param seg: Segmentation of the domain to refine
 	:type seg: :class:`viennagrid.Segmentation`
+	:param predicate: Function that tells whether an edge should be refined or not
+	:type predicate: function object that accepts an edge as parameter and returns a boolean
 	
 	:returns: A two-element tuple containing the output domain and segmentation after the refinement.
 	:raises: TypeError

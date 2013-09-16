@@ -139,7 +139,8 @@ class Point(object):
 		* norm_inf()
 		
 		Please, notice that not of all these methods are present in all point classes,
-		but only the applicable ones.
+		but only the applicable ones. Refer to the :doc:`viennagrid_wrapper` for
+		more information on what methods each low-level class provides.
 		"""
 		return self._point.__getattribute__(attr)
 
@@ -167,7 +168,7 @@ class Domain(object):
 	@property
 	def vertices(self):
 		"""
-		Return an object that allows accessing the list of all vertices contained in the domain.
+		Return an object that allows you to access the list of all vertices contained in the domain.
 		
 		This object provides the following methods:
 		
@@ -212,7 +213,7 @@ class Domain(object):
 	@property
 	def cells(self):
 		"""
-		Return an object that allows accessing the list of all cells contained in the domain.
+		Return an object that allows you to access the list of all cells contained in the domain.
 		
 		This object provides the following methods:
 		
@@ -256,20 +257,29 @@ class Domain(object):
 	
 	def make_vertex(self, point):
 		"""
-		Create a new vertex in the domain with the coordinates of the given point and return it.
+		Create a new vertex in the domain with the coordinates of the given point.
+		This method doesn't return the newly created vertex.
 		
 		The point and its coordinates will be copied, the point will not be referenced itself.
-		Instead, a new point will be created.
 		
 		:param point: Point on which to base the vertex.
 		:type point: :class:`viennagrid.Point`
-		
-		:returns: A :class:`~viennagrid.Vertex` object --- the newly created vertex
 		"""
 		if isinstance(point._point, self.config.point_type):
-			return self._domain.make_vertex(point._point)
+			self._domain.make_vertex(point._point)
 		else:
 			raise TypeError('wrong point type') # TODO: make error message more descriptive
+	
+	def make_cell(self, *args, **kwargs):
+		"""
+		Create a new cell in the domain and return it.
+		
+		As positional parameters you must pass as many vertices (:class:`~viennagrid.Vertex` objects) as needed to define a cell of the type and dimension of the domain.
+		
+		:returns: A :class:`~viennagrid.Cell` object --- the newly created cell
+		"""
+		vertices = [vertex._vertex for vertex in args]
+		return Cell(self._domain.make_cell(*vertices))
 	
 	def __iter__(self):
 		"""
@@ -279,54 +289,6 @@ class Domain(object):
 		"""
 		for vertex in self._domain.vertices:
 			yield Vertex(vertex)
-	
-	def read_netgen(self, path):
-		"""
-		Read domain and segmentation data from the Netgen file found at the given path.
-		
-		:param path: Path to the file
-		:type path: str
-		
-		.. note::
-			This method still doesn't work because it's not fully implemented in ViennaGrid.
-		"""
-		return self._domain.read_netgen(path)
-	
-	def read_vtk(self, path):
-		"""
-		Read domain and segmentation data from the VTK file found at the given path.
-		
-		:param path: Path to the file
-		:type path: str
-		
-		.. note::
-			This method still doesn't work because it's not fully implemented in ViennaGrid.
-		"""
-		return self._domain.read_vtk(path)
-	
-	def write_opendx(self, path):
-		"""
-		Write domain and segmentation data to the OpenDX file found at the given path.
-		
-		:param path: Path to the file
-		:type path: str
-		
-		.. note::
-			This method still doesn't work because it's not fully implemented in ViennaGrid.
-		"""
-		return self._domain.write_opendx(path)
-	
-	def write_vtk(self, path):
-		"""
-		Write domain and segmentation data to the VTK file found at the given path.
-		
-		:param path: Path to the file
-		:type path: str
-		
-		.. note::
-			This method still doesn't work because it's not fully implemented in ViennaGrid.
-		"""
-		return self._domain.write_vtk(path)
 	
 	def _make_segmentation(self):
 		"""
@@ -356,7 +318,7 @@ class Segmentation(object):
 	@property
 	def segments(self):
 		"""
-		Return an object that allows accessing the list of all segments contained in the segmentation.
+		Return an object that allows you to access the list of all segments contained in the segmentation.
 		
 		This object provides the following methods:
 		
@@ -406,17 +368,6 @@ class Segmentation(object):
 		"""
 		return Segment(self._segmentation.make_segment())
 	
-	def make_cell(self, *args, **kwargs):
-		"""
-		Create a new cell in the domain and return it.
-		
-		As positional parameters you must pass as many vertices (:class:`~viennagrid.Vertex` objects) as needed to define a cell of the type and dimension of the domain.
-		
-		:returns: A :class:`~viennagrid.Cell` object --- the newly created cell
-		"""
-		vertices = [vertex._vertex for vertex in args]
-		return Cell(self._domain.make_cell(*vertices))
-	
 	def __iter__(self):
 		"""
 		Return a generator object to iterate over all the segments contained in the segmentation.
@@ -441,7 +392,7 @@ class Segment(object):
 	@property
 	def cells(self):
 		"""
-		Return an object that allows accessing the list of all cells contained in the segment.
+		Return an object that allows you to access the list of all cells contained in the segment.
 		
 		This object provides the following methods:
 		
@@ -518,7 +469,7 @@ class Cell(object):
 	@property
 	def vertices(self):
 		"""
-		Return an object that allows accessing the list of all vertices that form the cell.
+		Return an object that allows you to access the list of all vertices that form the cell.
 		
 		This object provides the following methods:
 		
