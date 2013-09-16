@@ -565,6 +565,11 @@ class Cell(object):
 		"""Return a list containing the facets of the cell."""
 		return self._cell.facets
 	
+	@property
+	def edges(self):
+		"""Return a list containing the edges of the cell."""
+		return self._cell.facets
+	
 	def __iter__(self):
 		"""
 		Return a generator object to iterate over all the vertices that form the cell.
