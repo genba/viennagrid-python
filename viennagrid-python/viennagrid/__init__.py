@@ -208,6 +208,51 @@ class Domain(object):
 				return Vertex(self._domain.get_vertex(index))
 		return VertexList(self._domain)
 	
+	@property
+	def cells(self):
+		"""
+		Return an object that allows accessing the list of all cells contained in the domain.
+		
+		This object provides the following methods:
+		
+		.. method:: __call__()
+		
+			This returns a Python list containing all the cells of the domain, in ascending order of indices: ::
+			
+				cell_list = domain.cells()
+		
+		.. method:: __len__()
+		
+			This allows you to get  the number of cells in the domain as though it were a Python list: ::
+			
+				num_cells = len(domain.cells)
+		
+		.. method:: __iter__()
+		
+			This allows you to get an iterator over the cells of the domain like this: ::
+			
+				iterator = iter(domain.cells)
+		
+		.. method:: __getitem__(index)
+		
+			This allows you to access each cell by its index using bracket notation: ::
+			
+				s0 = domain.cells[0]
+		"""
+		class CellList(object):
+			def __init__(self, domain):
+				self._domain = domain
+			def __call__(self):
+				return [Cell(c) for c in self._domain.cells]
+			def __len__(self):
+				return self._domain.num_cells
+			def __iter__(self):
+				for c in self._domain.cells:
+					yield Cell(c)
+			def __getitem__(self, index):
+				return Cell(self._domain.cells[index])
+		return CellList(self._domain)
+	
 	def make_vertex(self, point):
 		"""
 		Create a new vertex in the domain with the coordinates of the given point and return it.
@@ -359,51 +404,6 @@ class Segmentation(object):
 		:returns: A :class:`~viennagrid.Segment` object --- the newly created segment
 		"""
 		return Segment(self._segmentation.make_segment())
-	
-	@property
-	def cells(self):
-		"""
-		Return an object that allows accessing the list of all cells contained in the domain.
-		
-		This object provides the following methods:
-		
-		.. method:: __call__()
-		
-			This returns a Python list containing all the cells of the domain, in ascending order of indices: ::
-			
-				cell_list = domain.cells()
-		
-		.. method:: __len__()
-		
-			This allows you to get  the number of cells in the domain as though it were a Python list: ::
-			
-				num_cells = len(domain.cells)
-		
-		.. method:: __iter__()
-		
-			This allows you to get an iterator over the cells of the domain like this: ::
-			
-				iterator = iter(domain.cells)
-		
-		.. method:: __getitem__(index)
-		
-			This allows you to access each cell by its index using bracket notation: ::
-			
-				s0 = domain.cells[0]
-		"""
-		class CellList(object):
-			def __init__(self, domain):
-				self._domain = domain
-			def __call__(self):
-				return [Cell(c) for c in self._domain.cells]
-			def __len__(self):
-				return self._domain.num_cells
-			def __iter__(self):
-				for c in self._domain.cells:
-					yield Cell(c)
-			def __getitem__(self, index):
-				return Cell(self._domain.cells[index])
-		return CellList(self._domain)
 	
 	def make_cell(self, *args, **kwargs):
 		"""
