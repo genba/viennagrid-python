@@ -146,11 +146,12 @@ def cell_refine(dom, seg, predicate):
 	:returns: A two-element tuple containing the output domain and segmentation after the refinement.
 	"""
 	if isinstance(dom, viennagrid.Domain):
+		config = dom.config
 		dom = dom._domain
 	if isinstance(seg, viennagrid.Segmentation):
 		seg = seg._segmentation
 	refined_result = viennagrid.wrapper.cell_refine(dom, seg, predicate)
-	refined_domain = viennagrid.Domain(dom.config)
+	refined_domain = viennagrid.Domain(config)
 	refined_domain._domain = refined_result[0]
 	refined_segmentation = viennagrid.Segmentation(refined_domain)
 	refined_segmentation._segmentation = refined_result[1]
