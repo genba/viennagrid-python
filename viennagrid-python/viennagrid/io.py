@@ -52,7 +52,7 @@ def read_vtk(filepath, domain, segmentation=None, accessors={}):
 		segmentation = segmentation._segmentation
 	
 	low_level_accessors = {}
-	for quantity_name, accessor in accessors.iteriterms():
+	for quantity_name, accessor in accessors.iteritems():
 		low_level_accessors[quantity_name] = accessor._accessor
 	
 	try:
@@ -75,7 +75,7 @@ def write_opendx(filepath, domain, accessors={}):
 		domain = domain._domain
 	
 	low_level_accessors = {}
-	for quantity_name, accessor in accessors.iteriterms():
+	for quantity_name, accessor in accessors.iteritems():
 		low_level_accessors[quantity_name] = accessor._accessor
 	
 	try:
@@ -104,7 +104,7 @@ def write_vtk(filepath, domain, segmentation=None, accessors={}):
 		segmentation = segmentation._segmentation
 	
 	low_level_accessors = {}
-	for quantity_name, accessor in accessors.iteriterms():
+	for quantity_name, accessor in accessors.iteritems():
 		low_level_accessors[quantity_name] = accessor._accessor
 	
 	try:
