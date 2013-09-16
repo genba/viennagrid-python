@@ -57,7 +57,7 @@ add_custom_command (OUTPUT ${PACKAGEDOC_OUTPUT}
                     COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_CURRENT_BINARY_DIR}/doc/objects.inv"
                     COMMAND python "${SETUP_PY}" sdist
                     COMMAND ${CMAKE_COMMAND} -E touch ${PACKAGEDOC_OUTPUT}
-                    DEPENDS ${PACKAGESRC_OUTPUT} doc)
+                    DEPENDS ${PACKAGESRC_OUTPUT} sphinx)
 
 add_custom_target (packagedoc ALL DEPENDS ${PACKAGEDOC_OUTPUT})
 
