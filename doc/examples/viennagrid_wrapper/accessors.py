@@ -84,8 +84,8 @@ accessors = {'surface': cell_surface_accessor}
 
 # Now we call the VTK write as in the I/O tutorial, but we also specify the dictionary
 # that contains all accessors that should be written to the file.
-write_vtk('tri2d_mesh_with_surface_data.vtu', domain, accessors)
+write_vtk('tri2d_mesh_with_surface_data_no_segment', domain, accessors)
 
 # If you want to save the segmentation information, too, you must call the writer as
 # explained in the I/O tutorial, also specifying the segmentation:
-write_vtk('tri2d_mesh_with_surface_data.vtu', domain, segmentation, accessors)
+write_vtk('tri2d_mesh_with_surface_data', domain, segmentation, accessors)
