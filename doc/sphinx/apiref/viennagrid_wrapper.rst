@@ -8,10 +8,30 @@ Free functions
 --------------
 
 .. autofunction:: version
+
+Input/output functions
+^^^^^^^^^^^^^^^^^^^^^^
+
 .. autofunction:: read_netgen
 .. autofunction:: read_vtk
 .. autofunction:: write_opendx
 .. autofunction:: write_vtk
+
+Algorithms
+^^^^^^^^^^
+
+.. autofunction:: apply_voronoi
+.. autofunction:: cell_refine
+.. autofunction:: centroid
+.. autofunction:: circumcenter
+.. autofunction:: is_boundary
+.. autofunction:: is_interface
+.. autofunction:: refine
+.. autofunction:: refine_uniformly
+.. autofunction:: scale
+.. autofunction:: spanned_volume
+.. autofunction:: surface
+.. autofunction:: volume
 
 Points
 ------

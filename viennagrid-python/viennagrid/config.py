@@ -146,7 +146,18 @@ class Configuration(object):
 		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class
 		"""
 		SegmentationType = self.segmentation_type
-		return SegmentationType(*args, **kwargs)
+		return SegmentationType(domain)
+	
+	def make_accessor(self, accessor_type):
+		"""
+		Create a new low-level (:mod:`viennagrid.wrapper`) segmentation based in this configuration.
+		
+		:param domain: Domain on which to base the segmentation.
+		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class
+		"""
+		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_', accessor_type.title(), '_Accessor'])
+		cls = _wrapper.__getattribute__(classname)
+		return cls()
 
 #########################
 # COMMON CONFIGURATIONS #

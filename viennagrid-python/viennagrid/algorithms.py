@@ -9,17 +9,24 @@ def inner_prod(point1, point2):
 	Compute the inner product of two vectors (represented by points).
 	
 	:param point1: First point
-	:type point1: :class:`viennagrid.Point` (or any point class from :mod:`viennagrid.wrapper`)
+	:type point1: :class:`viennagrid.Point`
 	:param point2: Second point
-	:type point2: :class:`viennagrid.Point` (or any point class from :mod:`viennagrid.wrapper`)
+	:type point2: :class:`viennagrid.Point`
 	
 	:returns: float --- the result of the inner product
 	:raises: TypeError
 	"""
-	if isinstance(point1, viennagrid.Point):
+	
+	try:
 		point1 = point1._point
-	if isinstance(point2, viennagrid.Point):
+	except AttributeError:
+		raise TypeError('paramater at position 1 is not a valid point')
+	
+	try:
 		point2 = point2._point
+	except AttributeError:
+		raise TypeError('paramater at position 1 is not a valid point')
+	
 	# Try to get method 'inner_prod' from 'point1'. If it doesn't have the method,
 	# it means it's not a cartesian point. Thus, convert to cartesian coordinates
 	# and get the method. If it still doesn't have the method, raise an exception.
@@ -52,17 +59,24 @@ def cross_prod(point1, point2):
 	Compute the cross product of two vectors (represented by points).
 	
 	:param point1: First point
-	:type point1: :class:`viennagrid.Point` (or any point class from :mod:`viennagrid.wrapper`)
+	:type point1: :class:`viennagrid.Point`
 	:param point2: Second point
-	:type point2: :class:`viennagrid.Point` (or any point class from :mod:`viennagrid.wrapper`)
+	:type point2: :class:`viennagrid.Point`
 	
 	:returns: :class:`viennagrid.Point` --- the result of the cross product
 	:raises: TypeError
 	"""
-	if isinstance(point1, viennagrid.Point):
+	
+	try:
 		point1 = point1._point
-	if isinstance(point2, viennagrid.Point):
+	except AttributeError:
+		raise TypeError('paramater at position 1 is not a valid point')
+	
+	try:
 		point2 = point2._point
+	except AttributeError:
+		raise TypeError('paramater at position 1 is not a valid point')
+	
 	# Try to get method 'cross_prod' from 'point1'. If it doesn't have the method,
 	# it means it's not a cartesian point. Thus, convert to cartesian coordinates
 	# and get the method. If it still doesn't have the method, raise an exception.
@@ -95,14 +109,20 @@ def norm(point, norm_type=2):
 	Compute the norm of a vector (represented by a point).
 	
 	:param point: Point
-	:type point: :class:`viennagrid.Point` (or any point class from :mod:`viennagrid.wrapper`)
+	:type point: :class:`viennagrid.Point`
 	
 	:param norm_type: Norm to calculate (at this time only 1, 2 and 'inf' are supported).
 	:type norm_type: int or str
 	
 	:returns: float --- the norm of the vector
-	:raises: ValueError
+	:raises: ValueError, TypeError
 	"""
+	
+	try:
+		point = point._point
+	except AttributeError:
+		raise TypeError('paramater at position 1 is not a valid point')
+	
 	norm_type = str(norm_type)
 	if norm_type in _SUPPORTED_NORMS:
 		norm_fn = viennagrid.wrapper.__getattribute__('norm_%(norm_type)s' % locals())
@@ -115,10 +135,14 @@ def apply_voronoi(dom):
 	Compute Voronoi information of the given domain.
 	
 	:param dom: Domain
-	:type dom: :class:`viennagrid.Domain` or any of the domain classes of :mod:`viennagrid.wrapper`
+	:type dom: :class:`viennagrid.Domain`
+	
+	:raises: TypeError
 	"""
-	if isinstance(dom, viennagrid.Domain):
+	try:
 		dom = dom._domain
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid domain')
 	viennagrid.wrapper.apply_voronoi(dom)
 
 def centroid(cell):
@@ -126,34 +150,48 @@ def centroid(cell):
 	Compute the centroid of the given cell.
 	
 	:param cell: Cell whose centroid should be computed
-	:type cell: :class:`viennagrid.Cell` or any of the cell classes of :mod:`viennagrid.wrapper`
+	:type cell: :class:`viennagrid.Cell`
 	
 	:returns: :class:`viennagrid.Point` --- the centroid of the cell
+	:raises: TypeError
 	"""
-	if isinstance(cell, viennagrid.Cell):
+	try:
 		cell = cell._cell
-	return viennagrid.Point(viennagrid.wrapper.centroid(cell))
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid cell')
+	point = viennagrid.wrapper.centroid(cell)
+	return viennagrid.Point(*point.coords, coord_sytem=point.coord_system)
 
 def cell_refine(dom, seg, predicate):
 	"""
 	Refine all cells of the given domain and segmentation which match a given predicate.
 	
 	:param dom: Domain to refine
-	:type dom: :class:`viennagrid.Domain` or any of the domain classes of :mod:`viennagrid.wrapper`
+	:type dom: :class:`viennagrid.Domain`
 	:param seg: Segmentation of the domain to refine
-	:type seg: :class:`viennagrid.Segmentation` or any of the segmentation classes of :mod:`viennagrid.wrapper`
+	:type seg: :class:`viennagrid.Segmentation`
 	
 	:returns: A two-element tuple containing the output domain and segmentation after the refinement.
+	:raises: TypeError
 	"""
-	if isinstance(dom, viennagrid.Domain):
+	
+	try:
+		config = dom.config
 		dom = dom._domain
-	if isinstance(seg, viennagrid.Segmentation):
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid domain')
+	
+	try:
 		seg = seg._segmentation
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid domain')
+	
 	refined_result = viennagrid.wrapper.cell_refine(dom, seg, predicate)
-	refined_domain = viennagrid.Domain(dom.config)
+	refined_domain = viennagrid.Domain(config)
 	refined_domain._domain = refined_result[0]
 	refined_segmentation = viennagrid.Segmentation(refined_domain)
 	refined_segmentation._segmentation = refined_result[1]
+	
 	return (refined_domain, refined_segmentation)
 
 def circumcenter(cell):
@@ -161,87 +199,118 @@ def circumcenter(cell):
 	Compute the circumcenter of the given cell.
 	
 	:param cell: Cell whose circumcenter should be computed
-	:type cell: :class:`viennagrid.Cell` or any of the cell classes of :mod:`viennagrid.wrapper`
+	:type cell: :class:`viennagrid.Cell`
 	
 	:returns: :class:`viennagrid.Point` --- the circumcenter of the cell
+	:raises: TypeError
 	"""
-	if isinstance(cell, viennagrid.Cell):
+	try:
 		cell = cell._cell
-	return viennagrid.Point(viennagrid.wrapper.circumcenter(cell))
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid cell')
+	point = viennagrid.wrapper.circumcenter(cell)
+	return viennagrid.Point(*point.coords, coord_system=point.coord_system)
 
 def is_boundary(domseg, boundary_elem):
 	"""
 	Check if the given element is a boundary element of the given domain or segment.
 	
 	:param domseg: Domain or segment
-	:type domseg: :class:`viennagrid.Domain` (or any domain class from :mod:`viennagrid.wrapper`), or :class:`viennagrid.Segment` (or any segment class from :mod:`viennagrid.wrapper`)
+	:type domseg: :class:`viennagrid.Domain` or :class:`viennagrid.Segment`
 	:param boundary_elem: Element of which to check if its a boundary element of the given domain or segment. The element can be a facet, and edge or a vertex.
-	:type boundary_elem: :class:`viennagrid.Facet`, :class:`viennagrid.Edge` or :class:`viennagrid.Vertex` (or any facet, edge or vertex class from :mod:`viennagrid.wrapper`)
+	:type boundary_elem: :class:`viennagrid.Facet`, :class:`viennagrid.Edge` or :class:`viennagrid.Vertex`
 	
 	:returns: bool --- True if the given element is a boundary element of the given domain or segment; False otherwise.
+	:raises: TypeError
 	"""
-	if isinstance(domseg, viennagrid.Domain):
-		domseg = domseg._domain
-	elif isinstance(domseg, viennagrid.Segment):
-		domseg = domseg._segment
 	
-	if isinstance(interface_elem, viennagrid.Facet):
-		interface_elem = interface_elem._facet
-	elif isinstance(interface_elem, viennagrid.Edge):
-		interface_elem = interface_elem._edge
-	elif isinstance(interface_elem, viennagrid.Vertex):
-		interface_elem = interface_elem._vertex
+	try:
+		if isinstance(domseg, viennagrid.Domain):
+			domseg = domseg._domain
+		elif isinstance(domseg, viennagrid.Segment):
+			domseg = domseg._segment
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid domain or segment')
 	
-	return viennagrid.wrapper.is_boundary(domseg, interface_elem)
+	try:
+		if isinstance(boundary_elem, viennagrid.Facet):
+			boundary_elem = boundary_elem._facet
+		elif isinstance(boundary_elem, viennagrid.Edge):
+			boundary_elem = boundary_elem._edge
+		elif isinstance(boundary_elem, viennagrid.Vertex):
+			boundary_elem = boundary_elem._vertex
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid boundary element')
+	
+	return viennagrid.wrapper.is_boundary(domseg, boundary_elem)
 
 def is_interface(seg0, seg1, interface_elem):
 	"""
 	Check if the given element is an interface element of the two given segments.
 	
 	:param seg0: First segment
-	:type seg0: :class:`viennagrid.Segment` (or any segment class from :mod:`viennagrid.wrapper`)
+	:type seg0: :class:`viennagrid.Segment`
 	:param seg1: Second segment
-	:type seg1: :class:`viennagrid.Segment` (or any segment class from :mod:`viennagrid.wrapper`)
+	:type seg1: :class:`viennagrid.Segment`
 	:param interface_elem: Element of which to check if its an interface element of the given segments. The element can be a facet, and edge or a vertex.
-	:type interface_elem: :class:`viennagrid.Facet`, :class:`viennagrid.Edge` or :class:`viennagrid.Vertex` (or any facet, edge or vertex class from :mod:`viennagrid.wrapper`)
+	:type interface_elem: :class:`viennagrid.Facet`, :class:`viennagrid.Edge` or :class:`viennagrid.Vertex`
 	
 	:returns: bool --- True if the given element is an interface element of the given segments; False otherwise.
+	:raises: TypeError
 	"""
-	if isinstance(seg0, viennagrid.Segment):
+	
+	try:
 		seg0 = seg0._segment
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid segment')
 	
-	if isinstance(seg1, viennagrid.Segment):
+	try:
 		seg1 = seg1._segment
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid segment')
 	
-	if isinstance(boundary_elem, viennagrid.Facet):
-		boundary_elem = boundary_elem._facet
-	elif isinstance(boundary_elem, viennagrid.Edge):
-		boundary_elem = boundary_elem._edge
-	elif isinstance(boundary_elem, viennagrid.Vertex):
-		boundary_elem = boundary_elem._vertex
+	try:
+		if isinstance(interface_elem, viennagrid.Facet):
+			interface_elem = interface_elem._facet
+		elif isinstance(interface_elem, viennagrid.Edge):
+			interface_elem = interface_elem._edge
+		elif isinstance(interface_elem, viennagrid.Vertex):
+			interface_elem = interface_elem._vertex
+	except AttributeError:
+		raise TypeError('parameter at position 3 is not a valid interface element')
 	
-	return viennagrid.wrapper.is_interface(seg0, seg1, boundary_elem)
+	return viennagrid.wrapper.is_interface(seg0, seg1, interface_elem)
 
 def refine(dom, seg, predicate):
 	"""
 	Refine all edges of the given domain and segmentation which match a given predicate.
 	
 	:param dom: Domain to refine
-	:type dom: :class:`viennagrid.Domain` or any of the domain classes of :mod:`viennagrid.wrapper`
+	:type dom: :class:`viennagrid.Domain`
 	:param seg: Segmentation of the domain to refine
-	:type seg: :class:`viennagrid.Segmentation` or any of the segmentation classes of :mod:`viennagrid.wrapper`
+	:type seg: :class:`viennagrid.Segmentation`
 	
 	:returns: A two-element tuple containing the output domain and segmentation after the refinement.
+	:raises: TypeError
 	"""
-	if isinstance(dom, viennagrid.Domain):
+	
+	try:
+		config = dom.config
 		dom = dom._domain
-	if isinstance(seg, viennagrid.Segmentation):
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid domain')
+	
+	try:
 		seg = seg._segmentation
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid domain')
+	
 	refined_result = viennagrid.wrapper.refine(dom, seg, predicate)
-	refined_domain = viennagrid.Domain(dom.config)
+	refined_domain = viennagrid.Domain(config)
 	refined_domain._domain = refined_result[0]
 	refined_segmentation = viennagrid.Segmentation(refined_domain)
 	refined_segmentation._segmentation = refined_result[1]
+	
 	return (refined_domain, refined_segmentation)
 
 def refine_uniformly(dom, seg):
@@ -249,20 +318,31 @@ def refine_uniformly(dom, seg):
 	Refine all edges of the given domain and segmentation.
 	
 	:param dom: Domain to refine
-	:type dom: :class:`viennagrid.Domain` or any of the domain classes of :mod:`viennagrid.wrapper`
+	:type dom: :class:`viennagrid.Domain`
 	:param seg: Segmentation of the domain to refine
-	:type seg: :class:`viennagrid.Segmentation` or any of the segmentation classes of :mod:`viennagrid.wrapper`
+	:type seg: :class:`viennagrid.Segmentation`
 	
-	:returns: A two-element tuple containing the output domain and segmentation after the refinement."""
-	if isinstance(dom, viennagrid.Domain):
+	:returns: A two-element tuple containing the output domain and segmentation after the refinement.
+	:raises: TypeError
+	"""
+	
+	try:
+		config = dom.config
 		dom = dom._domain
-	if isinstance(seg, viennagrid.Segmentation):
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid domain')
+	
+	try:
 		seg = seg._segmentation
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid domain')
+	
 	refined_result = viennagrid.wrapper.refine_uniformly(dom, seg)
-	refined_domain = viennagrid.Domain(dom.config)
+	refined_domain = viennagrid.Domain(config)
 	refined_domain._domain = refined_result[0]
 	refined_segmentation = viennagrid.Segmentation(refined_domain)
 	refined_segmentation._segmentation = refined_result[1]
+	
 	return (refined_domain, refined_segmentation)
 
 def surface(elem):
@@ -273,13 +353,17 @@ def surface(elem):
 	:type elem: :class:`viennagrid.Cell`, :class:`viennagrid.Domain` or :class:`viennagrid.Segment`
 	
 	:returns: float --- the surface of the cell, domain or segment
+	:raises: TypeError
 	"""
-	if isinstance(elem, viennagrid.Cell):
-		elem = elem._elem
-	elif isinstance(elem, viennagrid.Domain):
-		elem = elem._domain
-	elif isinstance(elem, viennagrid.Segment):
-		elem = elem._segment
+	try:
+		if isinstance(elem, viennagrid.Cell):
+			elem = elem._cell
+		elif isinstance(elem, viennagrid.Domain):
+			elem = elem._domain
+		elif isinstance(elem, viennagrid.Segment):
+			elem = elem._segment
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid element')
 	return viennagrid.wrapper.surface(elem)
 
 def volume(elem):
@@ -290,13 +374,17 @@ def volume(elem):
 	:type elem: :class:`viennagrid.Cell`, :class:`viennagrid.Domain` or :class:`viennagrid.Segment`
 	
 	:returns: float --- the volume of the cell, domain or segment
+	:raises: TypeError
 	"""
-	if isinstance(elem, viennagrid.Cell):
-		elem = elem._elem
-	elif isinstance(elem, viennagrid.Domain):
-		elem = elem._domain
-	elif isinstance(elem, viennagrid.Segment):
-		elem = elem._segment
+	try:
+		if isinstance(elem, viennagrid.Cell):
+			elem = elem._cell
+		elif isinstance(elem, viennagrid.Domain):
+			elem = elem._domain
+		elif isinstance(elem, viennagrid.Segment):
+			elem = elem._segment
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid element')
 	return viennagrid.wrapper.volume(elem)
 
 def scale(dom, factor):
@@ -304,30 +392,36 @@ def scale(dom, factor):
 	Scale a domain by a given factor.
 	
 	:param dom: Domain to be scaled
-	:type dom: :class:`viennagrid.Domain` or any domain class from :mod:`viennagrid.wrapper`
+	:type dom: :class:`viennagrid.Domain`
 	:param factor: Scale factor
 	:type factor: float
+	
+	:raises: TypeError
 	"""
-	if isinstance(dom, viennagrid.Domain):
+	try:
 		dom = dom._domain
+	except AttributeError:
+		raise TypeError('parameter at position 1 is not a valid domain')
 	viennagrid.wrapper.scale(dom, factor)
 
 def spanned_volume(*args):
 	"""
 	Calculate the volume spanned by a set of points.
 	
-	As arguments you have to pass an arbitrary number of points (either :class:`viennagrid.Point` objects
-	or instances of any point class from :mod:`viennagrid.wrapper`).
+	As arguments you have to pass an arbitrary number of points (:class:`viennagrid.Point` objects).
 	
 	:returns: float --- the volume spanned by the set of points
+	:raises: TypeError
 	"""
 	
 	point_list = []
 	
-	for point in args:
-		# If the point is a high-level point, get the low-level point
-		if isinstance(point, viennagrid.Point):
+	for i, point in enumerate(args):
+		# Get the low-level point
+		try:
 			point = point._point
+		except AttributeError:
+			raise TypeError('parameter at position %(pos)d is not a valid point' % {'pos': i + 1})
 		
 		# If point is not cartesian, convert it
 		if point.coord_system != 'cartesian':
@@ -336,4 +430,4 @@ def spanned_volume(*args):
 		# Append the point to the list
 		point_list.append(point)
 	
-	return viennagrid.wrapper.spanned_volume(point_list)
+	return viennagrid.wrapper.spanned_volume(*point_list)

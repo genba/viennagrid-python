@@ -43,7 +43,8 @@ class Point(object):
 		if len(args) in config.SUPPORTED_DIMENSIONS[_coord_system]:
 			for i, elem in enumerate(args):
 				if not isinstance(elem, (int, long, float, complex)):
-					raise TypeError('Coordinate %(i)d is non-numeric. Point coordinates must be numeric.' % locals())
+					cls_name = elem.__class__.__name__
+					raise TypeError('Coordinate %(i)d is non-numeric. Point coordinates must be numeric, got an instance of "%(cls_name)s" instead.' % locals())
 			_coords = args
 			_dim = len(args)
 			
@@ -172,7 +173,7 @@ class Domain(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the vertices of the domain, in ascendent order of indices: ::
+			This returns a Python list containing all the vertices of the domain, in ascending order of indices: ::
 			
 				vertex_list = domain.vertices()
 		
@@ -207,6 +208,51 @@ class Domain(object):
 			def __getitem__(self, index):
 				return Vertex(self._domain.get_vertex(index))
 		return VertexList(self._domain)
+	
+	@property
+	def cells(self):
+		"""
+		Return an object that allows accessing the list of all cells contained in the domain.
+		
+		This object provides the following methods:
+		
+		.. method:: __call__()
+		
+			This returns a Python list containing all the cells of the domain, in ascending order of indices: ::
+			
+				cell_list = domain.cells()
+		
+		.. method:: __len__()
+		
+			This allows you to get  the number of cells in the domain as though it were a Python list: ::
+			
+				num_cells = len(domain.cells)
+		
+		.. method:: __iter__()
+		
+			This allows you to get an iterator over the cells of the domain like this: ::
+			
+				iterator = iter(domain.cells)
+		
+		.. method:: __getitem__(index)
+		
+			This allows you to access each cell by its index using bracket notation: ::
+			
+				s0 = domain.cells[0]
+		"""
+		class CellList(object):
+			def __init__(self, domain):
+				self._domain = domain
+			def __call__(self):
+				return [Cell(c) for c in self._domain.cells]
+			def __len__(self):
+				return self._domain.num_cells
+			def __iter__(self):
+				for c in self._domain.cells:
+					yield Cell(c)
+			def __getitem__(self, index):
+				return Cell(self._domain.cells[index])
+		return CellList(self._domain)
 	
 	def make_vertex(self, point):
 		"""
@@ -316,7 +362,7 @@ class Segmentation(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the segments of the segmentation, in ascendent order of indices: ::
+			This returns a Python list containing all the segments of the segmentation, in ascending order of indices: ::
 			
 				segment_list = segmentation.segments()
 		
@@ -360,6 +406,17 @@ class Segmentation(object):
 		"""
 		return Segment(self._segmentation.make_segment())
 	
+	def make_cell(self, *args, **kwargs):
+		"""
+		Create a new cell in the domain and return it.
+		
+		As positional parameters you must pass as many vertices (:class:`~viennagrid.Vertex` objects) as needed to define a cell of the type and dimension of the domain.
+		
+		:returns: A :class:`~viennagrid.Cell` object --- the newly created cell
+		"""
+		vertices = [vertex._vertex for vertex in args]
+		return Cell(self._domain.make_cell(*vertices))
+	
 	def __iter__(self):
 		"""
 		Return a generator object to iterate over all the segments contained in the segmentation.
@@ -390,7 +447,7 @@ class Segment(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the cells of the segment, in ascendent order of indices: ::
+			This returns a Python list containing all the cells of the segment, in ascending order of indices: ::
 			
 				cell_list = segment.cells()
 		
@@ -467,7 +524,7 @@ class Cell(object):
 		
 		.. method:: __call__()
 		
-			This returns a Python list containing all the vertices of the cell, in ascendent order of indices: ::
+			This returns a Python list containing all the vertices of the cell, in ascending order of indices: ::
 			
 				vertex_list = cell.vertices()
 		
@@ -508,6 +565,11 @@ class Cell(object):
 		"""Return a list containing the facets of the cell."""
 		return self._cell.facets
 	
+	@property
+	def edges(self):
+		"""Return a list containing the edges of the cell."""
+		return self._cell.facets
+	
 	def __iter__(self):
 		"""
 		Return a generator object to iterate over all the vertices that form the cell.
@@ -538,7 +600,7 @@ class Vertex(object):
 		low_level_point = self._vertex.to_point()
 		coords = low_level_point.coords
 		coord_system = low_level_point.coord_system
-		return viennagrid.Point(*coords, coord_system=coord_system)
+		return Point(*coords, coord_system=coord_system)
 
 class Facet(object):
 	"""Wrapper class that represents a facet of a cell."""

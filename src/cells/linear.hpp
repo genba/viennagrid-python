@@ -50,6 +50,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a Python list containing all the facets that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_facets();
 	
 	/**
@@ -92,6 +100,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a Python list containing all the facets that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_facets();
 	
 	/**
@@ -134,6 +150,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a Python list containing all the facets that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_facets();
 	
 	/**
@@ -176,6 +200,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a Python list containing all the facets that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_facets();
 	
 	/**
@@ -218,6 +250,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a Python list containing all the facets that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_facets();
 	
 	/**
@@ -260,6 +300,14 @@ public:
 	 * @since 0.1.0
 	 */
 	list get_vertices();
+	
+	/**
+	 * Get a Python list containing all the facets that form the cell.
+	 *
+	 * @return Python list
+	 * 
+	 * @since 0.1.0
+	 */
 	list get_facets();
 	
 	/**

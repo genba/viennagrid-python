@@ -46,7 +46,7 @@ class TestLinearCartesian1D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian1D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian1D))
 
 class TestLinearCartesian2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -81,7 +81,7 @@ class TestLinearCartesian2D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian2D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian2D))
 
 class TestLinearCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -116,7 +116,7 @@ class TestLinearCartesian3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian3D))
 
 class TestLinearCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -151,7 +151,7 @@ class TestLinearCylindrical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCylindrical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCylindrical3D))
 
 class TestLinearPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -186,7 +186,7 @@ class TestLinearPolar2D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointPolar2D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointPolar2D))
 
 class TestLinearSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -221,7 +221,7 @@ class TestLinearSpherical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointSpherical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointSpherical3D))
 
 ######################
 # TRIANGULAR DOMAINS #
@@ -261,7 +261,7 @@ class TestTriangularCartesian2D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian2D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian2D))
 
 class TestTriangularCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -297,7 +297,7 @@ class TestTriangularCartesian3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian3D))
 
 class TestTriangularCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -333,7 +333,7 @@ class TestTriangularCylindrical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCylindrical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCylindrical3D))
 
 class TestTriangularPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -369,7 +369,7 @@ class TestTriangularPolar2D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointPolar2D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointPolar2D))
 
 class TestTriangularSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -405,7 +405,7 @@ class TestTriangularSpherical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointSpherical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointSpherical3D))
 
 #########################
 # QUADRILATERAL DOMAINS #
@@ -446,7 +446,7 @@ class TestQuadrilateralCartesian2D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian2D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian2D))
 
 class TestQuadrilateralCartesian3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -483,7 +483,7 @@ class TestQuadrilateralCartesian3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian3D))
 
 class TestQuadrilateralCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -520,7 +520,7 @@ class TestQuadrilateralCylindrical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCylindrical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCylindrical3D))
 
 class TestQuadrilateralPolar2D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -557,7 +557,7 @@ class TestQuadrilateralPolar2D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointPolar2D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointPolar2D))
 
 class TestQuadrilateralSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -594,7 +594,7 @@ class TestQuadrilateralSpherical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointSpherical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointSpherical3D))
 
 #######################
 # TETRAHEDRAL DOMAINS #
@@ -635,7 +635,7 @@ class TestTetrahedralCartesian3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCartesian3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCartesian3D))
 
 class TestTetrahedralCylindrical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -672,7 +672,7 @@ class TestTetrahedralCylindrical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointCylindrical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointCylindrical3D))
 
 class TestTetrahedralSpherical3D_Cell(unittest.TestCase):
 	def setUp(self):
@@ -709,7 +709,7 @@ class TestTetrahedralSpherical3D_Cell(unittest.TestCase):
 		"""Test attributes 'vertices' and 'num_vertices' of cell, and method 'to_point' of vertices."""
 		self.assertEqual(len(self.cell.vertices), self.num_vertices_per_cell)
 		self.assertEqual(self.cell.num_vertices, self.num_vertices_per_cell)
-		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid_wrapper.PointSpherical3D))
+		self.assertTrue(isinstance(self.cell.vertices[0].to_point(), viennagrid.wrapper.PointSpherical3D))
 
 if __name__ == '__main__':
 	unittest.main()

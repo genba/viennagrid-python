@@ -6,7 +6,7 @@
 // Triangular //
 ////////////////
 
-tuple TriangularCartesian2D_Domain_cell_refine(TriangularCartesian2D_Domain domain_in, TriangularCartesian2D_Segmentation segmentation_in, bool (*predicate)(const TriangularCartesian2D_Cell &))
+tuple TriangularCartesian2D_Domain_cell_refine(TriangularCartesian2D_Domain domain_in, TriangularCartesian2D_Segmentation segmentation_in, object predicate)
 {
 	TriangularCartesian2D_Domain          domain_out;
 	TriangularCartesian2D_Segmentation    segmentation_out(domain_out);
@@ -39,7 +39,7 @@ tuple TriangularCartesian2D_Domain_cell_refine(TriangularCartesian2D_Domain doma
 	return make_tuple<TriangularCartesian2D_Domain, TriangularCartesian2D_Segmentation>(domain_out, segmentation_out);
 }
 
-tuple TriangularCartesian3D_Domain_cell_refine(TriangularCartesian3D_Domain domain_in, TriangularCartesian3D_Segmentation segmentation_in, bool (*predicate)(const TriangularCartesian3D_Cell &))
+tuple TriangularCartesian3D_Domain_cell_refine(TriangularCartesian3D_Domain domain_in, TriangularCartesian3D_Segmentation segmentation_in, object predicate)
 {
 	TriangularCartesian3D_Domain          domain_out;
 	TriangularCartesian3D_Segmentation    segmentation_out(domain_out);
@@ -72,7 +72,7 @@ tuple TriangularCartesian3D_Domain_cell_refine(TriangularCartesian3D_Domain doma
 	return make_tuple<TriangularCartesian3D_Domain, TriangularCartesian3D_Segmentation>(domain_out, segmentation_out);
 }
 
-tuple TriangularCylindrical3D_Domain_cell_refine(TriangularCylindrical3D_Domain domain_in, TriangularCylindrical3D_Segmentation segmentation_in, bool (*predicate)(const TriangularCylindrical3D_Cell &))
+tuple TriangularCylindrical3D_Domain_cell_refine(TriangularCylindrical3D_Domain domain_in, TriangularCylindrical3D_Segmentation segmentation_in, object predicate)
 {
 	TriangularCylindrical3D_Domain          domain_out;
 	TriangularCylindrical3D_Segmentation    segmentation_out(domain_out);
@@ -105,7 +105,7 @@ tuple TriangularCylindrical3D_Domain_cell_refine(TriangularCylindrical3D_Domain 
 	return make_tuple<TriangularCylindrical3D_Domain, TriangularCylindrical3D_Segmentation>(domain_out, segmentation_out);
 }
 
-tuple TriangularPolar2D_Domain_cell_refine(TriangularPolar2D_Domain domain_in, TriangularPolar2D_Segmentation segmentation_in, bool (*predicate)(const TriangularPolar2D_Cell &))
+tuple TriangularPolar2D_Domain_cell_refine(TriangularPolar2D_Domain domain_in, TriangularPolar2D_Segmentation segmentation_in, object predicate)
 {
 	TriangularPolar2D_Domain          domain_out;
 	TriangularPolar2D_Segmentation    segmentation_out(domain_out);
@@ -138,7 +138,7 @@ tuple TriangularPolar2D_Domain_cell_refine(TriangularPolar2D_Domain domain_in, T
 	return make_tuple<TriangularPolar2D_Domain, TriangularPolar2D_Segmentation>(domain_out, segmentation_out);
 }
 
-tuple TriangularSpherical3D_Domain_cell_refine(TriangularSpherical3D_Domain domain_in, TriangularSpherical3D_Segmentation segmentation_in, bool (*predicate)(const TriangularSpherical3D_Cell &))
+tuple TriangularSpherical3D_Domain_cell_refine(TriangularSpherical3D_Domain domain_in, TriangularSpherical3D_Segmentation segmentation_in, object predicate)
 {
 	TriangularSpherical3D_Domain          domain_out;
 	TriangularSpherical3D_Segmentation    segmentation_out(domain_out);
@@ -175,7 +175,7 @@ tuple TriangularSpherical3D_Domain_cell_refine(TriangularSpherical3D_Domain doma
 // Tetrahedral //
 /////////////////
 
-tuple TetrahedralCartesian3D_Domain_cell_refine(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralCartesian3D_Cell &))
+tuple TetrahedralCartesian3D_Domain_cell_refine(TetrahedralCartesian3D_Domain domain_in, TetrahedralCartesian3D_Segmentation segmentation_in, object predicate)
 {
 	TetrahedralCartesian3D_Domain          domain_out;
 	TetrahedralCartesian3D_Segmentation    segmentation_out(domain_out);
@@ -208,7 +208,7 @@ tuple TetrahedralCartesian3D_Domain_cell_refine(TetrahedralCartesian3D_Domain do
 	return make_tuple<TetrahedralCartesian3D_Domain, TetrahedralCartesian3D_Segmentation>(domain_out, segmentation_out);
 }
 
-tuple TetrahedralCylindrical3D_Domain_cell_refine(TetrahedralCylindrical3D_Domain domain_in, TetrahedralCylindrical3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralCylindrical3D_Cell &))
+tuple TetrahedralCylindrical3D_Domain_cell_refine(TetrahedralCylindrical3D_Domain domain_in, TetrahedralCylindrical3D_Segmentation segmentation_in, object predicate)
 {
 	TetrahedralCylindrical3D_Domain          domain_out;
 	TetrahedralCylindrical3D_Segmentation    segmentation_out(domain_out);
@@ -241,7 +241,7 @@ tuple TetrahedralCylindrical3D_Domain_cell_refine(TetrahedralCylindrical3D_Domai
 	return make_tuple<TetrahedralCylindrical3D_Domain, TetrahedralCylindrical3D_Segmentation>(domain_out, segmentation_out);
 }
 
-tuple TetrahedralSpherical3D_Domain_cell_refine(TetrahedralSpherical3D_Domain domain_in, TetrahedralSpherical3D_Segmentation segmentation_in, bool (*predicate)(const TetrahedralSpherical3D_Cell &))
+tuple TetrahedralSpherical3D_Domain_cell_refine(TetrahedralSpherical3D_Domain domain_in, TetrahedralSpherical3D_Segmentation segmentation_in, object predicate)
 {
 	TetrahedralSpherical3D_Domain          domain_out;
 	TetrahedralSpherical3D_Segmentation    segmentation_out(domain_out);

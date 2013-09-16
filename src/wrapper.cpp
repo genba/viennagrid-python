@@ -41,6 +41,16 @@ using namespace boost::python;
 #include "facets/quadrilateral.hpp"
 #include "facets/tetrahedral.hpp"
 
+#include "accessors/linear.hpp"
+#include "accessors/triangular.hpp"
+#include "accessors/quadrilateral.hpp"
+#include "accessors/tetrahedral.hpp"
+
+#include "fields/linear.hpp"
+#include "fields/triangular.hpp"
+#include "fields/quadrilateral.hpp"
+#include "fields/tetrahedral.hpp"
+
 #include "algorithms/apply_voronoi.hpp"
 #include "algorithms/cell_centroid.hpp"
 #include "algorithms/cell_circumcenter.hpp"
@@ -223,6 +233,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCartesian1D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCartesian1D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCartesian1D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCartesian1D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCartesian1D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian1D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearCartesian2D_Domain>("LinearCartesian2D_Domain")
@@ -230,6 +243,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCartesian2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCartesian2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCartesian2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearCartesian3D_Domain>("LinearCartesian3D_Domain")
@@ -237,6 +253,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearCylindrical3D_Domain>("LinearCylindrical3D_Domain")
@@ -244,6 +263,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearPolar2D_Domain>("LinearPolar2D_Domain")
@@ -251,6 +273,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearPolar2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearPolar2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearPolar2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<LinearSpherical3D_Domain>("LinearSpherical3D_Domain")
@@ -258,6 +283,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &LinearSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &LinearSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &LinearSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &LinearSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &LinearSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &LinearSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/************************
@@ -452,6 +480,142 @@ BOOST_PYTHON_MODULE(wrapper)
 	class_<LinearSpherical3D_Facet>("LinearSpherical3D_Facet", init<LinearSpherical3D_Facet_t &>())
 	;
 	
+	/***************************
+	 * LINEAR VERTEX ACCESSORS *
+	 ***************************/
+	
+	class_<LinearCartesian1D_Vertex_Accessor>("LinearCartesian1D_Vertex_Accessor")
+		.def("get_value", &LinearCartesian1D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian1D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearCartesian2D_Vertex_Accessor>("LinearCartesian2D_Vertex_Accessor")
+		.def("get_value", &LinearCartesian2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearCartesian3D_Vertex_Accessor>("LinearCartesian3D_Vertex_Accessor")
+		.def("get_value", &LinearCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearCylindrical3D_Vertex_Accessor>("LinearCylindrical3D_Vertex_Accessor")
+		.def("get_value", &LinearCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearPolar2D_Vertex_Accessor>("LinearPolar2D_Vertex_Accessor")
+		.def("get_value", &LinearPolar2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearPolar2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearSpherical3D_Vertex_Accessor>("LinearSpherical3D_Vertex_Accessor")
+		.def("get_value", &LinearSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/*************************
+	 * LINEAR CELL ACCESSORS *
+	 *************************/
+	
+	class_<LinearCartesian1D_Cell_Accessor>("LinearCartesian1D_Cell_Accessor")
+		.def("get_value", &LinearCartesian1D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCartesian1D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearCartesian2D_Cell_Accessor>("LinearCartesian2D_Cell_Accessor")
+		.def("get_value", &LinearCartesian2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCartesian2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearCartesian3D_Cell_Accessor>("LinearCartesian3D_Cell_Accessor")
+		.def("get_value", &LinearCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearCylindrical3D_Cell_Accessor>("LinearCylindrical3D_Cell_Accessor")
+		.def("get_value", &LinearCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearPolar2D_Cell_Accessor>("LinearPolar2D_Cell_Accessor")
+		.def("get_value", &LinearPolar2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearPolar2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearSpherical3D_Cell_Accessor>("LinearSpherical3D_Cell_Accessor")
+		.def("get_value", &LinearSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	/************************
+	 * LINEAR VERTEX FIELDS *
+	 ************************/
+	
+	class_<LinearCartesian1D_Vertex_Field>("LinearCartesian1D_Vertex_Field", init<double>())
+		.def("get_value", &LinearCartesian1D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian1D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearCartesian2D_Vertex_Field>("LinearCartesian2D_Vertex_Field", init<double>())
+		.def("get_value", &LinearCartesian2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearCartesian3D_Vertex_Field>("LinearCartesian3D_Vertex_Field", init<double>())
+		.def("get_value", &LinearCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearCylindrical3D_Vertex_Field>("LinearCylindrical3D_Vertex_Field", init<double>())
+		.def("get_value", &LinearCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearPolar2D_Vertex_Field>("LinearPolar2D_Vertex_Field", init<double>())
+		.def("get_value", &LinearPolar2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearPolar2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<LinearSpherical3D_Vertex_Field>("LinearSpherical3D_Vertex_Field", init<double>())
+		.def("get_value", &LinearSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &LinearSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/**********************
+	 * LINEAR CELL FIELDS *
+	 **********************/
+	
+	class_<LinearCartesian1D_Cell_Field>("LinearCartesian1D_Cell_Field", init<double>())
+		.def("get_value", &LinearCartesian1D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCartesian1D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearCartesian2D_Cell_Field>("LinearCartesian2D_Cell_Field", init<double>())
+		.def("get_value", &LinearCartesian2D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCartesian2D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearCartesian3D_Cell_Field>("LinearCartesian3D_Cell_Field", init<double>())
+		.def("get_value", &LinearCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearCylindrical3D_Cell_Field>("LinearCylindrical3D_Cell_Field", init<double>())
+		.def("get_value", &LinearCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearPolar2D_Cell_Field>("LinearPolar2D_Cell_Field", init<double>())
+		.def("get_value", &LinearPolar2D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearPolar2D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<LinearSpherical3D_Cell_Field>("LinearSpherical3D_Cell_Field", init<double>())
+		.def("get_value", &LinearSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &LinearSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
 	/**********************
 	 * TRIANGULAR DOMAINS *
 	 **********************/
@@ -461,6 +625,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularCartesian2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularCartesian2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularCartesian2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularCartesian3D_Domain>("TriangularCartesian3D_Domain")
@@ -468,6 +635,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularCylindrical3D_Domain>("TriangularCylindrical3D_Domain")
@@ -475,6 +645,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularPolar2D_Domain>("TriangularPolar2D_Domain")
@@ -482,6 +655,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularPolar2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularPolar2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularPolar2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TriangularSpherical3D_Domain>("TriangularSpherical3D_Domain")
@@ -489,6 +665,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TriangularSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TriangularSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TriangularSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TriangularSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TriangularSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TriangularSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/****************************
@@ -567,30 +746,35 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("num_vertices", &TriangularCartesian2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularCartesian2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularCartesian2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularCartesian3D_Cell>("TriangularCartesian3D_Cell", init<TriangularCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularCartesian3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularCartesian3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularCylindrical3D_Cell>("TriangularCylindrical3D_Cell", init<TriangularCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularCylindrical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularCylindrical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularPolar2D_Cell>("TriangularPolar2D_Cell", init<TriangularPolar2D_Cell_t &>())
 		.add_property("num_vertices", &TriangularPolar2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularPolar2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularPolar2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TriangularSpherical3D_Cell>("TriangularSpherical3D_Cell", init<TriangularSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &TriangularSpherical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TriangularSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TriangularSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TriangularSpherical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	/***********************
@@ -655,6 +839,122 @@ BOOST_PYTHON_MODULE(wrapper)
 	class_<TriangularSpherical3D_Facet>("TriangularSpherical3D_Facet", init<TriangularSpherical3D_Facet_t &>())
 	;
 	
+	/*******************************
+	 * TRIANGULAR VERTEX ACCESSORS *
+	 *******************************/
+	
+	class_<TriangularCartesian2D_Vertex_Accessor>("TriangularCartesian2D_Vertex_Accessor")
+		.def("get_value", &TriangularCartesian2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularCartesian3D_Vertex_Accessor>("TriangularCartesian3D_Vertex_Accessor")
+		.def("get_value", &TriangularCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularCylindrical3D_Vertex_Accessor>("TriangularCylindrical3D_Vertex_Accessor")
+		.def("get_value", &TriangularCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularPolar2D_Vertex_Accessor>("TriangularPolar2D_Vertex_Accessor")
+		.def("get_value", &TriangularPolar2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularPolar2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularSpherical3D_Vertex_Accessor>("TriangularSpherical3D_Vertex_Accessor")
+		.def("get_value", &TriangularSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/*****************************
+	 * TRIANGULAR CELL ACCESSORS *
+	 *****************************/
+	
+	class_<TriangularCartesian2D_Cell_Accessor>("TriangularCartesian2D_Cell_Accessor")
+		.def("get_value", &TriangularCartesian2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularCartesian3D_Cell_Accessor>("TriangularCartesian3D_Cell_Accessor")
+		.def("get_value", &TriangularCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularCylindrical3D_Cell_Accessor>("TriangularCylindrical3D_Cell_Accessor")
+		.def("get_value", &TriangularCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularPolar2D_Cell_Accessor>("TriangularPolar2D_Cell_Accessor")
+		.def("get_value", &TriangularPolar2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularPolar2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularSpherical3D_Cell_Accessor>("TriangularSpherical3D_Cell_Accessor")
+		.def("get_value", &TriangularSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	/****************************
+	 * TRIANGULAR VERTEX FIELDS *
+	 ****************************/
+	
+	class_<TriangularCartesian2D_Vertex_Field>("TriangularCartesian2D_Vertex_Field", init<double>())
+		.def("get_value", &TriangularCartesian2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularCartesian3D_Vertex_Field>("TriangularCartesian3D_Vertex_Field", init<double>())
+		.def("get_value", &TriangularCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularCylindrical3D_Vertex_Field>("TriangularCylindrical3D_Vertex_Field", init<double>())
+		.def("get_value", &TriangularCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularPolar2D_Vertex_Field>("TriangularPolar2D_Vertex_Field", init<double>())
+		.def("get_value", &TriangularPolar2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularPolar2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TriangularSpherical3D_Vertex_Field>("TriangularSpherical3D_Vertex_Field", init<double>())
+		.def("get_value", &TriangularSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TriangularSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/**************************
+	 * TRIANGULAR CELL FIELDS *
+	 **************************/
+	
+	class_<TriangularCartesian2D_Cell_Field>("TriangularCartesian2D_Cell_Field", init<double>())
+		.def("get_value", &TriangularCartesian2D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian2D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularCartesian3D_Cell_Field>("TriangularCartesian3D_Cell_Field", init<double>())
+		.def("get_value", &TriangularCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularCylindrical3D_Cell_Field>("TriangularCylindrical3D_Cell_Field", init<double>())
+		.def("get_value", &TriangularCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularPolar2D_Cell_Field>("TriangularPolar2D_Cell_Field", init<double>())
+		.def("get_value", &TriangularPolar2D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularPolar2D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TriangularSpherical3D_Cell_Field>("TriangularSpherical3D_Cell_Field", init<double>())
+		.def("get_value", &TriangularSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TriangularSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
 	/*************************
 	 * QUADRILATERAL DOMAINS *
 	 *************************/
@@ -664,6 +964,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralCartesian2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralCartesian2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralCartesian2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralCartesian2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCartesian2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Domain>("QuadrilateralCartesian3D_Domain")
@@ -671,6 +974,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Domain>("QuadrilateralCylindrical3D_Domain")
@@ -678,6 +984,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralPolar2D_Domain>("QuadrilateralPolar2D_Domain")
@@ -685,6 +994,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralPolar2D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralPolar2D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralPolar2D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralPolar2D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralPolar2D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralPolar2D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Domain>("QuadrilateralSpherical3D_Domain")
@@ -692,6 +1004,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &QuadrilateralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &QuadrilateralSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &QuadrilateralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &QuadrilateralSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &QuadrilateralSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &QuadrilateralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/*******************************
@@ -770,30 +1085,35 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("num_vertices", &QuadrilateralCartesian2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralCartesian2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralCartesian2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralCartesian2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralCartesian3D_Cell>("QuadrilateralCartesian3D_Cell", init<QuadrilateralCartesian3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralCartesian3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralCartesian3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralCylindrical3D_Cell>("QuadrilateralCylindrical3D_Cell", init<QuadrilateralCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralCylindrical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralCylindrical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralPolar2D_Cell>("QuadrilateralPolar2D_Cell", init<QuadrilateralPolar2D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralPolar2D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralPolar2D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralPolar2D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralPolar2D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<QuadrilateralSpherical3D_Cell>("QuadrilateralSpherical3D_Cell", init<QuadrilateralSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &QuadrilateralSpherical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &QuadrilateralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &QuadrilateralSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &QuadrilateralSpherical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	/**************************
@@ -858,6 +1178,122 @@ BOOST_PYTHON_MODULE(wrapper)
 	class_<QuadrilateralSpherical3D_Facet>("QuadrilateralSpherical3D_Facet", init<QuadrilateralSpherical3D_Facet_t &>())
 	;
 	
+	/**********************************
+	 * QUADRILATERAL VERTEX ACCESSORS *
+	 **********************************/
+	
+	class_<QuadrilateralCartesian2D_Vertex_Accessor>("QuadrilateralCartesian2D_Vertex_Accessor")
+		.def("get_value", &QuadrilateralCartesian2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralCartesian3D_Vertex_Accessor>("QuadrilateralCartesian3D_Vertex_Accessor")
+		.def("get_value", &QuadrilateralCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Vertex_Accessor>("QuadrilateralCylindrical3D_Vertex_Accessor")
+		.def("get_value", &QuadrilateralCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralPolar2D_Vertex_Accessor>("QuadrilateralPolar2D_Vertex_Accessor")
+		.def("get_value", &QuadrilateralPolar2D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralPolar2D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralSpherical3D_Vertex_Accessor>("QuadrilateralSpherical3D_Vertex_Accessor")
+		.def("get_value", &QuadrilateralSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/********************************
+	 * QUADRILATERAL CELL ACCESSORS *
+	 ********************************/
+	
+	class_<QuadrilateralCartesian2D_Cell_Accessor>("QuadrilateralCartesian2D_Cell_Accessor")
+		.def("get_value", &QuadrilateralCartesian2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralCartesian3D_Cell_Accessor>("QuadrilateralCartesian3D_Cell_Accessor")
+		.def("get_value", &QuadrilateralCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Cell_Accessor>("QuadrilateralCylindrical3D_Cell_Accessor")
+		.def("get_value", &QuadrilateralCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralPolar2D_Cell_Accessor>("QuadrilateralPolar2D_Cell_Accessor")
+		.def("get_value", &QuadrilateralPolar2D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralPolar2D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralSpherical3D_Cell_Accessor>("QuadrilateralSpherical3D_Cell_Accessor")
+		.def("get_value", &QuadrilateralSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	/*******************************
+	 * QUADRILATERAL VERTEX FIELDS *
+	 *******************************/
+	
+	class_<QuadrilateralCartesian2D_Vertex_Field>("QuadrilateralCartesian2D_Vertex_Field", init<double>())
+		.def("get_value", &QuadrilateralCartesian2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralCartesian3D_Vertex_Field>("QuadrilateralCartesian3D_Vertex_Field", init<double>())
+		.def("get_value", &QuadrilateralCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Vertex_Field>("QuadrilateralCylindrical3D_Vertex_Field", init<double>())
+		.def("get_value", &QuadrilateralCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralPolar2D_Vertex_Field>("QuadrilateralPolar2D_Vertex_Field", init<double>())
+		.def("get_value", &QuadrilateralPolar2D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralPolar2D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<QuadrilateralSpherical3D_Vertex_Field>("QuadrilateralSpherical3D_Vertex_Field", init<double>())
+		.def("get_value", &QuadrilateralSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &QuadrilateralSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/*****************************
+	 * QUADRILATERAL CELL FIELDS *
+	 *****************************/
+	
+	class_<QuadrilateralCartesian2D_Cell_Field>("QuadrilateralCartesian2D_Cell_Field", init<double>())
+		.def("get_value", &QuadrilateralCartesian2D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian2D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralCartesian3D_Cell_Field>("QuadrilateralCartesian3D_Cell_Field", init<double>())
+		.def("get_value", &QuadrilateralCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralCylindrical3D_Cell_Field>("QuadrilateralCylindrical3D_Cell_Field", init<double>())
+		.def("get_value", &QuadrilateralCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralPolar2D_Cell_Field>("QuadrilateralPolar2D_Cell_Field", init<double>())
+		.def("get_value", &QuadrilateralPolar2D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralPolar2D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<QuadrilateralSpherical3D_Cell_Field>("QuadrilateralSpherical3D_Cell_Field", init<double>())
+		.def("get_value", &QuadrilateralSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &QuadrilateralSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
 	/*************************
 	 * TETRAHEDRAL DOMAINS *
 	 *************************/
@@ -867,6 +1303,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TetrahedralCartesian3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TetrahedralCartesian3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCartesian3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TetrahedralCartesian3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TetrahedralCartesian3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralCartesian3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Domain>("TetrahedralCylindrical3D_Domain")
@@ -874,6 +1313,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TetrahedralCylindrical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TetrahedralCylindrical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralCylindrical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TetrahedralCylindrical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TetrahedralCylindrical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralCylindrical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	class_<TetrahedralSpherical3D_Domain>("TetrahedralSpherical3D_Domain")
@@ -881,6 +1323,9 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("vertices", &TetrahedralSpherical3D_Domain::get_vertices, "Read-only property that returns a list containing all the vertices in the domain.")
 		.def("make_vertex", &TetrahedralSpherical3D_Domain::make_vertex, "Add a vertex to the domain. This gives the vertex a unique ID.")
 		.def("get_vertex", &TetrahedralSpherical3D_Domain::get_vertex, "Return the vertex with the given unique ID (which was assigned when the vertex was added either to the domain or to a segment contained in the domain).")
+		.add_property("num_cells", &TetrahedralSpherical3D_Domain::num_cells, "Read-only property that returns the number of cells in the domain.")
+		.def("make_cell", &TetrahedralSpherical3D_Domain::make_cell, "Create a cell within the domain, taking the vertices of the cell as arguments.")
+		.add_property("cells", &TetrahedralSpherical3D_Domain::get_cells, "Read-only property that returns a list containing all the cells stored within the domain.")
 	;
 	
 	/*****************************
@@ -935,18 +1380,21 @@ BOOST_PYTHON_MODULE(wrapper)
 		.add_property("num_vertices", &TetrahedralCartesian3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TetrahedralCartesian3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TetrahedralCartesian3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TetrahedralCartesian3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TetrahedralCylindrical3D_Cell>("TetrahedralCylindrical3D_Cell", init<TetrahedralCylindrical3D_Cell_t &>())
 		.add_property("num_vertices", &TetrahedralCylindrical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TetrahedralCylindrical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TetrahedralCylindrical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TetrahedralCylindrical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	class_<TetrahedralSpherical3D_Cell>("TetrahedralSpherical3D_Cell", init<TetrahedralSpherical3D_Cell_t &>())
 		.add_property("num_vertices", &TetrahedralSpherical3D_Cell::num_vertices, "Read-only property that returns the number of vertices that define the cell.")
 		.add_property("vertices", &TetrahedralSpherical3D_Cell::get_vertices, "Read-only property that returns a list containing all the vertices that define the cell.")
 		.add_property("facets", &TetrahedralSpherical3D_Cell::get_facets, "Read-only property that returns a list containing all the facets that form the cell.")
+		.add_property("edges", &TetrahedralSpherical3D_Cell::get_edges, "Read-only property that returns a list containing all the edges that form the cell.")
 	;
 	
 	/************************
@@ -989,6 +1437,82 @@ BOOST_PYTHON_MODULE(wrapper)
 	;
 	
 	class_<TetrahedralSpherical3D_Facet>("TetrahedralSpherical3D_Facet", init<TetrahedralSpherical3D_Facet_t &>())
+	;
+	
+	/********************************
+	 * TETRAHEDRAL VERTEX ACCESSORS *
+	 ********************************/
+	
+	class_<TetrahedralCartesian3D_Vertex_Accessor>("TetrahedralCartesian3D_Vertex_Accessor")
+		.def("get_value", &TetrahedralCartesian3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCartesian3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TetrahedralCylindrical3D_Vertex_Accessor>("TetrahedralCylindrical3D_Vertex_Accessor")
+		.def("get_value", &TetrahedralCylindrical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCylindrical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TetrahedralSpherical3D_Vertex_Accessor>("TetrahedralSpherical3D_Vertex_Accessor")
+		.def("get_value", &TetrahedralSpherical3D_Vertex_Accessor::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TetrahedralSpherical3D_Vertex_Accessor::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/******************************
+	 * TETRAHEDRAL CELL ACCESSORS *
+	 ******************************/
+	
+	class_<TetrahedralCartesian3D_Cell_Accessor>("TetrahedralCartesian3D_Cell_Accessor")
+		.def("get_value", &TetrahedralCartesian3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TetrahedralCartesian3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TetrahedralCylindrical3D_Cell_Accessor>("TetrahedralCylindrical3D_Cell_Accessor")
+		.def("get_value", &TetrahedralCylindrical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TetrahedralCylindrical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TetrahedralSpherical3D_Cell_Accessor>("TetrahedralSpherical3D_Cell_Accessor")
+		.def("get_value", &TetrahedralSpherical3D_Cell_Accessor::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TetrahedralSpherical3D_Cell_Accessor::set_value, "Set the value associated with the given cell.")
+	;
+	
+	/*****************************
+	 * TETRAHEDRAL VERTEX FIELDS *
+	 *****************************/
+	
+	class_<TetrahedralCartesian3D_Vertex_Field>("TetrahedralCartesian3D_Vertex_Field", init<double>())
+		.def("get_value", &TetrahedralCartesian3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCartesian3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TetrahedralCylindrical3D_Vertex_Field>("TetrahedralCylindrical3D_Vertex_Field", init<double>())
+		.def("get_value", &TetrahedralCylindrical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TetrahedralCylindrical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	class_<TetrahedralSpherical3D_Vertex_Field>("TetrahedralSpherical3D_Vertex_Field", init<double>())
+		.def("get_value", &TetrahedralSpherical3D_Vertex_Field::get_value, "Get the value associated with the given vertex.")
+		.def("set_value", &TetrahedralSpherical3D_Vertex_Field::set_value, "Set the value associated with the given vertex.")
+	;
+	
+	/***************************
+	 * TETRAHEDRAL CELL FIELDS *
+	 ***************************/
+	
+	class_<TetrahedralCartesian3D_Cell_Field>("TetrahedralCartesian3D_Cell_Field", init<double>())
+		.def("get_value", &TetrahedralCartesian3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TetrahedralCartesian3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TetrahedralCylindrical3D_Cell_Field>("TetrahedralCylindrical3D_Cell_Field", init<double>())
+		.def("get_value", &TetrahedralCylindrical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TetrahedralCylindrical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
+	;
+	
+	class_<TetrahedralSpherical3D_Cell_Field>("TetrahedralSpherical3D_Cell_Field", init<double>())
+		.def("get_value", &TetrahedralSpherical3D_Cell_Field::get_value, "Get the value associated with the given cell.")
+		.def("set_value", &TetrahedralSpherical3D_Cell_Field::set_value, "Set the value associated with the given cell.")
 	;
 	
 	/*****************
@@ -1628,22 +2152,22 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////
 	
 	def("read_vtk", LinearCartesian1D_Domain_read_vtk,
-	                LinearCartesian1D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCartesian1D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCartesian2D_Domain_read_vtk,
-	                LinearCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCartesian3D_Domain_read_vtk,
-	                LinearCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", LinearCylindrical3D_Domain_read_vtk,
-	                LinearCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Read mesh data from a VTK file."));
 	def("read_vtk", LinearPolar2D_Domain_read_vtk,
-	                LinearPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                        "Read mesh data from a VTK file."));
 	def("read_vtk", LinearSpherical3D_Domain_read_vtk,
-	                LinearSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                LinearSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	
 	////////////////
@@ -1651,19 +2175,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////////
 	
 	def("read_vtk", TriangularCartesian2D_Domain_read_vtk,
-	                TriangularCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularCartesian3D_Domain_read_vtk,
-	                TriangularCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularCylindrical3D_Domain_read_vtk,
-	                TriangularCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularPolar2D_Domain_read_vtk,
-	                TriangularPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                            "Read mesh data from a VTK file."));
 	def("read_vtk", TriangularSpherical3D_Domain_read_vtk,
-	                TriangularSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TriangularSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Read mesh data from a VTK file."));
 	
 	///////////////////
@@ -1671,19 +2195,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	///////////////////
 	
 	def("read_vtk", QuadrilateralCartesian2D_Domain_read_vtk,
-	                QuadrilateralCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralCartesian2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralCartesian3D_Domain_read_vtk,
-	                QuadrilateralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralCylindrical3D_Domain_read_vtk,
-	                QuadrilateralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralPolar2D_Domain_read_vtk,
-	                QuadrilateralPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralPolar2D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                               "Read mesh data from a VTK file."));
 	def("read_vtk", QuadrilateralSpherical3D_Domain_read_vtk,
-	                QuadrilateralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                QuadrilateralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	
 	/////////////////
@@ -1691,13 +2215,13 @@ BOOST_PYTHON_MODULE(wrapper)
 	/////////////////
 	
 	def("read_vtk", TetrahedralCartesian3D_Domain_read_vtk,
-	                TetrahedralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TetrahedralCartesian3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                 "Read mesh data from a VTK file."));
 	def("read_vtk", TetrahedralCylindrical3D_Domain_read_vtk,
-	                TetrahedralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TetrahedralCylindrical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Read mesh data from a VTK file."));
 	def("read_vtk", TetrahedralSpherical3D_Domain_read_vtk,
-	                TetrahedralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation"),
+	                TetrahedralSpherical3D_Domain_read_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                 "Read mesh data from a VTK file."));
 	
 	/****************
@@ -1708,40 +2232,78 @@ BOOST_PYTHON_MODULE(wrapper)
 	// LINEAR //
 	////////////
 	
-	def("write_opendx", &LinearCartesian1D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &LinearSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", LinearCartesian1D_Domain_write_opendx,
+	                    LinearCartesian1D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearCartesian2D_Domain_write_opendx,
+	                    LinearCartesian2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearCartesian3D_Domain_write_opendx,
+	                    LinearCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearCylindrical3D_Domain_write_opendx,
+	                    LinearCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                      "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearPolar2D_Domain_write_opendx,
+	                    LinearPolar2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                "Write mesh data to an OpenDX file."));
+	def("write_opendx", LinearSpherical3D_Domain_write_opendx,
+	                    LinearSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
 	
 	////////////////
 	// TRIANGULAR //
 	////////////////
 	
-	def("write_opendx", &TriangularCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TriangularSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", TriangularCartesian2D_Domain_write_opendx,
+	                    TriangularCartesian2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                        "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularCartesian3D_Domain_write_opendx,
+	                    TriangularCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                        "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularCylindrical3D_Domain_write_opendx,
+	                    TriangularCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                          "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularPolar2D_Domain_write_opendx,
+	                    TriangularPolar2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                    "Write mesh data to an OpenDX file."));
+	def("write_opendx", TriangularSpherical3D_Domain_write_opendx,
+	                    TriangularSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                        "Write mesh data to an OpenDX file."));
 	
 	///////////////////
 	// QUADRILATERAL //
 	///////////////////
 	
-	def("write_opendx", &QuadrilateralCartesian2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralPolar2D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &QuadrilateralSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", QuadrilateralCartesian2D_Domain_write_opendx,
+	                    QuadrilateralCartesian2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralCartesian3D_Domain_write_opendx,
+	                    QuadrilateralCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralCylindrical3D_Domain_write_opendx,
+	                    QuadrilateralCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                             "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralPolar2D_Domain_write_opendx,
+	                    QuadrilateralPolar2D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                       "Write mesh data to an OpenDX file."));
+	def("write_opendx", QuadrilateralSpherical3D_Domain_write_opendx,
+	                    QuadrilateralSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
 	
 	/////////////////
 	// TETRAHEDRAL //
 	/////////////////
 	
-	def("write_opendx", &TetrahedralCartesian3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TetrahedralCylindrical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
-	def("write_opendx", &TetrahedralSpherical3D_Domain_write_opendx, "Write mesh data to an OpenDX file.");
+	def("write_opendx", TetrahedralCartesian3D_Domain_write_opendx,
+	                    TetrahedralCartesian3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                         "Write mesh data to an OpenDX file."));
+	def("write_opendx", TetrahedralCylindrical3D_Domain_write_opendx,
+	                    TetrahedralCylindrical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                           "Write mesh data to an OpenDX file."));
+	def("write_opendx", TetrahedralSpherical3D_Domain_write_opendx,
+	                    TetrahedralSpherical3D_Domain_write_opendx_overloads(args("filename", "domain", "accessors"),
+	                                                                         "Write mesh data to an OpenDX file."));
 	
 	/*************
 	 * WRITE_VTK *
@@ -1752,22 +2314,22 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////
 	
 	def("write_vtk", LinearCartesian1D_Domain_write_vtk,
-	                 LinearCartesian1D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCartesian1D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCartesian2D_Domain_write_vtk,
-	                 LinearCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCartesian3D_Domain_write_vtk,
-	                 LinearCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", LinearCylindrical3D_Domain_write_vtk,
-	                 LinearCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                "Write mesh data to a VTK file."));
 	def("write_vtk", LinearPolar2D_Domain_write_vtk,
-	                 LinearPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                          "Write mesh data to a VTK file."));
 	def("write_vtk", LinearSpherical3D_Domain_write_vtk,
-	                 LinearSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 LinearSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	
 	////////////////
@@ -1775,19 +2337,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	////////////////
 	
 	def("write_vtk", TriangularCartesian2D_Domain_write_vtk,
-	                 TriangularCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularCartesian3D_Domain_write_vtk,
-	                 TriangularCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularCylindrical3D_Domain_write_vtk,
-	                 TriangularCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                    "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularPolar2D_Domain_write_vtk,
-	                 TriangularPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                              "Write mesh data to a VTK file."));
 	def("write_vtk", TriangularSpherical3D_Domain_write_vtk,
-	                 TriangularSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TriangularSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                  "Write mesh data to a VTK file."));
 	
 	///////////////////
@@ -1795,19 +2357,19 @@ BOOST_PYTHON_MODULE(wrapper)
 	///////////////////
 	
 	def("write_vtk", QuadrilateralCartesian2D_Domain_write_vtk,
-	                 QuadrilateralCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralCartesian2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralCartesian3D_Domain_write_vtk,
-	                 QuadrilateralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralCylindrical3D_Domain_write_vtk,
-	                 QuadrilateralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                       "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralPolar2D_Domain_write_vtk,
-	                 QuadrilateralPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralPolar2D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                 "Write mesh data to a VTK file."));
 	def("write_vtk", QuadrilateralSpherical3D_Domain_write_vtk,
-	                 QuadrilateralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 QuadrilateralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	
 	/////////////////
@@ -1815,12 +2377,12 @@ BOOST_PYTHON_MODULE(wrapper)
 	/////////////////
 	
 	def("write_vtk", TetrahedralCartesian3D_Domain_write_vtk,
-	                 TetrahedralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TetrahedralCartesian3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Write mesh data to a VTK file."));
 	def("write_vtk", TetrahedralCylindrical3D_Domain_write_vtk,
-	                 TetrahedralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TetrahedralCylindrical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                     "Write mesh data to a VTK file."));
 	def("write_vtk", TetrahedralSpherical3D_Domain_write_vtk,
-	                 TetrahedralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation"),
+	                 TetrahedralSpherical3D_Domain_write_vtk_overloads(args("filename", "domain", "segmentation", "accessors"),
 	                                                                   "Write mesh data to a VTK file."));
 }

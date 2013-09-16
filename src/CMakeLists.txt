@@ -152,6 +152,28 @@ set (VIENNAGRID_WRAPPER_IO_SRC
         io/write_vtk.hpp
         io/write_vtk.cpp)
 
+set (VIENNAGRID_WRAPPER_ACCESSORS_SRC
+        accessors/types.hpp
+        accessors/linear.hpp
+        accessors/linear.cpp
+        accessors/triangular.hpp
+        accessors/triangular.cpp
+        accessors/quadrilateral.hpp
+        accessors/quadrilateral.cpp
+        accessors/tetrahedral.hpp
+        accessors/tetrahedral.cpp)
+
+set (VIENNAGRID_WRAPPER_FIELDS_SRC
+        fields/types.hpp
+        fields/linear.hpp
+        fields/linear.cpp
+        fields/triangular.hpp
+        fields/triangular.cpp
+        fields/quadrilateral.hpp
+        fields/quadrilateral.cpp
+        fields/tetrahedral.hpp
+        fields/tetrahedral.cpp)
+
 set (VIENNAGRID_WRAPPER_SRC
         wrapper.cpp
         exception_translator.hpp
@@ -164,7 +186,9 @@ set (VIENNAGRID_WRAPPER_SRC
         ${VIENNAGRID_WRAPPER_EDGES_SRC}
         ${VIENNAGRID_WRAPPER_FACETS_SRC}
         ${VIENNAGRID_WRAPPER_ALGORITHMS_SRC}
-        ${VIENNAGRID_WRAPPER_IO_SRC})
+        ${VIENNAGRID_WRAPPER_IO_SRC}
+        ${VIENNAGRID_WRAPPER_ACCESSORS_SRC}
+        ${VIENNAGRID_WRAPPER_FIELDS_SRC})
 
 python_add_module (wrapper ${VIENNAGRID_WRAPPER_SRC})
 target_link_libraries (wrapper ${Boost_LIBRARIES})
