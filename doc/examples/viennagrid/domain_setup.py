@@ -31,15 +31,14 @@ domain.make_vertex(viennagrid.Point(2))
 domain.make_vertex(viennagrid.Point(3))
 domain.make_vertex(viennagrid.Point(4))
 
+i = 0
+# To get information on the vertices of a domain, the following
+# methods and attributes are available:
+# 
 domain.vertices()     # array of all vertices in the domain
 len(domain.vertices)  # number of segments in the domain
 iter(domain.vertices) # iterator over the elements of the array
 domain.vertices[i]    # get vertex i from the domain
-
-domain.cells()     # array of all cells in the domain
-len(domain.cells)  # number of segments in the domain
-iter(domain.cells) # iterator over the elements of the array
-domain.cells[i]    # get cell i from the domain
 
 # The actual interface for defining points behaves as follows:
 # 
@@ -56,13 +55,21 @@ domain.cells[i]    # get cell i from the domain
 # 
 # All possible combinations are as follows:
 
+D = 1
+x = 0
+y = 0
+z = 0
+
 # specifying only dimension:
 p = viennagrid.Point(dim=D)                                                      # cartesian of dimension D = {1, 2, 3}, coords set to 0
 # secifying only coord_system:
 p = viennagrid.Point(coord_system=viennagrid.config.POLAR)                       # polar of dimension 2, coords set to (0, 0)
 p = viennagrid.Point(coord_system=viennagrid.config.SPHERICAL)                   # spherical of dimension 3, coords set to (0, 0)
 p = viennagrid.Point(coord_system=viennagrid.config.CYLINDRICAL)                 # cylindrical of dimension 3, coords set to (0, 0)
-p = viennagrid.Point(coord_system=viennagrid.config.CARTESIAN)                   # raises an exception, becaus dim is not specified
+try:
+	p = viennagrid.Point(coord_system=viennagrid.config.CARTESIAN)               # raises an exception, becaus dim is not specified
+except TypeError:
+	pass
 # specifying both coord_system and dimension:
 p = viennagrid.Point(coord_system=viennagrid.config.CARTESIAN,   dim=D)          # cartesian of dimension D = {1, 2, 3}, coords set to 0
 p = viennagrid.Point(coord_system=viennagrid.config.POLAR,       dim=2)          # polar of dimension 2, coords set to (0, 0); if dim != 2, raises an exception
@@ -128,6 +135,14 @@ cell = seg1.make_cell(v0, v1)
 v0 = domain.vertices[1]
 v1 = domain.vertices[3]
 cell = seg1.make_cell(v0, v1)
+
+# To get information on the cells of a domain, the following
+# methods and attributes are available:
+# 
+domain.cells()     # array of all cells in the domain
+len(domain.cells)  # number of segments in the domain
+iter(domain.cells) # iterator over the elements of the array
+domain.cells[i]    # get cell i from the domain
 
 # To get information on the vertices of a cell, the following
 # methods and attributes are available:
