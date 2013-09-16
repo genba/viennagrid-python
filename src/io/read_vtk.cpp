@@ -28,7 +28,7 @@ void LinearCartesian1D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -47,14 +47,15 @@ void LinearCartesian1D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "LinearCartesian1D_Segmentation")
 				segmentation = extract<LinearCartesian1D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<LinearCartesian1D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<LinearCartesian1D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -107,7 +108,7 @@ void LinearCartesian2D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -126,14 +127,15 @@ void LinearCartesian2D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "LinearCartesian2D_Segmentation")
 				segmentation = extract<LinearCartesian2D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<LinearCartesian2D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<LinearCartesian2D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -186,7 +188,7 @@ void LinearCartesian3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -205,14 +207,15 @@ void LinearCartesian3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "LinearCartesian3D_Segmentation")
 				segmentation = extract<LinearCartesian3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<LinearCartesian3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<LinearCartesian3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -265,7 +268,7 @@ void LinearCylindrical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -284,14 +287,15 @@ void LinearCylindrical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "LinearCylindrical3D_Segmentation")
 				segmentation = extract<LinearCylindrical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<LinearCylindrical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<LinearCylindrical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -344,7 +348,7 @@ void LinearPolar2D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -363,14 +367,15 @@ void LinearPolar2D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "LinearPolar2D_Segmentation")
 				segmentation = extract<LinearPolar2D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<LinearPolar2D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<LinearPolar2D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -423,7 +428,7 @@ void LinearSpherical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -442,14 +447,15 @@ void LinearSpherical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "LinearSpherical3D_Segmentation")
 				segmentation = extract<LinearSpherical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<LinearSpherical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<LinearSpherical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -506,7 +512,7 @@ void TriangularCartesian2D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -525,14 +531,15 @@ void TriangularCartesian2D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TriangularCartesian2D_Segmentation")
 				segmentation = extract<TriangularCartesian2D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TriangularCartesian2D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TriangularCartesian2D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -585,7 +592,7 @@ void TriangularCartesian3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -604,14 +611,15 @@ void TriangularCartesian3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TriangularCartesian3D_Segmentation")
 				segmentation = extract<TriangularCartesian3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TriangularCartesian3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TriangularCartesian3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -664,7 +672,7 @@ void TriangularCylindrical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -683,14 +691,15 @@ void TriangularCylindrical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TriangularCylindrical3D_Segmentation")
 				segmentation = extract<TriangularCylindrical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TriangularCylindrical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TriangularCylindrical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -743,7 +752,7 @@ void TriangularPolar2D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -762,14 +771,15 @@ void TriangularPolar2D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TriangularPolar2D_Segmentation")
 				segmentation = extract<TriangularPolar2D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TriangularPolar2D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TriangularPolar2D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -822,7 +832,7 @@ void TriangularSpherical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -841,14 +851,15 @@ void TriangularSpherical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TriangularSpherical3D_Segmentation")
 				segmentation = extract<TriangularSpherical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TriangularSpherical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TriangularSpherical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -905,7 +916,7 @@ void QuadrilateralCartesian2D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -924,14 +935,15 @@ void QuadrilateralCartesian2D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "QuadrilateralCartesian2D_Segmentation")
 				segmentation = extract<QuadrilateralCartesian2D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<QuadrilateralCartesian2D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<QuadrilateralCartesian2D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -984,7 +996,7 @@ void QuadrilateralCartesian3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -1003,14 +1015,15 @@ void QuadrilateralCartesian3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "QuadrilateralCartesian3D_Segmentation")
 				segmentation = extract<QuadrilateralCartesian3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<QuadrilateralCartesian3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<QuadrilateralCartesian3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -1063,7 +1076,7 @@ void QuadrilateralCylindrical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -1082,14 +1095,15 @@ void QuadrilateralCylindrical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "QuadrilateralCylindrical3D_Segmentation")
 				segmentation = extract<QuadrilateralCylindrical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<QuadrilateralCylindrical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<QuadrilateralCylindrical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -1142,7 +1156,7 @@ void QuadrilateralPolar2D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -1161,14 +1175,15 @@ void QuadrilateralPolar2D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "QuadrilateralPolar2D_Segmentation")
 				segmentation = extract<QuadrilateralPolar2D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<QuadrilateralPolar2D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<QuadrilateralPolar2D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -1221,7 +1236,7 @@ void QuadrilateralSpherical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -1240,14 +1255,15 @@ void QuadrilateralSpherical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "QuadrilateralSpherical3D_Segmentation")
 				segmentation = extract<QuadrilateralSpherical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<QuadrilateralSpherical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<QuadrilateralSpherical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -1304,7 +1320,7 @@ void TetrahedralCartesian3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -1323,14 +1339,15 @@ void TetrahedralCartesian3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TetrahedralCartesian3D_Segmentation")
 				segmentation = extract<TetrahedralCartesian3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TetrahedralCartesian3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TetrahedralCartesian3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -1383,7 +1400,7 @@ void TetrahedralCylindrical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -1402,14 +1419,15 @@ void TetrahedralCylindrical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TetrahedralCylindrical3D_Segmentation")
 				segmentation = extract<TetrahedralCylindrical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TetrahedralCylindrical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TetrahedralCylindrical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
@@ -1462,7 +1480,7 @@ void TetrahedralSpherical3D_Domain_read_vtk(str filename,
 	// If arg1 is None, this means that only a domain has been provided, but no segmentation nor accessors,
 	// i.e. the following signature has been used:
 	// read_vtk(filename, domain)
-	if (arg1 == object())
+	if (arg1 == object() && arg2 == dict())
 		my_vtk_reader(domain.get_domain(), extract<std::string>(filename));
 	// If arg1 is not None, this means that either of the following signatures have been used:
 	// read_vtk(filename, domain, segmentation)
@@ -1481,14 +1499,15 @@ void TetrahedralSpherical3D_Domain_read_vtk(str filename,
 			object arg1_cls_name = arg1.attr("__class__").attr("__name__");
 			if (arg1_cls_name == "TetrahedralSpherical3D_Segmentation")
 				segmentation = extract<TetrahedralSpherical3D_Segmentation *>(arg1);
-			else
+			else if (arg1_cls_name == "dict")
 				accessors = (dict *) &arg1;
 		}
 		// If arg2 is not an empty dictionary, this means that the following signature has been used:
 		// read_vtk(filename, domain, segmentation, accessors)
 		else
 		{
-			segmentation = extract<TetrahedralSpherical3D_Segmentation *>(arg1);
+			if (arg1 != object())
+				segmentation = extract<TetrahedralSpherical3D_Segmentation *>(arg1);
 			accessors = (dict *) &arg2;
 		}
 		
