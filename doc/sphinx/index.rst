@@ -14,6 +14,7 @@ ViennaGrid for Python |release| documentation
    install
    tutorial
    apiref
+   devguide
 
 Indices and tables
 ==================
