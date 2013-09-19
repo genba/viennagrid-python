@@ -193,3 +193,10 @@ This will install the source distribution package with the Sphinx documentation 
 	python setup.py install
 
 from the directory `build/viennagrid-python`, even though they should have exactly the same effect.
+
+Running tests
+-------------
+
+You can run the test for the wrapper by issuing the command ::
+
+	make test
