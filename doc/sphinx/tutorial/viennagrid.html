@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1. Using viennagrid &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="3. Tutorials" href="../tutorial.html" />
+    <link rel="next" title="3.2. Using viennagrid.wrapper" href="viennagrid_wrapper.html" />
+    <link rel="prev" title="3. Tutorials" href="../tutorial.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="viennagrid_wrapper.html" title="3.2. Using viennagrid.wrapper"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../tutorial.html" title="3. Tutorials"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../tutorial.html" accesskey="U">3. Tutorials</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="using-viennagrid">
+<h1>3.1. Using <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a><a class="headerlink" href="#using-viennagrid" title="Permalink to this headline">¶</a></h1>
+<p>A mesh in ViennaGrid is composed of <strong>cells</strong> which, in turn, are defined by their <strong>vertices</strong>. All of the objects that conform the mesh are stored in a container called <strong>domain</strong>. In addition, a domain may be subdivided into <strong>segments</strong>.</p>
+<p>When a domain is defined, all the points that will act as vertices of any cells must be added to the domain. Then, a segmentation object can be created to specify how a domain should be subdivided, and cells can be created within the segments from the vertices that already belong to the domain.</p>
+<p>Please, refer to <a class="reference external" href="http://viennagrid.sourceforge.net/viennagrid-manual-current.pdf">ViennaGrid&#8217;s PDF manual</a> for further information.</p>
+<div class="section" id="defining-a-domain">
+<h2>3.1.1. Defining a domain<a class="headerlink" href="#defining-a-domain" title="Permalink to this headline">¶</a></h2>
+<p>For our example, we will consider the domain presented in chapter 4 of <a class="reference external" href="http://viennagrid.sourceforge.net/viennagrid-manual-current.pdf">ViennaGrid&#8217;s PDF manual</a>:</p>
+<p>This domain is a triangular domain in the cartesian 2D space which contains 5 vertices and which is subdivided into 2 segments, whereas each segment has two cells.</p>
+<p>In order to define a domain with the high-level module <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a>, you must first create a <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> object that specified the configuration of the domain, i.e., the coordinate system, the dimension of the space and the type of the cells that the domain will contain. Since the <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> class is in the module <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid.config" title="viennagrid.config: Configuration classes for domain definition"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.config</span></tt></a>, you must import it first. You can then create the configuration object like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">viennagrid</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="n">cfg</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">TRIANGLE_TAG</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where the first parameter indicates the cell type, the second indicates the coordinate system and the third indicates the dimension.</p>
+<p>Notice that we use constants defined in <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid.config" title="viennagrid.config: Configuration classes for domain definition"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.config</span></tt></a> to pass parameters to this function. All constants for the cell tag parameter are described in the section <a class="reference internal" href="../apiref/viennagrid.html#cell-tags"><em>Cell tags</em></a> and all constants for the coordinate system tag are described in the section <a class="reference internal" href="../apiref/viennagrid.html#coordinate-system-tags"><em>Coordinate system tags and supported dimensions</em></a> of the API reference.</p>
+<p>Once the configuration object is created, we can proceed to define a triangular domain of cartesian 2D points based on that configuration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">viennagrid</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-vertices-to-a-domain">
+<h2>3.1.2. Adding vertices to a domain<a class="headerlink" href="#adding-vertices-to-a-domain" title="Permalink to this headline">¶</a></h2>
+<p>The next step would be to add to the domain the vertices that will form our cells. To see what vertices are contained in the domain, you can use the read-only attribute <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Domain.vertices" title="viennagrid.Domain.vertices"><tt class="xref py py-attr docutils literal"><span class="pre">vertices</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<p>If you run this code, you will get an empty list, as you have seen in the interpreter output above, because we haven&#8217;t added any vertices to the domain yet.</p>
+<p>To add vertices, we need to create points with the <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> class and use the method <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Domain.make_vertex" title="viennagrid.Domain.make_vertex"><tt class="xref py py-meth docutils literal"><span class="pre">make_vertex()</span></tt></a>, which accepts as its only parameter the point you want to add as a vertex.</p>
+<p>Let&#8217;s add to the domain all the vertices that we need to define our cells:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">d</span><span class="o">.</span><span class="n">make_vertex</span><span class="p">(</span><span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c"># Vertex with ID #0</span>
+<span class="n">d</span><span class="o">.</span><span class="n">make_vertex</span><span class="p">(</span><span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c"># Vertex with ID #1</span>
+<span class="n">d</span><span class="o">.</span><span class="n">make_vertex</span><span class="p">(</span><span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c"># Vertex with ID #2</span>
+<span class="n">d</span><span class="o">.</span><span class="n">make_vertex</span><span class="p">(</span><span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c"># Vertex with ID #3</span>
+<span class="n">d</span><span class="o">.</span><span class="n">make_vertex</span><span class="p">(</span><span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c"># Vertex with ID #4</span>
+<span class="n">d</span><span class="o">.</span><span class="n">make_vertex</span><span class="p">(</span><span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c"># Vertex with ID #5</span>
+</pre></div>
+</div>
+<p>When you add a vertex to the domain, the vertex gets a unique ID which corresponds to its index in the list of vertices of the domain, as the comments on the right side indicate.</p>
+<p>Now that we&#8217;ve added vertices to our domain, we will get a non-empty list whenever we read the attribute <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Domain.vertices" title="viennagrid.Domain.vertices"><tt class="xref py py-attr docutils literal"><span class="pre">vertices</span></tt></a>. If you&#8217;ve followed the tutorial so far, you will get an output similar to this one (although the memory addresses of the objects may be different in your case):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
+<span class="go">[&lt;viennagrid.Vertex at 0x34c0e10&gt;,</span>
+<span class="go"> &lt;viennagrid.Vertex at 0x34c0d10&gt;,</span>
+<span class="go"> &lt;viennagrid.Vertex at 0x34c0bd0&gt;,</span>
+<span class="go"> &lt;viennagrid.Vertex at 0x34c0c10&gt;,</span>
+<span class="go"> &lt;viennagrid.Vertex at 0x34c0d90&gt;,</span>
+<span class="go"> &lt;viennagrid.Vertex at 0x34c0dd0&gt;]</span>
+</pre></div>
+</div>
+<p>Just for fun, you can attempt to get information on any of the vertices. For example, you could try to get the coordinates of the fourth vertex by doing this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">to_point</span><span class="p">()</span><span class="o">.</span><span class="n">coords</span>
+<span class="go">[2.0, 1.0]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="subdividing-a-domain-into-segments">
+<h2>3.1.3. Subdividing a domain into segments<a class="headerlink" href="#subdividing-a-domain-into-segments" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have a domain and vertices in it, we proceed to create a segmentation object that will define how the domain is divided into segments. When we do this, we must tell the segmentation to what domain it will correspond:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Segmentation</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Similar to what we did before with the vertices of the domain, we can get a list of the segments contained in a segmentation by using the attribute <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Segmentation.segments" title="viennagrid.Segmentation.segments"><tt class="xref py py-attr docutils literal"><span class="pre">segments</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">segments</span><span class="p">()</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<p>Like before, this will return an empty list, since we haven&#8217;t created any segments in the segmentation yet.</p>
+<p>To create addittional segments in a segmentation, we use the method <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Segmentation.make_segment" title="viennagrid.Segmentation.make_segment"><tt class="xref py py-meth docutils literal"><span class="pre">make_segment()</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">seg0</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">make_segment</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This method will create a new segment in the segmentation, and will return the newly created segment object.</p>
+<p>We will proceed to create a second segment:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">seg1</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">make_segment</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now there should be two segments in our segmentation, which we can check by reading the attribute <a class="reference internal" href="../apiref/viennagrid_wrapper.html#viennagrid.wrapper.TriangularCartesian2D_Segmentation.segments" title="viennagrid.wrapper.TriangularCartesian2D_Segmentation.segments"><tt class="xref py py-attr docutils literal"><span class="pre">segments</span></tt></a> again:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">segments</span><span class="p">()</span>
+<span class="go">[&lt;viennagrid.Segment at 0x34c0f10&gt;, &lt;viennagrid.Segment at 0x34c0f50&gt;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-cells-within-a-segment">
+<h2>3.1.4. Creating cells within a segment<a class="headerlink" href="#creating-cells-within-a-segment" title="Permalink to this headline">¶</a></h2>
+<p>To finish with domain setup, the only remaining step is to create cells from the vertices we&#8217;ve added and store the newly created cells in a segment within the domain. For that purpose, we use the method <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Segment.make_cell" title="viennagrid.Segment.make_cell"><tt class="xref py py-meth docutils literal"><span class="pre">make_cell()</span></tt></a>, passing as parameters the vertices that form the cell in the appropriate order:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">seg0</span><span class="o">.</span><span class="n">make_cell</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="c"># Cell with vertices 0-1-5</span>
+<span class="n">seg0</span><span class="o">.</span><span class="n">make_cell</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">d</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="c"># Cell with vertices 1-4-5</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Please, note that you have to pass the vertices from the domain! It will not work if you pass vertices different than those in the domain!</p>
+<p class="last">However, if you get the vertices from the domain and store them in other variables or pass them as parameters, it will still work, since the reference to the original vertex is preserved.</p>
+</div>
+<p>Thanks to <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Segment.make_cell" title="viennagrid.Segment.make_cell"><tt class="xref py py-meth docutils literal"><span class="pre">make_cell()</span></tt></a>, the cells are now created and stored in the segment. If you want, you can check that they&#8217;re there by reading the <a class="reference internal" href="../apiref/viennagrid.html#viennagrid.Segment.cells" title="viennagrid.Segment.cells"><tt class="xref py py-attr docutils literal"><span class="pre">cells</span></tt></a> attribute:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">seg0</span><span class="o">.</span><span class="n">cells</span><span class="p">()</span>
+<span class="go">[&lt;viennagrid.Cell at 0x34c0f90&gt;, &lt;viennagrid.Cell at 0x34cf210&gt;]</span>
+</pre></div>
+</div>
+<p>Now, you could even ask what vertices form any of the cells stored within the segment:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">seg0</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
+<span class="go">[&lt;viennagrid.Vertex at 0x34cf790&gt;,</span>
+<span class="go"> &lt;viennagrid.Vertex at 0x34cf050&gt;,</span>
+<span class="go"> &lt;viennagrid.Vertex at 0x34cf0d0&gt;]</span>
+</pre></div>
+</div>
+<p>and even show the coordinates of the cell&#8217;s vertices:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">seg0</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vertices</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">v</span><span class="o">.</span><span class="n">to_point</span><span class="p">()</span><span class="o">.</span><span class="n">coords</span>
+<span class="gp">...</span>
+<span class="go">[0.0, 0.0]</span>
+<span class="go">[1.0, 0.0]</span>
+<span class="go">[0.0, 1.0]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-to-do-next">
+<h2>3.1.5. What to do next<a class="headerlink" href="#what-to-do-next" title="Permalink to this headline">¶</a></h2>
+<p>You can find code examples on how to use <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> in the source code of ViennaGrid for Python, under the directory <cite>doc/examples/viennagrid/</cite>.</p>
+<p>Once you have your domain set up, you can apply to it any algorithm from <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid.algorithms" title="viennagrid.algorithms: Common algorithms on mesh elements"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.algorithms</span></tt></a>, associate scalar quantities to elements of the domain with <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid.accessors" title="viennagrid.accessors: Interface for storing scalar quantities in meshes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.accessors</span></tt></a>, or write the domain to a mesh file for data persistence using <a class="reference internal" href="../apiref/viennagrid.html#module-viennagrid.io" title="viennagrid.io: Input/output functions"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.io</span></tt></a>. For more information on how to use them, take a look at the <a class="reference internal" href="../apiref/viennagrid.html"><em>API reference of viennagrid</em></a> and the aforementioned code examples.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.1. Using <tt class="docutils literal"><span class="pre">viennagrid</span></tt></a><ul>
+<li><a class="reference internal" href="#defining-a-domain">3.1.1. Defining a domain</a></li>
+<li><a class="reference internal" href="#adding-vertices-to-a-domain">3.1.2. Adding vertices to a domain</a></li>
+<li><a class="reference internal" href="#subdividing-a-domain-into-segments">3.1.3. Subdividing a domain into segments</a></li>
+<li><a class="reference internal" href="#creating-cells-within-a-segment">3.1.4. Creating cells within a segment</a></li>
+<li><a class="reference internal" href="#what-to-do-next">3.1.5. What to do next</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../tutorial.html"
+                        title="previous chapter">3. Tutorials</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="viennagrid_wrapper.html"
+                        title="next chapter">3.2. Using <tt class="docutils literal docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/tutorial/viennagrid.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="viennagrid_wrapper.html" title="3.2. Using viennagrid.wrapper"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../tutorial.html" title="3. Tutorials"
+             >previous</a> |</li>
+        <li><a href="../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../tutorial.html" >3. Tutorials</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

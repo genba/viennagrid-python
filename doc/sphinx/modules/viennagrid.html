@@ -1,0 +1,673 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viennagrid &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for viennagrid</h1><div class="highlight"><pre>
+<span class="c">#-*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">wrapper</span>
+<span class="kn">import</span> <span class="nn">config</span>
+
+<span class="n">version</span> <span class="o">=</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">version</span>
+<span class="n">VERSION</span> <span class="o">=</span> <span class="n">version</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Point"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point">[docs]</a><span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents a point of any supported coordinate system and dimension.&quot;&quot;&quot;</span>
+	
+<div class="viewcode-block" id="Point.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Define a new point specifying its coordinate system, dimension and, optionally, coordinates.</span>
+<span class="sd">		</span>
+<span class="sd">		Args:</span>
+<span class="sd">			coordinates of the point (optional)</span>
+<span class="sd">		</span>
+<span class="sd">		Kwargs:</span>
+<span class="sd">			* coord_system: coordinate system tag (if omitted, cartesian is assumed)</span>
+<span class="sd">			* dim: dimension of the space (optional if coordinates are specified)</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		
+		<span class="nb">super</span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		
+		<span class="n">_coords</span> <span class="o">=</span> <span class="bp">None</span>
+		<span class="n">_coord_system</span> <span class="o">=</span> <span class="bp">None</span>
+		<span class="n">_dim</span> <span class="o">=</span> <span class="bp">None</span>
+		
+		<span class="c"># Extract coordinate system tag from keyword arguments or use default (cartesian)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">_coord_system</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;coord_system&#39;</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="n">_coord_system</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">CARTESIAN</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_coord_system</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Coordinate system tag must be a string.&#39;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">_coord_system</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">COORD_SYSTEM_TAGS</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unknown coordinate system tag.&#39;</span><span class="p">)</span>
+		
+		<span class="c"># If point coordinates (2 or 3 positional arguments) have been specified, store coordinates</span>
+		<span class="c"># and imply dimension of the space.</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">_coord_system</span><span class="p">]:</span>
+			<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">long</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span><span class="p">)):</span>
+					<span class="n">cls_name</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+					<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Coordinate </span><span class="si">%(i)d</span><span class="s"> is non-numeric. Point coordinates must be numeric, got an instance of &quot;</span><span class="si">%(cls_name)s</span><span class="s">&quot; instead.&#39;</span> <span class="o">%</span> <span class="nb">locals</span><span class="p">())</span>
+			<span class="n">_coords</span> <span class="o">=</span> <span class="n">args</span>
+			<span class="n">_dim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+			
+			<span class="c"># Check if keyword argument &#39;dim&#39; matches number of positional arguments (point coordinates).</span>
+			<span class="c"># If it matches or has not been specified, ignore. If it does not match, raise an exception.</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">dim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;dim&#39;</span><span class="p">]</span>
+			<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+				<span class="k">pass</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+					<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Dimension must be an integer.&#39;</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">dim</span> <span class="o">!=</span> <span class="n">_dim</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Keyword argument &quot;dim&quot; does not match number of positional arguments.&#39;</span><span class="p">)</span>
+				<span class="n">_dim</span> <span class="o">=</span> <span class="n">dim</span>
+		<span class="c"># If no positional arguments have been specified, initialize coordinates to zero and extract</span>
+		<span class="c"># dimension from keyword arguments. If no dimension has been specified, raise an exception.</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">dim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;dim&#39;</span><span class="p">]</span>
+			<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">_coord_system</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="n">_dim</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">_coord_system</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Space dimension has not been specified. You must either specify the dimension or the point coordinates.&#39;</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+					<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Dimension must be an integer.&#39;</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">dim</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">_coord_system</span><span class="p">]:</span>
+					<span class="n">coord_system_name</span> <span class="o">=</span> <span class="n">_coord_system</span>
+					<span class="n">supported_dims</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">_coord_system</span><span class="p">])</span>
+					<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unsupported dimension. Only the following dimensions are supported for </span><span class="si">%(coord_system_name)s</span><span class="s"> points: </span><span class="si">%(supported_dims)s</span><span class="s">.&#39;</span> <span class="o">%</span> <span class="nb">locals</span><span class="p">())</span>
+				<span class="n">_dim</span> <span class="o">=</span> <span class="n">dim</span>
+			<span class="n">_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">_dim</span><span class="p">)]</span>
+		<span class="c"># If an invalid number of positional arguments has been provided, raise an exception</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">coord_system_name</span> <span class="o">=</span> <span class="n">_coord_system</span>
+			<span class="n">supported_dims</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;0&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">_coord_system</span><span class="p">]])</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Point() for </span><span class="si">%(coord_system_name)s</span><span class="s"> points must take any of the following numbers of positional arguments: </span><span class="si">%(supported_dims)s</span><span class="s">.&#39;</span> <span class="o">%</span> <span class="nb">locals</span><span class="p">())</span>
+		
+		<span class="n">classname</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;Point&#39;</span><span class="p">,</span> <span class="n">_coord_system</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dim</span><span class="p">),</span> <span class="s">&#39;D&#39;</span><span class="p">])</span>
+		<span class="n">PointType</span> <span class="o">=</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="n">classname</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_point</span> <span class="o">=</span> <span class="n">PointType</span><span class="p">(</span><span class="o">*</span><span class="n">_coords</span><span class="p">)</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Point.coords"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.coords">[docs]</a>	<span class="k">def</span> <span class="nf">coords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return a list containing the coordinates of the point.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span><span class="o">.</span><span class="n">coords</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Point.coord_system"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.coord_system">[docs]</a>	<span class="k">def</span> <span class="nf">coord_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the coordinate system tag of the point as seen in :mod:`viennagrid.config`.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span><span class="o">.</span><span class="n">coord_system</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Point.dim"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.dim">[docs]</a>	<span class="k">def</span> <span class="nf">dim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the integer dimension of the space where the point is defined.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span><span class="o">.</span><span class="n">dim</span>
+	</div>
+<div class="viewcode-block" id="Point.__add__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.__add__">[docs]</a>	<span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Add two points.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">_point</span>
+	</div>
+<div class="viewcode-block" id="Point.__sub__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.__sub__">[docs]</a>	<span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Subtract two points.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">_point</span>
+	</div>
+<div class="viewcode-block" id="Point.__mul__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.__mul__">[docs]</a>	<span class="k">def</span> <span class="nf">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Multiply a point by a scalar number (coordinate-wise).&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span> <span class="o">*</span> <span class="n">scalar</span>
+	</div>
+<div class="viewcode-block" id="Point.__div__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.__div__">[docs]</a>	<span class="k">def</span> <span class="nf">__div__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Divide a point by a scalar number (coordinate-wise).&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span> <span class="o">/</span> <span class="n">scalar</span>
+	</div>
+<div class="viewcode-block" id="Point.__neg__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.__neg__">[docs]</a>	<span class="k">def</span> <span class="nf">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Negate a point (i.e. negate each coordinate of the point).&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_point</span>
+	</div>
+<div class="viewcode-block" id="Point.__getattr__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Point.__getattr__">[docs]</a>	<span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		If the requested attribute is not present in this class, try to get it from</span>
+<span class="sd">		the low-level point class. This serves the purpose of calling the methods for</span>
+<span class="sd">		coordinate system conversion and norm computation:</span>
+<span class="sd">		</span>
+<span class="sd">		* to_cartesian()</span>
+<span class="sd">		* to_cylindrical()</span>
+<span class="sd">		* to_polar()</span>
+<span class="sd">		* to_spherical()</span>
+<span class="sd">		* norm_1()</span>
+<span class="sd">		* norm_2()</span>
+<span class="sd">		* norm_inf()</span>
+<span class="sd">		</span>
+<span class="sd">		Please, notice that not of all these methods are present in all point classes,</span>
+<span class="sd">		but only the applicable ones. Refer to the :doc:`viennagrid_wrapper` for</span>
+<span class="sd">		more information on what methods each low-level class provides.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="Domain"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain">[docs]</a><span class="k">class</span> <span class="nc">Domain</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents a domain of any supported domain configuration.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Domain.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new domain with the given configuration.</span>
+<span class="sd">		</span>
+<span class="sd">		:param config: Configuration on which the new domain should be based.</span>
+<span class="sd">		:type config: :class:`viennagrid.config.Configuration`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Domain</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_config</span> <span class="o">=</span> <span class="n">config</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_domain</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">make_domain</span><span class="p">()</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Domain.config"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain.config">[docs]</a>	<span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return the configuration object of this domain (instance of</span>
+<span class="sd">		:class:`viennagrid.config.Configuration`).</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Domain.vertices"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain.vertices">[docs]</a>	<span class="k">def</span> <span class="nf">vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return an object that allows you to access the list of all vertices contained in the domain.</span>
+<span class="sd">		</span>
+<span class="sd">		This object provides the following methods:</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __call__()</span>
+<span class="sd">		</span>
+<span class="sd">			This returns a Python list containing all the vertices of the domain, in ascending order of indices: ::</span>
+<span class="sd">			</span>
+<span class="sd">				vertex_list = domain.vertices()</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __len__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get  the number of vertices in the domain as though it were a Python list: ::</span>
+<span class="sd">			</span>
+<span class="sd">				num_vertices = len(domain.vertices)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __iter__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get an iterator over the vertices of the domain like this: ::</span>
+<span class="sd">			</span>
+<span class="sd">				iterator = iter(domain.vertices)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __getitem__(index)</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to access each vertex by its index using bracket notation: ::</span>
+<span class="sd">			</span>
+<span class="sd">				v0 = domain.vertices[0]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">class</span> <span class="nc">VertexList</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+			<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_domain</span> <span class="o">=</span> <span class="n">domain</span>
+			<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="p">[</span><span class="n">Vertex</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">vertices</span><span class="p">]</span>
+			<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">num_vertices</span>
+			<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+					<span class="k">yield</span> <span class="n">Vertex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+			<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">Vertex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">VertexList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="p">)</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Domain.cells"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain.cells">[docs]</a>	<span class="k">def</span> <span class="nf">cells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return an object that allows you to access the list of all cells contained in the domain.</span>
+<span class="sd">		</span>
+<span class="sd">		This object provides the following methods:</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __call__()</span>
+<span class="sd">		</span>
+<span class="sd">			This returns a Python list containing all the cells of the domain, in ascending order of indices: ::</span>
+<span class="sd">			</span>
+<span class="sd">				cell_list = domain.cells()</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __len__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get  the number of cells in the domain as though it were a Python list: ::</span>
+<span class="sd">			</span>
+<span class="sd">				num_cells = len(domain.cells)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __iter__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get an iterator over the cells of the domain like this: ::</span>
+<span class="sd">			</span>
+<span class="sd">				iterator = iter(domain.cells)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __getitem__(index)</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to access each cell by its index using bracket notation: ::</span>
+<span class="sd">			</span>
+<span class="sd">				s0 = domain.cells[0]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">class</span> <span class="nc">CellList</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+			<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_domain</span> <span class="o">=</span> <span class="n">domain</span>
+			<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="p">[</span><span class="n">Cell</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">cells</span><span class="p">]</span>
+			<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">num_cells</span>
+			<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">Cell</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+			<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">Cell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">CellList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="p">)</span>
+	</div>
+<div class="viewcode-block" id="Domain.make_vertex"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain.make_vertex">[docs]</a>	<span class="k">def</span> <span class="nf">make_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new vertex in the domain with the coordinates of the given point.</span>
+<span class="sd">		This method doesn&#39;t return the newly created vertex.</span>
+<span class="sd">		</span>
+<span class="sd">		The point and its coordinates will be copied, the point will not be referenced itself.</span>
+<span class="sd">		</span>
+<span class="sd">		:param point: Point on which to base the vertex.</span>
+<span class="sd">		:type point: :class:`viennagrid.Point`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">_point</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">point_type</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">make_vertex</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">_point</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;wrong point type&#39;</span><span class="p">)</span> <span class="c"># TODO: make error message more descriptive</span>
+	</div>
+<div class="viewcode-block" id="Domain.make_cell"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain.make_cell">[docs]</a>	<span class="k">def</span> <span class="nf">make_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new cell in the domain and return it.</span>
+<span class="sd">		</span>
+<span class="sd">		As positional parameters you must pass as many vertices (:class:`~viennagrid.Vertex` objects) as needed to define a cell of the type and dimension of the domain.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: A :class:`~viennagrid.Cell` object --- the newly created cell</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">vertex</span><span class="o">.</span><span class="n">_vertex</span> <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+		<span class="k">return</span> <span class="n">Cell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">make_cell</span><span class="p">(</span><span class="o">*</span><span class="n">vertices</span><span class="p">))</span>
+	</div>
+<div class="viewcode-block" id="Domain.__iter__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Domain.__iter__">[docs]</a>	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return a generator object to iterate over all the vertices contained in the domain.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: A generator over all the vertices of the domain</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="o">.</span><span class="n">vertices</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="n">Vertex</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+	</div>
+	<span class="k">def</span> <span class="nf">_make_segmentation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new segmentation object and return.</span>
+<span class="sd">		This is a helper method intended for internal use only.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">make_segmentation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Segmentation"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segmentation">[docs]</a><span class="k">class</span> <span class="nc">Segmentation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents a segmentation of a wrapped domain.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Segmentation.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segmentation.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new segmentation of the given domain.</span>
+<span class="sd">		</span>
+<span class="sd">		:param domain: Domain on which to base the segmentation.</span>
+<span class="sd">		:type domain: :class:`viennagrid.Domain`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Segmentation</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_domain</span> <span class="o">=</span> <span class="n">domain</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">_make_segmentation</span><span class="p">()</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Segmentation.domain"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segmentation.domain">[docs]</a>	<span class="k">def</span> <span class="nf">domain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the domain to which this segmentation corresponds.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Segmentation.segments"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segmentation.segments">[docs]</a>	<span class="k">def</span> <span class="nf">segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return an object that allows you to access the list of all segments contained in the segmentation.</span>
+<span class="sd">		</span>
+<span class="sd">		This object provides the following methods:</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __call__()</span>
+<span class="sd">		</span>
+<span class="sd">			This returns a Python list containing all the segments of the segmentation, in ascending order of indices: ::</span>
+<span class="sd">			</span>
+<span class="sd">				segment_list = segmentation.segments()</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __len__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get  the number of segments in the segmentation as though it were a Python list: ::</span>
+<span class="sd">			</span>
+<span class="sd">				num_segments = len(segmentation.segments)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __iter__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get an iterator over the segments of the segmentation like this: ::</span>
+<span class="sd">			</span>
+<span class="sd">				iterator = iter(segmentation.segments)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __getitem__(index)</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to access each segment by its index using bracket notation: ::</span>
+<span class="sd">			</span>
+<span class="sd">				s0 = segmentation.segments[0]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">class</span> <span class="nc">SegmentList</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+			<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segmentation</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span> <span class="o">=</span> <span class="n">segmentation</span>
+			<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="p">[</span><span class="n">Segment</span><span class="p">(</span><span class="n">seg</span><span class="p">)</span> <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">]</span>
+			<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span><span class="o">.</span><span class="n">num_segments</span>
+			<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">Segment</span><span class="p">(</span><span class="n">seg</span><span class="p">)</span>
+			<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">Segment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">SegmentList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span><span class="p">)</span>
+	</div>
+<div class="viewcode-block" id="Segmentation.make_segment"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segmentation.make_segment">[docs]</a>	<span class="k">def</span> <span class="nf">make_segment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new segment in the segmentation and return it.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: A :class:`~viennagrid.Segment` object --- the newly created segment</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">Segment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span><span class="o">.</span><span class="n">make_segment</span><span class="p">())</span>
+	</div>
+<div class="viewcode-block" id="Segmentation.__iter__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segmentation.__iter__">[docs]</a>	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return a generator object to iterate over all the segments contained in the segmentation.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: A generator over all the segments of the segmentation</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="n">Segment</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="Segment"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segment">[docs]</a><span class="k">class</span> <span class="nc">Segment</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents a segment contained in a segmentation.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Segment.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segment.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segment</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new segment based on the given low-level ViennaGrid segment.</span>
+<span class="sd">		</span>
+<span class="sd">		:param segment: Low-level ViennaGrid segment to be wrapped in this high-level object.</span>
+<span class="sd">		:type segment: Low-level segment type from :mod:`viennagrid.wrapper`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Segment</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_segment</span> <span class="o">=</span> <span class="n">segment</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Segment.cells"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segment.cells">[docs]</a>	<span class="k">def</span> <span class="nf">cells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return an object that allows you to access the list of all cells contained in the segment.</span>
+<span class="sd">		</span>
+<span class="sd">		This object provides the following methods:</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __call__()</span>
+<span class="sd">		</span>
+<span class="sd">			This returns a Python list containing all the cells of the segment, in ascending order of indices: ::</span>
+<span class="sd">			</span>
+<span class="sd">				cell_list = segment.cells()</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __len__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get  the number of cells in the segment as though it were a Python list: ::</span>
+<span class="sd">			</span>
+<span class="sd">				num_cells = len(segment.cells)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __iter__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get an iterator over the cells of the segment like this: ::</span>
+<span class="sd">			</span>
+<span class="sd">				iterator = iter(segment.cells)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __getitem__(index)</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to access each cell by its index using bracket notation: ::</span>
+<span class="sd">			</span>
+<span class="sd">				s0 = segment.cells[0]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">class</span> <span class="nc">CellList</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+			<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segment</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_segment</span> <span class="o">=</span> <span class="n">segment</span>
+			<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="p">[</span><span class="n">Cell</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segment</span><span class="o">.</span><span class="n">cells</span><span class="p">]</span>
+			<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segment</span><span class="o">.</span><span class="n">num_cells</span>
+			<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segment</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">Cell</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+			<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">Cell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_segment</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">CellList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_segment</span><span class="p">)</span>
+	</div>
+<div class="viewcode-block" id="Segment.make_cell"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segment.make_cell">[docs]</a>	<span class="k">def</span> <span class="nf">make_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new cell in the segment and return it.</span>
+<span class="sd">		</span>
+<span class="sd">		As positional parameters you must pass as many vertices (:class:`~viennagrid.Vertex` objects) as needed to define a cell of the type and dimension of the domain.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: A :class:`~viennagrid.Cell` object --- the newly created cell</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">vertex</span><span class="o">.</span><span class="n">_vertex</span> <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+		<span class="k">return</span> <span class="n">Cell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_segment</span><span class="o">.</span><span class="n">make_cell</span><span class="p">(</span><span class="o">*</span><span class="n">vertices</span><span class="p">))</span>
+	</div>
+<div class="viewcode-block" id="Segment.__iter__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Segment.__iter__">[docs]</a>	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return a generator object to iterate over all the cells contained in the segment.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: A generator over all the cells of the segment</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_segment</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="n">Cell</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="Cell"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Cell">[docs]</a><span class="k">class</span> <span class="nc">Cell</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents a cell.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Cell.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Cell.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new cell based on the given low-level ViennaGrid cell.</span>
+<span class="sd">		</span>
+<span class="sd">		:param cell: Low-level ViennaGrid cell to be wrapped in this high-level object.</span>
+<span class="sd">		:type cell: Low-level cell type from :mod:`viennagrid.wrapper`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Cell</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cell</span> <span class="o">=</span> <span class="n">cell</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Cell.vertices"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Cell.vertices">[docs]</a>	<span class="k">def</span> <span class="nf">vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return an object that allows you to access the list of all vertices that form the cell.</span>
+<span class="sd">		</span>
+<span class="sd">		This object provides the following methods:</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __call__()</span>
+<span class="sd">		</span>
+<span class="sd">			This returns a Python list containing all the vertices of the cell, in ascending order of indices: ::</span>
+<span class="sd">			</span>
+<span class="sd">				vertex_list = cell.vertices()</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __len__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get  the number of vertices in the cell as though it were a Python list: ::</span>
+<span class="sd">			</span>
+<span class="sd">				num_vertices = len(cell.vertices)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __iter__()</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to get an iterator over the vertices of the cell like this: ::</span>
+<span class="sd">			</span>
+<span class="sd">				iterator = iter(cell.vertices)</span>
+<span class="sd">		</span>
+<span class="sd">		.. method:: __getitem__(index)</span>
+<span class="sd">		</span>
+<span class="sd">			This allows you to access each vertex by its index using bracket notation: ::</span>
+<span class="sd">			</span>
+<span class="sd">				s0 = cell.vertices[0]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">class</span> <span class="nc">VertexList</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+			<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_cell</span> <span class="o">=</span> <span class="n">cell</span>
+			<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="p">[</span><span class="n">Vertex</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">]</span>
+			<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="o">.</span><span class="n">num_vertices</span>
+			<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">Vertex</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+			<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">Vertex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">VertexList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="p">)</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Cell.facets"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Cell.facets">[docs]</a>	<span class="k">def</span> <span class="nf">facets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return a list containing the facets of the cell.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="o">.</span><span class="n">facets</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Cell.edges"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Cell.edges">[docs]</a>	<span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return a list containing the edges of the cell.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="o">.</span><span class="n">facets</span>
+	</div>
+<div class="viewcode-block" id="Cell.__iter__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Cell.__iter__">[docs]</a>	<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return a generator object to iterate over all the vertices that form the cell.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: A generator over all the vertices of the cell</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="n">Vertex</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="Vertex"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Vertex">[docs]</a><span class="k">class</span> <span class="nc">Vertex</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents a vertex.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Vertex.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Vertex.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertex</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new vertex based on the given low-level ViennaGrid vertex.</span>
+<span class="sd">		</span>
+<span class="sd">		:param vertex: Low-level ViennaGrid vertex to be wrapped in this high-level object.</span>
+<span class="sd">		:type vertex: Low-level vertex type from :mod:`viennagrid.wrapper`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Vertex</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_vertex</span> <span class="o">=</span> <span class="n">vertex</span>
+	</div>
+<div class="viewcode-block" id="Vertex.to_point"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Vertex.to_point">[docs]</a>	<span class="k">def</span> <span class="nf">to_point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Convert this vertex to a point.</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: :class:`viennagrid.Point`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">low_level_point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vertex</span><span class="o">.</span><span class="n">to_point</span><span class="p">()</span>
+		<span class="n">coords</span> <span class="o">=</span> <span class="n">low_level_point</span><span class="o">.</span><span class="n">coords</span>
+		<span class="n">coord_system</span> <span class="o">=</span> <span class="n">low_level_point</span><span class="o">.</span><span class="n">coord_system</span>
+		<span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">,</span> <span class="n">coord_system</span><span class="o">=</span><span class="n">coord_system</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="Facet"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Facet">[docs]</a><span class="k">class</span> <span class="nc">Facet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents a facet of a cell.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Facet.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Facet.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">facet</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new facet based on the given low-level ViennaGrid facet.</span>
+<span class="sd">		</span>
+<span class="sd">		:param facet: Low-level ViennaGrid facet to be wrapped in this high-level object.</span>
+<span class="sd">		:type facet: Low-level facet type from :mod:`viennagrid.wrapper`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Facet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_facet</span> <span class="o">=</span> <span class="n">facet</span>
+</div></div>
+<div class="viewcode-block" id="Edge"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Edge">[docs]</a><span class="k">class</span> <span class="nc">Edge</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Wrapper class that represents an edge of a cell.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Edge.__init__"><a class="viewcode-back" href="../apiref/viennagrid.html#viennagrid.Edge.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edge</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new edge based on the given low-level ViennaGrid edge.</span>
+<span class="sd">		</span>
+<span class="sd">		:param edge: Low-level ViennaGrid edge to be wrapped in this high-level object.</span>
+<span class="sd">		:type edge: Low-level edge type from :mod:`viennagrid.wrapper`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Edge</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_edge</span> <span class="o">=</span> <span class="n">edge</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

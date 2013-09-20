@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. API reference &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="4.1. API reference of viennagrid" href="apiref/viennagrid.html" />
+    <link rel="prev" title="3.2. Using viennagrid.wrapper" href="tutorial/viennagrid_wrapper.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apiref/viennagrid.html" title="4.1. API reference of viennagrid"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tutorial/viennagrid_wrapper.html" title="3.2. Using viennagrid.wrapper"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="api-reference">
+<h1>4. API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apiref/viennagrid.html">4.1. API reference of <tt class="docutils literal"><span class="pre">viennagrid</span></tt></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid">4.1.1. <tt class="docutils literal"><span class="pre">viennagrid</span></tt> &#8212; Fundamental classes for mesh representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.config">4.1.2. <tt class="docutils literal"><span class="pre">viennagrid.config</span></tt> &#8212; Configuration classes for domain definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apiref/viennagrid.html#coordinate-system-tags-and-supported-dimensions">4.1.2.1. Coordinate system tags and supported dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apiref/viennagrid.html#cell-tags">4.1.2.2. Cell tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apiref/viennagrid.html#common-configurations">4.1.2.3. Common configurations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.algorithms">4.1.3. <tt class="docutils literal"><span class="pre">viennagrid.algorithms</span></tt> &#8212; Common algorithms on mesh elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.io">4.1.4. <tt class="docutils literal"><span class="pre">viennagrid.io</span></tt> &#8212; Input/output functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.accessors">4.1.5. <tt class="docutils literal"><span class="pre">viennagrid.accessors</span></tt> &#8212; Interface for storing scalar quantities in meshes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/viennagrid_wrapper.html">4.2. API reference of <tt class="docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#points">4.2.1. Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#domains">4.2.2. Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#segmentations">4.2.3. Segmentations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#segments">4.2.4. Segments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#cells">4.2.5. Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#vertices">4.2.6. Vertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#facets">4.2.7. Facets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#edges">4.2.8. Edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref/viennagrid_wrapper.html#free-functions">4.2.9. Free functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apiref/viennagrid_wrapper.html#input-output-functions">4.2.9.1. Input/output functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apiref/viennagrid_wrapper.html#algorithms">4.2.9.2. Algorithms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tutorial/viennagrid_wrapper.html"
+                        title="previous chapter">3.2. Using <tt class="docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apiref/viennagrid.html"
+                        title="next chapter">4.1. API reference of <tt class="docutils literal"><span class="pre">viennagrid</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/apiref.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apiref/viennagrid.html" title="4.1. API reference of viennagrid"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tutorial/viennagrid_wrapper.html" title="3.2. Using viennagrid.wrapper"
+             >previous</a> |</li>
+        <li><a href="index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

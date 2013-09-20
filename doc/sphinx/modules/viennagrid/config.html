@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viennagrid.config &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="../../index.html" />
+    <link rel="up" title="viennagrid" href="../viennagrid.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../viennagrid.html" accesskey="U">viennagrid</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for viennagrid.config</h1><div class="highlight"><pre>
+<span class="c">#-*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">wrapper</span> <span class="kn">as</span> <span class="nn">_wrapper</span>
+
+<span class="c">##########################</span>
+<span class="c"># COORDINATE SYSTEM TAGS #</span>
+<span class="c">##########################</span>
+
+<span class="n">CARTESIAN</span>   <span class="o">=</span> <span class="s">&#39;cartesian&#39;</span>
+<span class="n">POLAR</span>       <span class="o">=</span> <span class="s">&#39;polar&#39;</span>
+<span class="n">SPHERICAL</span>   <span class="o">=</span> <span class="s">&#39;spherical&#39;</span>
+<span class="n">CYLINDRICAL</span> <span class="o">=</span> <span class="s">&#39;cylindrical&#39;</span>
+
+<span class="n">COORD_SYSTEM_TAGS</span> <span class="o">=</span> <span class="p">(</span><span class="n">CARTESIAN</span><span class="p">,</span> <span class="n">POLAR</span><span class="p">,</span> <span class="n">SPHERICAL</span><span class="p">,</span> <span class="n">CYLINDRICAL</span><span class="p">)</span>
+
+<span class="c">########################</span>
+<span class="c"># SUPPORTED DIMENSIONS #</span>
+<span class="c">########################</span>
+
+<span class="n">SUPPORTED_DIMENSIONS</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">CARTESIAN</span><span class="p">:</span>      <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+	<span class="n">CYLINDRICAL</span><span class="p">:</span>    <span class="p">(</span><span class="mi">3</span><span class="p">,),</span>
+	<span class="n">POLAR</span><span class="p">:</span>          <span class="p">(</span><span class="mi">2</span><span class="p">,),</span>
+	<span class="n">SPHERICAL</span><span class="p">:</span>      <span class="p">(</span><span class="mi">3</span><span class="p">,),</span>
+<span class="p">}</span>
+
+<span class="c">#############</span>
+<span class="c"># CELL TAGS #</span>
+<span class="c">#############</span>
+
+<span class="n">LINE_TAG</span>          <span class="o">=</span> <span class="s">&#39;linear&#39;</span>
+<span class="n">TRIANGLE_TAG</span>      <span class="o">=</span> <span class="s">&#39;triangular&#39;</span>
+<span class="n">TETRAHEDRON_TAG</span>   <span class="o">=</span> <span class="s">&#39;tetrahedral&#39;</span>
+<span class="n">QUADRILATERAL_TAG</span> <span class="o">=</span> <span class="s">&#39;quadrilateral&#39;</span>
+<span class="n">HEXAHEDRON_TAG</span>    <span class="o">=</span> <span class="s">&#39;hexahedral&#39;</span>
+
+<span class="n">CELL_TAGS</span> <span class="o">=</span> <span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">TRIANGLE_TAG</span><span class="p">,</span> <span class="n">TETRAHEDRON_TAG</span><span class="p">,</span> <span class="n">QUADRILATERAL_TAG</span><span class="p">,</span> <span class="n">HEXAHEDRON_TAG</span><span class="p">)</span>
+
+<span class="c">#######################</span>
+<span class="c"># CONFIGURATION CLASS #</span>
+<span class="c">#######################</span>
+
+<div class="viewcode-block" id="Configuration"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration">[docs]</a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	This class stores the necessary information to characterize the configuration of a domain:</span>
+<span class="sd">	</span>
+<span class="sd">	* numeric type (data type used for number representation)</span>
+<span class="sd">	* coordinate system</span>
+<span class="sd">	* dimension of the space</span>
+<span class="sd">	* cell tag (string that identifies which type of cell the domain consists of)</span>
+<span class="sd">	</span>
+<span class="sd">	and provides useful functions for retrieving the appropriate types for points, domains and segmentations.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell_tag</span><span class="p">,</span> <span class="n">coord_system</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">Configuration</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+		
+		<span class="c"># Set numeric_type to double</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_numeric_type</span> <span class="o">=</span> <span class="s">&#39;double&#39;</span>
+		
+		<span class="c"># Set cell_tag</span>
+		<span class="k">if</span> <span class="n">cell_tag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CELL_TAGS</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unsupported cell tag&#39;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cell_tag</span> <span class="o">=</span> <span class="n">cell_tag</span>
+		
+		<span class="c"># Set coord_system</span>
+		<span class="k">if</span> <span class="n">coord_system</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">COORD_SYSTEM_TAGS</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unsupported coordinate system tag&#39;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_coord_system</span> <span class="o">=</span> <span class="n">coord_system</span>
+		
+		<span class="c"># Set dim</span>
+		<span class="k">if</span> <span class="n">dim</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Dimension must be an integer&#39;</span><span class="p">)</span>
+			
+			<span class="k">if</span> <span class="n">dim</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">coord_system</span><span class="p">]:</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unsupported dimension: </span><span class="si">%(dim)s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="nb">locals</span><span class="p">())</span>
+			
+			<span class="bp">self</span><span class="o">.</span><span class="n">_dim</span> <span class="o">=</span> <span class="n">dim</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">coord_system</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_dim</span> <span class="o">=</span> <span class="n">SUPPORTED_DIMENSIONS</span><span class="p">[</span><span class="n">coord_system</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Dimension has not been specified&#39;</span><span class="p">)</span>
+	
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Configuration.numeric_type"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.numeric_type">[docs]</a>	<span class="k">def</span> <span class="nf">numeric_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the data type used for number representation (this is always the string `&#39;double&#39;`).&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_numeric_type</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Configuration.coord_system"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.coord_system">[docs]</a>	<span class="k">def</span> <span class="nf">coord_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the coordinate system tag.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coord_system</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Configuration.cell_tag"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.cell_tag">[docs]</a>	<span class="k">def</span> <span class="nf">cell_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the cell tag.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell_tag</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Configuration.dim"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.dim">[docs]</a>	<span class="k">def</span> <span class="nf">dim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the dimension of the space as an integer.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dim</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Configuration.point_type"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.point_type">[docs]</a>	<span class="k">def</span> <span class="nf">point_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return appropriate point type based on this configuration</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: Low-level point type</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">classname</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;Point&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">coord_system</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span> <span class="s">&#39;D&#39;</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">_wrapper</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="n">classname</span><span class="p">)</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Configuration.domain_type"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.domain_type">[docs]</a>	<span class="k">def</span> <span class="nf">domain_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return appropriate domain type based on this configuration</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: Low-level domain type</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">classname</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_tag</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">coord_system</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span> <span class="s">&#39;D_Domain&#39;</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">_wrapper</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="n">classname</span><span class="p">)</span>
+	</div>
+	<span class="nd">@property</span>
+<div class="viewcode-block" id="Configuration.segmentation_type"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.segmentation_type">[docs]</a>	<span class="k">def</span> <span class="nf">segmentation_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Return appropriate segmentation type based on this configuration</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: Low-level segmentation type</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">classname</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_tag</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">coord_system</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span> <span class="s">&#39;D_Segmentation&#39;</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">_wrapper</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="n">classname</span><span class="p">)</span>
+	</div>
+<div class="viewcode-block" id="Configuration.make_point"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.make_point">[docs]</a>	<span class="k">def</span> <span class="nf">make_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new low-level (:mod:`viennagrid.wrapper`) point based on this configuration</span>
+<span class="sd">		</span>
+<span class="sd">		As arguments you can pass the coordinates of the point to create, or nothing at all.</span>
+<span class="sd">		If you specify the coordinates of the point, the number of arguments must match the dimension of the space</span>
+<span class="sd">		(i.e. the number of coordinates that the are needed to describe the location of the point in the space).</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: Low-level point</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">PointType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">point_type</span>
+		<span class="k">return</span> <span class="n">PointType</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+	</div>
+<div class="viewcode-block" id="Configuration.make_domain"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.make_domain">[docs]</a>	<span class="k">def</span> <span class="nf">make_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new low-level (:mod:`viennagrid.wrapper`) domain based on this configuration</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: Low-level domain</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">DomainType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">domain_type</span>
+		<span class="k">return</span> <span class="n">DomainType</span><span class="p">()</span>
+	</div>
+<div class="viewcode-block" id="Configuration.make_segmentation"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.make_segmentation">[docs]</a>	<span class="k">def</span> <span class="nf">make_segmentation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new low-level (:mod:`viennagrid.wrapper`) segmentation based on this configuration.</span>
+<span class="sd">		</span>
+<span class="sd">		:param domain: Domain on which to base the segmentation.</span>
+<span class="sd">		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: Low-level segmentation</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">SegmentationType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segmentation_type</span>
+		<span class="k">return</span> <span class="n">SegmentationType</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+	</div>
+<div class="viewcode-block" id="Configuration.make_accessor"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.config.Configuration.make_accessor">[docs]</a>	<span class="k">def</span> <span class="nf">make_accessor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">accessor_type</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new low-level (:mod:`viennagrid.wrapper`) accessor or field based on this configuration.</span>
+<span class="sd">		</span>
+<span class="sd">		:param domain: Domain on which to base the segmentation.</span>
+<span class="sd">		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class</span>
+<span class="sd">		</span>
+<span class="sd">		:returns: Low-level accessors or field</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">classname</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_tag</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">coord_system</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span> <span class="s">&#39;D_&#39;</span><span class="p">,</span> <span class="n">accessor_type</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="s">&#39;_Accessor&#39;</span><span class="p">])</span>
+		<span class="n">cls</span> <span class="o">=</span> <span class="n">_wrapper</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="n">classname</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">cls</span><span class="p">()</span>
+
+<span class="c">#########################</span>
+<span class="c"># COMMON CONFIGURATIONS #</span>
+<span class="c">#########################</span>
+</div></div>
+<span class="n">linear_1d</span>        <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">linear_2d</span>        <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">linear_3d</span>        <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">triangular_2d</span>    <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">TRIANGLE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">triangular_3d</span>    <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">TRIANGLE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">tetrahedral_3d</span>   <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">TETRAHEDRON_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">quadrilateral_2d</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">QUADRILATERAL_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">quadrilateral_3d</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">QUADRILATERAL_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">hexahedral_3d</span>    <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">HEXAHEDRON_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../viennagrid.html" >viennagrid</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

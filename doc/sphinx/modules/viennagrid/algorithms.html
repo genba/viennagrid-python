@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>viennagrid.algorithms &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="../../index.html" />
+    <link rel="up" title="viennagrid" href="../viennagrid.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../viennagrid.html" accesskey="U">viennagrid</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for viennagrid.algorithms</h1><div class="highlight"><pre>
+<span class="c">#-*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">viennagrid</span>
+
+<span class="n">_SUPPORTED_NORMS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;inf&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="inner_prod"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.inner_prod">[docs]</a><span class="k">def</span> <span class="nf">inner_prod</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Compute the inner product of two vectors (represented by points).</span>
+<span class="sd">	</span>
+<span class="sd">	:param point1: First point</span>
+<span class="sd">	:type point1: :class:`viennagrid.Point`</span>
+<span class="sd">	:param point2: Second point</span>
+<span class="sd">	:type point2: :class:`viennagrid.Point`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: float --- the result of the inner product</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">point1</span> <span class="o">=</span> <span class="n">point1</span><span class="o">.</span><span class="n">_point</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;paramater at position 1 is not a valid point&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">point2</span> <span class="o">=</span> <span class="n">point2</span><span class="o">.</span><span class="n">_point</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;paramater at position 1 is not a valid point&#39;</span><span class="p">)</span>
+	
+	<span class="c"># Try to get method &#39;inner_prod&#39; from &#39;point1&#39;. If it doesn&#39;t have the method,</span>
+	<span class="c"># it means it&#39;s not a cartesian point. Thus, convert to cartesian coordinates</span>
+	<span class="c"># and get the method. If it still doesn&#39;t have the method, raise an exception.</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">inner_prod_fn</span> <span class="o">=</span> <span class="n">point1</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="s">&#39;inner_prod&#39;</span><span class="p">)</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="n">casted_pnt1</span> <span class="o">=</span> <span class="n">point1</span><span class="o">.</span><span class="n">to_cartesian</span><span class="p">()</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">inner_prod_fn</span> <span class="o">=</span> <span class="n">casted_pnt1</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="s">&#39;inner_prod&#39;</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;point1 has no method named inner_prod&#39;</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">casted_pnt1</span> <span class="o">=</span> <span class="n">point1</span>
+	
+	<span class="c"># If point types are equal, simply calculate the inner product. If they&#39;re not</span>
+	<span class="c"># equal, try to convert &#39;point2&#39; to the type of &#39;point1&#39;. If types are still</span>
+	<span class="c"># different, it means that both points are of incompatible types</span>
+	<span class="c"># (i.e. incompatible dimensions).</span>
+	<span class="k">if</span> <span class="n">casted_pnt1</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">is</span> <span class="n">point2</span><span class="o">.</span><span class="n">__class__</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">inner_prod_fun</span><span class="p">(</span><span class="n">point2</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">casted_pnt2</span> <span class="o">=</span> <span class="n">point2</span><span class="o">.</span><span class="n">to_cartesian</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">casted_pnt1</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">is</span> <span class="n">casted_pnt2</span><span class="o">.</span><span class="n">__class__</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">inner_prod_fun</span><span class="p">(</span><span class="n">casted_pnt2</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;incompatible point types&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="cross_prod"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.cross_prod">[docs]</a><span class="k">def</span> <span class="nf">cross_prod</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Compute the cross product of two vectors (represented by points).</span>
+<span class="sd">	</span>
+<span class="sd">	:param point1: First point</span>
+<span class="sd">	:type point1: :class:`viennagrid.Point`</span>
+<span class="sd">	:param point2: Second point</span>
+<span class="sd">	:type point2: :class:`viennagrid.Point`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: :class:`viennagrid.Point` --- the result of the cross product</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">point1</span> <span class="o">=</span> <span class="n">point1</span><span class="o">.</span><span class="n">_point</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;paramater at position 1 is not a valid point&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">point2</span> <span class="o">=</span> <span class="n">point2</span><span class="o">.</span><span class="n">_point</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;paramater at position 1 is not a valid point&#39;</span><span class="p">)</span>
+	
+	<span class="c"># Try to get method &#39;cross_prod&#39; from &#39;point1&#39;. If it doesn&#39;t have the method,</span>
+	<span class="c"># it means it&#39;s not a cartesian point. Thus, convert to cartesian coordinates</span>
+	<span class="c"># and get the method. If it still doesn&#39;t have the method, raise an exception.</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">cross_prod_fn</span> <span class="o">=</span> <span class="n">point1</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="s">&#39;cross_prod&#39;</span><span class="p">)</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="n">casted_pnt1</span> <span class="o">=</span> <span class="n">point1</span><span class="o">.</span><span class="n">to_cartesian</span><span class="p">()</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">cross_prod_fn</span> <span class="o">=</span> <span class="n">casted_pnt1</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="s">&#39;cross_prod&#39;</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;point1 has no method named cross_prod&#39;</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">casted_pnt1</span> <span class="o">=</span> <span class="n">point1</span>
+	
+	<span class="c"># If point types are equal, simply calculate the cross product. If they&#39;re not</span>
+	<span class="c"># equal, try to convert &#39;point2&#39; to the type of &#39;point1&#39;. If types are still</span>
+	<span class="c"># different, it means that both points are of incompatible types</span>
+	<span class="c"># (i.e. incompatible dimensions).</span>
+	<span class="k">if</span> <span class="n">casted_pnt1</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">is</span> <span class="n">point2</span><span class="o">.</span><span class="n">__class__</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">cross_prod_fn</span><span class="p">(</span><span class="n">point2</span><span class="p">))</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">casted_pnt2</span> <span class="o">=</span> <span class="n">point2</span><span class="o">.</span><span class="n">to_cartesian</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">casted_pnt1</span><span class="o">.</span><span class="n">__class__</span> <span class="ow">is</span> <span class="n">casted_pnt2</span><span class="o">.</span><span class="n">__class__</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">cross_prod_fn</span><span class="p">(</span><span class="n">casted_pnt2</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;incompatible point types&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="norm"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.norm">[docs]</a><span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Compute the norm of a vector (represented by a point).</span>
+<span class="sd">	</span>
+<span class="sd">	:param point: Point</span>
+<span class="sd">	:type point: :class:`viennagrid.Point`</span>
+<span class="sd">	</span>
+<span class="sd">	:param norm_type: Norm to calculate (at this time only 1, 2 and &#39;inf&#39; are supported).</span>
+<span class="sd">	:type norm_type: int or str</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: float --- the norm of the vector</span>
+<span class="sd">	:raises: ValueError, TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">_point</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;paramater at position 1 is not a valid point&#39;</span><span class="p">)</span>
+	
+	<span class="n">norm_type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">norm_type</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">norm_type</span> <span class="ow">in</span> <span class="n">_SUPPORTED_NORMS</span><span class="p">:</span>
+		<span class="n">norm_fn</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="s">&#39;norm_</span><span class="si">%(norm_type)s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="nb">locals</span><span class="p">())</span>
+		<span class="k">return</span> <span class="n">norm_fn</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;unsupported norm type: </span><span class="si">%(norm_type)s</span><span class="s">&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="apply_voronoi"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.apply_voronoi">[docs]</a><span class="k">def</span> <span class="nf">apply_voronoi</span><span class="p">(</span><span class="n">dom</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Compute Voronoi information of the given domain.</span>
+<span class="sd">	</span>
+<span class="sd">	:param dom: Domain</span>
+<span class="sd">	:type dom: :class:`viennagrid.Domain`</span>
+<span class="sd">	</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">dom</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">_domain</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid domain&#39;</span><span class="p">)</span>
+	<span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">apply_voronoi</span><span class="p">(</span><span class="n">dom</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="centroid"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.centroid">[docs]</a><span class="k">def</span> <span class="nf">centroid</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Compute the centroid of the given cell.</span>
+<span class="sd">	</span>
+<span class="sd">	:param cell: Cell whose centroid should be computed</span>
+<span class="sd">	:type cell: :class:`viennagrid.Cell`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: :class:`viennagrid.Point` --- the centroid of the cell</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">cell</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">_cell</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid cell&#39;</span><span class="p">)</span>
+	<span class="n">point</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">centroid</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">coord_sytem</span><span class="o">=</span><span class="n">point</span><span class="o">.</span><span class="n">coord_system</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="cell_refine"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.cell_refine">[docs]</a><span class="k">def</span> <span class="nf">cell_refine</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">predicate</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Refine all cells of the given domain and segmentation which match a given predicate.</span>
+<span class="sd">	</span>
+<span class="sd">	:param dom: Domain to refine</span>
+<span class="sd">	:type dom: :class:`viennagrid.Domain`</span>
+<span class="sd">	:param seg: Segmentation of the domain to refine</span>
+<span class="sd">	:type seg: :class:`viennagrid.Segmentation`</span>
+<span class="sd">	:param predicate: Function that tells whether a cell should be refined or not</span>
+<span class="sd">	:type predicate: function object that accepts a cell as parameter and returns a boolean</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: A two-element tuple containing the output domain and segmentation after the refinement.</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">config</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">config</span>
+		<span class="n">dom</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">_domain</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid domain&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">seg</span> <span class="o">=</span> <span class="n">seg</span><span class="o">.</span><span class="n">_segmentation</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 2 is not a valid domain&#39;</span><span class="p">)</span>
+	
+	<span class="n">refined_result</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">cell_refine</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span>
+	<span class="n">refined_domain</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+	<span class="n">refined_domain</span><span class="o">.</span><span class="n">_domain</span> <span class="o">=</span> <span class="n">refined_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">refined_segmentation</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Segmentation</span><span class="p">(</span><span class="n">refined_domain</span><span class="p">)</span>
+	<span class="n">refined_segmentation</span><span class="o">.</span><span class="n">_segmentation</span> <span class="o">=</span> <span class="n">refined_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+	
+	<span class="k">return</span> <span class="p">(</span><span class="n">refined_domain</span><span class="p">,</span> <span class="n">refined_segmentation</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="circumcenter"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.circumcenter">[docs]</a><span class="k">def</span> <span class="nf">circumcenter</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Compute the circumcenter of the given cell.</span>
+<span class="sd">	</span>
+<span class="sd">	:param cell: Cell whose circumcenter should be computed</span>
+<span class="sd">	:type cell: :class:`viennagrid.Cell`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: :class:`viennagrid.Point` --- the circumcenter of the cell</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">cell</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">_cell</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid cell&#39;</span><span class="p">)</span>
+	<span class="n">point</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">circumcenter</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">coord_system</span><span class="o">=</span><span class="n">point</span><span class="o">.</span><span class="n">coord_system</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="is_boundary"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.is_boundary">[docs]</a><span class="k">def</span> <span class="nf">is_boundary</span><span class="p">(</span><span class="n">domseg</span><span class="p">,</span> <span class="n">boundary_elem</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Check if the given element is a boundary element of the given domain or segment.</span>
+<span class="sd">	</span>
+<span class="sd">	:param domseg: Domain or segment</span>
+<span class="sd">	:type domseg: :class:`viennagrid.Domain` or :class:`viennagrid.Segment`</span>
+<span class="sd">	:param boundary_elem: Element of which to check if its a boundary element of the given domain or segment. The element can be a facet, and edge or a vertex.</span>
+<span class="sd">	:type boundary_elem: :class:`viennagrid.Facet`, :class:`viennagrid.Edge` or :class:`viennagrid.Vertex`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: bool --- True if the given element is a boundary element of the given domain or segment; False otherwise.</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">domseg</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Domain</span><span class="p">):</span>
+			<span class="n">domseg</span> <span class="o">=</span> <span class="n">domseg</span><span class="o">.</span><span class="n">_domain</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">domseg</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Segment</span><span class="p">):</span>
+			<span class="n">domseg</span> <span class="o">=</span> <span class="n">domseg</span><span class="o">.</span><span class="n">_segment</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid domain or segment&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">boundary_elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Facet</span><span class="p">):</span>
+			<span class="n">boundary_elem</span> <span class="o">=</span> <span class="n">boundary_elem</span><span class="o">.</span><span class="n">_facet</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">boundary_elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Edge</span><span class="p">):</span>
+			<span class="n">boundary_elem</span> <span class="o">=</span> <span class="n">boundary_elem</span><span class="o">.</span><span class="n">_edge</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">boundary_elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Vertex</span><span class="p">):</span>
+			<span class="n">boundary_elem</span> <span class="o">=</span> <span class="n">boundary_elem</span><span class="o">.</span><span class="n">_vertex</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 2 is not a valid boundary element&#39;</span><span class="p">)</span>
+	
+	<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">is_boundary</span><span class="p">(</span><span class="n">domseg</span><span class="p">,</span> <span class="n">boundary_elem</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="is_interface"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.is_interface">[docs]</a><span class="k">def</span> <span class="nf">is_interface</span><span class="p">(</span><span class="n">seg0</span><span class="p">,</span> <span class="n">seg1</span><span class="p">,</span> <span class="n">interface_elem</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Check if the given element is an interface element of the two given segments.</span>
+<span class="sd">	</span>
+<span class="sd">	:param seg0: First segment</span>
+<span class="sd">	:type seg0: :class:`viennagrid.Segment`</span>
+<span class="sd">	:param seg1: Second segment</span>
+<span class="sd">	:type seg1: :class:`viennagrid.Segment`</span>
+<span class="sd">	:param interface_elem: Element of which to check if its an interface element of the given segments. The element can be a facet, and edge or a vertex.</span>
+<span class="sd">	:type interface_elem: :class:`viennagrid.Facet`, :class:`viennagrid.Edge` or :class:`viennagrid.Vertex`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: bool --- True if the given element is an interface element of the given segments; False otherwise.</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">seg0</span> <span class="o">=</span> <span class="n">seg0</span><span class="o">.</span><span class="n">_segment</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid segment&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">seg1</span> <span class="o">=</span> <span class="n">seg1</span><span class="o">.</span><span class="n">_segment</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 2 is not a valid segment&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">interface_elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Facet</span><span class="p">):</span>
+			<span class="n">interface_elem</span> <span class="o">=</span> <span class="n">interface_elem</span><span class="o">.</span><span class="n">_facet</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">interface_elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Edge</span><span class="p">):</span>
+			<span class="n">interface_elem</span> <span class="o">=</span> <span class="n">interface_elem</span><span class="o">.</span><span class="n">_edge</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">interface_elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Vertex</span><span class="p">):</span>
+			<span class="n">interface_elem</span> <span class="o">=</span> <span class="n">interface_elem</span><span class="o">.</span><span class="n">_vertex</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 3 is not a valid interface element&#39;</span><span class="p">)</span>
+	
+	<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">is_interface</span><span class="p">(</span><span class="n">seg0</span><span class="p">,</span> <span class="n">seg1</span><span class="p">,</span> <span class="n">interface_elem</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="refine"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.refine">[docs]</a><span class="k">def</span> <span class="nf">refine</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">predicate</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Refine all edges of the given domain and segmentation which match a given predicate.</span>
+<span class="sd">	</span>
+<span class="sd">	:param dom: Domain to refine</span>
+<span class="sd">	:type dom: :class:`viennagrid.Domain`</span>
+<span class="sd">	:param seg: Segmentation of the domain to refine</span>
+<span class="sd">	:type seg: :class:`viennagrid.Segmentation`</span>
+<span class="sd">	:param predicate: Function that tells whether an edge should be refined or not</span>
+<span class="sd">	:type predicate: function object that accepts an edge as parameter and returns a boolean</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: A two-element tuple containing the output domain and segmentation after the refinement.</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">config</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">config</span>
+		<span class="n">dom</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">_domain</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid domain&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">seg</span> <span class="o">=</span> <span class="n">seg</span><span class="o">.</span><span class="n">_segmentation</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 2 is not a valid domain&#39;</span><span class="p">)</span>
+	
+	<span class="n">refined_result</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">refine</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span>
+	<span class="n">refined_domain</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+	<span class="n">refined_domain</span><span class="o">.</span><span class="n">_domain</span> <span class="o">=</span> <span class="n">refined_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">refined_segmentation</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Segmentation</span><span class="p">(</span><span class="n">refined_domain</span><span class="p">)</span>
+	<span class="n">refined_segmentation</span><span class="o">.</span><span class="n">_segmentation</span> <span class="o">=</span> <span class="n">refined_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+	
+	<span class="k">return</span> <span class="p">(</span><span class="n">refined_domain</span><span class="p">,</span> <span class="n">refined_segmentation</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="refine_uniformly"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.refine_uniformly">[docs]</a><span class="k">def</span> <span class="nf">refine_uniformly</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">seg</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Refine all edges of the given domain and segmentation.</span>
+<span class="sd">	</span>
+<span class="sd">	:param dom: Domain to refine</span>
+<span class="sd">	:type dom: :class:`viennagrid.Domain`</span>
+<span class="sd">	:param seg: Segmentation of the domain to refine</span>
+<span class="sd">	:type seg: :class:`viennagrid.Segmentation`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: A two-element tuple containing the output domain and segmentation after the refinement.</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">config</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">config</span>
+		<span class="n">dom</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">_domain</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid domain&#39;</span><span class="p">)</span>
+	
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">seg</span> <span class="o">=</span> <span class="n">seg</span><span class="o">.</span><span class="n">_segmentation</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 2 is not a valid domain&#39;</span><span class="p">)</span>
+	
+	<span class="n">refined_result</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">refine_uniformly</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">seg</span><span class="p">)</span>
+	<span class="n">refined_domain</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+	<span class="n">refined_domain</span><span class="o">.</span><span class="n">_domain</span> <span class="o">=</span> <span class="n">refined_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">refined_segmentation</span> <span class="o">=</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Segmentation</span><span class="p">(</span><span class="n">refined_domain</span><span class="p">)</span>
+	<span class="n">refined_segmentation</span><span class="o">.</span><span class="n">_segmentation</span> <span class="o">=</span> <span class="n">refined_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+	
+	<span class="k">return</span> <span class="p">(</span><span class="n">refined_domain</span><span class="p">,</span> <span class="n">refined_segmentation</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="surface"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.surface">[docs]</a><span class="k">def</span> <span class="nf">surface</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Calculate the surface of the given element.</span>
+<span class="sd">	</span>
+<span class="sd">	:param elem: Element whose surface should be calculated.</span>
+<span class="sd">	:type elem: :class:`viennagrid.Cell`, :class:`viennagrid.Domain` or :class:`viennagrid.Segment`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: float --- the surface of the cell, domain or segment</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Cell</span><span class="p">):</span>
+			<span class="n">elem</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">_cell</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Domain</span><span class="p">):</span>
+			<span class="n">elem</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">_domain</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Segment</span><span class="p">):</span>
+			<span class="n">elem</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">_segment</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid element&#39;</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="volume"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.volume">[docs]</a><span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Calculate the volume of the given element.</span>
+<span class="sd">	</span>
+<span class="sd">	:param elem: Element whose volume should be calculated.</span>
+<span class="sd">	:type elem: :class:`viennagrid.Cell`, :class:`viennagrid.Domain` or :class:`viennagrid.Segment`</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: float --- the volume of the cell, domain or segment</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Cell</span><span class="p">):</span>
+			<span class="n">elem</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">_cell</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Domain</span><span class="p">):</span>
+			<span class="n">elem</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">_domain</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">Segment</span><span class="p">):</span>
+			<span class="n">elem</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">_segment</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid element&#39;</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="scale"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.scale">[docs]</a><span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Scale a domain by a given factor.</span>
+<span class="sd">	</span>
+<span class="sd">	:param dom: Domain to be scaled</span>
+<span class="sd">	:type dom: :class:`viennagrid.Domain`</span>
+<span class="sd">	:param factor: Scale factor</span>
+<span class="sd">	:type factor: float</span>
+<span class="sd">	</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">dom</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">_domain</span>
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position 1 is not a valid domain&#39;</span><span class="p">)</span>
+	<span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">dom</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="spanned_volume"><a class="viewcode-back" href="../../apiref/viennagrid.html#viennagrid.algorithms.spanned_volume">[docs]</a><span class="k">def</span> <span class="nf">spanned_volume</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Calculate the volume spanned by a set of points.</span>
+<span class="sd">	</span>
+<span class="sd">	As arguments you have to pass an arbitrary number of points (:class:`viennagrid.Point` objects).</span>
+<span class="sd">	</span>
+<span class="sd">	:returns: float --- the volume spanned by the set of points</span>
+<span class="sd">	:raises: TypeError</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="n">point_list</span> <span class="o">=</span> <span class="p">[]</span>
+	
+	<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="c"># Get the low-level point</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">_point</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;parameter at position </span><span class="si">%(pos)d</span><span class="s"> is not a valid point&#39;</span> <span class="o">%</span> <span class="p">{</span><span class="s">&#39;pos&#39;</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">})</span>
+		
+		<span class="c"># If point is not cartesian, convert it</span>
+		<span class="k">if</span> <span class="n">point</span><span class="o">.</span><span class="n">coord_system</span> <span class="o">!=</span> <span class="s">&#39;cartesian&#39;</span><span class="p">:</span>
+			<span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">to_cartesian</span><span class="p">()</span>
+		
+		<span class="c"># Append the point to the list</span>
+		<span class="n">point_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+	
+	<span class="k">return</span> <span class="n">viennagrid</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">spanned_volume</span><span class="p">(</span><span class="o">*</span><span class="n">point_list</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../viennagrid.html" >viennagrid</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. Introduction &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="2. Installation instructions" href="install.html" />
+    <link rel="prev" title="ViennaGrid for Python 0.1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="2. Installation instructions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="ViennaGrid for Python 0.1.0 documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction">
+<h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><em>ViennaGrid for Python</em> is a set of Python modules that make the functionality of <a class="reference external" href="http://viennagrid.sourceforge.net/">ViennaGrid</a> accessible to Python programmers.</p>
+<p>As <a class="reference external" href="http://viennagrid.sourceforge.net/">ViennaGrid&#8217;s website</a> explains, <em>ViennaGrid is a C++ library designed for the handling of structured and unstructured meshes in arbitrary spatial dimensions using different coordinate systems</em>. However, the Python interface has some limitations regarding the supported spatial dimensions: you can no longer handle meshes in arbitrary dimensions; instead, it is limited to 2D and 3D meshes, but this should suffice for the vast majority of applications.</p>
+<p>In short, <em>ViennaGrid for Python</em> enables you to define and work with meshes based on lines, triangles, quadrilaterals and tetrahedra using cartesian (1D, 2D and 3D), polar (2D), cylindrical (3D) or spherical (3D) coordinates.</p>
+<p><em>ViennaGrid for Python</em> is based on two Python modules that should be considered separately:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a></li>
+<li><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a></li>
+</ol>
+<p><a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> is the low-level module that wraps ViennaGrid&#8217;s C++ classes and functions to Python. On the other hand, <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> is a higher-level module that provides a more Pythonic interface to ViennaGrid, and which actually relies on <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> to provide its functionality.</p>
+<p>Even though we are talking only about <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> as a Python module, ViennaGrid for Python is actually a Python package which consists of the following modules:</p>
+<ul class="simple">
+<li><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a></li>
+<li><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.accessors" title="viennagrid.accessors: Interface for storing scalar quantities in meshes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.accessors</span></tt></a></li>
+<li><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.algorithms" title="viennagrid.algorithms: Common algorithms on mesh elements"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.algorithms</span></tt></a></li>
+<li><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.config" title="viennagrid.config: Configuration classes for domain definition"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.config</span></tt></a></li>
+<li><a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.io" title="viennagrid.io: Input/output functions"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.io</span></tt></a></li>
+<li><a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a></li>
+</ul>
+<p>However, we refer only to <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> and <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> because we want to mark the difference between them, and we include the rest of the modules with <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> when we speak, because all of them provide a high-level interface (excepting <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>).</p>
+<p>In general, you will want to use <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> instead of <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>. However, there may be some circumstances under which you may prefer to use <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> directly. We will look into this with further detail in the <a class="reference internal" href="tutorial.html"><em>Tutorials</em></a>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">ViennaGrid for Python 0.1.0 documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="install.html"
+                        title="next chapter">2. Installation instructions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/intro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="2. Installation instructions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="ViennaGrid for Python 0.1.0 documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

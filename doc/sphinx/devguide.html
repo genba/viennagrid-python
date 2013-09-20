@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. Developer’s guide &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="index.html" />
+    <link rel="prev" title="4.2. API reference of viennagrid.wrapper" href="apiref/viennagrid_wrapper.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apiref/viennagrid_wrapper.html" title="4.2. API reference of viennagrid.wrapper"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="developer-s-guide">
+<h1>5. Developer&#8217;s guide<a class="headerlink" href="#developer-s-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="compiling-viennagrid-for-python">
+<h2>5.1. Compiling ViennaGrid for Python<a class="headerlink" href="#compiling-viennagrid-for-python" title="Permalink to this headline">¶</a></h2>
+<p>The first step to getting started developing ViennaGrid for Python is to set up a development environment and compile ViennaGrid for Python. To do this, you must follow the <a class="reference internal" href="install/src.html"><em>Installation from source</em></a> tutorial.</p>
+</div>
+<div class="section" id="required-knowledge-and-previous-readings">
+<h2>5.2. Required knowledge and previous readings<a class="headerlink" href="#required-knowledge-and-previous-readings" title="Permalink to this headline">¶</a></h2>
+<p>ViennaGrid for Python is a wrapper around the C++ ViennaGrid library. The low-level part of ViennaGrid for Python is also written in C++ using Boost.Python, its higher-level part is written directly in Python, though. In addition, we use CMake to generate the Makefiles so that ViennaGrid for Python can be compiled.  Besides, all source code versioning is done using Git. Thus, you must be familiar with the following technologies:</p>
+<ul class="simple">
+<li>C++</li>
+<li>Python</li>
+<li>Boost.Python</li>
+<li><a class="reference external" href="http://viennagrid.sourceforge.net/">ViennaGrid</a></li>
+<li><a class="reference external" href="http://www.cmake.org/">CMake</a> (you can visit the online documentation, but the <a class="reference external" href="http://www.cmake.org/cmake/help/book.html">book Mastering CMake</a> provides a very well structured guidance from basic to more advanced topics)</li>
+<li><a class="reference external" href="http://git-scm.com/">Git</a> (there is plenty of documentation on Git, and the <a class="reference external" href="http://git-scm.com/book">Pro Git book</a> is available online)</li>
+</ul>
+<p>The documentation of ViennaGrid for Python is generated using two tools:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> (for the vast majority of the documentation)</li>
+<li><a class="reference external" href="http://www.doxygen.org/">Doxygen</a> (for documenting the C++ code to support future development)</li>
+</ul>
+<p>Finally, you will need to know two other tools if you plan to write tests or package ViennaGrid for Python:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.python.org/2/library/distutils.html">distutils</a> (to generate the Python distributable package)</li>
+<li><a class="reference external" href="http://docs.python.org/2/library/unittest.html">unittest</a> (for testing both <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> and the high-level module <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a>)</li>
+</ul>
+</div>
+<div class="section" id="logical-structure-of-the-project">
+<h2>5.3. Logical structure of the project<a class="headerlink" href="#logical-structure-of-the-project" title="Permalink to this headline">¶</a></h2>
+<p>The Python extension that wraps the code of ViennaGrid to Python is written in C++ using Boost.Python. The C++ source code is under the <cite>src/</cite> directory. This is what users perceive as <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> after the C++ code has been compiled to a dynamic library. Tests for the wrapper can be found under <cite>tests/</cite> and they are written in Python. We usually call this component the low-level wrapper or simply the wrapper.</p>
+<p>In addition to this, there is also &#8220;the high-level Python module&#8221;, which is what we call the set of Python modules <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a>, <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.config" title="viennagrid.config: Configuration classes for domain definition"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.config</span></tt></a>, <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.io" title="viennagrid.io: Input/output functions"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.io</span></tt></a>, <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.algorithms" title="viennagrid.algorithms: Common algorithms on mesh elements"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.algorithms</span></tt></a> and <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.accessors" title="viennagrid.accessors: Interface for storing scalar quantities in meshes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.accessors</span></tt></a>. These and <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> compose the <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> Python packaged, which is packed as a <em>distutils</em> package whose source code is under the directory <cite>viennagrid-python/</cite>. The source code of the actual Python package (not the <em>distutils</em> package) is under <cite>viennagrid-python/viennagrid/</cite>. Tests can be found under <cite>viennagrid-python/viennagrid/tests/</cite>. Throughout the documentation, we refer to this component as the high-level Python module or just the high-level module.</p>
+<p>All the documentation of the project can be found under the <cite>doc/</cite> directory. There are three directories under <cite>doc/</cite> :</p>
+<ul class="simple">
+<li><cite>doc/sphinx/</cite>, which contains the Sphinx documentation of the project (what you are reading right now),</li>
+<li><cite>doc/doxygen/</cite>, which contains the files to generate the Doxygen documentation of the wrapper, and</li>
+<li><cite>doc/examples/</cite>, which contains example Python scripts that show how to use the ViennaGrid for Python (both <a class="reference internal" href="apiref/viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> and <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a>, depending on which one you want to use).</li>
+</ul>
+<p>When you build the project, the C++ source code which forms the wrapper gets compiled into a dynamic library or shared object (on UNIX systems, <cite>wrapper.so</cite>) which represents a Python extension (a shared library that defines functions and classes to form a new module that extends the Python module library). Then, the Python package is created by gathering the Python source code files and the wrapper as a shared object, and a distutils package is generated with the Python package and the generated Sphinx documentation.</p>
+<div class="section" id="source-code-of-the-wrapper">
+<h3>5.3.1. Source code of the wrapper<a class="headerlink" href="#source-code-of-the-wrapper" title="Permalink to this headline">¶</a></h3>
+<p>The source code of the wrapper can be found in the <cite>src/</cite> directory. The main source code file is <cite>src/wrapper.cpp</cite>, which defines a Boost.Python module and wraps all the functions and classes.</p>
+<p>The functions and classes themselves are defined in separate files classified in subdirectories of <cite>src/</cite> according to their functionality and what relation they have to each other. Thus, you will find the domains defined in a subdirectory, segmentations in another one, algorithms in a different subdirectory, and so on.</p>
+<p>Besides, there is a single file which is not classified under any subdirectory, because it is just one file and the functionality it provides is not related to any other file. This is <cite>exception.hpp</cite>, which implements a generic exception translator that translates Boost.Python and C++ exceptions into one of Python&#8217;s built-in exceptions.</p>
+</div>
+<div class="section" id="source-code-of-the-python-package">
+<h3>5.3.2. Source code of the Python package<a class="headerlink" href="#source-code-of-the-python-package" title="Permalink to this headline">¶</a></h3>
+<p>The source code of the Python package is much simpler, because there are fewer files. These source code files can be found under <cite>viennagrid-python/viennagrid/</cite>.</p>
+<p>Like any other Python package, there is a <cite>__init__.py</cite> file where the fundamental classes of the module <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> are defined. More specific functionality is separated in submodules: <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.accessors" title="viennagrid.accessors: Interface for storing scalar quantities in meshes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.accessors</span></tt></a> (<cite>accessors.py</cite>), <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.algorithms" title="viennagrid.algorithms: Common algorithms on mesh elements"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.algorithms</span></tt></a> (<cite>algorithms.py</cite>), <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.config" title="viennagrid.config: Configuration classes for domain definition"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.config</span></tt></a> (<cite>config.py</cite>) and <a class="reference internal" href="apiref/viennagrid.html#module-viennagrid.io" title="viennagrid.io: Input/output functions"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.io</span></tt></a> (<cite>io.py</cite>).</p>
+</div>
+</div>
+<div class="section" id="coding-guidelines">
+<h2>5.4. Coding guidelines<a class="headerlink" href="#coding-guidelines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="naming-conventions">
+<h3>5.4.1. Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h3>
+<p>The following naming conventions are used for the Python code and most of the C++ code:</p>
+<ul class="simple">
+<li>Classes: <cite>CamelCase</cite></li>
+<li>Methods and attributes: <cite>lower_case_with_underscores</cite></li>
+<li>Variables: <cite>lower_case_with_underscores</cite></li>
+<li>Functions: <cite>lower_case_with_underscores</cite></li>
+<li>Constants: <cite>UPPER_CASE_WITH_UNDERSCORES</cite></li>
+</ul>
+<p>There is only one exception to these rules. In the case of C++ wrapped classes, we sometimes use an underscore to separate the class name from a prefix that the class shares with other classes (e.g. <cite>TriangularCartesian3D_Domain</cite>), because they would otherwise be very long. However, for the rest of the code, CamelCase without underscores should be used.</p>
+</div>
+<div class="section" id="code-indentation-and-alignment">
+<h3>5.4.2. Code indentation and alignment<a class="headerlink" href="#code-indentation-and-alignment" title="Permalink to this headline">¶</a></h3>
+<p>Indentation in C++ is not as important as it is in Python. Since Python uses indentation to identify code blocks, indentation is vital in Python. <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a> defines a style guide for Python code, including for indentation, which they recommend to consist of 4 white spaces. However, we consider this too limiting and have opted for another approach for both Python and C++.</p>
+<p>Instead of using only tabs or only spaces, we have opted to use both of them, but each one for the purpose they are made for: <strong>tabs are for indentation, spaces are for code alignment</strong>. Following this mixed approach is much better than only using one or the other, because each contributor to the project will be able to customize how they see the code more easily and this will be better for collaboration.</p>
+<p>For a more detailed discussion on the reasons to do this, please refer to <a class="reference external" href="http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/">Lea Verou&#8217;s article on Why tabs are clearly superior</a>. The first reason she gives is grounded in the field of web development, but the rest of them are applicable to any other kind of software project, too.</p>
+</div>
+<div class="section" id="whitespace-in-expressions-and-statements">
+<h3>5.4.3. Whitespace in expressions and statements<a class="headerlink" href="#whitespace-in-expressions-and-statements" title="Permalink to this headline">¶</a></h3>
+<p>We use spaces to separate keywords and operators in statements. This usually improves the readability of the code notably. So, instead of writing:</p>
+<div class="highlight-python"><pre>for (i=0;i&lt;n;++i)
+        j=j+2;</pre>
+</div>
+<p>we write:</p>
+<div class="highlight-python"><pre>for (i = 0; i &lt; n; ++i)
+        j = j + 2;</pre>
+</div>
+<p>Likewise, particularly for C++, we separate keywords from parenthesis using a single space:</p>
+<div class="highlight-python"><pre>if (var1 == var2)</pre>
+</div>
+<p>instead of:</p>
+<div class="highlight-python"><pre>if(var1==var2)</pre>
+</div>
+</div>
+<div class="section" id="curly-braces">
+<h3>5.4.4. Curly braces<a class="headerlink" href="#curly-braces" title="Permalink to this headline">¶</a></h3>
+<p>In C++ code, we prefer curly braces to always be put on a different line, like so:</p>
+<div class="highlight-python"><pre>if (var1 == var2)
+{
+        // code
+}
+
+for (i = 0; i &lt; n; ++i)
+{
+        // code
+}</pre>
+</div>
+<p>with only two exceptions: when classes or structures have to be defined:</p>
+<div class="highlight-python"><pre>typedef struct {
+        // definitions...
+} my_structure;
+
+struct my_structure {
+        // definitions...
+};
+
+class MyClass {
+        // definitions...
+};</pre>
+</div>
+<p>and in <cite>do...while</cite> blocks:</p>
+<div class="highlight-python"><pre>do {
+        // code
+} while (condition);</pre>
+</div>
+<p>This convention turns out to be particularly useful when a condition must be split accross several lines. Consider, for example, the following code:</p>
+<div class="highlight-python"><pre>for (VertexOnElementIterator voeit = vertices_on_element.begin();
+                             voeit != vertices_on_element.end();
+                           ++voeit)
+{
+        vertices.append&lt;LinearCartesian1D_Vertex&gt;(LinearCartesian1D_Vertex(*voeit));
+}</pre>
+</div>
+<p>If we didn&#8217;t split this into several lines, it would become a very long line (and less readable), but, if we splitted the line but put the curly brace on the same line though, it wouldn&#8217;t look very nice either:</p>
+<div class="highlight-python"><pre>for (VertexOnElementIterator voeit = vertices_on_element.begin();
+                             voeit != vertices_on_element.end();
+                           ++voeit) {
+        vertices.append&lt;LinearCartesian1D_Vertex&gt;(LinearCartesian1D_Vertex(*voeit));
+}</pre>
+</div>
+</div>
+</div>
+<div class="section" id="source-code-revision-control">
+<h2>5.5. Source code revision control<a class="headerlink" href="#source-code-revision-control" title="Permalink to this headline">¶</a></h2>
+<p>For revision control we use Git. We try to follow <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">Vincent Driessen&#8217;s suggestions for A sucessful Git branching model</a>.</p>
+<p>The main branch of the Git repository, where stable releases reside, is the <cite>master</cite> branch. The second most important branch is <cite>devel</cite>, where all development happens. When the changes introduced in the <cite>devel</cite> branch are ready to become stable, <cite>devel</cite> is merged into <cite>master</cite> and development goes on on the <cite>devel</cite> branch for the next release. Under no circumstances should unstable or untested code be committed to <cite>master</cite>.</p>
+<p>Though committing directly to <cite>devel</cite> is possible and even desirable when the commit is a small change, it is highly recommended to branch off <cite>devel</cite> and create a topic branch in most of the cases, then merge without fast-forwarding, particularly if your changes won&#8217;t fit into a single commit, but in several commits instead, or when you are going to introduce a new feature that is not guaranteed to work and will require testing and refining.</p>
+<p>Also, try to write commit messages as descriptive as you can, and not to crowd a commit with too many changes, particularly if they are unrelated and can be split into several commits.</p>
+<p>Finally, remember to compile and run tests frequently, so that you avoid committing changes that break something or make the software not even compile. If you need to find errors or fix the past commit history, make the most of <cite>git bisect</cite> and <cite>git rebase</cite> (but please be careful not to rebase commits you have already pushed and other have pulled).</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5. Developer&#8217;s guide</a><ul>
+<li><a class="reference internal" href="#compiling-viennagrid-for-python">5.1. Compiling ViennaGrid for Python</a></li>
+<li><a class="reference internal" href="#required-knowledge-and-previous-readings">5.2. Required knowledge and previous readings</a></li>
+<li><a class="reference internal" href="#logical-structure-of-the-project">5.3. Logical structure of the project</a><ul>
+<li><a class="reference internal" href="#source-code-of-the-wrapper">5.3.1. Source code of the wrapper</a></li>
+<li><a class="reference internal" href="#source-code-of-the-python-package">5.3.2. Source code of the Python package</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coding-guidelines">5.4. Coding guidelines</a><ul>
+<li><a class="reference internal" href="#naming-conventions">5.4.1. Naming conventions</a></li>
+<li><a class="reference internal" href="#code-indentation-and-alignment">5.4.2. Code indentation and alignment</a></li>
+<li><a class="reference internal" href="#whitespace-in-expressions-and-statements">5.4.3. Whitespace in expressions and statements</a></li>
+<li><a class="reference internal" href="#curly-braces">5.4.4. Curly braces</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#source-code-revision-control">5.5. Source code revision control</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="apiref/viennagrid_wrapper.html"
+                        title="previous chapter">4.2. API reference of <tt class="docutils literal docutils literal docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/devguide.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apiref/viennagrid_wrapper.html" title="4.2. API reference of viennagrid.wrapper"
+             >previous</a> |</li>
+        <li><a href="index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1581 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.1. API reference of viennagrid &mdash; ViennaGrid for Python 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ViennaGrid for Python 0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="4. API reference" href="../apiref.html" />
+    <link rel="next" title="4.2. API reference of viennagrid.wrapper" href="viennagrid_wrapper.html" />
+    <link rel="prev" title="4. API reference" href="../apiref.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="viennagrid_wrapper.html" title="4.2. API reference of viennagrid.wrapper"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../apiref.html" title="4. API reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../apiref.html" accesskey="U">4. API reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="api-reference-of-viennagrid">
+<h1>4.1. API reference of <a class="reference internal" href="#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a><a class="headerlink" href="#api-reference-of-viennagrid" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-viennagrid">
+<span id="viennagrid-fundamental-classes-for-mesh-representation"></span><h2>4.1.1. <a class="reference internal" href="#module-viennagrid" title="viennagrid: High-level classes for mesh representation"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid</span></tt></a> &#8212; Fundamental classes for mesh representation<a class="headerlink" href="#module-viennagrid" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="viennagrid.Point">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Point</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a point of any supported coordinate system and dimension.</p>
+<dl class="method">
+<dt id="viennagrid.Point.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a new point specifying its coordinate system, dimension and, optionally, coordinates.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>coordinates of the point (optional)</dd>
+<dt>Kwargs:</dt>
+<dd><ul class="first last simple">
+<li>coord_system: coordinate system tag (if omitted, cartesian is assumed)</li>
+<li>dim: dimension of the space (optional if coordinates are specified)</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Point.coords">
+<tt class="descname">coords</tt><a class="reference internal" href="../modules/viennagrid.html#Point.coords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list containing the coordinates of the point.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Point.coord_system">
+<tt class="descname">coord_system</tt><a class="reference internal" href="../modules/viennagrid.html#Point.coord_system"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.coord_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the coordinate system tag of the point as seen in <a class="reference internal" href="#module-viennagrid.config" title="viennagrid.config: Configuration classes for domain definition"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.config</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Point.dim">
+<tt class="descname">dim</tt><a class="reference internal" href="../modules/viennagrid.html#Point.dim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the integer dimension of the space where the point is defined.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Point.__add__">
+<tt class="descname">__add__</tt><big>(</big><em>other</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point.__add__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.__add__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add two points.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Point.__sub__">
+<tt class="descname">__sub__</tt><big>(</big><em>other</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point.__sub__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.__sub__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtract two points.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Point.__mul__">
+<tt class="descname">__mul__</tt><big>(</big><em>scalar</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point.__mul__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.__mul__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiply a point by a scalar number (coordinate-wise).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Point.__div__">
+<tt class="descname">__div__</tt><big>(</big><em>scalar</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point.__div__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.__div__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Divide a point by a scalar number (coordinate-wise).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Point.__neg__">
+<tt class="descname">__neg__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point.__neg__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.__neg__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negate a point (i.e. negate each coordinate of the point).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Point.__getattr__">
+<tt class="descname">__getattr__</tt><big>(</big><em>attr</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Point.__getattr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Point.__getattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the requested attribute is not present in this class, try to get it from
+the low-level point class. This serves the purpose of calling the methods for
+coordinate system conversion and norm computation:</p>
+<ul class="simple">
+<li>to_cartesian()</li>
+<li>to_cylindrical()</li>
+<li>to_polar()</li>
+<li>to_spherical()</li>
+<li>norm_1()</li>
+<li>norm_2()</li>
+<li>norm_inf()</li>
+</ul>
+<p>Please, notice that not of all these methods are present in all point classes,
+but only the applicable ones. Refer to the <a class="reference internal" href="viennagrid_wrapper.html"><em>API reference of viennagrid.wrapper</em></a> for
+more information on what methods each low-level class provides.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.Domain">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Domain</tt><big>(</big><em>config</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a domain of any supported domain configuration.</p>
+<dl class="method">
+<dt id="viennagrid.Domain.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>config</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Domain.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new domain with the given configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.config.Configuration</span></tt></a>) &#8211; Configuration on which the new domain should be based.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Domain.config">
+<tt class="descname">config</tt><a class="reference internal" href="../modules/viennagrid.html#Domain.config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration object of this domain (instance of
+<a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.config.Configuration</span></tt></a>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Domain.vertices">
+<tt class="descname">vertices</tt><a class="reference internal" href="../modules/viennagrid.html#Domain.vertices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain.vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an object that allows you to access the list of all vertices contained in the domain.</p>
+<p>This object provides the following methods:</p>
+<dl class="method">
+<dt id="viennagrid.Domain.__call__">
+<tt class="descname">__call__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Domain.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns a Python list containing all the vertices of the domain, in ascending order of indices:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">vertex_list</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Domain.__len__">
+<tt class="descname">__len__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Domain.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get  the number of vertices in the domain as though it were a Python list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num_vertices</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">vertices</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Domain.__iter__">
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Domain.__iter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get an iterator over the vertices of the domain like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">vertices</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Domain.__getitem__">
+<tt class="descname">__getitem__</tt><big>(</big><em>index</em><big>)</big><a class="headerlink" href="#viennagrid.Domain.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to access each vertex by its index using bracket notation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v0</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Domain.cells">
+<tt class="descname">cells</tt><a class="reference internal" href="../modules/viennagrid.html#Domain.cells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain.cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an object that allows you to access the list of all cells contained in the domain.</p>
+<p>This object provides the following methods:</p>
+<dl class="method">
+<dt>
+<tt class="descname">__call__</tt><big>(</big><big>)</big></dt>
+<dd><p>This returns a Python list containing all the cells of the domain, in ascending order of indices:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cell_list</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">cells</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">__len__</tt><big>(</big><big>)</big></dt>
+<dd><p>This allows you to get  the number of cells in the domain as though it were a Python list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num_cells</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Domain.__iter__"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>This allows you to get an iterator over the cells of the domain like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">__getitem__</tt><big>(</big><em>index</em><big>)</big></dt>
+<dd><p>This allows you to access each cell by its index using bracket notation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s0</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Domain.make_vertex">
+<tt class="descname">make_vertex</tt><big>(</big><em>point</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Domain.make_vertex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain.make_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new vertex in the domain with the coordinates of the given point.
+This method doesn&#8217;t return the newly created vertex.</p>
+<p>The point and its coordinates will be copied, the point will not be referenced itself.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>point</strong> (<a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a>) &#8211; Point on which to base the vertex.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Domain.make_cell">
+<tt class="descname">make_cell</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Domain.make_cell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Domain.make_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new cell in the domain and return it.</p>
+<p>As positional parameters you must pass as many vertices (<a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">Vertex</span></tt></a> objects) as needed to define a cell of the type and dimension of the domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">Cell</span></tt></a> object &#8212; the newly created cell</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Domain.__iter__"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Return a generator object to iterate over all the vertices contained in the domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator over all the vertices of the domain</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.Segmentation">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Segmentation</tt><big>(</big><em>domain</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segmentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a segmentation of a wrapped domain.</p>
+<dl class="method">
+<dt id="viennagrid.Segmentation.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>domain</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segmentation.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segmentation.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new segmentation of the given domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>domain</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain on which to base the segmentation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Segmentation.domain">
+<tt class="descname">domain</tt><a class="reference internal" href="../modules/viennagrid.html#Segmentation.domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segmentation.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the domain to which this segmentation corresponds.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Segmentation.segments">
+<tt class="descname">segments</tt><a class="reference internal" href="../modules/viennagrid.html#Segmentation.segments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segmentation.segments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an object that allows you to access the list of all segments contained in the segmentation.</p>
+<p>This object provides the following methods:</p>
+<dl class="method">
+<dt id="viennagrid.Segmentation.__call__">
+<tt class="descname">__call__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Segmentation.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns a Python list containing all the segments of the segmentation, in ascending order of indices:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">segment_list</span> <span class="o">=</span> <span class="n">segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segmentation.__len__">
+<tt class="descname">__len__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Segmentation.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get  the number of segments in the segmentation as though it were a Python list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num_segments</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segmentation.__iter__">
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segmentation.__iter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segmentation.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get an iterator over the segments of the segmentation like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segmentation.__getitem__">
+<tt class="descname">__getitem__</tt><big>(</big><em>index</em><big>)</big><a class="headerlink" href="#viennagrid.Segmentation.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to access each segment by its index using bracket notation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s0</span> <span class="o">=</span> <span class="n">segmentation</span><span class="o">.</span><span class="n">segments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segmentation.make_segment">
+<tt class="descname">make_segment</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segmentation.make_segment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segmentation.make_segment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new segment in the segmentation and return it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference internal" href="#viennagrid.Segment" title="viennagrid.Segment"><tt class="xref py py-class docutils literal"><span class="pre">Segment</span></tt></a> object &#8212; the newly created segment</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segmentation.__iter__"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Return a generator object to iterate over all the segments contained in the segmentation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator over all the segments of the segmentation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.Segment">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Segment</tt><big>(</big><em>segment</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a segment contained in a segmentation.</p>
+<dl class="method">
+<dt id="viennagrid.Segment.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>segment</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segment.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segment.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new segment based on the given low-level ViennaGrid segment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>segment</strong> (Low-level segment type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) &#8211; Low-level ViennaGrid segment to be wrapped in this high-level object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Segment.cells">
+<tt class="descname">cells</tt><a class="reference internal" href="../modules/viennagrid.html#Segment.cells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segment.cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an object that allows you to access the list of all cells contained in the segment.</p>
+<p>This object provides the following methods:</p>
+<dl class="method">
+<dt id="viennagrid.Segment.__call__">
+<tt class="descname">__call__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Segment.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns a Python list containing all the cells of the segment, in ascending order of indices:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cell_list</span> <span class="o">=</span> <span class="n">segment</span><span class="o">.</span><span class="n">cells</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segment.__len__">
+<tt class="descname">__len__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Segment.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get  the number of cells in the segment as though it were a Python list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num_cells</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">segment</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segment.__iter__">
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segment.__iter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segment.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get an iterator over the cells of the segment like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">segment</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segment.__getitem__">
+<tt class="descname">__getitem__</tt><big>(</big><em>index</em><big>)</big><a class="headerlink" href="#viennagrid.Segment.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to access each cell by its index using bracket notation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s0</span> <span class="o">=</span> <span class="n">segment</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Segment.make_cell">
+<tt class="descname">make_cell</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segment.make_cell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Segment.make_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new cell in the segment and return it.</p>
+<p>As positional parameters you must pass as many vertices (<a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">Vertex</span></tt></a> objects) as needed to define a cell of the type and dimension of the domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">Cell</span></tt></a> object &#8212; the newly created cell</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Segment.__iter__"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Return a generator object to iterate over all the cells contained in the segment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator over all the cells of the segment</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.Cell">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Cell</tt><big>(</big><em>cell</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Cell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a cell.</p>
+<dl class="method">
+<dt id="viennagrid.Cell.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>cell</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Cell.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Cell.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new cell based on the given low-level ViennaGrid cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cell</strong> (Low-level cell type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) &#8211; Low-level ViennaGrid cell to be wrapped in this high-level object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Cell.vertices">
+<tt class="descname">vertices</tt><a class="reference internal" href="../modules/viennagrid.html#Cell.vertices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Cell.vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an object that allows you to access the list of all vertices that form the cell.</p>
+<p>This object provides the following methods:</p>
+<dl class="method">
+<dt id="viennagrid.Cell.__call__">
+<tt class="descname">__call__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Cell.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns a Python list containing all the vertices of the cell, in ascending order of indices:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">vertex_list</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Cell.__len__">
+<tt class="descname">__len__</tt><big>(</big><big>)</big><a class="headerlink" href="#viennagrid.Cell.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get  the number of vertices in the cell as though it were a Python list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num_vertices</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Cell.__iter__">
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Cell.__iter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Cell.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to get an iterator over the vertices of the cell like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Cell.__getitem__">
+<tt class="descname">__getitem__</tt><big>(</big><em>index</em><big>)</big><a class="headerlink" href="#viennagrid.Cell.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>This allows you to access each vertex by its index using bracket notation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s0</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Cell.facets">
+<tt class="descname">facets</tt><a class="reference internal" href="../modules/viennagrid.html#Cell.facets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Cell.facets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list containing the facets of the cell.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.Cell.edges">
+<tt class="descname">edges</tt><a class="reference internal" href="../modules/viennagrid.html#Cell.edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Cell.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list containing the edges of the cell.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Cell.__iter__"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Return a generator object to iterate over all the vertices that form the cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator over all the vertices of the cell</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.Vertex">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Vertex</tt><big>(</big><em>vertex</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Vertex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a vertex.</p>
+<dl class="method">
+<dt id="viennagrid.Vertex.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>vertex</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Vertex.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Vertex.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new vertex based on the given low-level ViennaGrid vertex.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vertex</strong> (Low-level vertex type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) &#8211; Low-level ViennaGrid vertex to be wrapped in this high-level object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.Vertex.to_point">
+<tt class="descname">to_point</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Vertex.to_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Vertex.to_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert this vertex to a point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.Facet">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Facet</tt><big>(</big><em>facet</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Facet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Facet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a facet of a cell.</p>
+<dl class="method">
+<dt id="viennagrid.Facet.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>facet</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Facet.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Facet.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new facet based on the given low-level ViennaGrid facet.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>facet</strong> (Low-level facet type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) &#8211; Low-level ViennaGrid facet to be wrapped in this high-level object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.Edge">
+<em class="property">class </em><tt class="descclassname">viennagrid.</tt><tt class="descname">Edge</tt><big>(</big><em>edge</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Edge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents an edge of a cell.</p>
+<dl class="method">
+<dt id="viennagrid.Edge.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>edge</em><big>)</big><a class="reference internal" href="../modules/viennagrid.html#Edge.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.Edge.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new edge based on the given low-level ViennaGrid edge.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>edge</strong> (Low-level edge type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) &#8211; Low-level ViennaGrid edge to be wrapped in this high-level object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-viennagrid.config">
+<span id="viennagrid-config-configuration-classes-for-domain-definition"></span><h2>4.1.2. <a class="reference internal" href="#module-viennagrid.config" title="viennagrid.config: Configuration classes for domain definition"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.config</span></tt></a> &#8212; Configuration classes for domain definition<a class="headerlink" href="#module-viennagrid.config" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="viennagrid.config.Configuration">
+<em class="property">class </em><tt class="descclassname">viennagrid.config.</tt><tt class="descname">Configuration</tt><big>(</big><em>cell_tag</em>, <em>coord_system</em>, <em>dim=None</em><big>)</big><a class="reference internal" href="../modules/viennagrid/config.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class stores the necessary information to characterize the configuration of a domain:</p>
+<ul class="simple">
+<li>numeric type (data type used for number representation)</li>
+<li>coordinate system</li>
+<li>dimension of the space</li>
+<li>cell tag (string that identifies which type of cell the domain consists of)</li>
+</ul>
+<p>and provides useful functions for retrieving the appropriate types for points, domains and segmentations.</p>
+<dl class="attribute">
+<dt id="viennagrid.config.Configuration.cell_tag">
+<tt class="descname">cell_tag</tt><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.cell_tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.cell_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cell tag.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.config.Configuration.coord_system">
+<tt class="descname">coord_system</tt><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.coord_system"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.coord_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the coordinate system tag.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.config.Configuration.dim">
+<tt class="descname">dim</tt><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.dim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the space as an integer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.config.Configuration.domain_type">
+<tt class="descname">domain_type</tt><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.domain_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.domain_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return appropriate domain type based on this configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Low-level domain type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.config.Configuration.make_accessor">
+<tt class="descname">make_accessor</tt><big>(</big><em>accessor_type</em><big>)</big><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.make_accessor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.make_accessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new low-level (<a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) accessor or field based on this configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>domain</strong> (A domain class from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> which matches this configuration class) &#8211; Domain on which to base the segmentation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Low-level accessors or field</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.config.Configuration.make_domain">
+<tt class="descname">make_domain</tt><big>(</big><big>)</big><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.make_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.make_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new low-level (<a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) domain based on this configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Low-level domain</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.config.Configuration.make_point">
+<tt class="descname">make_point</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.make_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.make_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new low-level (<a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) point based on this configuration</p>
+<p>As arguments you can pass the coordinates of the point to create, or nothing at all.
+If you specify the coordinates of the point, the number of arguments must match the dimension of the space
+(i.e. the number of coordinates that the are needed to describe the location of the point in the space).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Low-level point</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.config.Configuration.make_segmentation">
+<tt class="descname">make_segmentation</tt><big>(</big><em>domain</em><big>)</big><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.make_segmentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.make_segmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new low-level (<a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>) segmentation based on this configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>domain</strong> (A domain class from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a> which matches this configuration class) &#8211; Domain on which to base the segmentation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Low-level segmentation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.config.Configuration.numeric_type">
+<tt class="descname">numeric_type</tt><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.numeric_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.numeric_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the data type used for number representation (this is always the string <cite>&#8216;double&#8217;</cite>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.config.Configuration.point_type">
+<tt class="descname">point_type</tt><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.point_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.point_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return appropriate point type based on this configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Low-level point type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="viennagrid.config.Configuration.segmentation_type">
+<tt class="descname">segmentation_type</tt><a class="reference internal" href="../modules/viennagrid/config.html#Configuration.segmentation_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.config.Configuration.segmentation_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return appropriate segmentation type based on this configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Low-level segmentation type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="coordinate-system-tags-and-supported-dimensions">
+<span id="coordinate-system-tags"></span><h3>4.1.2.1. Coordinate system tags and supported dimensions<a class="headerlink" href="#coordinate-system-tags-and-supported-dimensions" title="Permalink to this headline">¶</a></h3>
+<dl class="data">
+<dt id="viennagrid.config.CARTESIAN">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">CARTESIAN</tt><a class="headerlink" href="#viennagrid.config.CARTESIAN" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the cartesian coordinate system. Its value is the string <cite>&#8216;cartesian&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.POLAR">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">POLAR</tt><a class="headerlink" href="#viennagrid.config.POLAR" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the polar coordinate system. Its value is the string <cite>&#8216;polar&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.SPHERICAL">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">SPHERICAL</tt><a class="headerlink" href="#viennagrid.config.SPHERICAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the spherical coordinate system. Its value is the string <cite>&#8216;spherical&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.CYLINDRICAL">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">CYLINDRICAL</tt><a class="headerlink" href="#viennagrid.config.CYLINDRICAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the cylindrical coordinate system. Its value is the string <cite>&#8216;cylindrical&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.COORD_SYSTEM_TAGS">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">COORD_SYSTEM_TAGS</tt><a class="headerlink" href="#viennagrid.config.COORD_SYSTEM_TAGS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tuple that contains all the supported coordinate system tags. The definition is as follows.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">COORD_SYSTEM_TAGS</span> <span class="o">=</span> <span class="p">(</span><span class="n">CARTESIAN</span><span class="p">,</span> <span class="n">POLAR</span><span class="p">,</span> <span class="n">SPHERICAL</span><span class="p">,</span> <span class="n">CYLINDRICAL</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.SUPPORTED_DIMENSIONS">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">SUPPORTED_DIMENSIONS</tt><a class="headerlink" href="#viennagrid.config.SUPPORTED_DIMENSIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary where the key is a coordinate system tag and the value is a tuple containing all supported dimensions for the given coordinate system. The definition is as follows.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SUPPORTED_DIMENSIONS</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">CARTESIAN</span><span class="p">:</span>      <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+        <span class="n">CYLINDRICAL</span><span class="p">:</span>    <span class="p">(</span><span class="mi">3</span><span class="p">,),</span>
+        <span class="n">POLAR</span><span class="p">:</span>          <span class="p">(</span><span class="mi">2</span><span class="p">,),</span>
+        <span class="n">SPHERICAL</span><span class="p">:</span>      <span class="p">(</span><span class="mi">3</span><span class="p">,),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="cell-tags">
+<span id="id1"></span><h3>4.1.2.2. Cell tags<a class="headerlink" href="#cell-tags" title="Permalink to this headline">¶</a></h3>
+<dl class="data">
+<dt id="viennagrid.config.LINE_TAG">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">LINE_TAG</tt><a class="headerlink" href="#viennagrid.config.LINE_TAG" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the given cell. Its value is the string <cite>&#8216;linear&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.TRIANGLE_TAG">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">TRIANGLE_TAG</tt><a class="headerlink" href="#viennagrid.config.TRIANGLE_TAG" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the given cell. Its value is the string <cite>&#8216;triangular&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.TETRAHEDRON_TAG">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">TETRAHEDRON_TAG</tt><a class="headerlink" href="#viennagrid.config.TETRAHEDRON_TAG" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the given cell. Its value is the string <cite>&#8216;tetrahedral&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.QUADRILATERAL_TAG">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">QUADRILATERAL_TAG</tt><a class="headerlink" href="#viennagrid.config.QUADRILATERAL_TAG" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the given cell. Its value is the string <cite>&#8216;quadrilateral&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.HEXAHEDRON_TAG">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">HEXAHEDRON_TAG</tt><a class="headerlink" href="#viennagrid.config.HEXAHEDRON_TAG" title="Permalink to this definition">¶</a></dt>
+<dd><p>String that identifies the given cell. Its value is the string <cite>&#8216;hexahedral&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.CELL_TAGS">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">CELL_TAGS</tt><a class="headerlink" href="#viennagrid.config.CELL_TAGS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tuple that contains all the supported cell tags. The definition is as follows.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">CELL_TAGS</span> <span class="o">=</span> <span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">TRIANGLE_TAG</span><span class="p">,</span> <span class="n">TETRAHEDRON_TAG</span><span class="p">,</span> <span class="n">QUADRILATERAL_TAG</span><span class="p">,</span> <span class="n">HEXAHEDRON_TAG</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="common-configurations">
+<h3>4.1.2.3. Common configurations<a class="headerlink" href="#common-configurations" title="Permalink to this headline">¶</a></h3>
+<dl class="data">
+<dt id="viennagrid.config.linear_1d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">linear_1d</tt><a class="headerlink" href="#viennagrid.config.linear_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a linear domain of cartesian 1D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.linear_2d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">linear_2d</tt><a class="headerlink" href="#viennagrid.config.linear_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a linear domain of cartesian 2D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.linear_3d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">linear_3d</tt><a class="headerlink" href="#viennagrid.config.linear_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a linear domain of cartesian 3D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">LINE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.triangular_2d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">triangular_2d</tt><a class="headerlink" href="#viennagrid.config.triangular_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a triangular domain of cartesian 2D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">TRIANGLE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.triangular_3d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">triangular_3d</tt><a class="headerlink" href="#viennagrid.config.triangular_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a triangular domain of cartesian 3D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">TRIANGLE_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.tetrahedral_3d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">tetrahedral_3d</tt><a class="headerlink" href="#viennagrid.config.tetrahedral_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a tetrahedral domain of cartesian 3D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">TETRAHEDRON_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.quadrilateral_2d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">quadrilateral_2d</tt><a class="headerlink" href="#viennagrid.config.quadrilateral_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a quadrilateral domain of cartesian 2D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">QUADRILATERAL_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.quadrilateral_3d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">quadrilateral_3d</tt><a class="headerlink" href="#viennagrid.config.quadrilateral_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a quadrilateral domain of cartesian 3D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">QUADRILATERAL_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="viennagrid.config.hexahedral_3d">
+<tt class="descclassname">viennagrid.config.</tt><tt class="descname">hexahedral_3d</tt><a class="headerlink" href="#viennagrid.config.hexahedral_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of class <a class="reference internal" href="#viennagrid.config.Configuration" title="viennagrid.config.Configuration"><tt class="xref py py-class docutils literal"><span class="pre">Configuration</span></tt></a> that holds the configuration of a hexahedral domain of cartesian 3D points. This is exactly the same as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Configuration</span><span class="p">(</span><span class="n">HEXAHEDRON_TAG</span><span class="p">,</span> <span class="n">CARTESIAN</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-viennagrid.algorithms">
+<span id="viennagrid-algorithms-common-algorithms-on-mesh-elements"></span><h2>4.1.3. <a class="reference internal" href="#module-viennagrid.algorithms" title="viennagrid.algorithms: Common algorithms on mesh elements"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.algorithms</span></tt></a> &#8212; Common algorithms on mesh elements<a class="headerlink" href="#module-viennagrid.algorithms" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="viennagrid.algorithms.apply_voronoi">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">apply_voronoi</tt><big>(</big><em>dom</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#apply_voronoi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.apply_voronoi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute Voronoi information of the given domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dom</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body">TypeError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.cell_refine">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">cell_refine</tt><big>(</big><em>dom</em>, <em>seg</em>, <em>predicate</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#cell_refine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.cell_refine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refine all cells of the given domain and segmentation which match a given predicate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dom</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain to refine</li>
+<li><strong>seg</strong> (<a class="reference internal" href="#viennagrid.Segmentation" title="viennagrid.Segmentation"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segmentation</span></tt></a>) &#8211; Segmentation of the domain to refine</li>
+<li><strong>predicate</strong> (<em>function object that accepts a cell as parameter and returns a boolean</em>) &#8211; Function that tells whether a cell should be refined or not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A two-element tuple containing the output domain and segmentation after the refinement.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.centroid">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">centroid</tt><big>(</big><em>cell</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#centroid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the centroid of the given cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cell</strong> (<a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a>) &#8211; Cell whose centroid should be computed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a> &#8212; the centroid of the cell</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body">TypeError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.circumcenter">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">circumcenter</tt><big>(</big><em>cell</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#circumcenter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.circumcenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the circumcenter of the given cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cell</strong> (<a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a>) &#8211; Cell whose circumcenter should be computed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a> &#8212; the circumcenter of the cell</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body">TypeError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.cross_prod">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">cross_prod</tt><big>(</big><em>point1</em>, <em>point2</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#cross_prod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.cross_prod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the cross product of two vectors (represented by points).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>point1</strong> (<a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a>) &#8211; First point</li>
+<li><strong>point2</strong> (<a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a>) &#8211; Second point</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a> &#8212; the result of the cross product</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.inner_prod">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">inner_prod</tt><big>(</big><em>point1</em>, <em>point2</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#inner_prod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.inner_prod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the inner product of two vectors (represented by points).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>point1</strong> (<a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a>) &#8211; First point</li>
+<li><strong>point2</strong> (<a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a>) &#8211; Second point</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">float &#8212; the result of the inner product</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.is_boundary">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">is_boundary</tt><big>(</big><em>domseg</em>, <em>boundary_elem</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#is_boundary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.is_boundary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given element is a boundary element of the given domain or segment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>domseg</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a> or <a class="reference internal" href="#viennagrid.Segment" title="viennagrid.Segment"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segment</span></tt></a>) &#8211; Domain or segment</li>
+<li><strong>boundary_elem</strong> (<a class="reference internal" href="#viennagrid.Facet" title="viennagrid.Facet"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Facet</span></tt></a>, <a class="reference internal" href="#viennagrid.Edge" title="viennagrid.Edge"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Edge</span></tt></a> or <a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Vertex</span></tt></a>) &#8211; Element of which to check if its a boundary element of the given domain or segment. The element can be a facet, and edge or a vertex.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">bool &#8212; True if the given element is a boundary element of the given domain or segment; False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.is_interface">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">is_interface</tt><big>(</big><em>seg0</em>, <em>seg1</em>, <em>interface_elem</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#is_interface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.is_interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given element is an interface element of the two given segments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>seg0</strong> (<a class="reference internal" href="#viennagrid.Segment" title="viennagrid.Segment"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segment</span></tt></a>) &#8211; First segment</li>
+<li><strong>seg1</strong> (<a class="reference internal" href="#viennagrid.Segment" title="viennagrid.Segment"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segment</span></tt></a>) &#8211; Second segment</li>
+<li><strong>interface_elem</strong> (<a class="reference internal" href="#viennagrid.Facet" title="viennagrid.Facet"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Facet</span></tt></a>, <a class="reference internal" href="#viennagrid.Edge" title="viennagrid.Edge"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Edge</span></tt></a> or <a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Vertex</span></tt></a>) &#8211; Element of which to check if its an interface element of the given segments. The element can be a facet, and edge or a vertex.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">bool &#8212; True if the given element is an interface element of the given segments; False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.norm">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">norm</tt><big>(</big><em>point</em>, <em>norm_type=2</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the norm of a vector (represented by a point).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>point</strong> (<a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a>) &#8211; Point</li>
+<li><strong>norm_type</strong> (<em>int or str</em>) &#8211; Norm to calculate (at this time only 1, 2 and &#8216;inf&#8217; are supported).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">float &#8212; the norm of the vector</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">ValueError, TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.refine">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">refine</tt><big>(</big><em>dom</em>, <em>seg</em>, <em>predicate</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#refine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.refine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refine all edges of the given domain and segmentation which match a given predicate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dom</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain to refine</li>
+<li><strong>seg</strong> (<a class="reference internal" href="#viennagrid.Segmentation" title="viennagrid.Segmentation"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segmentation</span></tt></a>) &#8211; Segmentation of the domain to refine</li>
+<li><strong>predicate</strong> (<em>function object that accepts an edge as parameter and returns a boolean</em>) &#8211; Function that tells whether an edge should be refined or not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A two-element tuple containing the output domain and segmentation after the refinement.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.refine_uniformly">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">refine_uniformly</tt><big>(</big><em>dom</em>, <em>seg</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#refine_uniformly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.refine_uniformly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refine all edges of the given domain and segmentation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dom</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain to refine</li>
+<li><strong>seg</strong> (<a class="reference internal" href="#viennagrid.Segmentation" title="viennagrid.Segmentation"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segmentation</span></tt></a>) &#8211; Segmentation of the domain to refine</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A two-element tuple containing the output domain and segmentation after the refinement.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.scale">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">scale</tt><big>(</big><em>dom</em>, <em>factor</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale a domain by a given factor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dom</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain to be scaled</li>
+<li><strong>factor</strong> (<em>float</em>) &#8211; Scale factor</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.spanned_volume">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">spanned_volume</tt><big>(</big><em>*args</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#spanned_volume"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.spanned_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the volume spanned by a set of points.</p>
+<p>As arguments you have to pass an arbitrary number of points (<a class="reference internal" href="#viennagrid.Point" title="viennagrid.Point"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Point</span></tt></a> objects).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float &#8212; the volume spanned by the set of points</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body">TypeError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.surface">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">surface</tt><big>(</big><em>elem</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#surface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the surface of the given element.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a>, <a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a> or <a class="reference internal" href="#viennagrid.Segment" title="viennagrid.Segment"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segment</span></tt></a>) &#8211; Element whose surface should be calculated.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">float &#8212; the surface of the cell, domain or segment</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body">TypeError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.algorithms.volume">
+<tt class="descclassname">viennagrid.algorithms.</tt><tt class="descname">volume</tt><big>(</big><em>elem</em><big>)</big><a class="reference internal" href="../modules/viennagrid/algorithms.html#volume"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.algorithms.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the volume of the given element.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a>, <a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a> or <a class="reference internal" href="#viennagrid.Segment" title="viennagrid.Segment"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segment</span></tt></a>) &#8211; Element whose volume should be calculated.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">float &#8212; the volume of the cell, domain or segment</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body">TypeError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-viennagrid.io">
+<span id="viennagrid-io-input-output-functions"></span><h2>4.1.4. <a class="reference internal" href="#module-viennagrid.io" title="viennagrid.io: Input/output functions"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.io</span></tt></a> &#8212; Input/output functions<a class="headerlink" href="#module-viennagrid.io" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="viennagrid.io.BadFileFormatError">
+<em class="property">exception </em><tt class="descclassname">viennagrid.io.</tt><tt class="descname">BadFileFormatError</tt><a class="reference internal" href="../modules/viennagrid/io.html#BadFileFormatError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.io.BadFileFormatError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when the mesh file is not well-formatted and hence cannot be read.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.io.read_netgen">
+<tt class="descclassname">viennagrid.io.</tt><tt class="descname">read_netgen</tt><big>(</big><em>filepath</em>, <em>domain</em>, <em>segmentation=None</em><big>)</big><a class="reference internal" href="../modules/viennagrid/io.html#read_netgen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.io.read_netgen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read mesh data from a Netgen file and save the read domain data into the given domain.
+If a segmentation is provided, also save segmentation data into the given segmentation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>str</em>) &#8211; Path to the mesh file.</li>
+<li><strong>domain</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain</li>
+<li><strong>segmentation</strong> (<a class="reference internal" href="#viennagrid.Segmentation" title="viennagrid.Segmentation"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segmentation</span></tt></a>) &#8211; Segmentation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">IOError, <a class="reference internal" href="#viennagrid.io.BadFileFormatError" title="viennagrid.io.BadFileFormatError"><tt class="xref py py-exc docutils literal"><span class="pre">BadFileFormatError</span></tt></a>, TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.io.read_vtk">
+<tt class="descclassname">viennagrid.io.</tt><tt class="descname">read_vtk</tt><big>(</big><em>filepath</em>, <em>domain</em>, <em>segmentation=None</em>, <em>accessors={}</em><big>)</big><a class="reference internal" href="../modules/viennagrid/io.html#read_vtk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.io.read_vtk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read mesh data from a VTK file and save the read domain data into the given domain.
+If a segmentation is provided, also save segmentation data into the given segmentation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>str</em>) &#8211; Path to the mesh file.</li>
+<li><strong>domain</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain</li>
+<li><strong>segmentation</strong> (<a class="reference internal" href="#viennagrid.Segmentation" title="viennagrid.Segmentation"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segmentation</span></tt></a>) &#8211; Segmentation</li>
+<li><strong>accessors</strong> (<em>dict</em>) &#8211; Accessors to be used to get quantities that should be read from the mesh file,
+in the form of a dictionary where keys are the names of the quantities (<cite>str</cite>)
+and where the values are accessors (<a class="reference internal" href="#viennagrid.accessors.Accessor" title="viennagrid.accessors.Accessor"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.accessors.Accessor</span></tt></a>) or
+fields(<a class="reference internal" href="#viennagrid.accessors.Field" title="viennagrid.accessors.Field"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.accessors.Field</span></tt></a>)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">IOError, <a class="reference internal" href="#viennagrid.io.BadFileFormatError" title="viennagrid.io.BadFileFormatError"><tt class="xref py py-exc docutils literal"><span class="pre">BadFileFormatError</span></tt></a>, TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.io.write_opendx">
+<tt class="descclassname">viennagrid.io.</tt><tt class="descname">write_opendx</tt><big>(</big><em>filepath</em>, <em>domain</em>, <em>accessors={}</em><big>)</big><a class="reference internal" href="../modules/viennagrid/io.html#write_opendx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.io.write_opendx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write mesh data from the given domain to an OpenDX file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>str</em>) &#8211; Path to the mesh file.</li>
+<li><strong>domain</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain</li>
+<li><strong>accessors</strong> (<em>dict</em>) &#8211; Accessors to be used to get quantities that should be written to the mesh file,
+in the form of a dictionary where keys are the names of the quantities (<cite>str</cite>)
+and where the values are accessors (<a class="reference internal" href="#viennagrid.accessors.Accessor" title="viennagrid.accessors.Accessor"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.accessors.Accessor</span></tt></a>) or
+fields(<a class="reference internal" href="#viennagrid.accessors.Field" title="viennagrid.accessors.Field"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.accessors.Field</span></tt></a>)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">IOError, <a class="reference internal" href="#viennagrid.io.BadFileFormatError" title="viennagrid.io.BadFileFormatError"><tt class="xref py py-exc docutils literal"><span class="pre">BadFileFormatError</span></tt></a>, TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="viennagrid.io.write_vtk">
+<tt class="descclassname">viennagrid.io.</tt><tt class="descname">write_vtk</tt><big>(</big><em>filepath</em>, <em>domain</em>, <em>segmentation=None</em>, <em>accessors={}</em><big>)</big><a class="reference internal" href="../modules/viennagrid/io.html#write_vtk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.io.write_vtk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write mesh data from the given domain to a VTK file.
+If a segmentation is provided, also write the segmentation data to the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>str</em>) &#8211; Path to the mesh file.</li>
+<li><strong>domain</strong> (<a class="reference internal" href="#viennagrid.Domain" title="viennagrid.Domain"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Domain</span></tt></a>) &#8211; Domain</li>
+<li><strong>segmentation</strong> (<a class="reference internal" href="#viennagrid.Segmentation" title="viennagrid.Segmentation"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Segmentation</span></tt></a>) &#8211; Segmentation</li>
+<li><strong>accessors</strong> (<em>dict</em>) &#8211; Accessors to be used to get quantities that should be written to the mesh file,
+in the form of a dictionary where keys are the names of the quantities (<cite>str</cite>)
+and where the values are accessors (<a class="reference internal" href="#viennagrid.accessors.Accessor" title="viennagrid.accessors.Accessor"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.accessors.Accessor</span></tt></a>) or
+fields(<a class="reference internal" href="#viennagrid.accessors.Field" title="viennagrid.accessors.Field"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.accessors.Field</span></tt></a>)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">IOError, <a class="reference internal" href="#viennagrid.io.BadFileFormatError" title="viennagrid.io.BadFileFormatError"><tt class="xref py py-exc docutils literal"><span class="pre">BadFileFormatError</span></tt></a>, TypeError</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-viennagrid.accessors">
+<span id="viennagrid-accessors-interface-for-storing-scalar-quantities-in-meshes"></span><h2>4.1.5. <a class="reference internal" href="#module-viennagrid.accessors" title="viennagrid.accessors: Interface for storing scalar quantities in meshes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.accessors</span></tt></a> &#8212; Interface for storing scalar quantities in meshes<a class="headerlink" href="#module-viennagrid.accessors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="viennagrid.accessors.Accessor">
+<em class="property">class </em><tt class="descclassname">viennagrid.accessors.</tt><tt class="descname">Accessor</tt><big>(</big><em>accessor_type</em>, <em>domain_config</em><big>)</big><a class="reference internal" href="../modules/viennagrid/accessors.html#Accessor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.accessors.Accessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents an accessor for vertices or cells.</p>
+<dl class="method">
+<dt id="viennagrid.accessors.Accessor.get_value">
+<tt class="descname">get_value</tt><big>(</big><em>elem</em><big>)</big><a class="reference internal" href="../modules/viennagrid/accessors.html#Accessor.get_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.accessors.Accessor.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value corresponding to the element (vertex or cell) associated with the accessor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Vertex</span></tt></a> or <a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a> (or any vertex or cell type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>)) &#8211; the vertex or cell whose value should be returned</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">float &#8212; the value corresponding to the element</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.accessors.Accessor.set_value">
+<tt class="descname">set_value</tt><big>(</big><em>elem</em>, <em>new_value</em><big>)</big><a class="reference internal" href="../modules/viennagrid/accessors.html#Accessor.set_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.accessors.Accessor.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the value corresponding to the element (vertex or cell) associated with the accessor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Vertex</span></tt></a> or <a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a> (or any vertex or cell type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>)) &#8211; the vertex or cell whose value should be set</li>
+<li><strong>new_value</strong> (<em>float</em>) &#8211; the new value to asssign to the element</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="viennagrid.accessors.Field">
+<em class="property">class </em><tt class="descclassname">viennagrid.accessors.</tt><tt class="descname">Field</tt><big>(</big><em>accessor_type</em>, <em>domain_config</em>, <em>default_value</em><big>)</big><a class="reference internal" href="../modules/viennagrid/accessors.html#Field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.accessors.Field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class that represents a field accessor for vertices or cells.</p>
+<dl class="method">
+<dt id="viennagrid.accessors.Field.get_value">
+<tt class="descname">get_value</tt><big>(</big><em>elem</em><big>)</big><a class="reference internal" href="../modules/viennagrid/accessors.html#Field.get_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.accessors.Field.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value corresponding to the element (vertex or cell) associated with the field accessor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Vertex</span></tt></a> or <a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a> (or any vertex or cell type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>)) &#8211; the vertex or cell whose value should be returned</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">float &#8212; the value corresponding to the element</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="viennagrid.accessors.Field.set_value">
+<tt class="descname">set_value</tt><big>(</big><em>elem</em>, <em>new_value</em><big>)</big><a class="reference internal" href="../modules/viennagrid/accessors.html#Field.set_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#viennagrid.accessors.Field.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the value corresponding to the element (vertex or cell) associated with the field accessor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<a class="reference internal" href="#viennagrid.Vertex" title="viennagrid.Vertex"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Vertex</span></tt></a> or <a class="reference internal" href="#viennagrid.Cell" title="viennagrid.Cell"><tt class="xref py py-class docutils literal"><span class="pre">viennagrid.Cell</span></tt></a> (or any vertex or cell type from <a class="reference internal" href="viennagrid_wrapper.html#module-viennagrid.wrapper" title="viennagrid.wrapper: Python wrapper around ViennaGrid that provides low-level access to ViennaGrid's functions and classes"><tt class="xref py py-mod docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a>)) &#8211; the vertex or cell whose value should be set</li>
+<li><strong>new_value</strong> (<em>float</em>) &#8211; the new value to asssign to the element</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.1. API reference of <tt class="docutils literal"><span class="pre">viennagrid</span></tt></a><ul>
+<li><a class="reference internal" href="#module-viennagrid">4.1.1. <tt class="docutils literal"><span class="pre">viennagrid</span></tt> &#8212; Fundamental classes for mesh representation</a></li>
+<li><a class="reference internal" href="#module-viennagrid.config">4.1.2. <tt class="docutils literal"><span class="pre">viennagrid.config</span></tt> &#8212; Configuration classes for domain definition</a><ul>
+<li><a class="reference internal" href="#coordinate-system-tags-and-supported-dimensions">4.1.2.1. Coordinate system tags and supported dimensions</a></li>
+<li><a class="reference internal" href="#cell-tags">4.1.2.2. Cell tags</a></li>
+<li><a class="reference internal" href="#common-configurations">4.1.2.3. Common configurations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-viennagrid.algorithms">4.1.3. <tt class="docutils literal"><span class="pre">viennagrid.algorithms</span></tt> &#8212; Common algorithms on mesh elements</a></li>
+<li><a class="reference internal" href="#module-viennagrid.io">4.1.4. <tt class="docutils literal"><span class="pre">viennagrid.io</span></tt> &#8212; Input/output functions</a></li>
+<li><a class="reference internal" href="#module-viennagrid.accessors">4.1.5. <tt class="docutils literal"><span class="pre">viennagrid.accessors</span></tt> &#8212; Interface for storing scalar quantities in meshes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../apiref.html"
+                        title="previous chapter">4. API reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="viennagrid_wrapper.html"
+                        title="next chapter">4.2. API reference of <tt class="docutils literal"><span class="pre">viennagrid.wrapper</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/apiref/viennagrid.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="viennagrid_wrapper.html" title="4.2. API reference of viennagrid.wrapper"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../apiref.html" title="4. API reference"
+             >previous</a> |</li>
+        <li><a href="../index.html">ViennaGrid for Python 0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../apiref.html" >4. API reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jonan Cruz-Martin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
