@@ -119,7 +119,7 @@ def download_boost(dest_dir, interactive=False, version=False, install=False, fo
 		run_commad('ln -s "%s" boost' % boost_filename.replace('.tar.bz2', ''))
 		os.chdir('boost')
 		run_commad('./bootstrap.sh --with-libraries=python')
-		os.chdir('..')
+		os.chdir('../..')
 	
 	# Compile Boost
 	if interactive:
@@ -130,7 +130,7 @@ def download_boost(dest_dir, interactive=False, version=False, install=False, fo
 		os.chdir(dest_dir)
 		os.chdir('boost')
 		run_commad('./b2')
-		os.chdir('..')
+		os.chdir('../..')
 	
 	# Install Boost
 	if interactive and not install:
@@ -139,7 +139,8 @@ def download_boost(dest_dir, interactive=False, version=False, install=False, fo
 		os.chdir(dest_dir)
 		os.chdir('boost')
 		run_commad('sudo ./b2 install')
-		os.chdir('..')
+		# FIXME: What do we do when sudo is not installed / set up (e.g. Debian)?
+		os.chdir('../..')
 
 def update_git_submodules(interactive=False):
 	if interactive:
@@ -148,7 +149,8 @@ def update_git_submodules(interactive=False):
 		update_submodules = True
 	
 	if update_submodules:
-		run_commad('git submodules update')
+		run_commad('git submodule init')
+		run_commad('git submodule update')
 
 def create_virtualenv(dest_dir, requirements=None, interactive=False, force=False):
 	if interactive:
@@ -166,8 +168,23 @@ def create_virtualenv(dest_dir, requirements=None, interactive=False, force=Fals
 		
 		if create_virtualenv:
 			run_commad('virtualenv --distribute --no-site-packages "%(dest_dir)s"' % locals())
+			# FIXME: What do we do when virtualenv is not installed? Must check if it is.
 			if requirements and os.path.isfile(requirements):
 				run_commad('%(dest_dir)s/bin/activate && pip install -r "%(requirements)s"' % locals())
+
+def create_build_dir(dest_dir, interactive=False, force=False):
+	if interactive:
+		create_build_dir = prompt('Create build directory?')
+	else:
+		create_build_dir = True
+	
+	if create_build_dir:
+		if os.path.exists(dest_dir):
+			warning_msg('Destination path for build directory already exists.')
+			if not force:
+				create_build_dir = prompt('Overwrite build directory?')
+		else:
+			os.mkdir(dest_dir)
 
 def checkout_branch(remote_branch, interactive=False):
 	if interactive:
@@ -219,6 +236,10 @@ def main(args):
 	# Checkout development branch
 	checkout_branch(args.remote_branch, interactive=args.interactive)
 
+	# Create build directory
+	if args.build_dir:
+		create_build_dir(args.build_dir, interactive=args.interactive, force=args.force)
+
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('dest_dir', help='Destination directory for libraries')
@@ -229,6 +250,7 @@ if __name__ == '__main__':
 	parser.add_argument('-r', '--requirement', action='store', default=None, help='Install all packages listed in the requirements file to the virtual environment using pip')
 	parser.add_argument('-c', '--checkout', metavar='remote_branch', action='store', default='origin/master', dest='remote_branch', help='Check out given remote branch to start development on that branch')
 	parser.add_argument('-f', '--force', action='store_true', help='Force overwrite existing files')
+	parser.add_argument('-b', '--build-dir', action='store', default=None, help='build directory for CMake')
 	
 	if HAS_ARGCOMPLETE:
 		argcomplete.autocomplete(parser)
