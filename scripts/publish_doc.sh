@@ -11,6 +11,8 @@ make doc
 cd ..
 git checkout gh-pages
 
+mkdir -p doc
+
 # Copy HTML documentation to GitHub page
 rm -rf doc/sphinx
 rm -rf doc/doxygen
