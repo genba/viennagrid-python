@@ -74,6 +74,8 @@ API reference of :mod:`viennagrid`
 	:undoc-members:
 	:synopsis: Configuration classes for domain definition
 
+.. _coordinate-system-tags:
+
 Coordinate system tags and supported dimensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -109,6 +111,8 @@ Coordinate system tags and supported dimensions
 			POLAR:          (2,),
 			SPHERICAL:      (3,),
 		}
+
+.. _cell-tags:
 
 Cell tags
 ^^^^^^^^^
