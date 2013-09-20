@@ -14,17 +14,23 @@ def read_netgen(filepath, domain, segmentation=None):
 	:param filepath: Path to the mesh file.
 	:type filepath: str
 	:param domain: Domain
-	:type domain: :class:`viennagrid.Domain` or any domain class from :mod:`viennagrid.wrapper`
+	:type domain: :class:`viennagrid.Domain`
 	:param segmentation: Segmentation
-	:type segmentation: :class:`viennagrid.Segmentation` or any segmentation class from :mod:`viennagrid.wrapper`
-	:raises: IOError, BadFileFormatError
+	:type segmentation: :class:`viennagrid.Segmentation`
+	:raises: IOError, :exc:`~viennagrid.io.BadFileFormatError`, TypeError
 	"""
 	
-	if isinstance(domain, viennagrid.Domain):
-		domain = domain._domain
+	try:
+		if isinstance(domain, viennagrid.Domain):
+			domain = domain._domain
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid domain')
 	
-	if isinstance(segmentation, viennagrid.Segmentation):
-		segmentation = segmentation._segmentation
+	try:
+		if isinstance(segmentation, viennagrid.Segmentation):
+			segmentation = segmentation._segmentation
+	except AttributeError:
+		raise TypeError('parameter at position 3 is not a valid segmentation')
 	
 	try:
 		viennagrid.wrapper.read_netgen(filepath, domain, segmentation)
@@ -39,17 +45,28 @@ def read_vtk(filepath, domain, segmentation=None, accessors={}):
 	:param filepath: Path to the mesh file.
 	:type filepath: str
 	:param domain: Domain
-	:type domain: :class:`viennagrid.Domain` or any domain class from :mod:`viennagrid.wrapper`
+	:type domain: :class:`viennagrid.Domain`
 	:param segmentation: Segmentation
-	:type segmentation: :class:`viennagrid.Segmentation` or any segmentation class from :mod:`viennagrid.wrapper`
-	:raises: IOError, BadFileFormatError
+	:type segmentation: :class:`viennagrid.Segmentation`
+	:param accessors: Accessors to be used to get quantities that should be read from the mesh file,
+	                  in the form of a dictionary where keys are the names of the quantities (`str`)
+	                  and where the values are accessors (:class:`viennagrid.accessors.Accessor`) or
+	                  fields(:class:`viennagrid.accessors.Field`)
+	:type accessors: dict
+	:raises: IOError, :exc:`~viennagrid.io.BadFileFormatError`, TypeError
 	"""
 	
-	if isinstance(domain, viennagrid.Domain):
-		domain = domain._domain
+	try:
+		if isinstance(domain, viennagrid.Domain):
+			domain = domain._domain
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid domain')
 	
-	if isinstance(segmentation, viennagrid.Segmentation):
-		segmentation = segmentation._segmentation
+	try:
+		if isinstance(segmentation, viennagrid.Segmentation):
+			segmentation = segmentation._segmentation
+	except AttributeError:
+		raise TypeError('parameter at position 3 is not a valid segmentation')
 	
 	low_level_accessors = {}
 	for quantity_name, accessor in accessors.iteritems():
@@ -67,12 +84,20 @@ def write_opendx(filepath, domain, accessors={}):
 	:param filepath: Path to the mesh file.
 	:type filepath: str
 	:param domain: Domain
-	:type domain: :class:`viennagrid.Domain` or any domain class from :mod:`viennagrid.wrapper`
-	:raises: IOError, BadFileFormatError
+	:type domain: :class:`viennagrid.Domain`
+	:param accessors: Accessors to be used to get quantities that should be written to the mesh file,
+	                  in the form of a dictionary where keys are the names of the quantities (`str`)
+	                  and where the values are accessors (:class:`viennagrid.accessors.Accessor`) or
+	                  fields(:class:`viennagrid.accessors.Field`)
+	:type accessors: dict
+	:raises: IOError, :exc:`~viennagrid.io.BadFileFormatError`, TypeError
 	"""
 	
-	if isinstance(domain, viennagrid.Domain):
-		domain = domain._domain
+	try:
+		if isinstance(domain, viennagrid.Domain):
+			domain = domain._domain
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid domain')
 	
 	low_level_accessors = {}
 	for quantity_name, accessor in accessors.iteritems():
@@ -91,17 +116,28 @@ def write_vtk(filepath, domain, segmentation=None, accessors={}):
 	:param filepath: Path to the mesh file.
 	:type filepath: str
 	:param domain: Domain
-	:type domain: :class:`viennagrid.Domain` or any domain class from :mod:`viennagrid.wrapper`
+	:type domain: :class:`viennagrid.Domain`
 	:param segmentation: Segmentation
-	:type segmentation: :class:`viennagrid.Segmentation` or any segmentation class from :mod:`viennagrid.wrapper`
-	:raises: IOError, BadFileFormatError
+	:type segmentation: :class:`viennagrid.Segmentation`
+	:param accessors: Accessors to be used to get quantities that should be written to the mesh file,
+	                  in the form of a dictionary where keys are the names of the quantities (`str`)
+	                  and where the values are accessors (:class:`viennagrid.accessors.Accessor`) or
+	                  fields(:class:`viennagrid.accessors.Field`)
+	:type accessors: dict
+	:raises: IOError, :exc:`~viennagrid.io.BadFileFormatError`, TypeError
 	"""
 	
-	if isinstance(domain, viennagrid.Domain):
-		domain = domain._domain
+	try:
+		if isinstance(domain, viennagrid.Domain):
+			domain = domain._domain
+	except AttributeError:
+		raise TypeError('parameter at position 2 is not a valid domain')
 	
-	if isinstance(segmentation, viennagrid.Segmentation):
-		segmentation = segmentation._segmentation
+	try:
+		if isinstance(segmentation, viennagrid.Segmentation):
+			segmentation = segmentation._segmentation
+	except AttributeError:
+		raise TypeError('parameter at position 3 is not a valid segmentation')
 	
 	low_level_accessors = {}
 	for quantity_name, accessor in accessors.iteritems():

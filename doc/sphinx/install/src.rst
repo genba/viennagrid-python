@@ -6,9 +6,9 @@ Installation from source
 To install from source, your system must satisfy the following dependencies:
 
 * **CMake 2.6 or greater** (2.8 is preferred)
-* **Python 2.0 or greater** (2.7 is preferred; Python 3 is not supported yet)
+* **Python 2.0 or greater** (2.7 is preferred; Python 3 is not officially supported yet)
 * **Python development libraries** (header files) for your Python version
-* **A modern C++ compiler** (any recent version of g++ or clang will do a good job)
+* **A modern C++ compiler** (for development, clang 3.0 has been used)
 
 `Boost.Python <http://www.boost.org/>`_ (1.53.0 or greater) and `ViennaGrid <http://viennagrid.sourceforge.net/>`_ (1.1.0 or greater) are also required to compile ViennaGrid for Python, but, if you don't have them, you can follow the steps in section :ref:`setting-up-devel-environ` to install them. On the other hand, if you already have them, you can skip directly to section :ref:`configuring-source` (provided that you don't want to create a virtual environment, which is done in section :ref:`setting-up-devel-environ`).
 
@@ -44,11 +44,11 @@ Manual setup
 Downloading and installing Boost.Python
 """""""""""""""""""""""""""""""""""""""
 
-If the package manager of your operating system provides packages for Boost.Python, you may install it from the packages, but please notice that the development of ViennaGrid for Python 0.1.0 was done using Boost 1.53.0. While a later version of Boost may work nicely, we cannot grant that a previous version will work without problems.
+If the package manager of your operating system provides packages for Boost.Python, you may install it from the packages, but please notice that the development of ViennaGrid for Python 0.1.0 was done using Boost 1.53.0. While a later version of Boost may work nicely, we cannot guarantee that a previous version will work without problems.
 
 If you prefer to install Boost.Python from source, you'll have to download Boost from http://www.boost.org/. In general, you don't need to compile Boost to use it, excepting when you use some of the few modules that require compilation. Boost.Python is one of those modules. Thus, we will have to compile it.
 
-For the development of ViennaGrid for Python, we use the convention to place all libraries that ViennaGrid for Python needs into the `inc` directory under the source code root directory (in our example, `viennagrid-python-0.1.0`), but you may choose to place Boost anywhere in your system. If you install Boost after compiling it, the place where its source code is located on disk won't matter and CMake (our configuration utility) will be able to find it. However, if you decide not to install Boost (which is totally fine), you'll have to provide the full path to CMake when we configure the project for building.
+For the development of ViennaGrid for Python, we use the convention to place all libraries that ViennaGrid for Python needs into the `inc` directory under the source code root directory (in our example, `viennagrid-python-0.1.0`), but you may choose to place Boost anywhere in your system. If you install Boost after compiling it, the place where its source code is located on disk won't matter and CMake (our configuration utility) will be able to find it. However, if you decide not to install Boost (which is totally fine), you'll have to provide the full path to CMake when you configure the project for building.
 
 That being said, we can proceed to fetch the Boost tarball from http://www.boost.org/ and decompress it. Since we used the bzipped version of Boost 1.53.0 for development: ::
 
@@ -63,7 +63,7 @@ After the configuration has finished, we compile Boost.Python by issuing the com
 
 	./b2
 
-When compilation has finished, the compilation script will show us the paths where Boost's header files and shared libraries are located, respectively. If you decide not to install Boost on your system, you'll have to note these to paths to tell CMake where Boost is on your disk.
+Once the compilation has finished, the compilation script will show us the paths where Boost's header files and shared libraries are located, respectively. If you decide not to install Boost on your system, you'll have to note these two paths so that, later, you can tell CMake where Boost is located on your disk.
 
 Finally, if you decide to install Boost.Python after all, you can do it like this (but please notice that you need administrator priviledges for this): ::
 
@@ -74,15 +74,19 @@ If you need more information on how to build Boost.Python, visit the `Boost docu
 Getting ViennaGrid
 """"""""""""""""""
 
-To download a stable version of ViennaGrid, visit http://viennagrid.sourceforge.net/. At this time, the CMake configuration of ViennaGrid for Python is not able to find ViennaGrid if it's outside of the `inc` directory mentioned above. Thus, you'll have to download and decompress ViennaGrid to that directory.
-
-If you prefer to use the latest development version from `ViennaGrid's GitHub repository <https://github.com/viennagrid/viennagrid-dev>`_, you'll have to clone that repository to `inc` and, since the resulting directory will be called `viennagrid-dev`, you'll have to rename it to just `viennagrid` for CMake to find it. All this can be done in a single command, if you want: ::
+If you are using a tarball, you'll have to download ViennaGrid by yourself, either a stable version from http://viennagrid.sourceforge.net/ or by cloning the code from `ViennaGrid's GitHub repository <https://github.com/viennagrid/viennagrid-dev>`_. At this time, the CMake configuration of ViennaGrid for Python is not able to find ViennaGrid if it's outside of the `inc` directory mentioned above. Thus, you'll have to download and decompress ViennaGrid to that directory if you don't want to edit the CMake configuration files for the project. Likewise, if you are cloning it instead of installing from a tarball, we recommend you clone it to the `inc` directory with the following command (to rename the resulting directory): ::
 
 	git clone git@github.com:viennagrid/viennagrid-dev.git viennagrid
 
-However, if you've cloned ViennaGrid for Python from the Git repository, you don't need to download or clone anything, because the ViennaGrid repository is included as a submodule. Thus, the only thing you'll have to do is update the submodules from within the source code directory of ViennaGrid for Python: ::
+If you prefer to download ViennaGrid for Python by getting the code from `ViennaGrid for Python's GitHub repository <https://github.com/genba/viennagrid-python>`_,  you won't need to download ViennaGrid by yourself, since it is already included in the repository as a Git submodule. If you want the code of ViennaGrid to be downloaded automatically when you clone the repository, you can do it in a single command, if you want: ::
+
+	git clone --recursive git@github.com:genba/viennagrid-python.git
+
+However, if you've already cloned ViennaGrid for Python from the Git repository and haven't provided the `--recursive` option to Git, you can still tell Git to download the submodule with the following command: ::
 
 	git submodules update
+
+After doing this, you are already set up to build ViennaGrid for Python. If you want to install ViennaGrid for Python to a virtual environment, proceed to section :ref:`setting-up-devel-environ`. If you don't want to do this, just skip to :ref:`configuring-source`.
 
 Creating a Python virtual environment
 """""""""""""""""""""""""""""""""""""
@@ -145,7 +149,7 @@ Configuring the source code to be built
 
 To configure the source code, we will use `CMake <http://www.cmake.org/>`_.
 
-First of all, we need to create a directory where the project will be built. We choose to create a directory called `build` in the root directory of the source code, i.e., `viennagrid-python-0.1.0` if you've downloaded the tarball or `viennagrid-python` if you've cloned the Git repository. So, from that directory, we issue the following commands: ::
+First of all, we need to create a directory where the project will be built. We choose to create a directory called `build` in the root directory of the source code directory, i.e., `viennagrid-python-0.1.0` if you've downloaded the tarball or `viennagrid-python` if you've cloned the Git repository. So, from that directory, we issue the following commands: ::
 
 	mkdir build
 	cd build/
@@ -156,18 +160,18 @@ From now on, we will execute the rest of the commands from within the `build` di
 * `ccmake ..` (curses interface)
 * `cmake-gui ..` (GUI)
 
-If you've set up the development environment as explained above and installed Boost.Python to your system, you shouln't have to do anything and there shouldn't be any errors to solve. The whole configuration process should have happened without requiring any input from you.
+If you've set up the development environment as explained above and installed Boost.Python to your system, you shouldn't have to do anything and there shouldn't be any errors to solve. The whole configuration process should have happened without requiring any input from you.
 
-However, if you haven't installed Boost to your system, you'll get a CMake error message stating that it could not find Boost.Python and you'll have to provide its location manually. After that re-run the configuration tool again and everything should work fine now and you can proceed to :ref:`building-source`.
+However, if you haven't installed Boost to your system, you'll get a CMake error message stating that it could not find Boost.Python and you'll have to provide its location manually. After that, re-run the configuration tool again and everything should work fine now, and you will be able to proceed to :ref:`building-source`.
 
-For more information on how to use CMake, visit http://www.cmake.org/. There's also a very good book titled `Mastering CMake <http://www.cmake.org/cmake/help/book.html>`_, which dedicated a whole chapter to explain CMake's installation and usage for building software.
+For more information on how to use CMake, visit http://www.cmake.org/. There's also a very good book titled `Mastering CMake <http://www.cmake.org/cmake/help/book.html>`_, which dedicates a whole chapter to explain CMake's installation and usage for building software.
 
 .. _building-source:
 
 Building the source code
 ------------------------
 
-Once you've configured the project using CMake, you can build the whole project from the `build` directory by issuing the command: ::
+Once you have configured the project using CMake, you can build the whole project from the `build` directory by issuing the command: ::
 
 	make
 
@@ -189,3 +193,10 @@ This will install the source distribution package with the Sphinx documentation 
 	python setup.py install
 
 from the directory `build/viennagrid-python`, even though they should have exactly the same effect.
+
+Running tests
+-------------
+
+You can run the test for the wrapper by issuing the command ::
+
+	make test

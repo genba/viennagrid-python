@@ -106,54 +106,76 @@ class Configuration(object):
 	
 	@property
 	def point_type(self):
-		"""Return appropriate point type based in this configuration"""
+		"""
+		Return appropriate point type based on this configuration
+		
+		:returns: Low-level point type
+		"""
 		classname = ''.join(['Point', self.coord_system.title(), str(self.dim), 'D'])
 		return _wrapper.__getattribute__(classname)
 	
 	@property
 	def domain_type(self):
-		"""Return appropriate domain type based in this configuration"""
+		"""
+		Return appropriate domain type based on this configuration
+		
+		:returns: Low-level domain type
+		"""
 		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_Domain'])
 		return _wrapper.__getattribute__(classname)
 	
 	@property
 	def segmentation_type(self):
-		"""Return appropriate segmentation type based in this configuration"""
+		"""
+		Return appropriate segmentation type based on this configuration
+		
+		:returns: Low-level segmentation type
+		"""
 		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_Segmentation'])
 		return _wrapper.__getattribute__(classname)
 	
 	def make_point(self, *args, **kwargs):
 		"""
-		Create a new low-level (:mod:`viennagrid.wrapper`) point based in this configuration
+		Create a new low-level (:mod:`viennagrid.wrapper`) point based on this configuration
 		
 		As arguments you can pass the coordinates of the point to create, or nothing at all.
 		If you specify the coordinates of the point, the number of arguments must match the dimension of the space
 		(i.e. the number of coordinates that the are needed to describe the location of the point in the space).
+		
+		:returns: Low-level point
 		"""
 		PointType = self.point_type
 		return PointType(*args, **kwargs)
 	
 	def make_domain(self):
-		"""Create a new low-level (:mod:`viennagrid.wrapper`) domain based in this configuration"""
+		"""
+		Create a new low-level (:mod:`viennagrid.wrapper`) domain based on this configuration
+		
+		:returns: Low-level domain
+		"""
 		DomainType = self.domain_type
 		return DomainType()
 	
 	def make_segmentation(self, domain):
 		"""
-		Create a new low-level (:mod:`viennagrid.wrapper`) segmentation based in this configuration.
+		Create a new low-level (:mod:`viennagrid.wrapper`) segmentation based on this configuration.
 		
 		:param domain: Domain on which to base the segmentation.
 		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class
+		
+		:returns: Low-level segmentation
 		"""
 		SegmentationType = self.segmentation_type
 		return SegmentationType(domain)
 	
 	def make_accessor(self, accessor_type):
 		"""
-		Create a new low-level (:mod:`viennagrid.wrapper`) segmentation based in this configuration.
+		Create a new low-level (:mod:`viennagrid.wrapper`) accessor or field based on this configuration.
 		
 		:param domain: Domain on which to base the segmentation.
 		:type domain: A domain class from :mod:`viennagrid.wrapper` which matches this configuration class
+		
+		:returns: Low-level accessors or field
 		"""
 		classname = ''.join([self.cell_tag.title(), self.coord_system.title(), str(self.dim), 'D_', accessor_type.title(), '_Accessor'])
 		cls = _wrapper.__getattribute__(classname)

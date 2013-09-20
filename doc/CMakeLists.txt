@@ -15,11 +15,17 @@ if (SPHINX_BUILD_EXECUTABLE)
 	set (SPHINX_CACHE_DIR "${CMAKE_CURRENT_BINARY_DIR}/sphinx/_doctrees")
 	# HTML output directory
 	set (SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/sphinx/html")
+	# LaTeX output directory
+	set (SPHINX_LATEX_DIR "${CMAKE_CURRENT_BINARY_DIR}/sphinx/latex")
 
 	configure_file("${SPHINX_SRC_DIR}/conf.py.in" "${SPHINX_CONF_DIR}/conf.py" @ONLY)
-	add_custom_target (sphinx
+	add_custom_target (sphinx-html
 	                   ${SPHINX_BUILD_EXECUTABLE} -q -b html -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_HTML_DIR}"
 	                   DEPENDS packagesrc)
+	add_custom_target (sphinx-pdf
+	                   ${SPHINX_BUILD_EXECUTABLE} -b latex -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_LATEX_DIR}"
+	                   DEPENDS packagesrc)
+	add_custom_target (sphinx DEPENDS sphinx-html sphinx-pdf)
 	set (TARGETS ${TARGETS} sphinx)
 else (SPHINX_BUILD_EXECUTABLE)
 	message (WARNING "sphinx-build not found")

@@ -25,12 +25,10 @@ API reference of :mod:`viennagrid`
 	.. automethod:: __init__
 	.. autoattribute:: config
 	.. autoattribute:: vertices
+	.. autoattribute:: cells
 	.. automethod:: make_vertex
+	.. automethod:: make_cell
 	.. automethod:: __iter__
-	.. automethod:: read_netgen
-	.. automethod:: read_vtk
-	.. automethod:: write_opendx
-	.. automethod:: write_vtk
 
 .. autoclass:: Segmentation
 
@@ -51,11 +49,14 @@ API reference of :mod:`viennagrid`
 
 	.. automethod:: __init__
 	.. autoattribute:: vertices
+	.. autoattribute:: facets
+	.. autoattribute:: edges
 	.. automethod:: __iter__
 
 .. autoclass:: Vertex
 
 	.. automethod:: __init__
+	.. automethod:: to_point
 
 .. autoclass:: Facet
 
@@ -72,6 +73,8 @@ API reference of :mod:`viennagrid`
 	:members:
 	:undoc-members:
 	:synopsis: Configuration classes for domain definition
+
+.. _coordinate-system-tags:
 
 Coordinate system tags and supported dimensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,6 +111,8 @@ Coordinate system tags and supported dimensions
 			POLAR:          (2,),
 			SPHERICAL:      (3,),
 		}
+
+.. _cell-tags:
 
 Cell tags
 ^^^^^^^^^
@@ -203,7 +208,6 @@ Common configurations
 	:undoc-members:
 	:synopsis: Common algorithms on mesh elements
 
-
 :mod:`viennagrid.io` --- Input/output functions
 -----------------------------------------------
 
@@ -211,3 +215,11 @@ Common configurations
 	:members:
 	:undoc-members:
 	:synopsis: Input/output functions
+
+:mod:`viennagrid.accessors` --- Interface for storing scalar quantities in meshes
+---------------------------------------------------------------------------------
+
+.. automodule:: viennagrid.accessors
+	:members:
+	:undoc-members:
+	:synopsis: Interface for storing scalar quantities in meshes
