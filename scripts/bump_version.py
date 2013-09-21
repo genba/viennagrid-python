@@ -23,6 +23,10 @@ def main(project_version, boost_version, viennagrid_version):
 		subprocess.call(cmd, shell=True)
 		cmd = "perl -p -i -e 's/%(old_str)s/%(new_str)s/g' src/wrapper.cpp" % locals()
 		subprocess.call(cmd, shell=True)
+		cmd = "perl -p -i -e 's/%(old_str)s/%(new_str)s/g' README.md" % locals()
+		subprocess.call(cmd, shell=True)
+		cmd = "perl -p -i -e 's/%(old_str)s/%(new_str)s/g' src/CMakeLists.txt" % locals()
+		subprocess.call(cmd, shell=True)
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
