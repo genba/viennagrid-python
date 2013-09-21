@@ -14,8 +14,10 @@ VIENNAGRID_VERSION = '1.0.1'  # Version of ViennaGrid used for development
 
 def main(project_version, boost_version, viennagrid_version):
 	paths = ' '.join(['doc', 'scripts', 'test', 'viennagrid-python'])
-	old_versions = [PROJECT_VERSION, BOOST_VERSION, VIENNAGRID_VERSION]
-	new_versions = [project_version, boost_version, viennagrid_version]
+	old_version_short = '.'.join(PROJECT_VERSION.split('.')[0:2])
+	new_version_short = '.'.join(project_version.split('.')[0:2])
+	old_versions = [PROJECT_VERSION, BOOST_VERSION, VIENNAGRID_VERSION, old_version_short]
+	new_versions = [project_version, boost_version, viennagrid_version, new_version_short]
 	for old_str, new_str in zip(old_versions, new_versions):
 		old_str = old_str.replace('.', '\.')
 		new_str = new_str.replace('.', '\.')
