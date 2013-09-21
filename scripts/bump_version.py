@@ -8,9 +8,9 @@
 import argparse
 import subprocess
 
-PROJECT_VERSION    = '0.1.0'  # Current version of the project (ViennaGrid for Python)
-BOOST_VERSION      = '1.53.0' # Version of Boost used for development
-VIENNAGRID_VERSION = '1.0.1'  # Version of ViennaGrid used for development
+PROJECT_VERSION    = '0.1.0-rc.2' # Current version of the project (ViennaGrid for Python)
+BOOST_VERSION      = '1.53.0'     # Version of Boost used for development
+VIENNAGRID_VERSION = '1.0.1'      # Version of ViennaGrid used for development
 
 def replace_dirs(old_str, new_str, dirs):
 	paths = ' '.join(dirs)
