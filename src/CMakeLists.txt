@@ -9,8 +9,8 @@ set (DOXYGEN_INPUT "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
 find_package (PythonLibs REQUIRED)
 include_directories (${PYTHON_INCLUDE_PATH})
 
-# Find Boost.Python 1.53.0
-find_package (Boost 1.53.0 REQUIRED COMPONENTS python)
+# Find Boost.Python
+find_package (Boost REQUIRED COMPONENTS python)
 include_directories (${Boost_INCLUDE_DIRS})
 
 # Add include path for ViennaGrid
