@@ -14,7 +14,7 @@ VIENNAGRID_VERSION = '1.0.1'      # Version of ViennaGrid used for development
 
 def replace_dirs(old_str, new_str, dirs):
 	paths = ' '.join(dirs)
-	cmd = "perl -p -i -e 's/%(old_str)s/%(new_str)s/g' `ack-grep -l '%(old_str)s' %(paths)s`" % locals()
+	cmd = "perl -p -i -e 's/%(old_str)s/%(new_str)s/g' `grep -Rl '%(old_str)s' %(paths)s`" % locals()
 	subprocess.call(cmd, shell=True)
 
 def replace_file(old_str, new_str, paths):
