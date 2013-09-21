@@ -14,7 +14,7 @@ SETUP_DIR = os.path.split(__file__)[0]
 
 setup(
 	name='viennagrid-python',
-	version='0.1.0',
+	version='0.1.0-rc.2',
 	author='Jonan CM',
 	author_email='jonancm@gmail.com',
 	url='http://genba.github.io/viennagrid-python/',
