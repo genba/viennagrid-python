@@ -27,8 +27,8 @@ def main(project_version, boost_version, viennagrid_version):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('project_version', help='version number of the next release of ViennaGrid for Python')
-	parser.add_argument('boost_version', help='ViennaGrid version number to be used')
-	parser.add_argument('viennagrid_version', help='Boost version number to be used')
+	parser.add_argument('boost_version', help='ViennaGrid version number to be used', nargs='?', default=BOOST_VERSION)
+	parser.add_argument('viennagrid_version', help='Boost version number to be used', nargs='?', default=VIENNAGRID_VERSION)
 	
 	args = parser.parse_args()
 	
