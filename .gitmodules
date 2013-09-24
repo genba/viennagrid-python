@@ -1,3 +1,3 @@
 [submodule "inc/viennagrid"]
 	path = inc/viennagrid
-	url = git@github.com:viennagrid/viennagrid-dev.git
+	url = https://github.com/genba/viennagrid-python.git
