@@ -39,6 +39,7 @@ set (PACKAGESRC_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/packagesrc")
 add_custom_command (OUTPUT ${PACKAGESRC_OUTPUT}
                     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/viennagrid" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
                     COMMAND ${CMAKE_COMMAND} -E copy "${LIBRARY_OUTPUT_PATH}/wrapper.so" "${CMAKE_CURRENT_BINARY_DIR}/viennagrid"
+                    COMMAND python "${SETUP_PY}" sdist
                     COMMAND ${CMAKE_COMMAND} -E touch ${PACKAGESRC_OUTPUT}
                     SOURCES ${PYTHON_SRC_FILES}
                     DEPENDS wrapper ${PYTHON_SRC_FILES})
