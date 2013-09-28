@@ -62,6 +62,11 @@ add_custom_command (OUTPUT ${PACKAGEDOC_OUTPUT}
 
 add_custom_target (packagedoc ALL DEPENDS ${PACKAGEDOC_OUTPUT})
 
-add_custom_target (package ALL DEPENDS packagesrc packagedoc)
+set (PACKAGE_INCLUDE_SPHINX_DOC ON CACHE BOOL "Include the Sphinx documentation in the distutils package?")
+if (PACKAGE_INCLUDE_SPHINX_DOC)
+     add_custom_target (package ALL DEPENDS packagesrc packagedoc)
+else (PACKAGE_INCLUDE_SPHINX_DOC)
+     add_custom_target (package ALL DEPENDS packagesrc)
+endif (PACKAGE_INCLUDE_SPHINX_DOC)
 
 install (CODE "execute_process (COMMAND python \"${SETUP_PY}\" install)")
