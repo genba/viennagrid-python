@@ -46,7 +46,11 @@ if (DOXYGEN_FOUND)
 	
 	configure_file("${DOXYFILE_TEMPLATE_PATH}" "${DOXYFILE_PATH}" @ONLY)
 	add_custom_target (doxygen ${DOXYGEN_EXECUTABLE} ${DOXYFILE_PATH})
-	set (TARGETS ${TARGETS} doxygen)
+	
+	set (DOXYGEN_GENERATE_DOC ON CACHE BOOL "Include target to generate Doxygen documentation in target 'doc'?")
+	if (DOXYGEN_GENERATE_DOC)
+		set (TARGETS ${TARGETS} doxygen)
+	endif (DOXYGEN_GENERATE_DOC)
 else (DOXYGEN_FOUND)
 	message (WARNING "doxygen not found")
 endif (DOXYGEN_FOUND)
