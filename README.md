@@ -2,7 +2,7 @@
 
 ViennaGrid for Python is a Python package that provides a wrapper around [ViennaGrid](http://viennagrid.sourceforge.net "ViennaGrid - C++ Mesh Data Structure Library at High Convenience and Performance"), so that you can use ViennaGrid's capabilities from your Python programs.
 
-The code provided here is version 0.1.0-rc.3 ViennaGrid for Python. This project uses [semantic versioning](http://semver.org "Semantic Versioning 2.0.0-rc.2") for specifying the version number. In brief, this means that it uses version numbers in the form
+The code provided here is version 0.1.0-rc.4 ViennaGrid for Python. This project uses [semantic versioning](http://semver.org "Semantic Versioning 2.0.0-rc.2") for specifying the version number. In brief, this means that it uses version numbers in the form
 
 	X.Y.Z (Major.Minor.Patch)
 
@@ -12,13 +12,13 @@ where the following rules apply:
 * Backwards compatible API additions/changes increment the minor version.
 * Backwards incompatible API changes increment the major version.
 
-You can download the latest release of ViennaGrid for Python from [ViennaGrid for Python's GitHub repository](https://github.com/genba/viennagrid-python).
+You can download ViennaGrid for Python from the [project's web page](http://genba.github.io/viennagrid-python/). You can also download the latest development version of ViennaGrid for Python from the [project's GitHub repository](https://github.com/genba/viennagrid-python).
 
 ## How to use ViennaGrid for Python
 
-If you want to learn how to use ViennaGrid for Python, you should read the Sphinx documentation of the project. The introduction should present the basic concepts of ViennaGrid for Python and the tutorial explains what you need to know to start writing useful programs.
+If you want to learn how to use ViennaGrid for Python, you should read the [Sphinx documentation](http://genba.github.io/viennagrid-python/doc/sphinx/) of the project. The introduction should present the basic concepts of ViennaGrid for Python and the tutorial explains what you need to know to start writing useful programs.
 
-Besides, there are code examples in the source code tree, under `doc/examples/`.
+Besides, there are code examples in the source code directory tree, under `doc/examples/`.
 
 ## Compilation instructions
 
@@ -36,7 +36,7 @@ To compile ViennaGrid for Python, you will need the following software installed
 * **A modern C++ compiler** (for development, clang 3.0 has been used)
 * **Boost.Python** (we have used Boost.Python 1.53.0)
 
-You will also need ViennaGrid 1.1.0, preferrably in the directory `inc/` of the source code tree. Otherwise, you will have to edit the CMakeLists manually to change the path to ViennaGrid.
+You will also need ViennaGrid 1.1.0, preferrably in the directory `inc/` of the source code directory tree. Otherwise, you will have to edit the CMakeLists manually to change the path to ViennaGrid.
 
 ### Building
 

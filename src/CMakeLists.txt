@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (ViennaGridWrapper)
 set (version 0.1)
-set (release 0.1.0-rc.3)
+set (release 0.1.0-rc.4)
 
 set (DOXYGEN_INPUT "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
 

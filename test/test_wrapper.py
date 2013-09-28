@@ -14,7 +14,7 @@ class TestWrapper(unittest.TestCase):
 		pass
 	
 	def test_version(self):
-		self.assertEqual(viennagrid.wrapper.version(), '0.1.0-rc.3')
+		self.assertEqual(viennagrid.wrapper.version(), '0.1.0-rc.4')
 
 if __name__ == '__main__':
 	unittest.main()
