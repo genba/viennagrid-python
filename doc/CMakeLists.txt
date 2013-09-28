@@ -25,7 +25,12 @@ if (SPHINX_BUILD_EXECUTABLE)
 	add_custom_target (sphinx-pdf
 	                   ${SPHINX_BUILD_EXECUTABLE} -b latex -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_LATEX_DIR}"
 	                   DEPENDS packagesrc)
-	add_custom_target (sphinx DEPENDS sphinx-html sphinx-pdf)
+	set (SPHINX_GENERATE_LATEX_DOC ON CACHE BOOL "Include target to generate LaTeX documentation in target 'sphinx'?")
+	if (SPHINX_GENERATE_LATEX_DOC)
+		add_custom_target (sphinx DEPENDS sphinx-html sphinx-pdf)
+	else (SPHINX_GENERATE_LATEX_DOC)
+		add_custom_target (sphinx DEPENDS sphinx-html)
+	endif (SPHINX_GENERATE_LATEX_DOC)
 	set (TARGETS ${TARGETS} sphinx)
 else (SPHINX_BUILD_EXECUTABLE)
 	message (WARNING "sphinx-build not found")
