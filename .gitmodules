@@ -1,3 +1,0 @@
-[submodule "inc/viennagrid"]
-	path = inc/viennagrid
-	url = https://github.com/viennagrid/viennagrid-dev.git
