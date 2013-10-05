@@ -2,7 +2,7 @@
 
 ViennaGrid for Python is a Python package that provides a wrapper around [ViennaGrid](http://viennagrid.sourceforge.net "ViennaGrid - C++ Mesh Data Structure Library at High Convenience and Performance"), so that you can use ViennaGrid's capabilities from your Python programs.
 
-The code provided here is version 0.1.0-rc.4 ViennaGrid for Python. This project uses [semantic versioning](http://semver.org "Semantic Versioning 2.0.0-rc.2") for specifying the version number. In brief, this means that it uses version numbers in the form
+The code provided here is version 0.1.0-rc.5 ViennaGrid for Python. This project uses [semantic versioning](http://semver.org "Semantic Versioning 2.0.0-rc.2") for specifying the version number. In brief, this means that it uses version numbers in the form
 
 	X.Y.Z (Major.Minor.Patch)
 
