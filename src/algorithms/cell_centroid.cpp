@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2013 Jonan Cruz-Martin
+ * 
+ * Distributed under the terms of the MIT license, see the accompanying
+ * file COPYING or http://opensource.org/licenses/MIT.
+ */
+
 #include "cell_centroid.hpp"
 
 #include <viennagrid/algorithm/centroid.hpp>
