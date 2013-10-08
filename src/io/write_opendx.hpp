@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2013 Jonan Cruz-Martin
+ * 
+ * Distributed under the terms of the MIT license, see the accompanying
+ * file COPYING or http://opensource.org/licenses/MIT.
+ * 
+ * @file
+ * @brief Function definitions for implementing the OpenDX writer.
+ */
+
 #ifndef IO_WRITE_OPENDX_HPP
 #define IO_WRITE_OPENDX_HPP
 
