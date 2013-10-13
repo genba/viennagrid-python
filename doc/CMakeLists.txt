@@ -64,6 +64,22 @@ if (DOXYGEN_FOUND)
 	configure_file("${DOXYFILE_TEMPLATE_PATH}" "${DOXYFILE_PATH}" @ONLY)
 	add_custom_target (doxygen ${DOXYGEN_EXECUTABLE} ${DOXYFILE_PATH})
 	
+	if (PDFLATEX_COMPILER)
+		add_custom_command (TARGET doxygen
+		                    POST_BUILD
+		                    COMMAND ${PDFLATEX_COMPILER} refman
+		                    COMMAND ${PDFLATEX_COMPILER} refman
+		                    WORKING_DIRECTORY "${DOXYGEN_OUTPUT_DIR}/latex")
+	else (PDFLATEX_COMPILER)
+		if (LATEX_COMPILER)
+			add_custom_command (TARGET doxygen
+			                    POST_BUILD
+			                    COMMAND ${LATEX_COMPILER} refman
+			                    COMMAND ${LATEX_COMPILER} refman
+			                    WORKING_DIRECTORY "${DOXYGEN_OUTPUT_DIR}//latex")
+		endif (LATEX_COMPILER)
+	endif (PDFLATEX_COMPILER)
+	
 	set (DOXYGEN_GENERATE_DOC ON CACHE BOOL "Include target to generate Doxygen documentation in target 'doc'?")
 	if (DOXYGEN_GENERATE_DOC)
 		set (TARGETS ${TARGETS} doxygen)
