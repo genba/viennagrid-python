@@ -2,6 +2,8 @@ cmake_minimum_required (VERSION 2.6)
 
 set (TARGETS)
 
+find_package (LATEX)
+
 # Find executable sphinx-build and add target for Sphinx documentation if sphinx-build is found.
 # If sphinx-build cannot be found, issue a warning and continue, but do not add target for Sphinx documentation.
 find_program (SPHINX_BUILD_EXECUTABLE sphinx-build)
@@ -25,6 +27,21 @@ if (SPHINX_BUILD_EXECUTABLE)
 	add_custom_target (sphinx-pdf
 	                   ${SPHINX_BUILD_EXECUTABLE} -b latex -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_LATEX_DIR}"
 	                   DEPENDS packagesrc)
+	if (PDFLATEX_COMPILER)
+		add_custom_command (TARGET sphinx-pdf
+		                    POST_BUILD
+		                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
+		                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
+		                    WORKING_DIRECTORY "${SPHINX_LATEX_DIR}")
+	else (PDFLATEX_COMPILER)
+		if (LATEX_COMPILER)
+			add_custom_command (TARGET sphinx-pdf
+			                    POST_BUILD
+			                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
+			                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
+			                    WORKING_DIRECTORY "${SPHINX_LATEX_DIR}")
+		endif (LATEX_COMPILER)
+	endif (PDFLATEX_COMPILER)
 	set (SPHINX_GENERATE_LATEX_DOC ON CACHE BOOL "Include target to generate LaTeX documentation in target 'sphinx'?")
 	if (SPHINX_GENERATE_LATEX_DOC)
 		add_custom_target (sphinx DEPENDS sphinx-html sphinx-pdf)
