@@ -24,18 +24,18 @@ if (SPHINX_BUILD_EXECUTABLE)
 	add_custom_target (sphinx-html
 	                   ${SPHINX_BUILD_EXECUTABLE} -q -b html -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_HTML_DIR}"
 	                   DEPENDS packagesrc)
-	add_custom_target (sphinx-pdf
+	add_custom_target (sphinx-latex
 	                   ${SPHINX_BUILD_EXECUTABLE} -b latex -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_LATEX_DIR}"
 	                   DEPENDS packagesrc)
 	if (PDFLATEX_COMPILER)
-		add_custom_command (TARGET sphinx-pdf
+		add_custom_command (TARGET sphinx-latex
 		                    POST_BUILD
 		                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
 		                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
 		                    WORKING_DIRECTORY "${SPHINX_LATEX_DIR}")
 	else (PDFLATEX_COMPILER)
 		if (LATEX_COMPILER)
-			add_custom_command (TARGET sphinx-pdf
+			add_custom_command (TARGET sphinx-latex
 			                    POST_BUILD
 			                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
 			                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
@@ -44,7 +44,7 @@ if (SPHINX_BUILD_EXECUTABLE)
 	endif (PDFLATEX_COMPILER)
 	set (SPHINX_GENERATE_LATEX_DOC ON CACHE BOOL "Include target to generate LaTeX documentation in target 'sphinx'?")
 	if (SPHINX_GENERATE_LATEX_DOC)
-		add_custom_target (sphinx DEPENDS sphinx-html sphinx-pdf)
+		add_custom_target (sphinx DEPENDS sphinx-html sphinx-latex)
 	else (SPHINX_GENERATE_LATEX_DOC)
 		add_custom_target (sphinx DEPENDS sphinx-html)
 	endif (SPHINX_GENERATE_LATEX_DOC)
