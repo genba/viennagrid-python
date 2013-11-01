@@ -29,8 +29,8 @@ Once you have the source code decompressed on your disk, enter the source code d
 
 	cd viennagrid-python-0.1.0/
 
-Configuring the source code to be built
----------------------------------------
+Configuring the build process
+-----------------------------
 
 To configure the build process, we will use `CMake <http://www.cmake.org/>`_.
 
@@ -46,6 +46,10 @@ From now on, we will execute the rest of the commands from within the `build` di
 * `cmake-gui ..` (GUI)
 
 If your system satisfies all the software dependencies mentioned above, you shouldn't have to do anything and there shouldn't be any errors to solve. The whole configuration process should have happened without requiring any input from you.
+
+If you want to customize how the software will be built, proceed to :ref:`advanced-build-config`. If you prefer to build the software with the default settings, skip to :ref:`building-source`.
+
+.. _advanced-build-config:
 
 Advanced build configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -65,6 +69,7 @@ There are some CMake variables that you can use to customize your build settings
 #. Build a distutils package (target `package`), which actually relies on one of the following targets:
 	* Build a distutils package without documentation (target `packagesrc`).
 	* Build a distutils package with documentation (target `packagedoc`).
+#. Install the distutils package (target `install`).
 
 You can customize the build process in the following manners:
 
@@ -77,7 +82,7 @@ You can customize the build process in the following manners:
 Configuring the build type
 """"""""""""""""""""""""""
 
-The build type is a very important thing to configure, because it will affect the built time and the later software performance.
+The build type is a very important thing to configure, because it will affect the time the build process will take, and the software performance.
 
 We can distinguish two main build types: debug and release. If you intend to build the software (eventually, a stable version of it) for use in production or to package it for distribution, a release build is the best option. However, if you plan to develop ViennaGrid for Python, a debug build will be better.
 
@@ -157,10 +162,3 @@ If you want to learn more about `virtualenv` or `pip`, visit their respective do
 * `pip documentation <http://www.pip-installer.org/>`_
 
 .. [#it-shouldnt-break] Doing this shouldn't actually break anything in your Python installation itself, but, if you have another version of ViennaGrid for Python installed, you may end up with version problems. This is what would actually get broken: if you have software that depends on one version of ViennaGrid for Python and you install a newer version which is not backwards-compatible, your software will stop working.
-
-Running tests
--------------
-
-You can run the test for the wrapper by issuing the command ::
-
-	make test
