@@ -47,7 +47,13 @@ From now on, we will execute the rest of the commands from within the `build` di
 
 If your system satisfies all the software dependencies mentioned above, you shouldn't have to do anything and there shouldn't be any errors to solve. The whole configuration process should have happened without requiring any input from you.
 
-However, there are some CMake variables that you can use to customize your build settings and what components will be built. Currently, the CMake files are written to do the following:
+Advanced build configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Selecting components to be built
+""""""""""""""""""""""""""""""""
+
+There are some CMake variables that you can use to customize your build settings and what components will be built. Currently, the CMake files are written to do the following:
 
 #. Download the appropriate version of the ViennaGrid source code needed to compile ViennaGrid for Python (target `viennagrid`).
 #. Build the Boost.Python wrapper (target `wrapper`).
@@ -67,6 +73,19 @@ You can customize the build process in the following manners:
 * Disable the generation of the Doxygen documentation by setting the option `DOXYGEN_GENERATE_DOC` to false. This will exclude the target `doxygen` from the target `doc`, which is useful when you don't want to generate the Doxygen documentation (neither in HTML nor in LaTeX form) and thus don't want the build process to take a longer time than needed.
 * Disable the compilation of the Doxygen LaTeX documentation by setting the option `DOXYGEN_COMPILE_LATEX_DOC` to false. In this case, the Doxygen LaTeX documentation will still be generated, but it won't be compiled by default, you'll have to do it by hand instead. This is useful if you want the Doxygen documentation in LaTeX form but don't want the build process to take a longer time to finish. Whenever you want to compile the LaTeX code by hand, you can enter the `doc/doxygen/latex` directory and run `make` from there.
 * Exclude the Sphinx documentation from the distutils package by setting the option `PACKAGE_INCLUDE_SPHINX_DOC` to false. This will make the target `package` depend only on the target `packagesrc`, which creates a distutils package without documentation. Otherwise, the target `package` will depend on both `packagesrc` and `packagedoc`, thus creating a distutils package with documentation. This is useful if you don't want to spend more time building the documentation or if you have problems with the Sphinx version installed on your system, because it will disable the use of Sphinx at all.
+
+Configuring the build type
+""""""""""""""""""""""""""
+
+The build type is a very important thing to configure, because it will affect the built time and the later software performance.
+
+We can distinguish two main build types: debug and release. If you intend to build the software (eventually, a stable version of it) for use in production or to package it for distribution, a release build is the best option. However, if you plan to develop ViennaGrid for Python, a debug build will be better.
+
+The differences between both types are mainly that release build are optimized for greater execution speed and don't contain debug symbols (for smaller executable size). On the other hand, a debug build will have no optimizations at all (hence, the executable will be bigger and slower), but it will contain debug information, which is ideal for development, since you most likely will have to debug at some point.
+
+To select the build type, you must set a value for the option `CMAKE_BUILD_TYPE`. If you want a release build, set the value of this option to `Release`. If you want a debug build, set it to `Debug`.
+
+There are other build types apart from these two. If you want a release build with debug symbols, set the option to `RelWithDebInfo` (this will have some code optimizations for increased execution speed, but still contain information for debugging). If you want a realease build with the minimum code size possible, use `MinSizeRel` instead.
 
 For more information on how to use CMake, visit http://www.cmake.org/. There's also a very good book titled `Mastering CMake <http://www.cmake.org/cmake/help/book.html>`_, which dedicates a whole chapter to explain CMake's installation and usage for building software.
 
