@@ -12,6 +12,7 @@ cd ..
 git checkout gh-pages
 
 mkdir -p doc
+mkdir -p files
 
 # Copy HTML documentation to GitHub page
 rm -rf doc/sphinx
@@ -28,3 +29,7 @@ perl -p -i -e 's/_modules/modules/g' `ack-grep -l _modules doc/sphinx`
 mv -v doc/sphinx/_static doc/sphinx/static
 mv -v doc/sphinx/_sources doc/sphinx/sources
 mv -v doc/sphinx/_modules doc/sphinx/modules
+
+# Copy documentation in PDF form to GitHub page
+cp -v build/doc/sphinx/latex/ViennaGridforPython.pdf files/ViennaGridPython-sphinx-latest.pdf
+cp -v build/doc/doxygen/latex/refman.pdf files/ViennaGridPython-doxygen-latest.pdf

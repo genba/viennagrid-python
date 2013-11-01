@@ -8,7 +8,7 @@
 import argparse
 import subprocess
 
-PROJECT_VERSION    = '0.1.0-rc.4' # Current version of the project (ViennaGrid for Python)
+PROJECT_VERSION    = '0.1.0-rc.5' # Current version of the project (ViennaGrid for Python)
 BOOST_VERSION      = '1.53.0'     # Version of Boost used for development
 VIENNAGRID_VERSION = '1.0.1'      # Version of ViennaGrid used for development
 

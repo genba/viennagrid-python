@@ -6,11 +6,19 @@ Installation from source
 To install from source, your system must satisfy the following dependencies:
 
 * **CMake 2.6 or greater** (2.8 is preferred)
+* **Git** (used by CMake to download the source code of ViennaGrid, which is needed to build the software)
 * **Python 2.0 or greater** (2.7 is preferred; Python 3 is not officially supported yet)
 * **Python development libraries** (header files) for your Python version
+* **Boost.Python** header files and compiled libraries (1.49.0 has been tested, but any recent version should work)
 * **A modern C++ compiler** (for development, clang 3.0 has been used)
 
-`Boost.Python <http://www.boost.org/>`_ (1.53.0 or greater) and `ViennaGrid <http://viennagrid.sourceforge.net/>`_ (1.1.0 or greater) are also required to compile ViennaGrid for Python, but, if you don't have them, you can follow the steps in section :ref:`setting-up-devel-environ` to install them. On the other hand, if you already have them, you can skip directly to section :ref:`configuring-source` (provided that you don't want to create a virtual environment, which is done in section :ref:`setting-up-devel-environ`).
+In case you want to generate the documentation of ViennaGrid for Python, you will also need the following packages:
+
+* **Sphinx** to generate the Sphinx documentation
+* **Doxygen** to generate the Sphinx documentation
+* **A LaTeX compiler** to build the LaTeX code of the Sphinx and Doxygen documentation
+
+Notice, though, that these packages are optional. If you don't have them, you want be able to generate the documentation, but you will still be able to build ViennaGrid for Python.
 
 Downloading the source code of ViennaGrid for Python
 ----------------------------------------------------
@@ -21,133 +29,10 @@ Once you have the source code decompressed on your disk, enter the source code d
 
 	cd viennagrid-python-0.1.0/
 
-.. _setting-up-devel-environ:
+Configuring the build process
+-----------------------------
 
-Setting up the development environment
---------------------------------------
-
-Before compiling ViennaGrid for Python, you must set up a development environment.
-
-In order to set up a development environment for ViennaGrid for Python, we must do the following:
-
-#. Download and install Boost.Python
-#. Download the source code of ViennaGrid
-#. Optionally, create a Python virtual environment
-
-To set up a development environment, you can choose to do either a :ref:`manual-setup` or an :ref:`automatic-setup` using a script provided with the source code of ViennaGrid for Python.
-
-.. _manual-setup:
-
-Manual setup
-^^^^^^^^^^^^
-
-Downloading and installing Boost.Python
-"""""""""""""""""""""""""""""""""""""""
-
-If the package manager of your operating system provides packages for Boost.Python, you may install it from the packages, but please notice that the development of ViennaGrid for Python 0.1.0 was done using Boost 1.53.0. While a later version of Boost may work nicely, we cannot guarantee that a previous version will work without problems.
-
-If you prefer to install Boost.Python from source, you'll have to download Boost from http://www.boost.org/. In general, you don't need to compile Boost to use it, excepting when you use some of the few modules that require compilation. Boost.Python is one of those modules. Thus, we will have to compile it.
-
-For the development of ViennaGrid for Python, we use the convention to place all libraries that ViennaGrid for Python needs into the `inc` directory under the source code root directory (in our example, `viennagrid-python-0.1.0`), but you may choose to place Boost anywhere in your system. If you install Boost after compiling it, the place where its source code is located on disk won't matter and CMake (our configuration utility) will be able to find it. However, if you decide not to install Boost (which is totally fine), you'll have to provide the full path to CMake when you configure the project for building.
-
-That being said, we can proceed to fetch the Boost tarball from http://www.boost.org/ and decompress it. Since we used the bzipped version of Boost 1.53.0 for development: ::
-
-	tar xvjf boost_1_53_0.tar.bz2
-
-Now, we must enter the decompressed directory and configure Boost to be built with the Boost.Python library: ::
-
-	cd boost_1_53_0/
-	./bootstrap.sh --with-libraries=python
-
-After the configuration has finished, we compile Boost.Python by issuing the command: ::
-
-	./b2
-
-Once the compilation has finished, the compilation script will show us the paths where Boost's header files and shared libraries are located, respectively. If you decide not to install Boost on your system, you'll have to note these two paths so that, later, you can tell CMake where Boost is located on your disk.
-
-Finally, if you decide to install Boost.Python after all, you can do it like this (but please notice that you need administrator priviledges for this): ::
-
-	./b2 install
-
-If you need more information on how to build Boost.Python, visit the `Boost documentation <http://www.boost.org/doc/>`_.
-
-Getting ViennaGrid
-""""""""""""""""""
-
-If you are using a tarball, you'll have to download ViennaGrid by yourself, either a stable version from http://viennagrid.sourceforge.net/ or by cloning the code from `ViennaGrid's GitHub repository <https://github.com/viennagrid/viennagrid-dev>`_. At this time, the CMake configuration of ViennaGrid for Python is not able to find ViennaGrid if it's outside of the `inc` directory mentioned above. Thus, you'll have to download and decompress ViennaGrid to that directory if you don't want to edit the CMake configuration files for the project. Likewise, if you are cloning it instead of installing from a tarball, we recommend you clone it to the `inc` directory with the following command (to rename the resulting directory): ::
-
-	git clone git@github.com:viennagrid/viennagrid-dev.git viennagrid
-
-If you prefer to download ViennaGrid for Python by getting the code from `ViennaGrid for Python's GitHub repository <https://github.com/genba/viennagrid-python>`_,  you won't need to download ViennaGrid by yourself, since it is already included in the repository as a Git submodule. If you want the code of ViennaGrid to be downloaded automatically when you clone the repository, you can do it in a single command, if you want: ::
-
-	git clone --recursive git@github.com:genba/viennagrid-python.git
-
-However, if you've already cloned ViennaGrid for Python from the Git repository and haven't provided the `--recursive` option to Git, you can still tell Git to download the submodule with the following command: ::
-
-	git submodules update
-
-After doing this, you are already set up to build ViennaGrid for Python. If you want to install ViennaGrid for Python to a virtual environment, proceed to section :ref:`setting-up-devel-environ`. If you don't want to do this, just skip to :ref:`configuring-source`.
-
-Creating a Python virtual environment
-"""""""""""""""""""""""""""""""""""""
-
-As said before, this step is optional. If you don't do it, ViennaGrid for Python will be installed into your system's Python installation, which is actually desireable for stable releases of ViennaGrid for Python. However, if you are installing an unstable release or want to develop ViennaGrid for Python, you probably don't want it to mess with your system's Python installation and break something. In that case, you should create a Python virtual environment to isolate any changes. When you install the build products of ViennaGrid for Python, they will be installed into this virtual environment and it won't affect the rest of your system at all, thus not breaking anything in your system's Python installation and all the software that depends on it. Furthermore, this will allow you to keep different versions of ViennaGrid for Python installed on your system, since you can install different versions to different virtual environments, and a different version into your system's Python installation.
-
-To create a virtual environment, you need the Python package `virtualenv <https://pypi.python.org/pypi/virtualenv>`_. If you don't have it, install it from your system's package manager or using `pip <https://pypi.python.org/pypi/pip>`_: ::
-
-	pip install virtualenv
-
-Once you have `virtualenv` installed, move to the directory where you want to place the virtual environment (if you want, you can safely keep this inside the source code directory of ViennaGrid for Python) and create a new directory, which is where your virtual environment will be installed. We will call it `env`: ::
-
-	mkdir env
-
-Finally, create the virtual environment and activate it for your current terminal session: ::
-
-	virtualenv --no-site-packages env/
-	source env/bin/activate
-
-If you want to learn more about `virtualenv` or `pip`, visit their respective documentation sites:
-
-* `virtualenv documentation <http://www.virtualenv.org/>`_
-* `pip documentation <http://www.pip-installer.org/>`_
-
-You're now ready to go on with :ref:`configuring-source`.
-
-.. _automatic-setup:
-
-Automatic setup
-^^^^^^^^^^^^^^^
-
-In the source code directory of ViennaGrid for Python, there is a directory called `scripts` that contains scripts that are useful for the development of ViennaGrid for Python. One of these scripts is a Python script named `bootstrap.py`.
-
-This script can be used to automatically set up a development environment for ViennaGrid for Python. If you call it passing the destination directory for libraries as a parameter (let's say, `inc`) ::
-
-	./scripts/bootstrap.py inc/
-
-it will download and compile Boost.Python, and get the latest ViennaGrid version from the GitHub repository.
-
-If you also want to install Boost.Python to your system, add the `-I` option (notice that `sudo` must be configured on your system for this to work): ::
-
-	./scripts/bootstrap.py inc/ -I
-
-If you want to set up a virtual environment under `env`, add the `-e` option: ::
-
-	./scripts/bootstrap.py inc/ -e env/
-
-If you want the script to ask you before doing anything, you can enter the interactive mode with the `-i` option: ::
-
-	./scripts/bootstrap.py inc/ -i
-
-To get more information on how to use the bootstrap script, use the `--help` command line argument: ::
-
-	./scripts/bootstrap.py --help
-
-.. _configuring-source:
-
-Configuring the source code to be built
----------------------------------------
-
-To configure the source code, we will use `CMake <http://www.cmake.org/>`_.
+To configure the build process, we will use `CMake <http://www.cmake.org/>`_.
 
 First of all, we need to create a directory where the project will be built. We choose to create a directory called `build` in the root directory of the source code directory, i.e., `viennagrid-python-0.1.0` if you've downloaded the tarball or `viennagrid-python` if you've cloned the Git repository. So, from that directory, we issue the following commands: ::
 
@@ -160,9 +45,52 @@ From now on, we will execute the rest of the commands from within the `build` di
 * `ccmake ..` (curses interface)
 * `cmake-gui ..` (GUI)
 
-If you've set up the development environment as explained above and installed Boost.Python to your system, you shouldn't have to do anything and there shouldn't be any errors to solve. The whole configuration process should have happened without requiring any input from you.
+If your system satisfies all the software dependencies mentioned above, you shouldn't have to do anything and there shouldn't be any errors to solve. The whole configuration process should have happened without requiring any input from you.
 
-However, if you haven't installed Boost to your system, you'll get a CMake error message stating that it could not find Boost.Python and you'll have to provide its location manually. After that, re-run the configuration tool again and everything should work fine now, and you will be able to proceed to :ref:`building-source`.
+If you want to customize how the software will be built, proceed to :ref:`advanced-build-config`. If you prefer to build the software with the default settings, skip to :ref:`building-source`.
+
+.. _advanced-build-config:
+
+Advanced build configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Selecting components to be built
+""""""""""""""""""""""""""""""""
+
+There are some CMake variables that you can use to customize your build settings and what components will be built. Currently, the CMake files are written to do the following:
+
+#. Download the appropriate version of the ViennaGrid source code needed to compile ViennaGrid for Python (target `viennagrid`).
+#. Build the Boost.Python wrapper (target `wrapper`).
+#. Run unit tests on the Boost.Python wrapper (target `test`).
+#. Generate the documentation (target `doc`), which actually performs the following tasks (if the necessary software is installed on your system):
+	* Generate the Sphinx documentation as HTML (target `sphinx-html`).
+	* Generate the Sphinx documentation as LaTeX and eventually compile it either to DVI or to PDF (target `sphinx-latex`).
+	* Generate the Doxygen documentation as HTML and LaTeX, and compile the LaTeX code to either DVI or PDF (target `doxygen`).
+#. Build a distutils package (target `package`), which actually relies on one of the following targets:
+	* Build a distutils package without documentation (target `packagesrc`).
+	* Build a distutils package with documentation (target `packagedoc`).
+#. Install the distutils package (target `install`).
+
+You can customize the build process in the following manners:
+
+* Disable the generation of the Sphinx LaTeX documentation by setting the option `SPHINX_GENERATE_LATEX_DOC` to false. This is useful if you don't want the LaTeX documentation and thus don't want the build process to take a longer time than needed. Notice that, if you don't have LaTeX installed, this option will be set to false automatically. Otherwise, it will be set to true.
+* Disable the compilation of the Sphinx LaTeX documentation by setting the option `SPHINX_COMPILE_LATEX_DOC` to false. In this case, the Sphinx LaTeX documentation will still be generated, but it won't be compiled by default, you'll have to do it by hand instead. This is useful if you want the Sphinx documentation in LaTeX form but don't want the build process to take a longer time to finish. Whenever you want to compile the LaTeX code by hand, you can enter the `doc/sphinx/latex` directory and run `make` from there.
+* Disable the generation of the Doxygen documentation by setting the option `DOXYGEN_GENERATE_DOC` to false. This will exclude the target `doxygen` from the target `doc`, which is useful when you don't want to generate the Doxygen documentation (neither in HTML nor in LaTeX form) and thus don't want the build process to take a longer time than needed.
+* Disable the compilation of the Doxygen LaTeX documentation by setting the option `DOXYGEN_COMPILE_LATEX_DOC` to false. In this case, the Doxygen LaTeX documentation will still be generated, but it won't be compiled by default, you'll have to do it by hand instead. This is useful if you want the Doxygen documentation in LaTeX form but don't want the build process to take a longer time to finish. Whenever you want to compile the LaTeX code by hand, you can enter the `doc/doxygen/latex` directory and run `make` from there.
+* Exclude the Sphinx documentation from the distutils package by setting the option `PACKAGE_INCLUDE_SPHINX_DOC` to false. This will make the target `package` depend only on the target `packagesrc`, which creates a distutils package without documentation. Otherwise, the target `package` will depend on both `packagesrc` and `packagedoc`, thus creating a distutils package with documentation. This is useful if you don't want to spend more time building the documentation or if you have problems with the Sphinx version installed on your system, because it will disable the use of Sphinx at all.
+
+Configuring the build type
+""""""""""""""""""""""""""
+
+The build type is a very important thing to configure, because it will affect the time the build process will take, and the software performance.
+
+We can distinguish two main build types: debug and release. If you intend to build the software (eventually, a stable version of it) for use in production or to package it for distribution, a release build is the best option. However, if you plan to develop ViennaGrid for Python, a debug build will be better.
+
+The differences between both types are mainly that release build are optimized for greater execution speed and don't contain debug symbols (for smaller executable size). On the other hand, a debug build will have no optimizations at all (hence, the executable will be bigger and slower), but it will contain debug information, which is ideal for development, since you most likely will have to debug at some point.
+
+To select the build type, you must set a value for the option `CMAKE_BUILD_TYPE`. If you want a release build, set the value of this option to `Release`. If you want a debug build, set it to `Debug`.
+
+There are other build types apart from these two. If you want a release build with debug symbols, set the option to `RelWithDebInfo` (this will have some code optimizations for increased execution speed, but still contain information for debugging). If you want a realease build with the minimum code size possible, use `MinSizeRel` instead.
 
 For more information on how to use CMake, visit http://www.cmake.org/. There's also a very good book titled `Mastering CMake <http://www.cmake.org/cmake/help/book.html>`_, which dedicates a whole chapter to explain CMake's installation and usage for building software.
 
@@ -182,6 +110,16 @@ Notice, however, that inside those directories there are additional files used t
 Installing the software
 -----------------------
 
+You have two options to install ViennaGrid for Python:
+
+#. Install ViennaGrid for Python directly to your system, or
+#. Install ViennaGrid for Python into a Python virtual environment.
+
+If you want to install a stable version for production, go ahead with the first option. On the other hand, if you plan to test a new version or to develop ViennaGrid for Python itself, you'd better do the second.
+
+Installing the software to your system
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In order to install the Python package you can just run ::
 
 	make install
@@ -194,9 +132,33 @@ This will install the source distribution package with the Sphinx documentation 
 
 from the directory `build/viennagrid-python`, even though they should have exactly the same effect.
 
-Running tests
--------------
+Installing the software into a Python virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can run the test for the wrapper by issuing the command ::
+Installing the software into a virtual environment is optional, but it provides a bunch of advantages. If you don't do it, ViennaGrid for Python will be installed into your system's Python installation, which is actually desireable for stable releases of ViennaGrid for Python. However, if you are installing an unstable release or want to develop ViennaGrid for Python, you probably don't want it to mess with your system's Python installation and break something [#it-shouldnt-break]_ . In that case, you should create a Python virtual environment to isolate any changes. When you install the build products of ViennaGrid for Python, they will be installed into this virtual environment and it won't affect the rest of your system at all, thus not breaking anything in your system's Python installation and all the software that depends on it. Furthermore, this will allow you to keep different versions of ViennaGrid for Python installed on your system, since you can install different versions to different virtual environments, and a different version into your system's Python installation.
 
-	make test
+To create a virtual environment, you need the Python package `virtualenv <https://pypi.python.org/pypi/virtualenv>`_. If you don't have it, install it from your system's package manager or using `pip <https://pypi.python.org/pypi/pip>`_: ::
+
+	pip install virtualenv
+
+Once you have `virtualenv` installed, move to the directory where you want to place the virtual environment (if you want, you can safely keep this inside the source code directory of ViennaGrid for Python) and create a new directory, which is where your virtual environment will be installed. We will call it `env`: ::
+
+	mkdir env
+
+Finally, create the virtual environment and activate it for your current terminal session: ::
+
+	virtualenv --no-site-packages env/
+	source env/bin/activate
+
+Now that you've entered the virtual environment (with the `source`) command, you can install the Python package as explained before, by issuing the command ::
+
+	make install
+
+but this time the command will install the package into your newly created virtual environment, not your system's Python installation.
+
+If you want to learn more about `virtualenv` or `pip`, visit their respective documentation sites:
+
+* `virtualenv documentation <http://www.virtualenv.org/>`_
+* `pip documentation <http://www.pip-installer.org/>`_
+
+.. [#it-shouldnt-break] Doing this shouldn't actually break anything in your Python installation itself, but, if you have another version of ViennaGrid for Python installed, you may end up with version problems. This is what would actually get broken: if you have software that depends on one version of ViennaGrid for Python and you install a newer version which is not backwards-compatible, your software will stop working.
