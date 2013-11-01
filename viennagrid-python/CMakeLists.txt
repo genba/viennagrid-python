@@ -31,7 +31,7 @@ configure_file (${MANIFEST_IN} ${MANIFEST} @ONLY)
 configure_file (${LICENSE_IN} ${LICENSE} @ONLY)
 configure_file (${CHANGES_IN} ${CHANGES} @ONLY)
 
-# Targert packagesrc to gather the Python source code files and the wrapper shared object
+# Target packagesrc to gather the Python source code files and the wrapper shared object
 # in order to create a Python package
 
 set (PACKAGESRC_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/packagesrc")
@@ -46,7 +46,7 @@ add_custom_command (OUTPUT ${PACKAGESRC_OUTPUT}
 
 add_custom_target (packagesrc ALL DEPENDS ${PACKAGESRC_OUTPUT})
 
-# Targert packagedoc to gather the Sphinx documentation files in order to add them
+# Target packagedoc to gather the Sphinx documentation files in order to add them
 # to the Python package
 
 set (PACKAGEDOC_OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/packagedoc")

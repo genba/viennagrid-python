@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2013 Jonan Cruz-Martin
+ * 
+ * Distributed under the terms of the MIT license, see the accompanying
+ * file COPYING or http://opensource.org/licenses/MIT.
+ */
+
 #include <boost/python.hpp>
 using namespace boost::python;
 
@@ -80,7 +87,7 @@ using namespace viennagrid::io;
 
 char const * version()
 {
-	return "0.1.0-rc.4";
+	return "0.1.0-rc.5";
 }
 
 BOOST_PYTHON_MODULE(wrapper)

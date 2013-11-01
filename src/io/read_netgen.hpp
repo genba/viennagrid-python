@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2013 Jonan Cruz-Martin
+ * 
+ * Distributed under the terms of the MIT license, see the accompanying
+ * file COPYING or http://opensource.org/licenses/MIT.
+ * 
+ * @file
+ * @brief Function definitions for implementing the Netgen reader.
+ */
+
 #ifndef IO_READ_NETGEN_HPP
 #define IO_READ_NETGEN_HPP
 

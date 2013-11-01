@@ -1,4 +1,9 @@
 /**
+ * Copyright (c) 2013 Jonan Cruz-Martin
+ * 
+ * Distributed under the terms of the MIT license, see the accompanying
+ * file COPYING or http://opensource.org/licenses/MIT.
+ * 
  * @file
  * @brief Class definitions for wrapped cartesian points.
  */
@@ -213,7 +218,7 @@ public:
 	double norm_2();
 	
 	/**
-	 * Calculate the ∞-norm of the point.
+	 * Calculate the inf-norm of the point.
 	 * 
 	 * @since 0.1.0
 	 */
@@ -428,7 +433,7 @@ public:
 	double norm_2();
 	
 	/**
-	 * Calculate the ∞-norm of the point.
+	 * Calculate the inf-norm of the point.
 	 * 
 	 * @since 0.1.0
 	 */
@@ -657,7 +662,7 @@ public:
 	double norm_2();
 	
 	/**
-	 * Calculate the ∞-norm of the point.
+	 * Calculate the inf-norm of the point.
 	 * 
 	 * @since 0.1.0
 	 */
