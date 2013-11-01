@@ -220,7 +220,7 @@ public:
 	double norm_2();
 	
 	/**
-	 * Calculate the ∞-norm of the point.
+	 * Calculate the inf-norm of the point.
 	 * 
 	 * @since 0.1.0
 	 */
