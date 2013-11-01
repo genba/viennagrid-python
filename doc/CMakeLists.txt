@@ -27,21 +27,24 @@ if (SPHINX_BUILD_EXECUTABLE)
 	add_custom_target (sphinx-latex
 	                   ${SPHINX_BUILD_EXECUTABLE} -b latex -c "${SPHINX_CONF_DIR}" -d "${SPHINX_CACHE_DIR}" "${SPHINX_SRC_DIR}" "${SPHINX_LATEX_DIR}"
 	                   DEPENDS packagesrc)
-	if (PDFLATEX_COMPILER)
-		add_custom_command (TARGET sphinx-latex
-		                    POST_BUILD
-		                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
-		                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
-		                    WORKING_DIRECTORY "${SPHINX_LATEX_DIR}")
-	else (PDFLATEX_COMPILER)
-		if (LATEX_COMPILER)
+	set (SPHINX_COMPILE_LATEX_DOC ON CACHE BOOL "Compile the Doxygen Sphinx documentation in target 'sphinx-latex'?")
+	if (SPHINX_COMPILE_LATEX_DOC)
+		if (PDFLATEX_COMPILER)
 			add_custom_command (TARGET sphinx-latex
 			                    POST_BUILD
-			                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
-			                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
+			                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
+			                    COMMAND ${PDFLATEX_COMPILER} ViennaGridforPython
 			                    WORKING_DIRECTORY "${SPHINX_LATEX_DIR}")
-		endif (LATEX_COMPILER)
-	endif (PDFLATEX_COMPILER)
+		else (PDFLATEX_COMPILER)
+			if (LATEX_COMPILER)
+				add_custom_command (TARGET sphinx-latex
+				                    POST_BUILD
+				                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
+				                    COMMAND ${LATEX_COMPILER} ViennaGridforPython
+				                    WORKING_DIRECTORY "${SPHINX_LATEX_DIR}")
+			endif (LATEX_COMPILER)
+		endif (PDFLATEX_COMPILER)
+	endif (SPHINX_COMPILE_LATEX_DOC)
 	set (SPHINX_GENERATE_LATEX_DOC ON CACHE BOOL "Include target to generate LaTeX documentation in target 'sphinx'?")
 	if (SPHINX_GENERATE_LATEX_DOC)
 		add_custom_target (sphinx DEPENDS sphinx-html sphinx-latex)
@@ -64,21 +67,24 @@ if (DOXYGEN_FOUND)
 	configure_file("${DOXYFILE_TEMPLATE_PATH}" "${DOXYFILE_PATH}" @ONLY)
 	add_custom_target (doxygen ${DOXYGEN_EXECUTABLE} ${DOXYFILE_PATH})
 	
-	if (PDFLATEX_COMPILER)
-		add_custom_command (TARGET doxygen
-		                    POST_BUILD
-		                    COMMAND ${PDFLATEX_COMPILER} refman
-		                    COMMAND ${PDFLATEX_COMPILER} refman
-		                    WORKING_DIRECTORY "${DOXYGEN_OUTPUT_DIR}/latex")
-	else (PDFLATEX_COMPILER)
-		if (LATEX_COMPILER)
+	set (DOXYGEN_COMPILE_LATEX_DOC ON CACHE BOOL "Compile the Doxygen LaTeX documentation in target 'doxygen'?")
+	if (DOXYGEN_COMPILE_LATEX_DOC)
+		if (PDFLATEX_COMPILER)
 			add_custom_command (TARGET doxygen
 			                    POST_BUILD
-			                    COMMAND ${LATEX_COMPILER} refman
-			                    COMMAND ${LATEX_COMPILER} refman
-			                    WORKING_DIRECTORY "${DOXYGEN_OUTPUT_DIR}//latex")
-		endif (LATEX_COMPILER)
-	endif (PDFLATEX_COMPILER)
+			                    COMMAND ${PDFLATEX_COMPILER} refman
+			                    COMMAND ${PDFLATEX_COMPILER} refman
+			                    WORKING_DIRECTORY "${DOXYGEN_OUTPUT_DIR}/latex")
+		else (PDFLATEX_COMPILER)
+			if (LATEX_COMPILER)
+				add_custom_command (TARGET doxygen
+				                    POST_BUILD
+				                    COMMAND ${LATEX_COMPILER} refman
+				                    COMMAND ${LATEX_COMPILER} refman
+				                    WORKING_DIRECTORY "${DOXYGEN_OUTPUT_DIR}//latex")
+			endif (LATEX_COMPILER)
+		endif (PDFLATEX_COMPILER)
+	endif (DOXYGEN_COMPILE_LATEX_DOC)
 	
 	set (DOXYGEN_GENERATE_DOC ON CACHE BOOL "Include target to generate Doxygen documentation in target 'doc'?")
 	if (DOXYGEN_GENERATE_DOC)
