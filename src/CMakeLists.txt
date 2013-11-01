@@ -13,8 +13,17 @@ include_directories (${PYTHON_INCLUDE_PATH})
 find_package (Boost REQUIRED COMPONENTS python)
 include_directories (${Boost_INCLUDE_DIRS})
 
+# Fetch ViennaGrid from the GitHub repository
+include (ExternalProject)
+ExternalProject_Add (viennagrid
+                     PREFIX ../inc/viennagrid
+                     GIT_REPOSITORY https://github.com/viennagrid/viennagrid-dev.git
+                     GIT_TAG 4bb4d9a527eb1173cd8ef224c45b0bd32a13d2b4
+                     BUILD_COMMAND ""
+                     INSTALL_COMMAND "")
 # Add include path for ViennaGrid
-include_directories (../inc/viennagrid)
+ExternalProject_Get_Property (viennagrid SOURCE_DIR)
+include_directories (${SOURCE_DIR})
 
 set (VIENNAGRID_WRAPPER_POINTS_SRC
         points/types.hpp
@@ -191,3 +200,4 @@ set (VIENNAGRID_WRAPPER_SRC
 python_add_module (wrapper ${VIENNAGRID_WRAPPER_SRC})
 target_link_libraries (wrapper ${Boost_LIBRARIES})
 set_target_properties (wrapper PROPERTIES VERSION ${release} SOVERSION ${version})
+add_dependencies (wrapper viennagrid)
